@@ -26,6 +26,7 @@ group :development, :test do
   gem 'faker'
   gem 'byebug', platform: :mri
   gem 'rubocop', require: false
+  gem 'dotenv-rails'
 end
 
 group :development do
