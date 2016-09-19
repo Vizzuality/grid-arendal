@@ -1,24 +1,80 @@
-# README
+# Grid Arendal
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![Build Status](https://travis-ci.org/Vizzuality/grid-arendal.svg?branch=develop)](https://travis-ci.org/Vizzuality/grid-arendal) [![Code Climate](https://codeclimate.com/github/Vizzuality/grid-arendal/badges/gpa.svg)](https://codeclimate.com/github/Vizzuality/grid-arendal)
 
-Things you may want to cover:
+TODO: Write a project description
 
-* Ruby version
+## Installation
 
-* System dependencies
+Requirements:
 
-* Configuration
+* Ruby 2.3.1 [How to install](https://gorails.com/setup/osx/10.10-yosemite)
+* PostgreSQL 9.4+ [How to install](http://exponential.io/blog/2015/02/21/install-postgresql-on-mac-os-x-via-brew/)
 
-* Database creation
+Setup and install application
 
-* Database initialization
+    bin/setup
 
-* How to run the test suite
+Or:
 
-* Services (job queues, cache servers, search engines, etc.)
+Install global dependencies:
 
-* Deployment instructions
+    gem install bundler
 
-* ...
+Install project dependencies:
+
+    bundle install
+
+First time execute:
+
+    cp config/database.yml.sample config/database.yml
+
+    bundle exec rake db:create
+    bundle exec rake db:migrate
+
+## Usage
+
+To run application:
+
+    bundle exec rails server
+
+## TEST
+
+  Run rspec:
+
+```ruby
+  bin/rspec
+```
+  Run cucumber:
+
+```ruby
+  rake cucumber
+```
+  Run all (cucumber, spec):
+
+```ruby
+  rake
+```
+
+capybara-webkit depends on a WebKit implementation from Qt (version >= 4.8), a cross-platform development toolkit. You'll need to download the Qt libraries to build and install the gem. [more](https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit)
+
+OS X Mavericks:
+
+    brew update
+    brew install qt
+
+In cucumber, tag scenarios with '@javascript' to run them using a headless WebKit browser.
+
+In RSpec, use the 'js: true' flag. See the [capybara documentation](http://rubydoc.info/gems/capybara#Using_Capybara_with_RSpec) for more information about using capybara with RSpec.
+
+## Contributing
+
+1. Fork it!
+2. Create your feature branch: `git checkout -b feature/my-new-feature`
+3. Commit your changes: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin feature/my-new-feature`
+5. Submit a pull request :D
+
+### BEFORE CREATING A PULL REQUEST
+
+  Please check all of [these points](https://github.com/Vizzuality/grid-arendal/blob/master/CONTRIBUTING.md).

@@ -1,0 +1,27 @@
+language: ruby
+cache: bundler
+
+rvm:
+  - 2.3.1
+
+addons:
+  postgresql: '9.4'
+
+before_script:
+  - cp config/database.yml.travis config/database.yml
+
+script:
+  - 'bundle exec rake db:create'
+  - 'bundle exec rake db:migrate'
+  - 'bundle exec rake'
+
+notifications:
+  email:
+    recipients:
+      - sebastian.schkudlara@vizzuality.com
+    on_failure: change
+    on_success: never
+
+addons:
+  code_climate:
+    repo_token: 138f5d1774f14dbb61bf2e13f44bed4a37a25340787ccf63ba057165e48306be

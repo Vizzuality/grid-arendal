@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -39,4 +40,21 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  config.after_initialize do
+    Bullet.enable = true
+    Bullet.bullet_logger = true
+    Bullet.raise = true
+  end
+
+  config.after_initialize do
+    # Set Time.now to September 1, 2016 12:00:00 AM (at this instant)
+    t = Time.local(2016, 9, 1, 12, 0, 0, 0)
+    Timecop.travel(t)
+  end
+
+  # Raises error for missing translations
+  # config.action_view.raise_on_missing_translations = true
+  config.action_mailer.default_url_options = { host: 'localhost', port: 5000 }
+  config.action_mailer.delivery_method = :test
 end
