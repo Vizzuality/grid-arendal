@@ -1,15 +1,15 @@
 # frozen_string_literal: true
-# User Roles: member, publisher, admin
+# User Roles: contributor, publisher, admin
 module Roleable
   extend ActiveSupport::Concern
 
   included do
     scope :admin_users,         -> { where(role: 'admin')       }
     scope :publisher_users,     -> { where(role: 'publisher')     }
-    scope :member_users,        -> { where(role: 'member')      }
+    scope :contributor_users,        -> { where(role: 'contributor')      }
     scope :not_admin_users,     -> { where.not(role: 'admin')   }
     scope :not_publisher_users, -> { where.not(role: 'publisher') }
-    scope :not_member_users,    -> { where.not(role: 'member')  }
+    scope :not_contributor_users,    -> { where.not(role: 'contributor')  }
 
     def make_admin
       update(role: 'admin')
@@ -20,7 +20,7 @@ module Roleable
     end
 
     def make_contributor
-      update(role: 'member')
+      update(role: 'contributor')
     end
 
     def admin?
@@ -31,15 +31,15 @@ module Roleable
       role.in?('publisher')
     end
 
-    def member?
-      role.in?('member')
+    def contributor?
+      role.in?('contributor')
     end
 
     def role_name
       case role
       when 'admin'     then I18n.t('shared.admin')
       when 'publisher' then I18n.t('shared.publisher')
-      when 'member'    then I18n.t('shared.member')
+      when 'contributor'    then I18n.t('shared.contributor')
       else
         I18n.t('shared.user')
       end

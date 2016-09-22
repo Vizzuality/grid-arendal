@@ -7,6 +7,6 @@ class AddFieldsToUsers < ActiveRecord::Migration[5.0]
     add_column :users, :web_url,          :string
     add_column :users, :active,           :boolean, default: false,  null: false
     add_column :users, :deactivated_at,   :datetime
-    add_column :users, :role,             :integer, default: 'user', null: false
+    add_column :users, :role,             :integer, default: 'user', null: false, comment: 'User role { contributor: 0, publisher: 1, admin: 2 }'
   end
 end

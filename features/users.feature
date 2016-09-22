@@ -37,7 +37,7 @@ I want to edit, view, activate, deactivate and make a user admin
     And I follow "Make admin"
     Then I should have two adminusers
     When I go to the user page for "pepe-moreno@sample.com"
-    And I follow "Make member"
+    And I follow "Make contributor"
     Then I should be on the users page
     And I should have one adminuser
 
@@ -53,7 +53,7 @@ I want to edit, view, activate, deactivate and make a user admin
     And I am authenticated adminuser
     Then I should have one publisheruser
     When I go to the user page for "pepe-moreno@sample.com"
-    And I follow "Make member"
+    And I follow "Make contributor"
     Then I should be on the users page
     And I should have zero publisherusers
 

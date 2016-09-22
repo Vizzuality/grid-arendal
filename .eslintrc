@@ -201,7 +201,7 @@ rules:
   no-arrow-condition: 0
   no-class-assign: 0
   no-const-assign: 0
-  no-dupe-class-members: 0
+  no-dupe-class-contributors: 0
   no-this-before-super: 0
   no-var: 0
   object-shorthand: 0

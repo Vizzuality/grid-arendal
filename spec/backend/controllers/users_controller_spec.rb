@@ -98,7 +98,7 @@ module Backend
         sign_in @adminuser
       end
 
-      it 'Make the member admin' do
+      it 'Make the contributor admin' do
         process :make_admin, params: { id: @user_2.id }
 
         expect(response).to              be_redirect
@@ -106,7 +106,7 @@ module Backend
         expect(@user_2.reload.admin?).to eq(true)
       end
 
-      it 'Make the member publisher' do
+      it 'Make the contributor publisher' do
         process :make_publisher, params: { id: @user_3.id }
 
         expect(response).to                be_redirect

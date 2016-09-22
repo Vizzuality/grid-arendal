@@ -23,7 +23,7 @@
 #  web_url                :string
 #  active                 :boolean          default(FALSE), not null
 #  deactivated_at         :datetime
-#  role                   :integer          default("member"), not null
+#  role                   :integer          default("contributor"), not null
 #
 # Indexes
 #

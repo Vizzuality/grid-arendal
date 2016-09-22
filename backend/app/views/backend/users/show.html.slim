@@ -6,7 +6,7 @@ h2
 
 - if (can? :make_contributor, @user) && (@user.admin? || @user.publisher?)
   p
-    = link_to 'Make member', make_contributor_user_path(@user), method: :patch
+    = link_to 'Make contributor', make_contributor_user_path(@user), method: :patch
 - if (can? :make_admin, @user) && !@user.admin?
   p
     = link_to 'Make admin', make_admin_user_path(@user), method: :patch

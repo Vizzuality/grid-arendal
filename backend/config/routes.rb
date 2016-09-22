@@ -20,11 +20,11 @@ Backend::Engine.routes.draw do
   end
 
   resources :users do
-    patch 'deactivate',   on: :member
-    patch 'activate',     on: :member
-    patch 'make_admin',   on: :member
-    patch 'make_publisher', on: :member
-    patch 'make_contributor',  on: :member
+    patch 'deactivate',       on: :member
+    patch 'activate',         on: :member
+    patch 'make_admin',       on: :member
+    patch 'make_publisher',   on: :member
+    patch 'make_contributor', on: :member
   end
 
   root to: 'admin_home#index'
