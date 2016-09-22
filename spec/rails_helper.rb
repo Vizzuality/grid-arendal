@@ -19,6 +19,14 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
 
+  config.mock_with :rspec do |c|
+    c.syntax = [:should, :expect]
+  end
+
+  config.expect_with :rspec do |c|
+    c.syntax = [:should, :expect]
+  end
+
   if Bullet.enable?
     config.before(:each, type: :controller) do
       Bullet.start_request
@@ -31,10 +39,13 @@ RSpec.configure do |config|
   end
 
   config.include FactoryGirl::Syntax::Methods
+  config.include Devise::Test::ControllerHelpers, type: :controller
 
-  Capybara.server do |app, port|
-    require 'rack/handler/puma'
-    Rack::Handler::Puma.run(app, Port: port)
+  Capybara.register_server :puma do |app, port, host|
+    require 'puma'
+    Puma::Server.new(app).tap do |s|
+      s.add_tcp_listener host, port
+    end.run.join
   end
   Capybara.javascript_driver = :webkit
 end

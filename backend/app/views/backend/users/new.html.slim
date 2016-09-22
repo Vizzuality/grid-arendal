@@ -1,0 +1,7 @@
+h2 New User
+
+= form_for @user do |f|
+  = render partial: f
+  = f.label :password
+  = f.password_field :password
+  = f.submit 'Create'

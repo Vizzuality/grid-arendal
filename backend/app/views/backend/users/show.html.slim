@@ -1,0 +1,23 @@
+h2
+  = @user.full_name || 'User'
+  |
+  = " (admin)"   if @user.admin?
+  = " (manager)" if @user.manager?
+
+- if (can? :make_member, @user) && (@user.admin? || @user.manager?)
+  p
+    = link_to 'Make member', make_member_user_path(@user), method: :patch
+- if (can? :make_admin, @user) && !@user.admin?
+  p
+    = link_to 'Make admin', make_admin_user_path(@user), method: :patch
+- if (can? :make_manager, @user) && !@user.manager?
+  p
+    = link_to 'Make manager', make_manager_user_path(@user), method: :patch
+
+- if can? :update, @user
+  p
+    = link_to t('shared.edit'), edit_user_path(@user), class: 'button -type-a'
+
+- if current_user && current_user.admin?
+  p
+    = render 'backend/shared/deactivatable_links', location: @user
