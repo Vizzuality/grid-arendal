@@ -6,8 +6,8 @@ module Abilities
     def initialize(user)
       can :manage, :all
 
-      cannot :make_member,             ::User, id: user.id
-      cannot :make_manager,            ::User, id: user.id
+      cannot :make_contributor,        ::User, id: user.id
+      cannot :make_publisher,          ::User, id: user.id
       cannot [:activate, :deactivate], ::User, id: user.id
     end
   end

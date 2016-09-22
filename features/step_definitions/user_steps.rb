@@ -15,12 +15,12 @@ Then /^I should have two adminusers$/ do
   expect(User.admin_users.size).to eq(2)
 end
 
-Then /^I should have one manageruser$/ do
-  expect(User.manager_users.size).to eq(1)
+Then /^I should have one publisheruser$/ do
+  expect(User.publisher_users.size).to eq(1)
 end
 
-Then /^I should have zero managerusers$/ do
-  expect(User.manager_users.size).to eq(0)
+Then /^I should have zero publisherusers$/ do
+  expect(User.publisher_users.size).to eq(0)
 end
 
 Given /^I am authenticated user$/ do
@@ -56,6 +56,6 @@ Given /^adminuser$/ do
   FactoryGirl.create(:user, active: true, role: 'admin')
 end
 
-Given /^manageruser$/ do
-  FactoryGirl.create(:manageruser, first_name: 'Pepe', last_name: 'Moreno', email: 'pepe-moreno@sample.com', active: true)
+Given /^publisheruser$/ do
+  FactoryGirl.create(:publisheruser, first_name: 'Pepe', last_name: 'Moreno', email: 'pepe-moreno@sample.com', active: true)
 end

@@ -6,7 +6,7 @@ module Backend
 
     before :each do
       @user   = create(:user, active: true)
-      @user_2 = create(:user, email: Faker::Internet.email, active: false, role: 'manager')
+      @user_2 = create(:user, email: Faker::Internet.email, active: false, role: 'publisher')
       @user_3 = create(:user, email: Faker::Internet.email, active: true, first_name: 'Pepe')
 
       @adminuser = create(:user, email: 'admin@sample.com', active: true, role: 'admin', first_name: 'Juanito')
@@ -106,30 +106,30 @@ module Backend
         expect(@user_2.reload.admin?).to eq(true)
       end
 
-      it 'Make the member manager' do
-        process :make_manager, params: { id: @user_3.id }
+      it 'Make the member publisher' do
+        process :make_publisher, params: { id: @user_3.id }
 
         expect(response).to                be_redirect
         expect(response).to                have_http_status(302)
-        expect(@user_3.reload.manager?).to eq(true)
+        expect(@user_3.reload.publisher?).to eq(true)
       end
 
       it 'Revoke admin role for user' do
         expect(@adminuser_2.admin?).to eq(true)
-        process :make_member, params: { id: @adminuser_2.id }
+        process :make_contributor, params: { id: @adminuser_2.id }
 
         expect(response).to                   be_redirect
         expect(response).to                   have_http_status(302)
         expect(@adminuser_2.reload.admin?).to eq(false)
       end
 
-      it 'Revoke manager role for user' do
-        expect(@user_2.manager?).to eq(true)
-        process :make_member, params: { id: @user_2.id }
+      it 'Revoke publisher role for user' do
+        expect(@user_2.publisher?).to eq(true)
+        process :make_contributor, params: { id: @user_2.id }
 
         expect(response).to                be_redirect
         expect(response).to                have_http_status(302)
-        expect(@user_2.reload.manager?).to eq(false)
+        expect(@user_2.reload.publisher?).to eq(false)
       end
     end
   end

@@ -41,24 +41,24 @@ I want to edit, view, activate, deactivate and make a user admin
     Then I should be on the users page
     And I should have one adminuser
 
-  Scenario: Adminuser can make user manager
+  Scenario: Adminuser can make user publisher
     Given user
     And I am authenticated adminuser
     When I go to the user page for "pepe-moreno@sample.com"
-    And I follow "Make manager"
-    Then I should have one manageruser
+    And I follow "Make publisher"
+    Then I should have one publisheruser
 
-  Scenario: Adminuser can remove manager rights from user
-    Given manageruser
+  Scenario: Adminuser can remove publisher rights from user
+    Given publisheruser
     And I am authenticated adminuser
-    Then I should have one manageruser
+    Then I should have one publisheruser
     When I go to the user page for "pepe-moreno@sample.com"
     And I follow "Make member"
     Then I should be on the users page
-    And I should have zero managerusers
+    And I should have zero publisherusers
 
   Scenario: Adminuser can deactivate and activate user and using active filter
-    Given manageruser
+    Given publisheruser
     And I am authenticated adminuser
     When I go to the user page for "pepe-moreno@sample.com"
     And I follow "Deactivate"

@@ -1,25 +1,25 @@
 # frozen_string_literal: true
-# User Roles: member, manager, admin
+# User Roles: member, publisher, admin
 module Roleable
   extend ActiveSupport::Concern
 
   included do
-    scope :admin_users,       -> { where(role: 'admin')       }
-    scope :manager_users,     -> { where(role: 'manager')     }
-    scope :member_users,      -> { where(role: 'member')      }
-    scope :not_admin_users,   -> { where.not(role: 'admin')   }
-    scope :not_manager_users, -> { where.not(role: 'manager') }
-    scope :not_member_users,  -> { where.not(role: 'member')  }
+    scope :admin_users,         -> { where(role: 'admin')       }
+    scope :publisher_users,     -> { where(role: 'publisher')     }
+    scope :member_users,        -> { where(role: 'member')      }
+    scope :not_admin_users,     -> { where.not(role: 'admin')   }
+    scope :not_publisher_users, -> { where.not(role: 'publisher') }
+    scope :not_member_users,    -> { where.not(role: 'member')  }
 
     def make_admin
       update(role: 'admin')
     end
 
-    def make_manager
-      update(role: 'manager')
+    def make_publisher
+      update(role: 'publisher')
     end
 
-    def make_member
+    def make_contributor
       update(role: 'member')
     end
 
@@ -27,8 +27,8 @@ module Roleable
       role.in?('admin')
     end
 
-    def manager?
-      role.in?('manager')
+    def publisher?
+      role.in?('publisher')
     end
 
     def member?
@@ -37,9 +37,9 @@ module Roleable
 
     def role_name
       case role
-      when 'admin'   then I18n.t('shared.admin')
-      when 'manager' then I18n.t('shared.manager')
-      when 'member'  then I18n.t('shared.member')
+      when 'admin'     then I18n.t('shared.admin')
+      when 'publisher' then I18n.t('shared.publisher')
+      when 'member'    then I18n.t('shared.member')
       else
         I18n.t('shared.user')
       end

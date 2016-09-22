@@ -7,7 +7,7 @@
 #  encrypted_password     :string           default(""), not null
 #  reset_password_token   :string
 #  reset_password_sent_at :datetime
-#  remember_created_at    :datetime
+#  recontributor_created_at    :datetime
 #  sign_in_count          :integer          default(0), not null
 #  current_sign_in_at     :datetime
 #  last_sign_in_at        :datetime
@@ -22,7 +22,7 @@
 #  web_url                :string
 #  active                 :boolean          default(FALSE), not null
 #  deactivated_at         :datetime
-#  role                   :integer          default("member"), not null
+#  role                   :integer          default("contributor"), not null
 #
 # Indexes
 #

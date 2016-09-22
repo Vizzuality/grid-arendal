@@ -32,7 +32,7 @@
 #
 
 class User < ApplicationRecord
-  enum role: { member: 0, manager: 1, admin: 2 }
+  enum role: { member: 0, publisher: 1, admin: 2 }
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

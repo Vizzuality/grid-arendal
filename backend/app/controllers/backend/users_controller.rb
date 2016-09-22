@@ -63,14 +63,14 @@ module Backend
       end
     end
 
-    def make_manager
-      if @user.try(:make_manager)
+    def make_publisher
+      if @user.try(:make_publisher)
         redirect_to users_path
       end
     end
 
-    def make_member
-      if @user.try(:make_member)
+    def make_contributor
+      if @user.try(:make_contributor)
         redirect_to users_path
       end
     end

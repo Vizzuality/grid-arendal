@@ -5,17 +5,17 @@ module Account
     before :each do
       @user        = create(:user)
       @adminuser   = create(:adminuser)
-      @manageruser = create(:manageruser)
+      @publisheruser = create(:publisheruser)
     end
 
     it { Abilities::AdminUser.should include(CanCan::Ability) }
     it { Abilities::AdminUser.should respond_to(:new).with(1).argument }
 
-    it { Abilities::ManagerUser.should include(CanCan::Ability) }
-    it { Abilities::ManagerUser.should respond_to(:new).with(1).argument }
+    it { Abilities::PublisherUser.should include(CanCan::Ability) }
+    it { Abilities::PublisherUser.should respond_to(:new).with(1).argument }
 
-    it { Abilities::MemberUser.should include(CanCan::Ability) }
-    it { Abilities::MemberUser.should respond_to(:new).with(1).argument }
+    it { Abilities::ContributorUser.should include(CanCan::Ability) }
+    it { Abilities::ContributorUser.should respond_to(:new).with(1).argument }
 
     it { Abilities::Guest.should include(CanCan::Ability) }
     it { Abilities::Guest.should respond_to(:new).with(1).argument }
@@ -23,8 +23,8 @@ module Account
     context 'Administrator' do
       it 'can manage objects' do
         Abilities::AdminUser.any_instance.should_receive(:can).with(:manage, :all)
-        Abilities::AdminUser.any_instance.should_receive(:cannot).with(:make_manager, ::User, id: @adminuser.id)
-        Abilities::AdminUser.any_instance.should_receive(:cannot).with(:make_member, ::User, id: @adminuser.id)
+        Abilities::AdminUser.any_instance.should_receive(:cannot).with(:make_publisher, ::User, id: @adminuser.id)
+        Abilities::AdminUser.any_instance.should_receive(:cannot).with(:make_contributor, ::User, id: @adminuser.id)
         Abilities::AdminUser.any_instance.should_receive(:cannot).with([:activate, :deactivate], ::User, id: @adminuser.id)
 
         Abilities::AdminUser.new @adminuser
@@ -33,21 +33,21 @@ module Account
 
     context 'Manager' do
       it 'can manage objects' do
-        Abilities::ManagerUser.any_instance.should_receive(:can).with(:update, ::User, id: @manageruser.id)
-        Abilities::ManagerUser.any_instance.should_receive(:can).with(:read, :all)
+        Abilities::PublisherUser.any_instance.should_receive(:can).with(:update, ::User, id: @publisheruser.id)
+        Abilities::PublisherUser.any_instance.should_receive(:can).with(:read, :all)
 
-        Abilities::ManagerUser.any_instance.should_receive(:cannot).with(:make_admin, ::User, id: @manageruser.id)
-        Abilities::ManagerUser.any_instance.should_receive(:cannot).with(:make_member, ::User, id: @manageruser.id)
-        Abilities::ManagerUser.any_instance.should_receive(:cannot).with([:activate, :deactivate], ::User, id: @manageruser.id)
-        Abilities::ManagerUser.new @manageruser
+        Abilities::PublisherUser.any_instance.should_receive(:cannot).with(:make_admin, ::User, id: @publisheruser.id)
+        Abilities::PublisherUser.any_instance.should_receive(:cannot).with(:make_contributor, ::User, id: @publisheruser.id)
+        Abilities::PublisherUser.any_instance.should_receive(:cannot).with([:activate, :deactivate], ::User, id: @publisheruser.id)
+        Abilities::PublisherUser.new @publisheruser
       end
     end
 
     context 'Member' do
       it 'can manage objects' do
-        Abilities::MemberUser.any_instance.should_receive(:can).with(:update, ::User, id: @user.id)
-        Abilities::MemberUser.any_instance.should_receive(:can).with(:read, ::User, id: @user.id)
-        Abilities::MemberUser.new @user
+        Abilities::ContributorUser.any_instance.should_receive(:can).with(:update, ::User, id: @user.id)
+        Abilities::ContributorUser.any_instance.should_receive(:can).with(:read, ::User, id: @user.id)
+        Abilities::ContributorUser.new @user
       end
     end
 

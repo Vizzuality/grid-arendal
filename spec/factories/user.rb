@@ -44,8 +44,8 @@ FactoryGirl.define do
     current_position Faker::Company.profession
   end
 
-  factory :manageruser, class: User do
-    sequence(:email) { |n| "manager#{n}@vizzuality.com" }
+  factory :publisheruser, class: User do
+    sequence(:email) { |n| "publisher#{n}@vizzuality.com" }
 
     password 'password'
     password_confirmation { |u| u.password }
@@ -55,7 +55,7 @@ FactoryGirl.define do
     web_url Faker::Internet.url('example.com', '/foobar')
     current_position Faker::Company.profession
     active true
-    role 'manager'
+    role 'publisher'
   end
 
   factory :adminuser, class: User do

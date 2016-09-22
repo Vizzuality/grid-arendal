@@ -2,17 +2,17 @@ h2
   = @user.full_name || 'User'
   |
   = " (admin)"   if @user.admin?
-  = " (manager)" if @user.manager?
+  = " (publisher)" if @user.publisher?
 
-- if (can? :make_member, @user) && (@user.admin? || @user.manager?)
+- if (can? :make_contributor, @user) && (@user.admin? || @user.publisher?)
   p
-    = link_to 'Make member', make_member_user_path(@user), method: :patch
+    = link_to 'Make member', make_contributor_user_path(@user), method: :patch
 - if (can? :make_admin, @user) && !@user.admin?
   p
     = link_to 'Make admin', make_admin_user_path(@user), method: :patch
-- if (can? :make_manager, @user) && !@user.manager?
+- if (can? :make_publisher, @user) && !@user.publisher?
   p
-    = link_to 'Make manager', make_manager_user_path(@user), method: :patch
+    = link_to 'Make publisher', make_publisher_user_path(@user), method: :patch
 
 - if can? :update, @user
   p

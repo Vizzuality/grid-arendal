@@ -6,10 +6,10 @@ class Ability
     if user # devise session users
       if user.admin?
         merge Abilities::AdminUser.new(user)
-      elsif user.manager?
-        merge Abilities::ManagerUser.new(user)
+      elsif user.publisher?
+        merge Abilities::PublisherUser.new(user)
       else
-        merge Abilities::MemberUser.new(user)
+        merge Abilities::ContributorUser.new(user)
       end
     else
       merge Abilities::Guest.new(user)
