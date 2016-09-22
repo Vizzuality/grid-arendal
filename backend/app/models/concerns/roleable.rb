@@ -4,12 +4,12 @@ module Roleable
   extend ActiveSupport::Concern
 
   included do
-    scope :admin_users,         -> { where(role: 'admin')       }
-    scope :publisher_users,     -> { where(role: 'publisher')     }
-    scope :contributor_users,        -> { where(role: 'contributor')      }
-    scope :not_admin_users,     -> { where.not(role: 'admin')   }
-    scope :not_publisher_users, -> { where.not(role: 'publisher') }
-    scope :not_contributor_users,    -> { where.not(role: 'contributor')  }
+    scope :admin_users,           -> { where(role: 'admin')           }
+    scope :publisher_users,       -> { where(role: 'publisher')       }
+    scope :contributor_users,     -> { where(role: 'contributor')     }
+    scope :not_admin_users,       -> { where.not(role: 'admin')       }
+    scope :not_publisher_users,   -> { where.not(role: 'publisher')   }
+    scope :not_contributor_users, -> { where.not(role: 'contributor') }
 
     def make_admin
       update(role: 'admin')
@@ -37,9 +37,9 @@ module Roleable
 
     def role_name
       case role
-      when 'admin'     then I18n.t('shared.admin')
-      when 'publisher' then I18n.t('shared.publisher')
-      when 'contributor'    then I18n.t('shared.contributor')
+      when 'admin'       then I18n.t('shared.admin')
+      when 'publisher'   then I18n.t('shared.publisher')
+      when 'contributor' then I18n.t('shared.contributor')
       else
         I18n.t('shared.user')
       end

@@ -3,8 +3,8 @@ require 'rails_helper'
 module Account
   RSpec.describe Ability, type: :model do
     before :each do
-      @user        = create(:user)
-      @adminuser   = create(:adminuser)
+      @user          = create(:user)
+      @adminuser     = create(:adminuser)
       @publisheruser = create(:publisheruser)
     end
 
