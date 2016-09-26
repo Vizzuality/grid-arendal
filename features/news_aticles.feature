@@ -22,6 +22,7 @@ I want to edit, create, view news_articles
     When I go to the new news_article page
     And I fill in "Title" with "My new about section"
     And I fill in "Exposure slug" with "my-slug"
+    And I select datetime "2016 January 23" as the "news_article_publication_date"
     And I press "Create News Article"
     Then I should have one news_article
     And I should see "My new about section"
