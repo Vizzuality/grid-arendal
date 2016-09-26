@@ -15,5 +15,9 @@
 
 class Content < ApplicationRecord
   include Publishable
+
+  has_many :participants
+  has_many :users, through: :participants
+
   validates :title, presence: true
 end

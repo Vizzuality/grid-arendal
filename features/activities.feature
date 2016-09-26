@@ -30,6 +30,7 @@ I want to edit, create, view activities
     When I go to the new activity page
     And I fill in "Title" with ""
     And I fill in "Description" with "My description"
+    And I select "Gonca A." from "Users"
     And I press "Create Activity"
     Then I should have zero activities
     And I should see "can't be blank"

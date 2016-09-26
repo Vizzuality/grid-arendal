@@ -6,6 +6,7 @@ module Backend
     load_and_authorize_resource
 
     before_action :set_activity, except: [:index, :new, :create]
+    before_action :set_users, only: [:new, :edit]
 
     def index
       @activities = Activity.order(:title)
@@ -22,6 +23,7 @@ module Backend
       if @activity.update(activity_params)
         redirect_to activities_url, notice: 'Activity updated'
       else
+        set_users
         render :edit
       end
     end
@@ -31,6 +33,7 @@ module Backend
       if @activity.save
         redirect_to activities_url
       else
+        set_users
         render :new
       end
     end
@@ -59,6 +62,10 @@ module Backend
 
       def activity_params
         params.require(:activity).permit!
+      end
+
+      def set_users
+        @users = User.order(:first_name, :last_name)
       end
   end
 end

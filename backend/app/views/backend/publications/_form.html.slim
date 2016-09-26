@@ -6,3 +6,6 @@
 
 = form.label :story_map_url
 = form.input :story_map_url, label: false
+
+= form.association :users, collection: users, label_method: :display_name,
+  value_method: :id

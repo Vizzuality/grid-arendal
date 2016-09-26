@@ -6,6 +6,7 @@ module Backend
     load_and_authorize_resource
 
     before_action :set_publication, except: [:index, :new, :create]
+    before_action :set_users, only: [:new, :edit]
 
     def index
       @publications = Publication.order(:title)
@@ -22,6 +23,7 @@ module Backend
       if @publication.update(publication_params)
         redirect_to publications_url, notice: 'Publication updated'
       else
+        set_users
         render :edit
       end
     end
@@ -31,6 +33,7 @@ module Backend
       if @publication.save
         redirect_to publications_url
       else
+        set_users
         render :new
       end
     end
@@ -60,6 +63,10 @@ module Backend
 
       def publication_params
         params.require(:publication).permit!
+      end
+
+      def set_users
+        @users = User.order(:first_name, :last_name)
       end
   end
 end
