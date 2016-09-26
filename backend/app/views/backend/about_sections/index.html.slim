@@ -1,0 +1,9 @@
+h2 About Sections
+
+- @about_sections.each do |about_section|
+  p
+    = about_section.title
+  p
+    = about_section.body
+  p
+    = link_to 'Edit', edit_about_section_path(about_section)

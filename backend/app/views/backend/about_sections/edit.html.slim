@@ -1,0 +1,8 @@
+h2
+  | Edit
+  '
+  = @about_section.title || 'About Section'
+
+= simple_form_for @about_section do |f|
+  = render partial: f
+  = f.submit 'Update'
