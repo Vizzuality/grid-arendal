@@ -8,7 +8,7 @@ module Backend
     before_action :set_partner, except: [:index, :new, :create]
 
     def index
-      @partners = Partner.all
+      @partners = Partner.order_by_name
     end
 
     def show

@@ -22,4 +22,6 @@ class Partner < ApplicationRecord
   validates_attachment_content_type :logo, content_type: /\Aimage\/.*\z/
 
   validates :name, presence: true
+
+  scope :order_by_name, -> { order('name ASC') }
 end
