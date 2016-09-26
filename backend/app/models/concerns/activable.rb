@@ -5,7 +5,7 @@ module Activable
   included do
     before_save :set_deactivated_at
 
-    before_update :deactivate_dependencies, if: '!active and active_changed?'
+    before_update :deactivate_dependencies, if: '!active && active_changed?'
 
     scope :filter_actives,   -> { where(active: true)  }
     scope :filter_inactives, -> { where(active: false) }

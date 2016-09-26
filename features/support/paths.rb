@@ -17,9 +17,11 @@ module NavigationHelpers
     when /the register page/
       '/manage/account/register'
     when /the account edit page for "(.*)"$/
-      backend.edit_user_registration_path(User.find_by_email($1).id)
+      backend.edit_user_account_path(User.find_by_email($1).id)
     when /the users page/
       backend.users_path
+    when /the new user page/
+      backend.new_user_path
     when /the user page for "(.*)"$/
       backend.user_path(User.find_by_email($1).id)
     when /the edit user page for "(.*)"$/

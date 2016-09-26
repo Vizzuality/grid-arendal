@@ -24,6 +24,9 @@
 #  active                 :boolean          default(FALSE), not null
 #  deactivated_at         :datetime
 #  role                   :integer          default("contributor"), not null
+#  locked_at              :datetime
+#  failed_attempts        :integer          default(0), not null
+#  unlock_token           :string
 #
 # Indexes
 #
@@ -36,25 +39,57 @@ class User < ApplicationRecord
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  devise :database_authenticatable, :recoverable,
+         :rememberable, :trackable, :validatable, :lockable
 
   include Activable
   include Roleable
   include Sanitizable
   include Display
 
-  def self.filter_users(filters)
-    actives   = filters[:active]['true']  if filters[:active].present?
-    inactives = filters[:active]['false'] if filters[:active].present?
+  before_update :deactivate_account, if: 'deactivated? && active_changed?'
+  before_update :activate_account,   if: 'activated? && active_changed?'
 
-    users = if actives.present?
-              filter_actives
-            elsif inactives.present?
-              filter_inactives
-            else
-              all
-            end
-    users
+  before_save :send_invitation, if: 'activated? && sign_in_count.zero?'
+
+  scope :locked_accounts, -> { where.not(locked_at: nil) }
+
+  class << self
+    def filter_users(filters)
+      actives   = filters[:active]['true']  if filters[:active].present?
+      inactives = filters[:active]['false'] if filters[:active].present?
+
+      users = if actives.present?
+                filter_actives
+              elsif inactives.present?
+                filter_inactives
+              else
+                all
+              end
+      users
+    end
+
+    def create_with_password(attributes={})
+      generated_password = ::Devise.friendly_token.first(8)
+      create(attributes.merge(password: generated_password, password_confirmation: generated_password))
+    end
   end
+
+  private
+
+    def deactivate_account
+      unless self.locked_at
+        return self.lock_access!
+      end
+    end
+
+    def activate_account
+      if self.locked_at
+        return self.unlock_access!
+      end
+    end
+
+    def send_invitation
+      self.send_reset_password_instructions if reset_password_token.blank?
+    end
 end

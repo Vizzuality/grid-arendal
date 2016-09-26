@@ -1,8 +1,23 @@
-= form.label :first_name
-= form.text_field :first_name
-
-= form.label :last_name
-= form.text_field :last_name
-
 = form.label :email
-= form.text_field :email
+= form.input :email, required: true, autofocus: true, label: false
+
+= form.label :first_name, 'Firstname'
+= form.input :first_name, label: false
+
+= form.label :last_name, 'Lastname'
+= form.input :last_name, label: false
+
+= form.label :organization
+= form.input :organization, label: false
+
+= form.label :current_position, 'Position'
+= form.input :current_position, label: false
+
+= form.label :web_url
+= form.input :web_url, label: false
+
+= form.label :role
+= form.input :role, collection: @user_roles, as: :collection_select, include_blank: false, label: false
+
+= form.label :active
+= form.input :active, label: false

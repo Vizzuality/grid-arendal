@@ -23,6 +23,22 @@ Then /^I should have zero publisherusers$/ do
   expect(User.publisher_users.size).to eq(0)
 end
 
+Then /^I should have one locked account$/ do
+  expect(User.locked_accounts.size).to eq(1)
+end
+
+Then /^I should have zero locked account$/ do
+  expect(User.locked_accounts.size).to eq(0)
+end
+
+Then /^I should have sign_in_count zero for "(.*)"$/ do |user_mail|
+  expect(User.find_by_email(user_mail).sign_in_count).to eq(0)
+end
+
+Then /^I should have reset_password_token for "(.*)"$/ do |user_mail|
+  expect(User.find_by_email(user_mail).reset_password_token).to be_present
+end
+
 Given /^I am authenticated user$/ do
   @user = FactoryGirl.create(:user, email: 'test_user@sample.com', first_name: 'Pepe', last_name: 'Moreno', active: true)
   email = @user.email

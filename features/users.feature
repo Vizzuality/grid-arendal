@@ -64,6 +64,7 @@ I want to edit, view, activate, deactivate and make a user admin
     And I follow "Deactivate"
     Then I should be on the users page
     And I should see "Pepe Moreno (deactivated)"
+    And I should have one locked account
     When I filter active on the users page
     Then I should not see "Pepe Moreno"
     When I filter inactive on the users page
@@ -72,3 +73,4 @@ I want to edit, view, activate, deactivate and make a user admin
     And I follow "Activate"
     Then I should be on the users page
     And I should not see "(deactivated)"
+    And I should have zero locked account

@@ -2,21 +2,18 @@
 Backend::Engine.routes.draw do
   devise_for :users, path: 'account',
                      path_names:  { sign_in:  'login',  sign_out: 'logout',
-                                    password: 'secret', sign_up:  'register' },
+                                    password: 'secret', unlock: 'unlock' },
                      controllers: {
-                                    sessions:      'backend/users/sessions',
-                                    registrations: 'backend/users/registrations',
-                                    passwords:     'backend/users/passwords'
+                                    sessions:  'backend/users/sessions',
+                                    passwords: 'backend/users/passwords',
+                                    unlocks:   'backend/users/unlocks'
                                   },
                      class_name: '::User',
                      module: :devise
 
-  scope :account do
-    devise_scope :user do
-      post 'register', to: 'users/registrations#create', as: :register
-      post 'password', to: 'users/passwords#create',     as: :secret
-      post 'edit',     to: 'users/registrations#edit',   as: :account_edit
-    end
+  devise_scope :user do
+    get 'account/edit', to: 'users/accounts#edit',   as: 'edit_user_account'
+    put 'account/:id',  to: 'users/accounts#update', as: 'update_user_account'
   end
 
   resources :users do

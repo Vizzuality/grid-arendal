@@ -23,6 +23,9 @@
 #  active                 :boolean          default(FALSE), not null
 #  deactivated_at         :datetime
 #  role                   :integer          default("contributor"), not null
+#  locked_at              :datetime
+#  failed_attempts        :integer          default(0), not null
+#  unlock_token           :string
 #
 # Indexes
 #

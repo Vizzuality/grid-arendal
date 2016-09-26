@@ -4,7 +4,9 @@ require_dependency "backend/application_controller"
 module Backend
   class UsersController < ::Backend::ApplicationController
     load_and_authorize_resource
-    before_action :set_user, except: [:index, :new, :create]
+
+    before_action :set_user,            except: [:index, :new, :create]
+    before_action :set_roles_selection, only:   [:update, :create, :new, :edit]
 
     def index
       @users = if current_user&.admin?
@@ -33,7 +35,7 @@ module Backend
     end
 
     def create
-      @user = User.new(user_params)
+      @user = User.create_with_password(user_params)
       if @user.save
         redirect_to users_path
       else
@@ -83,6 +85,10 @@ module Backend
 
       def set_user
         @user = User.find(params[:id])
+      end
+
+      def set_roles_selection
+        @user_roles = User.roles.map { |r,| [r, r] }
       end
 
       def user_params
