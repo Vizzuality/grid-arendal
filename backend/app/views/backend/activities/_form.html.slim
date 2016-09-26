@@ -6,3 +6,6 @@
 
 = form.association :users, collection: users, label_method: :display_name,
   value_method: :id
+
+= form.association :partners, collection: partners, label_method: :name,
+  value_method: :id
