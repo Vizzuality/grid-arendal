@@ -27,6 +27,8 @@ Backend::Engine.routes.draw do
   resources :partners
   resources :about_sections, except: [:show]
   resources :news_articles, except: [:show]
+  resources :publications, except: [:show]
+  resources :activities, except: [:show]
 
   resources :events do
     patch 'deactivate', on: :member

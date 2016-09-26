@@ -1,0 +1,9 @@
+h2 News Articles
+
+- @activities.each do |activity|
+  p
+    = activity.title
+  p
+    = activity.description
+  p
+    = link_to 'Edit', edit_activity_path(activity)
