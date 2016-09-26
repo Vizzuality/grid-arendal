@@ -4,5 +4,6 @@ h2
   = @activity.title || 'Activity'
 
 = simple_form_for @activity do |f|
-  = render 'form', form: f, users: @users, partners: @partners
+  = render 'form', form: f, users: @users, partners: @partners,
+    news_articles: @news_articles
   = f.submit 'Update'

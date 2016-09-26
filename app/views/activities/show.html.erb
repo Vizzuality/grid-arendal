@@ -2,6 +2,13 @@
 
 <%= @activity.description %>
 
+<h3>Related news</h3>
+<ul>
+  <% @activity.news_articles.each do |article| %>
+    <li><%= link_to article.title, news_path(article) %></li>
+  <% end %>
+</ul>
+
 <h3>Staff involved</h3>
 <ul>
   <% @activity.users.each do |u| %>
