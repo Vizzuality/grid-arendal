@@ -1,15 +1,51 @@
 <h1>GRID Arendal</h1>
 
-<h2>Latest News</h2>
-<section></section>
+<h2>Latest news</h2>
+<%= link_to "View all news", news_index_path %>
 
-<h2>Featured Activities</h2>
-<section></section>
+<ul>
+  <% @articles.each do |article| %>
+    <li>
+      <%= link_to article.title, news_path(article) %>
+      <%= time_ago_in_words(article.publication_date) if article.publication_date %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Featured activities</h2>
+<%= link_to "View all activities", activities_path %>
+
+<ul>
+  <% @activities.each do |activity| %>
+    <li>
+      <%= link_to activity.title, activity %>
+    </li>
+  <% end %>
+</ul>
 
 <h2>Featured Publications</h2>
-<section></section>
+<%= link_to "View all publications", publications_path %>
+
+<ul>
+  <% @publications.each do |publication| %>
+    <li>
+      <%= link_to publication.title, publication %>
+    </li>
+  <% end %>
+</ul>
 
 <h2>Featured Media</h2>
 <section></section>
 
-<%= render "users", users: @users %>
+<h2>Staff</h2>
+<%= link_to "Know our complete staff", staff_index_path %>
+<ul>
+  <% @users.each do |user| %>
+    <li>
+      <%= image_tag(user.avatar) %>
+      <%= user.display_name %>
+      <%= user.current_position %>
+    </li>
+  <% end %>
+</ul>
+

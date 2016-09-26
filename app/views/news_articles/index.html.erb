@@ -3,8 +3,8 @@
 <ul>
   <% @articles.each do |article| %>
     <li>
-      <%= link_to article.title, article %>
-      <%= article.exposure_slug %>
+      <%= link_to article.title, news_path(article) %>
+      <%= time_ago_in_words(article.publication_date) if article.publication_date %>
     </li>
   <% end %>
 </ul>

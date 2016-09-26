@@ -1,3 +1,5 @@
 <h2><%= @article.title %></h2>
 
 <%= @publication.exposure_slug %>
+
+<%= time_ago_in_words(@article.publication_date) if @article.publication_date %>

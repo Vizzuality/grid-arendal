@@ -2,5 +2,8 @@
 class HomeController < ApplicationController
   def index
     @users = User.limit(5)
+    @articles = NewsArticle.limit(5).order(:publication_date)
+    @activities = Activity.limit(5)
+    @publications = Publication.limit(5)
   end
 end
