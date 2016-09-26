@@ -1,0 +1,11 @@
+h2 News Articles
+
+- @publications.each do |publication|
+  p
+    = publication.title
+  p
+    = publication.description
+  p
+    = publication.story_map_url
+  p
+    = link_to 'Edit', edit_publication_path(publication)

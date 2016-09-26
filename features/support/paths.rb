@@ -46,6 +46,18 @@ module NavigationHelpers
       backend.new_news_article_path
     when /the edit news_article page for "(.*)"$/
       backend.edit_news_article_path(NewsArticle.find_by_title($1).id)
+    when /the publications page/
+      backend.publications_path
+    when /the new publication page/
+      backend.new_publication_path
+    when /the edit publication page for "(.*)"$/
+      backend.edit_publication_path(Publication.find_by_title($1).id)
+    when /the activities page/
+      backend.activities_path
+    when /the new activity page/
+      backend.new_activity_path
+    when /the edit activity page for "(.*)"$/
+      backend.edit_activity_path(Activity.find_by_title($1).id)
     when /the events page/
       backend.events_path
     when /the new event page/
