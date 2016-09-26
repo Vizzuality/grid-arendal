@@ -15,7 +15,6 @@ module GridArendal
       g.view_specs      false
       g.helper_specs    false
       g.factory_girl    false
-      g.template_engine :slim
       g.stylesheets     false
       g.javascripts     false
       g.helper          false

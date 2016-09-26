@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 
 ruby '2.3.1'
 
-gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
+gem 'rails', '~> 5.0.0', '< 5.1'
 gem 'pg', '~> 0.18'
 
 gem 'puma', '~> 3.0'
@@ -15,10 +15,20 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5.x'
 gem 'jbuilder', '~> 2.0'
 
+# User management
+gem 'devise'
+gem 'cancancan'
+
+# Backend
+gemspec path: 'backend'
+
 # Templating
 gem 'slim-rails'
 gem 'simple_form'
 gem 'kaminari'
+
+# File upload
+gem 'paperclip'
 
 group :development, :test do
   gem 'hirb'
@@ -30,12 +40,12 @@ group :development, :test do
 end
 
 group :development do
-  gem 'annotate'
   gem 'web-console'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry-rails'
+  gem 'annotate'
 end
 
 group :test do
@@ -50,7 +60,7 @@ group :test do
   gem 'bullet'
   gem 'database_cleaner'
   gem 'timecop'
-  gem 'codeclimate-test-reporter', require: nil
 end
 
+gem "codeclimate-test-reporter", group: :test, require: nil
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

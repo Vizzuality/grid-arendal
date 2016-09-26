@@ -1,0 +1,11 @@
+h2
+  | Edit
+  '
+  = @user.full_name || 'User'
+  '
+  |
+  = " (admin)" if @user.admin?
+
+= simple_form_for @user do |f|
+  = render partial: f
+  = f.submit 'Update'

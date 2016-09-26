@@ -1,0 +1,22 @@
+doctype html
+html lang='en'
+  head
+    meta charset='utf-8'
+    meta name='viewport' content='width=device-width, initial-scale=1.0'
+    title
+      = content_for?(:title) ? yield(:title) : 'RW'
+    = stylesheet_link_tag 'backend/manifests/application'
+    = csrf_meta_tags
+  body
+    - if alert
+      .alert data-alert='true'
+        = alert
+    - else
+      .success data-alert='true'
+        = notice
+
+    = render 'backend/shared/nav_bar'
+
+    = yield
+
+    = javascript_include_tag 'backend/manifests/application'
