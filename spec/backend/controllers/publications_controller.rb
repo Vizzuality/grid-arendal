@@ -51,6 +51,21 @@ module Backend
         process :update, method: :put, params: { id: @publication.id, publication: attri_fail }
         expect(response.body).to match('can&#39;t be blank')
       end
+
+      it 'Publishes publication' do
+        unpublished = create(:publication, is_published: false)
+        process :publish, method: :patch, params: { id: @publication.id }
+        expect(response).to be_redirect
+        expect(response).to have_http_status(302)
+        expect(@publication.reload.published?).to be(true)
+      end
+
+      it 'Unpublishes publication' do
+        process :unpublish, method: :patch, params: { id: @publication.id }
+        expect(response).to be_redirect
+        expect(response).to have_http_status(302)
+        expect(@publication.reload.unpublished?).to be(true)
+      end
     end
   end
 end

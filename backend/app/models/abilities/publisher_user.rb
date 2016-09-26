@@ -14,6 +14,8 @@ module Abilities
         can :manage, ::NewsArticle
         can :manage, ::Activity
         can :manage, ::Publication
+        can [:publish, :unpublish], ::Activity
+        can [:publish, :unpublish], ::Publication
         can [:activate, :deactivate], ::Event
       end
 

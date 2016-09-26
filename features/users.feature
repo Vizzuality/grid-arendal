@@ -9,7 +9,7 @@ I want to edit, view, activate, deactivate and make a user admin
     When I go to the users page
     And I should see "Pepe Moreno"
     And I should see "Juanito"
-    When I follow "Pepe Moreno (activated)"
+    When I follow "Pepe Moreno (active)"
     Then I should be on the user page for "test_user@sample.com"
     And I should see "Pepe Moreno"
 
@@ -63,7 +63,7 @@ I want to edit, view, activate, deactivate and make a user admin
     When I go to the user page for "pepe-moreno@sample.com"
     And I follow "Deactivate"
     Then I should be on the users page
-    And I should see "Pepe Moreno (deactivated)"
+    And I should see "Pepe Moreno (inactive)"
     And I should have one locked account
     When I filter active on the users page
     Then I should not see "Pepe Moreno"

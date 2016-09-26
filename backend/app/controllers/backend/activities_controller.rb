@@ -35,6 +35,22 @@ module Backend
       end
     end
 
+    def unpublish
+      if @activity.try(:unpublish)
+        redirect_to activities_path
+      else
+        redirect_to activity_path(@activity)
+      end
+    end
+
+    def publish
+      if @activity.try(:publish)
+        redirect_to activities_path
+      else
+        redirect_to activity_path(@activity)
+      end
+    end
+
     private
 
       def set_activity

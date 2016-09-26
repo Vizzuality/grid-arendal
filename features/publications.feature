@@ -24,7 +24,7 @@ I want to edit, create, view publications
     And I fill in "Description" with "My description"
     And I press "Create Publication"
     Then I should have one publication
-    And I should see "My description"
+    And I should see "My new publication"
 
   Scenario: Adminuser can not create publication without title
     Given I am authenticated adminuser
@@ -34,3 +34,13 @@ I want to edit, create, view publications
     And I press "Create Publication"
     Then I should have zero publications
     And I should see "can't be blank"
+
+  Scenario: Publisheruser can publish and unpublish an publication
+    Given I am authenticated publisheruser
+    And publication
+    When I go to the publications page
+    Then I should see "My publication"
+    And I follow "Unpublish"
+    Then I should be on the publications page
+    And I should see "My publication"
+    And I should see "Publish"

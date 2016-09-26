@@ -14,5 +14,6 @@
 #
 
 class Content < ApplicationRecord
+  include Publishable
   validates :title, presence: true
 end
