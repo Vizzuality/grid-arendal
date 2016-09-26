@@ -48,6 +48,12 @@ module NavigationHelpers
       backend.event_path(Event.find_by_title($1).id)
     when /the edit event page for "(.*)"$/
       backend.edit_event_path(Event.find_by_title($1).id)
+    when /the news_articles page/
+      backend.news_articles_path
+    when /the new news_article page/
+      backend.new_news_article_path
+    when /the edit news_article page for "(.*)"$/
+      backend.edit_news_article_path(NewsArticle.find_by_title($1).id)
     else
       if path = match_rails_path_for(page_name)
         path
