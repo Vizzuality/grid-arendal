@@ -1,0 +1,25 @@
+h2
+  = @user.full_name || 'User'
+  |
+  = " (admin)"   if @user.admin?
+  = " (publisher)" if @user.publisher?
+p
+  = image_tag @user.avatar.url(:thumb)
+
+- if (can? :make_contributor, @user) && (@user.admin? || @user.publisher?)
+  p
+    = link_to 'Make contributor', make_contributor_user_path(@user), method: :patch
+- if (can? :make_admin, @user) && !@user.admin?
+  p
+    = link_to 'Make admin', make_admin_user_path(@user), method: :patch
+- if (can? :make_publisher, @user) && !@user.publisher?
+  p
+    = link_to 'Make publisher', make_publisher_user_path(@user), method: :patch
+
+- if can? :update, @user
+  p
+    = link_to t('shared.edit'), edit_user_path(@user)
+
+- if current_user && current_user.admin?
+  p
+    = render 'backend/shared/deactivatable_links', location: @user
