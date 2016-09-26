@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 # == Schema Information
 #
 # Table name: contents
@@ -18,6 +19,9 @@ class Content < ApplicationRecord
 
   has_many :participants
   has_many :users, through: :participants
+
+  has_many :content_partners
+  has_many :partners, through: :content_partners
 
   validates :title, presence: true
 end

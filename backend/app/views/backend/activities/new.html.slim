@@ -1,5 +1,6 @@
 h2 New Activity
 
 = simple_form_for @activity do |f|
-  = render 'form', form: f, users: @users
+  = render 'form', form: f, users: @users, partners: @partners,
+    news_articles: @news_articles
   = f.submit 'Create Activity'

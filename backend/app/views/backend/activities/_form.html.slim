@@ -4,5 +4,11 @@
 = form.label :description
 = form.input :description, label: false
 
+= form.association :news_articles, collection: news_articles, label_method: :title,
+  value_method: :id
+
 = form.association :users, collection: users, label_method: :display_name,
+  value_method: :id
+
+= form.association :partners, collection: partners, label_method: :name,
   value_method: :id

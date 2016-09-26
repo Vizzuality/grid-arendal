@@ -19,18 +19,27 @@ I want to edit, create, view activities
 
   Scenario: Adminuser can create activity
     Given I am authenticated adminuser
+    And partner
+    And news_article
     When I go to the new activity page
     And I fill in "Title" with "My new activity"
     And I fill in "Description" with "My description"
+    And I select "Gonca A." from "Users"
+    And I select "Partner one" from "Partners"
+    And I select "About the Company" from "News articles"
     And I press "Create Activity"
     Then I should have one activity
 
   Scenario: Adminuser can not create activity without title
     Given I am authenticated adminuser
+    And partner
+    And news_article
     When I go to the new activity page
     And I fill in "Title" with ""
     And I fill in "Description" with "My description"
     And I select "Gonca A." from "Users"
+    And I select "Partner one" from "Partners"
+    And I select "About the Company" from "News articles"
     And I press "Create Activity"
     Then I should have zero activities
     And I should see "can't be blank"
