@@ -4,12 +4,15 @@ module Abilities
     include CanCan::Ability
 
     def initialize(user)
-      can :read, :all
+      can :read,   ::User, id: user.id
       can :update, ::User, id: user.id
 
       if user.activated?
         can :manage, ::Partner
         can :manage, ::AboutSection
+        can :manage, ::Event
+        can :manage, ::NewsArticle
+        can [:activate, :deactivate], ::Event
       end
 
       cannot :make_contributor,        ::User, id: user.id

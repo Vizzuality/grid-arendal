@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160926111437) do
+ActiveRecord::Schema.define(version: 20160926134853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,31 @@ ActiveRecord::Schema.define(version: 20160926111437) do
     t.integer  "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "web_url"
+    t.string   "background_image_file_name"
+    t.string   "background_image_content_type"
+    t.integer  "background_image_file_size"
+    t.datetime "background_image_updated_at"
+    t.boolean  "active",                        default: false, null: false
+    t.datetime "deactivated_at"
+    t.integer  "partner_id"
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
+    t.index ["partner_id"], name: "index_events_on_partner_id", using: :btree
+  end
+
+  create_table "news_articles", force: :cascade do |t|
+    t.string   "exposure_slug"
+    t.string   "title"
+    t.integer  "position"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.date     "publication_date"
   end
 
   create_table "partners", force: :cascade do |t|
@@ -55,7 +80,7 @@ ActiveRecord::Schema.define(version: 20160926111437) do
     t.string   "web_url"
     t.boolean  "active",                 default: false, null: false
     t.datetime "deactivated_at"
-    t.integer  "role",                   default: 0,     null: false, comment: "User role { contributor: 0, publisher: 1, admin: 2 }"
+    t.integer  "role",                   default: 0,     null: false
     t.datetime "locked_at"
     t.integer  "failed_attempts",        default: 0,     null: false
     t.string   "unlock_token"

@@ -26,6 +26,12 @@ Backend::Engine.routes.draw do
 
   resources :partners
   resources :about_sections, except: [:show]
+  resources :news_articles, except: [:show]
+
+  resources :events do
+    patch 'deactivate', on: :member
+    patch 'activate',   on: :member
+  end
 
   root to: 'admin_home#index'
 end

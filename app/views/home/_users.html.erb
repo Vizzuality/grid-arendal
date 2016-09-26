@@ -1,0 +1,12 @@
+<h2>Staff</h2>
+<%= link_to "Know our complete staff", staff_index_path %>
+<ul>
+  <% users.each do |user| %>
+    <li>
+      <%= image_tag(user.avatar) %>
+      <%= user.display_name %>
+      <%= user.current_position %>
+    </li>
+  <% end %>
+</ul>
+
