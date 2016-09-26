@@ -1,0 +1,10 @@
+<h2>Activities</h2>
+
+<ul>
+  <% @activities.each do |activity| %>
+    <li>
+      <%= link_to activity.title, activity %>
+      <%= activity.description %>
+    </li>
+  <% end %>
+</ul>
