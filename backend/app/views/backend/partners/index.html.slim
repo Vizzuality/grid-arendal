@@ -1,5 +1,8 @@
 h2 Partners
 
+- if can?(:create, Partner)
+  = link_to "New", new_partner_path
+
 - @partners.each do |partner|
   p
     = link_to partner.name, partner_path(partner)

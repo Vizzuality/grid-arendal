@@ -1,4 +1,7 @@
-h2 News Articles
+h2 Publications
+
+- if can?(:create, Publication)
+  = link_to "New", new_publication_path
 
 - @publications.each do |publication|
   p
