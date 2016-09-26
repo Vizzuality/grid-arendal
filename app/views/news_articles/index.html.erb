@@ -1,0 +1,10 @@
+<h2>News</h2>
+
+<ul>
+  <% @articles.each do |article| %>
+    <li>
+      <%= link_to article.title, article %>
+      <%= article.exposure_slug %>
+    </li>
+  <% end %>
+</ul>
