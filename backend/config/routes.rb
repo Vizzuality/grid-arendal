@@ -25,6 +25,7 @@ Backend::Engine.routes.draw do
   end
 
   resources :partners
+  resources :about_sections, except: [:show]
 
   root to: 'admin_home#index'
 end

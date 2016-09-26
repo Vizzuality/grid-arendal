@@ -34,6 +34,12 @@ module NavigationHelpers
       backend.partner_path(Partner.find_by_name($1).id)
     when /the edit partner page for "(.*)"$/
       backend.edit_partner_path(Partner.find_by_name($1).id)
+    when /the about_sections page/
+      backend.about_sections_path
+    when /the new about_section page/
+      backend.new_about_section_path
+    when /the edit about_section page for "(.*)"$/
+      backend.edit_about_section_path(AboutSection.find_by_title($1).id)
     else
       if path = match_rails_path_for(page_name)
         path

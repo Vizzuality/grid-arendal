@@ -9,6 +9,7 @@ module Abilities
 
       if user.activated?
         can :manage, ::Partner
+        can :manage, ::AboutSection
       end
 
       cannot :make_contributor,        ::User, id: user.id
