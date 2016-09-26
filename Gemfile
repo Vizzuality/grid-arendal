@@ -27,6 +27,9 @@ gem 'slim-rails'
 gem 'simple_form'
 gem 'kaminari'
 
+# File upload
+gem 'paperclip'
+
 group :development, :test do
   gem 'hirb'
   gem 'awesome_print'

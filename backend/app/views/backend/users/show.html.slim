@@ -3,6 +3,8 @@ h2
   |
   = " (admin)"   if @user.admin?
   = " (publisher)" if @user.publisher?
+p
+  = image_tag @user.avatar.url(:thumb)
 
 - if (can? :make_contributor, @user) && (@user.admin? || @user.publisher?)
   p
@@ -16,7 +18,7 @@ h2
 
 - if can? :update, @user
   p
-    = link_to t('shared.edit'), edit_user_path(@user), class: 'button -type-a'
+    = link_to t('shared.edit'), edit_user_path(@user)
 
 - if current_user && current_user.admin?
   p

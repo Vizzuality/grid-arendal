@@ -3,9 +3,9 @@ require 'rails_helper'
 module Account
   RSpec.describe Ability, type: :model do
     before :each do
-      @user          = create(:user)
-      @adminuser     = create(:adminuser)
-      @publisheruser = create(:publisheruser)
+      @user          = create(:user, active: true)
+      @adminuser     = create(:adminuser, active: true)
+      @publisheruser = create(:publisheruser, active: true)
     end
 
     it { Abilities::AdminUser.should include(CanCan::Ability) }
@@ -22,7 +22,10 @@ module Account
 
     context 'Administrator' do
       it 'can manage objects' do
+        Abilities::AdminUser.any_instance.should_receive(:can).with(:update, ::User, id: @adminuser.id)
+        Abilities::AdminUser.any_instance.should_receive(:can).with(:read, :all)
         Abilities::AdminUser.any_instance.should_receive(:can).with(:manage, :all)
+
         Abilities::AdminUser.any_instance.should_receive(:cannot).with(:make_publisher, ::User, id: @adminuser.id)
         Abilities::AdminUser.any_instance.should_receive(:cannot).with(:make_contributor, ::User, id: @adminuser.id)
         Abilities::AdminUser.any_instance.should_receive(:cannot).with([:activate, :deactivate], ::User, id: @adminuser.id)
@@ -31,10 +34,11 @@ module Account
       end
     end
 
-    context 'Manager' do
+    context 'Publisher' do
       it 'can manage objects' do
         Abilities::PublisherUser.any_instance.should_receive(:can).with(:update, ::User, id: @publisheruser.id)
         Abilities::PublisherUser.any_instance.should_receive(:can).with(:read, :all)
+        Abilities::PublisherUser.any_instance.should_receive(:can).with(:manage, ::Partner)
 
         Abilities::PublisherUser.any_instance.should_receive(:cannot).with(:make_admin, ::User, id: @publisheruser.id)
         Abilities::PublisherUser.any_instance.should_receive(:cannot).with(:make_contributor, ::User, id: @publisheruser.id)
@@ -43,7 +47,7 @@ module Account
       end
     end
 
-    context 'Member' do
+    context 'Contributor' do
       it 'can manage objects' do
         Abilities::ContributorUser.any_instance.should_receive(:can).with(:update, ::User, id: @user.id)
         Abilities::ContributorUser.any_instance.should_receive(:can).with(:read, ::User, id: @user.id)

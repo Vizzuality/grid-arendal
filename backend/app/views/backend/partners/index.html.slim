@@ -1,0 +1,9 @@
+h2 Partners
+
+- @partners.each do |partner|
+  p
+    = link_to partner.name, partner_path(partner)
+  p
+    = partner.name
+  p
+    = link_to 'Edit', edit_partner_path(partner)

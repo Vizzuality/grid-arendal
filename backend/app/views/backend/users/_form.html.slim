@@ -1,6 +1,9 @@
 = form.label :email
 = form.input :email, required: true, autofocus: true, label: false
 
+= form.label :avatar, 'Profile photo'
+= form.file_field :avatar, label: false
+
 = form.label :first_name, 'Firstname'
 = form.input :first_name, label: false
 

@@ -26,6 +26,14 @@ module NavigationHelpers
       backend.user_path(User.find_by_email($1).id)
     when /the edit user page for "(.*)"$/
       backend.edit_user_path(User.find_by_email($1).id)
+    when /the partners page/
+      backend.partners_path
+    when /the new partner page/
+      backend.new_partner_path
+    when /the partner page for "(.*)"$/
+      backend.partner_path(Partner.find_by_name($1).id)
+    when /the edit partner page for "(.*)"$/
+      backend.edit_partner_path(Partner.find_by_name($1).id)
     else
       if path = match_rails_path_for(page_name)
         path

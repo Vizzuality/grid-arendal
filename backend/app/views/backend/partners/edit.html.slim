@@ -1,0 +1,8 @@
+h2
+  | Edit
+  '
+  = @partner.name || 'Partner'
+
+= simple_form_for @partner do |f|
+  = render partial: f
+  = f.submit 'Update'

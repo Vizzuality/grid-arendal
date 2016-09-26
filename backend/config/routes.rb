@@ -24,5 +24,7 @@ Backend::Engine.routes.draw do
     patch 'make_contributor', on: :member
   end
 
+  resources :partners
+
   root to: 'admin_home#index'
 end

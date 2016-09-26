@@ -27,6 +27,10 @@
 #  locked_at              :datetime
 #  failed_attempts        :integer          default(0), not null
 #  unlock_token           :string
+#  avatar_file_name       :string
+#  avatar_content_type    :string
+#  avatar_file_size       :integer
+#  avatar_updated_at      :datetime
 #
 # Indexes
 #
@@ -47,10 +51,12 @@ class User < ApplicationRecord
   include Sanitizable
   include Display
 
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+
   before_update :deactivate_account, if: 'deactivated? && active_changed?'
   before_update :activate_account,   if: 'activated? && active_changed?'
-
-  before_save :send_invitation, if: 'activated? && sign_in_count.zero?'
+  before_save   :send_invitation,    if: 'activated? && sign_in_count.zero?'
 
   scope :locked_accounts, -> { where.not(locked_at: nil) }
 

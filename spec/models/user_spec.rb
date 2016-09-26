@@ -26,6 +26,10 @@
 #  locked_at              :datetime
 #  failed_attempts        :integer          default(0), not null
 #  unlock_token           :string
+#  avatar_file_name       :string
+#  avatar_content_type    :string
+#  avatar_file_size       :integer
+#  avatar_updated_at      :datetime
 #
 # Indexes
 #

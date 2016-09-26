@@ -8,6 +8,7 @@ module Abilities
       can :update, ::User, id: user.id
 
       if user.activated?
+        can :manage, ::Partner
       end
 
       cannot :make_contributor,        ::User, id: user.id
