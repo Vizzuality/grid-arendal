@@ -4,5 +4,5 @@ h2
   = @activity.title || 'Activity'
 
 = simple_form_for @activity do |f|
-  = render partial: f
+  = render 'form', form: f, users: @users
   = f.submit 'Update'

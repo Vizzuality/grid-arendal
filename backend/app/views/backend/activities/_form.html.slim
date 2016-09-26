@@ -3,3 +3,6 @@
 
 = form.label :description
 = form.input :description, label: false
+
+= form.association :users, collection: users, label_method: :display_name,
+  value_method: :id

@@ -4,5 +4,5 @@ h2
   = @publication.title || 'Publication'
 
 = simple_form_for @publication do |f|
-  = render partial: f
+  = render 'form', form: f, users: @users
   = f.submit 'Update'

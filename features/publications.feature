@@ -22,6 +22,7 @@ I want to edit, create, view publications
     When I go to the new publication page
     And I fill in "Title" with "My new publication"
     And I fill in "Description" with "My description"
+    And I select "Gonca A." from "Users"
     And I press "Create Publication"
     Then I should have one publication
     And I should see "My new publication"

@@ -50,7 +50,7 @@ Given /^I am authenticated user$/ do
 end
 
 Given /^I am authenticated adminuser$/ do
-  @user = FactoryGirl.create(:adminuser, active: true, role: 'admin', email: 'admin@sample.com')
+  @user = FactoryGirl.create(:adminuser, active: true, role: 'admin', email: 'admin@sample.com', first_name: "Gonca", last_name: "Ama")
   email = @user.email
   password = @user.password
   visit '/manage/account/login'
