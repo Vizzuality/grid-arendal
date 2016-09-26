@@ -40,6 +40,14 @@ module NavigationHelpers
       backend.new_about_section_path
     when /the edit about_section page for "(.*)"$/
       backend.edit_about_section_path(AboutSection.find_by_title($1).id)
+    when /the events page/
+      backend.events_path
+    when /the new event page/
+      backend.new_event_path
+    when /the event page for "(.*)"$/
+      backend.event_path(Event.find_by_title($1).id)
+    when /the edit event page for "(.*)"$/
+      backend.edit_event_path(Event.find_by_title($1).id)
     when /the news_articles page/
       backend.news_articles_path
     when /the new news_article page/

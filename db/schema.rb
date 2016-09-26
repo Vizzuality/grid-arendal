@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160926151358) do
+ActiveRecord::Schema.define(version: 20160926134853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,17 +21,6 @@ ActiveRecord::Schema.define(version: 20160926151358) do
     t.integer  "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "contents", force: :cascade do |t|
-    t.string   "type"
-    t.string   "title"
-    t.text     "description"
-    t.boolean  "is_published"
-    t.integer  "position"
-    t.string   "story_map_url"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
   end
 
   create_table "events", force: :cascade do |t|
@@ -91,7 +80,7 @@ ActiveRecord::Schema.define(version: 20160926151358) do
     t.string   "web_url"
     t.boolean  "active",                 default: false, null: false
     t.datetime "deactivated_at"
-    t.integer  "role",                   default: 0,     null: false, comment: "User role { contributor: 0, publisher: 1, admin: 2 }"
+    t.integer  "role",                   default: 0,     null: false
     t.datetime "locked_at"
     t.integer  "failed_attempts",        default: 0,     null: false
     t.string   "unlock_token"

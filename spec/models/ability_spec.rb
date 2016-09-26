@@ -23,7 +23,7 @@ module Account
     context 'Administrator' do
       it 'can manage objects' do
         Abilities::AdminUser.any_instance.should_receive(:can).with(:update, ::User, id: @adminuser.id)
-        Abilities::AdminUser.any_instance.should_receive(:can).with(:read, :all)
+        Abilities::AdminUser.any_instance.should_receive(:can).with(:read, ::User, id: @adminuser.id)
         Abilities::AdminUser.any_instance.should_receive(:can).with(:manage, :all)
         Abilities::AdminUser.any_instance.should_receive(:can).with([:activate, :deactivate], ::Event)
 
@@ -37,13 +37,13 @@ module Account
 
     context 'Publisher' do
       it 'can manage objects' do
+        Abilities::PublisherUser.any_instance.should_receive(:can).with(:read, ::User, id: @publisheruser.id)
         Abilities::PublisherUser.any_instance.should_receive(:can).with(:update, ::User, id: @publisheruser.id)
-        Abilities::PublisherUser.any_instance.should_receive(:can).with(:read, :all)
         Abilities::PublisherUser.any_instance.should_receive(:can).with(:manage, ::Partner)
         Abilities::PublisherUser.any_instance.should_receive(:can).with(:manage, ::AboutSection)
-        Abilities::PublisherUser.any_instance.should_receive(:can).with(:manage, ::NewsArticle)
         Abilities::PublisherUser.any_instance.should_receive(:can).with(:manage, ::Event)
         Abilities::PublisherUser.any_instance.should_receive(:can).with([:activate, :deactivate], ::Event)
+        Abilities::PublisherUser.any_instance.should_receive(:can).with(:manage, ::NewsArticle)
 
         Abilities::PublisherUser.any_instance.should_receive(:cannot).with(:make_admin, ::User, id: @publisheruser.id)
         Abilities::PublisherUser.any_instance.should_receive(:cannot).with(:make_contributor, ::User, id: @publisheruser.id)
