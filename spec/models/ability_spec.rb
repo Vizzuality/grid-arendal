@@ -25,6 +25,7 @@ module Account
         Abilities::AdminUser.any_instance.should_receive(:can).with(:update, ::User, id: @adminuser.id)
         Abilities::AdminUser.any_instance.should_receive(:can).with(:read, :all)
         Abilities::AdminUser.any_instance.should_receive(:can).with(:manage, :all)
+        Abilities::AdminUser.any_instance.should_receive(:can).with([:activate, :deactivate], ::Event)
 
         Abilities::AdminUser.any_instance.should_receive(:cannot).with(:make_publisher, ::User, id: @adminuser.id)
         Abilities::AdminUser.any_instance.should_receive(:cannot).with(:make_contributor, ::User, id: @adminuser.id)
@@ -40,6 +41,8 @@ module Account
         Abilities::PublisherUser.any_instance.should_receive(:can).with(:read, :all)
         Abilities::PublisherUser.any_instance.should_receive(:can).with(:manage, ::Partner)
         Abilities::PublisherUser.any_instance.should_receive(:can).with(:manage, ::AboutSection)
+        Abilities::PublisherUser.any_instance.should_receive(:can).with(:manage, ::Event)
+        Abilities::PublisherUser.any_instance.should_receive(:can).with([:activate, :deactivate], ::Event)
 
         Abilities::PublisherUser.any_instance.should_receive(:cannot).with(:make_admin, ::User, id: @publisheruser.id)
         Abilities::PublisherUser.any_instance.should_receive(:cannot).with(:make_contributor, ::User, id: @publisheruser.id)

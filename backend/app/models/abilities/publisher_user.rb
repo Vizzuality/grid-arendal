@@ -10,6 +10,8 @@ module Abilities
       if user.activated?
         can :manage, ::Partner
         can :manage, ::AboutSection
+        can :manage, ::Event
+        can [:activate, :deactivate], ::Event
       end
 
       cannot :make_contributor,        ::User, id: user.id

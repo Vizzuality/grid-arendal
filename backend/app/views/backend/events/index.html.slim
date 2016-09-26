@@ -1,0 +1,9 @@
+h2 Events
+
+- @events.each do |event|
+  p
+    = link_to event.title, event_path(event)
+  p
+    = event.title
+  p
+    = link_to 'Edit', edit_event_path(event)
