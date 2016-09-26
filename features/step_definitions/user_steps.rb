@@ -75,3 +75,13 @@ end
 Given /^publisheruser$/ do
   FactoryGirl.create(:publisheruser, first_name: 'Pepe', last_name: 'Moreno', email: 'pepe-moreno@sample.com', active: true)
 end
+
+Given /^I am authenticated publisheruser$/ do
+  @user = FactoryGirl.create(:publisheruser, first_name: 'Pepe', last_name: 'Moreno', email: 'pepe-moreno@sample.com', active: true)
+  email = @user.email
+  password = @user.password
+  visit '/manage/account/login'
+  fill_in "user_email", with: email
+  fill_in "user_password", with: password
+  click_button "Log in"
+end

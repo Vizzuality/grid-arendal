@@ -7,6 +7,10 @@ h2 Activities
   p
     = activity.title
   p
-    = activity.description
-  p
     = link_to 'Edit', edit_activity_path(activity)
+    - if can?(:publish, activity) && activity.unpublished?
+      | |
+      = link_to "Publish", publish_activity_path(activity), method: :patch
+    - if can?(:unpublish, activity) && activity.published?
+      | |
+      = link_to "Unpublish", unpublish_activity_path(activity), method: :patch

@@ -24,7 +24,6 @@ I want to edit, create, view activities
     And I fill in "Description" with "My description"
     And I press "Create Activity"
     Then I should have one activity
-    And I should see "My description"
 
   Scenario: Adminuser can not create activity without title
     Given I am authenticated adminuser
@@ -34,3 +33,13 @@ I want to edit, create, view activities
     And I press "Create Activity"
     Then I should have zero activities
     And I should see "can't be blank"
+
+  Scenario: Publisheruser can publish and unpublish an activity
+    Given I am authenticated publisheruser
+    And activity
+    When I go to the activities page
+    Then I should see "My activity"
+    And I follow "Unpublish"
+    Then I should be on the activities page
+    And I should see "My activity"
+    And I should see "Publish"

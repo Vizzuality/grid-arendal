@@ -35,6 +35,23 @@ module Backend
       end
     end
 
+    def unpublish
+      if @publication.try(:unpublish)
+        redirect_to publications_path
+      else
+        redirect_to publication_path(@publication)
+      end
+    end
+
+    def publish
+      if @publication.try(:publish)
+        redirect_to publications_path
+      else
+        redirect_to publication_path(@publication)
+      end
+    end
+
+
     private
 
       def set_publication

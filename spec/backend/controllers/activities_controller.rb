@@ -14,7 +14,7 @@ module Backend
     end
 
     let!(:attri) do
-      { title: test_title, exposure_slug: 'my-slug' }
+      { title: test_title, description: 'my description' }
     end
 
     let!(:attri_fail) do
@@ -50,6 +50,21 @@ module Backend
       it 'Validate activity title presence' do
         process :update, method: :put, params: { id: @activity.id, activity: attri_fail }
         expect(response.body).to match('can&#39;t be blank')
+      end
+
+      it 'Publishes activity' do
+        unpublished = create(:activity, is_published: false)
+        process :publish, method: :patch, params: { id: @activity.id }
+        expect(response).to be_redirect
+        expect(response).to have_http_status(302)
+        expect(@activity.reload.published?).to be(true)
+      end
+
+      it 'Unpublishes activity' do
+        process :unpublish, method: :patch, params: { id: @activity.id }
+        expect(response).to be_redirect
+        expect(response).to have_http_status(302)
+        expect(@activity.reload.unpublished?).to be(true)
       end
     end
   end

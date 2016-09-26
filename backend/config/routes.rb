@@ -27,8 +27,15 @@ Backend::Engine.routes.draw do
   resources :partners
   resources :about_sections, except: [:show]
   resources :news_articles, except: [:show]
-  resources :publications, except: [:show]
-  resources :activities, except: [:show]
+
+  resources :publications, except: [:show] do
+    patch 'publish', on: :member
+    patch 'unpublish', on: :member
+  end
+  resources :activities, except: [:show] do
+    patch 'publish', on: :member
+    patch 'unpublish', on: :member
+  end
 
   resources :events do
     patch 'deactivate', on: :member

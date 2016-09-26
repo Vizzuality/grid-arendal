@@ -7,8 +7,10 @@ h2 Publications
   p
     = publication.title
   p
-    = publication.description
-  p
-    = publication.story_map_url
-  p
     = link_to 'Edit', edit_publication_path(publication)
+    - if can?(:publish, publication) && publication.unpublished?
+      | |
+      = link_to "Publish", publish_publication_path(publication), method: :patch
+    - if can?(:unpublish, publication) && publication.published?
+      | |
+      = link_to "Unpublish", unpublish_publication_path(publication), method: :patch
