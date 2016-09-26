@@ -1,0 +1,9 @@
+h2 News Articles
+
+- @news_articles.each do |news_article|
+  p
+    = news_article.title
+  p
+    = news_article.exposure_slug
+  p
+    = link_to 'Edit', edit_news_article_path(news_article)

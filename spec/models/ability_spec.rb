@@ -40,6 +40,7 @@ module Account
         Abilities::PublisherUser.any_instance.should_receive(:can).with(:read, :all)
         Abilities::PublisherUser.any_instance.should_receive(:can).with(:manage, ::Partner)
         Abilities::PublisherUser.any_instance.should_receive(:can).with(:manage, ::AboutSection)
+        Abilities::PublisherUser.any_instance.should_receive(:can).with(:manage, ::NewsArticle)
 
         Abilities::PublisherUser.any_instance.should_receive(:cannot).with(:make_admin, ::User, id: @publisheruser.id)
         Abilities::PublisherUser.any_instance.should_receive(:cannot).with(:make_contributor, ::User, id: @publisheruser.id)
