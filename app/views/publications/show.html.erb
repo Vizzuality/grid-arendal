@@ -8,3 +8,10 @@
     <li><%= user.display_name %></li>
   <% end %>
 </ul>
+
+<h3>Partners</h3>
+<ul>
+  <% @publication.partners.each do |partner| %>
+    <li><%= link_to partner.name, partner.web_url %></li>
+  <% end %>
+</ul>
