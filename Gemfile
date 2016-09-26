@@ -18,7 +18,6 @@ gem 'jbuilder', '~> 2.0'
 # User management
 gem 'devise'
 gem 'cancancan'
-gem 'sendgrid-ruby'
 
 # Backend
 gemspec path: 'backend'
@@ -63,5 +62,7 @@ group :test do
   gem 'timecop'
 end
 
-gem "codeclimate-test-reporter", group: :test, require: nil
+gem 'sendgrid-ruby'
+gem 'newrelic_rpm'
+gem 'codeclimate-test-reporter', group: :test, require: nil
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
