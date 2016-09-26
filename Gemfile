@@ -18,6 +18,7 @@ gem 'jbuilder', '~> 2.0'
 # User management
 gem 'devise'
 gem 'cancancan'
+gem 'sendgrid-ruby'
 
 # Backend
 gemspec path: 'backend'
