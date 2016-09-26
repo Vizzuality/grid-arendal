@@ -11,6 +11,8 @@ module Abilities
         can :manage, ::Partner
         can :manage, ::AboutSection
         can :manage, ::NewsArticle
+        can :manage, ::Event
+        can [:activate, :deactivate], ::Event
       end
 
       cannot :make_contributor,        ::User, id: user.id

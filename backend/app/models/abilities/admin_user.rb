@@ -9,6 +9,7 @@ module Abilities
 
       if user.activated?
         can :manage, :all
+        can [:activate, :deactivate], ::Event
       end
 
       cannot :make_contributor,        ::User, id: user.id

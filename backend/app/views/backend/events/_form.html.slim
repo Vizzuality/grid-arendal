@@ -1,0 +1,18 @@
+= form.label :background_image
+= form.file_field :background_image, label: false
+
+.div
+  = form.label :title
+  = form.input :title, label: false
+
+= form.label :web_url
+= form.input :web_url, label: false
+
+= form.label :description
+= form.input :description, label: false
+
+= form.label :partner_id, 'Partner'
+= form.input :partner_id, collection: @partners, as: :collection_select, include_blank: false, label: false
+
+= form.label :active
+= form.input :active, label: false
