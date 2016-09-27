@@ -1,5 +1,17 @@
 <h1>GRID Arendal</h1>
 
+<% if @event %>
+  <div>
+    <h3><%= @event.title %></h3>
+    <%= @event.description %>
+    <br />
+    <%= link_to "Learn more", @event.web_url %>
+    <% if @event.partner %>
+      <p>sponsored by <%= link_to @event.partner.name, @event.partner.web_url %></p>
+    <% end %>
+  </div>
+<% end %>
+
 <h2>Latest news</h2>
 <p><%= link_to "View all news", news_index_path %></p>
 
