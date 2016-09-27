@@ -1,3 +1,8 @@
-body {
-  padding-top: 100px;
+.basic-nav {
+  list-style-type: none;
+
+  li {
+    float: left;
+    margin-left: 30px;
+  }
 }
