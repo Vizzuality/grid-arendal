@@ -1,6 +1,6 @@
 <h2>News</h2>
 
 <% @articles.each do |article| %>
-  <iframe src="https://GRIDArendal.exposure.co/<%= article.exposure_slug %>/embed/cover?embed=true" style="width:300px;height:400px;margin-bottom:5px;border:solid 1px #ccc;border-radius:2px;"></iframe><br><a href="https://gridarendal.exposure.co/plastic-can-end-up-on-your-dinner-plate">Plastic can end up on your dinner plate</a> by <a href="https://gridarendal.exposure.co/">GRID-Arendal</a> on <a href="https://exposure.co" style="text-transform:uppercase">Exposure</a>
-  <%= time_ago_in_words(article.publication_date) %>
+  <iframe src="https://GRIDArendal.exposure.co/<%= article.exposure_slug %>/embed/cover?embed=true" style="width:200px;height:300px;margin-bottom:5px;border:solid 1px #ccc;border-radius:2px;"></iframe><br>on <a href="https://exposure.co" style="text-transform:uppercase">Exposure</a>
+  <%= time_ago_in_words(article.publication_date) %> ago
 <% end %>
