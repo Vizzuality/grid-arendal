@@ -3,12 +3,9 @@ h2 News Articles
 - if can?(:create, NewsArticle)
   = link_to "New", new_news_article_path
 
-- @news_articles.each do |news_article|
-  p
-    = news_article.title
-  p
-    = news_article.exposure_slug
-  p
-    = news_article.publication_date
-  p
-    = link_to 'Edit', edit_news_article_path(news_article)
+ul
+  - @news_articles.each do |news_article|
+    li
+      = news_article.title
+      '
+      = link_to 'Edit', edit_news_article_path(news_article)
