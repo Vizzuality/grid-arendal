@@ -3,10 +3,9 @@ h2 Partners
 - if can?(:create, Partner)
   = link_to "New", new_partner_path
 
-- @partners.each do |partner|
-  p
-    = link_to partner.name, partner_path(partner)
-  p
-    = partner.name
-  p
-    = link_to 'Edit', edit_partner_path(partner)
+ul
+  - @partners.each do |partner|
+    li
+      = link_to partner.name, partner_path(partner)
+      '
+      = link_to 'Edit', edit_partner_path(partner)

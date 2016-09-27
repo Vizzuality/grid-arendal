@@ -3,10 +3,9 @@ h2 Events
 - if can?(:create, Event)
   = link_to "New", new_event_path
 
-- @events.each do |event|
-  p
-    = link_to event.title, event_path(event)
-  p
-    = event.title
-  p
-    = link_to 'Edit', edit_event_path(event)
+ul
+  - @events.each do |event|
+    li
+      = link_to event.title, event_path(event)
+      '
+      = link_to 'Edit', edit_event_path(event)
