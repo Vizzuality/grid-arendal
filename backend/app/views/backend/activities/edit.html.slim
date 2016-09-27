@@ -6,4 +6,5 @@ h2
 = simple_form_for @activity do |f|
   = render 'form', form: f, users: @users, partners: @partners,
     news_articles: @news_articles
-  = f.submit 'Update'
+  .actions
+    = f.submit 'Update'

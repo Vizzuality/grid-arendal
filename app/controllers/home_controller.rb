@@ -5,5 +5,6 @@ class HomeController < ApplicationController
     @articles = NewsArticle.limit(5).order(:publication_date)
     @activities = Activity.limit(5)
     @publications = Publication.limit(5)
+    @event = Event.where(active: true).order(:created_at).limit(1)&.first
   end
 end

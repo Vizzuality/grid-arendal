@@ -1,14 +1,23 @@
-= form.label :title
-= form.input :title, label: false
+.field
+  = form.label :title
+  = form.input :title, label: false
 
-= form.label :description
-= form.input :description, label: false
+.field
+  = form.label :picture, 'Cover picture'
+  = form.file_field :picture, label: false
 
-= form.label :story_map_url
-= form.input :story_map_url, label: false
+.field
+  = form.label :description
+  = form.input :description, label: false
 
-= form.association :users, collection: users, label_method: :display_name,
-  value_method: :id
+.field
+  = form.label :story_map_url
+  = form.input :story_map_url, label: false
 
-= form.association :partners, collection: partners, label_method: :name,
-  value_method: :id
+.field
+  = form.association :users, collection: users, label_method: :display_name,
+    value_method: :id
+
+.field
+  = form.association :partners, collection: partners, label_method: :name,
+    value_method: :id
