@@ -1,16 +1,14 @@
 <h1>GRID Arendal</h1>
 
 <h2>Latest news</h2>
-<%= link_to "View all news", news_index_path %>
+<p><%= link_to "View all news", news_index_path %></p>
 
-<ul>
-  <% @articles.each do |article| %>
-    <li>
-      <%= link_to article.title, news_path(article) %>
-      <%= time_ago_in_words(article.publication_date) if article.publication_date %>
-    </li>
-  <% end %>
-</ul>
+<% @articles.each do |article| %>
+  <iframe src="https://GRIDArendal.exposure.co/<%= article.exposure_slug %>/embed/cover?embed=true" style="width:200px;height:300px;margin-bottom:5px;border:solid 1px #ccc;border-radius:2px;"></iframe><br>on <a href="https://exposure.co" style="text-transform:uppercase">Exposure</a>
+  <%= time_ago_in_words(article.publication_date) %> ago
+<% end %>
+
+<hr />
 
 <h2>Featured activities</h2>
 <%= link_to "View all activities", activities_path %>
@@ -23,6 +21,8 @@
   <% end %>
 </ul>
 
+<hr />
+
 <h2>Featured Publications</h2>
 <%= link_to "View all publications", publications_path %>
 
@@ -34,8 +34,12 @@
   <% end %>
 </ul>
 
+<hr />
+
 <h2>Featured Media</h2>
 <section></section>
+
+<hr />
 
 <h2>Staff</h2>
 <%= link_to "Know our complete staff", staff_index_path %>
@@ -48,4 +52,8 @@
     </li>
   <% end %>
 </ul>
+
+<hr />
+
+<p>Contact us</p>
 
