@@ -3,21 +3,25 @@
 #
 # Table name: contents
 #
-#  id            :integer          not null, primary key
-#  type          :string
-#  title         :string
-#  description   :text
-#  is_published  :boolean
-#  position      :integer
-#  story_map_url :string
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
+#  id                   :integer          not null, primary key
+#  type                 :string
+#  title                :string
+#  description          :text
+#  is_published         :boolean
+#  position             :integer
+#  story_map_url        :string
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#  picture_file_name    :string
+#  picture_content_type :string
+#  picture_file_size    :integer
+#  picture_updated_at   :datetime
 #
 
 class Content < ApplicationRecord
   include Publishable
 
-  has_attached_file :picture, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  has_attached_file :picture, styles: { medium: '300x300>', thumb: '100x100>' }, default_url: '/images/:style/missing.png'
   validates_attachment_content_type :picture, content_type: /\Aimage\/.*\z/
 
   has_many :participants

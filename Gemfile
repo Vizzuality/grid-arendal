@@ -29,6 +29,7 @@ gem 'kaminari'
 
 # File upload
 gem 'paperclip'
+gem 'paperclip-dropbox'
 
 group :development, :test do
   gem 'hirb'
