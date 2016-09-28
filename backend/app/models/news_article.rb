@@ -3,12 +3,13 @@
 #
 # Table name: news_articles
 #
-#  id            :integer          not null, primary key
-#  exposure_slug :string
-#  title         :string
-#  position      :integer
-#  created_at    :datetime         not null
-#  updated_at    :datetime         not null
+#  id               :integer          not null, primary key
+#  exposure_slug    :string
+#  title            :string
+#  position         :integer
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
+#  publication_date :date
 #
 
 class NewsArticle < ApplicationRecord
