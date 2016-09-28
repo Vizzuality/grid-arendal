@@ -50,24 +50,7 @@ class User < ApplicationRecord
   include Roleable
   include Sanitizable
   include Display
-
-  if ENV['DROPBOX_APP_KEY'].present?
-    has_attached_file :avatar,
-                      styles: { medium: '300x300>', thumb: '100x100>' },
-                      default_url: '/images/:style/missing.png',
-                      storage: :dropbox,
-                      dropbox_credentials: Rails.root.join('config/dropbox.yml'),
-                      dropbox_options: {
-                        path: proc { |style| "#{Rails.env}/#{style}/#{id}_#{avatar.original_filename}"},
-                        unique_filename: true
-                      }
-  else
-    has_attached_file :avatar, styles: { medium: '300x300>', thumb: '100x100>' },
-                               default_url: '/images/:style/missing.png'
-  end
-
-  validates_attachment_content_type :avatar, content_type: /\Aimage/
-  validates_attachment_file_name :avatar, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
+  include Attachable::Avatar
 
   before_update :deactivate_account, if: 'deactivated? && active_changed?'
   before_update :activate_account,   if: 'activated? && active_changed?'
