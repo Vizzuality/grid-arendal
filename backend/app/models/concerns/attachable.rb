@@ -95,4 +95,24 @@ module Attachable
       validates_attachment_file_name :avatar, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
     end
   end
+
+  module Document
+    extend ActiveSupport::Concern
+
+    included do
+      if ENV['DROPBOX_APP_KEY'].present?
+        has_attached_file :document,
+                          storage: :dropbox,
+                          dropbox_credentials: Rails.root.join('config/dropbox.yml'),
+                          dropbox_options: {
+                            path: "#{Rails.env}/documents/#{id}_#{document.original_filename}",
+                            unique_filename: true
+                          }
+      else
+        has_attached_file :document
+      end
+
+      validates_attachment :document, content_type: ['application/pdf', 'application/postscript']
+    end
+  end
 end
