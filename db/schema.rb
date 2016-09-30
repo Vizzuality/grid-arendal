@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160927071144) do
+ActiveRecord::Schema.define(version: 20160930171026) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20160927071144) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.boolean  "is_featured"
   end
 
   create_table "events", force: :cascade do |t|
@@ -116,7 +117,7 @@ ActiveRecord::Schema.define(version: 20160927071144) do
     t.string   "web_url"
     t.boolean  "active",                 default: false, null: false
     t.datetime "deactivated_at"
-    t.integer  "role",                   default: 0,     null: false
+    t.integer  "role",                   default: 0,     null: false, comment: "User role { contributor: 0, publisher: 1, admin: 2 }"
     t.datetime "locked_at"
     t.integer  "failed_attempts",        default: 0,     null: false
     t.string   "unlock_token"
