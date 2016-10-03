@@ -1,0 +1,6 @@
+h2 New Vacancy
+
+= simple_form_for @vacancy do |f|
+  = render 'form', form: f
+  .actions
+    = f.submit 'Create Vacancy'

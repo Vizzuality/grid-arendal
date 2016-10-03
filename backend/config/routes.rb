@@ -37,6 +37,11 @@ Backend::Engine.routes.draw do
     end
   end
 
+  resources :vacancies, except: [:show] do
+    patch 'publish', on: :member
+    patch 'unpublish', on: :member
+  end
+
   resources :events do
     patch 'deactivate', on: :member
     patch 'activate',   on: :member
