@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require_dependency "backend/application_controller"
+require_dependency 'backend/application_controller'
 
 module Backend
   class PublicationsController < ::Backend::ApplicationController
@@ -9,7 +9,7 @@ module Backend
     before_action :set_users_and_partners, only: [:new, :edit]
 
     def index
-      @publications = Publication.order(:title)
+      @publications = Publication.order_by_title
     end
 
     def edit
@@ -54,7 +54,6 @@ module Backend
       end
     end
 
-
     private
 
       def set_publication
@@ -66,8 +65,8 @@ module Backend
       end
 
       def set_users_and_partners
-        @users = User.order(:first_name, :last_name)
-        @partners = Partner.order(:name)
+        @users    = User.order_by_fullname
+        @partners = Partner.order_by_name
       end
   end
 end

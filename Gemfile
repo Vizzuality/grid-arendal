@@ -30,6 +30,7 @@ gem 'kaminari'
 # File upload
 gem 'paperclip'
 gem 'paperclip-dropbox'
+gem 'flickraw'
 
 group :development, :test do
   gem 'hirb'

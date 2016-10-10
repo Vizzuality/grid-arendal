@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require_dependency "backend/application_controller"
+require_dependency 'backend/application_controller'
 
 module Backend
   class UsersController < ::Backend::ApplicationController
@@ -14,9 +14,6 @@ module Backend
                else
                  User.filter_actives
                end
-    end
-
-    def show
     end
 
     def edit

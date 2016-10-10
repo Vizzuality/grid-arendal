@@ -10,6 +10,8 @@ GC::Profiler.enable
 
 module GridArendal
   class Application < Rails::Application
+    config.autoload_paths += Dir[Rails.root.join('app', 'models', 'media')]
+
     config.generators do |g|
       g.test_framework  :rspec
       g.view_specs      false

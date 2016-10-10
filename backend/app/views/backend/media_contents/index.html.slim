@@ -1,0 +1,18 @@
+h2 Media contents
+
+- if can?(:create, MediaContent)
+  = link_to 'New', new_media_content_path
+
+ul
+  - @media_contents.each do |media_content|
+    li
+      = media_content.title
+      - if media_content.mediable_url.present?
+        .photo_thumb
+          = image_tag media_content.mediable_url, style: 'width: 150px; height: 100px;'
+      .edit_links
+        = link_to 'Edit', edit_media_content_path(media_content)
+      - if can? [:publish, :unpublish], media_content
+        .publish_unpublish
+          = render 'backend/shared/publishable_links', location: media_content
+      hr

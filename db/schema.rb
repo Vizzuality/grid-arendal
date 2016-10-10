@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160927071144) do
+ActiveRecord::Schema.define(version: 20161006161405) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(version: 20160927071144) do
     t.integer  "news_article_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "albums", force: :cascade do |t|
+    t.integer  "media_content_id"
+    t.string   "photoset_id"
+    t.string   "photoset_url"
+    t.integer  "albumable_count",  default: 0
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.index ["media_content_id"], name: "index_albums_on_media_content_id", using: :btree
   end
 
   create_table "content_partners", force: :cascade do |t|
@@ -68,6 +78,14 @@ ActiveRecord::Schema.define(version: 20160927071144) do
     t.index ["partner_id"], name: "index_events_on_partner_id", using: :btree
   end
 
+  create_table "media_contents", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.boolean  "is_published"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "news_articles", force: :cascade do |t|
     t.string   "exposure_slug"
     t.string   "title"
@@ -96,6 +114,15 @@ ActiveRecord::Schema.define(version: 20160927071144) do
     t.datetime "logo_updated_at"
   end
 
+  create_table "photos", force: :cascade do |t|
+    t.integer  "media_content_id"
+    t.string   "photo_id"
+    t.string   "photo_url"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["media_content_id"], name: "index_photos_on_media_content_id", using: :btree
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -116,7 +143,7 @@ ActiveRecord::Schema.define(version: 20160927071144) do
     t.string   "web_url"
     t.boolean  "active",                 default: false, null: false
     t.datetime "deactivated_at"
-    t.integer  "role",                   default: 0,     null: false
+    t.integer  "role",                   default: 0,     null: false, comment: "User role { contributor: 0, publisher: 1, admin: 2 }"
     t.datetime "locked_at"
     t.integer  "failed_attempts",        default: 0,     null: false
     t.string   "unlock_token"
@@ -128,4 +155,6 @@ ActiveRecord::Schema.define(version: 20160927071144) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "albums", "media_contents"
+  add_foreign_key "photos", "media_contents"
 end

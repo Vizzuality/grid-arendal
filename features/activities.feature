@@ -49,7 +49,11 @@ I want to edit, create, view activities
     And activity
     When I go to the activities page
     Then I should see "My activity"
-    And I follow "Unpublish"
+    When I follow "Unpublish" within ".publish_unpublish"
     Then I should be on the activities page
     And I should see "My activity"
     And I should see "Publish"
+    When I follow "Publish" within ".publish_unpublish"
+    Then I should be on the activities page
+    And I should see "My activity"
+    And I should see "Unpublish"

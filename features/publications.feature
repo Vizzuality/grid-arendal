@@ -45,7 +45,11 @@ I want to edit, create, view publications
     And publication
     When I go to the publications page
     Then I should see "My publication"
-    And I follow "Unpublish"
+    When I follow "Unpublish" within ".publish_unpublish"
     Then I should be on the publications page
     And I should see "My publication"
     And I should see "Publish"
+    When I follow "Publish" within ".publish_unpublish"
+    Then I should be on the publications page
+    And I should see "My publication"
+    And I should see "Unpublish"
