@@ -68,10 +68,10 @@ module Backend
     end
 
     def destroy
-      flickr.photos.delete(photo_id: @media_content.photo_id)
+      flickr.photos.delete(photo_id: @media_content.photo_id) if @media_content.is_photo?
       @media_content.destroy
       respond_to do |format|
-        format.html { redirect_to photos_url }
+        format.html { redirect_to media_contents_url }
         format.json { head :no_content }
       end
     end

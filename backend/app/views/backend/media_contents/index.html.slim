@@ -11,7 +11,10 @@ ul
         .photo_thumb
           = image_tag media_content.mediable_url, style: 'width: 150px; height: 100px;'
       .edit_links
-        = link_to 'Edit', edit_media_content_path(media_content)
+        .div
+          = link_to 'Edit', edit_media_content_path(media_content)
+        .div
+          = link_to 'Delete', media_content, method: :delete, data: { confirm: 'Are you sure?' }
       - if can? [:publish, :unpublish], media_content
         .publish_unpublish
           = render 'backend/shared/publishable_links', location: media_content

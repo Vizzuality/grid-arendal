@@ -18,13 +18,19 @@ I want to edit, create, view media contents
     And I press "Update"
     Then I should see "Album edited"
 
-  Scenario: Adminuser can create media content
+  Scenario: Adminuser can create and delete media content
     Given I am authenticated adminuser
     When I go to the new media content page
     And I fill in "Title" with "Photo new"
+    And I attach the file "features/upload_files/image1.png" to "media_content_photo_file"
+    And I fill in "Description" with "Lorem ipsum"
     And I press "Create media content"
     Then I should have one media content
     And I should see "Photo new"
+    When I follow "Delete"
+    Then I should have zero media contents
+    And I should be on the media contents page
+    And I should not see "Photo new"
 
   Scenario: Adminuser can not create media content without title
     Given I am authenticated adminuser
