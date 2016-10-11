@@ -8,7 +8,7 @@
  * class.
  */
 
-.text {
+.text, p, h1, h2, h3 {
   font-family: $font-family-1;
   letter-spacing: 0.5px;
   color: $color-1;
@@ -85,7 +85,7 @@
    * COLORS
    */
   &.-dark {
-    color: $black;
+    color: $color-1;
   }
 
   &.-dark-alt {
