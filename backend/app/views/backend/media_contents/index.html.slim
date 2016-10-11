@@ -15,7 +15,7 @@ ul
           = image_tag media_content.mediable_photo_url, style: 'width: 150px; height: 100px;'
       .edit_links
         .div
-          = link_to 'Edit', edit_media_content_path(media_content)
+          = link_to 'Edit', edit_media_content_path(media_content, mediable: media_content.mediable_type)
         .div
           = link_to 'Delete', media_content, method: :delete, data: { confirm: 'Are you sure?' }
       - if can? [:publish, :unpublish], media_content

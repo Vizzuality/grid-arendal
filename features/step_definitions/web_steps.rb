@@ -30,6 +30,15 @@ When /^(?:|I )follow new album on (.+)$/ do |page_name|
   visit path_to(page_name) + '?mediable=album'
 end
 
+When /^(?:|I )follow photo on (.+)$/ do |page_name|
+  visit path_to(page_name) + '?mediable=photo'
+end
+
+When /^(?:|I )follow album on (.+)$/ do |page_name|
+  visit path_to(page_name) + '?mediable=album'
+end
+
+
 When /^(?:|I )press "([^"]*)"(?: within "([^"]*)")?$/ do |button, selector|
   with_scope(selector) do
     click_button(button)
@@ -66,7 +75,7 @@ When /^(?:|I )click on overlapping "([^"]*)"(?: within "([^"]*)")?$/ do |div, se
   end
 end
 
-When /^(?:|I )click on hidden "([^"]*)" on "([^"]*)"(?: within "([^"]*)")?$/ do |div, hidden_el, selector|
+When(/^(?:|I )click on hidden "([^"]*)" on "([^"]*)"(?: within "([^"]*)")?$/) do |div, hidden_el, selector|
   with_scope(selector) do
     page.execute_script("$('#{hidden_el}').show()")
     page.execute_script("$('#{div}').click()")
@@ -79,13 +88,13 @@ Then(/^I should see tab "(.*?)" within "(.*?)"$/) do |div, selector|
   end
 end
 
-When /^(?:|I )fill in "([^"]*)" with "([^"]*)"(?: within "([^"]*)")?$/ do |field, value, selector|
+When(/^(?:|I )fill in "([^"]*)" with "([^"]*)"(?: within "([^"]*)")?$/) do |field, value, selector|
   with_scope(selector) do
     fill_in(field, with: value)
   end
 end
 
-When /^(?:|I )fill in hidden field "([^"]*)" with "([^"]*)"(?: within "([^"]*)")?$/ do |field, value, selector|
+When(/^(?:|I )fill in hidden field "([^"]*)" with "([^"]*)"(?: within "([^"]*)")?$/) do |field, value, selector|
   with_scope(selector) do
     page.execute_script("$('#{field} input').show()")
     page.execute_script("$('#{field} input').val('#{value}')")
@@ -100,7 +109,7 @@ When /^(?:|I )select datetime "([^ ]*) ([^ ]*) ([^ ]*)" as the "([^"]*)"(?: with
   end
 end
 
-When /^(?:|I )fill in "([^"]*)" for "([^"]*)"(?: within "([^"]*)")?$/ do |value, field, selector|
+When(/^(?:|I )fill in "([^"]*)" for "([^"]*)"(?: within "([^"]*)")?$/) do |value, field, selector|
   with_scope(selector) do
     fill_in(field, with: value)
   end
@@ -144,7 +153,7 @@ end
 # TODO: Add support for checkbox, select og option
 # based on naming conventions.
 #
-When /^(?:|I )fill in the following(?: within "([^"]*)")?:$/ do |selector, fields|
+When(/^(?:|I )fill in the following(?: within "([^"]*)")?:$/) do |selector, fields|
   with_scope(selector) do
     fields.rows_hash.each do |name, value|
       When %{I fill in "#{name}" with "#{value}"}
@@ -152,13 +161,13 @@ When /^(?:|I )fill in the following(?: within "([^"]*)")?:$/ do |selector, field
   end
 end
 
-When /^(?:|I )select "([^"]*)" from "([^"]*)"(?: within "([^"]*)")?$/ do |value, field, selector|
+When(/^(?:|I )select "([^"]*)" from "([^"]*)"(?: within "([^"]*)")?$/) do |value, field, selector|
   with_scope(selector) do
     select(value, from: field)
   end
 end
 
-When /^(?:|I )select_chosen "([^"]*)" from "([^"]*)"(?: within "([^"]*)")?$/ do |value, field, selector|
+When(/^(?:|I )select_chosen "([^"]*)" from "([^"]*)"(?: within "([^"]*)")?$/) do |value, field, selector|
   with_scope(selector) do
     find("##{field}", visible: false).set "#{value}"
   end
@@ -182,7 +191,7 @@ When /^(?:|I )choose "([^"]*)"(?: within "([^"]*)")?$/ do |field, selector|
   end
 end
 
-When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"(?: within "([^"]*)")?$/ do |path, field, selector|
+When(/^(?:|I )attach the file "([^"]*)" to "([^"]*)"(?: within "([^"]*)")?$/) do |path, field, selector|
   with_scope(selector) do
     attach_file(field, File.expand_path(path))
   end
@@ -205,7 +214,7 @@ Then /^(?:|I )should see "([^"]*)"(?: within "([^"]*)")?$/ do |text, selector|
   end
 end
 
-Then /^(?:|I )should see \/([^\/]*)\/(?: within "([^"]*)")?$/ do |regexp, selector|
+Then(/^(?:|I )should see \/([^\/]*)\/(?: within "([^"]*)")?$/) do |regexp, selector|
   regexp = Regexp.new(regexp)
   with_scope(selector) do
     if page.respond_to? :should
@@ -226,7 +235,7 @@ Then /^(?:|I )should not see "([^"]*)"(?: within "([^"]*)")?$/ do |text, selecto
   end
 end
 
-Then /^(?:|I )should not see \/([^\/]*)\/(?: within "([^"]*)")?$/ do |regexp, selector|
+Then(/^(?:|I )should not see \/([^\/]*)\/(?: within "([^"]*)")?$/) do |regexp, selector|
   regexp = Regexp.new(regexp)
   with_scope(selector) do
     if page.respond_to? :should
@@ -237,7 +246,7 @@ Then /^(?:|I )should not see \/([^\/]*)\/(?: within "([^"]*)")?$/ do |regexp, se
   end
 end
 
-Then /^the "([^"]*)" field(?: within "([^"]*)")? should contain "([^"]*)"$/ do |field, selector, value|
+Then(/^the "([^"]*)" field(?: within "([^"]*)")? should contain "([^"]*)"$/) do |field, selector, value|
   with_scope(selector) do
     field = find_field(field)
     field_value = field.tag_name == 'textarea' ? field.text : field.value
@@ -249,7 +258,7 @@ Then /^the "([^"]*)" field(?: within "([^"]*)")? should contain "([^"]*)"$/ do |
   end
 end
 
-Then /^the "([^"]*)" field(?: within "([^"]*)")? should not contain "([^"]*)"$/ do |field, selector, value|
+Then(/^the "([^"]*)" field(?: within "([^"]*)")? should not contain "([^"]*)"$/) do |field, selector, value|
   with_scope(selector) do
     field = find_field(field)
     field_value = field.tag_name == 'textarea' ? field.text : field.value

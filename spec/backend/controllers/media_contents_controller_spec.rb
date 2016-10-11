@@ -41,6 +41,12 @@ module Backend
         expect(response).to have_http_status(302)
       end
 
+      it 'Update album_content' do
+        process :update, method: :put, params: { id: @album_content.id, media_content: attri }
+        expect(response).to be_redirect
+        expect(response).to have_http_status(302)
+      end
+
       render_views
 
       it 'Validate photo_content title presence' do

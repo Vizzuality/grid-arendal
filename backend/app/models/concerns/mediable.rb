@@ -26,6 +26,14 @@ module Mediable
       self.create_album(options)
     end
 
+    def update_photo(options)
+      self.photo.update(options)
+    end
+
+    def update_album(options)
+      self.album.update(options)
+    end
+
     def is_photo?
       photo.present?
     end
@@ -62,9 +70,9 @@ module Mediable
 
     def mediable_type
       if is_photo?
-        'Photo'
+        'photo'
       else
-        'Album'
+        'album'
       end
     end
   end

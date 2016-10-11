@@ -6,7 +6,7 @@ module Backend
     load_and_authorize_resource
 
     before_action :set_media_content, except: [:index, :new, :create]
-    before_action :set_flickr,        only:   [:index, :create, :destroy]
+    before_action :set_flickr
 
     def index
       @media_contents = MediaContent.includes_mediable.order_by_title
@@ -20,29 +20,27 @@ module Backend
     end
 
     def update
-      if @media_content.update(media_content_params)
-        redirect_to media_contents_url, notice: 'MediaContent updated'
+      update_params = media_content_params.except(:photo_file, :main_photo_file)
+      if @media_content.update(update_params)
+        madiable_params = media_content_params.merge(photo_id: @media_content.photo_id,
+                                                     photoset_id: @media_content.photoset_id,
+                                                     title: @media_content.title,
+                                                     description: @media_content.description)
+        FlickrService.update_asset(@media_content, madiable_params)
+        redirect_to media_contents_url, notice: 'MediaContent updated.'
       else
-        render :edit
+        render :edit, notice: @media_content.errors
       end
     end
 
     def create
-      @media_content = if media_content_params[:photo_file].present? || media_content_params[:main_photo_file].present?
-                         MediaContent.new(media_content_params.except(:photo_file, :main_photo_file))
-                       else
-                         MediaContent.new(media_content_params)
-                       end
+      @media_content = MediaContent.new(media_content_params.except(:photo_file, :main_photo_file))
 
-      respond_to do |format|
-        if @media_content.save
-          FlickrService.set_asset(@media_content, media_content_params)
-          format.html { redirect_to media_contents_url, notice: 'MediaContent was successfully created.' }
-          format.json { render action: 'show', status: :created, location: @media_content }
-        else
-          format.html { render action: 'new' }
-          format.json { render json: @media_content.errors, status: :unprocessable_entity }
-        end
+      if @media_content.save
+        FlickrService.set_asset(@media_content, media_content_params)
+        redirect_to media_contents_url, notice: 'MediaContent was successfully created.'
+      else
+        render :new, notice: @media_content.errors
       end
     end
 
@@ -65,10 +63,7 @@ module Backend
     def destroy
       FlickrService.delete_asset(@media_content)
       @media_content.destroy
-      respond_to do |format|
-        format.html { redirect_to media_contents_url }
-        format.json { head :no_content }
-      end
+      redirect_to media_contents_url
     end
 
     private
