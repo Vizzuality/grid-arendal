@@ -189,3 +189,12 @@
     color: $font-color-3;
   }
 }
+
+a {
+  text-decoration: none;
+  color: $color-1;
+
+  &:hover {
+    color: $color-1;
+  }
+}

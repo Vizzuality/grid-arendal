@@ -1,0 +1,23 @@
+.c-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+
+    li {
+      margin-right: 30px;
+    }
+  }
+
+  .search {
+    width: 25px;
+    height: 25px;
+  }
+}
