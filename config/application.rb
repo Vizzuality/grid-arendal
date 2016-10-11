@@ -15,9 +15,9 @@ module GridArendal
       g.view_specs      false
       g.helper_specs    false
       g.factory_girl    false
-      g.stylesheets     false
-      g.javascripts     false
-      g.helper          false
+      # g.stylesheets     false
+      # g.javascripts     false
+      # g.helper          false
     end
   end
 end

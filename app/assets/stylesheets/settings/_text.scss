@@ -9,9 +9,9 @@
  */
 
 .text {
-  // font-family: $font-family-1;
+  font-family: $font-family-1;
   letter-spacing: 0.5px;
-  // color: $color-2;
+  color: $color-1;
   font-style: normal;
   font-size: 16px;
   line-height: 1.3;
@@ -43,57 +43,57 @@
   &.-medium {
     font-size: 20px;
 
-    // @media screen and (min-width: $screen-s) {
-    //   font-size: 23px;
-    // }
+    @media screen and (min-width: $screen-s) {
+      font-size: 23px;
+    }
   }
 
   &.-large {
     font-size: 26px;
 
-    // @media screen and (min-width: $screen-s) {
-    //   font-size: 30px;
-    // }
-    //
-    // @media screen and (min-width: $screen-m) {
-    //   font-size: 35px;
-    // }
-    //
-    // @media screen and (min-width: $screen-l) {
-    //   font-size: 40px;
-    // }
+    @media screen and (min-width: $screen-s) {
+      font-size: 30px;
+    }
+
+    @media screen and (min-width: $screen-m) {
+      font-size: 35px;
+    }
+
+    @media screen and (min-width: $screen-l) {
+      font-size: 40px;
+    }
   }
 
   &.-xlarge {
     font-size: 35px;
     line-height: 1.1;
 
-    // @media screen and (min-width: $screen-s) {
-    //   font-size: 45px;
-    // }
-    //
-    // @media screen and (min-width: $screen-m) {
-    //   font-size: 50px;
-    // }
-    //
-    // @media screen and (min-width: $screen-l) {
-    //   font-size: 67px;
-    // }
+    @media screen and (min-width: $screen-s) {
+      font-size: 45px;
+    }
+
+    @media screen and (min-width: $screen-m) {
+      font-size: 50px;
+    }
+
+    @media screen and (min-width: $screen-l) {
+      font-size: 67px;
+    }
   }
 
   /*
    * COLORS
    */
   &.-dark {
-    // color: $black;
+    color: $black;
   }
 
   &.-dark-alt {
-    // color: $font-color-2;
+    color: $font-color-2;
   }
 
   &.-light {
-    // color: $font-color-3;
+    color: $font-color-3;
   }
 
   /*
@@ -105,7 +105,7 @@
   }
 
   &.-alt {
-    // font-family: $font-family-2;
+    font-family: $font-family-2;
   }
 
   &.-comp {
