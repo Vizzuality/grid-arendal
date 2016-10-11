@@ -1,0 +1,115 @@
+/*
+ * Here you should find all the types of text
+ * for the project.
+ *
+ * There are some with colors and some without.
+ * Those without color can be found with different
+ * color along the project and setted with the apropiate
+ * class.
+ */
+
+.text {
+  // font-family: $font-family-1;
+  letter-spacing: 0.5px;
+  // color: $color-2;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.3;
+
+  /*
+   * WEIGHTS
+   */
+
+  &.-bold {
+    font-weight: 700;
+  }
+
+  &.-semi-bold {
+    font-weight: 600;
+  }
+
+  &.-normal {
+    font-weight: 400;
+  }
+
+  /*
+   * SIZES
+   */
+
+  &.-small {
+    font-size: 13px;
+  }
+
+  &.-medium {
+    font-size: 20px;
+
+    // @media screen and (min-width: $screen-s) {
+    //   font-size: 23px;
+    // }
+  }
+
+  &.-large {
+    font-size: 26px;
+
+    // @media screen and (min-width: $screen-s) {
+    //   font-size: 30px;
+    // }
+    //
+    // @media screen and (min-width: $screen-m) {
+    //   font-size: 35px;
+    // }
+    //
+    // @media screen and (min-width: $screen-l) {
+    //   font-size: 40px;
+    // }
+  }
+
+  &.-xlarge {
+    font-size: 35px;
+    line-height: 1.1;
+
+    // @media screen and (min-width: $screen-s) {
+    //   font-size: 45px;
+    // }
+    //
+    // @media screen and (min-width: $screen-m) {
+    //   font-size: 50px;
+    // }
+    //
+    // @media screen and (min-width: $screen-l) {
+    //   font-size: 67px;
+    // }
+  }
+
+  /*
+   * COLORS
+   */
+  &.-dark {
+    // color: $black;
+  }
+
+  &.-dark-alt {
+    // color: $font-color-2;
+  }
+
+  &.-light {
+    // color: $font-color-3;
+  }
+
+  /*
+   * EXTRAS
+   */
+
+  &.-upper {
+    text-transform: uppercase;
+  }
+
+  &.-alt {
+    // font-family: $font-family-2;
+  }
+
+  &.-comp {
+    line-height: 1;
+  }
+
+}
