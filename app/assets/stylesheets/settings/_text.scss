@@ -8,108 +8,183 @@
  * class.
  */
 
-.text, p, h1, h2, h3 {
+.text{
   font-family: $font-family-1;
-  letter-spacing: 0.5px;
   color: $color-1;
-  font-style: normal;
-  font-size: 16px;
   line-height: 1.3;
 
-  /*
-   * WEIGHTS
-   */
+  &.-menu {
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-family: $font-family-2;
 
-  &.-bold {
-    font-weight: 700;
+    @media screen and (min-width: $screen-m) {
+      font-size: 13px;
+    }
   }
 
-  &.-semi-bold {
-    font-weight: 600;
+  &.-cta {
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: center;
+
+    @media screen and (min-width: $screen-m) {
+      font-size: 14px;
+    }
   }
 
-  &.-normal {
-    font-weight: 400;
+  &.-title-block {
+    font-size: 16px;
+    font-family: $font-family-2;
+    letter-spacing: 0.3px;
+
+    @media screen and (min-width: $screen-m) {
+      font-size: 13px;
+    }
   }
 
-  /*
-   * SIZES
-   */
-
-  &.-small {
+  &.-view-all {
     font-size: 13px;
+    opacity: 0.8;
   }
 
-  &.-medium {
+  &.-title-card {
+    font-size: 18px;
+    font-family: $font-family-3;
+    font-weight: 600;
+
+    @media screen and (min-width: $screen-m) {
+      font-size: 26px;
+    }
+  }
+
+  &.-title-card-alt {
+    font-size: 18px;
+    font-weight: 600;
+    font-family: $font-family-3;
+
+    @media screen and (min-width: $screen-m) {
+      font-size: 16px;
+    }
+  }
+
+  &.-meta {
+    font-size: 14px;
+    opacity: 0.7;
+
+    @media screen and (min-width: $screen-m) {
+      font-size: 12px;
+    }
+  }
+
+  &.-summary {
+    font-size: 16px;
+    opacity: 0.8;
+
+    @media screen and (min-width: $screen-m) {
+      font-size: 14px;
+    }
+  }
+
+  &.-image-cap {
+    font-size: 18px;
+    font-family: $font-family-3;
+    font-weight: 600;
+
+    @media screen and (min-width: $screen-m) {
+      font-size: 22px;
+    }
+  }
+
+  &.-author {
+    font-size: 18px;
+    font-family: $font-family-3;
+    font-weight: 600;
+
+    @media screen and (min-width: $screen-m) {
+      font-size: 16px;
+    }
+  }
+
+  &.-title-single {
+    font-size: 26px;
+    font-weight: 600;
+    font-family: $font-family-3;
+  }
+
+  &.-title-single-alt {
+    font-size: 36px;
+    font-weight: 600;
+    font-family: $font-family-3;
+    line-height: 1.1;
+  }
+
+  &.-body-single {
+    font-size: 15px;
+    line-height: 1.7;
+    opacity: 0.8;
+
+    .-bold {
+      font-family: $font-family-2;
+    }
+  }
+
+  &.-body-single-alt {
+    font-size: 17px;
+    line-height: 1.7;
+    opacity: 0.8;
+
+    @media screen and (min-width: $screen-m) {
+      font-size: 18px;
+    }
+  }
+
+  &.-title-library {
+    font-size: 46px;
+    font-weight: 600;
+    font-family: $font-family-3;
+  }
+
+  &.-filter {
     font-size: 20px;
 
-    @media screen and (min-width: $screen-s) {
-      font-size: 23px;
+    @media screen and (min-width: $screen-m) {
+      font-size: 14px;
     }
   }
 
-  &.-large {
-    font-size: 26px;
-
-    @media screen and (min-width: $screen-s) {
-      font-size: 30px;
-    }
+  &.-filter-title {
+    font-size: 12px;
+    letter-spacing: 0.5px;
 
     @media screen and (min-width: $screen-m) {
-      font-size: 35px;
-    }
-
-    @media screen and (min-width: $screen-l) {
-      font-size: 40px;
+      font-size: 10px;
     }
   }
 
-  &.-xlarge {
-    font-size: 35px;
-    line-height: 1.1;
+  &.-read-more {
+    font-size: 16px;
+  }
 
-    @media screen and (min-width: $screen-s) {
-      font-size: 45px;
-    }
+  &.-download {
+    font-size: 16px;
+    font-family: $font-family-2;
+    letter-spacing: 0.7px;
 
     @media screen and (min-width: $screen-m) {
-      font-size: 50px;
-    }
-
-    @media screen and (min-width: $screen-l) {
-      font-size: 67px;
+      font-size: 13px;
     }
   }
 
   /*
    * COLORS
    */
-  &.-dark {
-    color: $color-1;
-  }
 
-  &.-dark-alt {
+  &.-light {
     color: $font-color-2;
   }
 
-  &.-light {
+  &.-light-alt {
     color: $font-color-3;
   }
-
-  /*
-   * EXTRAS
-   */
-
-  &.-upper {
-    text-transform: uppercase;
-  }
-
-  &.-alt {
-    font-family: $font-family-2;
-  }
-
-  &.-comp {
-    line-height: 1;
-  }
-
 }
