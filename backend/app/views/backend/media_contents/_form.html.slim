@@ -2,9 +2,14 @@
   = form.label :title
   = form.input :title, label: false
 
-.field
-  = form.label :photo_file
-  = form.file_field :photo_file
+- if params[:mediable].present?
+  .field
+    - if params[:mediable].in?('photo')
+      = form.label :photo_file
+      = form.file_field :photo_file
+    - if params[:mediable].in?('album')
+      = form.label :main_photo_file
+      = form.file_field :main_photo_file
 
 .field
   = form.label :description

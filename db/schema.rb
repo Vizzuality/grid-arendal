@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161006161405) do
+ActiveRecord::Schema.define(version: 20161010153810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,6 +37,8 @@ ActiveRecord::Schema.define(version: 20161006161405) do
     t.integer  "albumable_count",  default: 0
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+    t.string   "main_photo_id"
+    t.string   "main_photo_url"
     t.index ["media_content_id"], name: "index_albums_on_media_content_id", using: :btree
   end
 

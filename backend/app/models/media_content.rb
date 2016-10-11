@@ -16,7 +16,7 @@ class MediaContent < ApplicationRecord
   include Sanitizable
   include Mediable
 
-  attr_accessor :photo_file
+  attr_accessor :photo_file, :main_photo_file
 
   validates :title, presence: true
 

@@ -18,9 +18,9 @@ I want to edit, create, view media contents
     And I press "Update"
     Then I should see "Album edited"
 
-  Scenario: Adminuser can create and delete media content
+  Scenario: Adminuser can create and delete media content photo
     Given I am authenticated adminuser
-    When I go to the new media content page
+    When I follow new photo on the new media content page
     And I fill in "Title" with "Photo new"
     And I attach the file "features/upload_files/image1.png" to "media_content_photo_file"
     And I fill in "Description" with "Lorem ipsum"

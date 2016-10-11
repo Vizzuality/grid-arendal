@@ -28,20 +28,15 @@ module Backend
     end
 
     def create
-      if media_content_params['photo_file'].present?
-        photo_id  = flickr.upload_photo media_content_params[:photo_file].tempfile.path, title: 'Title', description: 'Description'
-        photo_url = FlickRaw.url_o(flickr.photos.getInfo(photo_id: photo_id))
-      end
-
-      @media_content = if photo_id.present? && photo_url.present?
-                         MediaContent.new(media_content_params.except(:photo_file))
+      @media_content = if media_content_params[:photo_file].present? || media_content_params[:main_photo_file].present?
+                         MediaContent.new(media_content_params.except(:photo_file, :main_photo_file))
                        else
                          MediaContent.new(media_content_params)
                        end
 
       respond_to do |format|
         if @media_content.save
-          @media_content.set_photo(photo_id: photo_id, photo_url: photo_url)
+          FlickrService.set_asset(@media_content, media_content_params)
           format.html { redirect_to media_contents_url, notice: 'MediaContent was successfully created.' }
           format.json { render action: 'show', status: :created, location: @media_content }
         else
@@ -68,7 +63,7 @@ module Backend
     end
 
     def destroy
-      flickr.photos.delete(photo_id: @media_content.photo_id) if @media_content.is_photo?
+      FlickrService.delete_asset(@media_content)
       @media_content.destroy
       respond_to do |format|
         format.html { redirect_to media_contents_url }

@@ -7,8 +7,9 @@ module Mediable
     has_one :photo, dependent: :destroy
     has_one :album, dependent: :destroy
 
-    delegate :photo_id,    :photo_url,    to: :photo, allow_nil: true
-    delegate :photoset_id, :photoset_url, to: :album, allow_nil: true
+    delegate :photo_id, :photo_url,           to: :photo, allow_nil: true
+    delegate :photoset_id, :photoset_url,
+             :main_photo_url, :main_photo_id, to: :album, allow_nil: true
 
     scope :photos,     -> { includes(:photo).joins(:photo)                 }
     scope :albums,     -> { includes(:album).joins(:album)                 }
@@ -46,6 +47,24 @@ module Mediable
         photo_url
       else
         photoset_url
+      end
+    end
+
+    def mediable_photo_url
+      if is_photo? && photo_url.present?
+        photo_url
+      elsif is_album? && main_photo_url.present?
+        main_photo_url
+      else
+        '/assets/album-sample.jpg'
+      end
+    end
+
+    def mediable_type
+      if is_photo?
+        'Photo'
+      else
+        'Album'
       end
     end
   end

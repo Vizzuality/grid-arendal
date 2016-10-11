@@ -22,6 +22,14 @@ When /^(?:|I )filter inactive on (.+)$/ do |page_name|
   visit path_to(page_name) + '?active=false'
 end
 
+When /^(?:|I )follow new photo on (.+)$/ do |page_name|
+  visit path_to(page_name) + '?mediable=photo'
+end
+
+When /^(?:|I )follow new album on (.+)$/ do |page_name|
+  visit path_to(page_name) + '?mediable=album'
+end
+
 When /^(?:|I )press "([^"]*)"(?: within "([^"]*)")?$/ do |button, selector|
   with_scope(selector) do
     click_button(button)
