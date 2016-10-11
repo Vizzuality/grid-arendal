@@ -1,8 +1,8 @@
 
 /* FONTS */
-$font-family-1: "Roboto-Regular";
-$font-family-2: "Roboto-Bold";
-$font-family-3: "PTSerif";
+@import 'https://fonts.googleapis.com/css?family=PT+Serif|Roboto:400,700';
+$font-family-1: 'Roboto', sans-serif;
+$font-family-2: 'PT Serif', serif;
 
 /* SCREENS */
 $screen-xs: 320px;
