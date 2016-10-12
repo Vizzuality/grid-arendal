@@ -11,6 +11,10 @@
   = form.input :description, label: false
 
 .field
+  = form.label :project_number
+  = form.input :project_number, label: false
+
+.field
   = form.association :news_articles, collection: news_articles, label_method: :title,
     value_method: :id
 .field
