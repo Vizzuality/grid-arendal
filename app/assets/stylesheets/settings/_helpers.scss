@@ -118,15 +118,14 @@
  text-overflow: ellipsis;
 }
 
-//Decoration
-@mixin fade ($color) {
- background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, $color), color-stop(1, rgba($color, 1)));
- background-image: -o-linear-gradient(bottom, rgba($color, 0), rgba($color, 1) 100%);
- background-image: -moz-linear-gradient(bottom, rgba($color, 0), rgba($color, 1) 100%);
- background-image: -webkit-linear-gradient(bottom, rgba($color, 0), rgba($color, 1) 100%);
- background-image: -ms-linear-gradient(bottom, rgba($color, 0), rgba($color, 1) 100%);
- background-image: linear-gradient(to bottom, rgba($color, 0), rgba($color, 1) 100%);
- pointer-events: none;
+// Degradado
+@mixin gradient($origin: left, $start: #ffffff, $stop: #000000) {
+  // background-color: $start;
+  background-image: -webkit-linear-gradient($origin, $start, $stop);
+  background-image: -moz-linear-gradient($origin, $start, $stop);
+  background-image: -o-linear-gradient($origin, $start, $stop);
+  background-image: -ms-linear-gradient($origin, $start, $stop);
+  background-image: linear-gradient($origin, $start, $stop);
 }
 
 //Shapes
