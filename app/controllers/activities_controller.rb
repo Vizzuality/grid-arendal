@@ -3,7 +3,7 @@ class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show]
 
   def index
-    @activities = Activity.order(:title).published
+    @activities = Activity.order(:title)
   end
 
   def show
