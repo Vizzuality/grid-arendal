@@ -26,4 +26,32 @@ namespace :import do
     end
     puts "#{Activity.count}"
   end
+
+  desc "Import activities from client provided doc"
+  task fake_publications: :environment do
+    csv_text = File.read(File.join(Rails.root, 'lib', 'data', 'GA-project-descriptions-2016.csv'))
+    csv = CSV.parse(csv_text, :headers => true)
+    puts "#{Publication.count} publications"
+    i = 0
+    csv.each do |row|
+      title = row[1] && "FAKE PUB!: #{i} #{row[1].strip}"
+      next if row[1] && Publication.where(title: title).any?
+      Publication.create({
+        project_number: row[0] && row[0].strip,
+        title: title,
+        #activity: row[2].strip,
+        #programme: row[3],
+        #staff_project_lead: row[4],
+        short_description: row[5] && "FAKE short:#{i}  #{row[5].strip}",
+        description: row[6] && "FAKE long:#{i}  #{row[6].strip}",
+        #outcomes: row[7],
+        #links: row[8],
+        #partners: row[9],
+        #staff: row[10].strip,
+        #tags: row[11].strip
+      })
+      i += 1
+    end
+    puts "#{Publication.count} publications"
+  end
 end
