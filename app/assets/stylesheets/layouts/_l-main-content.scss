@@ -21,11 +21,15 @@
 
     .item {
       break-inside: avoid;
-      padding: 10px 0;
+      padding: rem(10px) 0;
 
       @media screen and (min-width: $screen-m) {
-        padding: 10px;
+        padding: rem(10px);
       }
+    }
+
+    .c-card {
+      margin-top: 0;
     }
   }
 }
