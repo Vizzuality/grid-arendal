@@ -25,6 +25,10 @@ namespace :import do
       })
     end
     puts "#{Activity.count}"
+    Activity.limit(5).each do |t|
+      t.is_published = true
+      t.save
+    end
   end
 
   desc "Import activities from client provided doc"
@@ -53,5 +57,10 @@ namespace :import do
       i += 1
     end
     puts "#{Publication.count} publications"
+    Publication.limit(5).each do |t|
+      t.is_featured = true
+      t.is_published = true
+      t.save
+    end
   end
 end
