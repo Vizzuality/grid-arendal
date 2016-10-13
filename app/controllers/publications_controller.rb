@@ -3,7 +3,7 @@ class PublicationsController < ApplicationController
   before_action :set_publication, only: [:show]
 
   def index
-    @publications = Publication.order(:title).published
+    @publications = Publication.order(:title)
   end
 
   def show

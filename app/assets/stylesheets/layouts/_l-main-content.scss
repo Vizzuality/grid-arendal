@@ -2,4 +2,50 @@
   padding: rem(35px) 0 rem(50px);
   border-bottom: rem(1px) solid $white;
   background-color: rgba($color-1, .1);
+
+  &.-publications {
+    background-color: rgba($color-3, .08);
+  }
+
+  &.-activities {
+    background-color: rgba($color-1, .08);
+  }
+
+  &.-news {
+    background-color: rgba($color-2, .08);
+  }
+
+  .-fix {
+
+    @media screen and (min-width: $screen-m) {
+      padding-left: rem(5px);
+      padding-right: rem(5px);
+    }
+  }
+
+  .masonry-layout {
+    column-count: 1;
+    column-gap: 0;
+
+    @media screen and (min-width: $screen-m) {
+      column-count: 2;
+    }
+
+    @media screen and (min-width: $screen-l) {
+      column-count: 3;
+    }
+
+    .item {
+      break-inside: avoid;
+      padding: rem(10px) 0;
+
+      @media screen and (min-width: $screen-m) {
+        padding: rem(10px);
+      }
+    }
+
+    .c-card {
+      margin-top: 0;
+    }
+  }
 }

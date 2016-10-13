@@ -8,6 +8,8 @@
 
     index: function(params) {
       console.log('publications#index');
+
+
     },
 
     show: function(params) {

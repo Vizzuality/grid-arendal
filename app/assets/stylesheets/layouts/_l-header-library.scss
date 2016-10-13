@@ -1,0 +1,47 @@
+.l-header-library {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  position: relative;
+  padding-bottom: rem(50px);
+
+  &.-publications {
+    background-color: rgba($color-3, 0.04);
+  }
+
+  &.-activities {
+    background-color: rgba($color-1, 0.04);
+  }
+
+  &.-news {
+    background-color: rgba($color-2, 0.04);
+  }
+
+  .title-block {
+    position: relative;
+
+    .-summary {
+      max-width: rem(500px);
+    }
+
+    .share {
+      background-color: $white;
+      width: rem(50px);
+      height: rem(50px);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      right: rem(-25px);
+      top: 0;
+      cursor: pointer;
+
+      .icon {
+        width: rem(20px);
+        height: rem(20px);
+      }
+    }
+  }
+}

@@ -7,4 +7,8 @@ class HomeController < ApplicationController
     @publications = Publication.limit(5)
     @event = Event.where(active: true).order(:created_at).limit(1)&.first
   end
+
+  def menu_logo_view
+    @menu_logo = true
+  end
 end

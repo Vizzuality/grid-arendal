@@ -1,0 +1,43 @@
+.c-mobile-menu {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  padding: rem(25px) rem(20px) 0;
+  z-index: 15;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 61, 83, 0.6);
+  cursor: pointer;
+
+  &.-show {
+    display: flex;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    list-style: none;
+    z-index: 10;
+
+    li {
+      margin-right: rem(40px);
+      margin-bottom: rem(20px);
+
+      @media screen and (min-width: $screen-m) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .icon {
+    width: rem(15px);
+    height: rem(15px);
+    fill: $white;
+  }
+}
