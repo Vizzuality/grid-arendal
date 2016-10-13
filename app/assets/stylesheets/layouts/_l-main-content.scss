@@ -6,4 +6,26 @@
   &.-publications {
     background-color: rgba($color-3, .08);
   }
+
+  .masonry-layout {
+    column-count: 1;
+    column-gap: 0;
+
+    @media screen and (min-width: $screen-m) {
+      column-count: 2;
+    }
+
+    @media screen and (min-width: $screen-l) {
+      column-count: 3;
+    }
+
+    .item {
+      break-inside: avoid;
+      padding: 10px 0;
+
+      @media screen and (min-width: $screen-m) {
+        padding: 10px;
+      }
+    }
+  }
 }
