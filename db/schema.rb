@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160927071144) do
+ActiveRecord::Schema.define(version: 20161012130848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 20160927071144) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.integer  "project_number"
+    t.text     "short_description"
   end
 
   create_table "events", force: :cascade do |t|
@@ -80,8 +82,9 @@ ActiveRecord::Schema.define(version: 20160927071144) do
   create_table "participants", force: :cascade do |t|
     t.integer  "content_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "is_lead",    default: false
   end
 
   create_table "partners", force: :cascade do |t|
@@ -116,7 +119,7 @@ ActiveRecord::Schema.define(version: 20160927071144) do
     t.string   "web_url"
     t.boolean  "active",                 default: false, null: false
     t.datetime "deactivated_at"
-    t.integer  "role",                   default: 0,     null: false
+    t.integer  "role",                   default: 0,     null: false, comment: "User role { contributor: 0, publisher: 1, admin: 2 }"
     t.datetime "locked_at"
     t.integer  "failed_attempts",        default: 0,     null: false
     t.string   "unlock_token"
@@ -128,4 +131,10 @@ ActiveRecord::Schema.define(version: 20160927071144) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "activity_news", "contents", column: "activity_id"
+  add_foreign_key "activity_news", "news_articles"
+  add_foreign_key "content_partners", "contents"
+  add_foreign_key "content_partners", "partners"
+  add_foreign_key "participants", "contents"
+  add_foreign_key "participants", "users"
 end
