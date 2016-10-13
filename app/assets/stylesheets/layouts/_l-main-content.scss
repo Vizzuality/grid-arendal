@@ -16,8 +16,11 @@
   }
 
   .-fix {
-    padding-left: rem(5px);
-    padding-right: rem(5px);
+
+    @media screen and (min-width: $screen-m) {
+      padding-left: rem(5px);
+      padding-right: rem(5px);
+    }
   }
 
   .masonry-layout {
