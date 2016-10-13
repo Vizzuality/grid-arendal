@@ -18,8 +18,8 @@
   <div class="row">
     <div class="small-12 columns">
       <div class="c-main-content-header">
-        <h2>Latest news</h2>
-        <p><%= link_to "View all news", news_index_path %></p>
+        <h2 class="text -title-block">Latest news</h2>
+        <p class="text -view-all"><%= link_to "View all news", news_index_path %></p>
       </div>
     </div>
   </div>
@@ -34,50 +34,84 @@
 </div>
 
 <div class="l-main-content">
-  <h2>Featured activities</h2>
-  <%= link_to "View all activities", activities_path %>
 
-  <ul>
-    <% @activities.each do |activity| %>
-      <li>
-        <%= link_to activity.title, activity %>
-      </li>
-    <% end %>
-  </ul>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="c-main-content-header">
+        <h2 class="text -title-block">Featured activities</h2>
+        <p class="text -view-all"><%= link_to "View all activities", activities_path %></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <ul>
+      <% @activities.each do |activity| %>
+        <li class="small-12 medium-3 columns">
+          <%= link_to activity.title, activity %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
 
 
 <div class="l-main-content">
-  <h2>Featured Publications</h2>
-  <%= link_to "View all publications", publications_path %>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="c-main-content-header">
+        <h2 class="text -title-block">Featured Publications</h2>
+        <p class="text -view-all"><%= link_to "View all publications", publications_path %></p>
+      </div>
+    </div>
+  </div>
 
-  <ul>
-    <% @publications.each do |publication| %>
-      <li>
-        <%= link_to publication.title, publication %>
-      </li>
-    <% end %>
-  </ul>
+  <div class="row">
+    <ul>
+      <% @publications.each do |publication| %>
+        <li class="small-12 medium-3 columns">
+          <%= link_to publication.title, publication %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
 
 <div class="l-main-content">
-  <h2>Featured Media</h2>
-  <section></section>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="c-main-content-header">
+        <h2 class="text -title-block">Featured Media</h2>
+        <p class="text -view-all"></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row"></div>
 </div>
 
 
 <div class="l-main-content">
-  <h2>Staff</h2>
-  <%= link_to "Know our complete staff", staff_index_path %>
+
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="c-main-content-header">
+        <h2 class="text -title-block">Staff</h2>
+        <p class="text -view-all"><%= link_to "Know our complete staff", staff_index_path %></p>
+      </div>
+    </div>
+  </div>
+
   <ul>
     <% @users.each do |user| %>
-      <li>
+      <li class="small-6 medium-3 large-2 column">
         <%= image_tag(user.avatar) %>
         <%= user.display_name %>
         <%= user.current_position %>
       </li>
     <% end %>
   </ul>
+
 </div>
 
 <p>Contact us</p>
