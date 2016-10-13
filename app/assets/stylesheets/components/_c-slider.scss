@@ -1,0 +1,21 @@
+.c-slider {
+  .frame {
+      /**
+       * (optional) wrapper width, specifies width of the slider frame.
+       */
+      max-width: 62.5rem;
+      margin: 0 auto;
+
+      position: relative;
+      font-size: 0;
+      line-height: 0;
+      overflow: hidden;
+      white-space: nowrap;
+  }
+
+  .slide {
+    width: 31%;
+    margin: 0 1%;
+    display: inline-block;
+  }
+}
