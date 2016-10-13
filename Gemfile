@@ -24,6 +24,7 @@ gemspec path: 'backend'
 gem 'slim-rails'
 gem 'simple_form'
 gem 'kaminari'
+gem 'rails-assets-masonry', source: 'https://rails-assets.org'
 
 # File upload
 gem 'paperclip'

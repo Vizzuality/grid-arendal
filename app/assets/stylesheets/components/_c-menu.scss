@@ -35,6 +35,14 @@
     align-items: center;
     list-style: none;
 
+    .logo-menu {
+
+      .icon {
+        width: 100px;
+        height: 40px;
+      }
+    }
+
     li {
       margin-right: rem(40px);
     }

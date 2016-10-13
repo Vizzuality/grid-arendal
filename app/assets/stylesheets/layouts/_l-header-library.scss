@@ -4,91 +4,33 @@
   background-size: cover;
   background-color: rgba(83, 48, 0, 0.04);
   display: block;
-  height: rem(320px);
   position: relative;
   padding-bottom: rem(50px);
 
-  @media screen and (min-width: $screen-m) {
-    // height: rem(650px);
-    // padding-bottom: rem(100px);
-  }
-
-  .cta {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    max-width: rem(650px);
-    margin: auto;
-    height: calc(100% - 70px);
-    z-index: 10;
+  .title-block {
     position: relative;
 
-    .logo {
-      .icon {
-        width: rem(170px);
-        height: rem(55px);
-      }
+    .-summary {
+      max-width: rem(500px);
     }
 
-    .text {
-      margin: rem(30px) 0 rem(30px);
-      display: none;
-
-      @media screen and (min-width: $screen-m) {
-        display: block;
-      }
-    }
-
-    .media {
-      height: rem(60px);
-      width: rem(60px);
+    .share {
+      background-color: $white;
+      width: rem(50px);
+      height: rem(50px);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: $white;
-      margin-bottom: rem(-80px);
       position: absolute;
-      bottom: 0;
-      z-index: 10;
-
-      @media screen and (min-width: $screen-m) {
-        background-color: transparent;
-        position: relative;
-        border: solid 2px $color-1;
-        width: rem(30px);
-        height: rem(30px);
-      }
+      right: rem(-25px);
+      top: 0;
+      cursor: pointer;
 
       .icon {
-        width: rem(15px);
-        height: rem(15px);
-        margin-left: rem(2px);
-
-        @media screen and (min-width: $screen-m) {
-          width: rem(10px);
-          height: rem(10px);
-        }
+        width: rem(20px);
+        height: rem(20px);
       }
     }
-  }
-}
-
-.cta-mobile {
-  display: block;
-  padding: rem(50px) rem(10px);
-  background-color: rgba(0, 61, 83, 0.1);
-
-  @media screen and (min-width: $screen-m) {
-    display: none;
-  }
-}
-
-.cta-desktop {
-  display: none;
-
-  @media screen and (min-width: $screen-m) {
-    display: block;
   }
 }

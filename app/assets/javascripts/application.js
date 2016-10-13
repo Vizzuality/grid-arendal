@@ -19,6 +19,7 @@
 //= require underscore/underscore
 //= require backbone/backbone
 //= require select2
+//= require masonry
 
 //= require_self
 

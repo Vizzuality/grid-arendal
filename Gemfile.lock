@@ -222,6 +222,18 @@ GEM
     rails-assets-URIjs (1.18.1)
     rails-assets-backbone (1.3.3)
       rails-assets-underscore (>= 1.8.3)
+    rails-assets-desandro-matches-selector (2.0.1)
+    rails-assets-ev-emitter (1.0.3)
+    rails-assets-fizzy-ui-utils (2.0.3)
+      rails-assets-desandro-matches-selector (~> 2.0.0)
+    rails-assets-get-size (2.0.2)
+    rails-assets-masonry (4.1.1)
+      rails-assets-get-size (>= 2.0.2, < 3)
+      rails-assets-outlayer (>= 2.1.0, < 3)
+    rails-assets-outlayer (2.1.0)
+      rails-assets-ev-emitter (>= 1.0.0, < 2)
+      rails-assets-fizzy-ui-utils (>= 2.0.0, < 3)
+      rails-assets-get-size (>= 2.0.2, < 3)
     rails-assets-underscore (1.8.3)
     rails-dom-testing (2.0.1)
       activesupport (>= 4.2.0, < 6.0)
@@ -375,6 +387,7 @@ DEPENDENCIES
   rails (~> 5.0.0, < 5.1)
   rails-assets-URIjs!
   rails-assets-backbone!
+  rails-assets-masonry!
   rails-assets-underscore!
   rspec-rails (~> 3.0)
   rubocop
