@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161003080453) do
+ActiveRecord::Schema.define(version: 20161012130848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,6 +51,8 @@ ActiveRecord::Schema.define(version: 20161003080453) do
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
     t.boolean  "is_featured"
+    t.integer  "project_number"
+    t.text     "short_description"
   end
 
   create_table "events", force: :cascade do |t|
@@ -81,8 +83,9 @@ ActiveRecord::Schema.define(version: 20161003080453) do
   create_table "participants", force: :cascade do |t|
     t.integer  "content_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "is_lead",    default: false
   end
 
   create_table "partners", force: :cascade do |t|
@@ -137,4 +140,10 @@ ActiveRecord::Schema.define(version: 20161003080453) do
     t.datetime "updated_at",                   null: false
   end
 
+  add_foreign_key "activity_news", "contents", column: "activity_id"
+  add_foreign_key "activity_news", "news_articles"
+  add_foreign_key "content_partners", "contents"
+  add_foreign_key "content_partners", "partners"
+  add_foreign_key "participants", "contents"
+  add_foreign_key "participants", "users"
 end

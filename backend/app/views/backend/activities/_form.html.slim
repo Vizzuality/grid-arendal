@@ -7,8 +7,16 @@
   = form.file_field :picture, label: false
 
 .field
+  = form.label :short_description
+  = form.input :short_description, label: false
+
+.field
   = form.label :description
   = form.input :description, label: false
+
+.field
+  = form.label :project_number
+  = form.input :project_number, label: false
 
 .field
   = form.association :news_articles, collection: news_articles, label_method: :title,

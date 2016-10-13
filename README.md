@@ -32,6 +32,8 @@ First time execute:
     bundle exec rake db:create
     bundle exec rake db:migrate
 
+    rails import:activities
+
 ## Usage
 
 To run application:
