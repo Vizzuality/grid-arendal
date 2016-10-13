@@ -50,7 +50,6 @@ ActiveRecord::Schema.define(version: 20161012130848) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
-    t.boolean  "is_featured"
     t.integer  "project_number"
     t.text     "short_description"
   end
@@ -130,14 +129,6 @@ ActiveRecord::Schema.define(version: 20161012130848) do
     t.datetime "avatar_updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
-  end
-
-  create_table "vacancies", force: :cascade do |t|
-    t.string   "title"
-    t.string   "description"
-    t.boolean  "is_published", default: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
   end
 
   add_foreign_key "activity_news", "contents", column: "activity_id"
