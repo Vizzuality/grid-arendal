@@ -5,6 +5,8 @@
   flex-direction: row;
   height: 70px;
   padding: 0 15px;
+  z-index: 10;
+  position: relative;
 
   @media screen and (min-width: $screen-m) {
     padding: 0;
