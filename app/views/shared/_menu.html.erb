@@ -7,7 +7,12 @@
         </svg>
       </div>
       <ul class="desktop text -menu">
-        <li>News</li>
+        <li class="logo-menu">
+          <%= link_to "", root_path %>
+          <svg class="icon">
+            <use xlink:href="#icon-logo"></use>
+          </svg>
+        </li>
         <li><%= link_to "Activities", activities_path %></li>
         <li><%= link_to "Publications", publications_path %></li>
         <li><%= link_to "Media Library", "#" %></li>

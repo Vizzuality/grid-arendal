@@ -7,7 +7,7 @@
   background-image: image-url('bg2.jpg');
 
   @media screen and (min-width: $screen-m) {
-    height: 450px;
+    height: rem(450px);
   }
 
   .overlay {
@@ -34,14 +34,14 @@
     .social-links {
       z-index: 10;
       position: relative;
-      margin-top: 30px;
+      margin-top: rem(30px);
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
 
       @media screen and (min-width: $screen-m) {
-        margin-top: 40px;
+        margin-top: rem(40px);
       }
 
       .icon {
