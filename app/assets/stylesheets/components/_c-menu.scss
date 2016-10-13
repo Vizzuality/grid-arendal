@@ -3,8 +3,8 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  height: 70px;
-  padding: 0 15px;
+  height: rem(70px);
+  padding: 0 rem(15px);
   z-index: 10;
   position: relative;
 
@@ -21,13 +21,7 @@
   }
 
   .desktop {
-    position: absolute;
-    flex-direction: column;
-    top: 0;
-    left: 0;
-
-    padding: rem(60px) rem(30px) 0 0;
-    align-items: flex-start;
+    display: none;
 
     @media screen and (min-width: $screen-m) {
       display: flex;
@@ -43,11 +37,6 @@
 
     li {
       margin-right: rem(40px);
-      margin-bottom: rem(20px);
-
-      @media screen and (min-width: $screen-m) {
-        margin-bottom: 0;
-      }
     }
   }
 
