@@ -6,6 +6,10 @@
   height: 70px;
   padding: 0 15px;
 
+  @media screen and (min-width: $screen-m) {
+    padding: 0;
+  }
+
   .mobile {
     display: block;
 
