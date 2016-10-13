@@ -42,7 +42,7 @@
   </div>
 <% end %>
 
-<div class="l-main-content">
+<section class="l-main-content">
   <div class="row">
     <div class="small-12 columns">
       <div class="c-main-content-header">
@@ -52,9 +52,9 @@
     </div>
   </div>
 
+  <!-- sample for c-card, remove from here and add it to where it belongs -->
   <div class="row">
-    <!-- sample for c-card, remove from here and add it to where it belongs -->
-    <div class="small-12 medium-4 columns">
+    <div class="small-12 medium-3 columns">
       <article class="c-card">
         <div class="card-pic"></div>
         <div class="card-descrition">
@@ -64,10 +64,12 @@
         </div>
       </article>
     </div>
-    <!--  END -->
+  </div>
+  <!--  END -->
 
+  <ul class="row">
     <% @articles.each do |article| %>
-      <div class="small-12 medium-4 columns">
+      <li class="small-12 medium-3 columns">
         <article class="c-card">
           <div class="card-pic"></div>
           <div class="card-descrition">
@@ -76,13 +78,12 @@
             <p class="text -meta">1 week ago</p>
           </div>
         </article>
-      </div>
+      </li>
     <% end %>
+  </ul>
+</section>
 
-  </div>
-</div>
-
-<div class="l-main-content">
+<section class="l-main-content">
 
   <div class="row">
     <div class="small-12 columns">
@@ -93,19 +94,33 @@
     </div>
   </div>
 
+   <!-- sample for c-card, remove from here and add it to where it belongs -->
   <div class="row">
-    <ul>
-      <% @activities.each do |activity| %>
-        <li class="small-12 medium-3 columns">
-          <%= link_to activity.title, activity %>
-        </li>
-      <% end %>
-    </ul>
+    <div class="small-12 medium-4 columns">
+      <article class="c-card">
+        <div class="card-pic"></div>
+        <div class="card-descrition">
+          <h3 class="text -title-card">My awesome title</h3>
+          <p class="text -summary">This is some info related to this card</p>
+          <p class="text -meta">1 week ago</p>
+        </div>
+      </article>
+    </div>
   </div>
-</div>
+  <!-- end -->
+
+  <ul class="row">
+    <% @activities.each do |activity| %>
+      <li class="small-12 medium-4 columns">
+        <%= link_to activity.title, activity %>
+      </li>
+    <% end %>
+  </ul>
+
+</section>
 
 
-<div class="l-main-content">
+<section class="l-main-content">
   <div class="row">
     <div class="small-12 columns">
       <div class="c-main-content-header">
@@ -115,18 +130,31 @@
     </div>
   </div>
 
+   <!-- sample for c-card, remove from here and add it to where it belongs -->
   <div class="row">
-    <ul>
-      <% @publications.each do |publication| %>
-        <li class="small-12 medium-3 columns">
-          <%= link_to publication.title, publication %>
-        </li>
-      <% end %>
-    </ul>
+    <div class="small-12 medium-4 columns">
+      <article class="c-card">
+        <div class="card-pic"></div>
+        <div class="card-descrition">
+          <h3 class="text -title-card">My awesome title</h3>
+          <p class="text -summary">This is some info related to this card</p>
+          <p class="text -meta">1 week ago</p>
+        </div>
+      </article>
+    </div>
   </div>
-</div>
+  <!-- end -->
 
-<div class="l-main-content">
+  <ul class="row">
+    <% @publications.each do |publication| %>
+      <li class="small-12 medium-4 columns">
+        <%= link_to publication.title, publication %>
+      </li>
+    <% end %>
+  </ul>
+</section>
+
+<section class="l-main-content">
   <div class="row">
     <div class="small-12 columns">
       <div class="c-main-content-header">
@@ -137,10 +165,10 @@
   </div>
 
   <!-- slider -->
-</div>
+</section>
 
 
-<div class="l-main-content">
+<section class="l-main-content">
   <div class="row">
     <div class="small-12 columns">
       <div class="c-main-content-header">
@@ -150,16 +178,28 @@
     </div>
   </div>
 
-  <ul>
+  <ul class="row">
+    <!-- sample for c-card, remove from here and add it to where it belongs -->
+    <li class="small-6 medium-4 large-2 columns">
+      <div class="c-staff">
+        <div class="staff-pic"></div>
+        <p class="text -author">Name And Second Name</p>
+        <p class="text -meta">Position</p>
+      </div>
+    </li>
+    <!-- end -->
+
     <% @users.each do |user| %>
-      <li class="small-6 medium-3 large-2 column">
-        <%= image_tag(user.avatar) %>
-        <%= user.display_name %>
-        <%= user.current_position %>
+      <li class="small-6 medium-3 large-2 columns">
+        <div class="c-staff">
+          <div class="staff-pic" style="background-image:src(<%= image_tag(user.avatar) %>)"></div>
+          <p class="text -author"><%= user.display_name %></p>
+          <p class="text -meta"><%= user.current_position %></p>
+        </div>
       </li>
     <% end %>
   </ul>
 
-</div>
+</section>
 
 <%= render 'shared/footer' %>
