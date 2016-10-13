@@ -7,6 +7,7 @@
         </svg>
       </div>
       <ul class="desktop text -menu">
+        <li>News</li>
         <li><%= link_to "Activities", activities_path %></li>
         <li><%= link_to "Publications", publications_path %></li>
         <li><%= link_to "Media Library", "#" %></li>
@@ -18,4 +19,14 @@
       </svg>
     </div>
   </div>
+</div>
+<div class="c-mobile-menu">
+  <ul class="text -menu">
+    <li>News</li>
+    <li><%= link_to "Activities", activities_path %></li>
+    <li><%= link_to "Publications", publications_path %></li>
+    <li><%= link_to "Media Library", "#" %></li>
+    <li><%= link_to "News", news_index_path %></li>
+    <li><%= link_to "About", about_index_path %></li>
+  </ul>
 </div>
