@@ -1,7 +1,92 @@
 .l-header {
-  height: 650px;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   background-image: image-url('bg1.jpg');
+  background-color: #d8d8d8;
+  display: block;
+  height: 320px;
+  position: relative;
+  padding-bottom: 50px;
+
+  @media screen and (min-width: $screen-m) {
+    height: 650px;
+    padding-bottom: 100px;
+  }
+
+  .cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 650px;
+    margin: auto;
+    height: calc(100% - 70px);
+
+    .logo {
+      .icon {
+        width: 170px;
+        height: 55px;
+      }
+    }
+
+    .text {
+      margin: 30px 0 30px;
+      display: none;
+
+      @media screen and (min-width: $screen-m) {
+        display: block;
+      }
+    }
+
+    .media {
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $white;
+      margin-bottom: -30px;
+      position: absolute;
+      bottom: 0;
+
+      @media screen and (min-width: $screen-m) {
+        background-color: transparent;
+        position: relative;
+        border: solid 2px $color-1;
+        width: 30px;
+        height: 30px;
+      }
+
+      .icon {
+        width: 15px;
+        height: 15px;
+        margin-left: 2px;
+
+        @media screen and (min-width: $screen-m) {
+          width: 10px;
+          height: 10px;
+        }
+      }
+    }
+  }
+}
+
+.cta-mobile {
+  display: block;
+  padding: 50px 10px;
+  background-color: rgba(0, 61, 83, 0.1);
+
+  @media screen and (min-width: $screen-m) {
+    display: none;
+  }
+}
+
+.cta-desktop {
+  display: none;
+
+  @media screen and (min-width: $screen-m) {
+    display: block;
+  }
 }
