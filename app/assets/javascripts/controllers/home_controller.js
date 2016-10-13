@@ -12,16 +12,12 @@
 
     initSliders: function() {
 
-      var ease = document.querySelector('.js_slider');
-
-      // http://easings.net/
-
-      lory(ease, {
-        infinite: 3,
-        slidesToScroll: 1,
-        slideSpeed: 1000,
-        enableMouseEvents: true,
-        ease: 'cubic-bezier(0.455, 0.03, 0.515, 0.955)'
+      Array.prototype.slice.call(document.querySelectorAll('.js_slider')).forEach(function (element, index) {
+        lory(element, {
+          infinite: 3,
+          slidesToScroll: 1,
+          enableMouseEvents: true
+        });
       });
     }
 
