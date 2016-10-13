@@ -2,10 +2,21 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: rgba(83, 48, 0, 0.04);
   display: block;
   position: relative;
   padding-bottom: rem(50px);
+
+  &.-publications {
+    background-color: rgba($color-3, 0.04);
+  }
+
+  &.-activities {
+    background-color: rgba($color-1, 0.04);
+  }
+
+  &.-news {
+    background-color: rgba($color-2, 0.04);
+  }
 
   .title-block {
     position: relative;
