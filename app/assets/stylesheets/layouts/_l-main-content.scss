@@ -15,6 +15,11 @@
     background-color: rgba($color-2, .08);
   }
 
+  .-fix {
+    padding-left: rem(5px);
+    padding-right: rem(5px);
+  }
+
   .masonry-layout {
     column-count: 1;
     column-gap: 0;
