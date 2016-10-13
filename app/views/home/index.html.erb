@@ -107,25 +107,19 @@
     </div>
   </div>
 
-   <!-- sample for c-card, remove from here and add it to where it belongs -->
-  <div class="row">
-    <div class="small-12 medium-4 columns">
-      <article class="c-card">
-        <div class="card-pic"></div>
-        <div class="card-descrition">
-          <h3 class="text -title-card">My awesome title</h3>
-          <p class="text -summary">This is some info related to this card</p>
-          <p class="text -meta">1 week ago</p>
-        </div>
-      </article>
-    </div>
-  </div>
-  <!-- end -->
-
   <ul class="row">
     <% @activities.each do |activity| %>
       <li class="small-12 medium-4 columns">
-        <%= link_to activity.title, activity %>
+        <%= link_to activity do %>
+          <article class="c-card">
+            <div class="card-pic"></div>
+            <div class="card-descrition">
+              <h3 class="text -title-card">activity.title</h3>
+              <p class="text -summary">This is some info related to this card</p>
+              <p class="text -meta">1 week ago</p>
+            </div>
+          </article>
+        <% end %>
       </li>
     <% end %>
   </ul>
