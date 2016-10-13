@@ -1,0 +1,24 @@
+.c-card {
+  .card-pic {
+    width: 100%;
+    height: rem(230px);
+    background-color: #ddd;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .card-descrition {
+    background-color: $white;
+    padding: rem(24px) rem(20px);
+  }
+
+  .-summary {
+    margin-top: rem(10px);
+  }
+
+  .-meta {
+    margin-top: rem(13px);
+    text-align: right;
+  }
+}

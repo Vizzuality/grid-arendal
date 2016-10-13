@@ -52,11 +52,32 @@
   </div>
 
   <div class="row">
+    <!-- sample for c-card, remove from here and add it to where it belongs -->
+    <div class="small-12 medium-4 columns">
+      <article class="c-card">
+        <div class="card-pic"></div>
+        <div class="card-descrition">
+          <h3 class="text -title-card">My awesome title</h3>
+          <p class="text -summary">This is some info related to this card</p>
+          <p class="text -meta">1 week ago</p>
+        </div>
+      </article>
+    </div>
+    <!--  END -->
+
     <% @articles.each do |article| %>
       <div class="small-12 medium-4 columns">
-        <iframe src="https://GRIDArendal.exposure.co/<%= article.exposure_slug %>/embed/cover?embed=true" style="width:200px;height:300px;margin-bottom:5px;border:solid 1px #ccc;border-radius:2px;"></iframe>
-      <% end %>
+        <article class="c-card">
+          <div class="card-pic"></div>
+          <div class="card-descrition">
+            <h3 class="text -title-card">My awesome title</h3>
+            <p class="text -summary">This is some info related to this card</p>
+            <p class="text -meta">1 week ago</p>
+          </div>
+        </article>
       </div>
+    <% end %>
+
   </div>
 </div>
 
@@ -114,12 +135,11 @@
     </div>
   </div>
 
-  <div class="row"></div>
+  <!-- slider -->
 </div>
 
 
 <div class="l-main-content">
-
   <div class="row">
     <div class="small-12 columns">
       <div class="c-main-content-header">
