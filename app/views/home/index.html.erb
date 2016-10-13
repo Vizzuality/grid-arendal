@@ -46,7 +46,14 @@
     <div class="small-12 columns">
       <div class="c-main-content-header">
         <h2 class="text -title-block">Latest news</h2>
-        <p class="text -view-all"><%= link_to "View all news", news_index_path %></p>
+        <p class="text -view-all">
+          <%= link_to news_index_path do %>
+            View all news
+            <svg class="icon -arrow">
+              <use xlink:href="#icon-arrow"></use>
+            </svg>
+          <% end %>
+        </p>
       </div>
     </div>
   </div>
@@ -59,7 +66,7 @@
         <div class="card-descrition">
           <h3 class="text -title-card">My awesome title</h3>
           <p class="text -summary">This is some info related to this card</p>
-          <p class="text -meta">1 week ago</p>
+          <p class="text -meta">1 week ago </p>
         </div>
       </article>
     </div>
@@ -88,7 +95,14 @@
     <div class="small-12 columns">
       <div class="c-main-content-header">
         <h2 class="text -title-block">Featured activities</h2>
-        <p class="text -view-all"><%= link_to "View all activities", activities_path %></p>
+        <p class="text -view-all">
+          <%= link_to activities_path do %>
+            View all activities
+            <svg class="icon -arrow">
+              <use xlink:href="#icon-arrow"></use>
+            </svg>
+          <% end %>
+        </p>
       </div>
     </div>
   </div>
@@ -124,7 +138,14 @@
     <div class="small-12 columns">
       <div class="c-main-content-header">
         <h2 class="text -title-block">Featured Publications</h2>
-        <p class="text -view-all"><%= link_to "View all publications", publications_path %></p>
+        <p class="text -view-all">
+          <%= link_to publications_path do %>
+            View all publications
+            <svg class="icon -arrow">
+              <use xlink:href="#icon-arrow"></use>
+            </svg>
+          <% end %>
+        </p>
       </div>
     </div>
   </div>
@@ -158,7 +179,14 @@
     <div class="small-12 columns">
       <div class="c-main-content-header">
         <h2 class="text -title-block">Featured Media</h2>
-        <p class="text -view-all"></p>
+        <p class="text -view-all">
+          <%= link_to root_path do %>
+            View all media
+            <svg class="icon -arrow">
+              <use xlink:href="#icon-arrow"></use>
+            </svg>
+          <% end %>
+        </p>
       </div>
     </div>
   </div>
@@ -172,7 +200,14 @@
     <div class="small-12 columns">
       <div class="c-main-content-header">
         <h2 class="text -title-block">Staff</h2>
-        <p class="text -view-all"><%= link_to "Know our complete staff", staff_index_path %></p>
+        <p class="text -view-all">
+          <%= link_to staff_index_path do %>
+            Know our complete staff
+            <svg class="icon -arrow">
+              <use xlink:href="#icon-arrow"></use>
+            </svg>
+          <% end %>
+        </p>
       </div>
     </div>
   </div>
