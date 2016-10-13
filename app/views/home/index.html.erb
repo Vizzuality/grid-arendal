@@ -14,58 +14,70 @@
   </div>
 <% end %>
 
-<h2>Latest news</h2>
-<p><%= link_to "View all news", news_index_path %></p>
+<div class="l-main-content">
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="c-main-content-header">
+        <h2>Latest news</h2>
+        <p><%= link_to "View all news", news_index_path %></p>
+      </div>
+    </div>
+  </div>
 
-<% @articles.each do |article| %>
-  <iframe src="https://GRIDArendal.exposure.co/<%= article.exposure_slug %>/embed/cover?embed=true" style="width:200px;height:300px;margin-bottom:5px;border:solid 1px #ccc;border-radius:2px;"></iframe>
-<% end %>
+  <div class="row">
+    <% @articles.each do |article| %>
+      <div class="small-12 medium-4 columns">
+        <iframe src="https://GRIDArendal.exposure.co/<%= article.exposure_slug %>/embed/cover?embed=true" style="width:200px;height:300px;margin-bottom:5px;border:solid 1px #ccc;border-radius:2px;"></iframe>
+      <% end %>
+      </div>
+  </div>
+</div>
 
-<hr />
+<div class="l-main-content">
+  <h2>Featured activities</h2>
+  <%= link_to "View all activities", activities_path %>
 
-<h2>Featured activities</h2>
-<%= link_to "View all activities", activities_path %>
+  <ul>
+    <% @activities.each do |activity| %>
+      <li>
+        <%= link_to activity.title, activity %>
+      </li>
+    <% end %>
+  </ul>
+</div>
 
-<ul>
-  <% @activities.each do |activity| %>
-    <li>
-      <%= link_to activity.title, activity %>
-    </li>
-  <% end %>
-</ul>
 
-<hr />
+<div class="l-main-content">
+  <h2>Featured Publications</h2>
+  <%= link_to "View all publications", publications_path %>
 
-<h2>Featured Publications</h2>
-<%= link_to "View all publications", publications_path %>
+  <ul>
+    <% @publications.each do |publication| %>
+      <li>
+        <%= link_to publication.title, publication %>
+      </li>
+    <% end %>
+  </ul>
+</div>
 
-<ul>
-  <% @publications.each do |publication| %>
-    <li>
-      <%= link_to publication.title, publication %>
-    </li>
-  <% end %>
-</ul>
+<div class="l-main-content">
+  <h2>Featured Media</h2>
+  <section></section>
+</div>
 
-<hr />
 
-<h2>Featured Media</h2>
-<section></section>
-
-<hr />
-
-<h2>Staff</h2>
-<%= link_to "Know our complete staff", staff_index_path %>
-<ul>
-  <% @users.each do |user| %>
-    <li>
-      <%= image_tag(user.avatar) %>
-      <%= user.display_name %>
-      <%= user.current_position %>
-    </li>
-  <% end %>
-</ul>
-
-<hr />
+<div class="l-main-content">
+  <h2>Staff</h2>
+  <%= link_to "Know our complete staff", staff_index_path %>
+  <ul>
+    <% @users.each do |user| %>
+      <li>
+        <%= image_tag(user.avatar) %>
+        <%= user.display_name %>
+        <%= user.current_position %>
+      </li>
+    <% end %>
+  </ul>
+</div>
 
 <p>Contact us</p>
