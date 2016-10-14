@@ -7,6 +7,7 @@
 <ul>
   <% @publications.each do |publication| %>
     <li>
+      <%= image_tag(publication.picture(:thumb)) %>
       <%= publication.title %>
       <%= link_to 'Edit', edit_publication_path(publication) %>
       <% if can?(:publish, publication) && publication.unpublished? %>
