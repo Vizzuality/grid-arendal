@@ -14,7 +14,7 @@ module Backend
     end
 
     let!(:attri) do
-      { title: test_title, exposure_slug: 'my-slug' }
+      { title: test_title, description: 'my-slug' }
     end
 
     let!(:attri_fail) do
@@ -65,6 +65,21 @@ module Backend
         expect(response).to be_redirect
         expect(response).to have_http_status(302)
         expect(@publication.reload.unpublished?).to be(true)
+      end
+
+      it 'Feature publication' do
+        not_featured = create(:publication, is_featured: false)
+        process :make_featured, method: :patch, params: { id: @publication.id }
+        expect(response).to be_redirect
+        expect(response).to have_http_status(302)
+        expect(@publication.reload.featured?).to be(true)
+      end
+
+      it 'Remove featured status from publication' do
+        process :remove_featured, method: :patch, params: { id: @publication.id }
+        expect(response).to be_redirect
+        expect(response).to have_http_status(302)
+        expect(@publication.reload.not_featured?).to be(true)
       end
     end
   end

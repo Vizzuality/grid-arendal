@@ -66,6 +66,21 @@ module Backend
         expect(response).to have_http_status(302)
         expect(@activity.reload.unpublished?).to be(true)
       end
+
+      it 'Feature activity' do
+        create(:activity, is_featured: false)
+        process :make_featured, method: :patch, params: { id: @activity.id }
+        expect(response).to be_redirect
+        expect(response).to have_http_status(302)
+        expect(@activity.reload.featured?).to be(true)
+      end
+
+      it 'Remove featured status from activity' do
+        process :remove_featured, method: :patch, params: { id: @activity.id }
+        expect(response).to be_redirect
+        expect(response).to have_http_status(302)
+        expect(@activity.reload.not_featured?).to be(true)
+      end
     end
   end
 end

@@ -28,11 +28,16 @@ Backend::Engine.routes.draw do
   resources :about_sections, except: [:show]
   resources :news_articles, except: [:show]
 
-  resources :publications, except: [:show] do
-    patch 'publish', on: :member
-    patch 'unpublish', on: :member
+  [:publications, :activities].each do |res|
+    resources res, except: [:show] do
+      patch 'publish', on: :member
+      patch 'unpublish', on: :member
+      patch 'make_featured', on: :member
+      patch 'remove_featured', on: :member
+    end
   end
-  resources :activities, except: [:show] do
+
+  resources :vacancies, except: [:show] do
     patch 'publish', on: :member
     patch 'unpublish', on: :member
   end

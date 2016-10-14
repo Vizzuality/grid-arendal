@@ -25,4 +25,11 @@
   </section>
 <% end %>
 
+<h3>Vacancies</h3>
+<ul>
+  <% @vacancies.each do |vacancy| %>
+    <li><%= vacancy.title %></li>
+  <% end %>
+</ul>
+
 <%= render 'shared/footer' %>
