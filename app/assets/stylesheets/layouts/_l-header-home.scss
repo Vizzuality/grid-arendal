@@ -1,0 +1,107 @@
+.l-header-home {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: image-url('bg1.jpg');
+  background-color: #d8d8d8;
+  display: block;
+  height: rem(320px);
+  position: relative;
+  padding-bottom: rem(50px);
+
+  @media screen and (min-width: $screen-m) {
+    height: rem(650px);
+    padding-bottom: rem(100px);
+  }
+
+  .logo-menu {
+    display: none;
+  }
+
+  .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    z-index: 1;
+  }
+
+  .cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: rem(650px);
+    margin: auto;
+    height: calc(100% - 70px);
+    z-index: 10;
+    position: relative;
+
+    .logo {
+      .icon {
+        width: rem(170px);
+        height: rem(55px);
+      }
+    }
+
+    .text {
+      margin: rem(30px) 0 rem(30px);
+      display: none;
+
+      @media screen and (min-width: $screen-m) {
+        display: block;
+      }
+    }
+
+    .media {
+      height: rem(60px);
+      width: rem(60px);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $white;
+      margin-bottom: rem(-80px);
+      position: absolute;
+      bottom: 0;
+      z-index: 10;
+
+      @media screen and (min-width: $screen-m) {
+        background-color: transparent;
+        position: relative;
+        border: solid 2px $color-1;
+        width: rem(30px);
+        height: rem(30px);
+      }
+
+      .icon {
+        width: rem(15px);
+        height: rem(15px);
+        margin-left: rem(2px);
+
+        @media screen and (min-width: $screen-m) {
+          width: rem(10px);
+          height: rem(10px);
+        }
+      }
+    }
+  }
+}
+
+.cta-mobile {
+  display: block;
+  padding: rem(50px) rem(10px);
+  background-color: rgba(0, 61, 83, 0.1);
+
+  @media screen and (min-width: $screen-m) {
+    display: none;
+  }
+}
+
+.cta-desktop {
+  display: none;
+
+  @media screen and (min-width: $screen-m) {
+    display: block;
+  }
+}

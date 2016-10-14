@@ -1,4 +1,34 @@
-<h1>GRID Arendal</h1>
+<div class="l-header-home">
+  <div class="overlay"></div>
+  <%= render 'shared/menu' %>
+  <div class="cta">
+    <div class="logo">
+      <svg class="icon">
+        <use xlink:href="#icon-logo"></use>
+      </svg>
+    </div>
+    <div class="cta-desktop text -cta">
+      GRID-Arendal works closely with the United Nations Environment Programme (UNEP),
+      other UN agencies and partners around the world to connect science to policy.
+      Our goal is to reduce the time between when new knowledge is produced and when it is used.
+      We believe it’s important influence thinking and action at the global level
+      because our greatest challenges require collective action.
+    </div>
+    <div class="media">
+      <svg class="icon">
+        <use xlink:href="#icon-play"></use>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<div class="cta-mobile text -cta">
+  GRID-Arendal works closely with the United Nations Environment Programme (UNEP),
+  other UN agencies and partners around the world to connect science to policy.
+  Our goal is to reduce the time between when new knowledge is produced and when it is used.
+  We believe it’s important influence thinking and action at the global level
+  because our greatest challenges require collective action.
+</div>
 
 <% if @event %>
   <div>
@@ -12,59 +42,206 @@
   </div>
 <% end %>
 
-<h2>Latest news</h2>
-<p><%= link_to "View all news", news_index_path %></p>
+<section class="l-main-content">
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="c-main-content-header">
+        <h2 class="text -title-block">Latest news</h2>
+        <p class="text -view-all">
+          <%= link_to news_index_path do %>
+            View all news
+            <svg class="icon -arrow">
+              <use xlink:href="#icon-arrow"></use>
+            </svg>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
 
-<% @articles.each do |article| %>
-  <iframe src="https://GRIDArendal.exposure.co/<%= article.exposure_slug %>/embed/cover?embed=true" style="width:200px;height:300px;margin-bottom:5px;border:solid 1px #ccc;border-radius:2px;"></iframe>
-<% end %>
+  <!-- sample for c-card, remove from here and add it to where it belongs
+  <div class="row">
+    <div class="small-12 medium-3 columns">
+      <article class="c-card">
+        <div class="card-pic"></div>
+        <div class="card-descrition">
+          <h3 class="text -title-card">My awesome title</h3>
+          <p class="text -summary">This is some info related to this card</p>
+          <p class="text -meta">1 week ago </p>
+        </div>
+      </article>
+    </div>
+  </div>
+    END -->
 
-<hr />
+  <ul class="row">
+    <% @articles.each do |article| %>
+      <li class="small-12 medium-3 columns">
+        <article class="c-card">
+          <div class="card-pic"></div>
+          <div class="card-descrition">
+            <h3 class="text -title-card"><%= article.title %></h3>
+            <p class="text -summary">This is some info related to this card</p>
+            <p class="text -meta">
+              <%= time_ago_in_words(article.publication_date) %> ago
+            </p>
+          </div>
+        </article>
+      </li>
+    <% end %>
+  </ul>
+</section>
 
-<h2>Featured activities</h2>
-<%= link_to "View all activities", activities_path %>
+<section class="l-main-content">
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="c-main-content-header">
+        <h2 class="text -title-block">Featured activities</h2>
+        <p class="text -view-all">
+          <%= link_to activities_path do %>
+            View all activities
+            <svg class="icon -arrow">
+              <use xlink:href="#icon-arrow"></use>
+            </svg>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
 
-<ul>
-  <% @activities.each do |activity| %>
-    <li>
-      <%= link_to activity.title, activity %>
+  <div class="c-slider slider js_slider">
+    <span class="js_prev prev">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z"></path></g></svg>
+    </span>
+    <div class="frame js_frame">
+      <ul class="slides js_slides">
+        <% @activities.each do |activity| %>
+          <li class="js_slide slide">
+            <%= link_to activity do %>
+              <article class="c-card">
+                <div class="card-pic" style="background-image: url('<%= activity.picture %>')"></div>
+                <div class="card-descrition">
+                  <h3 class="text -title-card"><%= activity.title %></h3>
+                  <p class="text -summary"><%= activity.short_description %></p>
+                  <p class="text -meta">1 week ago</p>
+                </div>
+              </article>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <span class="js_next next">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"></path></g></svg>
+    </span>
+  </div>
+</section>
+
+<section class="l-main-content">
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="c-main-content-header">
+        <h2 class="text -title-block">Featured Publications</h2>
+        <p class="text -view-all">
+          <%= link_to publications_path do %>
+            View all publications
+            <svg class="icon -arrow">
+              <use xlink:href="#icon-arrow"></use>
+            </svg>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="c-slider slider js_slider">
+    <span class="js_prev prev">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z"></path></g></svg>
+    </span>
+    <div class="frame js_frame">
+      <ul class="slides js_slides">
+        <% @publications.each do |publication| %>
+          <li class="js_slide slide">
+            <%= link_to publication do %>
+              <article class="c-card">
+                <div class="card-pic" style="background-image: url('<%= publication.picture %>')"></div>
+                <div class="card-descrition">
+                  <h3 class="text -title-card"><%= publication.title %></h3>
+                  <p class="text -summary"><%= publication.short_description %></p>
+                  <p class="text -meta">1 week ago</p>
+                </div>
+              </article>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <span class="js_next next">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"></path></g></svg>
+    </span>
+  </div>
+</section>
+
+<section class="l-main-content">
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="c-main-content-header">
+        <h2 class="text -title-block">Featured Media</h2>
+        <p class="text -view-all">
+          <%= link_to root_path do %>
+            View all media
+            <svg class="icon -arrow">
+              <use xlink:href="#icon-arrow"></use>
+            </svg>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- slider -->
+</section>
+
+
+<section class="l-main-content">
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="c-main-content-header">
+        <h2 class="text -title-block">Staff</h2>
+        <p class="text -view-all">
+          <%= link_to staff_index_path do %>
+            Know our complete staff
+            <svg class="icon -arrow">
+              <use xlink:href="#icon-arrow"></use>
+            </svg>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <ul class="row">
+    <!-- sample for c-card, remove from here and add it to where it belongs
+    <li class="small-6 medium-4 large-2 columns">
+      <div class="c-staff">
+        <div class="staff-pic"></div>
+        <p class="text -author">Name And Second Name</p>
+        <p class="text -meta">Position</p>
+      </div>
     </li>
-  <% end %>
-</ul>
+     end -->
 
-<hr />
+    <% @users.each do |user| %>
+      <li class="small-6 medium-3 large-2 columns">
+        <div class="c-staff">
+          <div class="staff-pic" style="background-image: url('<%= user.avatar(:thumb) %>')"></div>
+          <p class="text -author"><%= user.display_name %></p>
+          <p class="text -meta"><%= user.current_position %></p>
+        </div>
+      </li>
+    <% end %>
+  </ul>
 
-<h2>Featured Publications</h2>
-<%= link_to "View all publications", publications_path %>
+</section>
 
-<ul>
-  <% @publications.each do |publication| %>
-    <li>
-      <%= link_to publication.title, publication %>
-    </li>
-  <% end %>
-</ul>
-
-<hr />
-
-<h2>Featured Media</h2>
-<section></section>
-
-<hr />
-
-<h2>Staff</h2>
-<%= link_to "Know our complete staff", staff_index_path %>
-<ul>
-  <% @users.each do |user| %>
-    <li>
-      <%= image_tag(user.avatar) %>
-      <%= user.display_name %>
-      <%= user.current_position %>
-    </li>
-  <% end %>
-</ul>
-
-<hr />
-
-<p>Contact us</p>
-
+<%= render 'shared/footer' %>

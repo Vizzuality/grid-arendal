@@ -11,3 +11,6 @@ h2 Activities
       - if can? [:publish, :unpublish], activity
         .publish_unpublish
           = render 'backend/shared/publishable_links', location: activity
+      - if can? [:make_featured, :remove_featured], activity
+        .make_featured_remove_featured
+          = render 'backend/shared/featured_links', location: activity

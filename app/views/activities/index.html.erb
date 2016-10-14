@@ -1,10 +1,46 @@
-<h2>Activities</h2>
+<div class="l-header-library -activities">
+  <div class="overlay"></div>
+  <%= render 'shared/menu' %>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="title-block">
+        <h1 class="text -title-library">Activities</h1>
+        <div class="text -summary">
+          GRID-Arendal has produced publications, in both printed and electronic formats, on a wide range of issues related to the environment.
+        </div>
+        <div class="share">
+          <svg class="icon">
+            <use xlink:href="#icon-share"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<ul>
-  <% @activities.each do |activity| %>
-    <li>
-      <%= link_to activity.title, activity %>
-      <%= activity.description %>
-    </li>
-  <% end %>
-</ul>
+<div class="l-main-content -activities">
+
+  <div class="row">
+    <div class="small-12 small-centered columns -fix">
+      <div class="masonry-layout">
+        <% @activities.each do |activity| %>
+          <%= link_to activity do %>
+            <div class="item">
+              <article class="c-card">
+                <div class="card-pic" style="background-image: url('<%= activity.picture %>')"></div>
+                <div class="card-descrition">
+                  <h3 class="text -title-card"><%= activity.title %></h3>
+                  <p class="text -summary"><%= activity.short_description %></p>
+                  <p class="text -meta">1 week ago</p>
+                </div>
+              </article>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<%= render 'shared/footer' %>

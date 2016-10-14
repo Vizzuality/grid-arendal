@@ -11,4 +11,7 @@ ul
       - if can? [:publish, :unpublish], publication
         .publish_unpublish
           = render 'backend/shared/publishable_links', location: publication
+      - if can? [:make_featured, :remove_featured], publication
+        .make_featured_remove_featured
+          = render 'backend/shared/featured_links', location: publication
 

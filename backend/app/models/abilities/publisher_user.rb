@@ -15,9 +15,11 @@ module Abilities
         can :manage, ::Activity
         can :manage, ::Publication
         can :manage, ::MediaContent
-        can [:publish, :unpublish], ::Activity
-        can [:publish, :unpublish], ::Publication
+        can :manage, ::Vacancy
         can [:publish, :unpublish], ::MediaContent
+        can [:publish, :unpublish, :make_featured, :remove_featured], ::Activity
+        can [:publish, :unpublish, :make_featured, :remove_featured], ::Publication
+        can [:publish, :unpublish], ::Vacancy
         can [:activate, :deactivate], ::Event
       end
 

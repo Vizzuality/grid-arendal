@@ -1,4 +1,22 @@
-<h2>About</h2>
+<div class="l-header-library -activities">
+  <div class="overlay"></div>
+  <%= render 'shared/menu' %>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="title-block">
+        <h1 class="text -title-library">About</h1>
+        <div class="text -summary">
+          GRID-Arendal has produced publications, in both printed and electronic formats, on a wide range of issues related to the environment.
+        </div>
+        <div class="share">
+          <svg class="icon">
+            <use xlink:href="#icon-share"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <% @sections.each do |section| %>
   <h2><%= section.title %></h2>
@@ -6,3 +24,12 @@
     <%= section.body %>
   </section>
 <% end %>
+
+<h3>Vacancies</h3>
+<ul>
+  <% @vacancies.each do |vacancy| %>
+    <li><%= vacancy.title %></li>
+  <% end %>
+</ul>
+
+<%= render 'shared/footer' %>

@@ -62,6 +62,12 @@ module NavigationHelpers
       backend.new_activity_path
     when /the edit activity page for "(.*)"$/
       backend.edit_activity_path(Activity.find_by_title($1).id)
+    when /the vacancies page/
+      backend.vacancies_path
+    when /the new vacancy page/
+      backend.new_vacancy_path
+    when /the edit vacancy page for "(.*)"$/
+      backend.edit_vacancy_path(Vacancy.find_by_title($1).id)
     when /the events page/
       backend.events_path
     when /the new event page/

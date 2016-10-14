@@ -1,0 +1,63 @@
+.l-footer {
+  height: 320px;
+  position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: image-url('bg2.jpg');
+
+  @media screen and (min-width: $screen-m) {
+    height: rem(450px);
+  }
+
+  .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(34, 34, 34, 0.3);
+    position: absolute;
+    z-index: 1;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    cursor: pointer;
+
+    .text {
+      z-index: 10;
+      position: relative;
+    }
+
+    .social-links {
+      z-index: 10;
+      position: relative;
+      margin-top: rem(30px);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+
+      @media screen and (min-width: $screen-m) {
+        margin-top: rem(40px);
+      }
+
+      .icon {
+        width: rem(20px);
+        height: rem(20px);
+        margin: 0 rem(25px);
+        margin-bottom: rem(40px);
+      }
+    }
+
+    .info-links {
+      display: flex;
+
+      li {
+        margin: 0 rem(5px);
+      }
+    }
+  }
+}

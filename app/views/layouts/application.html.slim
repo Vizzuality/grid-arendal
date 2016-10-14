@@ -3,11 +3,10 @@ html
   head
     title
       | GridArendal
+    meta name='viewport' content='width=device-width, initial-scale=1.0'
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = render 'shared/icons'
   body
-    = render "shared/nav"
-    br
-
     = yield
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'

@@ -1,0 +1,26 @@
+.c-staff {
+  margin-top: rem(16px);
+  text-align: center;
+
+  .staff-pic {
+    width: rem(120px);
+    height: rem(120px);
+    margin: 0 auto;
+    border-radius: 50%;
+    border: rem(3px) solid rgba($white, .3);
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 100%;
+  }
+
+  .-author {
+    margin-top: rem(15px);
+  }
+
+  .-meta {
+    margin-top: rem(4px);
+  }
+
+}

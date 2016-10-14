@@ -1,10 +1,46 @@
-<h2>Publications</h2>
+<div class="l-header-library -publications">
+  <div class="overlay"></div>
+  <%= render 'shared/menu' %>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="title-block">
+        <h1 class="text -title-library">Publications</h1>
+        <div class="text -summary">
+          GRID-Arendal has produced publications, in both printed and electronic formats, on a wide range of issues related to the environment.
+        </div>
+        <div class="share">
+          <svg class="icon">
+            <use xlink:href="#icon-share"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<ul>
-  <% @publications.each do |publication| %>
-    <li>
-      <%= link_to publication.title, publication %>
-      <%= publication.description %>
-    </li>
-  <% end %>
-</ul>
+<div class="l-main-content -publications">
+
+  <div class="row">
+    <div class="small-12 small-centered columns -fix">
+      <div class="masonry-layout">
+        <% @publications.each do |publication| %>
+          <%= link_to publication do %>
+            <div class="item">
+              <article class="c-card">
+                <div class="card-pic" style="background-image: url('<%= publication.picture %>')"></div>
+                <div class="card-descrition">
+                  <h3 class="text -title-card"><%= publication.title %></h3>
+                  <p class="text -summary"><%= publication.short_description %></p>
+                  <p class="text -meta">1 week ago</p>
+                </div>
+              </article>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<%= render 'shared/footer' %>

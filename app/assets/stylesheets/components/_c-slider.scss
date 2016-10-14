@@ -1,0 +1,45 @@
+.c-slider {
+  position: relative;
+  width: 1000px;
+  margin: 0 auto;
+
+  .frame {
+    /**
+     * (optional) wrapper width, specifies width of the slider frame.
+     */
+    max-width: calc(62.5rem - 2*(0.9375rem));
+    margin: 0 auto;
+    padding: 0 0.9375rem;
+
+    position: relative;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .slides {
+    display: inline-block;
+  }
+
+  .slide {
+    display: inline-block;
+    width: 310px;
+    margin: 0 10px;
+    vertical-align: top;
+  }
+
+
+  .next, .prev {
+    @extend %centery;
+    z-index: 1;
+  }
+
+  .next {
+    right: -30px;
+  }
+
+  .prev {
+    left: -30px;
+  }
+}

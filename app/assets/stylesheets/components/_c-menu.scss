@@ -1,0 +1,55 @@
+.c-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  height: rem(70px);
+  padding: 0 rem(15px);
+  z-index: 10;
+  position: relative;
+
+  @media screen and (min-width: $screen-m) {
+    padding: 0;
+  }
+
+  .mobile {
+    display: block;
+
+    @media screen and (min-width: $screen-m) {
+      display: none;
+    }
+  }
+
+  .desktop {
+    display: none;
+
+    @media screen and (min-width: $screen-m) {
+      display: flex;
+    }
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+
+    .logo-menu {
+
+      .icon {
+        width: 100px;
+        height: 40px;
+      }
+    }
+
+    li {
+      margin-right: rem(40px);
+    }
+  }
+
+  .icon {
+    width: rem(15px);
+    height: rem(15px);
+  }
+}

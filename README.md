@@ -1,6 +1,6 @@
 # Grid Arendal
 
-[![Build Status](https://travis-ci.org/Vizzuality/grid-arendal.svg?branch=develop)](https://travis-ci.org/Vizzuality/grid-arendal) [![Code Climate](https://codeclimate.com/github/Vizzuality/grid-arendal/badges/gpa.svg)](https://codeclimate.com/github/Vizzuality/grid-arendal)
+[![Build Status](https://travis-ci.org/Vizzuality/grid-arendal.svg?branch=master)](https://travis-ci.org/Vizzuality/grid-arendal) [![Code Climate](https://codeclimate.com/github/Vizzuality/grid-arendal/badges/gpa.svg)](https://codeclimate.com/github/Vizzuality/grid-arendal)
 
 TODO: Write a project description
 
@@ -31,6 +31,8 @@ First time execute:
 
     bundle exec rake db:create
     bundle exec rake db:migrate
+
+    rails import:activities
 
 ## Usage
 

@@ -3,7 +3,7 @@
 <ul>
   <% @users.each do |user| %>
     <li>
-      <%= image_tag(user.avatar) %>
+      <%= image_tag(user.avatar(:thumb)) %>
       <%= link_to user.display_name, staff_path(user) %>
       <%= user.current_position %>
     </li>

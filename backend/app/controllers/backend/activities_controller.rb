@@ -5,7 +5,6 @@ module Backend
   class ActivitiesController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_activity, except: [:index, :new, :create]
     before_action :set_users_partners_and_news, only: [:new, :edit]
 
     def index
@@ -38,27 +37,27 @@ module Backend
       end
     end
 
-    def unpublish
-      if @activity.try(:unpublish)
-        redirect_to activities_path
-      else
-        redirect_to activity_path(@activity)
-      end
+    def publish
+      @activity.try(:publish)
+      redirect_to activities_path
     end
 
-    def publish
-      if @activity.try(:publish)
-        redirect_to activities_path
-      else
-        redirect_to activity_path(@activity)
-      end
+    def unpublish
+      @activity.try(:unpublish)
+      redirect_to activities_path
+    end
+
+    def make_featured
+      @activity.try(:make_featured)
+      redirect_to activities_path
+    end
+
+    def remove_featured
+      @activity.try(:remove_featured)
+      redirect_to activities_path
     end
 
     private
-
-      def set_activity
-        @activity = Activity.find(params[:id])
-      end
 
       def activity_params
         params.require(:activity).permit!

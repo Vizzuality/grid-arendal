@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="small-12 columns">
+    <div class="c-menu">
+      <div class="mobile">
+        <svg class="icon">
+          <use xlink:href="#icon-menu"></use>
+        </svg>
+      </div>
+      <ul class="desktop text -menu">
+        <li class="logo-menu">
+          <a href="/">
+            <svg class="icon">
+              <use xlink:href="#icon-logo"></use>
+            </svg>
+          </a>
+        </li>
+        <li><%= link_to "Activities", activities_path %></li>
+        <li><%= link_to "Publications", publications_path %></li>
+        <li><%= link_to "Media Library", "#" %></li>
+        <li><%= link_to "News", news_index_path %></li>
+        <li><%= link_to "About", about_index_path %></li>
+      </ul>
+      <svg class="icon">
+        <use xlink:href="#icon-search"></use>
+      </svg>
+    </div>
+  </div>
+</div>
+<div class="c-mobile-menu">
+  <ul class="text -menu -light">
+    <li>
+      <svg class="icon">
+        <use xlink:href="#icon-close"></use>
+      </svg>
+    </li>
+    <li><%= link_to "Activities", activities_path %></li>
+    <li><%= link_to "Publications", publications_path %></li>
+    <li><%= link_to "Media Library", "#" %></li>
+    <li><%= link_to "News", news_index_path %></li>
+    <li><%= link_to "About", about_index_path %></li>
+  </ul>
+</div>

@@ -53,3 +53,13 @@ I want to edit, create, view publications
     Then I should be on the publications page
     And I should see "My publication"
     And I should see "Unpublish"
+
+  Scenario: Publisheruser can make and remove featured status from publication
+    Given I am authenticated publisheruser
+    And publication
+    When I go to the publications page
+    Then I should see "My publication"
+    And I follow "Remove featured"
+    Then I should be on the publications page
+    And I should see "My publication"
+    And I should see "Make featured"
