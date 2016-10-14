@@ -22,13 +22,13 @@ I want to edit, create, view media contents
     Given I am authenticated adminuser
     When I follow new photo on the new media content page
     And I fill in "Title" with "Photo new"
-    And I attach the file "features/upload_files/image1.png" to "media_content_photo_file"
+    And I attach the file "features/upload_files/album-sample.jpg" to "media_content_photo_file"
     And I fill in "Description" with "Lorem ipsum"
     And I press "Create media content"
     Then I should have one photo
     When I follow photo on the edit media content page for "Photo new"
     And I fill in "Title" with "Photo edited"
-    And I attach the file "features/upload_files/image1.png" to "media_content_photo_file"
+    And I attach the file "features/upload_files/album-sample.jpg" to "media_content_photo_file"
     And I fill in "Description" with "Lorem ipsum"
     And I press "Update"
     Then I should see "Photo edited"
@@ -56,7 +56,7 @@ I want to edit, create, view media contents
     Given I am authenticated adminuser
     When I follow new photo on the new media content page
     And I fill in "Title" with "Photo new"
-    And I attach the file "features/upload_files/image1.png" to "media_content_photo_file"
+    And I attach the file "features/upload_files/album-sample.jpg" to "media_content_photo_file"
     And I fill in "Description" with "Lorem ipsum"
     And I press "Create media content"
     Then I should have one photo
@@ -73,7 +73,7 @@ I want to edit, create, view media contents
   #   And I fill in "Title" with "Album new"
   #   And I follow "add album photo"
   #   And I click on ".add_fields"
-  #   And I attach the file "features/upload_files/image1.png" to "media_content_photo_file"
+  #   And I attach the file "features/upload_files/album-sample.jpg" to "media_content_photo_file"
   #   And I fill in "Title" with "Photo new"
   #   And I fill in "Description" with "Lorem ipsum"
   #   And I press "Create media content"
