@@ -31,6 +31,7 @@ gem 'kaminari'
 gem 'paperclip'
 gem 'paperclip-dropbox'
 gem 'flickraw'
+gem 'cocoon'
 
 group :development, :test do
   gem 'hirb'

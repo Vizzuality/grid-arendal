@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161010153810) do
+ActiveRecord::Schema.define(version: 20161011162404) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(version: 20161010153810) do
     t.integer  "news_article_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+  end
+
+  create_table "album_relations", force: :cascade do |t|
+    t.integer  "photoset_id",                 comment: "ID media content of type album"
+    t.integer  "album_photo_id",              comment: "ID media content of type photo"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["album_photo_id"], name: "index_album_relations_on_album_photo_id", using: :btree
+    t.index ["photoset_id", "album_photo_id"], name: "index_album_relations_on_photoset_id_and_album_photo_id", unique: true, using: :btree
+    t.index ["photoset_id"], name: "index_album_relations_on_photoset_id", using: :btree
   end
 
   create_table "albums", force: :cascade do |t|

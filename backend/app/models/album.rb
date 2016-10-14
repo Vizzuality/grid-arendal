@@ -10,6 +10,8 @@
 #  albumable_count  :integer          default(0)
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
+#  main_photo_id    :string
+#  main_photo_url   :string
 #
 # Indexes
 #

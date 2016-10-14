@@ -8,9 +8,14 @@
       = form.label :photo_file
       = form.file_field :photo_file
     - if params[:mediable].in?('album')
-      = form.label :main_photo_file
-      = form.file_field :main_photo_file
+      #photos
+        = form.simple_fields_for :album_photos do |album_photo|
+          = render 'album_photo_fields', f: album_photo
+      .links
+        = link_to_add_association 'add album photo', form, :album_photos
 
 .field
   = form.label :description
   = form.input :description, label: false
+
+= form.hidden_field :mediable, value: params[:mediable]

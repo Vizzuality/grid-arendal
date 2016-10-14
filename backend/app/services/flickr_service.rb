@@ -2,23 +2,44 @@
 module FlickrService
   class << self
     def set_asset(media_content, options)
-      photo_file      = options['photo_file']      if options['photo_file'].present?
-      main_photo_file = options['main_photo_file'] if options['main_photo_file'].present?
-      title           = options['title']           if options['title'].present?
-      description     = options['description']     if options['description'].present?
+      photo_file      = options['photo_file']              if options['photo_file'].present?
+      title           = options['title']                   if options['title'].present?
+      description     = options['description']             if options['description'].present?
+      album_photos    = options['album_photos_attributes'] if options['album_photos_attributes'].present?
 
-      if photo_file.present? || main_photo_file.present?
-        photo_file ||= main_photo_file
+      if photo_file.present?
         photo_id   = flickr.upload_photo(photo_file.tempfile.path, title: title, description: description)
         photo_url  = FlickRaw.url_o(flickr.photos.getInfo(photo_id: photo_id))
+
+        media_content.set_photo(photo_id: photo_id, photo_url: photo_url)
       end
 
-      if main_photo_file.present?
-        photoset = flickr.photosets.create(primary_photo_id: photo_id, title: title, description: description)
-        media_content.set_album(photoset_id: photoset.id, photoset_url: photoset.url,
-                                main_photo_id: photo_id, main_photo_url: photo_url)
-      else
-        media_content.set_photo(photo_id: photo_id, photo_url: photo_url)
+      if album_photos.present?
+        album_photo_ids = []
+        album_photos.values.each do |album_photo_params|
+          album_photo_file  = album_photo_params['photo_file']      if album_photo_params['photo_file'].present?
+          photo_title       = album_photo_params['title']           if album_photo_params['title'].present?
+          photo_description = album_photo_params['description']     if album_photo_params['description'].present?
+          main              = album_photo_params['main_photo_file'] if album_photo_params['main_photo_file'].present?
+
+          album_photo_id  = flickr.upload_photo(album_photo_file.tempfile.path, title: photo_title, description: photo_description)
+          album_photo_url = FlickRaw.url_o(flickr.photos.getInfo(photo_id: album_photo_id))
+          album_photo_ids << album_photo_id
+
+          album_photo = MediaContent.create(album_photo_params.except(:_destroy, :main_photo_file))
+          album_photo.save
+          album_photo.set_photo(photo_id: album_photo_id, photo_url: album_photo_url)
+          AlbumRelation.create(photoset_id: media_content.id, album_photo_id: album_photo.id)
+
+          if main.present?
+            @photoset = flickr.photosets.create(primary_photo_id: album_photo_id, title: title, description: description)
+            media_content.set_album(photoset_id: @photoset.id, photoset_url: @photoset.url,
+                                    main_photo_id: album_photo_id, main_photo_url: album_photo_url)
+            @main_album_photo_id = album_photo_id
+          end
+        end
+        album_photo_ids = album_photo_ids.join(',')
+        flickr.photosets.editPhotos(photoset_id: @photoset.id, primary_photo_id: @main_album_photo_id, photo_ids: album_photo_ids)
       end
     end
 

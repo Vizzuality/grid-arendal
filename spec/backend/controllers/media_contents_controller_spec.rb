@@ -51,7 +51,7 @@ module Backend
 
       it 'Validate photo_content title presence' do
         process :update, method: :put, params: { id: @photo_content.id, media_content: attri_fail }
-        expect(response.body).to match('can&#39;t be blank')
+        expect(response).to redirect_to(edit_media_content_path(@photo_content))
       end
     end
 

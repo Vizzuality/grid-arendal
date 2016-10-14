@@ -20,7 +20,7 @@ module Backend
     end
 
     def update
-      update_params = media_content_params.except(:photo_file, :main_photo_file)
+      update_params = media_content_params.except(:photo_file, :main_photo_file, :album_photos_attributes)
       if @media_content.update(update_params)
         madiable_params = media_content_params.merge(photo_id: @media_content.photo_id,
                                                      photoset_id: @media_content.photoset_id,
@@ -29,18 +29,20 @@ module Backend
         FlickrService.update_asset(@media_content, madiable_params)
         redirect_to media_contents_url, notice: 'MediaContent updated.'
       else
-        render :edit, notice: @media_content.errors
+        flash[:alert] = @media_content.errors.full_messages.join(', ')
+        redirect_to action: 'edit', mediable: media_content_params[:mediable]
       end
     end
 
     def create
-      @media_content = MediaContent.new(media_content_params.except(:photo_file, :main_photo_file))
+      @media_content = MediaContent.new(media_content_params.except(:photo_file, :album_photos_attributes))
 
       if @media_content.save
         FlickrService.set_asset(@media_content, media_content_params)
         redirect_to media_contents_url, notice: 'MediaContent was successfully created.'
       else
-        render :new, notice: @media_content.errors
+        flash[:alert] = @media_content.errors.full_messages.join(', ')
+        redirect_to action: 'new', mediable: media_content_params[:mediable]
       end
     end
 
