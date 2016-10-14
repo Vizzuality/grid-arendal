@@ -4,5 +4,6 @@ FactoryGirl.define do
     title "My first publication"
     description "It's about life itself"
     is_published true
+    is_featured true
   end
 end

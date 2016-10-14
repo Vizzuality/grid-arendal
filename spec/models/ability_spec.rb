@@ -45,9 +45,11 @@ module Account
         Abilities::PublisherUser.any_instance.should_receive(:can).with([:activate, :deactivate], ::Event)
         Abilities::PublisherUser.any_instance.should_receive(:can).with(:manage, ::NewsArticle)
         Abilities::PublisherUser.any_instance.should_receive(:can).with(:manage, ::Activity)
-        Abilities::PublisherUser.any_instance.should_receive(:can).with([:publish, :unpublish], ::Activity)
+        Abilities::PublisherUser.any_instance.should_receive(:can).with([:publish, :unpublish, :make_featured, :remove_featured], ::Activity)
         Abilities::PublisherUser.any_instance.should_receive(:can).with(:manage, ::Publication)
-        Abilities::PublisherUser.any_instance.should_receive(:can).with([:publish, :unpublish], ::Publication)
+        Abilities::PublisherUser.any_instance.should_receive(:can).with([:publish, :unpublish, :make_featured, :remove_featured], ::Publication)
+        Abilities::PublisherUser.any_instance.should_receive(:can).with(:manage, ::Vacancy)
+        Abilities::PublisherUser.any_instance.should_receive(:can).with([:publish, :unpublish], ::Vacancy)
 
         Abilities::PublisherUser.any_instance.should_receive(:cannot).with(:make_admin, ::User, id: @publisheruser.id)
         Abilities::PublisherUser.any_instance.should_receive(:cannot).with(:make_contributor, ::User, id: @publisheruser.id)
