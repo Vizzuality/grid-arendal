@@ -27,10 +27,10 @@
           <%= link_to activity do %>
             <div class="item">
               <article class="c-card">
-                <div class="card-pic"></div>
+                <div class="card-pic" style="background-image: url('<%= activity.picture %>')"></div>
                 <div class="card-descrition">
                   <h3 class="text -title-card"><%= activity.title %></h3>
-                  <p class="text -summary">This is some info related to this card</p>
+                  <p class="text -summary"><%= activity.short_description %></p>
                   <p class="text -meta">1 week ago</p>
                 </div>
               </article>
