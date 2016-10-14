@@ -13,7 +13,7 @@
 
   .field
     = f.label :main_photo_file, 'Main photo:'
-    - if @media_content.try(:main_photo_url) == f.object.try(:photo_url) && @media_content.try(:main_photo_url).present?
+    - if @media_content.try(:main_photo_id) == f.object.try(:photo_id) && @media_content.try(:main_photo_id).present?
       h4 Is main photo!
     - else
       = f.input :main_photo_file, as: :boolean, label: false do
