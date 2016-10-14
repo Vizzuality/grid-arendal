@@ -50,6 +50,8 @@
   }
 
   &.-title-card {
+    width: 100%;
+    white-space: normal;
     font-size: 18px;
     font-family: $font-family-2;
     font-weight: 600;
@@ -81,6 +83,8 @@
   &.-summary {
     font-size: 16px;
     opacity: 0.8;
+    width: 100%;
+    white-space: normal;
 
     @media screen and (min-width: $screen-m) {
       font-size: 14px;
