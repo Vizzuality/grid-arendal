@@ -1,0 +1,22 @@
+<h2>Vacancies</h2>
+
+<% if can?(:create, Vacancy) %>
+  <%= link_to "New", new_vacancy_path %>
+<% end %>
+
+<ul>
+  <% @vacancies.each do |vacancy| %>
+    <li>
+      <%= vacancy.title %>
+      <%= link_to 'Edit', edit_vacancy_path(vacancy) %>
+      <% if can?(:publish, vacancy) && vacancy.unpublished? %>
+        |
+        <%= link_to "Publish", publish_vacancy_path(vacancy), method: :patch %>
+      <% end %>
+      <% if can?(:unpublish, vacancy) && vacancy.published? %>
+        |
+        <%= link_to "Unpublish", unpublish_vacancy_path(vacancy), method: :patch %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

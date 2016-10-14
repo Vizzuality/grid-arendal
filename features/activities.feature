@@ -53,3 +53,13 @@ I want to edit, create, view activities
     Then I should be on the activities page
     And I should see "My activity"
     And I should see "Publish"
+
+  Scenario: Publisheruser can make and remove featured status from activity
+    Given I am authenticated publisheruser
+    And activity
+    When I go to the activities page
+    Then I should see "My activity"
+    And I follow "Remove featured"
+    Then I should be on the activities page
+    And I should see "My activity"
+    And I should see "Make featured"

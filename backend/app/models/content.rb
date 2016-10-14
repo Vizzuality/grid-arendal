@@ -20,6 +20,7 @@
 
 class Content < ApplicationRecord
   include Publishable
+  include Featurable
   include Attachable::Picture
 
   has_many :participants

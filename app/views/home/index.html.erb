@@ -59,7 +59,7 @@
     </div>
   </div>
 
-  <!-- sample for c-card, remove from here and add it to where it belongs -->
+  <!-- sample for c-card, remove from here and add it to where it belongs
   <div class="row">
     <div class="small-12 medium-3 columns">
       <article class="c-card">
@@ -72,7 +72,7 @@
       </article>
     </div>
   </div>
-  <!--  END -->
+    END -->
 
   <ul class="row">
     <% @articles.each do |article| %>
@@ -80,9 +80,11 @@
         <article class="c-card">
           <div class="card-pic"></div>
           <div class="card-descrition">
-            <h3 class="text -title-card">My awesome title</h3>
+            <h3 class="text -title-card"><%= article.title %></h3>
             <p class="text -summary">This is some info related to this card</p>
-            <p class="text -meta">1 week ago</p>
+            <p class="text -meta">
+              <%= time_ago_in_words(article.publication_date) %> ago
+            </p>
           </div>
         </article>
       </li>
@@ -114,10 +116,10 @@
           <li class="js_slide slide">
             <%= link_to activity do %>
               <article class="c-card">
-                <div class="card-pic"></div>
+                <div class="card-pic" style="background-image: url('<%= activity.picture %>')"></div>
                 <div class="card-descrition">
-                  <h3 class="text -title-card">activity.title</h3>
-                  <p class="text -summary">This is some info related to this card</p>
+                  <h3 class="text -title-card"><%= activity.title %></h3>
+                  <p class="text -summary"><%= activity.short_description %></p>
                   <p class="text -meta">1 week ago</p>
                 </div>
               </article>
@@ -161,10 +163,10 @@
           <li class="js_slide slide">
             <%= link_to publication do %>
               <article class="c-card">
-                <div class="card-pic"></div>
+                <div class="card-pic" style="background-image: url('<%= publication.picture %>')"></div>
                 <div class="card-descrition">
-                  <h3 class="text -title-card">publication.title</h3>
-                  <p class="text -summary">This is some info related to this card</p>
+                  <h3 class="text -title-card"><%= publication.title %></h3>
+                  <p class="text -summary"><%= publication.short_description %></p>
                   <p class="text -meta">1 week ago</p>
                 </div>
               </article>
@@ -223,7 +225,7 @@
   </div>
 
   <ul class="row">
-    <!-- sample for c-card, remove from here and add it to where it belongs -->
+    <!-- sample for c-card, remove from here and add it to where it belongs
     <li class="small-6 medium-4 large-2 columns">
       <div class="c-staff">
         <div class="staff-pic"></div>
@@ -231,12 +233,12 @@
         <p class="text -meta">Position</p>
       </div>
     </li>
-    <!-- end -->
+     end -->
 
     <% @users.each do |user| %>
       <li class="small-6 medium-3 large-2 columns">
         <div class="c-staff">
-          <div class="staff-pic" style="background-image: url('<%= image_tag(user.avatar) %>')"></div>
+          <div class="staff-pic" style="background-image: url('<%= user.avatar(:thumb) %>')"></div>
           <p class="text -author"><%= user.display_name %></p>
           <p class="text -meta"><%= user.current_position %></p>
         </div>

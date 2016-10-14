@@ -17,6 +17,14 @@
         |
         <%= link_to "Unpublish", unpublish_publication_path(publication), method: :patch %>
       <% end %>
+      <% if can?(:make_featured, publication) && publication.not_featured? %>
+        |
+        <%= link_to "Make featured", make_featured_publication_path(publication), method: :patch %>
+      <% end %>
+      <% if can?(:remove_featured, publication) && publication.featured? %>
+        |
+        <%= link_to "Remove featured", remove_featured_publication_path(publication), method: :patch %>
+      <% end %>
     </li>
   <% end %>
 </ul>

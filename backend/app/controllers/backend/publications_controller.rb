@@ -5,7 +5,6 @@ module Backend
   class PublicationsController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_publication, except: [:index, :new, :create]
     before_action :set_users_and_partners, only: [:new, :edit]
 
     def index
@@ -38,28 +37,27 @@ module Backend
       end
     end
 
-    def unpublish
-      if @publication.try(:unpublish)
-        redirect_to publications_path
-      else
-        redirect_to publication_path(@publication)
-      end
-    end
-
     def publish
-      if @publication.try(:publish)
-        redirect_to publications_path
-      else
-        redirect_to publication_path(@publication)
-      end
+      @publication.try(:publish)
+      redirect_to publications_path
     end
 
+    def unpublish
+      @publication.try(:unpublish)
+      redirect_to publications_path
+    end
+
+    def make_featured
+      @publication.try(:make_featured)
+      redirect_to publications_path
+    end
+
+    def remove_featured
+      @publication.try(:remove_featured)
+      redirect_to publications_path
+    end
 
     private
-
-      def set_publication
-        @publication = Publication.find(params[:id])
-      end
 
       def publication_params
         params.require(:publication).permit!
