@@ -44,12 +44,12 @@ module FlickrService
     end
 
     def update_asset(media_content, options)
-      photo_file      = options['photo_file']      if options['photo_file'].present?
-      main_photo_file = options['main_photo_file'] if options['main_photo_file'].present?
-      photo_id        = options['photo_id']        if options['photo_id'].present?
-      photoset_id     = options['photoset_id']     if options['photoset_id'].present?
-      title           = options['title']           if options['title'].present?
-      description     = options['description']     if options['description'].present?
+      photo_file      = options['photo_file']              if options['photo_file'].present?
+      photo_id        = options['photo_id']                if options['photo_id'].present?
+      photoset_id     = options['photoset_id']             if options['photoset_id'].present?
+      title           = options['title']                   if options['title'].present?
+      description     = options['description']             if options['description'].present?
+      album_photos    = options['album_photos_attributes'] if options['album_photos_attributes'].present?
 
       if photo_id.present?
         if photo_file.present?
@@ -65,11 +65,11 @@ module FlickrService
       end
 
       if photoset_id.present?
-        if main_photo_file.present?
-          main_photo_id  = flickr.upload_photo(main_photo_file.tempfile.path, title: title, description: description)
-          main_photo_url = FlickRaw.url_o(flickr.photos.getInfo(photo_id: main_photo_id))
-          flickr.photosets.editPhotos(photoset_id: photoset_id, primary_photo_id: main_photo_id, photo_ids: main_photo_id)
-          media_content.update_album(main_photo_id: main_photo_id, main_photo_url: main_photo_url)
+        if album_photos.present?
+          # main_photo_id  = flickr.upload_photo(main_photo_file.tempfile.path, title: title, description: description)
+          # main_photo_url = FlickRaw.url_o(flickr.photos.getInfo(photo_id: main_photo_id))
+          # flickr.photosets.editPhotos(photoset_id: photoset_id, primary_photo_id: main_photo_id, photo_ids: main_photo_id)
+          # media_content.update_album(main_photo_id: main_photo_id, main_photo_url: main_photo_url)
         end
         begin
           flickr.photosets.editMeta(photoset_id: photoset_id, title: title, description: description)

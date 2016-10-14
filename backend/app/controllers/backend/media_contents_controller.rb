@@ -20,7 +20,7 @@ module Backend
     end
 
     def update
-      update_params = media_content_params.except(:photo_file, :main_photo_file, :album_photos_attributes)
+      update_params = media_content_params.except(:photo_file, :main_photo_file)
       if @media_content.update(update_params)
         madiable_params = media_content_params.merge(photo_id: @media_content.photo_id,
                                                      photoset_id: @media_content.photoset_id,
