@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161011162404) do
+ActiveRecord::Schema.define(version: 20161012130848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,9 @@ ActiveRecord::Schema.define(version: 20161011162404) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.boolean  "is_featured"
+    t.integer  "project_number"
+    t.text     "short_description"
   end
 
   create_table "events", force: :cascade do |t|
@@ -110,8 +113,9 @@ ActiveRecord::Schema.define(version: 20161011162404) do
   create_table "participants", force: :cascade do |t|
     t.integer  "content_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "is_lead",    default: false
   end
 
   create_table "partners", force: :cascade do |t|
@@ -167,6 +171,20 @@ ActiveRecord::Schema.define(version: 20161011162404) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  create_table "vacancies", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.boolean  "is_published", default: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  add_foreign_key "activity_news", "contents", column: "activity_id"
+  add_foreign_key "activity_news", "news_articles"
   add_foreign_key "albums", "media_contents"
+  add_foreign_key "content_partners", "contents"
+  add_foreign_key "content_partners", "partners"
+  add_foreign_key "participants", "contents"
+  add_foreign_key "participants", "users"
   add_foreign_key "photos", "media_contents"
 end

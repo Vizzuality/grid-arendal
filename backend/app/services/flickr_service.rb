@@ -117,7 +117,7 @@ module FlickrService
 
     def delete_asset(media_content)
       if media_content.is_photo?
-        flickr.photos.delete(photo_id: media_content.mediable_id)
+        flickr.photos.delete(photo_id: media_content.mediable_id) unless Album.is_cover_in_albums(media_content.mediable_id).any?
       elsif media_content.is_album?
         flickr.photosets.delete(photoset_id: media_content.mediable_id)
       end rescue nil
