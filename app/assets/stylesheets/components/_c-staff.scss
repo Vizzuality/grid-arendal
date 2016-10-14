@@ -8,6 +8,11 @@
     margin: 0 auto;
     border-radius: 50%;
     border: rem(3px) solid rgba($white, .3);
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 100%;
   }
 
   .-author {

@@ -27,6 +27,7 @@ namespace :import do
     puts "#{Activity.count}"
     Activity.limit(5).each do |t|
       t.is_published = true
+      t.is_featured = true
       t.save
     end
   end

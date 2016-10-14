@@ -1,4 +1,7 @@
 .c-slider {
+  position: relative;
+  width: 1000px;
+  margin: 0 auto;
   .frame {
     /**
      * (optional) wrapper width, specifies width of the slider frame.
@@ -17,17 +20,24 @@
   .slide {
     position: relative;
     display: inline-block;
-    // width: 33%;
-    margin: 0 1%;
-    display: inline-block;
+    width: 310px;
+    margin: 0 10px;
   }
 
   .slides {
-      display: inline-block;
+    display: inline-block;
   }
 
-  .slider-handlers {
-    width: 100%;
-    text-align: center;
+  .next, .prev {
+    @extend %centery;
+    z-index: 1;
+  }
+
+  .next {
+    right: -30px;
+  }
+
+  .prev {
+    left: -30px;
   }
 }
