@@ -1,0 +1,51 @@
+.l-single-article {
+
+  &.-publications {
+    background-color: rgba($color-3, .04);
+  }
+
+  &.-activities {
+    background-color: rgba($color-1, .08);
+  }
+
+  &.-news {
+    background-color: rgba($color-2, .08);
+  }
+
+  .l-main-content {
+    background-color: inherit;
+  }
+
+  .image {
+    background-image: image-url('bg5.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 580px;
+  }
+
+  .content {
+    background: $white;
+    padding: 40px 40px 40px 0;
+
+    .-title-single-alt {
+      margin-bottom: 20px;
+    }
+  }
+
+  .cover {
+    background-image: image-url('cover_demo.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
+  }
+
+  .title {
+    margin-top: 20px;
+  }
+
+
+}
