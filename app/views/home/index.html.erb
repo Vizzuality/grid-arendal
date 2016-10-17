@@ -42,95 +42,14 @@
   </div>
 <% end %>
 
-<section class="l-main-content">
-  <div class="row">
-    <div class="small-12 columns">
-      <div class="c-main-content-header">
-        <h2 class="text -title-block">Latest news</h2>
-        <p class="text -view-all">
-          <%= link_to news_index_path do %>
-            View all news
-            <svg class="icon -arrow">
-              <use xlink:href="#icon-arrow"></use>
-            </svg>
-          <% end %>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <ul class="row">
-    <% @articles.each do |article| %>
-      <li class="small-12 medium-3 columns">
-        <article class="c-card">
-          <div class="card-pic"></div>
-          <div class="card-descrition">
-            <h3 class="text -title-card"><%= article.title %></h3>
-            <p class="text -summary">This is some info related to this card</p>
-            <p class="text -meta">
-              <%= time_ago_in_words(article.publication_date) %> ago
-            </p>
-          </div>
-        </article>
-      </li>
-    <% end %>
-  </ul>
-</section>
+<%= render 'shared/news' %>
 
 <%= render 'shared/related_posts', collection: @activities, title: 'activities', link: activities_path %>
 
 <%= render 'shared/related_posts', collection: @publications, title: 'publications', link: publications_path %>
 
-<section class="l-main-content">
-  <div class="row">
-    <div class="small-12 columns">
-      <div class="c-main-content-header">
-        <h2 class="text -title-block">Featured Media</h2>
-        <p class="text -view-all">
-          <%= link_to root_path do %>
-            View all media
-            <svg class="icon -arrow">
-              <use xlink:href="#icon-arrow"></use>
-            </svg>
-          <% end %>
-        </p>
-      </div>
-    </div>
-  </div>
+<%= render 'shared/featured_media' %>
 
-  <!-- slider -->
-</section>
-
-
-<section class="l-main-content">
-  <div class="row">
-    <div class="small-12 columns">
-      <div class="c-main-content-header">
-        <h2 class="text -title-block">Staff</h2>
-        <p class="text -view-all">
-          <%= link_to staff_index_path do %>
-            Know our complete staff
-            <svg class="icon -arrow">
-              <use xlink:href="#icon-arrow"></use>
-            </svg>
-          <% end %>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <ul class="row">
-    <% @users.each do |user| %>
-      <li class="small-6 medium-3 large-2 columns">
-        <div class="c-staff">
-          <div class="staff-pic" style="background-image: url('<%= user.avatar(:thumb) %>')"></div>
-          <p class="text -author"><%= user.display_name %></p>
-          <p class="text -meta"><%= user.current_position %></p>
-        </div>
-      </li>
-    <% end %>
-  </ul>
-
-</section>
+<%= render 'shared/users' %>
 
 <%= render 'shared/footer' %>

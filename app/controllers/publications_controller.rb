@@ -8,7 +8,7 @@ class PublicationsController < ApplicationController
 
   def show
     @publications = Publication.order(:title).published
-    @current_users = @publication.users
+    @users = @publication.users
   end
 
   private
