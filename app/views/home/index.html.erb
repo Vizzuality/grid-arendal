@@ -77,95 +77,9 @@
   </ul>
 </section>
 
-<section class="l-main-content">
-  <div class="row">
-    <div class="small-12 columns">
-      <div class="c-main-content-header">
-        <h2 class="text -title-block">Featured activities</h2>
-        <p class="text -view-all">
-          <%= link_to activities_path do %>
-            View all activities
-            <svg class="icon -arrow">
-              <use xlink:href="#icon-arrow"></use>
-            </svg>
-          <% end %>
-        </p>
-      </div>
-    </div>
-  </div>
+<%= render 'shared/related_posts', collection: @activities, title: 'activities', link: activities_path %>
 
-  <div class="c-slider slider js_slider">
-    <span class="js_prev prev">
-      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z"></path></g></svg>
-    </span>
-    <div class="frame js_frame">
-      <ul class="slides js_slides">
-        <% @activities.each do |activity| %>
-          <li class="js_slide slide">
-            <%= link_to activity do %>
-              <article class="c-card">
-                <div class="card-pic" style="background-image: url('<%= activity.picture %>')"></div>
-                <div class="card-descrition">
-                  <h3 class="text -title-card"><%= activity.title %></h3>
-                  <p class="text -summary"><%= activity.short_description %></p>
-                  <p class="text -meta">1 week ago</p>
-                </div>
-              </article>
-            <% end %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-    <span class="js_next next">
-      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"></path></g></svg>
-    </span>
-  </div>
-</section>
-
-<section class="l-main-content">
-  <div class="row">
-    <div class="small-12 columns">
-      <div class="c-main-content-header">
-        <h2 class="text -title-block">Featured Publications</h2>
-        <p class="text -view-all">
-          <%= link_to publications_path do %>
-            View all publications
-            <svg class="icon -arrow">
-              <use xlink:href="#icon-arrow"></use>
-            </svg>
-          <% end %>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="c-slider slider js_slider">
-    <span class="js_prev prev">
-      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z"></path></g></svg>
-    </span>
-    <div class="frame js_frame">
-      <ul class="slides js_slides">
-        <% @publications.each do |publication| %>
-          <li class="js_slide slide">
-            <%= link_to publication do %>
-              <article class="c-card">
-                <div class="card-pic" style="background-image: url('<%= publication.picture %>')"></div>
-                <div class="card-descrition">
-                  <h3 class="text -title-card"><%= publication.title %></h3>
-                  <p class="text -summary"><%= publication.short_description %></p>
-                  <p class="text -meta">1 week ago</p>
-                </div>
-              </article>
-            <% end %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-    <span class="js_next next">
-      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"></path></g></svg>
-    </span>
-  </div>
-</section>
+<%= render 'shared/related_posts', collection: @publications, title: 'publications', link: publications_path %>
 
 <section class="l-main-content">
   <div class="row">
