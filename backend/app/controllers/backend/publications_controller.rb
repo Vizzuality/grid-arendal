@@ -39,22 +39,22 @@ module Backend
 
     def publish
       @publication.try(:publish)
-      redirect_to publications_path
+      redirect_to publications_url
     end
 
     def unpublish
       @publication.try(:unpublish)
-      redirect_to publications_path
+      redirect_to publications_url
     end
 
     def make_featured
       @publication.try(:make_featured)
-      redirect_to publications_path
+      redirect_to publications_url
     end
 
     def remove_featured
       @publication.try(:remove_featured)
-      redirect_to publications_path
+      redirect_to publications_url
     end
 
     private

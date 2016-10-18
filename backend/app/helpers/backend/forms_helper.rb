@@ -2,7 +2,7 @@
 module Backend
   module FormsHelper
     def is_cover_photo?(media_content, photo)
-      media_content.try(:main_photo_id) == photo.try(:photo_id) if media_content.try(:main_photo_id).present?
+      media_content.main_photo_id.present? && media_content.main_photo_id == photo.photo_id
     end
   end
 end

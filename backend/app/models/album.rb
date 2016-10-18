@@ -29,6 +29,4 @@ class Album < ApplicationRecord
 
   validates :photoset_id,  presence: true
   validates :photoset_url, presence: true
-
-  scope :is_cover_in_albums, -> (main_photo_id) { select(:main_photo_id).where(main_photo_id: main_photo_id) }
 end

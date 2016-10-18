@@ -11,10 +11,11 @@ module Mediable
     delegate :photoset_id, :photoset_url,
              :main_photo_url, :main_photo_id, to: :album, allow_nil: true
 
-    scope :photos,     -> { includes(:photo).joins(:photo)                 }
-    scope :albums,     -> { includes(:album).joins(:album)                 }
-    scope :not_photos, -> { where.not(id: Photo.select(:media_content_id)) }
-    scope :not_albums, -> { where.not(id: Album.select(:media_content_id)) }
+    scope :photos,             -> { includes(:photo).joins(:photo)                                                                       }
+    scope :albums,             -> { includes(:album).joins(:album)                                                                       }
+    scope :not_photos,         -> { where.not(id: joins(:photo).select(:media_content_id))                                               }
+    scope :not_albums,         -> { where.not(id: joins(:album).select(:media_content_id))                                               }
+    scope :is_cover_in_albums, -> (main_photo_id) { joins(:album).select(:main_photo_id).where(albums: { main_photo_id: main_photo_id }) }
 
     def set_photo(options)
       return false if is_photo? || is_album?

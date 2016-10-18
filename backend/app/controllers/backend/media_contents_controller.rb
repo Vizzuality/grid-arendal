@@ -48,25 +48,25 @@ module Backend
 
     def unpublish
       if @media_content.try(:unpublish)
-        redirect_to media_contents_path
+        redirect_to media_contents_url
       else
-        redirect_to media_content_path(@media_content)
+        redirect_to media_content_url(@media_content)
       end
     end
 
     def publish
       if @media_content.try(:publish)
-        redirect_to media_contents_path
+        redirect_to media_contents_url
       else
-        redirect_to media_content_path(@media_content)
+        redirect_to media_content_url(@media_content)
       end
     end
 
     def destroy
-      FlickrService.delete_asset(@media_content)
-      if Album.is_cover_in_albums(@media_content.mediable_id).any?
+      if MediaContent.is_cover_in_albums(@media_content.mediable_id).any?
         flash[:alert] = "Photo can't not be deleted! Photo is a cover of an album."
       else
+        FlickrService.delete_asset(@media_content)
         @media_content.destroy
       end
       redirect_to media_contents_url

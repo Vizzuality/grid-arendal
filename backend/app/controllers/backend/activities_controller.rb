@@ -39,22 +39,22 @@ module Backend
 
     def publish
       @activity.try(:publish)
-      redirect_to activities_path
+      redirect_to activities_url
     end
 
     def unpublish
       @activity.try(:unpublish)
-      redirect_to activities_path
+      redirect_to activities_url
     end
 
     def make_featured
       @activity.try(:make_featured)
-      redirect_to activities_path
+      redirect_to activities_url
     end
 
     def remove_featured
       @activity.try(:remove_featured)
-      redirect_to activities_path
+      redirect_to activities_url
     end
 
     private

@@ -34,7 +34,7 @@ module Backend
     def create
       @user = User.create_with_password(user_params)
       if @user.save
-        redirect_to users_path
+        redirect_to users_url
       else
         render :new
       end
@@ -42,7 +42,7 @@ module Backend
 
     def deactivate
       if @user.try(:deactivate)
-        redirect_to users_path
+        redirect_to users_url
       else
         redirect_to user_path(@user)
       end
@@ -50,7 +50,7 @@ module Backend
 
     def activate
       if @user.try(:activate)
-        redirect_to users_path
+        redirect_to users_url
       else
         redirect_to user_path(@user)
       end
@@ -58,19 +58,19 @@ module Backend
 
     def make_admin
       if @user.try(:make_admin)
-        redirect_to users_path
+        redirect_to users_url
       end
     end
 
     def make_publisher
       if @user.try(:make_publisher)
-        redirect_to users_path
+        redirect_to users_url
       end
     end
 
     def make_contributor
       if @user.try(:make_contributor)
-        redirect_to users_path
+        redirect_to users_url
       end
     end
 

@@ -30,5 +30,5 @@ class MediaContent < ApplicationRecord
   validates :title, presence: true
 
   scope :includes_mediable, -> { includes([:photo, :album]) }
-  scope :order_by_title,    -> { order('title ASC') }
+  scope :order_by_title,    -> { order('title ASC')         }
 end
