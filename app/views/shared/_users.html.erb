@@ -1,0 +1,31 @@
+<section class="l-main-content">
+
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="c-main-content-header">
+        <h2 class="text -title-block">Staff</h2>
+        <p class="text -view-all">
+          <%= link_to staff_index_path do %>
+            Know our complete staff
+            <svg class="icon -arrow">
+              <use xlink:href="#icon-arrow"></use>
+            </svg>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <ul class="row">
+    <% @users.each do |user| %>
+      <li class="small-6 medium-3 large-2 columns">
+        <div class="c-staff">
+          <div class="staff-pic" style="background-image: url('<%= user.avatar(:thumb) %>')"></div>
+          <p class="text -author"><%= user.display_name %></p>
+          <p class="text -meta"><%= user.current_position %></p>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+
+</section>

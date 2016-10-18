@@ -1,0 +1,52 @@
+<section class="l-main-content">
+
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="c-main-content-header">
+        <h2 class="text -title-block">
+          <% if current_page?('/') %>
+            Featued <%= title %>
+          <% else %>
+            Related <%= title %>
+          <% end %>
+        </h2>
+        <p class="text -view-all">
+          <%= link_to link do %>
+            View all <%= title %>
+            <svg class="icon -arrow">
+              <use xlink:href="#icon-arrow"></use>
+            </svg>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="c-slider slider js_slider">
+    <span class="js_prev prev">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M302.67 90.877l55.77 55.508L254.575 250.75 358.44 355.116l-55.77 55.506L143.56 250.75z"></path></g></svg>
+    </span>
+    <div class="frame js_frame">
+      <ul class="slides js_slides">
+        <% collection.each do |post| %>
+          <li class="js_slide slide">
+            <%= link_to post do %>
+              <article class="c-card">
+                <div class="card-pic" style="background-image: url('<%= post.picture %>')"></div>
+                <div class="card-descrition">
+                  <h3 class="text -title-card"><%= post.title %></h3>
+                  <p class="text -summary"><%= post.short_description %></p>
+                  <p class="text -meta">1 week ago</p>
+                </div>
+              </article>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <span class="js_next next">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 501.5 501.5"><g><path fill="#2E435A" d="M199.33 410.622l-55.77-55.508L247.425 250.75 143.56 146.384l55.77-55.507L358.44 250.75z"></path></g></svg>
+    </span>
+  </div>
+
+</section>

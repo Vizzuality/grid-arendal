@@ -1,17 +1,82 @@
-<h2><%= @publication.title %></h2>
+<div class="l-header-single -publications">
+  <div class="overlay"></div>
+  <%= render 'shared/menu' %>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="title-block">
+        <div class="c-breadcrumbs">
+          <a href="/">
+            <svg class="icon-home">
+              <use xlink:href="#icon-breadcrumb-home"></use>
+            </svg>
+          </a>
+          <svg class="icon">
+            <use xlink:href="#icon-breadcrumb-chevron-right"></use>
+          </svg>
+          <%= link_to "Publications", publications_path, class: "text -meta" %>
+          <svg class="icon">
+            <use xlink:href="#icon-breadcrumb-chevron-right"></use>
+          </svg>
+          <span class="text -meta"><%= @publication.title %></span>
+        </div>
+        <div class="share">
+          <svg class="icon">
+            <use xlink:href="#icon-share"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= @publication.description %>
+<div class="l-single-article -publications">
 
-<h3>Staff involved</h3>
-<ul>
-  <% @publication.users.each do |user| %>
-    <li><%= user.display_name %></li>
-  <% end %>
-</ul>
+  <div class="row">
+    <div class="small-12 column">
+      <div class="image"></div>
+    </div>
+  </div>
 
-<h3>Partners</h3>
-<ul>
-  <% @publication.partners.each do |partner| %>
-    <li><%= link_to partner.name, partner.web_url %></li>
-  <% end %>
-</ul>
+  <div class="row">
+    <div class="small-12 medium-6 column">
+      <div class="content">
+        <h2 class="text -title-single-alt"><%= @publication.title %></h2>
+        <div class="text -body-single"><%= @publication.description %></div>
+      </div>
+    </div>
+
+    <div class="small-6 medium-2 columns">
+      <div class="cover">
+      </div>
+    </div>
+    <div class="small-6 medium-4 columns">
+      <div class="title text -meta">
+        Download
+      </div>
+      <div class="btn -dark">
+        pdf
+      </div>
+      <div class="btn -dark">
+        e-book
+      </div>
+      <div class="btn">
+        graphics
+      </div>
+    </div>
+  </div>
+
+  <ul>
+    <% @publication.partners.each do |partner| %>
+      <li><%= link_to partner.name, partner.web_url %></li>
+    <% end %>
+  </ul>
+
+  <%= render 'shared/users' %>
+
+  <%= render 'shared/posts', collection: @publications, title: 'publications', link: publications_path %>
+
+  <%= render 'shared/media' %>
+
+</div>
+
+<%= render 'shared/footer' %>

@@ -1,0 +1,34 @@
+<section class="l-main-content">
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="c-main-content-header">
+        <h2 class="text -title-block">Latest news</h2>
+        <p class="text -view-all">
+          <%= link_to news_index_path do %>
+            View all news
+            <svg class="icon -arrow">
+              <use xlink:href="#icon-arrow"></use>
+            </svg>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <ul class="row">
+    <% @articles.each do |article| %>
+      <li class="small-12 medium-3 columns">
+        <article class="c-card">
+          <div class="card-pic"></div>
+          <div class="card-descrition">
+            <h3 class="text -title-card"><%= article.title %></h3>
+            <p class="text -summary">This is some info related to this card</p>
+            <p class="text -meta">
+              <%= time_ago_in_words(article.publication_date) %> ago
+            </p>
+          </div>
+        </article>
+      </li>
+    <% end %>
+  </ul>
+</section>
