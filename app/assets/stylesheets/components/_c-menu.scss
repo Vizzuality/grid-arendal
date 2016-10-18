@@ -28,20 +28,20 @@
     }
   }
 
+  .logo-menu {
+
+    .icon {
+      width: rem(100px);
+      height: rem(40px);
+    }
+  }
+
   ul {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     list-style: none;
-
-    .logo-menu {
-
-      .icon {
-        width: 100px;
-        height: 40px;
-      }
-    }
 
     li {
       margin-right: rem(40px);
