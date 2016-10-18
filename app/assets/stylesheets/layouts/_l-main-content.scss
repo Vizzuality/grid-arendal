@@ -1,9 +1,10 @@
 .l-main-content {
-  padding: rem(35px) 0 rem(50px);
+  padding: rem(35px) 0 rem(0px);
   background-color: rgba($color-1, .1);
 
   @media screen and (min-width: $screen-m) {
     border-bottom: rem(1px) solid $white;
+    padding: rem(35px) 0 rem(50px);
   }
 
   &.-publications {

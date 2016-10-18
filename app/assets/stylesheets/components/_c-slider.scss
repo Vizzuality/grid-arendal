@@ -21,15 +21,24 @@
 
   .slide {
     display: inline-block;
-    width: 310px;
+    width: 270px;
     margin: 0 10px;
     vertical-align: top;
+
+    @media (min-width: $screen-m){
+      width: 310px;
+    }
   }
 
 
   .next, .prev {
     @extend %centery;
     z-index: 1;
+    display: none;
+
+    @media (min-width: $screen-m){
+      display: block;
+    }
   }
 
   .next {
