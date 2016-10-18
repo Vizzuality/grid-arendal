@@ -36,7 +36,7 @@
     z-index: 1;
     display: none;
 
-    @media (min-width: $screen-m){
+    @media (min-width: $screen-l){
       display: block;
     }
   }

@@ -5,11 +5,11 @@
   }
 
   &.-activities {
-    background-color: rgba($color-1, .08);
+    background-color: rgba($color-1, .04);
   }
 
   &.-news {
-    background-color: rgba($color-2, .08);
+    background-color: rgba($color-2, .04);
   }
 
   .l-main-content {
@@ -71,16 +71,18 @@
   .sidebar {
     width: 100%;
 
-    &.-publications {
-      background-color: rgba($color-3, .04);
-    }
+    @media screen and (max-width: 1023px) {
+      &.-publications {
+        background-color: rgba($color-3, .04);
+      }
 
-    &.-activities {
-      background-color: rgba($color-1, .08);
-    }
+      &.-activities {
+        background-color: rgba($color-1, .04);
+      }
 
-    &.-news {
-      background-color: rgba($color-2, .08);
+      &.-news {
+        background-color: rgba($color-2, .04);
+      }
     }
 
     @media screen and (min-width: $screen-l) {
