@@ -21,6 +21,10 @@
   .title-block {
     position: relative;
 
+    .-title-library{
+      margin: rem(10px) 0;
+    }
+
     .-summary {
       max-width: rem(500px);
     }
