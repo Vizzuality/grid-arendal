@@ -22,19 +22,21 @@
     },
 
     _listeners: function() {
-      this.status.on('change:hidden', this.changedStatus, this);
+      this.status.on('change:hidden', this.onClickChangeStatus, this);
     },
 
-    onClickToggleMenu: function() {
+    onClickChangeStatus: function() {
       var hidden = this.status.get('hidden');
       this.status.set('hidden', !hidden);
     },
 
-    changedStatus: function() {
-      this.$('html').toggleClass('-menu-open');
-      this.$('body').toggleClass('-menu-open');
-      this.$('.c-mobile-menu').toggleClass('-is-open');
-      this.$('.c-menu').toggleClass('-is-open');
+    toggleMenuPanel: function() {
+      var hidden = !!this.model.get('hidden');
+
+      this.$('html').toggleClass('-menu-open', !hidden);
+      this.$('body').toggleClass('-menu-open', !hidden);
+      this.$('.c-mobile-menu').toggleClass('-is-open', !hidden);
+      this.$('.c-menu').toggleClass('-is-open', !hidden);
     }
   });
 
