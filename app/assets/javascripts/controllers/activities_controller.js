@@ -4,14 +4,14 @@
 
   App.Controller = App.Controller || {};
 
-  App.Controller.Publications = App.Controller.Page.extend({
+  App.Controller.Activities = App.Controller.Page.extend({
 
     index: function(params) {
-      console.log('publications#index');
+      console.log('activities#index');
     },
 
     show: function(params) {
-      console.log('publications#show');
+      console.log('activities#show');
       this.initSliders();
     },
 

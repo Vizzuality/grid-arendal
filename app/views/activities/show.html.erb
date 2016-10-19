@@ -1,24 +1,87 @@
-<h2><%= @activity.title %></h2>
+<div class="l-header-single -activities">
+  <div class="overlay"></div>
+  <%= render 'shared/menu' %>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="title-block">
+        <div class="c-breadcrumbs">
+          <a href="/">
+            <svg class="icon-home">
+              <use xlink:href="#icon-breadcrumb-home"></use>
+            </svg>
+          </a>
+          <svg class="icon">
+            <use xlink:href="#icon-breadcrumb-chevron-right"></use>
+          </svg>
+          <%= link_to "Activities", activities_path, class: "text -meta" %>
+          <svg class="icon">
+            <use xlink:href="#icon-breadcrumb-chevron-right"></use>
+          </svg>
+          <span class="text -meta"><%= @activity.title %></span>
+        </div>
+        <div class="share">
+          <svg class="icon">
+            <use xlink:href="#icon-share"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= @activity.description %>
+<div class="l-single-article -activities">
 
-<h3>Related news</h3>
-<ul>
-  <% @activity.news_articles.each do |article| %>
-    <li><%= link_to article.title, news_path(article) %></li>
-  <% end %>
-</ul>
+  <div class="row">
+    <div class="small-12 column">
+      <div class="image"></div>
+    </div>
+  </div>
 
-<h3>Staff involved</h3>
-<ul>
-  <% @activity.users.each do |u| %>
-    <li><%= u.display_name %></li>
-  <% end %>
-</ul>
+  <div class="content-wrapper">
 
-<h3>Partners</h3>
-<ul>
-  <% @activity.partners.each do |partner| %>
-    <li><%= link_to partner.name, partner.web_url %></li>
-  <% end %>
-</ul>
+    <div class="content">
+      <h2 class="text -title-single-alt"><%= @activity.title %></h2>
+      <div class="text -body-single"><%= @activity.description %></div>
+    </div>
+
+    <div class="sidebar -activities">
+      <div class="title text -title-block mobile">
+        Download
+      </div>
+      <div class="meta">
+        <div class="row">
+          <div class="small-6 medium-3 large-4 columns">
+        <div class="cover">
+        </div>
+      </div>
+        <div class="small-6 medium-9 large-8 columns">
+          <div class="title text -meta desktop">
+            Download
+          </div>
+          <div class="download-links">
+            <div class="btn -dark">
+              pdf
+            </div>
+            <div class="btn -dark">
+              e-book
+            </div>
+            <div class="btn">
+              graphics
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  </div>
+
+  <%= render 'shared/users' %>
+
+  <%= render 'shared/posts', collection: @activities, title: 'activities', link: activities_path %>
+
+  <%= render 'shared/media' %>
+
+</div>
+
+<%= render 'shared/footer' %>
