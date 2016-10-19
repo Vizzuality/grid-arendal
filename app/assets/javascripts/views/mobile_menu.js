@@ -6,23 +6,35 @@
 
     el: 'body',
 
-    initialize: function() {
-      $('html').removeClass('-menu-open');
-      $('body').removeClass('-menu-open');
-      $('.c-mobile-menu').removeClass('-is-open');
-      $('.c-menu').removeClass('-is-open');
-    },
-
     events: {
-      'click .btn-mobile-menu' : 'toggleMenu',
-      'click .btn-close' : 'toggleMenu'
+      'click .btn-mobile-menu' : 'onClickToggleMenu',
+      'click .btn-close' : 'onClickToggleMenu'
     },
 
-    toggleMenu: function() {
-      $('html').toggleClass('-menu-open');
-      $('body').toggleClass('-menu-open');
-      $('.c-mobile-menu').toggleClass('-is-open');
-      $('.c-menu').toggleClass('-is-open');
+    initialize: function() {
+      this.status =  new (Backbone.Model.extend({
+        defaults: {
+          hidden: true
+        }
+      }));
+
+      this._listeners();
+    },
+
+    _listeners: function() {
+      this.status.on('change:hidden', this.changedStatus, this);
+    },
+
+    onClickToggleMenu: function() {
+      var hidden = this.status.get('hidden');
+      this.status.set('hidden', !hidden);
+    },
+
+    changedStatus: function() {
+      this.$('html').toggleClass('-menu-open');
+      this.$('body').toggleClass('-menu-open');
+      this.$('.c-mobile-menu').toggleClass('-is-open');
+      this.$('.c-menu').toggleClass('-is-open');
     }
   });
 
