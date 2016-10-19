@@ -4,12 +4,16 @@
   justify-content: space-between;
   flex-direction: row;
   height: rem(70px);
-  padding: 0 rem(15px);
+  padding: 0 rem(5px);
   z-index: 10;
   position: relative;
 
   @media screen and (min-width: $screen-m) {
     padding: 0;
+  }
+
+  &.-is-open {
+    opacity: 0;
   }
 
   .mobile {
