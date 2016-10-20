@@ -1,6 +1,17 @@
 $pics: 'pic-1', 'pic-2', 'pic-3', 'pic-4';
 
+%step {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: rem(3px);
+  background: $white;
+}
+
 .c-card {
+  position: relative;
   margin-top: rem(20px);
 
   .card-pic {
@@ -17,6 +28,9 @@ $pics: 'pic-1', 'pic-2', 'pic-3', 'pic-4';
       }
     }
 
+    .-media-library & {
+      height: rem(200px);
+    }
   }
 
   .card-descrition {
@@ -31,5 +45,23 @@ $pics: 'pic-1', 'pic-2', 'pic-3', 'pic-4';
   .-meta {
     margin-top: rem(13px);
     text-align: right;
+  }
+
+  &.-card-steps {
+    &:before {
+      @extend %step;
+      width: calc(100% -  #{rem(10px)});
+      bottom: rem(-6px);
+    }
+
+    &:after {
+      @extend %step;
+      width: calc(100% -  #{rem(20px)});
+      bottom: rem(-12px);
+    }
+  }
+
+  .masonry-layout & {
+    margin-top: 0;
   }
 }
