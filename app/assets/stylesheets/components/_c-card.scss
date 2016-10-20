@@ -43,13 +43,13 @@
     &:before {
       @extend %step;
       width: calc(100% -  #{rem(10px)});
-      bottom: -6px;
+      bottom: rem(-6px);
     }
 
     &:after {
       @extend %step;
       width: calc(100% -  #{rem(20px)});
-      bottom: -12px;
+      bottom: rem(-12px);
     }
   }
 
