@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   margin: auto;
-  height: 3px;
+  height: rem(3px);
   background: $white;
 }
 
@@ -45,7 +45,7 @@
       width: calc(100% -  #{rem(10px)});
       bottom: -6px;
     }
-    
+
     &:after {
       @extend %step;
       width: calc(100% -  #{rem(20px)});
