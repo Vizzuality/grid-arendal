@@ -7,8 +7,8 @@
     el: 'body',
 
     events: {
-      'click .btn-mobile-menu' : 'onClickToggleMenu',
-      'click .btn-close' : 'onClickToggleMenu'
+      'click .js-btn-mobile-menu' : 'onClickChangeStatus',
+      'click .js-btn-close' : 'onClickChangeStatus'
     },
 
     initialize: function() {
@@ -22,7 +22,7 @@
     },
 
     _listeners: function() {
-      this.status.on('change:hidden', this.onClickChangeStatus, this);
+      this.status.on('change:hidden', this.toggleMenuPanel, this);
     },
 
     onClickChangeStatus: function() {
@@ -31,7 +31,7 @@
     },
 
     toggleMenuPanel: function() {
-      var hidden = !!this.model.get('hidden');
+      var hidden = !!this.status.get('hidden');
 
       this.$('html').toggleClass('-menu-open', !hidden);
       this.$('body').toggleClass('-menu-open', !hidden);
