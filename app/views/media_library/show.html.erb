@@ -1,1 +1,80 @@
-<p>Hello from media library show</p>
+<div class="l-header-single -media-library">
+  <div class="overlay"></div>
+  <%= render 'shared/menu' %>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="title-block">
+        <div class="c-breadcrumbs">
+          <a href="/">
+            <svg class="icon-home">
+              <use xlink:href="#icon-breadcrumb-home"></use>
+            </svg>
+          </a>
+          <svg class="icon">
+            <use xlink:href="#icon-breadcrumb-chevron-right"></use>
+          </svg>
+          <%= link_to "Media library", media_library_path, class: "text -meta" %>
+          <svg class="icon">
+            <use xlink:href="#icon-breadcrumb-chevron-right"></use>
+          </svg>
+          <span class="text -meta">Lorem fistrum te va a hasé pupitaa a peich</span>
+        </div>
+        <div class="share">
+          <svg class="icon">
+            <use xlink:href="#icon-share"></use>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="l-single-article -publications">
+
+  <div class="row">
+    <div class="small-12 column">
+      <div class="image"></div>
+    </div>
+  </div>
+
+  <div class="content-wrapper">
+
+    <div class="content">
+      <h2 class="text -title-single-alt">Lorem fistrum te va a hasé pupitaa</h2>
+      <div class="text -body-single">Lorem fistrum te va a hasé pupitaa a peich diodenoo papaar papaar ese pedazo de quietooor a gramenawer no puedor te va a hasé pupitaa hasta luego Lucas.</div>
+    </div>
+
+    <div class="sidebar -publications">
+      <div class="title text -title-block mobile">
+        Download
+      </div>
+      <div class="meta">
+        <div class="row">
+          <div class="small-6 medium-3 large-4 columns">
+        <div class="cover">
+        </div>
+      </div>
+        <div class="small-6 medium-9 large-8 columns">
+          <div class="title text -meta desktop">
+            Download
+          </div>
+          <div class="download-links">
+            <div class="btn -dark">
+              pdf
+            </div>
+            <div class="btn -dark">
+              e-book
+            </div>
+            <div class="btn">
+              graphics
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  </div>
+
+</div>
+
+<%= render 'shared/footer' %>

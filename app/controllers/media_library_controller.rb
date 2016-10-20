@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 class MediaLibraryController < ApplicationController
+  before_action :set_media, only: [:show]
 
   def index
     @publications = Publication.order(:title).published
@@ -7,5 +8,11 @@ class MediaLibraryController < ApplicationController
 
   def show
   end
+
+  private
+
+    def set_media
+      
+    end
 
 end
