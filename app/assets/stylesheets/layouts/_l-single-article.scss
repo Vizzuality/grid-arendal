@@ -16,20 +16,6 @@
     background-color: inherit;
   }
 
-  .image {
-    background-image: image-url('bg5.jpg');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: rem(580px);
-    z-index: 10;
-    display: none;
-
-    @media screen and (min-width: $screen-m) {
-      display: block;
-    }
-  }
-
   .content-wrapper {
     display: flex;
     flex-direction: column;
