@@ -17,20 +17,62 @@
     </div>
   </div>
 
-  <ul class="row">
-    <% @articles.each do |article| %>
+  <!-- <ul class="row">
+    <%# @articles.each do |article| %>
       <li class="small-12 medium-3 columns">
         <article class="c-card">
           <div class="card-pic"></div>
           <div class="card-descrition">
-            <h3 class="text -title-card"><%= article.title %></h3>
+            <h3 class="text -title-card"><%#= article.title %></h3>
             <p class="text -summary">This is some info related to this card</p>
             <p class="text -meta">
-              <%= time_ago_in_words(article.publication_date) %> ago
+              <%#= time_ago_in_words(article.publication_date) %> ago
             </p>
           </div>
         </article>
       </li>
-    <% end %>
+    <%# end %>
+  </ul> -->
+
+  <ul class="row">
+    <li class="small-12 medium-3 columns">
+      <article class="c-card">
+        <div class="card-pic pic-1"></div>
+        <div class="card-descrition">
+          <h3 class="text -title-card">Tackling plastic pollution should begin at the source, says new report</h3>
+          <p class="text -meta">2 days ago</p>
+        </div>
+      </article>
+    </li>
+
+    <li class="small-12 medium-3 columns">
+      <article class="c-card">
+        <div class="card-pic pic-2"></div>
+        <div class="card-descrition">
+          <h3 class="text -title-card">Is burning fossil fuel like smoking tobacco?</h3>
+          <p class="text -meta">3 days ago</p>
+        </div>
+      </article>
+    </li>
+
+    <li class="small-12 medium-3 columns">
+      <article class="c-card">
+        <div class="card-pic pic-3"></div>
+        <div class="card-descrition">
+          <h3 class="text -title-card">A picture is worth (more than) 1000 words</h3>
+          <p class="text -meta">1 week ago</p>
+        </div>
+      </article>
+    </li>
+
+    <li class="small-12 medium-3 columns">
+      <article class="c-card">
+        <div class="card-pic pic-4"></div>
+        <div class="card-descrition">
+          <h3 class="text -title-card">European Ministers target air pollution, focus on green economy at environment conference</h3>
+          <p class="text -meta">1 week ago</p>
+        </div>
+      </article>
+    </li>
   </ul>
 </section>

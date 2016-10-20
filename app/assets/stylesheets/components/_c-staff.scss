@@ -1,3 +1,5 @@
+$pics: 'pic-1', 'pic-2', 'pic-3', 'pic-4', 'pic-5', 'pic-6';
+
 .c-staff {
   margin-top: rem(16px);
   text-align: center;
@@ -13,6 +15,12 @@
     background-size: cover;
     background-position: center;
     border-radius: 100%;
+
+    @for $i from 1 through length($pics) {
+      &.#{nth($pics, $i)} {
+        background-image: image-url('staff/#{nth($pics, $i)}.jpg');
+      }
+    }
   }
 
   .-author {

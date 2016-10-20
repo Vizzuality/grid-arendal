@@ -10,11 +10,13 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 61, 83, 0.6);
+  background: rgba(0, 61, 83, 0.8);
   cursor: pointer;
 
-  &.-show {
+  &.-is-open {
     display: flex;
+    transition: all 0.3s ease-in 0.2s;
+    // transform: translatey(100%);
   }
 
   ul {
@@ -24,6 +26,8 @@
     align-items: flex-start;
     list-style: none;
     z-index: 10;
+    position: absolute;
+    top: rem(25px);
 
     li {
       margin-right: rem(40px);
