@@ -19,6 +19,15 @@
     background-color: rgba($color-2, .08);
   }
 
+  &.-media-library {
+    padding: rem(37px) 0 0;
+    background-color: rgba($color-2, .1);
+
+    @media screen and (min-width: $screen-m) {
+      padding: rem(37px) 0 rem(48px);
+    }
+  }
+
   .-fix {
 
     @media screen and (min-width: $screen-m) {
@@ -27,29 +36,13 @@
     }
   }
 
-  .masonry-layout {
-    column-count: 1;
-    column-gap: 0;
+  &.-publications .masonry-layout,
+  &.-activities .masonry-layout,
+  &.-news .masonry-layout {
+    @include masonry-layout(1, 0, 2, 3, rem(10px) 0, rem(10px));
+  }
 
-    @media screen and (min-width: $screen-m) {
-      column-count: 2;
-    }
-
-    @media screen and (min-width: $screen-l) {
-      column-count: 3;
-    }
-
-    .item {
-      break-inside: avoid;
-      padding: rem(10px) 0;
-
-      @media screen and (min-width: $screen-m) {
-        padding: rem(10px);
-      }
-    }
-
-    .c-card {
-      margin-top: 0;
-    }
+  &.-media-library .masonry-layout {
+    @include masonry-layout(1, 0, 3, 4, rem(8px) 0 rem(12px) 0, rem(8px) rem(10px) rem(12px) rem(10px));
   }
 }
