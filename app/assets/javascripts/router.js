@@ -15,6 +15,9 @@
       'publications': 'Publications#index',
       'publications/:id': 'Publications#show'
 
+      // 'activities': 'Activities#index',
+      // 'activities/:id': 'Activities#show'
+
 
       // Here you have an example
       // 'countries': 'Countries#index',
