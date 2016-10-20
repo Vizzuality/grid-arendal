@@ -2,6 +2,7 @@
 class MediaLibraryController < ApplicationController
 
   def index
+    @publications = Publication.order(:title).published
   end
 
   def show

@@ -7,6 +7,29 @@
   @return ($px / $base) * 1rem;
 }
 
+//Structure mixins
+@mixin masonry-layout($column-count, $column-gap, $column-count-screen-m, $column-count-screen-l, $item-padding, $item-padding-screen-m) {
+  column-count: $column-count;
+  column-gap: $column-gap;
+
+  @media screen and (min-width: $screen-m) {
+    column-count: $column-count-screen-m;
+  }
+
+  @media screen and (min-width: $screen-l) {
+    column-count: $column-count-screen-l;
+  }
+
+  .item {
+    break-inside: avoid;
+    padding: $item-padding;
+
+    @media screen and (min-width: $screen-m) {
+      padding: $item-padding-screen-m;
+    }
+  }
+}
+
 /*
  * SHAPES
  */
