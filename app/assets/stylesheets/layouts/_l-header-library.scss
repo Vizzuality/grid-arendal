@@ -5,6 +5,7 @@
   display: block;
   position: relative;
   padding-bottom: rem(50px);
+  min-height: rem(280px);
 
   &.-publications {
     background-color: rgba($color-3, 0.04);
