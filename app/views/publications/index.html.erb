@@ -24,7 +24,7 @@
     <div class="small-12 small-centered columns -fix">
       <div class="masonry-layout">
         <% @publications.each do |publication| %>
-          <%= link_to publication do %>
+          <%= link_to publication_path(publication) do %>
             <div class="item">
               <article class="c-card">
                 <div class="card-pic" style="background-image: url('<%= publication.picture %>')"></div>
