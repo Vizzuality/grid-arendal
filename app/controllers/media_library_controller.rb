@@ -8,4 +8,8 @@ class MediaLibraryController < ApplicationController
   def show
   end
 
+  private
+    def set_publication
+      @publication = Publication.find(params[:id])
+    end
 end
