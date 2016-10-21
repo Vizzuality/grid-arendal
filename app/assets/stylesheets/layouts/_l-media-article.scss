@@ -3,4 +3,23 @@
   &.-media-library {
     background-color: rgba($color-2, 0.05);
   }
+
+  .-title-single {
+    line-height: 1.15;
+  }
+
+  .content {
+    padding: rem(20px);
+    padding-top: rem(40px);
+
+    @media screen and (min-width: $screen-s) {
+      padding: rem(30px);
+      padding-top: rem(40px);
+    }
+
+    @media screen and (min-width: $screen-l) {
+      padding: rem(40px) rem(40px) rem(40px) 0;
+      width: 50%;
+    }
+  }
 }
