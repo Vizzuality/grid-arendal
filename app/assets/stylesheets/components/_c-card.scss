@@ -1,3 +1,5 @@
+$pics: 'pic-1', 'pic-2', 'pic-3', 'pic-4';
+
 %step {
   content: "";
   position: absolute;
@@ -19,6 +21,12 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+
+    @for $i from 1 through length($pics) {
+      &.#{nth($pics, $i)} {
+        background-image: image-url('news/#{nth($pics, $i)}.jpg');
+      }
+    }
 
     .-media-library & {
       height: rem(200px);

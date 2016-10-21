@@ -64,7 +64,7 @@
       margin-bottom: rem(-80px);
       position: absolute;
       bottom: 0;
-      z-index: 10;
+      z-index: 20;
 
       @media screen and (min-width: $screen-m) {
         background-color: transparent;

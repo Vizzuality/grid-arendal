@@ -64,6 +64,7 @@
       right: rem(25px);
       bottom: rem(-25px);
       cursor: pointer;
+      z-index: 20;
 
       @media screen and (min-width: $screen-m) {
         right: rem(-25px);
