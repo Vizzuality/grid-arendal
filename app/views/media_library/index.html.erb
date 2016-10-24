@@ -22,7 +22,7 @@
     <div class="small-12 small-centered columns -fix">
       <div class="masonry-layout">
         <% @publications.each do |publication| %>
-          <%= link_to publication do %>
+          <%= link_to publication_path(publication) do %>
             <div class="item">
               <article class="c-card -card-steps">
                 <div class="card-pic" style="background-image: url('http://www.audubon.org/sites/default/files/styles/engagement_card/public/sfw_apa_2013_28342_232388_briankushner_blue_jay_kk_high.jpg')"></div>
