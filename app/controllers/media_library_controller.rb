@@ -11,6 +11,5 @@ class MediaLibraryController < ApplicationController
 
   private
     def set_media
-      @publication = Publication.find(params[:id])
     end
 end
