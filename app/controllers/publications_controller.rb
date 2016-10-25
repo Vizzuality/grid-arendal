@@ -7,10 +7,11 @@ class PublicationsController < ApplicationController
   end
 
   def show
+    @publications = Publication.order(:title).published
+    @users = @publication.users
   end
 
   private
-
     def set_publication
       @publication = Publication.find(params[:id])
     end

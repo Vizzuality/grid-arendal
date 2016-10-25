@@ -8,11 +8,11 @@
         <div class="text -summary">
           GRID-Arendal has produced publications, in both printed and electronic formats, on a wide range of issues related to the environment.
         </div>
-        <div class="share">
+        <!-- <div class="share">
           <svg class="icon">
             <use xlink:href="#icon-share"></use>
           </svg>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
@@ -24,7 +24,7 @@
     <div class="small-12 small-centered columns -fix">
       <div class="masonry-layout">
         <% @publications.each do |publication| %>
-          <%= link_to publication do %>
+          <%= link_to publication_path(publication) do %>
             <div class="item">
               <article class="c-card">
                 <div class="card-pic" style="background-image: url('<%= publication.picture %>')"></div>

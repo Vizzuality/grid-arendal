@@ -1,4 +1,17 @@
+$pics: 'pic-1', 'pic-2', 'pic-3', 'pic-4';
+
+%step {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: rem(3px);
+  background: $white;
+}
+
 .c-card {
+  position: relative;
   margin-top: rem(20px);
 
   .card-pic {
@@ -8,6 +21,16 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+
+    @for $i from 1 through length($pics) {
+      &.#{nth($pics, $i)} {
+        background-image: image-url('news/#{nth($pics, $i)}.jpg');
+      }
+    }
+
+    .-media-library & {
+      height: rem(200px);
+    }
   }
 
   .card-descrition {
@@ -22,5 +45,23 @@
   .-meta {
     margin-top: rem(13px);
     text-align: right;
+  }
+
+  &.-card-steps {
+    &:before {
+      @extend %step;
+      width: calc(100% -  #{rem(10px)});
+      bottom: rem(-6px);
+    }
+
+    &:after {
+      @extend %step;
+      width: calc(100% -  #{rem(20px)});
+      bottom: rem(-12px);
+    }
+  }
+
+  .masonry-layout & {
+    margin-top: 0;
   }
 }

@@ -5,6 +5,7 @@
   display: block;
   position: relative;
   padding-bottom: rem(50px);
+  min-height: rem(280px);
 
   &.-publications {
     background-color: rgba($color-3, 0.04);
@@ -18,8 +19,16 @@
     background-color: rgba($color-2, 0.04);
   }
 
+  &.-media-library {
+    background-color: rgba($color-2, 0.05);
+  }
+
   .title-block {
     position: relative;
+
+    .-title-library{
+      margin: rem(10px) 0;
+    }
 
     .-summary {
       max-width: rem(500px);
@@ -36,6 +45,7 @@
       position: absolute;
       right: rem(-25px);
       top: 0;
+      z-index: 20;
       cursor: pointer;
 
       .icon {
