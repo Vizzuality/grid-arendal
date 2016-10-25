@@ -191,6 +191,17 @@
     }
   }
 
+  &.-sidebar-title {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+
+    @media screen and (min-width: $screen-m) {
+      font-size: 13px;
+      letter-spacing: 0.3px;
+    }
+  }
+
   /*
    * COLORS
    */
