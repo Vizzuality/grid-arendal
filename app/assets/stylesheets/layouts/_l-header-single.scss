@@ -25,6 +25,13 @@
     background-color: rgba($color-1, 0.04);
   }
 
+  &.-activities-article {
+    @media screen and (min-width: $screen-m) {
+      height: rem(650px);
+      background-image: image-url('bg1.jpg');
+    }
+  }
+
   &.-news {
     background-color: rgba($color-2, 0.04);
   }
@@ -46,7 +53,6 @@
     @media screen and (min-width: $screen-m) {
       position: relative;
     }
-
 
     .share {
       background-color: $white;
