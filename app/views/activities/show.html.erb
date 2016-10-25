@@ -19,18 +19,31 @@
           </svg>
           <span class="text -meta"><%= @activity.title %></span>
         </div>
-        <div class="share">
-          <svg class="icon">
-            <use xlink:href="#icon-share"></use>
-          </svg>
-        </div>
       </div>
     </div>
   </div>
 
-  <div>
+  <div class="section-menu">
     <div class="row">
+      <div class="small-12 columns">
+        <div class="title-block">
+          <h2 class="text -title-single-alt"><%= @activity.title %></h2>
+          <div class="share">
+            <svg class="icon">
+              <use xlink:href="#icon-share"></use>
+            </svg>
+          </div>
+        </div>
 
+        <ul class="anchors">
+          <li class="text -section-menu">Overview</li>
+          <li class="text -section-menu">Staff involved</li>
+          <li class="text -section-menu">Publications</li>
+          <li class="text -section-menu">Related News</li>
+          <li class="text -section-menu">Related media</li>
+          <li class="text -section-menu">Partners & Links</li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
@@ -39,55 +52,19 @@
 
   <div class="row">
     <div class="small-12 column">
-      <div class="c-article-image"></div>
+      <div class="text -summary-alt">The methodology has been under development in conjunction with the UN World Ocean Assessment (WOA) to assist countries to participate in that assessment by conducting their own state of marine environment (SOME) assessments. GRID-Arendal has developed a web-based software to facilitate workshops for rapid SOME assessments. Further development and demonstration of this software, in order to achieve recognition and adoption by UNEP, IOC and DOALOS, is a key driver for the project.</div>
     </div>
   </div>
-
-  <div class="content-wrapper">
-
-    <div class="content">
-      <h2 class="text -title-single-alt"><%= @activity.title %></h2>
-      <div class="text -body-single"><%= @activity.description %></div>
-    </div>
-
-    <div class="sidebar -activities">
-      <div class="title text -title-block mobile">
-        Download
-      </div>
-      <div class="meta">
-        <div class="row">
-          <div class="small-6 medium-3 large-4 columns">
-        <div class="cover">
-        </div>
-      </div>
-        <div class="small-6 medium-9 large-8 columns">
-          <div class="title text -meta desktop">
-            Download
-          </div>
-          <div class="download-links">
-            <div class="btn -dark">
-              pdf
-            </div>
-            <div class="btn -dark">
-              e-book
-            </div>
-            <div class="btn">
-              graphics
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-
-  </div>
-
-  <%= render 'shared/users' %>
-
-  <%= render 'shared/posts', collection: @activities, title: 'activities', link: activities_path %>
-
-  <%= render 'shared/media' %>
-
 </div>
+
+<%= render 'shared/users' %>
+
+<%= render 'shared/posts', collection: @publications, title: 'publications', link: publications_path %>
+
+<%= render 'shared/news' %>
+
+<%= render 'shared/media' %>
+
+<%= render 'shared/partners' %>
 
 <%= render 'shared/footer' %>

@@ -6,6 +6,11 @@
 
   &.-activities {
     background-color: rgba($color-1, .04);
+
+    .-summary-alt {
+      width: 70%;
+      padding: rem(29px) 0;
+    }
   }
 
   &.-news {

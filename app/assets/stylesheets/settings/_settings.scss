@@ -1,6 +1,6 @@
 
 /* FONTS */
-@import 'https://fonts.googleapis.com/css?family=PT+Serif|Roboto:400,700';
+@import 'https://fonts.googleapis.com/css?family=PT+Serif|Roboto:400,500,700';
 $font-family-1: 'Roboto', sans-serif;
 $font-family-2: 'PT Serif', serif;
 
@@ -21,6 +21,7 @@ $white: #ffffff;
 $dark-white: #eef1f4;
 $grey: #f0f5f0;
 $veil-grey: #d8d8d8;
+$skull-white: #f8f7f5;
 
 
 /* THEME COLORS */
@@ -34,3 +35,4 @@ $color-4: $veil-grey;
 $font-color-1: $main-blue;
 $font-color-2: $dark-white;
 $font-color-3: $grey;
+$font-color-4: $skull-white;

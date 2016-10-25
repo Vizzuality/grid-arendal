@@ -8,6 +8,7 @@ class ActivitiesController < ApplicationController
 
   def show
     @activities = Activity.order(:title).published
+    @publications = Publication.order(:title).published
     @users = @activity.users
   end
 

@@ -82,4 +82,35 @@
       }
     }
   }
+
+  .section-menu {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: rem(27px) 0;
+    background-color: rgba($color-1, 0.6);
+
+    .-title-single-alt {
+      width: 55%;
+      line-height: 1.11;
+      color: $skull-white;
+    }
+
+    .share {
+      top: rem(-52px);
+    }
+
+    .anchors {
+      margin-top: rem(33px);
+      font-size: 0;
+
+      li {
+        display: inline-block;
+
+        &:not(:last-child) {
+          margin-right: rem(29px);
+        }
+      }
+    }
+  }
 }
