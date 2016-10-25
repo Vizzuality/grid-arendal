@@ -22,7 +22,6 @@
 
     @media screen and (min-width: $screen-m) {
       padding: rem(26px) rem(40px) rem(40px) 0;
-      width: 50%;
     }
 
     .rating {
@@ -54,8 +53,7 @@
     }
 
     @media screen and (min-width: $screen-m) {
-      width: 50%;
-      padding: rem(40px) 0 rem(40px) rem(40px);
+      padding: rem(40px) 0;
     }
 
     .download-links {
@@ -66,7 +64,7 @@
         width: 50%;
       }
 
-      @media screen and (min-width: $screen-m) {
+      @media screen and (min-width: $screen-l) {
         float: right;
       }
 
