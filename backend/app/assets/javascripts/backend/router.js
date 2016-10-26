@@ -10,7 +10,10 @@
      * @type {Object}
      */
     routes: {
-      'manage': 'BackOfficeHome#index'
+      'manage': 'BackOfficeHome#index',
+      'manage/activities': 'BackOfficeHome#show',
+      'manage/publications': 'BackOfficeHome#show',
+      'manage/news_articles': 'BackOfficeHome#show',
 
       // Here you have an example
       // 'countries': 'Countries#index',

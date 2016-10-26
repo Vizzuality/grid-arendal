@@ -7,7 +7,11 @@
   App.Controller.BackOfficeHome = App.Controller.Page.extend({
 
     index: function() {
-      console.log('hello from home index')
+      console.log('hello from backoffice index')
+    },
+
+    show: function() {
+      console.log('hello from backoffice show')
     }
   });
 
