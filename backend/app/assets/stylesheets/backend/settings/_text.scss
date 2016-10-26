@@ -10,212 +10,50 @@
 
 .text {
   font-family: $font-family-1;
-  color: $color-1;
-  line-height: 1.3;
 
-  &.-menu {
-    font-size: 16px;
-    letter-spacing: 1px;
+
+  &.-main-title {
+    font-size: rem(20px);
     font-weight: 700;
-    text-transform: uppercase;
-
-    @media screen and (min-width: $screen-m) {
-      font-size: 13px;
-    }
+    line-height: 2.5;
   }
 
-  &.-cta {
-    font-size: 16px;
-    line-height: 1.4;
-    text-align: center;
-
-    @media screen and (min-width: $screen-m) {
-      font-size: 14px;
-    }
+  &.-plain-text {
+    font-size: rem(14px);
+    line-height: 1.43;
   }
 
-  &.-title-block {
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 0.3px;
-
-    @media screen and (min-width: $screen-m) {
-      font-size: 13px;
-    }
-  }
-
-  &.-view-all {
-    font-size: 13px;
-    opacity: 0.8;
-  }
-
-  &.-title-card {
-    width: 90%;
-    white-space: normal;
-    word-break: break-word;
-    font-size: 18px;
-    font-family: $font-family-2;
-    font-weight: 600;
-
-    @media screen and (min-width: $screen-m) {
-      font-size: 16px;
-    }
-  }
-
-  &.-title-card-small {
-    font-size: 16px;
-    font-family: $font-family-2;
-    font-weight: 600;
-    white-space: normal;
-    word-break: break-word;
-  }
-
-  &.-title-card-alt {
-    font-size: 18px;
-    font-weight: 600;
-    font-family: $font-family-2;
-
-    @media screen and (min-width: $screen-m) {
-      font-size: 16px;
-    }
-  }
-
-  &.-meta {
-    font-size: 14px;
+  &.-notes {
     opacity: 0.5;
-
-    @media screen and (min-width: $screen-m) {
-      font-size: 12px;
-    }
+    font-size: rem(14px);
+    line-height: 1.43;
   }
 
-  &.-summary {
-    font-size: 16px;
+  &.-index-item {
     opacity: 0.8;
-    width: 90%;
-    white-space: normal;
-    word-break: break-word;
+    font-size: rem(14px);
+    line-height: 1.43;
 
-    @media screen and (min-width: $screen-m) {
-      font-size: 14px;
-    }
-  }
-
-  &.-image-cap {
-    font-size: 18px;
-    font-family: $font-family-2;
-    font-weight: 600;
-
-    @media screen and (min-width: $screen-m) {
-      font-size: 22px;
-    }
-  }
-
-  &.-author {
-    font-size: 18px;
-    font-family: $font-family-2;
-    font-weight: 600;
-
-    @media screen and (min-width: $screen-m) {
-      font-size: 16px;
-    }
-  }
-
-  &.-title-single {
-    font-size: 26px;
-    font-weight: 600;
-    font-family: $font-family-2;
-  }
-
-  &.-title-single-alt {
-    font-size: 36px;
-    font-weight: 600;
-    font-family: $font-family-2;
-    line-height: 1.1;
-  }
-
-  &.-body-single {
-    font-size: 15px;
-    line-height: 1.7;
-    opacity: 0.8;
-
-    .-bold {
+    .-active & {
       font-weight: 700;
     }
   }
 
-  &.-body-single-alt {
-    font-size: 17px;
-    line-height: 1.7;
-    opacity: 0.8;
-
-    @media screen and (min-width: $screen-m) {
-      font-size: 18px;
-    }
-  }
-
-  &.-title-library {
-    font-size: 46px;
-    font-weight: 600;
-    font-family: $font-family-2;
-  }
-
-  &.-filter {
-    font-size: 20px;
-
-    @media screen and (min-width: $screen-m) {
-      font-size: 14px;
-    }
-  }
-
-  &.-filter-title {
-    font-size: 12px;
-    letter-spacing: 0.5px;
-
-    @media screen and (min-width: $screen-m) {
-      font-size: 10px;
-    }
-  }
-
-  &.-read-more {
-    font-size: 16px;
-  }
-
-  &.-download {
-    font-size: 16px;
+  /*
+   * WEIGHT
+   */
+  &.-bold {
     font-weight: 700;
-    letter-spacing: 0.7px;
-
-    @media screen and (min-width: $screen-m) {
-      font-size: 13px;
-    }
-  }
-
-  &.-sidebar-title {
-    font-size: 16px;
-    font-weight: 500;
-    letter-spacing: 0.4px;
-
-    @media screen and (min-width: $screen-m) {
-      font-size: 13px;
-      letter-spacing: 0.3px;
-    }
   }
 
   /*
    * COLORS
    */
+  &.-dark {
+    color: $font-color-1;
+  }
 
   &.-light {
     color: $font-color-2;
   }
-
-  &.-light-alt {
-    color: $font-color-3;
-  }
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
 }
