@@ -73,11 +73,13 @@
       bottom: rem(-30px);
       cursor: pointer;
       z-index: 20;
+      box-shadow: 0 2px 4px 0 rgba($black, 0.1);
 
       @media screen and (min-width: $screen-s) {
         width: rem(50px);
         height: rem(50px);
         bottom: rem(-25px);
+        box-shadow: none;
       }
 
       @media screen and (min-width: 1050px) {
