@@ -1,0 +1,36 @@
+
+/* FONTS */
+@import 'https://fonts.googleapis.com/css?family=PT+Serif|Roboto:400,700';
+$font-family-1: 'Roboto', sans-serif;
+$font-family-2: 'PT Serif', serif;
+
+/* SCREENS */
+$screen-xs: 320px;
+$screen-s: 540px;
+$screen-m: 768px;
+$screen-l: 1024px;
+$screen-xl: 1280px;
+$screen-xxl: 2000px;
+
+
+/* COLORS */
+$main-blue: #003d53;
+$main-green: #004c02;
+$main-brown: #533000;
+$white: #ffffff;
+$dark-white: #eef1f4;
+$grey: #f0f5f0;
+$veil-grey: #d8d8d8;
+
+
+/* THEME COLORS */
+$color-1: $main-blue;
+$color-2: $main-green;
+$color-3: $main-brown;
+$color-4: $veil-grey;
+
+
+/* FONT COLORS */
+$font-color-1: $main-blue;
+$font-color-2: $dark-white;
+$font-color-3: $grey;
