@@ -26,6 +26,8 @@
   }
 
   &.-activities-article {
+    height: rem(530px);
+
     @media screen and (min-width: $screen-m) {
       height: rem(650px);
       background-image: image-url('bg1.jpg');
@@ -60,17 +62,23 @@
 
     .share {
       background-color: $white;
-      width: rem(50px);
-      height: rem(50px);
+      width: rem(60px);
+      height: rem(60px);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       position: absolute;
-      right: rem(25px);
-      bottom: rem(-25px);
+      right: rem(20px);
+      bottom: rem(-30px);
       cursor: pointer;
       z-index: 20;
+
+      @media screen and (min-width: $screen-s) {
+        width: rem(50px);
+        height: rem(50px);
+        bottom: rem(-25px);
+      }
 
       @media screen and (min-width: 1050px) {
         right: rem(-25px);
@@ -87,8 +95,12 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding: rem(27px) 0;
+    padding: rem(16px) 0 rem(38px) 0;
     background-color: rgba($color-1, 0.6);
+
+    @media screen and (min-width: $screen-s) {
+      padding: rem(27px) 0;
+    }
 
     .-title-single-alt {
       line-height: 1.11;
@@ -103,7 +115,14 @@
     }
 
     .share {
-      top: rem(-52px);
+
+      @media screen and (min-width: $screen-s) {
+        top: rem(-25px);
+      }
+
+      @media screen and (min-width: $screen-m) {
+        top: rem(-52px);
+      }
     }
 
     .anchors {
