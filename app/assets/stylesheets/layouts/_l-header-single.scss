@@ -72,7 +72,7 @@
       cursor: pointer;
       z-index: 20;
 
-      @media screen and (min-width: $screen-m) {
+      @media screen and (min-width: 1050px) {
         right: rem(-25px);
       }
 
@@ -91,9 +91,15 @@
     background-color: rgba($color-1, 0.6);
 
     .-title-single-alt {
-      width: 55%;
       line-height: 1.11;
       color: $skull-white;
+
+      @media screen and (min-width: $screen-s) {
+        width: 70%;
+      }
+      @media screen and (min-width: $screen-m) {
+        width: 55%;
+      }
     }
 
     .share {
@@ -103,6 +109,11 @@
     .anchors {
       margin-top: rem(33px);
       font-size: 0;
+      display: none;
+
+      @media screen and (min-width: $screen-m) {
+        display: block;
+      }
 
       li {
         display: inline-block;
