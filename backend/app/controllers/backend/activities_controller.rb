@@ -8,10 +8,12 @@ module Backend
     before_action :set_users_partners_and_news, only: [:new, :edit]
 
     def index
-      @activities = Activity.order(:title)
+      @activity = Activity.order(:title).first
+      redirect_to edit_activity_url(@activity)
     end
 
     def edit
+      @activities = Activity.order(:title)
     end
 
     def new
