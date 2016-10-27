@@ -88,16 +88,36 @@
       }
     }
 
-    &.-show-dropdown .dropdown {
-      display: block;
+    &.-show-dropdown {
+
+      .dropdown {
+        display: block;
+      }
     }
 
-    &.-have-value .speaker:before {
-      @extend %filter-background;
+    &.-have-value {
+
+      .speaker:before {
+        @extend %filter-background;
+      }
     }
 
     &:not(.-have-value) > .-filter-title {
       display: none;
+    }
+
+    &.-type-tags {
+      position: static;
+
+      .dropdown {
+        width: 100%;
+        left: 0;
+        white-space: normal;
+
+        li {
+          display: inline-block;
+        }
+      }
     }
   }
 }
