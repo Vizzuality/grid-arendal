@@ -28,6 +28,32 @@
     }
   }
 
+  &.-partners {
+    .-summary-alt {
+      margin-top: rem(20px);
+    }
+
+    .logos {
+      font-size: 0;
+
+      span {
+        position: relative;
+        display: inline-block;
+        width: 33.33%;
+        height: rem(100px);
+        text-align: center;
+      }
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 80%;
+        max-height: 80%;
+      }
+    }
+  }
+
   .-fix {
 
     @media screen and (min-width: $screen-m) {
