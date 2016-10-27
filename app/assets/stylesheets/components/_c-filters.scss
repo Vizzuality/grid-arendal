@@ -1,3 +1,16 @@
+%filter-background {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: rem(-8px);
+  margin: auto;
+  width: calc(100% + #{rem(16px)});
+  height: rem(5px);
+  z-index: -1;
+  background-color: $white;
+}
+
 .c-filters {
   display: flex;
   position: relative;
@@ -8,24 +21,23 @@
   }
 
   .filter {
+    position: relative;
     width: 18%;
+    padding-top: rem(14px);
 
-    .text {
+    > .-filter-title {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .speaker {
       position: relative;
       z-index: 1;
       cursor: pointer;
 
       &:hover:before {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: rem(-8px);
-        margin: auto;
-        width: calc(100% + #{rem(16px)});
-        height: rem(5px);
-        z-index: -1;
-        background-color: $white;
+        @extend %filter-background;
       }
     }
 
@@ -44,26 +56,48 @@
       flex-grow: 2;
       text-align: right;
     }
-  }
 
-  .dropdown {
-    position: absolute;
-    padding-top: 9px;
-    background-color: #f8f7f5;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
-    white-space: nowrap;
+    .dropdown {
+      position: absolute;
+      top: -9px;
+      left: -10px;
+      padding-top: 9px;
+      background-color: #f8f7f5;
+      box-shadow: 0 2px 4px 0 rgba($black, 0.2);
+      white-space: nowrap;
+      z-index: 2;
+      display: none;
 
-    .-filter-title {
-      padding: 0 10px;
+      .-filter-title {
+        padding: 0 10px;
+      }
+
+      .list {
+        margin-top: 3px;
+
+        li {
+          padding: 0 10px;
+          line-height: 2.14;
+          cursor: pointer;
+
+          &:hover {
+            background-color: $white;
+            font-weight: 500;
+          }
+        }
+      }
     }
 
-    .list {
-      margin-top: 2px;
+    &.-show-dropdown .dropdown {
+      display: block;
+    }
 
-      li {
-        padding: 0 10px;
-        line-height: 2.14;
-      }
+    &.-have-value .speaker:before {
+      @extend %filter-background;
+    }
+
+    &:not(.-have-value) > .-filter-title {
+      display: none;
     }
   }
 }
