@@ -1,12 +1,14 @@
-= render 'activities', activities: @activities
+.l-items-index
+  = render 'activities', activities: @activities
 
-h2
-  | Edit
-  '
-  = @activity.title || 'Activity'
+.l-items-detail
+  h2
+    | Edit
+    '
+    = @activity.title || 'Activity'
 
-= simple_form_for @activity do |f|
-  = render 'form', form: f, users: @users, partners: @partners,
-    news_articles: @news_articles
-  .actions
-    = f.submit 'Update'
+  = simple_form_for @activity do |f|
+    = render 'form', form: f, users: @users, partners: @partners,
+      news_articles: @news_articles
+    .actions
+      = f.submit 'Update'

@@ -1,0 +1,27 @@
+$header-width: 15%;
+$index-width: 25%;
+$item-detail-width: 60%;
+
+.l-navigation {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: $header-width;
+}
+
+.l-items-index {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: $header-width;
+  width: $index-width;
+}
+
+.l-items-detail {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: $index-width;
+  width: $item-detail-width;
+}
