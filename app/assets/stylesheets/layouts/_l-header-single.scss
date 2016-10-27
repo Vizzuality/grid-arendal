@@ -107,13 +107,6 @@
     .-title-single-alt {
       line-height: 1.11;
       color: $skull-white;
-
-      @media screen and (min-width: $screen-s) {
-        width: 70%;
-      }
-      @media screen and (min-width: $screen-m) {
-        width: 55%;
-      }
     }
 
     .share {
