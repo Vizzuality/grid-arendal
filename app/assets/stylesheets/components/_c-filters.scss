@@ -1,0 +1,69 @@
+.c-filters {
+  display: flex;
+  position: relative;
+  z-index: 2;
+
+  @media screen and (min-width: $screen-s) {
+    margin-top: rem(4px);
+  }
+
+  .filter {
+    width: 18%;
+
+    .text {
+      position: relative;
+      z-index: 1;
+      cursor: pointer;
+
+      &:hover:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: rem(-8px);
+        margin: auto;
+        width: calc(100% + #{rem(16px)});
+        height: rem(5px);
+        z-index: -1;
+        background-color: $white;
+      }
+    }
+
+    .icon {
+      position: relative;
+      z-index: 2;
+
+      @media screen and (min-width: $screen-s) {
+        width: rem(8px);
+        height: rem(8px);
+        margin-left: rem(5px);
+      }
+    }
+
+    &.-search {
+      flex-grow: 2;
+      text-align: right;
+    }
+  }
+
+  .dropdown {
+    position: absolute;
+    padding-top: 9px;
+    background-color: #f8f7f5;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+
+    .-filter-title {
+      padding: 0 10px;
+    }
+
+    .list {
+      margin-top: 2px;
+
+      li {
+        padding: 0 10px;
+        line-height: 2.14;
+      }
+    }
+  }
+}
