@@ -11,6 +11,16 @@
   background-color: $white;
 }
 
+%filter-tag-background {
+  content: "";
+  position: absolute;
+  left: rem(-9px);
+  width: calc(100% + #{rem(18px)});
+  height: 100%;
+  border-radius: rem(100px);
+  z-index: -1;
+}
+
 .c-filters {
   display: flex;
   position: relative;
@@ -25,7 +35,7 @@
     width: 18%;
     padding-top: rem(14px);
 
-    > .-filter-title {
+    > .type {
       position: absolute;
       top: 0;
       left: 0;
@@ -36,19 +46,21 @@
       z-index: 1;
       cursor: pointer;
 
-      &:hover:before {
-        @extend %filter-background;
+      &:hover {
+        &:before {
+          @extend %filter-background;
+        }
       }
-    }
 
-    .icon {
-      position: relative;
-      z-index: 2;
+      .icon {
+        position: relative;
+        z-index: 2;
 
-      @media screen and (min-width: $screen-s) {
-        width: rem(8px);
-        height: rem(8px);
-        margin-left: rem(5px);
+        @media screen and (min-width: $screen-s) {
+          width: rem(8px);
+          height: rem(8px);
+          margin-left: rem(5px);
+        }
       }
     }
 
@@ -59,30 +71,30 @@
 
     .dropdown {
       position: absolute;
-      top: -9px;
-      left: -10px;
-      padding-top: 9px;
-      background-color: #f8f7f5;
+      top: rem(-9px);
+      left: rem(-10px);
+      padding-top: rem(9px);
+      background-color: $creamy-grey;
       box-shadow: 0 2px 4px 0 rgba($black, 0.2);
       white-space: nowrap;
       z-index: 2;
       display: none;
 
-      .-filter-title {
-        padding: 0 10px;
+      .type {
+        padding: 0 rem(10px);
       }
 
       .list {
-        margin-top: 3px;
+        margin-top: rem(3px);
 
         li {
-          padding: 0 10px;
+          position: relative;
+          padding: 0 rem(10px);
           line-height: 2.14;
           cursor: pointer;
 
           &:hover {
             background-color: $white;
-            font-weight: 500;
           }
         }
       }
@@ -102,7 +114,7 @@
       }
     }
 
-    &:not(.-have-value) > .-filter-title {
+    &:not(.-have-value) > .type {
       display: none;
     }
 
@@ -112,10 +124,51 @@
       .dropdown {
         width: 100%;
         left: 0;
+        padding: rem(19px) 0 rem(13px) rem(21px);
+        font-size: 0;
         white-space: normal;
 
-        li {
-          display: inline-block;
+        .type {
+          padding: 0;
+        }
+
+        .icon {
+          position: absolute;
+          top: rem(19px);
+          right: rem(19px);
+          width: rem(12px);
+          height: rem(12px);
+          margin: 0;
+          transform: rotateX(180deg);
+        }
+
+        .list {
+          margin-top: rem(14px);
+
+          li {
+            display: inline-block;
+            line-height: 1.8;
+            margin: 0 rem(27px) rem(6px) 0;
+            padding: 0;
+
+            &:hover {
+              background-color: transparent;
+
+              &:before {
+                @extend %filter-tag-background;
+                background-color: $white;
+              }
+            }
+
+            &.selected {
+              color: $creamy-grey;
+
+              &:before {
+                @extend %filter-tag-background;
+                background-color: $color-1;
+              }
+            }
+          }
         }
       }
     }
