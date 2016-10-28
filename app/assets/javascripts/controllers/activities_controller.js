@@ -11,8 +11,8 @@
     },
 
     show: function(params) {
-      console.log('activities#show');
-      this.initSliders();
+      var activitiesAnchorsView = new App.View.ActivitiesAnchors({});
+      //this.initSliders();
     },
 
     initSliders: function() {
