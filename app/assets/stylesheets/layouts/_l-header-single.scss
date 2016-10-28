@@ -25,6 +25,15 @@
     background-color: rgba($color-1, 0.04);
   }
 
+  &.-activities-article {
+    height: rem(530px);
+
+    @media screen and (min-width: $screen-m) {
+      height: rem(650px);
+      background-image: image-url('bg1.jpg');
+    }
+  }
+
   &.-news {
     background-color: rgba($color-2, 0.04);
   }
@@ -53,17 +62,25 @@
 
     .share {
       background-color: $white;
-      width: rem(50px);
-      height: rem(50px);
+      width: rem(60px);
+      height: rem(60px);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       position: absolute;
-      right: rem(25px);
-      bottom: rem(-25px);
+      right: rem(20px);
+      bottom: rem(-30px);
       cursor: pointer;
       z-index: 20;
+      box-shadow: 0 2px 4px 0 rgba($black, 0.1);
+
+      @media screen and (min-width: $screen-s) {
+        width: rem(50px);
+        height: rem(50px);
+        bottom: rem(-25px);
+        box-shadow: none;
+      }
 
       @media screen and (min-width: 1050px) {
         right: rem(-25px);
@@ -72,6 +89,52 @@
       .icon {
         width: rem(20px);
         height: rem(20px);
+      }
+    }
+  }
+
+  .section-menu {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: rem(16px) 0 rem(38px) 0;
+    background-color: rgba($color-1, 0.6);
+
+    @media screen and (min-width: $screen-s) {
+      padding: rem(27px) 0;
+    }
+
+    .-title-single-alt {
+      line-height: 1.11;
+      color: $skull-white;
+    }
+
+    .share {
+
+      @media screen and (min-width: $screen-s) {
+        top: rem(-25px);
+      }
+
+      @media screen and (min-width: $screen-m) {
+        top: rem(-52px);
+      }
+    }
+
+    .anchors {
+      margin-top: rem(33px);
+      font-size: 0;
+      display: none;
+
+      @media screen and (min-width: $screen-m) {
+        display: block;
+      }
+
+      li {
+        display: inline-block;
+
+        &:not(:last-child) {
+          margin-right: rem(29px);
+        }
       }
     }
   }

@@ -100,6 +100,18 @@
       font-size: 14px;
     }
   }
+  &.-summary-alt {
+    font-family: $font-family-1;
+    font-size: 17px;
+    line-height: 1.47;
+    color: $font-color-1;
+    opacity: 0.8;
+
+    @media screen and (min-width: $screen-m) {
+      font-size: 18px;
+      line-height: 1.67;
+    }
+  }
 
   &.-image-cap {
     font-size: 18px;
@@ -204,6 +216,15 @@
       font-size: 13px;
       letter-spacing: 0.3px;
     }
+  }
+
+  &.-section-menu {
+    font-family: $font-family-1;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.23;
+    letter-spacing: 0.3px;
+    color: $font-color-4;
   }
 
   /*
