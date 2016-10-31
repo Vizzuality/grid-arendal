@@ -1,6 +1,7 @@
 $header-width: 15%;
 $index-width: 25%;
 $item-detail-width: 60%;
+$headerPlusIndex: 40%;
 
 .l-navigation {
   position: absolute;
@@ -22,6 +23,6 @@ $item-detail-width: 60%;
   position: absolute;
   top: 0;
   bottom: 0;
-  left: $index-width;
+  left: $headerPlusIndex;
   width: $item-detail-width;
 }
