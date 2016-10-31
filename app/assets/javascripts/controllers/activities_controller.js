@@ -7,7 +7,9 @@
   App.Controller.Activities = App.Controller.Page.extend({
 
     index: function(params) {
-      console.log('activities#index');
+      var masonryView = new App.View.Masonry({
+        el: '#masonry-layout'
+      });
     },
 
     show: function(params) {

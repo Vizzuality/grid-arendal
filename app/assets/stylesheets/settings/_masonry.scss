@@ -1,0 +1,70 @@
+//masonry colum class
+@function masonry-class($columns) {
+  @return '#{$columns} .masonry-column.size-1of#{$columns}';
+}
+
+//Structure mixins
+@mixin masonry-layout ($columns-screen-s, $columns-screen-m, $columns-screen-l, $columns-screen-xl, $item-padding, $item-padding-screen-m) {
+
+  &[data-columns]::before {
+    display: none;
+  }
+
+  @media screen and (max-width: $screen-s) {
+    &[data-columns]::before {
+      content: masonry-class($columns-screen-s);
+    }
+  }
+
+  @media screen and (min-width: $screen-s + 1) and (max-width: $screen-m) {
+    &[data-columns]::before {
+      content: masonry-class($columns-screen-m);
+    }
+  }
+
+  @media screen and (min-width: $screen-m + 1) and (max-width: $screen-l) {
+    &[data-columns]::before {
+      content: masonry-class($columns-screen-l);
+    }
+  }
+
+  @media screen and (min-width: $screen-l + 1) {
+    &[data-columns]::before {
+      content: masonry-class($columns-screen-xl);
+    }
+  }
+
+  .masonry-column { float: left; }
+
+  .size-1of1 { width: 100%; }
+
+  .size-1of2 { width: 50%; }
+
+  .size-1of3 { width: 33.3%; }
+
+  .size-1of4 { width: 25%; }
+
+  .item {
+    break-inside: avoid;
+    padding: $item-padding;
+
+    @media screen and (min-width: $screen-m) {
+      padding: $item-padding-screen-m;
+    }
+  }
+}
+
+@include keyframes(masonry-appear) {
+  0%   {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.masonry-layout {
+  @include animation('masonry-appear 0.7s 1');
+}
