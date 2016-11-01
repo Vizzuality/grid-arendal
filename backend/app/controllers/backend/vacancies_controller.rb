@@ -35,12 +35,12 @@ module Backend
 
     def publish
       @vacancy.try(:publish)
-      redirect_to vacancies_path
+      redirect_to vacancies_url
     end
 
     def unpublish
       @vacancy.try(:unpublish)
-      redirect_to vacancies_path
+      redirect_to vacancies_url
     end
 
     private

@@ -1,0 +1,4 @@
+- if (can? :publish, location) && location.published?
+  = link_to 'Unpublish', "/manage/#{location.model_name.route_key}/#{location.id}/unpublish", method: :patch
+- if (can? :unpublish, location) && location.unpublished?
+  = link_to 'Publish', "/manage/#{location.model_name.route_key}/#{location.id}/publish", method: :patch

@@ -19,4 +19,5 @@
 #
 
 class Publication < Content
+  scope :order_by_title, -> { order('title ASC') }
 end

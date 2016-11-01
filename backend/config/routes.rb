@@ -24,9 +24,9 @@ Backend::Engine.routes.draw do
     patch 'make_contributor', on: :member
   end
 
-  resources :partners
-  resources :about_sections, except: [:show]
-  resources :news_articles, except: [:show]
+  resources :partners,       except: :show
+  resources :about_sections, except: :show
+  resources :news_articles,  except: :show
 
   [:publications, :activities].each do |res|
     resources res, except: [:show] do
@@ -42,9 +42,14 @@ Backend::Engine.routes.draw do
     patch 'unpublish', on: :member
   end
 
-  resources :events do
+  resources :events, except: :show do
     patch 'deactivate', on: :member
     patch 'activate',   on: :member
+  end
+
+  resources :media_contents, except: :show do
+    patch 'publish',   on: :member
+    patch 'unpublish', on: :member
   end
 
   root to: 'admin_home#index'

@@ -1,0 +1,24 @@
+h2 Media contents
+
+- if can?(:create, MediaContent)
+  .span
+    = link_to 'New photo', new_media_content_path(mediable: 'photo')
+  .span
+    = link_to 'New album', new_media_content_path(mediable: 'album')
+
+ul
+  - @media_contents.each do |media_content|
+    li
+      = "#{media_content.title} (#{media_content.mediable_type})"
+      - if media_content.mediable_photo_url.present?
+        .photo_thumb
+          = image_tag media_content.mediable_photo_url, style: 'width: 150px; height: 100px;'
+      .edit_links
+        .div
+          = link_to 'Edit', edit_media_content_path(media_content, mediable: media_content.mediable_type)
+        .div
+          = link_to 'Delete', media_content, method: :delete, data: { confirm: 'Are you sure?' }
+      - if can? [:publish, :unpublish], media_content
+        .publish_unpublish
+          = render 'backend/shared/publishable_links', location: media_content
+      hr
