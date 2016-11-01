@@ -3,6 +3,17 @@
   justify-content: space-between;
   align-items: center;
 
+  .-view-all {
+
+    span {
+      display: none;
+
+      @media screen and (min-width: $screen-m) {
+        display: inline-block;
+      }
+    }
+  }
+
   .icon {
     &.-arrow {
       position: relative;

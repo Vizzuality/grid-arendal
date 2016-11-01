@@ -1,0 +1,158 @@
+.l-single-article {
+
+  &.-publications {
+    background-color: rgba($color-3, .04);
+  }
+
+  &.-activities {
+    background-color: rgba($color-1, .04);
+
+    .-summary-alt {
+      padding: rem(52px) 0 rem(29px) 0;
+
+      @media screen and (min-width: $screen-s) {
+        padding: rem(29px) 0;
+      }
+
+      @media screen and (min-width: $screen-m) {
+        width: 70%;
+      }
+    }
+  }
+
+  &.-news {
+    background-color: rgba($color-2, .04);
+  }
+
+  .l-main-content {
+    background-color: inherit;
+  }
+
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: $screen-l) {
+      flex-direction: row;
+    }
+  }
+
+  .content {
+    padding: rem(20px);
+    padding-top: rem(40px);
+
+    @media screen and (min-width: $screen-s) {
+      padding: rem(30px);
+      padding-top: rem(40px);
+    }
+
+    @media screen and (min-width: $screen-l) {
+      padding: rem(40px) rem(40px) rem(40px) 0;
+      width: 50%;
+      margin-top: rem(-80px);
+      z-index: 15;
+      background: $white;
+    }
+
+    .-title-single-alt {
+      margin-bottom: rem(20px);
+    }
+
+    .text {
+
+      @media screen and (min-width: $screen-l) {
+        margin-left: calc(100% - (970px / 2) + 40px);
+      }
+    }
+  }
+
+  .sidebar {
+    width: 100%;
+
+    @media screen and (max-width: 1023px) {
+      &.-publications {
+        background-color: rgba($color-3, .04);
+      }
+
+      &.-activities {
+        background-color: rgba($color-1, .04);
+      }
+
+      &.-news {
+        background-color: rgba($color-2, .04);
+      }
+    }
+
+    @media screen and (min-width: $screen-l) {
+      width: 50%;
+    }
+
+    .meta {
+
+      @media screen and (min-width: $screen-l) {
+        margin-right: calc(100% - (970px / 2) - 15px);
+      }
+
+    }
+
+    .cover {
+      background-image: image-url('cover_demo.jpg');
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      max-width: rem(160px);
+      height: rem(200px);
+      margin-top: rem(10px);
+      margin-left: rem(5px);
+
+      @media screen and (min-width: $screen-l) {
+        margin-top: rem(20px);
+      }
+    }
+
+    .title {
+      margin-top: rem(20px);
+      margin-left: rem(20px);
+      margin-bottom: rem(5px);
+      font-weight: 600;
+
+      &.desktop {
+        display: none;
+      }
+
+      @media screen and (min-width: $screen-l) {
+        margin-top: rem(30px);
+        margin-left: 0;
+
+        &.desktop {
+          display: block;
+        }
+
+        &.mobile {
+          display: none;
+        }
+      }
+    }
+
+    .download-links {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+
+      @media screen and (min-width: $screen-m) {
+        flex-direction: row;
+      }
+
+      .btn {
+        width: 100%;
+        margin-top: rem(10px);
+
+        @media screen and (min-width: $screen-m) {
+          width: 48%;
+        }
+      }
+    }
+  }
+}

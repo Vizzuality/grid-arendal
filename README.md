@@ -10,6 +10,7 @@ Requirements:
 
 * Ruby 2.3.1 [How to install](https://gorails.com/setup/osx/10.10-yosemite)
 * PostgreSQL 9.4+ [How to install](http://exponential.io/blog/2015/02/21/install-postgresql-on-mac-os-x-via-brew/)
+* If installing from a clean OS Sierra see below set up
 
 Setup and install application
 
@@ -33,6 +34,10 @@ First time execute:
     bundle exec rake db:migrate
 
     rails import:activities
+
+## OS Sierra
+
+If you are working on a clean installation of Sierra, you will have trouble installing both qt and capybara. This is due to Qt being removed from qt5.6, and qt5.5 and below failing to install on OS Sierra due to changes in Xcode8. Before running the set up above, following the instructions here to install qt55 and manually install the capaybara gem. Once complete run bundle install and then bin/setup: https://github.com/thoughtbot/capybara-webkit/wiki/Installing-Qt-and-compiling-capybara-webkit#macos-sierra-1012
 
 ## Usage
 

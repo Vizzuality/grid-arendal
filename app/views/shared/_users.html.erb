@@ -1,0 +1,78 @@
+<section class="l-main-content" data-section="users">
+
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="c-main-content-header">
+        <h2 class="text -title-block">Staff</h2>
+        <p class="text -view-all">
+          <%= link_to staff_index_path do %>
+            <span>
+              Know our complete staff
+            </span>
+            <svg class="icon -arrow">
+              <use xlink:href="#icon-arrow"></use>
+            </svg>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- <ul class="row">
+    <% @users.each do |user| %>
+      <li class="small-6 medium-3 large-2 columns">
+        <div class="c-staff">
+          <div class="staff-pic" style="background-image: url('<%= user.avatar(:thumb) %>')"></div>
+          <p class="text -author"><%= user.display_name %></p>
+          <p class="text -meta"><%= user.current_position %></p>
+        </div>
+      </li>
+    <% end %>
+  </ul> -->
+
+  <ul class="row">
+    <li class="small-6 medium-3 large-2 columns">
+      <div class="c-staff">
+        <div class="staff-pic pic-1"></div>
+        <p class="text -author">El-Zeind, Charles</p>
+        <p class="text -meta">Intern, Blue Carbon</p>
+      </div>
+    </li>
+    <li class="small-6 medium-3 large-2 columns">
+      <div class="c-staff">
+        <div class="staff-pic pic-2"></div>
+        <p class="text -author">Beaudoin, Yannick Christian </p>
+        <p class="text -meta">Chief Scientist</p>
+      </div>
+    </li>
+    <li class="small-6 medium-3 large-2 columns">
+      <div class="c-staff">
+        <div class="staff-pic pic-3"></div>
+        <p class="text -author">Tofte, Christina</p>
+        <p class="text -meta">HR Administration Officer</p>
+      </div>
+    </li>
+    <li class="small-6 medium-3 large-2 columns">
+      <div class="c-staff">
+        <div class="staff-pic pic-4"></div>
+        <p class="text -author">Emelin, Valentin Vasilyevich </p>
+        <p class="text -meta">Programme Leader Environment and Crime Programme, Senior Advisor to the Managing Director</p>
+      </div>
+    </li>
+    <li class="small-6 medium-3 large-2 columns">
+      <div class="c-staff">
+        <div class="staff-pic pic-5"></div>
+        <p class="text -author">Patterson, Trista</p>
+        <p class="text -meta">Senior Economist, Senior Advisor to the Managing Director</p>
+      </div>
+    </li>
+    <li class="small-6 medium-3 large-2 columns">
+      <div class="c-staff">
+        <div class="staff-pic pic-6"></div>
+        <p class="text -author">Kurvits, Tiina</p>
+        <p class="text -meta">Project Manager, Ecosystem Management</p>
+      </div>
+    </li>
+  </ul>
+
+</section>
