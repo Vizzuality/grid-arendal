@@ -79,10 +79,10 @@ module Backend
       end
 
       def set_flickr
-        FlickRaw.api_key       = ENV['API_KEY']
-        FlickRaw.shared_secret = ENV['SHARED_SECRET']
-        flickr.access_token    = ENV['ACCESS_TOKEN']
-        flickr.access_secret   = ENV['ACCESS_SECRET']
+        FlickRaw.api_key       = ENV['FLICKR_API_KEY']
+        FlickRaw.shared_secret = ENV['FLICKR_SHARED_SECRET']
+        flickr.access_token    = ENV['FLICKR_ACCESS_TOKEN']
+        flickr.access_secret   = ENV['FLICKR_ACCESS_SECRET']
       end
 
       def media_content_params
