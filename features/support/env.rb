@@ -3,6 +3,7 @@ require 'cucumber/rails'
 require 'factory_girl'
 require 'email_spec'
 require 'email_spec/cucumber'
+require 'cucumber/rspec/doubles'
 
 ActionController::Base.allow_rescue = false
 
