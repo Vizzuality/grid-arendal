@@ -1,0 +1,9 @@
+h2
+  | Edit
+  '
+  = @media_content.title || 'Media content'
+
+= simple_form_for @media_content do |f|
+  = render 'form', form: f
+  .actions
+    = f.submit 'Update'

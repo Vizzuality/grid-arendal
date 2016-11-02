@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require_dependency "backend/application_controller"
+require_dependency 'backend/application_controller'
 
 module Backend
   class EventsController < ::Backend::ApplicationController
@@ -10,9 +10,6 @@ module Backend
 
     def index
       @events = Event.order_by_title
-    end
-
-    def show
     end
 
     def edit
@@ -41,17 +38,17 @@ module Backend
 
     def deactivate
       if @event.try(:deactivate)
-        redirect_to events_path
+        redirect_to events_url
       else
-        redirect_to event_path(@event)
+        redirect_to events_url
       end
     end
 
     def activate
       if @event.try(:activate)
-        redirect_to events_path
+        redirect_to events_url
       else
-        redirect_to event_path(@event)
+        redirect_to events_url
       end
     end
 

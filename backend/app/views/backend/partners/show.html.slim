@@ -1,8 +1,0 @@
-h2
-  = @partner.name || 'Partner'
-p
-  = image_tag @partner.logo.url(:thumb)
-
-- if can? :update, @partner
-  p
-    = link_to t('shared.edit'), edit_partner_path(@partner)

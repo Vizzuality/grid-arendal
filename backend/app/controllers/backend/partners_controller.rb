@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require_dependency "backend/application_controller"
+require_dependency 'backend/application_controller'
 
 module Backend
   class PartnersController < ::Backend::ApplicationController
@@ -11,9 +11,6 @@ module Backend
       @partners = Partner.order_by_name
     end
 
-    def show
-    end
-
     def edit
     end
 
@@ -23,7 +20,7 @@ module Backend
 
     def update
       if @partner.update(partner_params)
-        redirect_to partner_path(@partner), notice: 'Partner updated'
+        redirect_to partners_url, notice: 'Partner updated'
       else
         render :edit
       end
@@ -32,7 +29,7 @@ module Backend
     def create
       @partner = Partner.create(partner_params)
       if @partner.save
-        redirect_to partners_path
+        redirect_to partners_url
       else
         render :new
       end
