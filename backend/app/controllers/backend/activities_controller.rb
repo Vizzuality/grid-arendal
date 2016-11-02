@@ -8,13 +8,16 @@ module Backend
     before_action :set_users_partners_and_news, only: [:new, :edit]
 
     def index
-      @activities = Activity.order(:title)
+      @activity = Activity.order(:title).first
+      redirect_to edit_activity_url(@activity)
     end
 
     def edit
+      @activities = Activity.order(:title)
     end
 
     def new
+      @activities = Activity.order(:title)
       @activity = Activity.new
     end
 
@@ -23,6 +26,7 @@ module Backend
         redirect_to activities_url, notice: 'Activity updated'
       else
         set_users_partners_and_news
+        @activities = Activity.order(:title)
         render :edit
       end
     end
@@ -33,6 +37,7 @@ module Backend
         redirect_to activities_url
       else
         set_users_partners_and_news
+        @activities = Activity.order(:title)
         render :new
       end
     end

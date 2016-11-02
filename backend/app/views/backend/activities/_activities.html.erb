@@ -1,0 +1,31 @@
+<h2>Activities</h2>
+
+<% if can?(:create, Activity) %>
+  <%= link_to "New", new_activity_path %>
+<% end %>
+
+<ul>
+  <% activities.each do |activity| %>
+    <li>
+      <%= image_tag(activity.picture(:thumb)) %>
+      <%= activity.title %>
+      <%= link_to 'Edit', edit_activity_path(activity) %>
+      <% if can?(:publish, activity) && activity.unpublished? %>
+        |
+        <%= link_to "Publish", publish_activity_path(activity), method: :patch %>
+      <% end %>
+      <% if can?(:unpublish, activity) && activity.published? %>
+        |
+        <%= link_to "Unpublish", unpublish_activity_path(activity), method: :patch %>
+      <% end %>
+      <% if can?(:make_featured, activity) && activity.not_featured? %>
+        |
+        <%= link_to "Make featured", make_featured_activity_path(activity), method: :patch %>
+      <% end %>
+      <% if can?(:remove_featured, activity) && activity.featured? %>
+        |
+        <%= link_to "Remove featured", remove_featured_activity_path(activity), method: :patch %>
+      <% end %>
+    </li>
+  <% end %>
+</ul>
