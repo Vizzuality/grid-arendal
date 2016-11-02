@@ -50,8 +50,7 @@ I want to edit, create, view activities
     When I go to the activities page
     Then I should see "My activity"
     And I follow "Unpublish"
-    Then I should be on the activities page
-    And I should see "My activity"
+    Then I should see "My activity"
     And I should see "Publish"
 
   Scenario: Publisheruser can make and remove featured status from activity
@@ -60,6 +59,5 @@ I want to edit, create, view activities
     When I go to the activities page
     Then I should see "My activity"
     And I follow "Remove featured"
-    Then I should be on the activities page
-    And I should see "My activity"
+    Then I should see "My activity"
     And I should see "Make featured"
