@@ -56,7 +56,7 @@
    * App will be start when DOM is ready
    */
   function initApp() {
-    this.dispatcher = new Dispatcher();
+    new Dispatcher();
 
     if (Backbone.History.started) {
       Backbone.history.stop();
@@ -66,15 +66,12 @@
     Backbone.history.start({ pushState: true });
   };
 
-  function reloadApp() {
-    Backbone.history.stop();
-    this.initApp();
-  };
 
-  document.addEventListener('DOMContentLoaded', initApp);
-
-  document.addEventListener('page:load', reloadApp);
-
-
+  /*
+   * As we will using turbolinks, we will listen to the turbolinks
+   * load event and we will refresh the app each time the page loads.
+   */
+  // document.addEventListener('DOMContentLoaded', initApp);
+  document.addEventListener('turbolinks:load', initApp);
 
 })(this.App);
