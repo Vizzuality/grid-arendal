@@ -9,9 +9,11 @@ module Backend
 
     def index
       @publications = Publication.order_by_title
+      redirect_to edit_publication_url(@publication)
     end
 
     def edit
+      @publications = Publication.order_by_title
     end
 
     def new

@@ -1,17 +1,17 @@
-h2 Publications
+.l-items-index
+  h2 Publications
 
-- if can?(:create, Publication)
-  = link_to "New", new_publication_path
+  - if can?(:create, Publication)
+    = link_to "New", new_publication_path
 
-ul
-  - @publications.each do |publication|
-    li
-      = publication.title
-      = link_to 'Edit', edit_publication_path(publication)
-      - if can? [:publish, :unpublish], publication
-        .publish_unpublish
-          = render 'backend/shared/publishable_links', location: publication
-      - if can? [:make_featured, :remove_featured], publication
-        .make_featured_remove_featured
-          = render 'backend/shared/featured_links', location: publication
-
+  ul
+    - @publications.each do |publication|
+      li
+        = publication.title
+        = link_to 'Edit', edit_publication_path(publication)
+        - if can? [:publish, :unpublish], publication
+          .publish_unpublish
+            = render 'backend/shared/publishable_links', location: publication
+        - if can? [:make_featured, :remove_featured], publication
+          .make_featured_remove_featured
+            = render 'backend/shared/featured_links', location: publication

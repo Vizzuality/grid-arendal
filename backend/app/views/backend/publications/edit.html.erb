@@ -1,0 +1,17 @@
+<div class="l-items-index">
+  <%= render 'publications', publications: @publications %>
+</div>
+
+<div class="l-items-detail">
+  <h2> Edit</h2>
+  <p><%= @publication.title || 'Publication' %></p>
+  <%= simple_form_for @publication do |f| %>
+    <%= render 'form', form: f, users: @users, partners: @partners,
+      news_articles: @news_articles %>
+    <div class="actions">
+      <%=  f.submit  do %>
+        <button>Update</button>
+      <% end %>
+    </div>
+  <% end %>
+</div>
