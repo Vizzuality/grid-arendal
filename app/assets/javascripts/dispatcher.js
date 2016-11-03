@@ -56,7 +56,7 @@
    * App will be start when DOM is ready
    */
   function initApp() {
-    new Dispatcher();
+    this.dispatcher = new Dispatcher();
 
     if (Backbone.History.started) {
       Backbone.history.stop();
@@ -64,9 +64,17 @@
 
     // Start listening changes in routes
     Backbone.history.start({ pushState: true });
-  }
+  };
+
+  function reloadApp() {
+    Backbone.history.stop();
+    this.initApp();
+  };
 
   document.addEventListener('DOMContentLoaded', initApp);
+
+  document.addEventListener('page:load', reloadApp);
+
 
 
 })(this.App);
