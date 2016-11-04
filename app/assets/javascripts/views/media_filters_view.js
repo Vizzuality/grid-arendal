@@ -6,10 +6,28 @@
 
   App.View.MediaFilters = Backbone.View.extend({
 
+    el: '.c-filters',
+
+    events: {
+      'click .js-filters-maximizer' : '_onClickToggleFilters'
+    },
+
+    options: {
+      opened: false,
+      showFiltersClass: "-show-filters",
+      openFiltersAnimateSpeed: 0.5,
+    },
+
     initialize: function(settings) {
-      this.options = settings && settings.options ? settings.options : {};
+      var opts = settings && settings.options ? settings.options : {};
+      this.options = _.extend({}, this.options, opts);
 
       this._loadFilters();
+      this.cache();
+    },
+
+    cache: function() {
+      this.$container = this.$el.find('.container');
     },
 
     _loadFilters: function() {
@@ -34,6 +52,29 @@
 
     _filterMedia: function() {
       console.log("_filterMedia!!");
+    },
+
+    _onClickToggleFilters: function() {
+      if (!this.opened) {
+        if (typeof this.filtersHeight == "undefined") {
+          this.filtersHeight = this._getFiltersHeight();
+        }
+        this.$container.css("height", this.filtersHeight);
+      } else {
+        this.$container.attr("style", "");
+      }
+
+      this.opened = !this.opened;
+      this.$el.toggleClass(this.options.showFiltersClass);
+    },
+
+    _getFiltersHeight: function() {
+      console.log("load");
+      var elem = this.$container.clone().css("height", "auto").appendTo(this.$el);
+      var height = elem.css("height");
+      elem.remove();
+
+      return height;
     }
 
   });
