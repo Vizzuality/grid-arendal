@@ -13,9 +13,11 @@ module Backend
     end
 
     def edit
+      @media_contents = MediaContent.includes_mediable.order_by_title
     end
 
     def new
+      @media_contents = MediaContent.includes_mediable.order_by_title
       @media_content = MediaContent.new
     end
 

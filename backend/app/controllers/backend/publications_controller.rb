@@ -8,7 +8,8 @@ module Backend
     before_action :set_users_and_partners, only: [:new, :edit]
 
     def index
-      @publications = Publication.order_by_title
+      @publication = Publication.order_by_title.first
+      redirect_to edit_publication_url(@publication)
     end
 
     def edit
