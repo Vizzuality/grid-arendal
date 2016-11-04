@@ -1,0 +1,19 @@
+<div class="l-items-index">
+  <%= render 'publications', publications: @publications %>
+</div>
+
+
+<div class="l-items-detail">
+  <h2>New Publication</h2>
+
+  <%= simple_form_for @publication do |f| %>
+    <%= render 'form', form: f, users: @users, partners: @partners %>
+
+    <div class="actions">
+      <%= f.submit do %>
+        <button>Create Publication</button>
+      <% end %>
+    </div>
+  <% end %>
+
+</div>

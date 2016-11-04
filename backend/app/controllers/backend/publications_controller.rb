@@ -9,7 +9,6 @@ module Backend
 
     def index
       @publications = Publication.order_by_title
-      redirect_to edit_publication_url(@publication)
     end
 
     def edit
@@ -17,6 +16,7 @@ module Backend
     end
 
     def new
+      @publications = Publication.order_by_title
       @publication = Publication.new
     end
 
