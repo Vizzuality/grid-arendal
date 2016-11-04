@@ -12,9 +12,11 @@ module Backend
     end
 
     def edit
+      @news_articles = NewsArticle.order(:title)
     end
 
     def new
+      @news_articles = NewsArticle.order(:title)
       @news_article = NewsArticle.new
     end
 

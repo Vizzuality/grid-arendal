@@ -1,0 +1,16 @@
+<div class="l-items-index">
+  <%= render 'news_articles', news_articles: @news_articles %>
+</div>
+
+<div class="l-items-detail">
+  <p>New News Article</p>
+
+  <%= simple_form_for @news_article do |f| %>
+    <%= render partial: f %>
+    <div class="actions">
+      <%= f.submit do %>
+        <button>Create News Article</button>
+      <% end %>
+    </div>
+  <% end %>
+</div>

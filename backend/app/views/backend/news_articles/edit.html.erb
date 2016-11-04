@@ -1,11 +1,11 @@
 <div class="l-items-index">
-  <%= render 'publications', publications: @publications %>
+  <%= render 'news_articles', news_articles: @news_articles %>
 </div>
 
 <div class="l-items-detail">
-  <p> Edit</p>
-  <h2><%= @publication.title || 'Publication' %></h2>
-  <%= simple_form_for @publication do |f| %>
+  <h2> Edit</h2>
+  <p><%= @news_article.title || 'news_article' %></p>
+  <%= simple_form_for @news_article do |f| %>
     <%= render 'form', form: f, users: @users, partners: @partners,
       news_articles: @news_articles %>
     <div class="actions">
