@@ -9,18 +9,18 @@ module Backend
     before_action :set_flickr
 
     def index
-      @media_content = MediaContent.includes_mediable.order_by_title.first
+      @media_content = MediaContent.includes_mediable.order(:title).first
       if @media_content
         redirect_to edit_media_content_url(@media_content) and return
       end
     end
 
     def edit
-      @media_contents = MediaContent.includes_mediable.order_by_title
+      @media_contents = MediaContent.includes_mediable.order(:title)
     end
 
     def new
-      @media_contents = MediaContent.includes_mediable.order_by_title
+      @media_contents = MediaContent.includes_mediable.order(:title)
       @media_content = MediaContent.new
     end
 
