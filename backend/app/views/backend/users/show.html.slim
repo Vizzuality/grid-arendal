@@ -1,3 +1,4 @@
+<div class="l-items-detail">
 h2
   = @user.full_name || 'User'
   |
@@ -23,3 +24,4 @@ p
 - if current_user && current_user.admin?
   p
     = render 'backend/shared/deactivatable_links', location: @user
+div

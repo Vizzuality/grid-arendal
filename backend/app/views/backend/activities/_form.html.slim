@@ -28,6 +28,11 @@
 .field
   = form.association :users, collection: users, label_method: :display_name,
     value_method: :id
+
 .field
   = form.association :partners, collection: partners, label_method: :name,
+    value_method: :id
+
+.field
+  = form.association :publications, collection: publications, label_method: :title,
     value_method: :id

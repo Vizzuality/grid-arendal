@@ -12,9 +12,11 @@ module Backend
     end
 
     def edit
+      @partners = Partner.order_by_name
     end
 
     def new
+      @partners = Partner.order_by_name
       @partner = Partner.new
     end
 

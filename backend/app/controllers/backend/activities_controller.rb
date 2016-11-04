@@ -72,6 +72,7 @@ module Backend
         @users = User.order(:first_name, :last_name)
         @partners = Partner.order(:name)
         @news_articles = NewsArticle.order(:title)
+        @publications = Publication.order(:title)
       end
   end
 end

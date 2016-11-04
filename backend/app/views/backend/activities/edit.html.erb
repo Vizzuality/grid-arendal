@@ -7,7 +7,7 @@
   <p><%= @activity.title || 'Activity' %></p>
   <%= simple_form_for @activity do |f| %>
     <%= render 'form', form: f, users: @users, partners: @partners,
-      news_articles: @news_articles %>
+      news_articles: @news_articles, publications: @publications %>
     <div class="actions">
       <%=  f.submit  do %>
         <button>Update</button>

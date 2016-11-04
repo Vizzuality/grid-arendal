@@ -1,0 +1,16 @@
+<div class="l-items-index">
+  <%= render 'users', users: @users %>
+</div>
+
+<div class="l-items-detail">
+  <h2>New User</h2>
+
+  <%= simple_form_for @user do |f| %>
+    <%= render partial: f %>
+    <div class="actions">
+      <%= f.submit do %>
+        <button>Create User</button>
+      <% end %>
+    </div>
+  <% end %>
+</div>
