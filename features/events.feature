@@ -8,9 +8,6 @@ I want to edit, create, view events
     And event
     When I go to the events page
     And I should see "Event one"
-    When I follow "Event one"
-    Then I should be on the event page for "Event one"
-    And I should see "Event one"
 
   Scenario: Adminuser can edit event
     Given event

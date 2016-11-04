@@ -56,7 +56,8 @@ class User < ApplicationRecord
   before_update :activate_account,   if: 'activated? && active_changed?'
   before_save   :send_invitation,    if: 'activated? && sign_in_count.zero?'
 
-  scope :locked_accounts, -> { where.not(locked_at: nil) }
+  scope :locked_accounts,   -> { where.not(locked_at: nil) }
+  scope :order_by_fullname, -> { order(:first_name, :last_name) }
 
   class << self
     def filter_users(filters)

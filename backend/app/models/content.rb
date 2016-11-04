@@ -20,6 +20,7 @@
 
 class Content < ApplicationRecord
   include Publishable
+  include Sanitizable
   include Featurable
   include Attachable::Picture
 

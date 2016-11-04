@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require_dependency "backend/application_controller"
+require_dependency 'backend/application_controller'
 
 module Backend
   class NewsArticlesController < ::Backend::ApplicationController

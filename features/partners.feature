@@ -3,13 +3,10 @@ In order to manage partners
 As an adminuser
 I want to edit, create, view partners
 
-  Scenario: User can view partners page and partner page
+  Scenario: User can view partners page
     Given I am authenticated adminuser
     And partner
     When I go to the partners page
-    And I should see "Partner one"
-    When I follow "Partner one"
-    Then I should be on the partner page for "Partner one"
     And I should see "Partner one"
 
   Scenario: Adminuser can edit partner

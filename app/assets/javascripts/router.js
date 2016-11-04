@@ -11,22 +11,15 @@
      */
     routes: {
       '': 'Home#index',
-
       'publications': 'Publications#index',
       'publications/:id': 'Publications#show',
-
       'activities': 'Activities#index',
+      'activities/:id': 'Activities#show'
       'activities/:id': 'Activities#show',
-
       'media-library': 'Media#index',
       'media-library/:id': 'Media#show',
-
       'news': 'News#index',
-      'news/:id': 'News#show',
-
-      // Here you have an example
-      // 'countries': 'Countries#index',
-      // 'countries/:iso': 'Countries#show'
+      'news/:id': 'News#show'
     },
 
     initialize: function() {
