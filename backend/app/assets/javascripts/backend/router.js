@@ -11,9 +11,9 @@
      */
     routes: {
       'manage': 'BackOfficeHome#index',
-      'manage/activities': 'BackOfficeHome#show',
-      'manage/publications': 'BackOfficeHome#show',
-      'manage/news_articles': 'BackOfficeHome#show',
+      'manage/activities/:id/edit': 'BackOfficeHome#show',
+      'manage/publications:id/edit': 'BackOfficeHome#show',
+      'manage/news_articles:id/edit': 'BackOfficeHome#show',
 
       // Here you have an example
       // 'countries': 'Countries#index',

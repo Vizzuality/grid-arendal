@@ -8,5 +8,5 @@ Then /^I should have one publication$/ do
 end
 
 Given /^publication$/ do
-  FactoryGirl.create(:publication, title: 'My publication')
+  FactoryGirl.create(:publication, title: 'My publication', is_published: true)
 end

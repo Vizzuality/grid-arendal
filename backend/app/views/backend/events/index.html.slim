@@ -1,11 +1,14 @@
 h2 Events
 
 - if can?(:create, Event)
-  = link_to "New", new_event_path
+  = link_to 'New', new_event_path
 
 ul
   - @events.each do |event|
     li
-      = link_to event.title, event_path(event)
-      '
+      = event.title
+      |
       = link_to 'Edit', edit_event_path(event)
+      - if can? [:activate, :deactivate], event
+        .activate_deactivate
+          = render 'backend/shared/deactivatable_links', location: event

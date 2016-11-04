@@ -14,7 +14,9 @@ module Abilities
         can :manage, ::NewsArticle
         can :manage, ::Activity
         can :manage, ::Publication
+        can :manage, ::MediaContent
         can :manage, ::Vacancy
+        can [:publish, :unpublish], ::MediaContent
         can [:publish, :unpublish, :make_featured, :remove_featured], ::Activity
         can [:publish, :unpublish, :make_featured, :remove_featured], ::Publication
         can [:publish, :unpublish], ::Vacancy
