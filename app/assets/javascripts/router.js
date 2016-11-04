@@ -18,6 +18,9 @@
       'activities': 'Activities#index',
       'activities/:id': 'Activities#show',
 
+      'media-library': 'Media#index',
+      'media-library/:id': 'Media#show',
+
       // Here you have an example
       // 'countries': 'Countries#index',
       // 'countries/:iso': 'Countries#show'

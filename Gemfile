@@ -68,7 +68,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Assets pipeline
 gem 'jquery-rails'
-gem 'select2-rails'
+gem 'select2-rails', '~> 3.5.3'
 gem 'sass-rails', '~> 5.0'
 gem 'autoprefixer-rails', '~> 6.5.1'
 gem 'handlebars_assets'

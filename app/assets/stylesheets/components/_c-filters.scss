@@ -1,39 +1,55 @@
 %filter-background {
   content: "";
   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: rem(-8px);
-  margin: auto;
-  width: calc(100% + #{rem(16px)});
+  top: rem(3px);
+  left: rem(-10px);
+  width: calc(100% + #{rem(32px)});
   height: rem(5px);
   z-index: -1;
   background-color: $white;
+
+  @media screen and (min-width: $screen-m) {
+    top: rem(2px);
+    left: rem(-8px);
+    width: calc(100% + #{rem(28px)});
+    color: transparent;
+  }
 }
 
 %filter-tag-background {
   content: "";
   position: absolute;
   left: rem(-9px);
-  width: calc(100% + #{rem(18px)});
+  width: calc(100% + #{rem(11px)});
   height: 100%;
   border-radius: rem(100px);
   z-index: -1;
 }
 
 .c-filters {
-  display: flex;
+  display: block;
   position: relative;
-  z-index: 2;
 
   @media screen and (min-width: $screen-s) {
     margin-top: rem(4px);
   }
 
+  @media screen and (min-width: $screen-m) {
+    display: flex;
+  }
+
   .filter {
     position: relative;
-    width: 18%;
-    padding-top: rem(14px);
+    width: 100%;
+    padding-top: rem(22px);
+    margin-top: rem(11px);
+
+    @media screen and (min-width: $screen-m) {
+      width: 18%;
+      padding-top: rem(16px);
+      padding-right: rem(15px);
+      margin-top: 0;
+    }
 
     > .type {
       position: absolute;
@@ -52,14 +68,27 @@
         }
       }
 
+      .text {
+        display: inline-block;
+        @include ellipsis(calc(100% - #{rem(18px)}));
+
+        @media screen and (max-width: $screen-m) {
+          color: transparent;
+        }
+      }
+
       .icon {
-        position: relative;
+        position: absolute;
+        top: rem(1px);
+        width: rem(11px);
+        height: rem(11px);
+        margin-left: rem(6px);
         z-index: 2;
 
-        @media screen and (min-width: $screen-s) {
+        @media screen and (min-width: $screen-m) {
           width: rem(8px);
           height: rem(8px);
-          margin-left: rem(5px);
+          margin-left: rem(8px);
         }
       }
     }
@@ -67,6 +96,11 @@
     &.-search {
       flex-grow: 2;
       text-align: right;
+      display: none;
+
+      @media screen and (min-width: $screen-m) {
+        display: block;
+      }
     }
 
     .dropdown {
@@ -100,17 +134,43 @@
       }
     }
 
+    select {
+      position: absolute;
+      top: rem(18px);
+      left: rem(-4px);
+      background-color: transparent;
+      border: none;
+      outline: none;
+      z-index: 2;
+
+      @media screen and (min-width: $screen-m) {
+        display: none;
+      }
+    }
+
     &.-show-dropdown {
 
       .dropdown {
         display: block;
+        z-index: 16;
       }
     }
 
     &.-have-value {
 
-      .speaker:before {
-        @extend %filter-background;
+      .speaker {
+
+        &:before {
+          @extend %filter-background;
+        }
+
+        .text {
+          font-weight: 500;
+        }
+      }
+
+      select {
+        font-weight: 500;
       }
     }
 
@@ -173,4 +233,13 @@
       }
     }
   }
+}
+
+.c-filters-closer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
 }

@@ -1,44 +1,12 @@
 <div class="row">
   <div class="small-12 column">
     <div class="c-filters">
-      <div class="filter -have-value">
-        <div class="type text -filter-title">ORDERED BY</div>
-        <span class="text -filter speaker">
-          Popularity
-          <svg class="icon">
-            <use xlink:href="#icon-dropdown-arrow-down"></use>
-          </svg>
-        </span>
-        <div class="dropdown">
-          <div class="type text -filter-title">ORDERED BY</div>
-          <ul class="list">
-            <li class="text -filter">Popularity</li>
-            <li class="text -filter">Rapid Response Assessments</li>
-            <li class="text -filter">Vital Graphics</li>
-            <li class="text -filter">Mountains Outlook</li>
-            <li class="text -filter">Environment Atlas</li>
-            <li class="text -filter">Environment Times</li>
-            <li class="text -filter">Environment and Security</li>
-            <li class="text -filter">Story Maps</li>
-            <li class="text -filter">Brochures and Flyers</li>
-            <li class="text -filter">Web & CD-ROM productions</li>
-            <li class="text -filter">E-Books (Interactive)</li>
-            <li class="text -filter">Partner Publications</li>
-          </ul>
-        </div>
-      </div>
-      <div class="filter">
-        <span class="text -filter speaker">
-          Filter by type
-          <svg class="icon">
-            <use xlink:href="#icon-dropdown-arrow-down"></use>
-          </svg>
-        </span>
-      </div>
-      <div class="filter -type-tags -show-dropdown">
+      <%= render 'shared/select', js_trigger: 'js-dropdown-order-by', title: "ORDERED BY", placeholder: "Order by"%>
+      <%= render 'shared/select', js_trigger: 'js-dropdown-filter-by-type', title: "FILTER BY TYPE", placeholder: "Filter by type"%>
+      <div class="filter -type-tags">
         <div class="type text -filter-title">FILTER BY TAGS</div>
-        <span class="text -filter speaker">
-          Filter by tags
+        <span class="speaker">
+          <span class="text -filter">Filter by tags</span>
           <svg class="icon">
             <use xlink:href="#icon-dropdown-arrow-down"></use>
           </svg>
