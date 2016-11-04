@@ -13,9 +13,11 @@ module Backend
     end
 
     def edit
+      @events = Event.order_by_title
     end
 
     def new
+      @events = Event.order_by_title
       @event = Event.new
     end
 
