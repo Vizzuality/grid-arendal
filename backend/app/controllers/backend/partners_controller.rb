@@ -8,15 +8,18 @@ module Backend
     before_action :set_partner, except: [:index, :new, :create]
 
     def index
-      @partners = Partner.order_by_name
+      @partner = Partner.order(:name).first
+      if @partner
+        redirect_to edit_partner_url(@partner) and return
+      end
     end
 
     def edit
-      @partners = Partner.order_by_name
+      @partners = Partner.order(:name)
     end
 
     def new
-      @partners = Partner.order_by_name
+      @partners = Partner.order(:name)
       @partner = Partner.new
     end
 

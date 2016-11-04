@@ -9,15 +9,18 @@ module Backend
     before_action :set_partners_selection, only: [:update, :create, :new, :edit]
 
     def index
-      @events = Event.order_by_title
+      @event = Event.order(:title).first
+      if @event
+        redirect_to edit_event_url(@event) and return
+      end
     end
 
     def edit
-      @events = Event.order_by_title
+      @events = Event.order(:title)
     end
 
     def new
-      @events = Event.order_by_title
+      @events = Event.order(:title)
       @event = Event.new
     end
 
