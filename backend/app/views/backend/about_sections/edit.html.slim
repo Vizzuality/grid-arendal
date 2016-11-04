@@ -6,3 +6,24 @@ h2
 = simple_form_for @about_section do |f|
   = render partial: f
   = f.submit 'Update'
+
+
+
+
+<div class="l-items-index">
+  <%= render 'about_sections', about_sections: @about_sections %>
+</div>
+
+<div class="l-items-detail">
+  <h2> Edit</h2>
+  <p><%= @activity.title || 'Activity' %></p>
+  <%= simple_form_for @activity do |f| %>
+    <%= render 'form', form: f, users: @users, partners: @partners,
+      news_articles: @news_articles %>
+    <div class="actions">
+      <%=  f.submit  do %>
+        <button>Update</button>
+      <% end %>
+    </div>
+  <% end %>
+</div>

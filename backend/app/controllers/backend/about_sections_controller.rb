@@ -12,9 +12,11 @@ module Backend
     end
 
     def edit
+      @about_sections = AboutSection.order(:title)
     end
 
     def new
+      @about_sections = AboutSection.order(:title)
       @about_section = AboutSection.new
     end
 
