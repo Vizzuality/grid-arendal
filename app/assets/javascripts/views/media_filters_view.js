@@ -23,10 +23,10 @@
       this.options = _.extend({}, this.options, opts);
 
       this._loadFilters();
-      this.cache();
+      this._cache();
     },
 
-    cache: function() {
+    _cache: function() {
       this.$container = this.$el.find('.container');
     },
 

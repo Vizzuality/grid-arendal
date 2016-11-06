@@ -10,6 +10,7 @@
       closerClass: "c-filters-closer",
       showDropdownClass: "-show-dropdown",
       haveValueClass: "-have-value",
+      selectedClass: "selected",
       screenMWidth: 768
     },
 
@@ -20,23 +21,32 @@
       var opts = settings && settings.options ? settings.options : {};
       this.options = _.extend({}, this.options, opts);
 
+      this._cache();
       this._onClickOpenDropdown();
       this._onClickOptions();
       this._onChangeSelectValue();
     },
 
+    _cache: function() {
+      this.$select = this.$el.find("select");
+      this.$speaker = this.$el.find(".speaker");
+      this.$speakerText = this.$el.find(".speaker .text");
+      this.$dropdown = this.$el.find(".dropdown");
+    },
+
     _setSpeaker: function(value) {
-      this.$el.find(".speaker .text").html(value);
+      this.$speakerText.html(value);
     },
 
     _setSelectValue: function(element) {
-      this.$el.find("select")
+      this.$select
         .val($(element.currentTarget).data("value"))
         .change();
     },
 
     _openDropdown: function() {
       this.$el.addClass(this.options.showDropdownClass);
+      this._showCloser();
     },
 
     _closeDropdown: function() {
@@ -64,9 +74,8 @@
     },
 
     _onClickOpenDropdown: function() {
-      this.$el.find(".speaker").on('click', function() {
+      this.$speaker.on('click', function() {
         this._openDropdown();
-        this._showCloser();
       }.bind(this));
     },
 
@@ -77,7 +86,7 @@
     },
 
     _onChangeSelectValue: function() {
-      this.$el.find("select").change(function(e) {
+      this.$select.change(function(e) {
         this.$el.addClass(this.options.haveValueClass);
         this._setSpeaker($(e.currentTarget).val());
         this._closeProcess();
