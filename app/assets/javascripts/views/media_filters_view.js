@@ -15,7 +15,7 @@
     options: {
       opened: false,
       showFiltersClass: "-show-filters",
-      openFiltersAnimateSpeed: 0.5,
+      openFiltersAnimateSpeed: 0.5
     },
 
     initialize: function(settings) {
@@ -36,18 +36,29 @@
           case "select":
             this._loadSelect(filter);
             break;
+          case "tag":
+            this._loadTag(filter);
+            break;
         }
       }.bind(this));
     },
 
     _loadSelect: function(filter) {
-      new App.Helper.SelectHandler({
+      new App.Helper.SelectHandler(this._getHelperFilterObject(filter));
+    },
+
+    _loadTag: function(filter) {
+      new App.Helper.TagSelectHandler(this._getHelperFilterObject(filter));
+    },
+
+    _getHelperFilterObject: function(filter) {
+      return {
         el: filter.triggerClass,
         options: {
           filter: filter,
           callback: this._filterMedia
         }
-      });
+      };
     },
 
     _filterMedia: function() {
@@ -69,7 +80,6 @@
     },
 
     _getFiltersHeight: function() {
-      console.log("load");
       var elem = this.$container.clone().css("height", "auto").appendTo(this.$el);
       var height = elem.css("height");
       elem.remove();

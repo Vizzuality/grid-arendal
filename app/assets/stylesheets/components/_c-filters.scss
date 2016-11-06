@@ -1,7 +1,7 @@
 %filter-background {
   content: "";
   position: absolute;
-  top: rem(3px);
+  top: rem(1px);
   left: rem(-10px);
   width: calc(100% + #{rem(32px)});
   height: rem(5px);
@@ -20,7 +20,7 @@
   content: "";
   position: absolute;
   left: rem(-9px);
-  width: calc(100% + #{rem(11px)});
+  width: calc(100% + #{rem(18px)});
   height: 100%;
   border-radius: rem(100px);
   z-index: -1;
@@ -29,28 +29,29 @@
 .c-filters {
   display: block;
   position: relative;
-  min-height: rem(50px);
-  padding-top: rem(11px);
-
-  @media screen and (min-width: $screen-s) {
-    padding-top: 0;
-    margin-top: rem(4px);
-  }
+  padding: rem(12px) 0 rem(28px) 0;
+  transition: height 0.5s ease-out;
 
   @media screen and (min-width: $screen-m) {
     display: flex;
   }
 
   .container {
-    height: rem(28px);
-    overflow: hidden;
+    width: 100%;
+    height: 0;
     transition: height 0.5s ease-out;
+
+    @media screen and (min-width: $screen-m) {
+      height: auto;
+      overflow: visible;
+      display: inherit;
+    }
 
     .filter {
       position: relative;
       width: 100%;
-      padding-top: rem(22px);
-      margin-top: rem(11px);
+      padding-top: rem(18px);
+      margin-top: rem(10px);
       opacity: 0;
       transition: opacity 0.5s;
 
@@ -65,7 +66,6 @@
       > .type {
         position: absolute;
         top: 0;
-        left: 0;
       }
 
       .speaker {
@@ -82,21 +82,18 @@
         .text {
           display: inline-block;
           @include ellipsis(calc(100% - #{rem(18px)}));
-
-          @media screen and (max-width: $screen-m) {
-            color: transparent;
-          }
         }
 
         .icon {
           position: absolute;
-          top: rem(1px);
+          top: 0;
           width: rem(11px);
           height: rem(11px);
-          margin-left: rem(6px);
+          margin-left: rem(5px);
           z-index: 2;
 
           @media screen and (min-width: $screen-m) {
+            top: rem(1px);
             width: rem(8px);
             height: rem(8px);
             margin-left: rem(8px);
@@ -190,7 +187,10 @@
       }
 
       &.-type-tags {
-        position: static;
+
+        @media screen and (min-width: $screen-m) {
+          position: static;
+        }
 
         .dropdown {
           width: 100%;
@@ -211,6 +211,7 @@
             height: rem(12px);
             margin: 0;
             transform: rotateX(180deg);
+            cursor: pointer;
           }
 
           .list {
@@ -243,6 +244,19 @@
           }
         }
       }
+
+      &.-type-select {
+
+        .speaker {
+
+          .text {
+
+            @media screen and (max-width: $screen-m) {
+              color: transparent;
+            }
+          }
+        }
+      }
     }
   }
 
@@ -264,7 +278,7 @@
     }
 
     .icon {
-      margin-top: 4px;
+      margin-top: rem(4px);
       width: rem(26px);
       height: rem(20px);
 
@@ -275,6 +289,7 @@
   }
 
   &.-show-filters {
+    padding-bottom: rem(30px);
 
     .filter {
       opacity: 1;

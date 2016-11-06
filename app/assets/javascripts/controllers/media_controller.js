@@ -17,6 +17,10 @@
             {
               type: "select",
               triggerClass: ".js-dropdown-filter-by-type"
+            },
+            {
+              type: "tag",
+              triggerClass: ".js-dropdown-filter-by-tags"
             }
           ]
         }

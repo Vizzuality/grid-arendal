@@ -9,7 +9,8 @@
     options: {
       closerClass: "c-filters-closer",
       showDropdownClass: "-show-dropdown",
-      haveValueClass: "-have-value"
+      haveValueClass: "-have-value",
+      screenMWidth: 768
     },
 
     initialize: function(settings) {
@@ -25,11 +26,13 @@
     },
 
     _setSpeaker: function(value) {
-      $(this.options.filter.triggerClass + " .speaker .text").html(value);
+      this.$el.find(".speaker .text").html(value);
     },
 
-    _setSelectValue: function(value) {
-      $(this.options.filter.triggerClass + " select").val(value).change();
+    _setSelectValue: function(element) {
+      this.$el.find("select")
+        .val($(element.currentTarget).data("value"))
+        .change();
     },
 
     _openDropdown: function() {
@@ -45,8 +48,7 @@
         "class": this.options.closerClass,
         on: {
           click: function() {
-            this._closeDropdown();
-            this._destroyCloser();
+            this._closeProcess();
           }.bind(this)
         }
       }).appendTo("body");
@@ -56,25 +58,29 @@
       $("." + this.options.closerClass).remove();
     },
 
+    _closeProcess: function() {
+      this._closeDropdown();
+      this._destroyCloser();
+    },
+
     _onClickOpenDropdown: function() {
-      $(this.options.filter.triggerClass + " .speaker").on('click', function() {
+      this.$el.find(".speaker").on('click', function() {
         this._openDropdown();
         this._showCloser();
       }.bind(this));
     },
 
     _onClickOptions: function() {
-      $(this.options.filter.triggerClass + " .dropdown li").on('click', function(e) {
-        this._setSelectValue($(e.currentTarget).data("value"));
+      this.$el.find(".dropdown li").on('click', function(e) {
+        this._setSelectValue(e);
       }.bind(this));
     },
 
     _onChangeSelectValue: function() {
-      $(this.options.filter.triggerClass + " select").change(function(e) {
+      this.$el.find("select").change(function(e) {
         this.$el.addClass(this.options.haveValueClass);
         this._setSpeaker($(e.currentTarget).val());
-        this._closeDropdown();
-        this._destroyCloser();
+        this._closeProcess();
         this._runCallback();
       }.bind(this));
     },
