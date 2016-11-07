@@ -6,8 +6,7 @@
   <h2> Edit</h2>
   <p><%= @news_article.title || 'news_article' %></p>
   <%= simple_form_for @news_article do |f| %>
-    <%= render 'form', form: f, users: @users, partners: @partners,
-      news_articles: @news_articles %>
+    <%= render partial: f %>
     <div class="actions">
       <%=  f.submit  do %>
         <button>Update</button>

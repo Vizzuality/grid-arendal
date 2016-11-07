@@ -9,6 +9,7 @@
     <% @about_sections.each do |about_section| %>
       <li>
         <h2><%= about_section.title %></h2>
+        <p><%= about_section.body %></p>
         <%= link_to 'Edit', edit_about_section_path(about_section) %>
       </li>
     <% end %>
