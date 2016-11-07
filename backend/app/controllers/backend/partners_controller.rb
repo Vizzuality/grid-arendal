@@ -5,7 +5,8 @@ module Backend
   class PartnersController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_partner, except: [:index, :new, :create]
+    before_action :set_partner,  except: [:index, :new, :create]
+    before_action :set_partners, except: :index
 
     def index
       @partner = Partner.order(:name).first
@@ -15,11 +16,9 @@ module Backend
     end
 
     def edit
-      @partners = Partner.order(:name)
     end
 
     def new
-      @partners = Partner.order(:name)
       @partner = Partner.new
     end
 
@@ -44,6 +43,10 @@ module Backend
 
       def set_partner
         @partner = Partner.find(params[:id])
+      end
+
+      def set_partners
+        @partners = Partner.order(:name)
       end
 
       def partner_params
