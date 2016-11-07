@@ -4,11 +4,12 @@ $item-detail-width: 60%;
 $headerPlusIndex: 40%;
 
 .l-navigation {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   width: $header-width;
+  background-color: $main-blue;
 }
 
 .l-items-index {
