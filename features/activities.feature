@@ -49,12 +49,10 @@ I want to edit, create, view activities
     And activity
     When I go to the activities page
     Then I should see "My activity"
-    When I follow "Unpublish" within ".publish_unpublish"
-    Then I should be on the activities page
+    When I follow "Unpublish"
     And I should see "My activity"
     And I should see "Publish"
-    When I follow "Publish" within ".publish_unpublish"
-    Then I should be on the activities page
+    When I follow "Publish"
     And I should see "My activity"
     And I should see "Unpublish"
 
@@ -64,6 +62,5 @@ I want to edit, create, view activities
     When I go to the activities page
     Then I should see "My activity"
     And I follow "Remove featured"
-    Then I should be on the activities page
-    And I should see "My activity"
+    Then I should see "My activity"
     And I should see "Make featured"

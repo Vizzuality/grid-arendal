@@ -8,6 +8,7 @@ module Backend
       @photo_content = create(:photo_content, is_published: true)
       @album_content = create(:album_content, is_published: false)
       @adminuser     = create(:user, email: 'admin@sample.com', active: true, role: 'admin', first_name: 'Albert')
+      allow(controller).to receive(:set_flickr).and_return(true)
     end
 
     let!(:attri) do
@@ -36,12 +37,14 @@ module Backend
       end
 
       it 'Update photo_content' do
+        allow(FlickrService).to receive(:update_asset).and_return(true)
         process :update, method: :put, params: { id: @photo_content.id, media_content: attri }
         expect(response).to be_redirect
         expect(response).to have_http_status(302)
       end
 
       it 'Update album_content' do
+        allow(FlickrService).to receive(:update_asset).and_return(true)
         process :update, method: :put, params: { id: @album_content.id, media_content: attri }
         expect(response).to be_redirect
         expect(response).to have_http_status(302)

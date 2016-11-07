@@ -1,0 +1,121 @@
+.l-media-article {
+
+  &.-media-library {
+    background-color: rgba($color-2, 0.05);
+  }
+
+  .-title-single {
+    line-height: 1.15;
+  }
+  .-body-single {
+    margin-top: rem(20px);
+  }
+
+  .content {
+    float: left;
+    width: 100%;
+    padding: rem(40px) 0 rem(20px) 0;
+
+    @media screen and (min-width: $screen-s) {
+      padding: rem(40px) 0 rem(30px) 0;
+    }
+
+    @media screen and (min-width: $screen-m) {
+      padding: rem(26px) rem(40px) rem(40px) 0;
+    }
+
+    .rating {
+      margin-left: rem(15px)
+    }
+
+    .tags {
+      margin-top: rem(25px);
+    }
+
+    .tag {
+      display: inline-block;
+      margin: 0 0 rem(10px) rem(6px);
+      padding: rem(2px) rem(10px);
+      border-radius: 15px;
+      background-color: $color-1;
+      color: $font-color-3;
+      opacity: 1;
+    }
+  }
+
+  .sidebar {
+    float: right;
+    width: 100%;
+    padding: rem(10px) 0 rem(20px) 0;
+
+    @media screen and (min-width: $screen-s) {
+      padding: 0 0 rem(30px) 0;
+    }
+
+    @media screen and (min-width: $screen-m) {
+      padding: rem(40px) 0;
+    }
+
+    .download-links {
+      float: left;
+      padding-bottom: rem(20px);
+
+      @media screen and (max-width: $screen-m) and (min-width: $screen-s) {
+        width: 50%;
+      }
+
+      @media screen and (min-width: $screen-l) {
+        float: right;
+      }
+
+      .button-list {
+        font-size: 0;
+        margin-top: rem(16px);
+
+        li {
+          position: relative;
+          width: rem(70px);
+          display: inline-flex;
+          margin-bottom: rem(40px);
+
+          &:not(:last-child) {
+            margin-right: rem(20px);
+          }
+
+          &::before {
+            content: attr(data-file-size);
+            position: absolute;
+            top: rem(48px);
+            left: 0;
+            opacity: 0.5;
+            font-family: $font-family-1;
+            font-size: 12px;
+            font-weight: 200;
+            color: $font-color-1;
+          }
+        }
+      }
+    }
+
+    .constraints {
+      float: right;
+
+      @media screen and (max-width: $screen-m) and (min-width: $screen-s) {
+        width: 50%;
+        padding-left: rem(20px);
+      }
+
+      .-meta {
+        margin-top: rem(15px);
+        opacity: 0.5;
+        font-family: 'Roboto', sans-serif;
+        line-height: 1.33;
+        color: $font-color-1;
+
+        @media screen and (min-width: $screen-m) {
+          max-width: rem(340px);
+        }
+      }
+    }
+  }
+}

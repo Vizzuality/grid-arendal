@@ -5,6 +5,7 @@ I want to edit, create, view media contents
 
   Scenario: User can view media contents page
     Given I am authenticated adminuser
+    And I stub flickr
     And photo content
     And album content
     When I go to the media contents page
@@ -13,6 +14,7 @@ I want to edit, create, view media contents
   Scenario: Adminuser can edit media content without attachment
     Given album content
     And I am authenticated adminuser
+    And I stub flickr
     When I go to the edit media content page for "My album"
     And I fill in "Title" with "Album edited"
     And I press "Update"
@@ -20,6 +22,7 @@ I want to edit, create, view media contents
 
   Scenario: Adminuser can edit photo content with photo
     Given I am authenticated adminuser
+    And I stub flickr
     When I follow new photo on the new media content page
     And I fill in "Title" with "Photo new"
     And I attach the file "features/upload_files/album-sample.jpg" to "media_content_photo_file"
@@ -54,6 +57,7 @@ I want to edit, create, view media contents
 
   Scenario: Adminuser can create and delete media content photo
     Given I am authenticated adminuser
+    And I stub flickr
     When I follow new photo on the new media content page
     And I fill in "Title" with "Photo new"
     And I attach the file "features/upload_files/album-sample.jpg" to "media_content_photo_file"
@@ -87,6 +91,7 @@ I want to edit, create, view media contents
 
   Scenario: Adminuser can not create media content without title
     Given I am authenticated adminuser
+    And I stub flickr
     When I go to the new media content page
     And I fill in "Title" with ""
     And I press "Create media content"
@@ -95,6 +100,7 @@ I want to edit, create, view media contents
 
   Scenario: Publisheruser can publish and unpublish an media content
     Given I am authenticated publisheruser
+    And I stub flickr
     And photo content
     And album content
     When I go to the media contents page
