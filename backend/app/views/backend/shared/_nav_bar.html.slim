@@ -1,8 +1,15 @@
 ul.basic-nav
   - if user_signed_in?
-    li
-      = current_user.display_name
-      = link_to 'Log Out', destroy_user_session_path, method: 'delete'
+    li.-user
+      img.avatar src="https://pbs.twimg.com/profile_images/794258346115268614/odGvBrDx_bigger.jpg"
+      div.texts-container
+        div.user-name.text.-plain-text.-light
+          = current_user.display_name
+        = link_to 'Sign out', destroy_user_session_path, method: 'delete', class: 'text -plain-text -light'
+    li.-separator
+    li.-logo
+      svg.icon
+        use xlink:href="#icon-logo"
     li
       = link_to "Activities", activities_path
     li
