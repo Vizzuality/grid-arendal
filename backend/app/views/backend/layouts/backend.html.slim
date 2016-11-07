@@ -8,6 +8,7 @@ html lang='en'
     = stylesheet_link_tag 'backend/manifests/application'
     = csrf_meta_tags
   body
+    = render 'backend/shared/icons'
     - if alert
       .alert data-alert='true'
         = alert

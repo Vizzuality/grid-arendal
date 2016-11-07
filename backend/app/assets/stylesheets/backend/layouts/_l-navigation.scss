@@ -4,13 +4,19 @@ $nav-horizontal-padding: rem(19px);
 
   .basic-nav {
 
-
     li {
       position: relative;
       display: flex;
       align-items: center;
       height: rem(40px);
       padding: 0 rem(19px);
+      cursor: pointer;
+
+      &.-separator {
+        width: 100%;
+        height: rem(1px);
+        background-color: rgba($white, 0.1);
+      }
 
       &.-user {
         height: rem(67px);
@@ -48,10 +54,20 @@ $nav-horizontal-padding: rem(19px);
         }
       }
 
-      &.-separator {
-        width: 100%;
-        height: rem(1px);
-        background-color: rgba($white, 0.1);
+      &.-logo {
+        height: rem(100px);
+      }
+
+      &:not(.-no-hover) {
+
+        &:hover,
+        &.selected {
+          background-color: rgba($white, 0.1);
+        }
+
+        &.selected {
+          font-weight: 700;
+        }
       }
     }
   }
