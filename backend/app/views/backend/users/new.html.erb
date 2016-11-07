@@ -8,9 +8,7 @@
   <%= simple_form_for @user do |f| %>
     <%= render partial: f %>
     <div class="actions">
-      <%= f.submit do %>
-        <button>Create User</button>
-      <% end %>
+      <%= f.submit 'Create user' %>
     </div>
   <% end %>
 </div>

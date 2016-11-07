@@ -29,6 +29,10 @@ Given /^photo content$/ do
   FactoryGirl.create(:photo_content, title: 'My photo')
 end
 
+Given /^second photo content$/ do
+  FactoryGirl.create(:photo_content, title: 'Second photo')
+end
+
 Given /^album content$/ do
   FactoryGirl.create(:album_content, title: 'My album')
 end

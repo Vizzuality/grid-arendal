@@ -8,9 +8,7 @@
   <%= simple_form_for @event do |f| %>
     <%= render partial: f %>
     <div class="actions">
-      <%= f.submit do %>
-        <button>Create Event</button>
-      <% end %>
+      <%= f.submit 'Create Event' %>
     </div>
   <% end %>
 </div>
