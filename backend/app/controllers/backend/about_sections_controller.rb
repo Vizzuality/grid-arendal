@@ -5,7 +5,8 @@ module Backend
   class AboutSectionsController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_about_section, except: [:index, :new, :create]
+    before_action :set_about_section,  except: [:index, :new, :create]
+    before_action :set_about_sections, except: :index
 
     def index
       @about_section = AboutSection.order(:title).first
@@ -15,11 +16,9 @@ module Backend
     end
 
     def edit
-      @about_sections = AboutSection.order(:title)
     end
 
     def new
-      @about_sections = AboutSection.order(:title)
       @about_section = AboutSection.new
     end
 
@@ -44,6 +43,10 @@ module Backend
 
       def set_about_section
         @about_section = AboutSection.find(params[:id])
+      end
+
+      def set_about_sections
+        @about_sections = AboutSection.order(:title)
       end
 
       def about_section_params

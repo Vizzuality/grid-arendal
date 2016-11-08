@@ -9,14 +9,16 @@
     <li>
       <%= publication.title %>
       <%= link_to 'Edit', edit_publication_path(publication) %>
-      <% if can?(:publish, publication) && publication.unpublished? %>
-        |
-        <%= link_to "Publish", publish_publication_path(publication), method: :patch %>
-      <% end %>
-      <% if can?(:unpublish, publication) && publication.published? %>
-        |
-        <%= link_to "Unpublish", unpublish_publication_path(publication), method: :patch %>
-      <% end %>
+      <div class="publish_unpublish">
+        <% if can?(:publish, publication) && publication.unpublished? %>
+          |
+          <%= link_to "Publish", publish_publication_path(publication), method: :patch %>
+        <% end %>
+        <% if can?(:unpublish, publication) && publication.published? %>
+          |
+          <%= link_to "Unpublish", unpublish_publication_path(publication), method: :patch %>
+        <% end %>
+      </div>
       <% if can?(:make_featured, publication) && publication.not_featured? %>
         |
         <%= link_to "Make featured", make_featured_publication_path(publication), method: :patch %>

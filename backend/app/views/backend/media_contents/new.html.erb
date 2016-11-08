@@ -8,9 +8,7 @@
   <%= simple_form_for @media_content do |f| %>
     <%= render 'form', form: f %>
     <div class="actions">
-      <%= f.submit do %>
-        <button>Create media content</button>
-      <% end %>
+      <%= f.submit 'Create media content' %>
     </div>
   <% end %>
 </div>

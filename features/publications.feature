@@ -46,11 +46,11 @@ I want to edit, create, view publications
     When I go to the publications page
     Then I should see "My publication"
     When I follow "Unpublish" within ".publish_unpublish"
-    Then I should be on the publications page
+    Then I should be on the edit publication page for "My publication"
     And I should see "My publication"
     And I should see "Publish"
     When I follow "Publish" within ".publish_unpublish"
-    Then I should be on the publications page
+    Then I should be on the edit publication page for "My publication"
     And I should see "My publication"
     And I should see "Unpublish"
 
@@ -60,6 +60,6 @@ I want to edit, create, view publications
     When I go to the publications page
     Then I should see "My publication"
     And I follow "Remove featured"
-    Then I should be on the publications page
+    Then I should be on the edit publication page for "My publication"
     And I should see "My publication"
     And I should see "Make featured"

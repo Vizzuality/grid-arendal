@@ -101,15 +101,15 @@ I want to edit, create, view media contents
   Scenario: Publisheruser can publish and unpublish an media content
     Given I am authenticated publisheruser
     And I stub flickr
-    And photo content
+    And second photo content
     And album content
     When I go to the media contents page
-    Then I should see "My photo"
+    Then I should see "Second photo"
     When I follow "Unpublish"
-    Then I should be on the media contents page
-    And I should see "My photo"
+    Then I should be on the edit media content page for "Second photo"
+    And I should see "Second photo"
     And I should see "Publish"
     When I follow "Publish"
-    Then I should be on the media contents page
-    And I should see "My photo"
+    Then I should be on the media content page for "Second photo"
+    And I should see "Second photo"
     And I should see "Unpublish"

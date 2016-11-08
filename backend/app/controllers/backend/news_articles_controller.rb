@@ -5,7 +5,8 @@ module Backend
   class NewsArticlesController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_news_article, except: [:index, :new, :create]
+    before_action :set_news_article,  except: [:index, :new, :create]
+    before_action :set_news_articles, except: :index
 
     def index
       @news_article = NewsArticle.order(:title).first
@@ -15,11 +16,9 @@ module Backend
     end
 
     def edit
-      @news_articles = NewsArticle.order(:title)
     end
 
     def new
-      @news_articles = NewsArticle.order(:title)
       @news_article = NewsArticle.new
     end
 
@@ -44,6 +43,10 @@ module Backend
 
       def set_news_article
         @news_article = NewsArticle.find(params[:id])
+      end
+
+      def set_news_articles
+        @news_articles = NewsArticle.order(:title)
       end
 
       def news_article_params

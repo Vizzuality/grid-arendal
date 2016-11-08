@@ -24,7 +24,7 @@ I want to edit, create, view events
     And I fill in "Title" with "Event new"
     And I fill in "Web url" with "event-new-sample.org"
     And I select "Partner one" from "Partner"
-    And I press "Create event"
+    And I press "Create Event"
     Then I should have one event
     And I should see "Event new"
 
@@ -33,6 +33,6 @@ I want to edit, create, view events
     When I go to the new event page
     And I fill in "Title" with ""
     And I fill in "Web url" with "event-new-sample.org"
-    And I press "Create event"
+    And I press "Create Event"
     Then I should have zero events
     And I should see "can't be blank"
