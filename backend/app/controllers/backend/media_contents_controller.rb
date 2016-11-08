@@ -10,10 +10,7 @@ module Backend
     before_action :set_media_contents, except: :index
 
     def index
-      @media_content = MediaContent.includes_mediable.order(:title).first
-      if @media_content
-        redirect_to edit_media_content_url(@media_content) and return
-      end
+      redirect_to new_media_content_url(mediable: 'photo')
     end
 
     def edit
