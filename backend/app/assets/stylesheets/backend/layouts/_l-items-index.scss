@@ -1,5 +1,5 @@
 $index-horizontal-padding: rem(12px);
-$items-height: 60px;
+$items-height: rem(60px);
 $items-border: rem(1px) solid rgba($white, 0.2);
 
 .l-items-index {
@@ -41,7 +41,7 @@ $items-border: rem(1px) solid rgba($white, 0.2);
       position: relative;
       display: flex;
       align-items: center;
-      height: rem($items-height);
+      height: $items-height;
       padding: 0 rem(95px) 0 rem(30px);
       cursor: pointer;
       border-bottom: $items-border;
@@ -81,7 +81,7 @@ $items-border: rem(1px) solid rgba($white, 0.2);
       }
 
       &:first-child {
-        height: rem($items-height + 1px);
+        height: $items-height + rem(1px);
         border-top: $items-border;
       }
 
