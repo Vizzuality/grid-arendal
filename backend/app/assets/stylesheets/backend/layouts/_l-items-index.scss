@@ -86,11 +86,11 @@ $items-border: rem(1px) solid rgba($white, 0.2);
       }
 
       &:hover,
-      &.selected {
+      &.-selected {
         background-color: rgba($white, 0.2);
       }
 
-      &.selected {
+      &.-selected {
 
         .-edit {
 
