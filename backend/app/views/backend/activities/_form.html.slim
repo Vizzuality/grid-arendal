@@ -5,37 +5,38 @@ div.form_header
     = form.button :submit, 'SAVE', class: 'btn -dark'
     = form.button :button, 'CANCEL', class: 'btn -light'
 
-.field
-  = form.label :picture
-  = form.file_field :picture, label: false
+div.fields
+  .field
+    = form.label :picture
+    = form.file_field :picture, label: false
 
-.field
-  = form.label :short_description
-  = form.input :short_description, label: false
+  .field
+    = form.label :short_description
+    = form.input :short_description, label: false
 
-.field
-  = form.label :description
-  = form.input :description, label: false
+  .field
+    = form.label :description
+    = form.input :description, label: false
 
-.field
-  = form.label :story_map_url
-  = form.input :story_map_url, label: false
+  .field
+    = form.label :story_map_url
+    = form.input :story_map_url, label: false
 
-.field
-  = form.label :project_number
-  = form.input :project_number, label: false
+  .field
+    = form.label :project_number
+    = form.input :project_number, label: false
 
-.field
-  = form.association :news_articles, collection: news_articles, label_method: :title,
-    value_method: :id
-.field
-  = form.association :users, collection: users, label_method: :display_name,
-    value_method: :id
+  .field
+    = form.association :news_articles, collection: news_articles, label_method: :title,
+      value_method: :id
+  .field
+    = form.association :users, collection: users, label_method: :display_name,
+      value_method: :id
 
-.field
-  = form.association :partners, collection: partners, label_method: :name,
-    value_method: :id
+  .field
+    = form.association :partners, collection: partners, label_method: :name,
+      value_method: :id
 
-.field
-  = form.association :publications, collection: publications, label_method: :title,
-    value_method: :id
+  .field
+    = form.association :publications, collection: publications, label_method: :title,
+      value_method: :id
