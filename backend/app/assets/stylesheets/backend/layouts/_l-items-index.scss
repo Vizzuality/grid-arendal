@@ -36,7 +36,6 @@ $items-border: rem(1px) solid rgba($white, 0.2);
     margin-top: rem(25px);
     overflow: auto;
 
-
     li {
       position: relative;
       display: flex;
@@ -55,10 +54,6 @@ $items-border: rem(1px) solid rgba($white, 0.2);
           width: rem(10px);
           height: rem(10px);
         }
-      }
-
-      .-index-item {
-        color: $font-color-2;
       }
 
       .options {
@@ -100,7 +95,7 @@ $items-border: rem(1px) solid rgba($white, 0.2);
         }
       }
 
-      &.blocked {
+      &.-blocked {
         cursor: default;
 
         &:before {

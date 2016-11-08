@@ -35,6 +35,7 @@
     line-height: 1.43;
 
     .-selected & {
+      opacity: 1;
       font-weight: 700;
     }
   }
