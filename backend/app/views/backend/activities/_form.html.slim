@@ -1,6 +1,9 @@
-.field
-  = form.label :title
-  = form.input :title, label: false
+div.form_header
+  = form.input :title, label: false, input_html: { class: 'text -main-title -dark' }
+
+  div.actions
+    = form.button :submit, 'SAVE', class: 'btn -dark'
+    = form.button :button, 'CANCEL', class: 'btn -light'
 
 .field
   = form.label :picture
