@@ -1,0 +1,16 @@
+<div class="l-items-index">
+  <h2>Partners</h2>
+
+  <% if can?(:create, Partner) %>
+    <%= link_to "New", new_partner_path %>
+  <% end %>
+
+  <ul>
+    <% @partners.each do |partner| %>
+      <li>
+        <%= partner.name %>
+        <%= link_to 'Edit', edit_partner_path(partner) %>
+      </li>
+    <% end %>
+  </ul>
+</div>

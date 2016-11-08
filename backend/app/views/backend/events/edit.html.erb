@@ -1,0 +1,16 @@
+<div class="l-items-index">
+  <%= render 'events', events: @events %>
+</div>
+
+<div class="l-items-detail">
+  <h2>Edit</h2>
+  <p><%= @event.title || 'Event' %></p>
+  <%= simple_form_for @event do |f| %>
+    <%= render partial: f %>
+    <div class="actions">
+      <%=  f.submit  do %>
+        <button>Update</button>
+      <% end %>
+    </div>
+  <% end %>
+</div>

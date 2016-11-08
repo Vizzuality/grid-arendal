@@ -5,10 +5,14 @@ module Backend
   class NewsArticlesController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_news_article, except: [:index, :new, :create]
+    before_action :set_news_article,  except: [:index, :new, :create]
+    before_action :set_news_articles, except: :index
 
     def index
-      @news_articles = NewsArticle.order(:title)
+      @news_article = NewsArticle.order(:title).first
+      if @news_article
+        redirect_to edit_news_article_url(@news_article) and return
+      end
     end
 
     def edit
@@ -39,6 +43,10 @@ module Backend
 
       def set_news_article
         @news_article = NewsArticle.find(params[:id])
+      end
+
+      def set_news_articles
+        @news_articles = NewsArticle.order(:title)
       end
 
       def news_article_params

@@ -6,9 +6,12 @@ module Backend
     load_and_authorize_resource
 
     before_action :set_users_and_partners, only: [:new, :edit]
+    before_action :publications,           except: :index
+
 
     def index
-      @publications = Publication.order_by_title
+      @publication = Publication.order(:title).first
+      redirect_to edit_publication_url(@publication)
     end
 
     def edit
@@ -61,6 +64,10 @@ module Backend
 
       def publication_params
         params.require(:publication).permit!
+      end
+
+      def publications
+        @publications = Publication.order(:title)
       end
 
       def set_users_and_partners

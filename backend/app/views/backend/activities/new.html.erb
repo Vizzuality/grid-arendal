@@ -1,0 +1,18 @@
+<div class="l-items-index">
+  <%= render 'activities', activities: @activities %>
+</div>
+
+<div class="l-items-detail">
+  <h2>New Activity</h2>
+
+  <%= simple_form_for @activity do |f| %>
+    <%= render 'form', form: f, users: @users, partners: @partners,
+      news_articles: @news_articles, publications: @publications %>
+
+    <div class="actions">
+      <%= f.submit do %>
+        <button>Create Activity</button>
+      <% end %>
+    </div>
+  <% end %>
+</div>

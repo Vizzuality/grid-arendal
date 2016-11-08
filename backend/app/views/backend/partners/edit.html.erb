@@ -1,0 +1,17 @@
+<div class="l-items-index">
+  <%= render 'partners', partners: @partners %>
+</div>
+
+<div class="l-items-detail">
+  <h2>Edit</h2>
+
+  <h2><%= @partner.name || 'Partner' %></h2>
+
+  <%= simple_form_for @partner do |f| %>
+    <%= render partial: f %>
+
+    <div class="actions">
+      <%= f.submit 'Update' %>
+    </div>
+  <% end %>
+</div>
