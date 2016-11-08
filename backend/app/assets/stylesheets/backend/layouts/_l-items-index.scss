@@ -1,6 +1,6 @@
 $index-horizontal-padding: rem(12px);
 $items-height: 60px;
-$items-border: 1px solid rgba($white, 0.2);
+$items-border: rem(1px) solid rgba($white, 0.2);
 
 .l-items-index {
 
@@ -21,12 +21,12 @@ $items-border: 1px solid rgba($white, 0.2);
 
       &.-create-new {
         float: left;
-        padding: 0 11px;
+        padding: 0 rem(11px);
       }
 
       .icon {
-        width: 14px;
-        height: 14px;
+        width: rem(14px);
+        height: rem(14px);
       }
     }
   }
@@ -42,18 +42,18 @@ $items-border: 1px solid rgba($white, 0.2);
       display: flex;
       align-items: center;
       height: rem($items-height);
-      padding: 0 rem(95px) 0 30px;
+      padding: 0 rem(95px) 0 rem(30px);
       cursor: pointer;
       border-bottom: $items-border;
       overflow: hidden;
 
       .dragger {
         position: absolute;
-        left: 10px;
+        left: rem(10px);
 
         .icon {
-          width: 10px;
-          height: 10px;
+          width: rem(10px);
+          height: rem(10px);
         }
       }
 
@@ -69,8 +69,8 @@ $items-border: 1px solid rgba($white, 0.2);
           margin-left: rem(5px);
 
           .icon {
-            width: 12px;
-            height: 12px;
+            width: rem(12px);
+            height: rem(12px);
             opacity: 0.3;
 
             &:hover {
@@ -101,7 +101,7 @@ $items-border: 1px solid rgba($white, 0.2);
       }
 
       &.blocked {
-        cursor: none;
+        cursor: default;
 
         &:before {
           content: "";
@@ -109,7 +109,7 @@ $items-border: 1px solid rgba($white, 0.2);
           left: 0;
           width: 100%;
           height: 100%;
-          background-image: repeating-linear-gradient(-45deg, transparent, rgba(255, 255, 255, .2) 1px, transparent 2px, transparent 5px);
+          background-image: repeating-linear-gradient(-45deg, transparent, rgba(255, 255, 255, .2) rem(1px), transparent rem(2px), transparent rem(5px));
           z-index: 1;
         }
       }
