@@ -1,26 +1,46 @@
-<h2>Activities</h2>
+<h2 class="text -main-title -light">Activities</h2>
 
-<% if can?(:create, Activity) %>
-  <%= link_to "New", new_activity_path %>
-<% end %>
+<div class="buttons-bar">
+  <% if can?(:create, Activity) %>
+      <%= link_to "Create New", new_activity_path, class: 'btn -light -no-border -create-new' %>
+  <% end %>
+  <div class="btn">
+    <svg class="icon">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"></use>
+    </svg>
+  </div>
+  <div class="btn">
+    <svg class="icon">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-sort"></use>
+    </svg>
+  </div>
+</div>
 
-<ul>
+<ul class="items-list">
   <% activities.each do |activity| %>
     <li>
-      <%= activity.title %>
-      <%= link_to 'Edit', edit_activity_path(activity) %>
-      <% if can?(:publish, activity) && activity.unpublished? %>
-        <%= link_to "Publish", publish_activity_path(activity), method: :patch %>
-      <% end %>
-      <% if can?(:unpublish, activity) && activity.published? %>
-        <%= link_to "Unpublish", unpublish_activity_path(activity), method: :patch %>
-      <% end %>
-      <% if can?(:make_featured, activity) && activity.not_featured? %>
-        <%= link_to "Make featured", make_featured_activity_path(activity), method: :patch %>
-      <% end %>
-      <% if can?(:remove_featured, activity) && activity.featured? %>
-        <%= link_to "Remove featured", remove_featured_activity_path(activity), method: :patch %>
-      <% end %>
+      <div class="dragger">
+        <svg class="icon">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-row_dragger"></use>
+        </svg>
+      </div>
+      <div class="text -index-item"><%= activity.title %></div>
+      <div class="options">
+        <% if can?(:make_featured, activity) && activity.not_featured? %>
+            <%= link_to raw('<svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-star_outline"></use></svg>'), make_featured_activity_path(activity), method: :patch %>
+        <% end %>
+        <% if can?(:remove_featured, activity) && activity.featured? %>
+            <%= link_to raw('<svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-star"></use></svg>'), remove_featured_activity_path(activity), method: :patch %>
+        <% end %>
+        <% if can?(:publish, activity) && activity.unpublished? %>
+            <%= link_to raw('<svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-visibility_off"></use></svg>'), publish_activity_path(activity), method: :patch %>
+        <% end %>
+        <% if can?(:unpublish, activity) && activity.published? %>
+            <%= link_to raw('<svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-visibility"></use></svg>'), unpublish_activity_path(activity), method: :patch %>
+        <% end %>
+        <%= link_to raw('<svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-edit"></use></svg>'), edit_activity_path(activity), class: '-edit' %>
+        <%= link_to raw('<svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-delete"></use></svg>'), remove_featured_activity_path(activity), method: :patch %>
+      </div>
     </li>
   <% end %>
 </ul>

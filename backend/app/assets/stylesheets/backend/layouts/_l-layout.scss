@@ -9,15 +9,16 @@ $headerPlusIndex: 40%;
   bottom: 0;
   left: 0;
   width: $header-width;
-  background-color: $main-blue;
+  background-color: $color-1;
 }
 
 .l-items-index {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: $header-width;
   width: $index-width;
+  background-color: $color-2;
 }
 
 .l-items-detail {

@@ -1,0 +1,103 @@
+$index-horizontal-padding: rem(12px);
+$items-height: 60px;
+$items-border: 1px solid rgba($white, 0.2);
+
+.l-items-index {
+
+  h2 {
+    padding: rem(15px) 0 0 $index-horizontal-padding;
+  }
+
+  .buttons-bar {
+    width: 100%;
+    height: rem(30px);
+    padding-left: $index-horizontal-padding;
+    margin-top: rem(13px);
+
+    .btn {
+      float: right;
+      margin-right: $index-horizontal-padding;
+      border-color: rgba($white, 0.5);
+
+      &.-create-new {
+        float: left;
+        padding: 0 11px;
+      }
+
+      .icon {
+        width: 14px;
+        height: 14px;
+      }
+    }
+  }
+
+  .items-list {
+    height: calc(100% - #{rem(133px)});
+    margin-top: rem(25px);
+    overflow: auto;
+
+
+    li {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: rem($items-height);
+      padding: 0 rem(94px) 0 30px;
+      cursor: pointer;
+      border-bottom: $items-border;
+      overflow: hidden;
+
+      .dragger {
+        position: absolute;
+        left: 10px;
+
+        .icon {
+          width: 10px;
+          height: 10px;
+        }
+      }
+
+      .-index-item {
+        color: $font-color-2;
+      }
+
+      .options {
+        position: absolute;
+        right: rem(9px);
+
+        a {
+          margin-left: rem(5px);
+
+          .icon {
+            width: 12px;
+            height: 12px;
+          }
+        }
+      }
+
+      &:first-child {
+        height: rem($items-height + 1px);
+        border-top: $items-border;
+      }
+
+      &:hover,
+      &.selected {
+        background-color: rgba($white, 0.2);
+      }
+
+      &.selected {
+
+        .options {
+
+          .-edit {
+
+            use path {
+              opacity: 1;
+              fill: red;
+            }
+          }
+        }
+      }
+    }
+  }
+}
