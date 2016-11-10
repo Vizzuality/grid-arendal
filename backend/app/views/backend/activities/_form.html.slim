@@ -10,7 +10,7 @@ div.fields
     = form.label :picture, class: 'text -field-label -bold -dark'
     = form.file_field :picture, label: false
 
-  .field
+  .field data-type="short_description"
     = form.label :short_description, class: 'text -field-label -bold -dark'
     = form.input :short_description, label: false, input_html: { class: 'textarea -size-s text -plain-text -dark' }
     div.options
