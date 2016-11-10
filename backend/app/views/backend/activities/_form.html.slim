@@ -30,7 +30,7 @@ div.fields
 
 div.fields.-grey
   .field
-    = form.association :publications, collection: activities, label_method: :title, value_method: :id, label_html: { class: 'text -field-label -bold -dark' }, input_html: { class: 'js-select-tags' }
+    = form.association :publications, collection: publications, label_method: :title, value_method: :id, label_html: { class: 'text -field-label -bold -dark' }, input_html: { class: 'js-select-tags' }
     div.options
       div.text.-field-note.-dark
         '(Choose specific publications or tags)
