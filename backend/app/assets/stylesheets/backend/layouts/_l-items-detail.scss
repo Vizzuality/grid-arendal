@@ -1,3 +1,12 @@
+%input-defaults {
+  width: 100%;
+  background-color: $white;
+  border: solid rem(1px) rgba($black, 0.2);
+  border-radius: 0;
+}
+
+$input-min-height: rem(43px);
+
 .l-items-detail {
 
   form {
@@ -36,21 +45,27 @@
     }
 
     .fields {
-      padding: 0 rem(75px);
+      padding: rem(30px) rem(75px);
 
       .field {
         position: relative;
-        margin-top: rem(35px);
+
+        &:not(:first-child) {
+          margin-top: rem(35px);
+        }
+
+        .options {
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
 
         .textarea {
-          width: 100%;
-
           padding: rem(8px) rem(9px);
-          border: solid rem(1px) rgba($black, 0.2);
-          border-radius: 0;
           resize: none;
           outline: 0;
           overflow: auto;
+          @extend %input-defaults;
 
           &:not(.medium-editor-hidden) {
             display: block;
@@ -65,11 +80,57 @@
           }
         }
 
-        .options {
-          position: absolute;
-          top: 0;
-          right: 0;
+        .basic-input {
+          height: $input-min-height;
+          padding: rem(8px) rem(9px);
+          @extend %input-defaults;
         }
+
+        select {
+          height: $input-min-height;
+          @extend %input-defaults;
+
+          option {
+            display: none;
+          }
+        }
+
+        .select2-container--default {
+          min-height: $input-min-height;
+          @extend %input-defaults;
+
+          .select2-selection--multiple {
+            border: 0;
+            border-radius: 0;
+
+            .select2-selection__choice {
+              position: relative;
+              height: rem(30px);
+              padding-right: rem(31px);
+              border-radius: rem(4px);
+              background-color: rgba($color-1, 0.1);
+              font-family: $font-family-1;
+              font-size: rem(14px);
+              line-height: 2.2;
+              color: $font-color-1;
+              border: 0;
+            }
+
+            .select2-selection__choice__remove {
+              position: absolute;
+              right: 0;
+              margin-right: rem(12px);
+            }
+
+            .select2-selection__rendered {
+              padding: rem(4px) rem(5px) rem(3px) rem(8px);
+            }
+          }
+        }
+      }
+
+      &.-grey {
+        background-color: $grey;
       }
     }
   }

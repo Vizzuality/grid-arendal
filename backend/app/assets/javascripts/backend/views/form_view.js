@@ -13,6 +13,7 @@
     initialize: function() {
       this._loadShortDescription();
       this._loadMediumEditor();
+      this._loadTaggingSelect();
     },
 
     _loadShortDescription: function() {
@@ -23,6 +24,12 @@
 
     _loadMediumEditor: function () {
       new MediumEditor('.js-textarea-editable');
+    },
+
+    _loadTaggingSelect: function () {
+      $(".js-select-tags").select2({
+        tags: true
+      }).bind(this);
     },
 
   });

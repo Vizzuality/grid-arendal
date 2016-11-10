@@ -22,24 +22,27 @@ div.fields
 
   .field
     = form.label :story_map_url, class: 'text -field-label -bold -dark'
-    = form.input :story_map_url, label: false
+    = form.input :story_map_url, label: false, input_html: { class: 'basic-input text -plain-text -dark' }
 
   .field
     = form.label :project_number, class: 'text -field-label -bold -dark'
-    = form.input :project_number, label: false
+    = form.input :project_number, label: false, input_html: { class: 'basic-input text -plain-text -dark' }
 
-  div
-    .field
-      = form.association :news_articles, collection: news_articles, label_method: :title,
-        value_method: :id
-    .field
-      = form.association :users, collection: users, label_method: :display_name,
-        value_method: :id
+div.fields.-grey
+  .field
+    = form.association :publications, collection: activities, label_method: :title, value_method: :id, label_html: { class: 'text -field-label -bold -dark' }, input_html: { class: 'js-select-tags' }
+    div.options
+      div.text.-field-note.-dark
+        '(Choose specific publications or tags)
 
-    .field
-      = form.association :partners, collection: partners, label_method: :name,
-        value_method: :id
+  .field
+    = form.association :news_articles, collection: news_articles, label_method: :title, value_method: :id, label_html: { class: 'text -field-label -bold -dark' }, input_html: { class: 'js-select-tags' }
+    div.options
+      div.text.-field-note.-dark
+        '(Choose specific news or tags)
 
-    .field
-      = form.association :publications, collection: publications, label_method: :title,
-        value_method: :id
+  .field
+    = form.association :users, collection: users, label_method: :display_name, value_method: :id, label_html: { class: 'text -field-label -bold -dark' }, input_html: { class: 'js-select-tags' }
+
+  .field
+    = form.association :partners, collection: partners, label_method: :name, value_method: :id
