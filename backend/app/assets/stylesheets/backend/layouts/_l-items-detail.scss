@@ -37,6 +37,33 @@
 
     .fields {
       padding: 0 rem(75px);
+
+      .field {
+        margin-top: rem(35px);
+
+        .textarea {
+          width: 100%;
+
+          padding: rem(8px) rem(9px);
+          border: solid rem(1px) rgba($black, 0.2);
+          border-radius: 0;
+          resize: none;
+          outline: 0;
+          overflow: auto;
+
+          &:not(.medium-editor-hidden) {
+            display: block;
+          }
+
+          &.-size-s {
+            height: rem(60px);
+          }
+
+          &.-size-l {
+            height: rem(260px);
+          }
+        }
+      }
     }
   }
 }

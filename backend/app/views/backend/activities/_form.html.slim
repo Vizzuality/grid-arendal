@@ -7,23 +7,25 @@ div.form_header
 
 div.fields
   .field
-    = form.label :picture
+    = form.label :picture, class: 'text -field-label -bold -dark'
     = form.file_field :picture, label: false
 
   .field
-    = form.label :short_description
-    = form.input :short_description, label: false
+    = form.label :short_description, class: 'text -field-label -bold -dark'
+    = form.input :short_description, label: false, input_html: { class: 'textarea -size-s text -plain-text -dark' }
+    div.options
+      div.char_counter data-max="140"
 
   .field
-    = form.label :description
-    = form.input :description, label: false
+    = form.label :description, class: 'text -field-label -bold -dark'
+    = form.input :description, label: false, input_html: { class: 'textarea -size-l text -plain-text -dark js-textarea-editable' }
 
   .field
-    = form.label :story_map_url
+    = form.label :story_map_url, class: 'text -field-label -bold -dark'
     = form.input :story_map_url, label: false
 
   .field
-    = form.label :project_number
+    = form.label :project_number, class: 'text -field-label -bold -dark'
     = form.input :project_number, label: false
 
   .field
