@@ -12,9 +12,9 @@ div.fields
 
   .field data-type="short_description"
     = form.label :short_description, class: 'text -field-label -bold -dark'
-    = form.input :short_description, label: false, input_html: { class: 'textarea -size-s text -plain-text -dark' }
+    = form.input :short_description, label: false, input_html: { class: 'textarea -size-s text -plain-text -dark', maxlength: '140' }
     div.options
-      div.char_counter data-max="140"
+      div.text.-field-note.-small.-dark.js-char-counter
 
   .field
     = form.label :description, class: 'text -field-label -bold -dark'
@@ -28,17 +28,18 @@ div.fields
     = form.label :project_number, class: 'text -field-label -bold -dark'
     = form.input :project_number, label: false
 
-  .field
-    = form.association :news_articles, collection: news_articles, label_method: :title,
-      value_method: :id
-  .field
-    = form.association :users, collection: users, label_method: :display_name,
-      value_method: :id
+  div
+    .field
+      = form.association :news_articles, collection: news_articles, label_method: :title,
+        value_method: :id
+    .field
+      = form.association :users, collection: users, label_method: :display_name,
+        value_method: :id
 
-  .field
-    = form.association :partners, collection: partners, label_method: :name,
-      value_method: :id
+    .field
+      = form.association :partners, collection: partners, label_method: :name,
+        value_method: :id
 
-  .field
-    = form.association :publications, collection: publications, label_method: :title,
-      value_method: :id
+    .field
+      = form.association :publications, collection: publications, label_method: :title,
+        value_method: :id

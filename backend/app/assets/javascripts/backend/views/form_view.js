@@ -12,12 +12,17 @@
 
     initialize: function() {
       this._loadShortDescription();
+      this._loadMediumEditor();
     },
 
     _loadShortDescription: function() {
       new App.Helper.FormInputCharLimited({
-        el: this.$el.find('[data-type="short_description"]')
+        el: $(this.$el.find('[data-type="short_description"]'))
       });
+    },
+
+    _loadMediumEditor: function () {
+      new MediumEditor('.js-textarea-editable');
     },
 
   });

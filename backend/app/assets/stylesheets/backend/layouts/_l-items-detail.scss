@@ -39,6 +39,7 @@
       padding: 0 rem(75px);
 
       .field {
+        position: relative;
         margin-top: rem(35px);
 
         .textarea {
@@ -62,6 +63,12 @@
           &.-size-l {
             height: rem(260px);
           }
+        }
+
+        .options {
+          position: absolute;
+          top: 0;
+          right: 0;
         }
       }
     }

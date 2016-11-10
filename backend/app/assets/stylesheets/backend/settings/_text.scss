@@ -50,6 +50,17 @@
     line-height: 1.43;
   }
 
+  &.-field-note {
+    opacity: 0.5;
+    font-size: rem(14px);
+    line-height: 1.93;
+
+    &.-small {
+      font-size: rem(12px);
+      line-height: 2.5;
+    }
+  }
+
   /*
    * WEIGHT
    */
