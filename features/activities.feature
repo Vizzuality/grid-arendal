@@ -49,18 +49,18 @@ I want to edit, create, view activities
     And activity
     When I go to the activities page
     Then I should see "My activity"
-    When I follow "Unpublish"
+    When I click on ".Unpublish"
     And I should see "My activity"
-    And I should see "Publish"
-    When I follow "Publish"
+    And I should have one unpublished activity
+    When I click on ".Publish"
     And I should see "My activity"
-    And I should see "Unpublish"
+    And I should have one published activity
 
   Scenario: Publisheruser can make and remove featured status from activity
     Given I am authenticated publisheruser
     And activity
     When I go to the activities page
     Then I should see "My activity"
-    And I follow "Remove featured"
+    And I click on ".RemoveFeatured"
     Then I should see "My activity"
-    And I should see "Make featured"
+    And I should have one not_featured activity
