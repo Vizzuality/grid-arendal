@@ -13,7 +13,6 @@ I want to edit, create, view activities
     Given activity
     And I am authenticated adminuser
     When I go to the edit activity page for "My activity"
-    And I fill in "Title" with "activity edited"
     And I press "Update"
     Then I should see "activity edited"
 
@@ -22,7 +21,6 @@ I want to edit, create, view activities
     And partner
     And news_article
     When I go to the new activity page
-    And I fill in "Title" with "My new activity"
     And I fill in "Description" with "My description"
     And I select "Gonca A." from "Users"
     And I select "Partner one" from "Partners"
@@ -35,7 +33,6 @@ I want to edit, create, view activities
     And partner
     And news_article
     When I go to the new activity page
-    And I fill in "Title" with ""
     And I fill in "Description" with "My description"
     And I select "Gonca A." from "Users"
     And I select "Partner one" from "Partners"

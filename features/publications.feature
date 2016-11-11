@@ -13,7 +13,6 @@ I want to edit, create, view publications
     Given publication
     And I am authenticated adminuser
     When I go to the edit publication page for "My publication"
-    And I fill in "Title" with "Publication edited"
     And I press "Update"
     Then I should see "Publication edited"
 
@@ -21,7 +20,6 @@ I want to edit, create, view publications
     Given I am authenticated adminuser
     And partner
     When I go to the new publication page
-    And I fill in "Title" with "My new publication"
     And I fill in "Description" with "My description"
     And I select "Gonca A." from "Users"
     And I select "Partner one" from "Partners"
@@ -33,7 +31,6 @@ I want to edit, create, view publications
     Given I am authenticated adminuser
     And partner
     When I go to the new publication page
-    And I fill in "Title" with ""
     And I fill in "Description" with "My description"
     And I select "Partner one" from "Partners"
     And I press "Create Publication"
@@ -45,21 +42,18 @@ I want to edit, create, view publications
     And publication
     When I go to the publications page
     Then I should see "My publication"
-    When I follow "Unpublish" within ".publish_unpublish"
-    Then I should be on the edit publication page for "My publication"
+    When I click on ".Unpublish"
     And I should see "My publication"
-    And I should see "Publish"
-    When I follow "Publish" within ".publish_unpublish"
-    Then I should be on the edit publication page for "My publication"
+    And I should have one unpublished publication
+    When I click on ".Publish"
     And I should see "My publication"
-    And I should see "Unpublish"
+    And I should have one published publication
 
   Scenario: Publisheruser can make and remove featured status from publication
     Given I am authenticated publisheruser
     And publication
     When I go to the publications page
     Then I should see "My publication"
-    And I follow "Remove featured"
-    Then I should be on the edit publication page for "My publication"
+    And I click on ".RemoveFeatured"
     And I should see "My publication"
-    And I should see "Make featured"
+    And I should have one not_featured publication
