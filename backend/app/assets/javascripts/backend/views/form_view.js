@@ -8,7 +8,10 @@
 
     el: 'form',
 
-    events: {},
+    options: {
+      mediumEditorTriggerClass: ".js-textarea-editable",
+      selectTagsTriggerClass: ".js-select-tags"
+    },
 
     initialize: function() {
       this._loadShortDescription();
@@ -23,11 +26,15 @@
     },
 
     _loadMediumEditor: function () {
-      new MediumEditor('.js-textarea-editable');
+      new MediumEditor(this.options.mediumEditorTriggerClass, {
+        toolbar: {
+          buttons: ['bold', 'italic', 'underline', 'h1', 'h2', 'quote', 'anchor']
+        }
+      });
     },
 
     _loadTaggingSelect: function () {
-      $(".js-select-tags").select2({
+      $(this.options.selectTagsTriggerClass).select2({
         tags: true
       }).bind(this);
     },

@@ -45,4 +45,4 @@ div.fields.-grey
     = form.association :users, collection: users, label_method: :display_name, value_method: :id, label_html: { class: 'text -field-label -bold -dark' }, input_html: { class: 'js-select-tags' }
 
   .field
-    = form.association :partners, collection: partners, label_method: :name, value_method: :id
+    = form.association :partners, collection: partners, label_method: :name, value_method: :id, label_html: { class: 'text -field-label -bold -dark' }
