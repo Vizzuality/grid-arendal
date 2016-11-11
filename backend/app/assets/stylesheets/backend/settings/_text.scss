@@ -34,9 +34,15 @@
     font-size: rem(14px);
     line-height: 1.43;
 
-    .-active & {
+    .-selected & {
+      opacity: 1;
       font-weight: 700;
     }
+  }
+
+  &.-nav-text {
+    font-size: rem(14px);
+    line-height: 1.43;
   }
 
   /*

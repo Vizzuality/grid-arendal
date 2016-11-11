@@ -15,7 +15,7 @@ I want to login, logout and reset password
   Scenario: User logout
     Given I am authenticated user
     And I am on the admin page
-    When I follow "Log Out"
+    When I follow "Sign out"
     Then I should see "Signed out successfully."
     And I am on the admin page
 
