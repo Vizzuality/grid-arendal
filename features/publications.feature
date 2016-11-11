@@ -13,17 +13,19 @@ I want to edit, create, view publications
     Given publication
     And I am authenticated adminuser
     When I go to the edit publication page for "My publication"
-    And I press "Update"
+    And I fill in "Title" with "Publication edited"
+    And I press "SAVE"
     Then I should see "Publication edited"
 
   Scenario: Adminuser can create publication
     Given I am authenticated adminuser
     And partner
     When I go to the new publication page
+    And I fill in "Title" with "My new publication"
     And I fill in "Description" with "My description"
     And I select "Gonca A." from "Users"
     And I select "Partner one" from "Partners"
-    And I press "Create Publication"
+    And I press "SAVE"
     Then I should have one publication
     And I should see "My new publication"
 
@@ -31,9 +33,10 @@ I want to edit, create, view publications
     Given I am authenticated adminuser
     And partner
     When I go to the new publication page
+    And I fill in "Title" with ""
     And I fill in "Description" with "My description"
     And I select "Partner one" from "Partners"
-    And I press "Create Publication"
+    And I press "SAVE"
     Then I should have zero publications
     And I should see "can't be blank"
 
