@@ -1,9 +1,10 @@
 div.form_header
-  = form.input :title, label: false, input_html: { class: 'text -main-title -dark' }
+  = form.input :title, label: false, input_html: { class: 'text -main-title -dark', placeholder: 'New Activity' }
 
   div.actions
     = form.button :submit, 'SAVE', class: 'btn -dark'
-    = form.button :button, 'CANCEL', class: 'btn -light'
+    div.btn.-light.js-cancel-process
+      'CANCEL
 
 div.fields
   .field

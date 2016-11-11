@@ -8,6 +8,10 @@
 
     el: 'form',
 
+    events: {
+      'click .js-cancel-process': '_cancelProcess'
+    },
+
     options: {
       mediumEditorTriggerClass: ".js-textarea-editable",
       selectTagsTriggerClass: ".js-select-tags"
@@ -37,6 +41,10 @@
       $(this.options.selectTagsTriggerClass).select2({
         tags: true
       }).bind(this);
+    },
+
+    _cancelProcess: function () {
+      location.reload();
     },
 
   });

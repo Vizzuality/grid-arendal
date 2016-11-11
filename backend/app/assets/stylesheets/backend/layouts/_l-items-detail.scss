@@ -25,6 +25,11 @@ $input-min-height: rem(43px);
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
+          outline: 0;
+
+          &:focus {
+            text-decoration: underline;
+          }
         }
       }
 
