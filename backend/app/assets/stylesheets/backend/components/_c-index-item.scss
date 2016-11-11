@@ -18,6 +18,24 @@
     }
   }
 
+  .title {
+
+    &.-long {
+      display: none;
+    }
+
+    @media screen and (min-width: $screen-xl) {
+
+      &.-short {
+        display: none;
+      }
+
+      &.-long {
+        display: block;
+      }
+    }
+  }
+
   .options {
     position: absolute;
     right: rem(9px);
