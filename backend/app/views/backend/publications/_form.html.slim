@@ -1,27 +1,34 @@
-.field
+div.form_header
   = form.label :title
-  = form.input :title, label: false
+  = form.input :title, label: false, input_html: { class: 'text -main-title -dark title', placeholder: 'New Publication' }
 
-.field
-  = form.label :picture, 'Cover picture'
-  = form.file_field :picture, label: false
+  div.actions
+    = form.button :submit, 'SAVE', class: 'btn -dark'
+    div.btn.-light.js-cancel-process
+      'CANCEL
 
-.field
-  = form.label :short_description
-  = form.input :short_description, label: false
+div.fields
+  .field
+    = form.label :picture, 'Cover picture', class: 'text -field-label -bold -dark'
+    = form.file_field :picture, label: false
 
-.field
-  = form.label :description
-  = form.input :description, label: false
+  .field data-type="short_description"
+    = form.label :short_description, class: 'text -field-label -bold -dark'
+    = form.input :short_description, label: false, input_html: {class: 'textarea -size-s text -plain-text -dark', maxlength: '140'}
+    div.options
+      div.text.-field-note.-small.-dark.js-char-counter
 
-.field
-  = form.label :story_map_url
-  = form.input :story_map_url, label: false
+  .field
+    = form.label :description, class: 'text -field-label -bold -dark'
+    = form.input :description, label: false, input_html: {class: 'textarea -size-l text -plain-text -dark js-textarea-editable'}
 
-.field
-  = form.association :users, collection: users, label_method: :display_name,
-    value_method: :id
+  .field
+    = form.label :story_map_url, class: 'text -field-label -bold -dark'
+    = form.input :story_map_url, label: false, input_html: {class: 'basic-input text -plain-text -dark'}
 
-.field
-  = form.association :partners, collection: partners, label_method: :name,
-    value_method: :id
+div.fields.-grey
+  .field
+    = form.association :users, collection: users, label_method: :display_name, value_method: :id, label_html: {class: 'text -field-label -bold -dark'}, input_html: {class: 'js-select-tags'}
+
+  .field
+    = form.association :partners, collection: partners, label_method: :name, value_method: :id, label_html: {class: 'text -field-label -bold -dark'}

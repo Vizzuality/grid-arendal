@@ -10,8 +10,7 @@ module Backend
 
 
     def index
-      @publication = Publication.order(:title).first
-      redirect_to edit_publication_url(@publication)
+      redirect_to new_publication_path()
     end
 
     def edit

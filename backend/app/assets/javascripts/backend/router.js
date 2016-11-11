@@ -12,7 +12,9 @@
     routes: {
       'manage': 'BackOfficeHome#index',
       'manage/activities/:id/edit': 'BackOfficeHome#show',
-      'manage/publications:id/edit': 'BackOfficeHome#show',
+      'manage/activities/new': 'BackOfficeHome#show',
+      'manage/publications/:id/edit': 'BackOfficeHome#show',
+      'manage/publications/new': 'BackOfficeHome#show',
       'manage/news_articles:id/edit': 'BackOfficeHome#show',
 
       // Here you have an example

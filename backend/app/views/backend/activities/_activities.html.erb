@@ -18,6 +18,13 @@
 
 <ul class="items-list">
   <% activities.each do |activity| %>
-    <%= render 'item', activity: activity %>
+    <%= render 'backend/shared/index_item',
+      item: activity,
+      title: activity.title,
+      make_featured_path: make_featured_activity_path(activity),
+      remove_featured_path: remove_featured_activity_path(activity),
+      publishn_path: publish_activity_path(activity),
+      unpublish_path: unpublish_activity_path(activity),
+      edit_path: edit_activity_path(activity)%>
   <% end %>
 </ul>
