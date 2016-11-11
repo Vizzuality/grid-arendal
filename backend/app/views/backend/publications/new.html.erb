@@ -4,16 +4,7 @@
 
 
 <div class="l-items-detail">
-  <p>New Publication</p>
-
   <%= simple_form_for @publication do |f| %>
     <%= render 'form', form: f, users: @users, partners: @partners %>
-
-    <div class="actions">
-      <%= f.submit do %>
-        <button>Create Publication</button>
-      <% end %>
-    </div>
   <% end %>
-
 </div>

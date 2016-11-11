@@ -40,7 +40,7 @@
     _loadTaggingSelect: function () {
       $(this.options.selectTagsTriggerClass).select2({
         tags: true
-      }).bind(this);
+      });
     },
 
     _cancelProcess: function () {

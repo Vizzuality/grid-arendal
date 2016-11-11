@@ -16,20 +16,17 @@ $input-min-height: rem(43px);
       padding: rem(15px) rem(240px) rem(15px) rem(19px);
       border-bottom: rem(1px) solid rgba($color-1, 0.2);
 
-      .activity_title {
+      .title {
+        width: 100%;
+        padding: 0;
+        border: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        outline: 0;
 
-        input {
-          width: 100%;
-          padding: 0;
-          border: 0;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          outline: 0;
-
-          &:focus {
-            text-decoration: underline;
-          }
+        &:focus {
+          text-decoration: underline;
         }
       }
 
