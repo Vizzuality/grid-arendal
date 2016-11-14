@@ -7,7 +7,9 @@
   App.Controller.Publications = App.Controller.Page.extend({
 
     index: function(params) {
-      console.log('publications#index');
+      var masonryView = new App.View.Masonry({
+        el: '#masonry-layout'
+      });
     },
 
     show: function(params) {

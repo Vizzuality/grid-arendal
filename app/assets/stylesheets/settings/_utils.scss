@@ -7,28 +7,38 @@
   @return ($px / $base) * 1rem;
 }
 
-//Structure mixins
-@mixin masonry-layout($column-count, $column-gap, $column-count-screen-m, $column-count-screen-l, $layout-margin, $layout-margin-screen-m, $item-padding, $item-padding-screen-m) {
-  column-count: $column-count;
-  column-gap: $column-gap;
-  margin: $layout-margin;
+/*
+ * MIXIN
+ */
+@mixin animation($animate...) {
+  $max: length($animate);
+  $animations: '';
 
-  @media screen and (min-width: $screen-m) {
-    column-count: $column-count-screen-m;
-    margin: $layout-margin-screen-m;
-  }
+  @for $i from 1 through $max {
+    $animations: #{$animations + nth($animate, $i)};
 
-  @media screen and (min-width: $screen-l) {
-    column-count: $column-count-screen-l;
-  }
-
-  .item {
-    break-inside: avoid;
-    padding: $item-padding;
-
-    @media screen and (min-width: $screen-m) {
-      padding: $item-padding-screen-m;
+    @if $i < $max {
+      $animations: #{$animations + ", "};
     }
+  }
+  -webkit-animation: $animations;
+  -moz-animation:    $animations;
+  -o-animation:      $animations;
+  animation:         $animations;
+}
+
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
   }
 }
 
