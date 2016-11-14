@@ -10,10 +10,10 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require medium-editor
 //= require jquery
 //= require jquery_ujs
 //= require cocoon
-//= require turbolinks
 
 //= require URIjs
 //= require handlebars
@@ -23,7 +23,6 @@
 
 //= require_self
 
-//= require_tree ../lib
 
 //= require_tree ../templates
 //= require_tree ../helpers

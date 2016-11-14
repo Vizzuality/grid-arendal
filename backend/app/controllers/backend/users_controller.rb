@@ -17,9 +17,19 @@ module Backend
     end
 
     def edit
+      @users = if current_user&.admin?
+                 User.filter_users(user_filters)
+               else
+                 User.filter_actives
+               end
     end
 
     def new
+      @users = if current_user&.admin?
+                 User.filter_users(user_filters)
+               else
+                 User.filter_actives
+               end
       @user = User.new
     end
 

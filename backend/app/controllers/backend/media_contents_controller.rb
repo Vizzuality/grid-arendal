@@ -5,17 +5,20 @@ module Backend
   class MediaContentsController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_media_content, except: [:index, :new, :create]
     before_action :set_flickr
+    before_action :set_media_content,  except: [:index, :new, :create]
+    before_action :set_media_contents, except: :index
 
     def index
-      @media_contents = MediaContent.includes_mediable.order_by_title
+      redirect_to new_media_content_url(mediable: 'photo')
     end
 
     def edit
+      @media_contents = MediaContent.includes_mediable.order(:title)
     end
 
     def new
+      @media_contents = MediaContent.includes_mediable.order(:title)
       @media_content = MediaContent.new
     end
 
@@ -76,6 +79,10 @@ module Backend
 
       def set_media_content
         @media_content = MediaContent.find(params[:id])
+      end
+
+      def set_media_contents
+        @media_contents = MediaContent.order(:title)
       end
 
       def set_flickr

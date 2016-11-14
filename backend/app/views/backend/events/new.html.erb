@@ -1,0 +1,14 @@
+<div class="l-items-index">
+  <%= render 'events', events: @events %>
+</div>
+
+<div class="l-items-detail">
+  <p>New event</p>
+
+  <%= simple_form_for @event do |f| %>
+    <%= render partial: f %>
+    <div class="actions">
+      <%= f.submit 'Create Event' %>
+    </div>
+  <% end %>
+</div>
