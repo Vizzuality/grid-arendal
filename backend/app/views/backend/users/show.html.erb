@@ -1,0 +1,24 @@
+<div class="l-items-detail">
+  <h2><%= @user.full_name || 'User' %></h2>
+  <p><%= " (admin)"   if @user.admin? %></p>
+  <p><%= " (publisher)" if @user.publisher? %></p>
+
+  <%= image_tag @user.avatar.url(:thumb) %>
+
+  <% if (can? :make_contributor, @user) && (@user.admin? || @user.publisher?) %>
+    <%= link_to 'Make contributor', make_contributor_user_path(@user), method: :patch %>
+  <% end %>
+  <% if (can? :make_admin, @user) && !@user.admin? %>
+    <%= link_to 'Make admin', make_admin_user_path(@user), method: :patch %>
+  <% end %>
+  <% if (can? :make_publisher, @user) && !@user.publisher? %>
+    <%= link_to 'Make publisher', make_publisher_user_path(@user), method: :patch %>
+  <% end %>
+  <% if can? :update, @user %>
+    <%= link_to t('shared.edit'), edit_user_path(@user) %>
+  <% end %>
+  <% if current_user && current_user.admin? %>
+    <%= render 'backend/shared/deactivatable_links', location: @user %>
+  <% end %>
+
+</div>

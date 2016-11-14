@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-require_dependency "backend/application_controller"
+require_dependency 'backend/application_controller'
 
 module Backend
   class UsersController < ::Backend::ApplicationController
@@ -16,13 +16,20 @@ module Backend
                end
     end
 
-    def show
-    end
-
     def edit
+      @users = if current_user&.admin?
+                 User.filter_users(user_filters)
+               else
+                 User.filter_actives
+               end
     end
 
     def new
+      @users = if current_user&.admin?
+                 User.filter_users(user_filters)
+               else
+                 User.filter_actives
+               end
       @user = User.new
     end
 
@@ -37,7 +44,7 @@ module Backend
     def create
       @user = User.create_with_password(user_params)
       if @user.save
-        redirect_to users_path
+        redirect_to users_url
       else
         render :new
       end
@@ -45,7 +52,7 @@ module Backend
 
     def deactivate
       if @user.try(:deactivate)
-        redirect_to users_path
+        redirect_to users_url
       else
         redirect_to user_path(@user)
       end
@@ -53,7 +60,7 @@ module Backend
 
     def activate
       if @user.try(:activate)
-        redirect_to users_path
+        redirect_to users_url
       else
         redirect_to user_path(@user)
       end
@@ -61,19 +68,19 @@ module Backend
 
     def make_admin
       if @user.try(:make_admin)
-        redirect_to users_path
+        redirect_to users_url
       end
     end
 
     def make_publisher
       if @user.try(:make_publisher)
-        redirect_to users_path
+        redirect_to users_url
       end
     end
 
     def make_contributor
       if @user.try(:make_contributor)
-        redirect_to users_path
+        redirect_to users_url
       end
     end
 

@@ -1,17 +1,18 @@
 # frozen_string_literal: true
-require_dependency "backend/application_controller"
+require_dependency 'backend/application_controller'
 
 module Backend
   class PartnersController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_partner, except: [:index, :new, :create]
+    before_action :set_partner,  except: [:index, :new, :create]
+    before_action :set_partners, except: :index
 
     def index
-      @partners = Partner.order_by_name
-    end
-
-    def show
+      @partner = Partner.order(:name).first
+      if @partner
+        redirect_to edit_partner_url(@partner) and return
+      end
     end
 
     def edit
@@ -23,7 +24,7 @@ module Backend
 
     def update
       if @partner.update(partner_params)
-        redirect_to partner_path(@partner), notice: 'Partner updated'
+        redirect_to partners_url, notice: 'Partner updated'
       else
         render :edit
       end
@@ -32,7 +33,7 @@ module Backend
     def create
       @partner = Partner.create(partner_params)
       if @partner.save
-        redirect_to partners_path
+        redirect_to partners_url
       else
         render :new
       end
@@ -42,6 +43,10 @@ module Backend
 
       def set_partner
         @partner = Partner.find(params[:id])
+      end
+
+      def set_partners
+        @partners = Partner.order(:name)
       end
 
       def partner_params

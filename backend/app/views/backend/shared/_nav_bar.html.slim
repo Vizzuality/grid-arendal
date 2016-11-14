@@ -1,0 +1,32 @@
+ul.basic-nav
+  - if user_signed_in?
+    li.-user.-no-hover
+      img.avatar src="https://pbs.twimg.com/profile_images/794258346115268614/odGvBrDx_bigger.jpg"
+      div.texts-container
+        div.user-name.text.-nav-text.-light
+          = current_user.display_name
+        = link_to 'Sign out', destroy_user_session_path, method: 'delete', class: 'text -nav-text -light'
+    li.-separator
+    li.-logo.-no-hover
+      svg.icon
+        use xlink:href="#icon-logo"
+    li.-separator
+    li
+      = link_to "Activities", activities_path, class: 'text -nav-text -light'
+    li
+      = link_to "Publications", publications_path, class: 'text -nav-text -light'
+    li
+      = link_to "News", news_articles_path, class: 'text -nav-text -light'
+    li
+      = link_to "About Sections", about_sections_path, class: 'text -nav-text -light'
+    li
+      = link_to "Events", events_path, class: 'text -nav-text -light'
+    li
+      = link_to "Media contents", new_media_content_path(mediable: 'photo'), class: 'text -nav-text -light'
+    li
+      = link_to "Partners", partners_path, class: 'text -nav-text -light'
+    li
+      = link_to "Users", users_path, class: 'text -nav-text -light'
+  - else
+    li
+      = link_to 'Log In', new_user_session_path

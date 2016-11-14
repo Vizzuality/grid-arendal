@@ -1,0 +1,39 @@
+$index-horizontal-padding: rem(12px);
+$items-height: rem(60px);
+$items-border: rem(1px) solid rgba($white, 0.2);
+
+.l-items-index {
+
+  h2 {
+    padding: rem(15px) 0 0 $index-horizontal-padding;
+  }
+
+  .buttons-bar {
+    width: 100%;
+    height: rem(30px);
+    padding-left: $index-horizontal-padding;
+    margin-top: rem(13px);
+
+    .btn {
+      float: right;
+      margin-right: $index-horizontal-padding;
+      border-color: rgba($white, 0.5);
+
+      &.-create-new {
+        float: left;
+        padding: 0 rem(11px);
+      }
+
+      .icon {
+        width: rem(14px);
+        height: rem(14px);
+      }
+    }
+  }
+
+  .items-list {
+    height: calc(100% - #{rem(133px)});
+    margin-top: rem(25px);
+    overflow: auto;
+  }
+}

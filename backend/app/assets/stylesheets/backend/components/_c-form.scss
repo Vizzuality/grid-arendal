@@ -1,0 +1,140 @@
+%input-defaults {
+  width: 100%;
+  background-color: $white;
+  border: solid rem(1px) rgba($black, 0.2);
+  border-radius: 0;
+}
+
+$input-min-height: rem(43px);
+
+.c-form {
+
+    .form_header {
+      position: relative;
+      padding: rem(15px) rem(240px) rem(15px) rem(19px);
+      border-bottom: rem(1px) solid rgba($color-1, 0.2);
+
+      label {
+        display: none;
+      }
+
+      .title {
+        width: 100%;
+        padding: 0;
+        border: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        outline: 0;
+
+        &:focus {
+          text-decoration: underline;
+        }
+      }
+
+      .actions {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: rem(20px);
+        height: rem(30px);
+        margin: auto;
+
+        .btn {
+          float: right;
+          width: rem(100px);
+          margin-left: rem(10px);
+        }
+      }
+    }
+
+    .fields {
+      padding: rem(30px) rem(75px);
+
+      .field {
+        position: relative;
+
+        &:not(:first-child) {
+          margin-top: rem(35px);
+        }
+
+        .options {
+          position: absolute;
+          top: 0;
+          right: 0;
+        }
+
+        .textarea {
+          padding: rem(8px) rem(9px);
+          resize: none;
+          outline: 0;
+          overflow: auto;
+          @extend %input-defaults;
+
+          &:not(.medium-editor-hidden) {
+            display: block;
+          }
+
+          &.-size-s {
+            height: rem(60px);
+          }
+
+          &.-size-l {
+            height: rem(260px);
+          }
+        }
+
+        .basic-input {
+          height: $input-min-height;
+          padding: rem(8px) rem(9px);
+          @extend %input-defaults;
+        }
+
+        select {
+          height: $input-min-height;
+          @extend %input-defaults;
+
+          option {
+            display: none;
+          }
+        }
+
+        .select2-container--default {
+          min-height: $input-min-height;
+          @extend %input-defaults;
+
+          .select2-selection--multiple {
+            border: 0;
+            border-radius: 0;
+
+            .select2-selection__choice {
+              position: relative;
+              height: rem(30px);
+              padding-right: rem(31px);
+              border-radius: rem(4px);
+              background-color: rgba($color-1, 0.1);
+              font-family: $font-family-1;
+              font-size: rem(14px);
+              line-height: 2.2;
+              color: $font-color-1;
+              border: 0;
+            }
+
+            .select2-selection__choice__remove {
+              position: absolute;
+              right: 0;
+              margin-right: rem(12px);
+            }
+
+            .select2-selection__rendered {
+              padding: rem(4px) rem(5px) rem(3px) rem(8px);
+            }
+          }
+        }
+      }
+
+      &.-grey {
+        background-color: $grey;
+      }
+    }
+  }

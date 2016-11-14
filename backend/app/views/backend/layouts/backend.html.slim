@@ -8,6 +8,7 @@ html lang='en'
     = stylesheet_link_tag 'backend/manifests/application'
     = csrf_meta_tags
   body
+    = render 'backend/shared/icons'
     - if alert
       .alert data-alert='true'
         = alert
@@ -15,8 +16,8 @@ html lang='en'
       .success data-alert='true'
         = notice
 
-    = render 'backend/shared/nav_bar'
-    br
+    .l-navigation
+      = render 'backend/shared/nav_bar'
 
     = yield
 

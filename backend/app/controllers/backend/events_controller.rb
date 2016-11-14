@@ -1,18 +1,19 @@
 # frozen_string_literal: true
-require_dependency "backend/application_controller"
+require_dependency 'backend/application_controller'
 
 module Backend
   class EventsController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_event, except: [:index, :new, :create]
+    before_action :set_event,              except: [:index, :new, :create]
     before_action :set_partners_selection, only: [:update, :create, :new, :edit]
+    before_action :set_events,             except: :index
 
     def index
-      @events = Event.order_by_title
-    end
-
-    def show
+      @event = Event.order(:title).first
+      if @event
+        redirect_to edit_event_url(@event) and return
+      end
     end
 
     def edit
@@ -41,17 +42,17 @@ module Backend
 
     def deactivate
       if @event.try(:deactivate)
-        redirect_to events_path
+        redirect_to events_url
       else
-        redirect_to event_path(@event)
+        redirect_to events_url
       end
     end
 
     def activate
       if @event.try(:activate)
-        redirect_to events_path
+        redirect_to events_url
       else
-        redirect_to event_path(@event)
+        redirect_to events_url
       end
     end
 
@@ -59,6 +60,10 @@ module Backend
 
       def set_event
         @event = Event.find(params[:id])
+      end
+
+      def set_events
+        @events = Event.order(:title)
       end
 
       def set_partners_selection

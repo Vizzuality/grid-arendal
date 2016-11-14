@@ -7,12 +7,14 @@
   App.Controller.Activities = App.Controller.Page.extend({
 
     index: function(params) {
-      console.log('activities#index');
+      var masonryView = new App.View.Masonry({
+        el: '#masonry-layout'
+      });
     },
 
     show: function(params) {
-      console.log('activities#show');
-      this.initSliders();
+      var activitiesAnchorsView = new App.View.ActivitiesAnchors({});
+      //this.initSliders();
     },
 
     initSliders: function() {

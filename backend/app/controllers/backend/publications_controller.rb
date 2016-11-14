@@ -1,14 +1,16 @@
 # frozen_string_literal: true
-require_dependency "backend/application_controller"
+require_dependency 'backend/application_controller'
 
 module Backend
   class PublicationsController < ::Backend::ApplicationController
     load_and_authorize_resource
 
     before_action :set_users_and_partners, only: [:new, :edit]
+    before_action :publications,           except: :index
+
 
     def index
-      @publications = Publication.order(:title)
+      redirect_to new_publication_path()
     end
 
     def edit
@@ -39,22 +41,22 @@ module Backend
 
     def publish
       @publication.try(:publish)
-      redirect_to publications_path
+      redirect_to publications_url
     end
 
     def unpublish
       @publication.try(:unpublish)
-      redirect_to publications_path
+      redirect_to publications_url
     end
 
     def make_featured
       @publication.try(:make_featured)
-      redirect_to publications_path
+      redirect_to publications_url
     end
 
     def remove_featured
       @publication.try(:remove_featured)
-      redirect_to publications_path
+      redirect_to publications_url
     end
 
     private
@@ -63,9 +65,13 @@ module Backend
         params.require(:publication).permit!
       end
 
+      def publications
+        @publications = Publication.order(:title)
+      end
+
       def set_users_and_partners
-        @users = User.order(:first_name, :last_name)
-        @partners = Partner.order(:name)
+        @users    = User.order_by_fullname
+        @partners = Partner.order_by_name
       end
   end
 end

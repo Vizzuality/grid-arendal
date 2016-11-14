@@ -1,0 +1,28 @@
+.nested-fields
+  .field
+    = f.label :title
+    = f.input :title, label: false
+
+  .field
+    = f.label :photo_file
+    = f.file_field :photo_file, class: 'album_photo_file'
+
+  .field
+    = f.label :description
+    = f.input :description, label: false
+
+  .field
+    = f.label :main_photo_file, 'Main photo:'
+    - if is_cover_photo?(@media_content, f.object)
+      h4 Is main photo!
+    - else
+      = f.input :main_photo_file, as: :boolean, label: false do
+        = f.check_box :main_photo_file, {}, true, nil
+
+  .field
+    = f.label :is_published
+    = f.input :is_published, as: :boolean
+
+  - unless is_cover_photo?(@media_content, f.object)
+    .remove-link
+      = link_to_remove_association 'remove photo', f

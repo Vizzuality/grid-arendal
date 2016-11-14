@@ -14,8 +14,8 @@ I want to edit, create, view activities
     And I am authenticated adminuser
     When I go to the edit activity page for "My activity"
     And I fill in "Title" with "activity edited"
-    And I press "Update"
-    Then I should see "activity edited"
+    And I press "SAVE"
+    Then I should have one published activity
 
   Scenario: Adminuser can create activity
     Given I am authenticated adminuser
@@ -27,7 +27,7 @@ I want to edit, create, view activities
     And I select "Gonca A." from "Users"
     And I select "Partner one" from "Partners"
     And I select "About the Company" from "News articles"
-    And I press "Create Activity"
+    And I press "SAVE"
     Then I should have one activity
 
   Scenario: Adminuser can not create activity without title
@@ -40,7 +40,7 @@ I want to edit, create, view activities
     And I select "Gonca A." from "Users"
     And I select "Partner one" from "Partners"
     And I select "About the Company" from "News articles"
-    And I press "Create Activity"
+    And I press "SAVE"
     Then I should have zero activities
     And I should see "can't be blank"
 
@@ -49,17 +49,18 @@ I want to edit, create, view activities
     And activity
     When I go to the activities page
     Then I should see "My activity"
-    And I follow "Unpublish"
-    Then I should be on the activities page
+    When I click on ".Unpublish"
     And I should see "My activity"
-    And I should see "Publish"
+    And I should have one unpublished activity
+    When I click on ".Publish"
+    And I should see "My activity"
+    And I should have one published activity
 
   Scenario: Publisheruser can make and remove featured status from activity
     Given I am authenticated publisheruser
     And activity
     When I go to the activities page
     Then I should see "My activity"
-    And I follow "Remove featured"
-    Then I should be on the activities page
-    And I should see "My activity"
-    And I should see "Make featured"
+    And I click on ".RemoveFeatured"
+    Then I should see "My activity"
+    And I should have one not_featured activity

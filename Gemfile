@@ -28,6 +28,8 @@ gem 'kaminari'
 # File upload
 gem 'paperclip'
 gem 'paperclip-dropbox'
+gem 'flickraw'
+gem 'cocoon'
 
 group :development, :test do
   gem 'hirb'
@@ -77,4 +79,5 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-underscore'
   gem 'rails-assets-backbone'
   gem 'rails-assets-URIjs'
+  gem 'rails-assets-medium-editor'
 end

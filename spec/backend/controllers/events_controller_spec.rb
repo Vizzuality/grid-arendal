@@ -25,14 +25,8 @@ module Backend
 
       it 'GET index returns http success' do
         process :index
-        expect(response).to be_success
-        expect(response).to have_http_status(200)
-      end
-
-      it 'GET show returns http success' do
-        process :show, params: { id: @partner_event.id }
-        expect(response).to be_success
-        expect(response).to have_http_status(200)
+        expect(response).to be_redirect
+        expect(response).to have_http_status(302)
       end
 
       it 'GET edit returns http success' do

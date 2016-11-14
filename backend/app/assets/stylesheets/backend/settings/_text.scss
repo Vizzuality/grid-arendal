@@ -1,0 +1,81 @@
+/*
+ * Here you should find all the types of text
+ * for the project.
+ *
+ * There are some with colors and some without.
+ * Those without color can be found with different
+ * color along the project and setted with the apropiate
+ * class.
+ */
+
+.text {
+  font-family: $font-family-1;
+
+
+  &.-main-title {
+    font-size: rem(20px);
+    font-weight: 700;
+    line-height: 2.5;
+  }
+
+  &.-plain-text {
+    font-size: rem(14px);
+    line-height: 1.43;
+  }
+
+  &.-notes {
+    opacity: 0.5;
+    font-size: rem(14px);
+    line-height: 1.43;
+  }
+
+  &.-index-item {
+    opacity: 0.8;
+    font-size: rem(14px);
+    line-height: 1.43;
+
+    .-selected & {
+      opacity: 1;
+      font-weight: 700;
+    }
+  }
+
+  &.-nav-text {
+    font-size: rem(14px);
+    line-height: 1.43;
+  }
+
+  &.-field-label {
+    font-size: rem(14px);
+    line-height: 1.43;
+  }
+
+  &.-field-note {
+    opacity: 0.5;
+    font-size: rem(14px);
+    line-height: 1.93;
+
+    &.-small {
+      font-size: rem(12px);
+      line-height: 2.5;
+    }
+  }
+
+  /*
+   * WEIGHT
+   */
+  &.-bold {
+    font-weight: 700;
+  }
+
+  /*
+   * COLORS
+   */
+  &.-dark {
+    color: $font-color-1;
+  }
+
+  &.-light {
+    color: $font-color-2;
+  }
+}

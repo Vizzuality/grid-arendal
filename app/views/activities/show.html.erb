@@ -1,4 +1,4 @@
-<div class="l-header-single -activities">
+<div class="l-header-single -activities-article">
   <div class="overlay"></div>
   <%= render 'shared/menu' %>
   <div class="row">
@@ -19,69 +19,54 @@
           </svg>
           <span class="text -meta"><%= @activity.title %></span>
         </div>
-        <div class="share">
-          <svg class="icon">
-            <use xlink:href="#icon-share"></use>
-          </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-menu">
+    <div class="row">
+      <div class="small-12 columns">
+        <div class="title-block">
+          <div class="small-8 medium-7">
+            <h2 class="text -title-single-alt"><%= @activity.title %></h2>
+          </div>
+          <div class="share">
+            <svg class="icon">
+              <use xlink:href="#icon-share"></use>
+            </svg>
+          </div>
         </div>
+
+        <ul class="anchors">
+          <li class="text -section-menu js-anchor" data-section-belongs="overview">Overview</li>
+          <li class="text -section-menu js-anchor" data-section-belongs="users">Staff involved</li>
+          <li class="text -section-menu js-anchor" data-section-belongs="posts">Publications</li>
+          <li class="text -section-menu js-anchor" data-section-belongs="news">Related News</li>
+          <li class="text -section-menu js-anchor" data-section-belongs="media">Related media</li>
+          <li class="text -section-menu js-anchor" data-section-belongs="partners">Partners & Links</li>
+        </ul>
       </div>
     </div>
   </div>
 </div>
 
-<div class="l-single-article -activities">
+<section class="l-single-article -activities" data-section="overview">
 
   <div class="row">
     <div class="small-12 column">
-      <div class="image"></div>
+      <div class="text -summary-alt">The methodology has been under development in conjunction with the UN World Ocean Assessment (WOA) to assist countries to participate in that assessment by conducting their own state of marine environment (SOME) assessments. GRID-Arendal has developed a web-based software to facilitate workshops for rapid SOME assessments. Further development and demonstration of this software, in order to achieve recognition and adoption by UNEP, IOC and DOALOS, is a key driver for the project.</div>
     </div>
   </div>
+</section>
 
-  <div class="content-wrapper">
+<%= render 'shared/users' %>
 
-    <div class="content">
-      <h2 class="text -title-single-alt"><%= @activity.title %></h2>
-      <div class="text -body-single"><%= @activity.description %></div>
-    </div>
+<%= render 'shared/posts', collection: @publications, title: 'publications', link: publications_path %>
 
-    <div class="sidebar -activities">
-      <div class="title text -title-block mobile">
-        Download
-      </div>
-      <div class="meta">
-        <div class="row">
-          <div class="small-6 medium-3 large-4 columns">
-        <div class="cover">
-        </div>
-      </div>
-        <div class="small-6 medium-9 large-8 columns">
-          <div class="title text -meta desktop">
-            Download
-          </div>
-          <div class="download-links">
-            <div class="btn -dark">
-              pdf
-            </div>
-            <div class="btn -dark">
-              e-book
-            </div>
-            <div class="btn">
-              graphics
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
+<%= render 'shared/news' %>
 
-  </div>
+<%= render 'shared/media' %>
 
-  <%= render 'shared/users' %>
-
-  <%= render 'shared/posts', collection: @activities, title: 'activities', link: activities_path %>
-
-  <%= render 'shared/media' %>
-
-</div>
+<%= render 'shared/partners' %>
 
 <%= render 'shared/footer' %>
