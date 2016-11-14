@@ -21,4 +21,7 @@
 class Activity < Content
   has_many :activity_news
   has_many :news_articles, through: :activity_news
+
+  has_many :related_contents
+  has_many :publications, through: :related_contents
 end

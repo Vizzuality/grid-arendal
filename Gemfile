@@ -79,4 +79,5 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-underscore'
   gem 'rails-assets-backbone'
   gem 'rails-assets-URIjs'
+  gem 'rails-assets-medium-editor'
 end

@@ -4,19 +4,21 @@ $item-detail-width: 60%;
 $headerPlusIndex: 40%;
 
 .l-navigation {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   width: $header-width;
+  background-color: $color-1;
 }
 
 .l-items-index {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: $header-width;
   width: $index-width;
+  background-color: $color-2;
 }
 
 .l-items-detail {
@@ -25,4 +27,5 @@ $headerPlusIndex: 40%;
   bottom: 0;
   left: $headerPlusIndex;
   width: $item-detail-width;
+  background-color: $color-3;
 }

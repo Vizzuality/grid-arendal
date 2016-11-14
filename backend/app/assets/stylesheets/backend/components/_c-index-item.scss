@@ -1,0 +1,91 @@
+.c-index-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: $items-height;
+  padding: 0 rem(95px) 0 rem(30px);
+  cursor: pointer;
+  border-bottom: $items-border;
+  overflow: hidden;
+
+  .dragger {
+    position: absolute;
+    left: rem(10px);
+
+    .icon {
+      width: rem(10px);
+      height: rem(10px);
+    }
+  }
+
+  .title {
+
+    &.-long {
+      display: none;
+    }
+
+    @media screen and (min-width: $screen-xl) {
+
+      &.-short {
+        display: none;
+      }
+
+      &.-long {
+        display: block;
+      }
+    }
+  }
+
+  .options {
+    position: absolute;
+    right: rem(9px);
+
+    a {
+      margin-left: rem(5px);
+
+      .icon {
+        width: rem(12px);
+        height: rem(12px);
+        opacity: 0.3;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &:first-child {
+    height: $items-height + rem(1px);
+    border-top: $items-border;
+  }
+
+  &:hover,
+  &.-selected {
+    background-color: rgba($white, 0.2);
+  }
+
+  &.-selected {
+
+    .-edit {
+
+      .icon {
+        opacity: 1;
+      }
+    }
+  }
+
+  &.-blocked {
+    cursor: default;
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: repeating-linear-gradient(-45deg, transparent, rgba(255, 255, 255, .2) rem(1px), transparent rem(2px), transparent rem(5px));
+      z-index: 1;
+    }
+  }
+}

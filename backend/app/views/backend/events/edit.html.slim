@@ -1,9 +1,0 @@
-h2
-  | Edit
-  '
-  = @event.title || 'Event'
-
-= simple_form_for @event do |f|
-  = render partial: f
-  .actions
-    = f.submit 'Update'

@@ -8,8 +8,7 @@ module Backend
     before_action :set_users_partners_and_news, only: [:new, :edit]
 
     def index
-      @activity = Activity.order(:title).first
-      redirect_to edit_activity_url(@activity)
+      redirect_to new_activity_path()
     end
 
     def edit
@@ -72,6 +71,7 @@ module Backend
         @users = User.order(:first_name, :last_name)
         @partners = Partner.order(:name)
         @news_articles = NewsArticle.order(:title)
+        @publications = Publication.order(:title)
       end
   end
 end

@@ -4,12 +4,12 @@ Rails.application.routes.draw do
   # Backend
   mount Backend::Engine, at: 'manage'
 
-  resources :staff,        controller: 'users',          only: [:index, :show]
-  resources :activities,                                 only: [:index, :show]
-  resources :publications,                               only: [:index, :show]
+  resources :staff,                        controller: 'users',          only: [:index, :show]
+  resources :activities,                                                 only: [:index, :show]
+  resources :publications,                                               only: [:index, :show]
   resources :media, path: 'media-library', controller: 'media_library',  only: [:index, :show]
-  resources :news,         controller: 'news_articles',  only: [:index, :show]
-  resources :about,        controller: 'about_sections', only: [:index]
+  resources :news,                         controller: 'news_articles',  only: [:index, :show]
+  resources :about,                        controller: 'about_sections', only: [:index]
 
   root 'home#index'
 end

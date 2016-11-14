@@ -11,7 +11,7 @@
     },
 
     show: function() {
-      console.log('hello from backoffice show')
+      var formView = new App.View.Form({});
     }
   });
 
