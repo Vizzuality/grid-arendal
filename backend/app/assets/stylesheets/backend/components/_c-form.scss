@@ -32,6 +32,30 @@ $input-min-height: rem(43px);
         }
       }
 
+      .field_with_errors {
+        input {
+          &::-webkit-input-placeholder {
+            color: #ec5c5c;
+          }
+
+          &:-moz-placeholder {
+            color: #ec5c5c;
+          }
+
+          &::-moz-placeholder {
+            color: #ec5c5c;
+          }
+
+          &:-ms-input-placeholder {
+            color: #ec5c5c;
+          }
+        }
+
+        .error {
+          display: none;
+        }
+      }
+
       .actions {
         position: absolute;
         top: 0;
