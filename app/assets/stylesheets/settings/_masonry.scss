@@ -1,9 +1,7 @@
-//masonry colum class
 @function masonry-class($columns) {
   @return '#{$columns} .masonry-column.size-1of#{$columns}';
 }
 
-//Structure mixins
 @mixin masonry-layout ($columns-screen-s, $columns-screen-m, $columns-screen-l, $columns-screen-xl, $item-padding, $item-padding-screen-m) {
 
   &[data-columns]::before {
