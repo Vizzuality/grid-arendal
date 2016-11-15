@@ -4,14 +4,16 @@
 
   .event-container {
     position: absolute;
-    top: rem(60px);
-    background-color: $white;
-    background-position: center center;
+    top: rem(15px);
+    background-color: #f2f5f6;
+    box-shadow: 0 rem(20px) rem(20px) 0 rgba(0, 0, 0, 0.2);
+    background-size: contain;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-position: center bottom;
     z-index: 100;
     width: 100%;
-    padding: rem(15px);
+    padding: rem(50px) rem(15px);
+    height: calc(100vh - 100px);
 
     @media screen and (min-width: $screen-s) {
       padding: rem(25px) rem(25px);
@@ -21,6 +23,8 @@
       padding: rem(40px) rem(50px);
       top: rem(70px);
       height: 530px;
+      background-size: cover;
+      background-position: center center;
     }
 
     @media screen and (min-width: $screen-l) {
@@ -29,11 +33,11 @@
   }
 
   .icon {
-    width: rem(15px);
-    height: rem(15px);
+    width: rem(20px);
+    height: rem(20px);
     position: absolute;
-    top: rem(10px);
-    right: rem(10px);
+    top: rem(20px);
+    right: rem(20px);
     fill: $color-1;
     opacity: 0.15;
   }
@@ -42,7 +46,7 @@
     max-width: rem(450px);
 
     p {
-      padding: rem(10px) 0;
+      padding: rem(20px) 0;
 
       @media screen and (min-width: $screen-m) {
         padding: rem(25px) 0;
@@ -51,8 +55,6 @@
   }
 
   .btn {
-    @media screen and (min-width: $screen-m) {
-      max-width: 160px;
-    }
+    max-width: 160px;
   }
 }
