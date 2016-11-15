@@ -1,29 +1,58 @@
 .c-events-modal {
-  height: calc(100% - 130px);
-  position: absolute;
-  top: 70px;
-  background-color: $white;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: 100;
-  max-width: 970px;
-  width: 100%;
-  padding: 70px 90px;
+  position: relative;
+  height: 100%;
+
+  .event-container {
+    position: absolute;
+    top: rem(60px);
+    background-color: $white;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 100;
+    width: 100%;
+    padding: rem(15px);
+
+    @media screen and (min-width: $screen-s) {
+      padding: rem(25px) rem(25px);
+    }
+
+    @media screen and (min-width: $screen-m) {
+      padding: rem(40px) rem(50px);
+      top: rem(70px);
+      height: 530px;
+    }
+
+    @media screen and (min-width: $screen-l) {
+      padding: rem(70px) rem(90px);
+    }
+  }
 
   .icon {
-    width: 20px;
-    height: 20px;
+    width: rem(15px);
+    height: rem(15px);
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: rem(10px);
+    right: rem(10px);
+    fill: $color-1;
+    opacity: 0.15;
   }
 
   .event-info {
-    max-width: 450px;
+    max-width: rem(450px);
 
     p {
-      padding: 25px 0;
+      padding: rem(10px) 0;
+
+      @media screen and (min-width: $screen-m) {
+        padding: rem(25px) 0;
+      }
+    }
+  }
+
+  .btn {
+    @media screen and (min-width: $screen-m) {
+      max-width: 160px;
     }
   }
 }
