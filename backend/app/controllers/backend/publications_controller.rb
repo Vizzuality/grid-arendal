@@ -13,6 +13,7 @@ module Backend
     end
 
     def edit
+      @publication = Publication.find(params[:id])
     end
 
     def new

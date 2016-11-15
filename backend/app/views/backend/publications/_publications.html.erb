@@ -30,6 +30,7 @@
       publishn_path: publish_publication_path(publication),
       unpublish_path: unpublish_publication_path(publication),
       edit_path: edit_publication_path(publication),
-      delete_path: publication_path(publication) %>
+      delete_path: publication_path(publication),
+      selected: @publication && (@publication.id == publication.id) %>
   <% end %>
 </ul>
