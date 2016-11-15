@@ -6,6 +6,7 @@
   </div>
   <div class="text -index-item -light title -short"><%= truncate(title, length: 30) %></div>
   <div class="text -index-item -light title -long"><%= truncate(title, length: 50) %></div>
+  <%= link_to '', edit_path, class: 'linker' %>
   <div class="options">
     <% if can?(:make_featured, item) && item.not_featured? %>
         <%= link_to raw('<svg class="icon" data-type="Make featured"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-star_outline"></use></svg>'), make_featured_path, method: :patch, class: "MakeFeatured" %>
@@ -20,6 +21,6 @@
         <%= link_to raw('<svg class="icon" data-type="Unpublish"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-visibility"></use></svg>'), unpublish_path, method: :patch, class: "Unpublish" %>
     <% end %>
     <%= link_to raw('<svg class="icon" data-type="Edit"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-edit"></use></svg>'), edit_path, class: '-edit' %>
-    <%= link_to raw('<svg class="icon" data-type="Delete"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-delete"></use></svg>'), "#", method: :patch %>
+    <%= link_to raw('<svg class="icon" data-type="Delete"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-delete"></use></svg>'), delete_path, method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
 </li>

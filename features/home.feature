@@ -11,6 +11,6 @@ I want to follow links
     Then I should be on the login page
     And I fill in "Email" with "test-user@sample.com"
     And I fill in "Password" with "password"
-    And I press "Log in"
+    And I press "LOGIN"
     Then I should see "Signed in successfully."
     And I should be on the admin page

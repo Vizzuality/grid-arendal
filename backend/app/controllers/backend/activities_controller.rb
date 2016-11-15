@@ -41,6 +41,13 @@ module Backend
       end
     end
 
+    def destroy
+      @publication = Activity.find(params[:id])
+      if @publication.destroy
+        redirect_to activities_url
+      end
+    end
+
     def publish
       @activity.try(:publish)
       redirect_to activities_url

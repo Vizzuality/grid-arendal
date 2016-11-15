@@ -39,6 +39,13 @@ module Backend
       end
     end
 
+    def destroy
+      @publication = Publication.find(params[:id])
+      if @publication.destroy
+        redirect_to publications_url
+      end
+    end
+
     def publish
       @publication.try(:publish)
       redirect_to publications_url

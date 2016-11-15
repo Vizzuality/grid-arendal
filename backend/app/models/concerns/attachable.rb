@@ -7,7 +7,7 @@ module Attachable
       if ENV['DROPBOX_APP_KEY'].present?
         has_attached_file :picture,
                           styles: { medium: '300x300>', thumb: '100x100>' },
-                          default_url: '/assets/:style/missing.png',
+                          default_url: '/assets/:style/missing2.png',
                           storage: :dropbox,
                           dropbox_credentials: Rails.root.join('config/dropbox.yml'),
                           dropbox_options: {
@@ -16,7 +16,7 @@ module Attachable
                           }
       else
         has_attached_file :picture, styles: { medium: '300x300>', thumb: '100x100>' },
-                                    default_url: '/assets/:style/missing.png'
+                                    default_url: '/assets/:style/missing2.png'
       end
 
       validates_attachment_content_type :picture, content_type: /\Aimage/
@@ -31,7 +31,7 @@ module Attachable
       if ENV['DROPBOX_APP_KEY'].present?
         has_attached_file :logo,
                           styles: { medium: '300x300>', thumb: '100x100>' },
-                          default_url: '/assets/:style/missing.png',
+                          default_url: '/assets/:style/missing2.png',
                           storage: :dropbox,
                           dropbox_credentials: Rails.root.join('config/dropbox.yml'),
                           dropbox_options: {
@@ -40,7 +40,7 @@ module Attachable
                           }
       else
         has_attached_file :logo, styles: { medium: '300x300>', thumb: '100x100>' },
-                                 default_url: '/assets/:style/missing.png'
+                                 default_url: '/assets/:style/missing2.png'
       end
 
       validates_attachment_content_type :logo, content_type: /\Aimage/
@@ -55,7 +55,7 @@ module Attachable
       if ENV['DROPBOX_APP_KEY'].present?
         has_attached_file :background_image,
                           styles: { medium: '300x300>', thumb: '100x100>' },
-                          default_url: '/assets/:style/missing.png',
+                          default_url: '/assets/:style/missing2.png',
                           storage: :dropbox,
                           dropbox_credentials: Rails.root.join('config/dropbox.yml'),
                           dropbox_options: {
@@ -64,7 +64,7 @@ module Attachable
                           }
       else
         has_attached_file :background_image, styles: { medium: '300x300>', thumb: '100x100>' },
-                                             default_url: '/assets/:style/missing.png'
+                                             default_url: '/assets/:style/missing2.png'
       end
 
       validates_attachment_content_type :background_image, content_type: /\Aimage/
@@ -79,7 +79,7 @@ module Attachable
       if ENV['DROPBOX_APP_KEY'].present?
         has_attached_file :avatar,
                           styles: { medium: '300x300>', thumb: '100x100>' },
-                          default_url: '/assets/:style/missing.png',
+                          default_url: '/assets/:style/missing2.png',
                           storage: :dropbox,
                           dropbox_credentials: Rails.root.join('config/dropbox.yml'),
                           dropbox_options: {
@@ -88,7 +88,7 @@ module Attachable
                           }
       else
         has_attached_file :avatar, styles: { medium: '300x300>', thumb: '100x100>' },
-                                   default_url: '/assets/:style/missing.png'
+                                   default_url: '/assets/:style/missing2.png'
       end
 
       validates_attachment_content_type :avatar, content_type: /\Aimage/

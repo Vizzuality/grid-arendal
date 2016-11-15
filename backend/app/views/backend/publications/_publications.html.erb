@@ -1,3 +1,7 @@
+<div class="l-navigation">
+  <%= render 'backend/shared/nav_bar' %>
+</div>
+
 <h2 class="text -main-title -light">Publications</h2>
 
 <div class="buttons-bar">
@@ -25,6 +29,7 @@
       remove_featured_path: remove_featured_publication_path(publication),
       publishn_path: publish_publication_path(publication),
       unpublish_path: unpublish_publication_path(publication),
-      edit_path: edit_publication_path(publication)%>
+      edit_path: edit_publication_path(publication),
+      delete_path: publication_path(publication) %>
   <% end %>
 </ul>
