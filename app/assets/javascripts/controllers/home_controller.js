@@ -8,6 +8,7 @@
 
     index: function() {
       this.initSliders();
+      var homeSliderView = new App.View.HomeSlider();
     },
 
     initSliders: function() {

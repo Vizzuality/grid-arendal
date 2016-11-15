@@ -7,6 +7,22 @@
     padding: rem(35px) 0 rem(50px);
   }
 
+  &.-color-1 {
+    background-color: rgba($color-1, .1);
+  }
+
+  &.-color-2 {
+    background-color: rgba(169, 143, 0, 0.08);
+  }
+
+  &.-color-3 {
+    background-color: rgba(83, 48, 0, 0.08);
+  }
+
+  &.-color-4 {
+    background-color: rgba(0, 76, 2, 0.08);
+  }
+
   &.-publications {
     background-color: rgba($color-3, .08);
   }
