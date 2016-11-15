@@ -5,9 +5,9 @@ module Abilities
 
     def initialize(user)
       can :read,   ::User, id: user.id
-      can :update, ::User, id: user.id
 
       if user.activated?
+        can :update, ::User, id: user.id
         can :manage, :all
         can [:activate, :deactivate], ::Event
       end
