@@ -5,10 +5,7 @@ I want to follow links
 
   Scenario: User will be redirect to login page and back to new actor page after following create actor on homepage
     Given I am registrated user
-    And I am on the admin page
-    Then I should see "Admin Home"
-    When I follow "Log In"
-    Then I should be on the login page
+    And I am on the login page
     And I fill in "Email" with "test-user@sample.com"
     And I fill in "Password" with "password"
     And I press "LOGIN"
