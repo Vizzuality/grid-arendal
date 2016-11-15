@@ -7,5 +7,15 @@ module Backend
 
     def index
     end
+
+    protected
+
+      def authenticate_user!
+        if user_signed_in?
+          super
+        else
+          redirect_to backend.new_user_session_path
+        end
+      end
   end
 end

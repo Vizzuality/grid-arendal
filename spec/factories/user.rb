@@ -10,6 +10,7 @@ FactoryGirl.define do
     organization Faker::Company.name
     web_url Faker::Internet.url('example.com', '/foobar')
     current_position Faker::Company.profession
+    role 'contributor'
   end
 
   factory :publisheruser, class: User do
