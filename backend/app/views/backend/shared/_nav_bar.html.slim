@@ -23,6 +23,7 @@ ul.basic-nav
     li.-separator
     - links.each do |link|
       li class=(params[:controller] == "backend/#{link['key']}" ? 'selected' : '')
+        = link_to '', link['path'], class: 'linker'
         = link_to link['name'], link['path'], class: 'text -nav-text -light'
   - else
     li
