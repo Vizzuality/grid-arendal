@@ -72,9 +72,9 @@ ActiveRecord::Schema.define(version: 20161104164400) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
-    t.boolean  "is_featured"
     t.integer  "project_number"
     t.text     "short_description"
+    t.boolean  "is_featured"
   end
 
   create_table "events", force: :cascade do |t|
@@ -96,9 +96,9 @@ ActiveRecord::Schema.define(version: 20161104164400) do
   create_table "media_contents", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.boolean  "is_published"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.boolean  "is_published", default: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "news_articles", force: :cascade do |t|
