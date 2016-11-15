@@ -1,0 +1,19 @@
+.c-phrases {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  .item {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+
+    &.-showed {
+      opacity: 1;
+      transition-timing-function: ease-in;
+      transition-delay: 0.4s;
+    }
+  }
+}
