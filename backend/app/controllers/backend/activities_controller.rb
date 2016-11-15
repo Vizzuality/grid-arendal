@@ -8,7 +8,7 @@ module Backend
     before_action :set_users_partners_and_news, only: [:new, :edit]
 
     def index
-      redirect_to new_activity_path()
+      @activities = Activity.order(:title)
     end
 
     def edit
