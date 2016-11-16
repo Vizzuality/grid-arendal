@@ -6,7 +6,7 @@
 
   App.View.HomeSlider = Backbone.View.extend({
 
-    el: 'l-header-home',
+    el: 'body',
 
     options: {
       itemInterval: 5000,
@@ -22,19 +22,17 @@
     _triggerImageAnimation: function(options) {
       var currentItem = 0;
       var infiniteLoop = setInterval(function() {
-        $('.bg').eq(currentItem).fadeOut(options.fadeTime);
-        $('.l-main-content').fadeOut(options.fadeTime, function() {
-          $(this).removeClass("-color-" + (currentItem + 1));
-        });
+        $('.l-header-home .bg').eq(currentItem).fadeOut(options.fadeTime);
+        $('.l-footer .bg').eq(currentItem).fadeOut(options.fadeTime);
+        $('.l-main-content').removeClass("-color-" + (currentItem + 1));
         if (currentItem == options.itemNumber - 1) {
           currentItem = 0;
         } else {
           currentItem++;
         }
-        $('.bg').eq(currentItem).fadeIn(options.fadeTime);
-        $('.l-main-content').fadeIn(options.fadeTime, function() {
-          $(this).addClass("-color-" + (currentItem + 1));
-        });
+        $('.l-header-home .bg').eq(currentItem).fadeIn(options.fadeTime);
+        $('.l-footer .bg').eq(currentItem).fadeIn(options.fadeTime);
+        $('.l-main-content').addClass("-color-" + (currentItem + 1));
       }, options.itemInterval)
     },
 
