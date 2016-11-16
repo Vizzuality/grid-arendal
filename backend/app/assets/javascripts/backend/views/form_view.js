@@ -21,6 +21,7 @@
       this._loadShortDescription();
       this._loadMediumEditor();
       this._loadTaggingSelect();
+      this._loadFileInput();
     },
 
     _loadShortDescription: function() {
