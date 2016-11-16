@@ -9,31 +9,45 @@
     el: 'body',
 
     options: {
-      itemInterval: 8000,
+      itemInterval: 3000,
       fadeTime: 1500,
       itemNumber: 4,
+      elements: [$('.l-header-home .bg'), $('.l-footer .bg')]
     },
 
     initialize: function() {
-      this._triggerImageAnimation(this.options);
-      // this._triggerBackgroundAnimation(this.options);
+      this._triggerImageAnimation();
     },
 
-    _triggerImageAnimation: function(options) {
+    _triggerImageAnimation: function() {
       var currentItem = 0;
       var infiniteLoop = setInterval(function() {
-        $('.l-header-home .bg').eq(currentItem).fadeOut(options.fadeTime);
-        $('.l-footer .bg').eq(currentItem).fadeOut(options.fadeTime);
+        this._fadeOut(this.options.elements, currentItem);
+        // headerHome.eq(currentItem).fadeOut(options.fadeTime);
+        // footer.eq(currentItem).fadeOut(options.fadeTime);
         $('.l-main-content').removeClass("-color-" + (currentItem + 1));
-        if (currentItem == options.itemNumber - 1) {
+        if (currentItem == this.options.itemNumber - 1) {
           currentItem = 0;
         } else {
           currentItem++;
         }
-        $('.l-header-home .bg').eq(currentItem).fadeIn(options.fadeTime);
-        $('.l-footer .bg').eq(currentItem).fadeIn(options.fadeTime);
+        this._fadeIn(this.options.elements, currentItem);
+        // headerHome.eq(currentItem).fadeIn(options.fadeTime);
+        // footer.eq(currentItem).fadeIn(options.fadeTime);
         $('.l-main-content').addClass("-color-" + (currentItem + 1));
-      }, options.itemInterval)
+      }.bind(this), this.options.itemInterval)
+    },
+
+    _fadeOut: function(elements, item) {
+      elements.forEach( function(element) {
+        element.eq(item).fadeOut(this.options.fadeTime);
+      }.bind(this));
+    },
+
+    _fadeIn: function(elements, item) {
+      elements.forEach( function(element) {
+        element.eq(item).fadeIn(this.options.fadeTime);
+      }.bind(this));
     },
 
   });

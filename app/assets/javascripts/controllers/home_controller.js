@@ -8,7 +8,10 @@
 
     index: function() {
       this.initSliders();
-      var homeSliderView = new App.View.HomeSlider();
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        $('.image-slider').addClass('slide-' + (parseInt(Math.floor(Math.random() * 4)) + 1) );
+      }
+      // var homeSliderView = new App.View.HomeSlider();
     },
 
     initSliders: function() {
