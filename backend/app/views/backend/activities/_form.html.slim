@@ -11,13 +11,14 @@ div.fields
   .field data-type="picture"
     = form.label :picture, class: 'text -field-label -bold -dark'
     = form.file_field :picture, label: false
-    = form.label :picture, class: 'fake-input', data: { img: picture_url }
+    = form.label :picture, class: 'fake-input'
       div.tip
         svg.icon
           use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-img"
         p.text.-plain-text.-dark Drag and drop an image or click here to upload one.
       - if have_picture
         div.current_picture style="background-image: url('#{picture_url}');"
+    div.searcher
 
   .field data-type="short_description"
     = form.label :short_description, class: 'text -field-label -bold -dark'

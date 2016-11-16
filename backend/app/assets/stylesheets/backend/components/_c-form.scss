@@ -6,6 +6,8 @@
 }
 
 $input-min-height: rem(43px);
+$picture-input-margin: rem(10px);
+$picture-input-height: rem(230px);
 
 .c-form {
 
@@ -180,14 +182,16 @@ $input-min-height: rem(43px);
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            width: 50%;
-            height: 230px;
+            width: calc(50% - #{$picture-input-margin});
+            height: $picture-input-height;
+            margin-right: $picture-input-margin;
             border-radius: 4px;
             background-color: rgba($color-1, 0.1);
             border: solid 1px rgba($color-1, 0.2);
             cursor: pointer;
 
             .tip {
+              position: absolute;
               text-align: center;
 
               .icon {
@@ -219,6 +223,14 @@ $input-min-height: rem(43px);
                 opacity: 0;
               }
             }
+          }
+
+          .searcher {
+            position: relative;
+            display: inline-block;
+            width: calc(50% - #{$picture-input-margin});
+            height: $picture-input-height;
+            margin-left: $picture-input-margin;
           }
         }
       }
