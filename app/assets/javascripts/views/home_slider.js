@@ -9,8 +9,8 @@
     el: 'body',
 
     options: {
-      itemInterval: 5000,
-      fadeTime: 1000,
+      itemInterval: 8000,
+      fadeTime: 1500,
       itemNumber: 4,
     },
 
