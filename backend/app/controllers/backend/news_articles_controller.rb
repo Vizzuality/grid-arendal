@@ -9,10 +9,6 @@ module Backend
     before_action :set_news_articles, except: :index
 
     def index
-      @news_article = NewsArticle.order(:title).first
-      if @news_article
-        redirect_to edit_news_article_url(@news_article) and return
-      end
     end
 
     def edit
