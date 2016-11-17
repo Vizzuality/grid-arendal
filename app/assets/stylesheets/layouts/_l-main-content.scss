@@ -1,6 +1,6 @@
 .l-main-content {
-  padding: rem(35px) 0 rem(0px);
-  background-color: rgba($color-1, .1);
+  padding: rem(35px) 0 rem(20px);
+  background-color: #E5EBED;
   transition:background-color 1s ease;
 
   @media screen and (min-width: $screen-m) {
@@ -10,15 +10,19 @@
   }
 
   @keyframes slidybackground {
-    0% { background-color: rgba($color-1, .1) }
-    20% { background-color: rgba($color-1, .1) }
-    25% { background-color: rgba(169, 143, 0, 0.08) }
-    45% { background-color: rgba(169, 143, 0, 0.08) }
-    50% { background-color: rgba(83, 48, 0, 0.08) }
-    70% { background-color: rgba(83, 48, 0, 0.08) }
-    75% { background-color: rgba(0, 76, 2, 0.08) }
-    95% { background-color: rgba(0, 76, 2, 0.08) }
-    100% { background-color: rgba($color-1, .1) }
+    0% { background-color: #E5EBED }
+    12% { background-color: #E5EBED }
+    17% { background-color: #F6F3E5 }
+    29% { background-color: #F6F3E5 }
+    34% { background-color: #F2EFEB }
+    46% { background-color: #F2EFEB }
+    51% { background-color: #E5EDE5 }
+    63% { background-color: #E5EDE5 }
+    68% { background-color: #F5EEEF }
+    80% { background-color: #F5EEEF }
+    85% { background-color: #F0ECF4 }
+    95% { background-color: #F0ECF4 }
+    100% { background-color: #E5EBED }
   }
 
   &.-publications {

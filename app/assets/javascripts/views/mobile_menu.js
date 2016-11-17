@@ -2,7 +2,9 @@
 
   'use strict';
 
-  var MobileMenu = Backbone.View.extend({
+  App.View = App.View || {};
+
+  App.View.MobileMenu = Backbone.View.extend({
 
     el: 'body',
 
