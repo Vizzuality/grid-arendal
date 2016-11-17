@@ -1,23 +1,13 @@
-.field
-  = form.label :background_image
-  = form.file_field :background_image, label: false
+== render 'backend/shared/form/header', form: form, title_placeholder: 'New event'
 
-.field
-  = form.label :title
-  = form.input :title, label: false
+div.fields
 
-.field
-  = form.label :web_url
-  = form.input :web_url, label: false
+  == render 'backend/shared/form/field_upload_img', form: form, value: :background_image, label_txt: 'Background image', have_picture: have_picture, picture_url: picture_url
 
-.field
-  = form.label :description
-  = form.input :description, label: false
+  == render 'backend/shared/form/field_input', form: form, value: :web_url
 
-.field
-  = form.label :partner_id, 'Partner'
-  = form.input :partner_id, collection: @partners, as: :collection_select, include_blank: false, label: false
+  == render 'backend/shared/form/field_textarea', form: form, value: :description
 
-.field
-  = form.label :active
-  = form.input :active, label: false
+  == render 'backend/shared/form/field_select', form: form, value: :partner_id, collection: @partners, label_txt: 'Partner'
+
+  == render 'backend/shared/form/field_checkbox', form: form, value: :active

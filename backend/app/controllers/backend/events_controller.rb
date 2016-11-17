@@ -36,6 +36,13 @@ module Backend
       end
     end
 
+    def destroy
+      @event = Event.find(params[:id])
+      if @event.destroy
+        redirect_to events_url
+      end
+    end
+
     def deactivate
       if @event.try(:deactivate)
         redirect_to events_url

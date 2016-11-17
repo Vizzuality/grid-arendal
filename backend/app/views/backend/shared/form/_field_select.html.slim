@@ -1,0 +1,8 @@
+.field
+  = form.label value, label_txt, class: 'text -field-label -bold -dark'
+  = form.input value,
+    collection: collection,
+    as: :collection_select,
+    include_blank: false,
+    label: false,
+    input_html: {class: 'basic-input text -plain-text -dark js-select'}

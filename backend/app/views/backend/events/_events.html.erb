@@ -21,8 +21,8 @@
     <%= render 'backend/shared/index_item',
       item: event,
       title: event.title,
-      edit_path: edit_news_article_path(event),
-      delete_path: news_article_path(event),
+      edit_path: edit_event_path(event),
+      delete_path: event_path(event),
       selected: @event && (@event.id == event.id) %>
   <% end %>
 </ul>

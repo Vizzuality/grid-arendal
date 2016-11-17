@@ -23,6 +23,9 @@
       'manage/about_sections': 'BackOfficeHome#index',
       'manage/about_sections/:id/edit': 'BackOfficeHome#show',
       'manage/about_sections/new': 'BackOfficeHome#show',
+      'manage/events': 'BackOfficeHome#index',
+      'manage/events/:id/edit': 'BackOfficeHome#show',
+      'manage/events/new': 'BackOfficeHome#show',
     },
 
     initialize: function() {
