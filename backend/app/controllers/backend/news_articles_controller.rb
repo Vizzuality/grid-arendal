@@ -16,7 +16,6 @@ module Backend
 
     def new
       @news_article = NewsArticle.new
-      render :edit
     end
 
     def update
