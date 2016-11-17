@@ -28,4 +28,9 @@ $headerPlusIndex: 40%;
   left: $headerPlusIndex;
   width: $item-detail-width;
   background-color: $color-3;
+
+  &.-no-index {
+    left: $header-width;
+    width: $item-detail-width + $index-width;
+  }
 }
