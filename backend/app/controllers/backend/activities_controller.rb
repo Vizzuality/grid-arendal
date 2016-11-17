@@ -19,7 +19,6 @@ module Backend
     def new
       @activities = Activity.order(:title)
       @activity = Activity.new
-      render :edit
     end
 
     def update
