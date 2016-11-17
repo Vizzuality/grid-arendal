@@ -1,34 +1,16 @@
-div.form_header
-  = form.label :title
-  = form.input :title, label: false, input_html: { class: 'text -main-title -dark title', placeholder: 'New Publication' }
-
-  div.actions
-    = form.button :submit, 'SAVE', class: 'btn -dark'
-    div.btn.-light.js-cancel-process
-      'CANCEL
+== render 'backend/shared/form/header', form: form, title_placeholder: 'New Publication'
 
 div.fields
-  .field
-    = form.label :picture, 'Cover picture', class: 'text -field-label -bold -dark'
-    = form.file_field :picture, label: false
+  == render 'backend/shared/form/field_upload_img', form: form, value: :picture, label_txt: 'Cover picture', have_picture: have_picture, picture_url: picture_url
 
-  .field data-type="short_description"
-    = form.label :short_description, class: 'text -field-label -bold -dark'
-    = form.input :short_description, label: false, input_html: {class: 'textarea -size-s text -plain-text -dark', maxlength: '140'}
-    div.options
-      div.text.-field-note.-small.-dark.js-char-counter
+  == render 'backend/shared/form/field_limited_input', form: form, value: :short_description, maxlength: 140
 
-  .field
-    = form.label :description, class: 'text -field-label -bold -dark'
-    = form.input :description, label: false, input_html: {class: 'textarea -size-l text -plain-text -dark js-textarea-editable'}
+  == render 'backend/shared/form/field_textarea', form: form, value: :description
 
-  .field
-    = form.label :story_map_url, class: 'text -field-label -bold -dark'
-    = form.input :story_map_url, label: false, input_html: {class: 'basic-input text -plain-text -dark'}
+  == render 'backend/shared/form/field_input', form: form, value: :story_map_url
 
 div.fields.-grey
-  .field
-    = form.association :users, collection: users, label_method: :display_name, value_method: :id, label_html: {class: 'text -field-label -bold -dark'}, input_html: {class: 'js-select-tags'}
 
-  .field
-    = form.association :partners, collection: partners, label_method: :name, value_method: :id, label_html: {class: 'text -field-label -bold -dark'}
+  == render 'backend/shared/form/field_association', form: form, value: :users, collection: users, label_method: :display_name, js_trigger_class: 'js-select-tags'
+
+  == render 'backend/shared/form/field_association', form: form, value: :partners, collection: partners, label_method: :name

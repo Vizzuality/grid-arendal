@@ -1,17 +1,11 @@
-div.form_header
-  = form.label :title
-  = form.input :title, label: false, input_html: {class: 'text -main-title -dark title', placeholder: 'New News Article'}
-
-  div.actions
-    = form.button :submit, 'SAVE', class: 'btn -dark'
-    div.btn.-light.js-cancel-process
-      'CANCEL
+== render 'backend/shared/form/header', form: form, title_placeholder: 'New News Article'
 
 div.fields
-  .field
-    = form.label :exposure_slug, class: 'text -field-label -bold -dark'
-    = form.input :exposure_slug, label: false, input_html: {class: 'basic-input text -plain-text -dark'}
 
-  .field
-    = form.label :publication_date, class: 'text -field-label -bold -dark'
-    = form.input :publication_date, label: false, input_html: { class: 'basic-input text -plain-text -dark js-select' }
+  == render 'backend/shared/form/field_limited_input', form: form, value: :short_description, maxlength: 140
+
+  == render 'backend/shared/form/field_textarea', form: form, value: :description
+
+  == render 'backend/shared/form/field_input', form: form, value: :exposure_slug
+
+  == render 'backend/shared/form/field_input', form: form, value: :publication_date, js_trigger_class: 'js-select'

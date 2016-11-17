@@ -19,15 +19,15 @@
     },
 
     initialize: function() {
-      this._loadShortDescription();
+      this._loadLimitedInput();
       this._loadMediumEditor();
       this._loadSelect();
       this._loadTaggingSelect();
     },
 
-    _loadShortDescription: function() {
+    _loadLimitedInput: function() {
       new App.Helper.FormInputCharLimited({
-        el: $(this.$el.find('[data-type="short_description"]'))
+        el: $(this.$el.find('[data-type="limited_input"]'))
       });
     },
 

@@ -1,0 +1,6 @@
+- if not(defined? js_trigger_class)
+  - js_trigger_class = ''
+
+.field
+  = form.label value, class: 'text -field-label -bold -dark'
+  = form.input value, label: false, input_html: {class: "basic-input text -plain-text -dark #{js_trigger_class}"}

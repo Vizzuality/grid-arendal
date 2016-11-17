@@ -1,0 +1,55 @@
+.c-events-modal {
+  position: relative;
+  height: 100%;
+
+  .event-container {
+    position: absolute;
+    top: rem(15px);
+    background-color: #f2f5f6;
+    box-shadow: 0 rem(20px) rem(20px) 0 rgba(0, 0, 0, 0.2);
+    background-size: contain;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    z-index: 100;
+    width: 100%;
+    padding: rem(50px) rem(15px);
+    height: calc(100vh - 100px);
+
+    @media screen and (min-width: $screen-m) {
+      padding: rem(70px) rem(90px);
+      top: rem(70px);
+      height: 530px;
+
+    }
+
+    @media screen and (min-width: $screen-l) {
+
+    }
+  }
+
+  .icon {
+    width: rem(20px);
+    height: rem(20px);
+    position: absolute;
+    top: rem(20px);
+    right: rem(20px);
+    fill: $color-1;
+    opacity: 0.15;
+  }
+
+  .event-info {
+    max-width: rem(450px);
+
+    p {
+      padding: rem(20px) 0;
+
+      @media screen and (min-width: $screen-m) {
+        padding: rem(25px) 0;
+      }
+    }
+  }
+
+  .btn {
+    max-width: 160px;
+  }
+}
