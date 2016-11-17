@@ -42,6 +42,4 @@
     }
   });
 
-  var mobileMenu = new MobileMenu();
-
 })(this.App);
