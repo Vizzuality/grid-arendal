@@ -35,6 +35,13 @@ module Backend
       end
     end
 
+    def destroy
+      @news_article = NewsArticle.find(params[:id])
+      if @news_article.destroy
+        redirect_to news_articles_url
+      end
+    end
+
     private
 
       def set_news_article
