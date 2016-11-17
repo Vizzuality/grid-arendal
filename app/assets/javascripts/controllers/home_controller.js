@@ -9,9 +9,8 @@
     index: function() {
       this.initSliders();
       if (window.matchMedia("(max-width: 768px)").matches) {
-        $('.image-slider').addClass('slide-' + (parseInt(Math.floor(Math.random() * 4)) + 1) );
+        $('body').addClass('slide-' + (parseInt(Math.floor(Math.random() * 4)) + 1) );
       }
-      // var homeSliderView = new App.View.HomeSlider();
     },
 
     initSliders: function() {

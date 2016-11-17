@@ -6,18 +6,19 @@
   @media screen and (min-width: $screen-m) {
     border-bottom: rem(1px) solid $white;
     padding: rem(35px) 0 rem(50px);
+    animation: $loop-length slidybackground infinite;
   }
 
-  &.-color-2 {
-    background-color: rgba(169, 143, 0, 0.08);
-  }
-
-  &.-color-3 {
-    background-color: rgba(83, 48, 0, 0.08);
-  }
-
-  &.-color-4 {
-    background-color: rgba(0, 76, 2, 0.08);
+  @keyframes slidybackground {
+    0% { background-color: rgba($color-1, .1) }
+    20% { background-color: rgba($color-1, .1) }
+    25% { background-color: rgba(169, 143, 0, 0.08) }
+    45% { background-color: rgba(169, 143, 0, 0.08) }
+    50% { background-color: rgba(83, 48, 0, 0.08) }
+    70% { background-color: rgba(83, 48, 0, 0.08) }
+    75% { background-color: rgba(0, 76, 2, 0.08) }
+    95% { background-color: rgba(0, 76, 2, 0.08) }
+    100% { background-color: rgba($color-1, .1) }
   }
 
   &.-publications {
