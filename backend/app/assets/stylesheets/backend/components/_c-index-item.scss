@@ -75,16 +75,6 @@
     background-color: rgba($white, 0.2);
   }
 
-  &.-selected {
-
-    .-edit {
-
-      .icon {
-        opacity: 1;
-      }
-    }
-  }
-
   &.-blocked {
     cursor: default;
 

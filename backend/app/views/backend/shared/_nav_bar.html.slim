@@ -1,5 +1,15 @@
 ul.basic-nav
   - if user_signed_in?
+
+    - links = [{"name" => "Activities", "path" => activities_path, "key" => "activities"},
+            {"name" => "Publications", "path" => publications_path, "key" => "publications"},
+            {"name" => "News", "path" => news_articles_path, "key" => "news"},
+            {"name" => "About Sections", "path" => about_sections_path, "key" => "about_sections"},
+            {"name" => "Events", "path" => events_path, "key" => "events"},
+            {"name" => "Media contents", "path" => new_media_content_path("mediable" => 'photo'), "key" => "media_contents"},
+            {"name" => "Partners", "path" => partners_path, "key" => "partners"},
+            {"name" => "Users", "path" => users_path, "key" => "users"}]
+
     li.-user.-no-hover
       img.avatar src="https://pbs.twimg.com/profile_images/794258346115268614/odGvBrDx_bigger.jpg"
       div.texts-container
@@ -11,22 +21,10 @@ ul.basic-nav
       svg.icon
         use xlink:href="#icon-logo"
     li.-separator
-    li
-      = link_to "Activities", activities_path, class: 'text -nav-text -light'
-    li
-      = link_to "Publications", publications_path, class: 'text -nav-text -light'
-    li
-      = link_to "News", news_articles_path, class: 'text -nav-text -light'
-    li
-      = link_to "About Sections", about_sections_path, class: 'text -nav-text -light'
-    li
-      = link_to "Events", events_path, class: 'text -nav-text -light'
-    li
-      = link_to "Media contents", new_media_content_path(mediable: 'photo'), class: 'text -nav-text -light'
-    li
-      = link_to "Partners", partners_path, class: 'text -nav-text -light'
-    li
-      = link_to "Users", users_path, class: 'text -nav-text -light'
+    - links.each do |link|
+      li class=(controller_name == link['key'] ? 'selected' : '')
+        = link_to '', link['path'], class: 'linker'
+        = link_to link['name'], link['path'], class: 'text -nav-text -light'
   - else
     li
       = link_to 'Log In', new_user_session_path
