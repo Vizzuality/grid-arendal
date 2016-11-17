@@ -18,10 +18,11 @@
 
 <ul class="items-list">
   <% @news_articles.each do |news_article| %>
-      <%= render 'backend/shared/index_item',
-                 item: news_article,
-                 title: news_article.title,
-                 edit_path: edit_news_article_path(news_article),
-                 delete_path: news_article_path(news_article)%>
+    <%= render 'backend/shared/index_item',
+      item: news_article,
+      title: news_article.title,
+      edit_path: edit_news_article_path(news_article),
+      delete_path: news_article_path(news_article),
+      selected: @news_article && (@news_article.id == news_article.id) %>
   <% end %>
 </ul>

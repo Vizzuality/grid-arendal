@@ -7,12 +7,7 @@
 </div>
 
 <div class="l-items-detail">
-  <p>New News Article</p>
-
-  <%= simple_form_for @news_article do |f| %>
-    <%= render partial: f %>
-    <div class="actions">
-      <%= f.submit 'Create News Article' %>
-    </div>
+  <%= simple_form_for @news_article, html: { class: 'c-form' } do |f| %>
+      <%= render 'form', form: f %>
   <% end %>
 </div>
