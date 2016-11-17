@@ -18,6 +18,7 @@ module Backend
 
     def new
       @publication = Publication.new
+      render :edit
     end
 
     def update
