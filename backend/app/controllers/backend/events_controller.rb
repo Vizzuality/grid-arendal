@@ -10,10 +10,6 @@ module Backend
     before_action :set_events,             except: :index
 
     def index
-      @event = Event.order(:title).first
-      if @event
-        redirect_to edit_event_url(@event) and return
-      end
     end
 
     def edit

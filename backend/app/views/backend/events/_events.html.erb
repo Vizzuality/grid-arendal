@@ -1,15 +1,28 @@
-<div class="l-items-index">
-  <h2>Events</h2>
+<h2 class="text -main-title -light">Events</h2>
 
-  <% if can?(:create, Event) %>
-    <%= link_to "New", new_event_path %>
+<div class="buttons-bar">
+  <% if can?(:create, Activity) %>
+      <%= link_to "Create New", new_event_path, class: 'btn -light -no-border -create-new' %>
   <% end %>
-  <ul>
-    <% @events.each do |event| %>
-      <li>
-        <h2><%= event.title %></h2>
-        <%= link_to 'Edit', edit_event_path(event) %>
-      </li>
-    <% end %>
-  </ul>
+  <div class="btn">
+    <svg class="icon">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"></use>
+    </svg>
+  </div>
+  <div class="btn">
+    <svg class="icon">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-sort"></use>
+    </svg>
+  </div>
 </div>
+
+<ul class="items-list">
+  <% @events.each do |event| %>
+    <%= render 'backend/shared/index_item',
+      item: event,
+      title: event.title,
+      edit_path: edit_news_article_path(event),
+      delete_path: news_article_path(event),
+      selected: @event && (@event.id == event.id) %>
+  <% end %>
+</ul>

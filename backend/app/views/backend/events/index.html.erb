@@ -1,2 +1,11 @@
-<%= render partial: 'events' %>
+<div class="l-navigation">
+  <%= render 'backend/shared/nav_bar' %>
+</div>
 
+<div class="l-items-index">
+  <%= render 'events', events: @events %>
+</div>
+
+<div class="l-items-detail">
+  <%= render 'backend/shared/phrases' %>
+</div>
