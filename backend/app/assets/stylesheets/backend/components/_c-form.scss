@@ -6,6 +6,8 @@
 }
 
 $input-min-height: rem(43px);
+$picture-input-margin: rem(10px);
+$picture-input-height: rem(230px);
 
 .c-form {
 
@@ -77,9 +79,16 @@ $input-min-height: rem(43px);
 
       .field {
         position: relative;
+        width: 100%;
+        font-size: 0;
 
         &:not(:first-child) {
           margin-top: rem(35px);
+        }
+
+        label {
+          display: block;
+          width: 100%;
         }
 
         .options {
@@ -153,6 +162,79 @@ $input-min-height: rem(43px);
             .select2-selection__rendered {
               padding: rem(4px) rem(5px) rem(3px) rem(8px);
             }
+          }
+        }
+
+        &[data-type="picture"] {
+
+          input {
+            position: absolute;
+            width: calc(50% - #{$picture-input-margin});
+            height: $picture-input-height;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 2;
+
+            &:hover {
+
+              + .fake-input {
+
+                .current_picture {
+                  opacity: 0;
+                }
+              }
+            }
+          }
+
+          .fake-input {
+            position: relative;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: calc(50% - #{$picture-input-margin});
+            height: $picture-input-height;
+            margin-right: $picture-input-margin;
+            border-radius: 4px;
+            background-color: rgba($color-1, 0.1);
+            border: solid 1px rgba($color-1, 0.2);
+            cursor: pointer;
+            z-index: 1;
+
+            .tip {
+              position: absolute;
+              text-align: center;
+
+              .icon {
+                width: 18px;
+                height: 18px;
+              }
+
+              p {
+                margin-top: rem(13px);
+                padding: 0 19%;
+                opacity: 0.5;
+                text-align: center;
+              }
+            }
+
+            .current_picture {
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              background-size: cover;
+              background-repeat: no-repeat;
+              opacity: 0.1;
+              transition: opacity 0.2s ease-out;
+            }
+          }
+
+          .searcher {
+            position: relative;
+            display: inline-block;
+            width: calc(50% - #{$picture-input-margin});
+            height: $picture-input-height;
+            margin-left: $picture-input-margin;
           }
         }
       }
