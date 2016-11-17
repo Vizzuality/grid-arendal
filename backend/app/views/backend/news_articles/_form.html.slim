@@ -1,19 +1,11 @@
-.field
-  = form.label :title
-  = form.input :title, label: false
+== render 'backend/shared/form/header', form: form, title_placeholder: 'New News Article'
 
-.field
-  = form.label :short_description
-  = form.input :short_description, label: false
+div.fields
 
-.field
-  = form.label :description
-  = form.input :description, label: false, disabled: true
+  == render 'backend/shared/form/field_limited_input', form: form, value: :short_description, maxlength: 140
 
-.field
-  = form.label :exposure_slug
-  = form.input :exposure_slug, label: false, disabled: true
+  == render 'backend/shared/form/field_textarea', form: form, value: :description
 
-.field
-  = form.label :publication_date
-  = form.input :publication_date, label: false, disabled: true
+  == render 'backend/shared/form/field_input', form: form, value: :exposure_slug
+
+  == render 'backend/shared/form/field_input', form: form, value: :publication_date, js_trigger_class: 'js-select'
