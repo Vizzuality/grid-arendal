@@ -168,12 +168,22 @@ $picture-input-height: rem(230px);
         &[data-type="picture"] {
 
           input {
-            width: 0.1px;
-            height: 0.1px;
-            opacity: 0;
-            overflow: hidden;
             position: absolute;
-            z-index: -1;
+            width: calc(50% - #{$picture-input-margin});
+            height: $picture-input-height;
+            opacity: 0;
+            cursor: pointer;
+            z-index: 2;
+
+            &:hover {
+
+              + .fake-input {
+
+                .current_picture {
+                  opacity: 0;
+                }
+              }
+            }
           }
 
           .fake-input {
@@ -189,6 +199,7 @@ $picture-input-height: rem(230px);
             background-color: rgba($color-1, 0.1);
             border: solid 1px rgba($color-1, 0.2);
             cursor: pointer;
+            z-index: 1;
 
             .tip {
               position: absolute;
@@ -215,13 +226,6 @@ $picture-input-height: rem(230px);
               background-repeat: no-repeat;
               opacity: 0.1;
               transition: opacity 0.2s ease-out;
-            }
-
-            &:hover {
-
-              .current_picture {
-                opacity: 0;
-              }
             }
           }
 
