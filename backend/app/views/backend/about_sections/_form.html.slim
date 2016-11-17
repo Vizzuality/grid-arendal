@@ -1,6 +1,13 @@
-= form.label :title
-= form.input :title, label: false
+div.form_header
+  = form.label :title
+  = form.input :title, label: false, input_html: {class: 'text -main-title -dark title', placeholder: 'New About Section'}
 
-= form.label :body
-= form.input :body, label: false
+  div.actions
+    = form.button :submit, 'SAVE', class: 'btn -dark'
+    div.btn.-light.js-cancel-process
+      'CANCEL
 
+div.fields
+  .field
+    = form.label :body, class: 'text -field-label -bold -dark'
+    = form.input :body, label: false, input_html: {class: 'textarea -size-l text -plain-text -dark js-textarea-editable'}
