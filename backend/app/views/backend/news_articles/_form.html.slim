@@ -1,17 +1,19 @@
-div.form_header
+.field
   = form.label :title
-  = form.input :title, label: false, input_html: {class: 'text -main-title -dark title', placeholder: 'New News Article'}
+  = form.input :title, label: false
 
-  div.actions
-    = form.button :submit, 'SAVE', class: 'btn -dark'
-    div.btn.-light.js-cancel-process
-      'CANCEL
+.field
+  = form.label :short_description
+  = form.input :short_description, label: false
 
-div.fields
-  .field
-    = form.label :exposure_slug, class: 'text -field-label -bold -dark'
-    = form.input :exposure_slug, label: false, input_html: {class: 'basic-input text -plain-text -dark'}
+.field
+  = form.label :description
+  = form.input :description, label: false, disabled: true
 
-  .field
-    = form.label :publication_date, class: 'text -field-label -bold -dark'
-    = form.input :publication_date, label: false, input_html: { class: 'basic-input text -plain-text -dark js-select' }
+.field
+  = form.label :exposure_slug
+  = form.input :exposure_slug, label: false, disabled: true
+
+.field
+  = form.label :publication_date
+  = form.input :publication_date, label: false, disabled: true
