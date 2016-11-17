@@ -7,7 +7,7 @@
   App.Controller.BackOfficeHome = App.Controller.Page.extend({
 
     index: function() {
-      console.log('hello from backoffice index')
+      var phrasesView = new App.View.Phrases({});
     },
 
     show: function() {

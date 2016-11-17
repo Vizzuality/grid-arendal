@@ -6,14 +6,14 @@ module Backend
     load_and_authorize_resource
 
     before_action :set_users_and_partners, only: [:new, :edit]
-    before_action :publications,           except: :index
+    before_action :publications,
 
 
     def index
-      redirect_to new_publication_path()
     end
 
     def edit
+      @publication = Publication.find(params[:id])
     end
 
     def new
