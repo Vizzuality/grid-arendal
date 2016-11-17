@@ -3,9 +3,17 @@
   = form.input :title, label: false
 
 .field
+  = form.label :short_description
+  = form.input :short_description, label: false
+
+.field
+  = form.label :description
+  = form.input :description, label: false, disabled: true
+
+.field
   = form.label :exposure_slug
-  = form.input :exposure_slug, label: false
+  = form.input :exposure_slug, label: false, disabled: true
 
 .field
   = form.label :publication_date
-  = form.input :publication_date, label: false
+  = form.input :publication_date, label: false, disabled: true
