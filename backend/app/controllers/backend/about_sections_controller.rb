@@ -16,6 +16,7 @@ module Backend
 
     def new
       @about_section = AboutSection.new
+      render :edit
     end
 
     def update
