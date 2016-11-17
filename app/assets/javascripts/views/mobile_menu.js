@@ -2,7 +2,9 @@
 
   'use strict';
 
-  var MobileMenu = Backbone.View.extend({
+  App.View = App.View || {};
+
+  App.View.MobileMenu = Backbone.View.extend({
 
     el: 'body',
 
@@ -39,7 +41,5 @@
       this.$('.c-menu').toggleClass('-is-open', !hidden);
     }
   });
-
-  var mobileMenu = new MobileMenu();
 
 })(this.App);

@@ -37,7 +37,7 @@
   &.-news {
     background-color: rgba($color-2, 0.04);
   }
-  
+
   &.-media-library {
     background-color: rgba($color-2, 0.05);
   }
@@ -47,7 +47,7 @@
     height: 100%;
     background-color: rgba(255, 255, 255, 0.2);
     position: absolute;
-    z-index: 1;
+    z-index: 5;
 
     @media screen and (min-width: $screen-m) {
       display: none;
