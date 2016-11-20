@@ -39,6 +39,13 @@ module Backend
       end
     end
 
+    def destroy
+      @partner = Partner.find(params[:id])
+      if @partner.destroy
+        redirect_to partners_url
+      end
+    end
+
     private
 
       def set_partner

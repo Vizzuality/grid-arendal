@@ -20,7 +20,7 @@
   <% @partners.each do |partner| %>
     <%= render 'backend/shared/index_item',
     item: partner,
-    title: partner.title,
+    title: partner.name,
     edit_path: edit_partner_path(partner),
     delete_path: partner_path(partner),
     selected: @partner && (@partner.id == partner.id) %>
