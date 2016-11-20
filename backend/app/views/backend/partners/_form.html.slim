@@ -1,15 +1,22 @@
-.field
-  = form.label :logo
-  = form.file_field :logo, label: false
+== render 'backend/shared/form/header', form: form, title_placeholder: 'New Partner'
 
-.field
-  = form.label :name
-  = form.input :name, label: false
+div.fields
 
-.field
-  = form.label :web_url
-  = form.input :web_url, label: false
+  == render 'backend/shared/form/field_upload_img', form: form, value: :logo, label_txt: 'Picture', have_picture: have_picture, picture_url: picture_url
 
-.field
-  = form.label :description
-  = form.input :description, label: false
+
+  .field
+    = form.label :logo
+    = form.file_field :logo, label: false
+
+  .field
+    = form.label :name
+    = form.input :name, label: false
+
+  .field
+    = form.label :web_url
+    = form.input :web_url, label: false
+
+  .field
+    = form.label :description
+    = form.input :description, label: false
