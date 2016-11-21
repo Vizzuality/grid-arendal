@@ -1,17 +1,20 @@
-= render 'backend/shared/form/header', form: form, title_placeholder: params[:mediable].in?('album') ? 'New Album' : 'New Picture'
+= render 'backend/shared/form/header', form: form, title_placeholder: params[:mediable].in?('album') ? 'Album title' : 'Photo title'
 
 div.fields
-  - if params[:mediable].present?
-    .field
-      - if params[:mediable].in?('photo')
-        = form.label :photo_file
-        = form.file_field :photo_file
-      - if params[:mediable].in?('album')
-        #photos
-          = form.simple_fields_for :album_photos do |album_photo|
-            = render 'album_photo_fields', f: album_photo
-        .links
-          = link_to_add_association 'add album photo', form, :album_photos
+  = render 'backend/shared/form/field_textarea', form: form, value: :description
 
-    = render 'backend/shared/form/field_textarea', form: form, value: :description
+div.fields.-grey
+
+- if params[:mediable].present?
+  .field
+    - if params[:mediable].in?('photo')
+      = form.label :photo_file
+      = form.file_field :photo_file
+    - if params[:mediable].in?('album')
+      #photos
+        = form.simple_fields_for :album_photos do |album_photo|
+          = render 'album_photo_fields', f: album_photo
+      .links
+        = link_to_add_association 'add album photo', form, :album_photos
+
   = form.hidden_field :mediable, value: params[:mediable]

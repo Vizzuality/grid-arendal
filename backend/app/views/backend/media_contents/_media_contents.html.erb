@@ -24,6 +24,7 @@
       title: media_content.title,
       type: media_content.mediable_type,
       media_photo_url: media_content.mediable_photo_url.present? ? media_content.mediable_photo_url : nil,
+      edit_path: edit_media_content_path(media_content, "mediable" => media_content.mediable_type),
       selected: @media_content && (@media_content.id == media_content.id) %>
   <% end %>
 </ul>
