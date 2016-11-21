@@ -4,6 +4,8 @@ class PublicationsController < ApplicationController
 
   def index
     @publications = Publication.order(:title).published
+    #@years = (Publication.minimum(:created_at).year...Publication.maximum(:created_at).year)
+    @years = (2012..2016)
   end
 
   def show
