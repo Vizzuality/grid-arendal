@@ -3,19 +3,32 @@ $dropdown-modal-title-height: rem(60px);
 %filter-background {
   content: "";
   position: absolute;
-  top: rem(1px);
   left: rem(-10px);
-  width: calc(100% + #{rem(32px)});
   height: rem(5px);
   z-index: -1;
   background-color: $white;
 
   @media screen and (min-width: $screen-m) {
-    top: rem(2px);
     left: rem(-8px);
-    width: calc(100% + #{rem(28px)});
     color: transparent;
   }
+}
+
+%filter-background-speaker {
+  @extend %filter-background;
+  top: rem(1px);
+  width: calc(100% + #{rem(32px)});
+
+  @media screen and (min-width: $screen-m) {
+    top: rem(2px);
+    width: calc(100% + #{rem(28px)});
+  }
+}
+
+%filter-background-default {
+  @extend %filter-background;
+  top: rem(5px);
+  width: calc(100% + #{rem(16px)});
 }
 
 %filter-tag-background {
@@ -29,6 +42,7 @@ $dropdown-modal-title-height: rem(60px);
 }
 
 %dropdown-tags {
+
   .dropdown {
     width: 100%;
     left: 0;
@@ -91,6 +105,7 @@ $dropdown-modal-title-height: rem(60px);
 
   @media screen and (min-width: $screen-m) {
     display: flex;
+    flex-wrap: wrap;
   }
 
   .container {
@@ -99,9 +114,11 @@ $dropdown-modal-title-height: rem(60px);
     transition: height 0.5s ease-out;
 
     @media screen and (min-width: $screen-m) {
+      display: flex;
+      flex-wrap: wrap;
+      flex: 1 100%;
       height: auto;
       overflow: visible;
-      display: inherit;
     }
 
     .filter {
@@ -131,8 +148,14 @@ $dropdown-modal-title-height: rem(60px);
         cursor: pointer;
 
         &:hover {
+
           &:before {
-            @extend %filter-background;
+            @extend %filter-background-speaker;
+            top: rem(1px);
+
+            @media screen and (min-width: $screen-m) {
+              top: rem(2px);
+            }
           }
         }
 
@@ -155,16 +178,6 @@ $dropdown-modal-title-height: rem(60px);
             height: rem(8px);
             margin-left: rem(8px);
           }
-        }
-      }
-
-      &.-search {
-        flex-grow: 2;
-        text-align: right;
-        display: none;
-
-        @media screen and (min-width: $screen-m) {
-          display: block;
         }
       }
 
@@ -226,7 +239,7 @@ $dropdown-modal-title-height: rem(60px);
         .speaker {
 
           &:before {
-            @extend %filter-background;
+            @extend %filter-background-speaker;
           }
 
           .text {
@@ -241,6 +254,26 @@ $dropdown-modal-title-height: rem(60px);
 
       &:not(.-have-value) > .type {
         display: none;
+      }
+
+      &.-type-search {
+        flex-grow: 2;
+        text-align: right;
+        display: none;
+
+        @media screen and (min-width: $screen-m) {
+          display: block;
+        }
+
+        .speaker {
+
+          &:hover {
+
+            &:before {
+              width: calc(100% + #{rem(16px)});
+            }
+          }
+        }
       }
 
       &.-type-tags {
@@ -260,6 +293,35 @@ $dropdown-modal-title-height: rem(60px);
 
             @media screen and (max-width: $screen-m) {
               color: transparent;
+            }
+          }
+        }
+      }
+
+      &.-type-years {
+        flex: 1 100%;
+        padding-top: rem(27px);
+        display: none;
+
+        @media screen and (min-width: $screen-m) {
+          display: block;
+        }
+
+        .list {
+          display: flex;
+          justify-content: space-between;
+
+          li {
+            position: relative;
+            z-index: 1;
+            cursor: pointer;
+
+            &:hover,
+            &.selected {
+
+              &:before {
+                @extend %filter-background-default;
+              }
             }
           }
         }

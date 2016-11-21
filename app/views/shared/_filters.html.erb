@@ -8,13 +8,16 @@
         </svg>
       </div>
       <div class="container">
-        <%= render 'shared/select', js_trigger: 'js-dropdown-order-by', title: "ORDERED BY", placeholder: "Order by"%>
-        <%= render 'shared/select', js_trigger: 'js-dropdown-filter-by-type', title: "FILTER BY TYPE", placeholder: "Filter by type"%>
-        <%= render 'shared/tags_select', js_trigger: 'js-dropdown-filter-by-tags', title: "FILTER BY TAGS", placeholder: "Filter by tags"%>
-        <div class="filter -search">
-          <span class="text -filter speaker">Search media</span>
-        </div>
+        <%= render 'shared/filters/select', js_trigger: 'js-dropdown-order-by', title: "ORDERED BY", placeholder: "Order by" %>
+        <%= render 'shared/filters/select', js_trigger: 'js-dropdown-filter-by-type', title: "FILTER BY TYPE", placeholder: "Filter by type" %>
+        <%= render 'shared/filters/tags_select', js_trigger: 'js-dropdown-filter-by-tags', title: "FILTER BY TAGS", placeholder: "Filter by tags" %>
+        <%= render 'shared/filters/search', placeholder: "Search media" %>
       </div>
+      <% if (@years.present?) %>
+        <div class="container">
+          <%= render 'shared/filters/years', js_trigger: 'js-years-filter', years: @years %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

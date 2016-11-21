@@ -18,12 +18,8 @@
   </div>
 </div>
 
-<% @years.each do |year| %>
-  <%= year %>
-<% end %>
-
 <div class="l-main-content -publications">
-
+  <%= render 'shared/filters', years: @years %>
   <div class="row">
     <div class="small-12 small-centered columns -fix">
       <div id="masonry-layout" class="masonry-layout" hidden data-columns>

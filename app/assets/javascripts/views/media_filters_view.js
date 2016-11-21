@@ -39,6 +39,9 @@
           case "tag":
             this._loadTag(filter);
             break;
+          case "years":
+            this._loadYears(filter);
+            break;
         }
       }.bind(this));
     },
@@ -49,6 +52,10 @@
 
     _loadTag: function(filter) {
       new App.Helper.TagSelectHandler(this._getHelperFilterObject(filter));
+    },
+
+    _loadYears: function(filter) {
+      new App.Helper.YearsFilter(this._getHelperFilterObject(filter));
     },
 
     _getHelperFilterObject: function(filter) {
