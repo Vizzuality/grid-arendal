@@ -1,14 +1,29 @@
 <h2 class="text -main-title -light">Media Library</h2>
 
-<%= render 'backend/shared/index_items_buttons.html',
-  havePermissionToCreate: can?(:create, MediaContent),
-  createPath: new_media_content_path(mediable: 'photo')
-%>
+<div class="buttons-bar">
+  <% if can?(:create, MediaContent) %>
+    <%= link_to "New photo", new_media_content_path(mediable: 'photo'), class: 'btn -light -no-border -create-new' %>
+    <%= link_to "New album", new_media_content_path(mediable: 'album'), class: 'btn -light -no-border -create-new' %>
+  <% end %>
+  <div class="btn">
+    <svg class="icon">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"></use>
+    </svg>
+  </div>
+  <div class="btn">
+    <svg class="icon">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-sort"></use>
+    </svg>
+  </div>
+</div>
+
 <ul class="items-list">
-  <% media_contents.each do |media_content| %>
-    <%= render 'backend/shared/index_item',
+  <% @media_contents.each do |media_content| %>
+    <%= render 'backend/shared/index_media_item',
       item: media_content,
       title: media_content.title,
-      edit_path: edit_media_content_path(media_content, mediable: media_content.mediable_type) %>
+      type: media_content.mediable_type,
+      media_photo_url: media_content.mediable_photo_url.present? ? media_content.mediable_photo_url : nil,
+      selected: @media_content && (@media_content.id == media_content.id) %>
   <% end %>
 </ul>

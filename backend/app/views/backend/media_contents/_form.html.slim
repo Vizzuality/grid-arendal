@@ -1,10 +1,6 @@
-= form.hidden_field :mediable, value: params[:mediable]
-
-= render 'backend/shared/form/header', form: form,
-  inputs: [{value: :title, title_placeholder: 'Media title'}]
+= render 'backend/shared/form/header', form: form, title_placeholder: params[:mediable].in?('album') ? 'New Album' : 'New Picture'
 
 div.fields
-
   - if params[:mediable].present?
     .field
       - if params[:mediable].in?('photo')
@@ -17,5 +13,5 @@ div.fields
         .links
           = link_to_add_association 'add album photo', form, :album_photos
 
-  = render 'backend/shared/form/field_textarea', form: form, value: :description
-
+    = render 'backend/shared/form/field_textarea', form: form, value: :description
+  = form.hidden_field :mediable, value: params[:mediable]
