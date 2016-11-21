@@ -14,12 +14,14 @@
 
     options: {
       mediumEditorTriggerClass: ".js-textarea-editable",
+      selectTriggerClass: ".js-select",
       selectTagsTriggerClass: ".js-select-tags"
     },
 
     initialize: function() {
       this._loadLimitedInput();
       this._loadMediumEditor();
+      this._loadSelect();
       this._loadTaggingSelect();
     },
 
@@ -34,6 +36,12 @@
         toolbar: {
           buttons: ['bold', 'italic', 'underline', 'h1', 'h2', 'quote', 'anchor']
         }
+      });
+    },
+
+    _loadSelect: function () {
+      $(this.options.selectTriggerClass).select2({
+        minimumResultsForSearch: Infinity
       });
     },
 

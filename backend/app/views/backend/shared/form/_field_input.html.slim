@@ -1,3 +1,6 @@
+- if not(defined? js_trigger_class)
+  - js_trigger_class = ''
+
 .field
-  = form.label :story_map_url, class: 'text -field-label -bold -dark'
-  = form.input :story_map_url, label: false, input_html: {class: 'basic-input text -plain-text -dark'}
+  = form.label value, class: 'text -field-label -bold -dark'
+  = form.input value, label: false, input_html: {class: "basic-input text -plain-text -dark #{js_trigger_class}"}

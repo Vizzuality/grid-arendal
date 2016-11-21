@@ -17,7 +17,9 @@
       'manage/publications': 'BackOfficeHome#index',
       'manage/publications/:id/edit': 'BackOfficeHome#show',
       'manage/publications/new': 'BackOfficeHome#show',
-      'manage/news_articles:id/edit': 'BackOfficeHome#show',
+      'manage/news_articles': 'BackOfficeHome#index',
+      'manage/news_articles/:id/edit': 'BackOfficeHome#show',
+      'manage/news_articles/new': 'BackOfficeHome#show',
     },
 
     initialize: function() {
