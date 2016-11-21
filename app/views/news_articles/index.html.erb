@@ -20,100 +20,23 @@
 
 <div class="l-main-content -news">
 
-  <% @articles.each do |article| %>
-    <iframe src="https://GRIDArendal.exposure.co/<%= article.exposure_slug %>/embed/cover?embed=true" style="width:200px;height:300px;margin-bottom:5px;border:solid 1px #ccc;border-radius:2px;"></iframe>
-  <% end %>
-
   <div class="row">
     <div class="small-12 small-centered columns -fix">
-      <div class="masonry-layout">
-       <div class="item">
-         <article class="c-card">
-           <div class="card-pic"></div>
-           <div class="card-descrition">
-             <h3 class="text -title-card">My awesome title</h3>
-             <p class="text -summary">Zambia has abundant water resources, vast forests,huge mineral deposits, and large tracts of arableland. These natural resources are important for thecountry’s economy, with copper and cobalt beingthe country’s main exports. While mining brings...</p>
-             <p class="text -meta">1 week ago</p>
-           </div>
-         </article>
-       </div>
-
-       <div class="item">
-         <article class="c-card">
-           <div class="card-pic"></div>
-           <div class="card-descrition">
-             <h3 class="text -title-card">My awesome title</h3>
-             <p class="text -summary">Every year, the sum of humanity’s knowledge increases exponentially. And as we learn more, we also learn there is much we still don’t know. Plastic litter…</p>
-             <p class="text -meta">1 week ago</p>
-           </div>
-         </article>
-       </div>
-
-       <div class="item">
-         <article class="c-card">
-           <div class="card-pic"></div>
-           <div class="card-descrition">
-             <h3 class="text -title-card">My awesome title</h3>
-             <p class="text -summary">The shallow coral reefs that we all know, are like the tip of an iceberg - they are the more visible part of an extensive coral ecosystem that reaches int…</p>
-             <p class="text -meta">1 week ago</p>
-           </div>
-         </article>
-       </div>
-
-       <div class="item">
-         <article class="c-card">
-           <div class="card-pic"></div>
-           <div class="card-descrition">
-             <h3 class="text -title-card">My awesome title</h3>
-             <p class="text -summary">The first World Ocean Assessment (WOA) is a report on the state of the planet’s oceans. It is the product of the first cycle of the Regular Process.</p>
-             <p class="text -meta">1 week ago</p>
-           </div>
-         </article>
-       </div>
-
-       <div class="item">
-         <article class="c-card">
-           <div class="card-pic"></div>
-           <div class="card-descrition">
-             <h3 class="text -title-card">My awesome title</h3>
-             <p class="text -summary">The Tropical Andes will experience some of the most drastic climate changes in South America. By the end of this century, the coldest years in the Tropical Andes mountains will be warmer than the warmest years to which humans and other species have adapted so far.</p>
-             <p class="text -meta">1 week ago</p>
-           </div>
-         </article>
-       </div>
-
-       <div class="item">
-         <article class="c-card">
-           <div class="card-pic"></div>
-           <div class="card-descrition">
-             <h3 class="text -title-card">My awesome title</h3>
-             <p class="text -summary">This Story Map explores the ecosystem services of the Cubango-Okavango River Basin and the threats they face. A combination of interactive maps, graphics...</p>
-             <p class="text -meta">1 week ago</p>
-           </div>
-         </article>
-       </div>
-
-       <div class="item">
-         <article class="c-card">
-           <div class="card-pic"></div>
-           <div class="card-descrition">
-             <h3 class="text -title-card">My awesome title</h3>
-             <p class="text -summary">Growing energy demands, uncertainty about supplies, and the urgent need to reduce emissions of greenhouse gases mean that the world faces an uncertain ene…</p>
-             <p class="text -meta">1 week ago</p>
-           </div>
-         </article>
-       </div>
-
-       <div class="item">
-         <article class="c-card">
-           <div class="card-pic"></div>
-           <div class="card-descrition">
-             <h3 class="text -title-card">My awesome title</h3>
-             <p class="text -summary">This is some info related to this card</p>
-             <p class="text -meta">1 week ago</p>
-           </div>
-         </article>
-       </div>
+      <div id="masonry-layout" class="masonry-layout" hidden data-columns>
+        <% @articles.each do |article| %>
+          <div class="item">
+            <article class="c-card">
+              <div class="card-pic" style="background-image: url('<%= article.cover_src %>')"></div>
+              <div class="card-descrition">
+                <h3 class="text -title-card"><%= article.title %></h3>
+                <p class="text -summary"><%= article.short_description %></p>
+                <p class="text -meta">
+                  <%= time_ago_in_words(article.publication_date) %> ago
+                </p>
+              </div>
+            </article>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

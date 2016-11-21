@@ -29,23 +29,4 @@
       width: 310px;
     }
   }
-
-
-  .next, .prev {
-    @extend %centery;
-    z-index: 1;
-    display: none;
-
-    @media (min-width: $screen-l){
-      display: block;
-    }
-  }
-
-  .next {
-    right: -30px;
-  }
-
-  .prev {
-    left: -30px;
-  }
 }

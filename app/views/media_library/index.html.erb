@@ -21,7 +21,7 @@
   <%= render 'shared/filters' %>
   <div class="row">
     <div class="small-12 small-centered columns -fix">
-      <div class="masonry-layout">
+      <div id="masonry-layout" class="masonry-layout" hidden data-columns>
         <% @publications.each do |publication| %>
             <%= render 'shared/media-card', picture: 'http://www.audubon.org/sites/default/files/styles/engagement_card/public/sfw_apa_2013_28342_232388_briankushner_blue_jay_kk_high.jpg', title: publication.title, link: publication_path(publication) %>
         <% end %>

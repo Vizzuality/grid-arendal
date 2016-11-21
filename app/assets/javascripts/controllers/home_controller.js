@@ -8,6 +8,9 @@
 
     index: function() {
       this.initSliders();
+      if (window.matchMedia("(max-width: 768px)").matches) {
+        $('body').addClass('slide-' + (parseInt(Math.floor(Math.random() * 6)) + 1) );
+      }
     },
 
     initSliders: function() {

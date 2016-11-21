@@ -7,6 +7,9 @@
   App.Controller.Media = App.Controller.Page.extend({
 
     index: function(params) {
+      var masonryView = new App.View.Masonry({
+        el: '#masonry-layout'
+      });
       var filtersView = new App.View.MediaFilters({
         options: {
           filters: [

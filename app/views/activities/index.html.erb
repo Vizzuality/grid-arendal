@@ -22,7 +22,7 @@
 
   <div class="row">
     <div class="small-12 small-centered columns -fix">
-      <div class="masonry-layout">
+      <div id="masonry-layout" class="masonry-layout" hidden data-columns>
         <% @activities.each do |activity| %>
           <%= link_to activity do %>
             <div class="item">

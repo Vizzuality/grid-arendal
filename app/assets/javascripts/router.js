@@ -16,7 +16,9 @@
       'activities': 'Activities#index',
       'activities/:id': 'Activities#show',
       'media-library': 'Media#index',
-      'media-library/:id': 'Media#show'
+      'media-library/:id': 'Media#show',
+      'news': 'News#index',
+      'news/:id': 'News#show'
     },
 
     initialize: function() {

@@ -8,11 +8,12 @@ module Backend
     before_action :set_users_partners_and_news, only: [:new, :edit]
 
     def index
-      redirect_to new_activity_path()
+      @activities = Activity.order(:title)
     end
 
     def edit
       @activities = Activity.order(:title)
+      @activity = Activity.find(params[:id])
     end
 
     def new
@@ -38,6 +39,13 @@ module Backend
         set_users_partners_and_news
         @activities = Activity.order(:title)
         render :new
+      end
+    end
+
+    def destroy
+      @activity = Activity.find(params[:id])
+      if @activity.destroy
+        redirect_to activities_url
       end
     end
 
