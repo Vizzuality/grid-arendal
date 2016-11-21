@@ -19,7 +19,7 @@ phrases = {
     "Suspendisse condimentum luctus arcu id tincidunt."
   ]
 }
-current_phrases = phrases[controller_name] ? phrases[controller_name] : phrases['default']
+current_phrases = phrases[controller_name].present? ? phrases[controller_name] : phrases['default']
 %>
 
 <div class="c-phrases">

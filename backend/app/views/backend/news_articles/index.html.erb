@@ -1,15 +1,11 @@
-<div class="l-items-index">
-  <h2> News Articles</h2>
+<div class="l-navigation">
+  <%= render 'backend/shared/nav_bar' %>
+</div>
 
-  <% if can?(:create, NewsArticle) %>
-    <%= link_to "New", new_news_article_path %>
-  <% end %>
-  <ul>
-    <% @news_articles.each do |news_article| %>
-      <li>
-        <h2><%= news_article.title %></h2>
-        <%= link_to 'Edit', edit_news_article_path(news_article) %>
-      </li>
-    <% end %>
-  </ul>
+<div class="l-items-index">
+  <%= render 'news_articles', news_articles: @news_articles %>
+</div>
+
+<div class="l-items-detail">
+  <%= render 'backend/shared/phrases' %>
 </div>
