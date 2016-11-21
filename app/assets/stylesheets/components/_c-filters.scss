@@ -1,4 +1,5 @@
 $dropdown-modal-title-height: rem(60px);
+$filters-screen-m-width: 18%;
 
 %filter-background {
   content: "";
@@ -130,7 +131,7 @@ $dropdown-modal-title-height: rem(60px);
       transition: opacity 0.5s;
 
       @media screen and (min-width: $screen-m) {
-        width: 18%;
+        width: $filters-screen-m-width;
         padding-top: rem(16px);
         padding-right: rem(15px);
         margin-top: 0;
@@ -279,6 +280,7 @@ $dropdown-modal-title-height: rem(60px);
       &.-type-tags {
 
         @media screen and (min-width: $screen-m) {
+          width: $filters-screen-m-width * 2;
           position: static;
         }
 
@@ -309,12 +311,15 @@ $dropdown-modal-title-height: rem(60px);
 
         .list {
           display: flex;
-          justify-content: space-between;
 
           li {
             position: relative;
             z-index: 1;
             cursor: pointer;
+
+            &:not(:first-child) {
+              margin-left: rem(29px);
+            }
 
             &:hover,
             &.selected {
