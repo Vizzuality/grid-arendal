@@ -14,7 +14,7 @@ I want to edit, create, view about_sections
     And I am authenticated adminuser
     When I go to the edit about_section page for "About the Company"
     And I fill in "Title" with "About section edited"
-    And I press "Update"
+    And I press "SAVE"
     Then I should see "About section edited"
 
   Scenario: Adminuser can create about_section
@@ -22,7 +22,7 @@ I want to edit, create, view about_sections
     When I go to the new about_section page
     And I fill in "Title" with "My new about section"
     And I fill in "Body" with "My body"
-    And I press "Create About Section"
+    And I press "SAVE"
     Then I should have one about_section
     And I should see "My new about section"
 
@@ -31,6 +31,6 @@ I want to edit, create, view about_sections
     When I go to the new about_section page
     And I fill in "Title" with ""
     And I fill in "Body" with "My body"
-    And I press "Create About Section"
+    And I press "SAVE"
     Then I should have zero about_sections
     And I should see "can't be blank"

@@ -9,10 +9,6 @@ module Backend
     before_action :set_about_sections, except: :index
 
     def index
-      @about_section = AboutSection.order(:title).first
-      if @about_section
-        redirect_to edit_about_section_url(@about_section) and return
-      end
     end
 
     def edit

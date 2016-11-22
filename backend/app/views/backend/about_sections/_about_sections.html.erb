@@ -1,14 +1,28 @@
-<h2>About sections</h2>
+<h2 class="text -main-title -light">About sections</h2>
 
-<% if can?(:create, AboutSection) %>
-  <%= link_to "New", new_about_section_path %>
-<% end %>
+<div class="buttons-bar">
+  <% if can?(:create, AboutSection) %>
+    <%= link_to "Create New", new_about_section_path, class: 'btn -light -no-border -create-new' %>
+  <% end %>
+  <div class="btn">
+    <svg class="icon">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"></use>
+    </svg>
+  </div>
+  <div class="btn">
+    <svg class="icon">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-sort"></use>
+    </svg>
+  </div>
+</div>
 
-<ul>
+<ul class="items-list">
   <% @about_sections.each do |about_section| %>
-    <li>
-      <h2><%= about_section.title %></h2>
-      <%= link_to 'Edit', edit_about_section_path(about_section) %>
-    </li>
+    <%= render 'backend/shared/index_item',
+      item: about_section,
+      title: about_section.title,
+      edit_path: edit_about_section_path(about_section),
+      delete_path: about_section_path(about_section),
+      selected: @about_section && (@about_section.id == about_section.id) %>
   <% end %>
 </ul>
