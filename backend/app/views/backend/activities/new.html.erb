@@ -7,14 +7,12 @@
 </div>
 
 <div class="l-items-detail">
-  <%= simple_form_for @activity, html: { class: 'c-form' } do |f| %>
-    <%= render 'form',
-      form: f,
-      users: @users,
-      partners: @partners,
-      news_articles: @news_articles,
-      publications: @publications,
-      have_picture: false,
-      picture_url: nil %>
-  <% end %>
+  <%= render 'form',
+    activity: @activity,
+    users: @users,
+    partners: @partners,
+    news_articles: @news_articles,
+    publications: @publications,
+    have_picture: false,
+    picture_url: nil %>
 </div>
