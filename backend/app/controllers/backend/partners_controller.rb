@@ -12,10 +12,19 @@ module Backend
     end
 
     def edit
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
 
     def new
       @partner = Partner.new
+      respond_to do |format|
+        format.html
+        format.js
+      end
+      render :edit
     end
 
     def update
