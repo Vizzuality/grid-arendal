@@ -26,7 +26,6 @@
       publishn_path: publish_activity_path(activity),
       unpublish_path: unpublish_activity_path(activity),
       edit_path: edit_activity_path(activity),
-      delete_path: activity_path(activity),
-      selected: @activity && (@activity.id == activity.id) %>
+      delete_path: activity_path(activity) %>
   <% end %>
 </ul>
