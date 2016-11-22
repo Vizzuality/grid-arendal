@@ -1,0 +1,10 @@
+$(function() {
+  $('.l-items-detail').html('<%= escape_javascript(
+    render 'form',
+    event: @event,
+    partners: @partners,
+    have_picture: @event.background_image_file_name ? true : false,
+    picture_url: @event.background_image
+  ) %>');
+  var formView = new App.View.Form({});
+});
