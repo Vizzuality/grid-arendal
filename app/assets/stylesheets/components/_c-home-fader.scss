@@ -2,8 +2,10 @@
   .header-slider {
     background-image: image-url('header1.jpg');
   }
-  .l-main-content {
-    background-color: #E5EBED;
+  .l-main-content, .cta-mobile {
+    &.home {
+      background-color: #E5EBED;
+    }
   }
   .footer-slider {
     background-image: image-url('footer1.jpg');
@@ -15,7 +17,9 @@
     background-image: image-url('header2.jpg');
   }
   .l-main-content, .cta-mobile {
-    background-color: #F6F3E5;
+    &.home {
+      background-color: #F6F3E5;
+    }
   }
   .footer-slider {
     background-image: image-url('footer2.jpg');
@@ -27,7 +31,9 @@
     background-image: image-url('header3.jpg');
   }
   .l-main-content, .cta-mobile {
-    background-color: #F2EFEB;
+    &.home {
+      background-color: #F2EFEB;
+    }
   }
   .footer-slider {
     background-image: image-url('footer3.jpg');
@@ -39,7 +45,9 @@
     background-image: image-url('header4.jpg');
   }
   .l-main-content, .cta-mobile {
-    background-color: #E5EDE5;
+    &.home {
+      background-color: #E5EDE5;
+    }
   }
   .footer-slider {
     background-image: image-url('footer4.jpg');
@@ -51,7 +59,9 @@
     background-image: image-url('header5.jpg');
   }
   .l-main-content, .cta-mobile {
-    background-color: #F5EEEF;
+    &.home {
+      background-color: #F5EEEF;
+    }
   }
   .footer-slider {
     background-image: image-url('footer5.jpg');
@@ -63,7 +73,9 @@
     background-image: image-url('header6.jpg');
   }
   .l-main-content, .cta-mobile {
-    background-color: #F0ECF4;
+    &.home {
+      background-color: #F0ECF4;
+    }
   }
   .footer-slider {
     background-image: image-url('footer6.jpg');
