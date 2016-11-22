@@ -30,7 +30,6 @@ div.fields
     = link_to_add_association 'Add document', form, :documents
 
 div.fields.-grey
-
   = render 'backend/shared/form/field_association', form: form, value: :lead_user,
     collection: users, label_method: :display_name, label: "Staff lead",
     js_trigger_class: 'js-select-tags'
