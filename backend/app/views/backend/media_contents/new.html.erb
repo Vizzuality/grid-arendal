@@ -7,10 +7,8 @@
 </div>
 
 <div class="l-items-detail">
-  <%= simple_form_for @media_content, html: { class: 'c-form' } do |f| %>
-    <%= render 'form',
-      form: f,
-      have_picture: @media_content.mediable_photo_url.present? ? true : false,
-      picture_url: @media_content.mediable_photo_url.present? ? @media_content.mediable_photo_url : nil %>
-  <% end %>
+  <%= render 'form',
+    media_content: @media_content,
+    have_picture: false,
+    picture_url: nil %>
 </div>

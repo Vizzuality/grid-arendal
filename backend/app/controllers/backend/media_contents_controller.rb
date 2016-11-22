@@ -23,11 +23,20 @@ module Backend
 
     def edit
       @media_contents = MediaContent.includes_mediable.order(:title)
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
 
     def new
       @media_contents = MediaContent.includes_mediable.order(:title)
       @media_content = MediaContent.new
+      respond_to do |format|
+        format.html
+        format.js
+      end
+      render :edit
     end
 
     def update

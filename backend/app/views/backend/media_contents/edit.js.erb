@@ -1,0 +1,9 @@
+$(function() {
+  $('.l-items-detail').html('<%= escape_javascript(
+    render 'form',
+    media_content: @media_content,
+    have_picture: @media_content.mediable_photo_url.present? ? true : false,
+    picture_url: @media_content.mediable_photo_url.present? ? @media_content.mediable_photo_url : nil
+  ) %>');
+  var formView = new App.View.Form({});
+});
