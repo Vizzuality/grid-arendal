@@ -14,11 +14,20 @@ module Backend
     def edit
       @activities = Activity.order(:title)
       @activity = Activity.find(params[:id])
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
 
     def new
       @activities = Activity.order(:title)
       @activity = Activity.new
+      respond_to do |format|
+        format.html
+        format.js
+      end
+      render :edit
     end
 
     def update

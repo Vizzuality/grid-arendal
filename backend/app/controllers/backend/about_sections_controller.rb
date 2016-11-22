@@ -12,10 +12,19 @@ module Backend
     end
 
     def edit
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
 
     def new
       @about_section = AboutSection.new
+      respond_to do |format|
+        format.html
+        format.js
+      end
+      render :edit
     end
 
     def update
@@ -32,6 +41,13 @@ module Backend
         redirect_to about_sections_url
       else
         render :new
+      end
+    end
+
+    def destroy
+      @about_section = AboutSection.find(params[:id])
+      if @about_section.destroy
+        redirect_to about_sections_url
       end
     end
 

@@ -2,7 +2,7 @@
 
 <div class="buttons-bar">
   <% if can?(:create, Publication) %>
-      <%= link_to "Create New", new_publication_path, class: 'btn -light -no-border -create-new' %>
+    <%= link_to "Create New", new_publication_path, remote: true, class: 'btn -light -no-border -create-new js-create-new' %>
   <% end %>
   <div class="btn">
     <svg class="icon">
@@ -26,7 +26,6 @@
       publishn_path: publish_publication_path(publication),
       unpublish_path: unpublish_publication_path(publication),
       edit_path: edit_publication_path(publication),
-      delete_path: publication_path(publication),
-      selected: @publication && (@publication.id == publication.id) %>
+      delete_path: publication_path(publication) %>
   <% end %>
 </ul>

@@ -1,8 +1,8 @@
 <h2 class="text -main-title -light">About sections</h2>
 
 <div class="buttons-bar">
-  <% if can?(:create, Activity) %>
-    <%= link_to "Create New", new_about_section_path, class: 'btn -light -no-border -create-new' %>
+  <% if can?(:create, AboutSection) %>
+    <%= link_to "Create New", new_about_section_path, remote: true, class: 'btn -light -no-border -create-new js-create-new' %>
   <% end %>
   <div class="btn">
     <svg class="icon">
@@ -22,7 +22,6 @@
       item: about_section,
       title: about_section.title,
       edit_path: edit_about_section_path(about_section),
-      delete_path: about_section_path(about_section),
-      selected: @about_section && (@about_section.id == about_section.id) %>
+      delete_path: about_section_path(about_section) %>
   <% end %>
 </ul>
