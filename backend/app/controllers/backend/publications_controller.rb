@@ -14,10 +14,18 @@ module Backend
 
     def edit
       @publication = Publication.find(params[:id])
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
 
     def new
       @publication = Publication.new
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
 
     def update
