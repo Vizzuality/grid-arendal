@@ -9,7 +9,8 @@
     el: '.l-items-index',
 
     events: {
-      'click .c-index-item': '_onClickHighlightItem'
+      'click .c-index-item': '_onClickHighlightItem',
+      'click .js-create-new': '_removeHighlight'
     },
 
     options: {
@@ -19,7 +20,7 @@
 
     _onClickHighlightItem: function (e) {
       if ($(e.target).hasClass(this.options.linkerTriggerClass)) {
-        this._resetHighlight();
+        this._removeHighlight();
         this._setHighlight($(e.currentTarget));
       }
     },
@@ -28,7 +29,7 @@
       element.addClass(this.options.selectedClass);
     },
 
-    _resetHighlight: function () {
+    _removeHighlight: function () {
       this.$el.find("." + this.options.selectedClass).removeClass(this.options.selectedClass);
     },
 
