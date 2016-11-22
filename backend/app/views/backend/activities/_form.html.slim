@@ -10,6 +10,8 @@
 
     = render 'backend/shared/form/field_textarea', form: f, value: :description
 
+    = render 'backend/shared/form/field_input', form: f, value: :content_date, js_trigger_class: 'js-select'
+
     = render 'backend/shared/form/field_input', form: f, value: :story_map_url
 
     = render 'backend/shared/form/field_input', form: f, value: :project_number
