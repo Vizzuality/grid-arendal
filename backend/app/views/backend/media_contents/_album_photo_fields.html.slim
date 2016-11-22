@@ -1,4 +1,4 @@
-div.fields
+.nested-fields.fields
 
   = render 'backend/shared/form/field_input', form: f, value: :title
 
@@ -19,5 +19,5 @@ div.fields
     = f.input :is_published, as: :boolean
 
   - unless is_cover_photo?(@media_content, f.object)
-    .remove-link
-      = link_to_remove_association 'remove photo', f
+  .remove-link
+    = link_to_remove_association 'remove photo', f
