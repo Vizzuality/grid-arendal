@@ -9,6 +9,8 @@ div.fields
 
   = render 'backend/shared/form/field_input', form: form, value: :story_map_url
 
+  = render 'backend/shared/form/field_input', form: form, value: :content_date, js_trigger_class: 'js-select'
+
 div.fields.-grey
 
   = render 'backend/shared/form/field_association', form: form, value: :users, collection: users, label_method: :display_name, js_trigger_class: 'js-select-tags'
