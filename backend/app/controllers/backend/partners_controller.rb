@@ -9,10 +9,6 @@ module Backend
     before_action :set_partners, except: :index
 
     def index
-      @partner = Partner.order(:name).first
-      if @partner
-        redirect_to edit_partner_url(@partner) and return
-      end
     end
 
     def edit
@@ -36,6 +32,13 @@ module Backend
         redirect_to partners_url
       else
         render :new
+      end
+    end
+
+    def destroy
+      @partner = Partner.find(params[:id])
+      if @partner.destroy
+        redirect_to partners_url
       end
     end
 

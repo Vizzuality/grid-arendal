@@ -1,15 +1,13 @@
+<div class="l-navigation">
+  <%= render 'backend/shared/nav_bar' %>
+</div>
+
 <div class="l-items-index">
   <%= render 'partners', partners: @partners %>
 </div>
 
 <div class="l-items-detail">
-  <h2>New Partner</h2>
-
-  <%= simple_form_for @partner do |f| %>
-    <%= render partial: f %>
-
-    <div class="actions">
-      <%= f.submit 'Create Partner' %>
-    </div>
+  <%= simple_form_for @partner, html: { class: 'c-form' } do |f| %>
+      <%= render 'form', form: f, have_logo: @partner.logo_file_name ? true : false, logo_url: @partner.logo %>
   <% end %>
 </div>
