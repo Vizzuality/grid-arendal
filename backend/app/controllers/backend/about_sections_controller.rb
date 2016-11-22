@@ -24,6 +24,7 @@ module Backend
         format.html
         format.js
       end
+      render :edit
     end
 
     def update
