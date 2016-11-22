@@ -1,7 +1,7 @@
 <h2 class="text -main-title -light">About sections</h2>
 
 <div class="buttons-bar">
-  <% if can?(:create, Activity) %>
+  <% if can?(:create, AboutSection) %>
     <%= link_to "Create New", new_about_section_path, class: 'btn -light -no-border -create-new' %>
   <% end %>
   <div class="btn">
