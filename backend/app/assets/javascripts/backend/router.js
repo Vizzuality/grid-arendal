@@ -20,6 +20,9 @@
       'manage/news_articles': 'BackOfficeHome#index',
       'manage/news_articles/:id/edit': 'BackOfficeHome#show',
       'manage/news_articles/new': 'BackOfficeHome#show',
+      'manage/about_sections': 'BackOfficeHome#index',
+      'manage/about_sections/:id/edit': 'BackOfficeHome#show',
+      'manage/about_sections/new': 'BackOfficeHome#show',
     },
 
     initialize: function() {

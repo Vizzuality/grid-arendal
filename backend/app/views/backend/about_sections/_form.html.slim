@@ -1,6 +1,5 @@
-= form.label :title
-= form.input :title, label: false
+= render 'backend/shared/form/header', form: form, title_placeholder: 'About Section title'
 
-= form.label :body
-= form.input :body, label: false
+div.fields
 
+  = render 'backend/shared/form/field_textarea', form: form, value: :body
