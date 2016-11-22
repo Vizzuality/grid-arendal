@@ -44,7 +44,7 @@
      */
     updateParams: function(params) {
       this.params.clear().set(params, { silent: true });
-      this.updateUrl();
+      // this.updateUrl();
     },
 
     /**

@@ -18,6 +18,7 @@
   </div>
 
   <ul class="row">
+    <% if defined? @articles %>
     <% @articles.each do |article| %>
       <li class="small-12 medium-3 columns">
         <article class="c-card">
@@ -30,6 +31,7 @@
           </div>
         </article>
       </li>
+    <% end %>
     <% end %>
   </ul>
 </section>
