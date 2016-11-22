@@ -1,0 +1,13 @@
+$(function() {
+  $('.l-items-detail').html('<%= escape_javascript(
+    render 'form',
+    activity: @activity,
+    users: @users,
+    partners: @partners,
+    news_articles: @news_articles,
+    publications: @publications,
+    have_picture: @activity.picture_file_name ? true : false,
+    picture_url: @activity.picture
+  ) %>');
+  var formView = new App.View.Form({});
+});
