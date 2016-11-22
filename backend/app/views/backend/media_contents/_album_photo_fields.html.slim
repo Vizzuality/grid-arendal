@@ -19,5 +19,5 @@
     = f.input :is_published, as: :boolean
 
   - unless is_cover_photo?(@media_content, f.object)
-  .remove-link
-    = link_to_remove_association 'remove photo', f
+  .links
+    = link_to_remove_association 'REMOVE PHOTO', f, class: 'btn -light'

@@ -1,8 +1,8 @@
 = render 'backend/shared/form/header', form: form, title_placeholder: params[:mediable].in?('album') ? 'Album title' : 'Photo title'
 
 div.fields
-  = form.hidden_field :mediable, value: params[:mediable]
   = render 'backend/shared/form/field_textarea', form: form, value: :description
+  = form.hidden_field :mediable, value: params[:mediable]
 
 - if params[:mediable].in?('photo')
   div.fields
