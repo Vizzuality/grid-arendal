@@ -23,6 +23,10 @@ module Backend
     def new
       @activities = Activity.order(:title)
       @activity = Activity.new
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
 
     def update
