@@ -72,9 +72,9 @@ ActiveRecord::Schema.define(version: 20161122102250) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
-    t.boolean  "is_featured"
     t.integer  "project_number"
     t.text     "short_description"
+    t.boolean  "is_featured"
     t.date     "content_date"
   end
 

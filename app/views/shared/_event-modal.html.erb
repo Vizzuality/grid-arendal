@@ -1,0 +1,24 @@
+<% if @event %>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="c-events-modal">
+        <div class="event-container" style="background-image: url(<%= asset_path 'demo-event-bg.png' %>);">
+          <svg class="icon icon-share">
+            <use xlink:href="#icon-close"></use>
+          </svg>
+          <div class="event-info">
+            <h3 class="text -title-single-alt"><%= @event.title %></h3>
+            <p class="text -body-single"><%= @event.description %></p>
+            <div class="btn -dark">
+              <%= link_to "Find out more", @event.web_url, target: "_blank" %>
+            </div>
+            <% if @event.partner %>
+              <p>sponsored by <%= link_to @event.partner.name, @event.partner.web_url, target: "_blank" %></p>
+            <% end %>
+          </div>
+          <div class="event-logo"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
