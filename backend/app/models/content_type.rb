@@ -10,4 +10,7 @@
 #
 
 class ContentType < ApplicationRecord
+  has_many :contents
+
+  FOR_CONTENT = ["both", "Activity", "Publication"]
 end

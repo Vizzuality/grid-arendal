@@ -47,6 +47,8 @@ Backend::Engine.routes.draw do
     patch 'activate',   on: :member
   end
 
+  resources :content_types, except: :show
+
   resources :media_contents, except: :show do
     patch 'publish',   on: :member
     patch 'unpublish', on: :member
