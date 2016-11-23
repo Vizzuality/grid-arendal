@@ -1,7 +1,0 @@
-$(function() {
-  $('.l-items-detail').html('<%= escape_javascript(
-    render 'form',
-    news_article: @news_article
-  ) %>');
-  var formView = new App.View.Form({});
-});

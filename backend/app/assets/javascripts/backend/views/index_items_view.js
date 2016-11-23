@@ -15,7 +15,27 @@
 
     options: {
       linkerTriggerClass: "js-linker",
-      selectedClass: "-selected"
+      selectedClass: "-selected",
+      listClass: "items-list"
+    },
+
+    initialize: function() {
+      this._loadRecoveredIndexStateEvents();
+    },
+
+    _loadRecoveredIndexStateEvents: function () {
+      document.addEventListener('turbolinks:before-visit', function() {
+        window.indexScrollTopPrevPage = $('.l-items-index .items-list').scrollTop();
+        window.indexHighlightPrevPage = $('.l-items-index .c-index-item.-selected').data("item-id");
+      });
+
+      document.addEventListener('turbolinks:load', function() {
+        $('.l-items-index .items-list').scrollTop(window.indexScrollTopPrevPage);
+
+        if (typeof window.indexHighlightPrevPage != "undefined") {
+          $('.l-items-index [data-item-id="' + window.indexHighlightPrevPage + '"]').addClass("-selected");
+        }
+      });
     },
 
     _onClickHighlightItem: function (e) {

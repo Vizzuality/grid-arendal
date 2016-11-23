@@ -1,9 +1,0 @@
-$(function() {
-  $('.l-items-detail').html('<%= escape_javascript(
-    render 'form',
-    partner: @partner,
-    have_logo: @partner.logo_file_name ? true : false,
-    logo_url: @partner.logo
-  ) %>');
-  var formView = new App.View.Form({});
-});

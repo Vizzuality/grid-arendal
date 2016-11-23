@@ -2,7 +2,7 @@
 
 <div class="buttons-bar">
   <% if can?(:create, AboutSection) %>
-    <%= link_to "Create New", new_about_section_path, remote: true, class: 'btn -light -no-border -create-new js-create-new' %>
+    <%= link_to "Create New", new_about_section_path, class: 'btn -light -no-border -create-new js-create-new' %>
   <% end %>
   <div class="btn">
     <svg class="icon">
