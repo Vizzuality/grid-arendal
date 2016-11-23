@@ -33,7 +33,7 @@
 
   <div class="row">
     <div class="small-12 column">
-      <div class="c-article-image"></div>
+      <div class="c-article-image" <% if @publication.picture_file_name %>style="background-image: url('<%= @publication.picture %>');"<% end %>></div>
     </div>
   </div>
 
@@ -41,42 +41,28 @@
 
     <div class="content">
       <h2 class="text -title-single-alt"><%= @publication.title %></h2>
-      <div class="text -body-single"><%= @publication.description %></div>
+      <div class="text -body-single"><%= raw @publication.description %></div>
     </div>
 
     <div class="sidebar -publications">
-      <div class="title text -title-block mobile">
-        Download
-      </div>
+      <div class="title text -title-block mobile">Download</div>
       <div class="meta">
         <div class="row">
           <div class="small-6 medium-3 large-4 columns">
-        <div class="cover">
-        </div>
-      </div>
-        <div class="small-6 medium-9 large-8 columns">
-          <div class="title text -meta desktop">
-            Download
+            <div class="cover"></div>
           </div>
-          <div class="download-links">
-            <div class="btn -dark">
-              pdf
-            </div>
-            <div class="btn -dark">
-              e-book
-            </div>
-            <div class="btn">
-              graphics
+          <div class="small-6 medium-9 large-8 columns">
+            <div class="title text -meta desktop">Download</div>
+            <div class="download-links">
+              <div class="btn -dark">pdf</div>
+              <div class="btn -dark">e-book</div>
+              <div class="btn">graphics</div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    </div>
-
   </div>
-
-
 
   <ul>
     <% @publication.partners.each do |partner| %>

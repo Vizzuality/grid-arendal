@@ -1,4 +1,4 @@
-<div class="l-header-single -activities-article">
+<div class="l-header-single -activities-article" <% if @activity.picture_file_name %>style="background-image: url('<%= @activity.picture %>');"<% end %>>
   <div class="overlay"></div>
   <%= render 'shared/menu' %>
   <div class="row">
