@@ -8,12 +8,10 @@
 
     index: function() {
       this.initSliders();
+      var eventsModalView = new App.View.EventsModal();
       $('.l-main-content').addClass('home');
       $('.cta-mobile').addClass('home');
       $('.footer-slider').addClass('home');
-      $('.js-btn-events-modal').on('click', function(e) {
-        $('.c-events-modal').css('display', 'none');
-      })
     },
 
     initSliders: function() {
