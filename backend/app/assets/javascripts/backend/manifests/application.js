@@ -12,6 +12,7 @@
 //
 //= require medium-editor
 //= require jquery
+//= require turbolinks
 //= require jquery_ujs
 //= require cocoon
 

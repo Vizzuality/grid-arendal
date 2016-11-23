@@ -1,13 +1,11 @@
-= simple_form_for @news_article, html: { class: 'c-form' } do |f|
+= render 'backend/shared/form/header', form: form, value: :title, title_placeholder: 'News article title'
 
-  = render 'backend/shared/form/header', form: f, value: :title, title_placeholder: 'News article title'
+div.fields
 
-  div.fields
+  = render 'backend/shared/form/field_limited_input', form: form, value: :short_description, maxlength: 140
 
-    = render 'backend/shared/form/field_limited_input', form: f, value: :short_description, maxlength: 140
+  = render 'backend/shared/form/field_textarea', form: form, value: :description
 
-    = render 'backend/shared/form/field_textarea', form: f, value: :description
+  = render 'backend/shared/form/field_input', form: form, value: :exposure_slug
 
-    = render 'backend/shared/form/field_input', form: f, value: :exposure_slug
-
-    = render 'backend/shared/form/field_input', form: f, value: :publication_date, js_trigger_class: 'js-select'
+  = render 'backend/shared/form/field_input', form: form, value: :publication_date, js_trigger_class: 'js-select'

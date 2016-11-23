@@ -2,7 +2,7 @@
 
 <div class="buttons-bar">
   <% if can?(:create, Publication) %>
-    <%= link_to "Create New", new_publication_path, remote: true, class: 'btn -light -no-border -create-new js-create-new' %>
+    <%= link_to "Create New", new_publication_path, class: 'btn -light -no-border -create-new js-create-new' %>
   <% end %>
   <div class="btn">
     <svg class="icon">

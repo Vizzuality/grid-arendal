@@ -1,7 +1,5 @@
-= simple_form_for @about_section, html: { class: 'c-form' } do |f|
+= render 'backend/shared/form/header', form: form, value: :title, title_placeholder: 'About section title'
 
-  = render 'backend/shared/form/header', form: f, value: :title, title_placeholder: 'About section title'
+div.fields
 
-  div.fields
-
-    = render 'backend/shared/form/field_textarea', form: f, value: :body
+  = render 'backend/shared/form/field_textarea', form: form, value: :body
