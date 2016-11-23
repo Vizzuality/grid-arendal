@@ -1,21 +1,23 @@
-= simple_form_for @media_content, html: { class: 'c-form' } do |f|
+= render 'backend/shared/form/header', form: form, value: :title, title_placeholder: params[:mediable].in?('album') ? 'Album title' : 'Photo title'
 
-  = render 'backend/shared/form/header', form: f, value: :title, title_placeholder: params[:mediable].in?('album') ? 'Album title' : 'Photo title'
+- if params[:mediable].in?('photo')
 
-  div.fields
+  .fields
 
-    = render 'backend/shared/form/field_textarea', form: f, value: :description
+    = render 'backend/shared/form/field_upload_img', form: form, value: :photo_file, label_txt: 'Picture', have_picture: have_picture, picture_url: picture_url
 
-    = f.hidden_field :mediable, value: params[:mediable]
+- if params[:mediable].in?('album')
 
-  - if params[:mediable].in?('photo')
-    div.fields
+  = form.simple_fields_for :album_photos do |album_photo|
 
-      - if params[:mediable].in?('photo')
-        = render 'backend/shared/form/field_upload_img', form: f, value: :photo_file, label_txt: 'Picture', have_picture: have_picture, picture_url: picture_url
+    = render 'album_photo_fields', f: album_photo
 
-  - if params[:mediable].in?('album')
-    = f.simple_fields_for :album_photos do |album_photo|
-      = render 'album_photo_fields', f: album_photo
-    .links
-      = link_to_add_association 'ADD PHOTO', f, :album_photos, class: 'btn -dark'
+.links.fields
+
+  = link_to_add_association 'ADD PHOTO', form, :album_photos, class: 'btn -dark'
+
+.fields
+
+  = render 'backend/shared/form/field_textarea', form: form, value: :description
+
+= form.hidden_field :mediable, value: params[:mediable]

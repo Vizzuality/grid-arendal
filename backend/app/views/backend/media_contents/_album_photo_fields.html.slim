@@ -7,17 +7,17 @@
   = render 'backend/shared/form/field_textarea', form: f, value: :description
 
   .field
-    = f.label :main_photo_file, 'Main photo:'
-    - if is_cover_photo?(@media_content, f.object)
-      h4 Is main photo!
-    - else
+
+    - if not(is_cover_photo?(@media_content, f.object))
+      = f.label :main_photo_file, 'Main photo:', class: 'text -field-label -bold -dark'
       = f.input :main_photo_file, as: :boolean, label: false do
         = f.check_box :main_photo_file, {}, true, nil
 
   .field
-    = f.label :is_published
+    = f.label :is_published, class: 'text -field-label -bold -dark'
     = f.input :is_published, as: :boolean
 
   - unless is_cover_photo?(@media_content, f.object)
-  .links
-    = link_to_remove_association 'REMOVE PHOTO', f, class: 'btn -light'
+
+    .links
+      = link_to_remove_association 'REMOVE PHOTO', f, class: 'btn -light'
