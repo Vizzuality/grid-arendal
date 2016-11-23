@@ -7,10 +7,12 @@
 </div>
 
 <div class="l-items-detail">
-  <%= render 'form',
-    publication: @publication,
-    users: @users,
-    partners: @partners,
-    have_picture: @publication.picture_file_name ? true : false,
-    picture_url: @publication.picture %>
+  <%= simple_form_for @publication, html: { class: 'c-form' } do |f| %>
+    <%= render 'form',
+      form: f,
+      users: @users,
+      partners: @partners,
+      have_picture: @publication.picture_file_name ? true : false,
+      picture_url: @publication.picture %>
+  <% end %>
 </div>

@@ -7,8 +7,10 @@
 </div>
 
 <div class="l-items-detail">
-  <%= render 'form',
-    partner: @partner,
-    have_logo: @partner.logo_file_name ? true : false,
-    logo_url: @partner.logo %>
+  <%= simple_form_for @partner, html: { class: 'c-form' } do |f| %>
+    <%= render 'form',
+      form: f,
+      have_logo: @partner.logo_file_name ? true : false,
+      logo_url: @partner.logo %>
+  <% end %>
 </div>

@@ -1,20 +1,18 @@
-= simple_form_for @publication, html: { class: 'c-form' } do |f|
+= render 'backend/shared/form/header', form: f, value: :title, title_placeholder: 'Publication title'
 
-  = render 'backend/shared/form/header', form: f, value: :title, title_placeholder: 'Publication title'
+div.fields
+  = render 'backend/shared/form/field_upload_img', form: f, value: :picture, label_txt: 'Cover picture', have_picture: have_picture, picture_url: picture_url
 
-  div.fields
-    = render 'backend/shared/form/field_upload_img', form: f, value: :picture, label_txt: 'Cover picture', have_picture: have_picture, picture_url: picture_url
+  = render 'backend/shared/form/field_limited_input', form: f, value: :short_description, maxlength: 140
 
-    = render 'backend/shared/form/field_limited_input', form: f, value: :short_description, maxlength: 140
+  = render 'backend/shared/form/field_textarea', form: f, value: :description
 
-    = render 'backend/shared/form/field_textarea', form: f, value: :description
+  = render 'backend/shared/form/field_input', form: f, value: :story_map_url
 
-    = render 'backend/shared/form/field_input', form: f, value: :story_map_url
+  = render 'backend/shared/form/field_input', form: f, value: :content_date, js_trigger_class: 'js-select'
 
-    = render 'backend/shared/form/field_input', form: f, value: :content_date, js_trigger_class: 'js-select'
+div.fields.-grey
 
-  div.fields.-grey
+  = render 'backend/shared/form/field_association', form: f, value: :users, collection: users, label_method: :display_name, js_trigger_class: 'js-select-tags'
 
-    = render 'backend/shared/form/field_association', form: f, value: :users, collection: users, label_method: :display_name, js_trigger_class: 'js-select-tags'
-
-    = render 'backend/shared/form/field_association', form: f, value: :partners, collection: partners, label_method: :name
+  = render 'backend/shared/form/field_association', form: f, value: :partners, collection: partners, label_method: :name

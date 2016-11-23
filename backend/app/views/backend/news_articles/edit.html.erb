@@ -7,5 +7,7 @@
 </div>
 
 <div class="l-items-detail">
-  <%= render 'form' %>
+  <%= simple_form_for @news_article, html: { class: 'c-form' } do |f| %>
+    <%= render 'form', form: f %>
+  <% end %>
 </div>
