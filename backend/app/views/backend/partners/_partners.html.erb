@@ -2,7 +2,7 @@
 
 <div class="buttons-bar">
   <% if can?(:create, Partner) %>
-    <%= link_to "Create New", new_partner_path, class: 'btn -light -no-border -create-new' %>
+    <%= link_to "Create New", new_partner_path, class: 'btn -light -no-border -create-new js-create-new' %>
   <% end %>
   <div class="btn">
     <svg class="icon">
@@ -22,7 +22,6 @@
     item: partner,
     title: partner.name,
     edit_path: edit_partner_path(partner),
-    delete_path: partner_path(partner),
-    selected: @partner && (@partner.id == partner.id) %>
+    delete_path: partner_path(partner) %>
   <% end %>
 </ul>

@@ -1,4 +1,4 @@
-<li class="c-index-item <%= selected ? "-selected" : "" %>">
+<li class="c-index-item" data-item-id="<%= item.id %>">
   <div class="dragger">
     <svg class="icon">
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-row_dragger"></use>
@@ -6,7 +6,7 @@
   </div>
   <div class="text -index-item -light title -short"><%= truncate(title, length: 30) %></div>
   <div class="text -index-item -light title -long"><%= truncate(title, length: 50) %></div>
-  <%= link_to '', edit_path, class: 'linker' %>
+  <%= link_to '', edit_path, class: 'linker js-linker' %>
   <div class="options">
     <% if ['activities', 'publications'].include?(controller_name) %>
       <% if can?(:make_featured, item) && item.not_featured? %>

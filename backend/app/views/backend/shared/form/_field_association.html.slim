@@ -1,12 +1,15 @@
+- if not(defined? js_trigger_class)
+  - js_trigger_class = ''
+
 .field
   = form.association value,
     collection: collection,
     label_method: label_method,
     value_method: :id,
     label_html: { class: 'text -field-label -bold -dark' },
-    input_html: { class: defined? js_trigger_class ? js_trigger_class : '' }
+    input_html: { class: js_trigger_class }
 
   - if defined? note_txt
     div.options
       div.text.-field-note.-dark
-        == note_txt
+        = note_txt
