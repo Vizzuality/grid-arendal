@@ -35,6 +35,13 @@ module Backend
       end
     end
 
+    def destroy
+      @about_section = AboutSection.find(params[:id])
+      if @about_section.destroy
+        redirect_to about_sections_url
+      end
+    end
+
     private
 
       def set_about_section
