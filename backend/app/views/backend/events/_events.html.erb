@@ -1,8 +1,8 @@
 <h2 class="text -main-title -light">Events</h2>
 
 <div class="buttons-bar">
-  <% if can?(:create, Activity) %>
-    <%= link_to "Create New", new_event_path, remote: true, class: 'btn -light -no-border -create-new js-create-new' %>
+  <% if can?(:create, Event) %>
+    <%= link_to "Create New", new_event_path, class: 'btn -light -no-border -create-new js-create-new' %>
   <% end %>
   <div class="btn">
     <svg class="icon">

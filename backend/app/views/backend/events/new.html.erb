@@ -7,9 +7,11 @@
 </div>
 
 <div class="l-items-detail">
-  <%= render 'form',
-    event: @event,
-    partners: @partners,
-    have_picture: false,
-    picture_url: nil %>
+  <%= simple_form_for @event, html: { class: 'c-form' } do |f| %>
+    <%= render 'form',
+      form: f,
+      partners: @partners,
+      have_picture: false,
+      picture_url: nil %>
+  <% end %>
 </div>
