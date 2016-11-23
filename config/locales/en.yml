@@ -20,4 +20,20 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  datetime:
+    distance_in_words:
+      about_x_months:
+        one:   "1 month ago"
+        other: "%{count} months ago"
+      x_months:
+        one:   "1 month ago"
+        other: "%{count} months ago"
+      about_x_years:
+        one:   "1 year ago"
+        other: "%{count} years ago"
+      over_x_years:
+        one:   "1 year ago"
+        other: " %{count} years ago"
+      almost_x_years:
+        one:   "1 year ago"
+        other: "%{count} years ago"
