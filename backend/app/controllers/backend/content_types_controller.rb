@@ -5,7 +5,7 @@ module Backend
   class ContentTypesController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_content_type, only: [:edit, :create, :update]
+    before_action :set_content_type, only: [:edit, :update, :destroy]
     before_action :set_content_types
 
     def index

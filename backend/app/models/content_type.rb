@@ -12,5 +12,10 @@
 class ContentType < ApplicationRecord
   has_many :contents
 
-  FOR_CONTENT = ["both", "Activity", "Publication"]
+  FOR_CONTENT = ["Activity and Publications", "Activity", "Publication"]
+
+  validates :title, presence: true
+  validates :for_content, presence: true
+  validates :for_content,
+    inclusion: { in: FOR_CONTENT, message: "%{value} is not a valid value" }
 end
