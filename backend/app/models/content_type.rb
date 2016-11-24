@@ -12,7 +12,10 @@
 class ContentType < ApplicationRecord
   has_many :contents
 
-  FOR_CONTENT = ["Activity and Publications", "Activity", "Publication"]
+  BOTH = "Activity and Publication"
+  ACTIVITY = "Activity"
+  PUBLICATION = "Publication"
+  FOR_CONTENT = [BOTH, ACTIVITY, PUBLICATION]
 
   validates :title, presence: true
   validates :for_content, presence: true
