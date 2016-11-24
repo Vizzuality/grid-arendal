@@ -8,6 +8,7 @@
 
     index: function() {
       this.initSliders();
+      var eventsModalView = new App.View.EventsModal();
       $('.l-main-content').addClass('home');
       $('.cta-mobile').addClass('home');
       $('.footer-slider').addClass('home');
