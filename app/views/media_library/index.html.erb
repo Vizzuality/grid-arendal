@@ -21,9 +21,14 @@
   <div class="row">
     <div class="small-12 small-centered columns -fix">
       <div id="masonry-layout" class="masonry-layout" hidden data-columns>
-        <% @publications.each do |publication| %>
-            <%= render 'shared/media-card', picture: 'http://www.audubon.org/sites/default/files/styles/engagement_card/public/sfw_apa_2013_28342_232388_briankushner_blue_jay_kk_high.jpg', title: publication.title, link: publication_path(publication) %>
-        <% end %>
+        <% @media_contents.each do |media| %>
+          <%= render 'shared/media-card',
+            picture: media.mediable_photo_url.present? ? media.mediable_photo_url : nil,
+            title: media.title,
+            link: medium_path(media),
+            photos_count: 2,
+            videos_count: 2 %>
+          <% end %>
       </div>
     </div>
   </div>

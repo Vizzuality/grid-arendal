@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 class MediaLibraryController < ApplicationController
-  before_action :set_publication, only: :show
+  before_action :media_content, only: :show
 
   def index
-    @publications = Publication.order(:title).published
+    @media_contents = MediaContent.includes_mediable.order(:title).published
   end
 
   def show
@@ -11,6 +11,7 @@ class MediaLibraryController < ApplicationController
 
   private
 
-    def set_publication
+    def media_content
+      @media_content = MediaContent.find(params[:id])
     end
 end
