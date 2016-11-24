@@ -1,20 +1,9 @@
 <h2 class="text -main-title -light">News</h2>
 
-<div class="buttons-bar">
-  <% if can?(:create, NewsArticle) %>
-      <%= link_to "Create New", new_news_article_path, class: 'btn -light -no-border -create-new js-create-new' %>
-  <% end %>
-  <div class="btn">
-    <svg class="icon">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"></use>
-    </svg>
-  </div>
-  <div class="btn">
-    <svg class="icon">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-sort"></use>
-    </svg>
-  </div>
-</div>
+<%= render 'backend/shared/index_items_buttons.html',
+  havePermissionToCreate: can?(:create, NewsArticle),
+  createPath: new_news_article_path
+%>
 
 <ul class="items-list">
   <% @news_articles.each do |news_article| %>

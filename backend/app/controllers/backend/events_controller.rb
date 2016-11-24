@@ -10,10 +10,6 @@ module Backend
     before_action :set_events,             except: :index
 
     def index
-      @event = Event.order(:title).first
-      if @event
-        redirect_to edit_event_url(@event) and return
-      end
     end
 
     def edit
@@ -37,6 +33,13 @@ module Backend
         redirect_to events_url
       else
         render :new
+      end
+    end
+
+    def destroy
+      @event = Event.find(params[:id])
+      if @event.destroy
+        redirect_to events_url
       end
     end
 

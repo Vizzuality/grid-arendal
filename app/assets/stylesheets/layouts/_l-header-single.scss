@@ -1,7 +1,6 @@
 .l-header-single {
   display: block;
   position: relative;
-  background-image: image-url('bg5.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -30,7 +29,6 @@
 
     @media screen and (min-width: $screen-m) {
       height: rem(650px);
-      background-image: image-url('bg1.jpg');
     }
   }
 

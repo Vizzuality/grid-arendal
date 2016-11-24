@@ -1,15 +1,16 @@
-<div class="l-items-index">
-  <h2>Events</h2>
+<h2 class="text -main-title -light">Events</h2>
 
-  <% if can?(:create, Event) %>
-    <%= link_to "New", new_event_path %>
+<%= render 'backend/shared/index_items_buttons.html',
+  havePermissionToCreate: can?(:create, Event),
+  createPath: new_event_path
+%>
+
+<ul class="items-list">
+  <% @events.each do |event| %>
+    <%= render 'backend/shared/index_item',
+      item: event,
+      title: event.title,
+      edit_path: edit_event_path(event),
+      delete_path: event_path(event) %>
   <% end %>
-  <ul>
-    <% @events.each do |event| %>
-      <li>
-        <h2><%= event.title %></h2>
-        <%= link_to 'Edit', edit_event_path(event) %>
-      </li>
-    <% end %>
-  </ul>
-</div>
+</ul>
