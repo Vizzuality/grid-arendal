@@ -29,6 +29,9 @@
       'manage/events': 'BackOfficeHome#index',
       'manage/events/:id(/:action)': 'BackOfficeHome#show',
       'manage/events/new': 'BackOfficeHome#show',
+      'manage/users': 'BackOfficeHome#index',
+      'manage/users/:id(/:action)': 'BackOfficeHome#show',
+      'manage/users/new': 'BackOfficeHome#show',
     },
 
     initialize: function() {

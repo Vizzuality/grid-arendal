@@ -1,1 +1,11 @@
-<%= render partial:'users' %>
+<div class="l-navigation">
+  <%= render 'backend/shared/nav_bar' %>
+</div>
+
+<div class="l-items-index">
+  <%= render 'users', users: @users %>
+</div>
+
+<div class="l-items-detail">
+  <%= render 'backend/shared/phrases' %>
+</div>

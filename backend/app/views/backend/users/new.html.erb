@@ -1,14 +1,13 @@
+<div class="l-navigation">
+  <%= render 'backend/shared/nav_bar' %>
+</div>
+
 <div class="l-items-index">
-  <%= render 'users', users: @users %>
+    <%= render 'users', users: @users %>
 </div>
 
 <div class="l-items-detail">
-  <h2>New User</h2>
-
-  <%= simple_form_for @user do |f| %>
-    <%= render partial: f %>
-    <div class="actions">
-      <%= f.submit 'Create user' %>
-    </div>
+  <%= simple_form_for @user, html: { class: 'c-form' } do |f| %>
+    <%= render 'form', form: f %>
   <% end %>
 </div>

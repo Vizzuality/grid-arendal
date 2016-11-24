@@ -1,6 +1,7 @@
 div.form_header
-  = form.label value
-  = form.input value, label: false, input_html: { class: 'text -main-title -dark title', placeholder: title_placeholder }
+  - inputs.each do |input|
+    = form.label input.values[0]
+    = form.input input.values[0], label: false, input_html: { class: 'text -main-title -dark title', placeholder: input.values[1] }
 
   div.actions
     = form.button :submit, 'SAVE', class: 'btn -dark'
