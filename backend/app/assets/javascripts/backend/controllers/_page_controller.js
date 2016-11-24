@@ -23,14 +23,19 @@
 
   App.Controller.Page = Controller.extend({
 
-    initialize: function() {},
+    initialize: function() {
+      this._setSection();
+    },
 
     /**
      * Instance common and global view here
      * @return {[type]} [description]
      */
-    _instanceCommonViews: function() {
-      // new App.View.Modal({ el: '#modalView' });
+    _instanceCommonViews: function() {},
+
+    _setSection: function() {
+      var fragmentedUrl = Backbone.history.getFragment().split("/");
+      App.Controller.section = fragmentedUrl[1];
     }
 
   });

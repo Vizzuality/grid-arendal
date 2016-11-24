@@ -15,7 +15,8 @@
     options: {
       mediumEditorTriggerClass: ".js-textarea-editable",
       selectTriggerClass: ".js-select",
-      selectTagsTriggerClass: ".js-select-tags"
+      selectTagsTriggerClass: ".js-select-tags",
+      baseCMSUrl: "/manage/"
     },
 
     initialize: function() {
@@ -52,7 +53,7 @@
     },
 
     _cancelProcess: function () {
-      location.reload();
+      Turbolinks.visit(this.options.baseCMSUrl + App.Controller.section);
     },
 
   });
