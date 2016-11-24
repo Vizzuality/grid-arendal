@@ -3,7 +3,7 @@ class MediaLibraryController < ApplicationController
   before_action :set_publication, only: :show
 
   def index
-    @publications = Publication.order(:title).published
+    @media_contents = MediaContent.includes_mediable.order(:title).published
   end
 
   def show
