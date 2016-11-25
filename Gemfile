@@ -31,6 +31,9 @@ gem 'paperclip-dropbox'
 gem 'flickraw'
 gem 'cocoon'
 
+# Content
+gem 'acts-as-taggable-on', '~> 4.0'
+
 group :development, :test do
   gem 'hirb'
   gem 'awesome_print'
