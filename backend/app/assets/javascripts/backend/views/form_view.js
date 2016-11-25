@@ -20,10 +20,16 @@
     },
 
     initialize: function() {
+      this._setSection();
       this._loadLimitedInput();
       this._loadMediumEditor();
       this._loadSelect();
       this._loadTaggingSelect();
+    },
+
+    _setSection: function() {
+      var fragmentedUrl = Backbone.history.getFragment().split("/");
+      this.section = fragmentedUrl[1];
     },
 
     _loadLimitedInput: function() {
@@ -53,7 +59,7 @@
     },
 
     _cancelProcess: function () {
-      Turbolinks.visit(this.options.baseCMSUrl + App.Controller.section);
+      Turbolinks.visit(this.options.baseCMSUrl + this.section);
     },
 
   });

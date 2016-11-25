@@ -23,20 +23,13 @@
 
   App.Controller.Page = Controller.extend({
 
-    initialize: function() {
-      this._setSection();
-    },
+    initialize: function() {},
 
     /**
      * Instance common and global view here
      * @return {[type]} [description]
      */
     _instanceCommonViews: function() {},
-
-    _setSection: function() {
-      var fragmentedUrl = Backbone.history.getFragment().split("/");
-      App.Controller.section = fragmentedUrl[1];
-    }
 
   });
 
