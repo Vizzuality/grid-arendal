@@ -49,6 +49,8 @@ Backend::Engine.routes.draw do
 
   resources :content_types, except: :show
 
+  resources :tags, except: :show
+
   resources :media_contents, except: :show do
     patch 'publish',   on: :member
     patch 'unpublish', on: :member
