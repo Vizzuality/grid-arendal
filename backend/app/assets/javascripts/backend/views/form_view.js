@@ -15,14 +15,21 @@
     options: {
       mediumEditorTriggerClass: ".js-textarea-editable",
       selectTriggerClass: ".js-select",
-      selectTagsTriggerClass: ".js-select-tags"
+      selectTagsTriggerClass: ".js-select-tags",
+      baseCMSUrl: "/manage/"
     },
 
     initialize: function() {
+      this._setSection();
       this._loadLimitedInput();
       this._loadMediumEditor();
       this._loadSelect();
       this._loadTaggingSelect();
+    },
+
+    _setSection: function() {
+      var fragmentedUrl = Backbone.history.getFragment().split("/");
+      this.section = fragmentedUrl[1];
     },
 
     _loadLimitedInput: function() {
@@ -52,7 +59,7 @@
     },
 
     _cancelProcess: function () {
-      location.reload();
+      Turbolinks.visit(this.options.baseCMSUrl + this.section);
     },
 
   });
