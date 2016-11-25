@@ -13,16 +13,24 @@
     },
 
     options: {
+      adjustableTriggerClass: ".js-adjustable-input",
       mediumEditorTriggerClass: ".js-textarea-editable",
       selectTriggerClass: ".js-select",
       selectTagsTriggerClass: ".js-select-tags"
     },
 
     initialize: function() {
+      this._loadAdjustableInput();
       this._loadLimitedInput();
       this._loadMediumEditor();
       this._loadSelect();
       this._loadTaggingSelect();
+    },
+
+    _loadAdjustableInput: function () {
+      new App.Helper.FormAdjustableInput({
+        el: $(this.$el.find(this.options.adjustableTriggerClass))
+      });
     },
 
     _loadLimitedInput: function() {

@@ -21,22 +21,29 @@ $picture-input-height: rem(230px);
       display: none;
     }
 
+    > .input {
+      display: inline-block;
+    }
+
     .title {
-      width: 100%;
       padding: 0;
       border: 0;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       outline: 0;
+    }
 
-      &:focus {
-        text-decoration: underline;
-      }
+    .icon {
+      display: inline-block;
+      width: rem(18px);
+      height: rem(18px);
     }
 
     .field_with_errors {
+
       input {
+
         &::-webkit-input-placeholder {
           color: #ec5c5c;
         }
