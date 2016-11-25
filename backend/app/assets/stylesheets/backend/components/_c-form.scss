@@ -22,10 +22,12 @@ $picture-input-height: rem(230px);
     }
 
     > .input {
+      position: relative;
       display: inline-block;
     }
 
     .title {
+      max-width: 100%;
       padding: 0;
       border: 0;
       white-space: nowrap;
@@ -78,6 +80,35 @@ $picture-input-height: rem(230px);
         float: right;
         width: rem(100px);
         margin-left: rem(10px);
+      }
+    }
+
+    &[data-fields='1'] {
+      > .input {
+        max-width: calc(100% - #{rem(18px)});
+      }
+    }
+
+    &[data-fields='2'] {
+
+      > .input {
+        max-width: calc(50% - #{rem(9px)});
+
+        &:first-of-type {
+          padding-right: rem(10px);
+
+          &:before {
+            content: ",";
+            position: absolute;
+            top: 0;
+            right: rem(5px);
+            font-family: $font-family-1;
+            font-size: rem(20px);
+            font-weight: 700;
+            line-height: 2.5;
+            color: $font-color-1;
+          }
+        }
       }
     }
   }

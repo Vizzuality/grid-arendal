@@ -13,6 +13,7 @@
     },
 
     options: {
+      formHeaderClass: ".form_header",
       adjustableTriggerClass: ".js-adjustable-input",
       mediumEditorTriggerClass: ".js-textarea-editable",
       selectTriggerClass: ".js-select",
@@ -20,17 +21,19 @@
     },
 
     initialize: function() {
-      this._loadAdjustableInput();
+      this._loadHeaderAdjustableInput();
       this._loadLimitedInput();
       this._loadMediumEditor();
       this._loadSelect();
       this._loadTaggingSelect();
     },
 
-    _loadAdjustableInput: function () {
-      new App.Helper.FormAdjustableInput({
-        el: $(this.$el.find(this.options.adjustableTriggerClass))
-      });
+    _loadHeaderAdjustableInput: function () {
+      _.each($(this.$el.find(this.options.adjustableTriggerClass)), function(element) {
+        new App.Helper.FormAdjustableInput({
+          el: element
+        });
+      }.bind(this));
     },
 
     _loadLimitedInput: function() {
