@@ -24,6 +24,8 @@ class Content < ApplicationRecord
   include Featurable
   include Attachable::Picture
 
+  acts_as_taggable
+
   has_many :participants
   has_many :users, through: :participants
 
