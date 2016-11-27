@@ -8,6 +8,7 @@ div.fields
 
   = render 'backend/shared/form/field_textarea', form: form, value: :description
 
-  = render 'backend/shared/form/field_select', form: form, value: :partner_id, collection: partners, label_txt: 'Partner'
+  = render 'backend/shared/form/field_select', form: form, value: :partner_id,
+    collection: partners, label_txt: 'Partner', input_as: :collection_select
 
   = render 'backend/shared/form/field_checkbox', form: form, value: :active

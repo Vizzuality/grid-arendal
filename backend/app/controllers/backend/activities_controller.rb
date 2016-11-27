@@ -5,7 +5,7 @@ module Backend
   class ActivitiesController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_users_partners_and_news, only: [:new, :edit]
+    before_action :set_objects, only: [:new, :edit]
 
     def index
       @activities = Activity.order(:title)
@@ -25,7 +25,7 @@ module Backend
       if @activity.update(activity_params)
         redirect_to activities_url, notice: 'Activity updated'
       else
-        set_users_partners_and_news
+        set_objects
         @activities = Activity.order(:title)
         render :edit
       end
@@ -36,7 +36,7 @@ module Backend
       if @activity.save
         redirect_to activities_url
       else
-        set_users_partners_and_news
+        set_objects
         @activities = Activity.order(:title)
         render :new
       end
@@ -75,11 +75,14 @@ module Backend
         params.require(:activity).permit!
       end
 
-      def set_users_partners_and_news
+      def set_objects
         @users = User.order(:first_name, :last_name)
         @partners = Partner.order(:name)
         @news_articles = NewsArticle.order(:title)
         @publications = Publication.order(:title)
+        @content_types = ContentType.
+          where(for_content: [ContentType::BOTH, ContentType::ACTIVITY]).
+          order(:title)
       end
   end
 end
