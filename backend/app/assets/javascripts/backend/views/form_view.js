@@ -11,7 +11,7 @@
     options: {
       mediumEditorTriggerClass: ".js-textarea-editable",
       selectTriggerClass: ".js-select",
-      selectTagsTriggerClass: ".js-select-tags",
+      selectTagsTriggerClass: ".js-select-tags"
     },
 
     initialize: function() {
