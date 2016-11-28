@@ -13,6 +13,11 @@ $error-red: #ec5c5c;
 
 .c-form {
 
+  input,
+  textarea {
+    outline: 0;
+  }
+
   .form_header {
     position: relative;
     padding: rem(15px) rem(240px) rem(15px) rem(19px);
@@ -33,7 +38,6 @@ $error-red: #ec5c5c;
       border: 0;
       white-space: nowrap;
       overflow: hidden;
-      outline: 0;
     }
 
     .icon {
@@ -118,7 +122,6 @@ $error-red: #ec5c5c;
       .textarea {
         padding: rem(8px) rem(9px);
         resize: none;
-        outline: 0;
         overflow: auto;
         @extend %input-defaults;
 
