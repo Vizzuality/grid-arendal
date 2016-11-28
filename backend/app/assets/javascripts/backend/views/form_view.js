@@ -8,28 +8,17 @@
 
     el: 'form',
 
-    events: {
-      'click .js-cancel-process': '_cancelProcess'
-    },
-
     options: {
       mediumEditorTriggerClass: ".js-textarea-editable",
       selectTriggerClass: ".js-select",
       selectTagsTriggerClass: ".js-select-tags",
-      baseCMSUrl: "/manage/"
     },
 
     initialize: function() {
-      this._setSection();
       this._loadLimitedInput();
       this._loadMediumEditor();
       this._loadSelect();
       this._loadTaggingSelect();
-    },
-
-    _setSection: function() {
-      var fragmentedUrl = Backbone.history.getFragment().split("/");
-      this.section = fragmentedUrl[1];
     },
 
     _loadLimitedInput: function() {
@@ -56,10 +45,6 @@
       $(this.options.selectTagsTriggerClass).select2({
         tags: true
       });
-    },
-
-    _cancelProcess: function () {
-      Turbolinks.visit(this.options.baseCMSUrl + this.section);
     },
 
   });
