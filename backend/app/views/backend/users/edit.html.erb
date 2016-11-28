@@ -1,14 +1,17 @@
+<div class="l-navigation">
+  <%= render 'backend/shared/nav_bar' %>
+</div>
+
 <div class="l-items-index">
   <%= render 'users', users: @users %>
 </div>
 
 <div class="l-items-detail">
-  <h2>Edit</h2>
-  <p><%= @user.full_name || 'User' %></p>
-  <%= simple_form_for @user do |f| %>
-    <%= render partial: f %>
-    <div class="actions">
-      <%=  f.submit 'Update' %>
-    </div>
+  <%= simple_form_for @user, html: { class: 'c-form' } do |f| %>
+    <%= render 'form',
+      form: f,
+      user_roles: @user_roles,
+      have_picture: @user.avatar_file_name ? true : false,
+      picture_url: @user.avatar %>
   <% end %>
 </div>

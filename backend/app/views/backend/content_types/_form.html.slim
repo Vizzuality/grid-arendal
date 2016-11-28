@@ -1,4 +1,4 @@
-= render 'backend/shared/form/header', form: form, value: :title, title_placeholder: 'Content type title'
+= render 'backend/shared/form/header', form: form, inputs: [{value: :title, title_placeholder: 'Content type title'}]
 
 .fields
   = render 'backend/shared/form/field_select', form: form, value: :for_content,

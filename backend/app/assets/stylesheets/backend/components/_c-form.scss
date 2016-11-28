@@ -9,6 +9,7 @@
 $input-min-height: rem(43px);
 $picture-input-margin: rem(10px);
 $picture-input-height: rem(230px);
+$error-red: #ec5c5c;
 
 .c-form {
 
@@ -21,42 +22,28 @@ $picture-input-height: rem(230px);
       display: none;
     }
 
+    > .input {
+      position: relative;
+      display: inline-block;
+    }
+
     .title {
-      width: 100%;
+      max-width: 100%;
       padding: 0;
       border: 0;
       white-space: nowrap;
       overflow: hidden;
-      text-overflow: ellipsis;
       outline: 0;
-
-      &:focus {
-        text-decoration: underline;
-      }
     }
 
-    .field_with_errors {
-      input {
-        &::-webkit-input-placeholder {
-          color: #ec5c5c;
-        }
-
-        &:-moz-placeholder {
-          color: #ec5c5c;
-        }
-
-        &::-moz-placeholder {
-          color: #ec5c5c;
-        }
-
-        &:-ms-input-placeholder {
-          color: #ec5c5c;
-        }
-      }
-
-      .error {
-        display: none;
-      }
+    .icon {
+      display: inline-block;
+      width: rem(15px);
+      height: rem(15px);
+      margin-left: rem(8px);
+      margin-bottom: rem(-2px);
+      opacity: 0.3;
+      transition: opacity 0.1s linear;
     }
 
     .actions {
@@ -71,6 +58,36 @@ $picture-input-height: rem(230px);
         float: right;
         width: rem(100px);
         margin-left: rem(10px);
+      }
+    }
+
+    &[data-fields='1'] {
+
+      > .input {
+        max-width: calc(100% - #{rem(18px)});
+      }
+    }
+
+    &[data-fields='2'] {
+
+      > .input {
+        max-width: calc(50% - #{rem(9px)});
+
+        &:first-of-type {
+          padding-right: rem(10px);
+
+          &:before {
+            content: ",";
+            position: absolute;
+            top: 0;
+            right: rem(5px);
+            font-family: $font-family-1;
+            font-size: rem(20px);
+            font-weight: 700;
+            line-height: 2.5;
+            color: #9f9f9f;
+          }
+        }
       }
     }
   }
@@ -255,6 +272,33 @@ $picture-input-height: rem(230px);
 
     &.-grey {
       background-color: $grey;
+    }
+  }
+
+  .field_with_errors {
+
+    input {
+      border-color: $error-red !important;
+
+      &::-webkit-input-placeholder {
+        color: $error-red;
+      }
+
+      &:-moz-placeholder {
+        color:$error-red;
+      }
+
+      &::-moz-placeholder {
+        color: $error-red;
+      }
+
+      &:-ms-input-placeholder {
+        color: $error-red;
+      }
+    }
+
+    .error {
+      display: none;
     }
   }
 }

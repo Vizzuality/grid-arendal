@@ -9,16 +9,36 @@
     el: 'form',
 
     options: {
+      formHeaderIconClass: ".form_header .icon",
+      adjustableTriggerClass: ".js-adjustable-input",
       mediumEditorTriggerClass: ".js-textarea-editable",
       selectTriggerClass: ".js-select",
       selectTagsTriggerClass: ".js-select-tags"
     },
 
     initialize: function() {
+      this._cache();
+      this._loadHeaderAdjustableInput();
       this._loadLimitedInput();
       this._loadMediumEditor();
       this._loadSelect();
       this._loadTaggingSelect();
+    },
+
+    _cache: function () {
+      this.$headerIcon = $(this.$el.find(this.options.formHeaderIconClass));
+    },
+
+    _loadHeaderAdjustableInput: function () {
+      _.each($(this.$el.find(this.options.adjustableTriggerClass)), function(element) {
+        new App.Helper.FormAdjustableInput({
+          el: element,
+          events: {
+            'focusin': this._setFocusHeader.bind(this),
+            'focusout': this._setFocusHeader.bind(this),
+          },
+        });
+      }.bind(this));
     },
 
     _loadLimitedInput: function() {
@@ -45,6 +65,14 @@
       $(this.options.selectTagsTriggerClass).select2({
         tags: true
       });
+    },
+
+    _setFocusHeader: function (e) {
+      if (e.type == "focusin") {
+        this.$headerIcon.css("opacity", 0);
+      } else {
+        this.$headerIcon.removeAttr("style");
+      }
     },
 
   });
