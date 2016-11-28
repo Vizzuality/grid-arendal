@@ -8,10 +8,6 @@
 
     el: 'form',
 
-    events: {
-      'click .js-cancel-process': '_cancelProcess'
-    },
-
     options: {
       formHeaderIconClass: ".form_header .icon",
       adjustableTriggerClass: ".js-adjustable-input",
@@ -77,10 +73,6 @@
       } else {
         this.$headerIcon.removeAttr("style");
       }
-    },
-
-    _cancelProcess: function () {
-      location.reload();
     },
 
   });

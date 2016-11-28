@@ -10,5 +10,4 @@ div.form_header data-fields="#{fields}"
 
   div.actions
     = form.button :submit, 'SAVE', class: 'btn -dark'
-    div.btn.-light.js-cancel-process
-      'CANCEL
+    = link_to "CANCEL", :back, class: 'btn -light'

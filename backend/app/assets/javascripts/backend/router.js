@@ -32,6 +32,12 @@
       'manage/users': 'BackOfficeHome#index',
       'manage/users/:id(/:action)': 'BackOfficeHome#show',
       'manage/users/new': 'BackOfficeHome#show',
+      'manage/content_types': 'BackOfficeHome#index',
+      'manage/content_types/:id(/:action)': 'BackOfficeHome#show',
+      'manage/content_types/new': 'BackOfficeHome#show',
+      'manage/tags': 'BackOfficeHome#index',
+      'manage/tags/:id(/:action)': 'BackOfficeHome#show',
+      'manage/tags/new': 'BackOfficeHome#show',
     },
 
     initialize: function() {

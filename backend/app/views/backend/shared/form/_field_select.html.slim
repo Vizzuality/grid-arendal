@@ -1,8 +1,10 @@
+- include_blank ||= false
+
 .field
   = form.label value, label_txt, class: 'text -field-label -bold -dark'
   = form.input value,
     collection: collection,
-    as: :collection_select,
-    include_blank: false,
+    as: input_as,
+    include_blank: include_blank,
     label: false,
     input_html: {class: 'basic-input text -plain-text -dark js-select'}

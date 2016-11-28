@@ -52,6 +52,7 @@ module Account
         Abilities::PublisherUser.any_instance.should_receive(:can).with([:publish, :unpublish, :make_featured, :remove_featured], ::Publication)
         Abilities::PublisherUser.any_instance.should_receive(:can).with(:manage, ::Vacancy)
         Abilities::PublisherUser.any_instance.should_receive(:can).with([:publish, :unpublish], ::Vacancy)
+        Abilities::PublisherUser.any_instance.should_receive(:can).with(:manage, ::Tag)
 
         Abilities::PublisherUser.any_instance.should_receive(:cannot).with(:make_admin, ::User, id: @publisheruser.id)
         Abilities::PublisherUser.any_instance.should_receive(:cannot).with(:make_contributor, ::User, id: @publisheruser.id)

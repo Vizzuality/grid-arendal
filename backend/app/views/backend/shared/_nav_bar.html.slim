@@ -8,7 +8,9 @@ ul.basic-nav
             {"name" => "Events", "path" => events_path, "key" => "events"},
             {"name" => "Media contents", "path" => new_media_content_path("mediable" => 'photo'), "key" => "media_contents"},
             {"name" => "Partners", "path" => partners_path, "key" => "partners"},
-            {"name" => "Users", "path" => users_path, "key" => "users"}]
+            {"name" => "Users", "path" => users_path, "key" => "users"},
+            {"name" => "Content types", "path" => content_types_path, "key" => "content_types"},
+            {"name" => "Tags", "path" => tags_path, "key" => "tags"}]
 
     li.-user.-no-hover
       img.avatar src="#{current_user.avatar}"
