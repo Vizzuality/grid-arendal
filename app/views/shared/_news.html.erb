@@ -18,6 +18,7 @@
   </div>
 
   <ul class="row">
+    <% if defined? @articles %>
     <% @articles.each do |article| %>
       <li class="small-12 medium-3 columns">
         <article class="c-card">
@@ -25,11 +26,12 @@
           <div class="card-descrition">
             <h3 class="text -title-card"><%= article.title %></h3>
             <p class="text -meta">
-              <%= time_ago_in_words(article.publication_date) %> ago
+              <%= time_ago_in_words(article.publication_date) %>
             </p>
           </div>
         </article>
       </li>
+    <% end %>
     <% end %>
   </ul>
 </section>

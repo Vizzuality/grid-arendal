@@ -1,3 +1,7 @@
+<div class="l-navigation">
+  <%= render 'backend/shared/nav_bar' %>
+</div>
+
 <div class="l-items-index">
   <%= render 'publications', publications: @publications %>
 </div>
@@ -8,6 +12,7 @@
       form: f,
       users: @users,
       partners: @partners,
+      content_types: @content_types,
       have_picture: @publication.picture_file_name ? true : false,
       picture_url: @publication.picture %>
   <% end %>

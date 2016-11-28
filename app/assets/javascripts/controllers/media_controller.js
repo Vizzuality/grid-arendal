@@ -30,7 +30,11 @@
       });
     },
 
-    show: function(params) { },
+    show: function(params) {
+      var masonryView = new App.View.Masonry({
+        el: '#masonry-layout'
+      });
+    },
 
   });
 

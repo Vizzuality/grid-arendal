@@ -1,8 +1,13 @@
-div.form_header
-  = form.label :title
-  = form.input :title, label: false, input_html: { class: 'text -main-title -dark title', placeholder: title_placeholder }
+- fields ||= 1
+
+div.form_header data-fields="#{fields}"
+  - inputs.each do |input|
+    = form.label input.values[0]
+    = form.input input.values[0], label: false, input_html: { class: 'text -main-title -dark title js-adjustable-input', placeholder: input.values[1] }
+
+  svg.icon
+    use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-edit"
 
   div.actions
     = form.button :submit, 'SAVE', class: 'btn -dark'
-    div.btn.-light.js-cancel-process
-      'CANCEL
+    = link_to "CANCEL", :back, class: 'btn -light'

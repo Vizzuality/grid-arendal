@@ -6,6 +6,7 @@ html lang='en'
     title
       = content_for?(:title) ? yield(:title) : 'RW'
     = stylesheet_link_tag 'backend/manifests/application'
+    = javascript_include_tag 'backend/manifests/application'
     = csrf_meta_tags
   body
     = render 'backend/shared/icons'
@@ -17,5 +18,3 @@ html lang='en'
         = notice
 
     = yield
-
-    = javascript_include_tag 'backend/manifests/application'

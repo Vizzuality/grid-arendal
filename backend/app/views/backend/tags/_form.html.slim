@@ -1,0 +1,6 @@
+= render 'backend/shared/form/header', form: form, inputs: [{value: :name, title_placeholder: 'Tag'}]
+
+.fields
+  = render 'backend/shared/form/field_select', form: form, value: :category,
+    collection: Tag::CATEGORIES, include_blank: true,
+    label_txt: "Tag Category", input_as: :select

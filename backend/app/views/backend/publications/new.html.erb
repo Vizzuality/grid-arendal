@@ -1,10 +1,19 @@
+<div class="l-navigation">
+  <%= render 'backend/shared/nav_bar' %>
+</div>
+
 <div class="l-items-index">
   <%= render 'publications', publications: @publications %>
 </div>
 
-
 <div class="l-items-detail">
   <%= simple_form_for @publication, html: { class: 'c-form' } do |f| %>
-    <%= render 'form', form: f, users: @users, partners: @partners, have_picture: false, picture_url: '' %>
+    <%= render 'form',
+      form: f,
+      users: @users,
+      partners: @partners,
+      content_types: @content_types,
+      have_picture: false,
+      picture_url: nil %>
   <% end %>
 </div>

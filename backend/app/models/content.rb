@@ -24,11 +24,14 @@ class Content < ApplicationRecord
   include Featurable
   include Attachable::Picture
 
+  acts_as_taggable
+
   has_many :participants
   has_many :users, through: :participants
 
   has_many :content_partners
   has_many :partners, through: :content_partners
+  belongs_to :content_type
 
   validates :title, presence: true
 end

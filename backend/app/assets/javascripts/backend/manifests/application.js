@@ -12,6 +12,7 @@
 //
 //= require medium-editor
 //= require jquery
+//= require turbolinks
 //= require jquery_ujs
 //= require cocoon
 
@@ -23,7 +24,7 @@
 
 //= require_self
 
-
+//= require_tree ../lib
 //= require_tree ../templates
 //= require_tree ../helpers
 //= require_tree ../models

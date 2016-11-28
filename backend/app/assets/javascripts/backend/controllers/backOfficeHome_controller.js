@@ -8,10 +8,13 @@
 
     index: function() {
       var phrasesView = new App.View.Phrases({});
+      var indexItemView = new App.View.IndexItems({});
+      var formView = new App.View.Form({});
     },
 
     show: function() {
       var formView = new App.View.Form({});
+      var indexItemView = new App.View.IndexItems({});
     }
   });
 

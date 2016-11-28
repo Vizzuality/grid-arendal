@@ -9,10 +9,6 @@ module Backend
     before_action :set_news_articles, except: :index
 
     def index
-      @news_article = NewsArticle.order(:title).first
-      if @news_article
-        redirect_to edit_news_article_url(@news_article) and return
-      end
     end
 
     def edit
@@ -36,6 +32,13 @@ module Backend
         redirect_to news_articles_url
       else
         render :new
+      end
+    end
+
+    def destroy
+      @news_article = NewsArticle.find(params[:id])
+      if @news_article.destroy
+        redirect_to news_articles_url
       end
     end
 

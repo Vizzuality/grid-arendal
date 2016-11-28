@@ -5,7 +5,7 @@ module Backend
   class PublicationsController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_users_and_partners, only: [:new, :edit]
+    before_action :set_objects, only: [:new, :edit]
     before_action :publications,
 
 
@@ -24,7 +24,7 @@ module Backend
       if @publication.update(publication_params)
         redirect_to publications_url, notice: 'Publication updated'
       else
-        set_users_and_partners
+        set_objects
         render :edit
       end
     end
@@ -34,7 +34,7 @@ module Backend
       if @publication.save
         redirect_to publications_url
       else
-        set_users_and_partners
+        set_objects
         render :new
       end
     end
@@ -76,9 +76,12 @@ module Backend
         @publications = Publication.order(:title)
       end
 
-      def set_users_and_partners
+      def set_objects
         @users    = User.order_by_fullname
         @partners = Partner.order_by_name
+        @content_types = ContentType.
+          where(for_content: [ContentType::BOTH, ContentType::PUBLICATION]).
+          order(:title)
       end
   end
 end

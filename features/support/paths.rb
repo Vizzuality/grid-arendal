@@ -44,6 +44,18 @@ module NavigationHelpers
       backend.new_event_path
     when /the edit event page for "(.*)"$/
       backend.edit_event_path(Event.find_by(title: $1).id)
+    when /the content types page/
+      backend.content_types_path
+    when /the new content type page/
+      backend.new_content_type_path
+    when /the edit content type page for "(.*)"$/
+      backend.edit_content_type_path(ContentType.find_by(title: $1).id)
+    when /the tags page/
+      backend.tags_path
+    when /the new tag page/
+      backend.new_tag_path
+    when /the edit tag page for "(.*)"$/
+      backend.edit_tag_path(Tag.find_by(name: $1).id)
     when /the news_articles page/
       backend.news_articles_path
     when /the new news_article page/

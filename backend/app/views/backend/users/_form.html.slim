@@ -1,35 +1,17 @@
-.field
-  = form.label :email
-  = form.input :email, required: true, autofocus: true, label: false
+= render 'backend/shared/form/header', form: form, inputs: [{value: :last_name, title_placeholder: 'Lastname'}, {value: :first_name, title_placeholder: 'Firstname'}], fields: 2
 
-.field
-  = form.label :avatar, 'Profile photo'
-  = form.file_field :avatar, label: false
+div.fields
 
-.field
-  = form.label :first_name, 'Firstname'
-  = form.input :first_name, label: false
+  = render 'backend/shared/form/field_input', form: form, value: :email, required: true
 
-.field
-  = form.label :last_name, 'Lastname'
-  = form.input :last_name, label: false
+  = render 'backend/shared/form/field_upload_img', form: form, value: :avatar, label_txt: 'Profile photo', have_picture: have_picture, picture_url: picture_url
 
-.field
-  = form.label :organization
-  = form.input :organization, label: false
+  = render 'backend/shared/form/field_input', form: form, value: :organization
 
-.field
-  = form.label :current_position, 'Position'
-  = form.input :current_position, label: false
+  = render 'backend/shared/form/field_input', form: form, value: :current_position, label_txt: 'Position'
 
-.field
-  = form.label :web_url
-  = form.input :web_url, label: false
+  = render 'backend/shared/form/field_input', form: form, value: :web_url
 
-.field
-  = form.label :role
-  = form.input :role, collection: @user_roles, as: :collection_select, include_blank: false, label: false
+  = render 'backend/shared/form/field_select', form: form, value: :role, collection: user_roles, as: :collection_select, label_txt: 'Role'
 
-.field
-  = form.label :active
-  = form.input :active, label: false
+  = render 'backend/shared/form/field_checkbox', form: form, value: :active

@@ -8,9 +8,10 @@
 
     index: function() {
       this.initSliders();
-      if (window.matchMedia("(max-width: 768px)").matches) {
-        $('body').addClass('slide-' + (parseInt(Math.floor(Math.random() * 6)) + 1) );
-      }
+      var eventsModalView = new App.View.EventsModal();
+      $('.l-main-content').addClass('home');
+      $('.cta-mobile').addClass('home');
+      $('.footer-slider').addClass('home');
     },
 
     initSliders: function() {

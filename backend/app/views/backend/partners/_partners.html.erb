@@ -1,16 +1,16 @@
-<div class="l-items-index">
-  <h2>Partners</h2>
+<h2 class="text -main-title -light">Partners</h2>
 
-  <% if can?(:create, Partner) %>
-    <%= link_to "New", new_partner_path %>
+<%= render 'backend/shared/index_items_buttons.html',
+  havePermissionToCreate: can?(:create, Partner),
+  createPath: new_partner_path
+%>
+
+<ul class="items-list">
+  <% @partners.each do |partner| %>
+    <%= render 'backend/shared/index_item',
+    item: partner,
+    title: partner.name,
+    edit_path: edit_partner_path(partner),
+    delete_path: partner_path(partner) %>
   <% end %>
-
-  <ul>
-    <% @partners.each do |partner| %>
-      <li>
-        <%= partner.name %>
-        <%= link_to 'Edit', edit_partner_path(partner) %>
-      </li>
-    <% end %>
-  </ul>
-</div>
+</ul>

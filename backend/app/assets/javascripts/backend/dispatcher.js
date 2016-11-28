@@ -66,7 +66,7 @@
     Backbone.history.start({ pushState: true });
   }
 
-  document.addEventListener('DOMContentLoaded', initApp);
+  document.addEventListener('turbolinks:load', initApp);
 
 
 })(this.App);

@@ -1,10 +1,21 @@
+<%
+needSteps = (photos_count + videos_count) > 2
+meta = []
+if photos_count > 0
+  meta.push("#{photos_count} photos")
+end
+if videos_count > 0
+  meta.push("#{videos_count} videos")
+end
+%>
+
 <%= link_to link do %>
   <div class="item">
-    <article class="c-card -card-steps">
+    <article class="c-card <% if needSteps %>-card-steps<% end %>">
       <div class="card-pic" style="background-image: url('<%= picture %>')"></div>
       <div class="card-descrition">
         <h3 class="text -title-card-small"><%= title %></h3>
-        <p class="text -meta">46 photos | 2 videos</p>
+        <p class="text -meta"><%= meta.join(" | ") %></p>
       </div>
     </article>
   </div>
