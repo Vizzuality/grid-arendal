@@ -11,7 +11,7 @@ ul.basic-nav
             {"name" => "Users", "path" => users_path, "key" => "users"}]
 
     li.-user.-no-hover
-      img.avatar src="https://pbs.twimg.com/profile_images/794258346115268614/odGvBrDx_bigger.jpg"
+      img.avatar src="#{current_user.avatar}"
       div.texts-container
         div.user-name.text.-nav-text.-light
           = current_user.display_name

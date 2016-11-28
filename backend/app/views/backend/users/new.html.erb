@@ -8,6 +8,10 @@
 
 <div class="l-items-detail">
   <%= simple_form_for @user, html: { class: 'c-form' } do |f| %>
-    <%= render 'form', form: f %>
+    <%= render 'form',
+      form: f,
+      user_roles: @user_roles,
+      have_picture: false,
+      picture_url: nil %>
   <% end %>
 </div>

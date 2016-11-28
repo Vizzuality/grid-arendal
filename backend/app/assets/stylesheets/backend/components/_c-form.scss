@@ -9,6 +9,7 @@
 $input-min-height: rem(43px);
 $picture-input-margin: rem(10px);
 $picture-input-height: rem(230px);
+$error-red: #ec5c5c;
 
 .c-form {
 
@@ -43,32 +44,6 @@ $picture-input-height: rem(230px);
       margin-bottom: rem(-2px);
       opacity: 0.3;
       transition: opacity 0.1s linear;
-    }
-
-    .field_with_errors {
-
-      input {
-
-        &::-webkit-input-placeholder {
-          color: #ec5c5c;
-        }
-
-        &:-moz-placeholder {
-          color: #ec5c5c;
-        }
-
-        &::-moz-placeholder {
-          color: #ec5c5c;
-        }
-
-        &:-ms-input-placeholder {
-          color: #ec5c5c;
-        }
-      }
-
-      .error {
-        display: none;
-      }
     }
 
     .actions {
@@ -297,6 +272,33 @@ $picture-input-height: rem(230px);
 
     &.-grey {
       background-color: $grey;
+    }
+  }
+
+  .field_with_errors {
+
+    input {
+      border-color: $error-red !important;
+
+      &::-webkit-input-placeholder {
+        color: $error-red;
+      }
+
+      &:-moz-placeholder {
+        color:$error-red;
+      }
+
+      &::-moz-placeholder {
+        color: $error-red;
+      }
+
+      &:-ms-input-placeholder {
+        color: $error-red;
+      }
+    }
+
+    .error {
+      display: none;
     }
   }
 }
