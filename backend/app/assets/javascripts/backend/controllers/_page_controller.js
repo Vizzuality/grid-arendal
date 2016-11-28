@@ -29,9 +29,7 @@
      * Instance common and global view here
      * @return {[type]} [description]
      */
-    _instanceCommonViews: function() {
-      // new App.View.Modal({ el: '#modalView' });
-    }
+    _instanceCommonViews: function() {},
 
   });
 
