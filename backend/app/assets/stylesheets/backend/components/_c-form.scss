@@ -32,14 +32,17 @@ $picture-input-height: rem(230px);
       border: 0;
       white-space: nowrap;
       overflow: hidden;
-      text-overflow: ellipsis;
       outline: 0;
     }
 
     .icon {
       display: inline-block;
-      width: rem(18px);
-      height: rem(18px);
+      width: rem(15px);
+      height: rem(15px);
+      margin-left: rem(8px);
+      margin-bottom: rem(-2px);
+      opacity: 0.3;
+      transition: opacity 0.1s linear;
     }
 
     .field_with_errors {
@@ -84,6 +87,7 @@ $picture-input-height: rem(230px);
     }
 
     &[data-fields='1'] {
+
       > .input {
         max-width: calc(100% - #{rem(18px)});
       }
@@ -106,7 +110,7 @@ $picture-input-height: rem(230px);
             font-size: rem(20px);
             font-weight: 700;
             line-height: 2.5;
-            color: $font-color-1;
+            color: #9f9f9f;
           }
         }
       }
