@@ -271,6 +271,20 @@ $error-red: #ec5c5c;
           margin-left: $picture-input-margin;
         }
       }
+
+      &[data-type="tags"] {
+
+        .select2-container--default {
+
+          .select2-selection--multiple {
+
+            .select2-selection__choice {
+              padding-left: rem(10px);
+              border-radius: rem(15px);
+            }
+          }
+        }
+      }
     }
 
     &.-grey {

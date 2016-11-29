@@ -82,6 +82,7 @@ module Backend
         @content_types = ContentType.
           where(for_content: [ContentType::BOTH, ContentType::PUBLICATION]).
           order(:title)
+        @tags = Tag.order(:name)
       end
   end
 end
