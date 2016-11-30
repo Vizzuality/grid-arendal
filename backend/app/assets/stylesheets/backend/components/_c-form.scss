@@ -158,8 +158,10 @@ $error-red: #ec5c5c;
         @extend %input-defaults;
 
         .select2-selection--single {
+          min-height: $picture-input-margin - rem(2px);
           border: 0;
           border-radius: 0;
+          outline: 0;
 
           .select2-selection__rendered {
             font-family: $font-family-1;
@@ -317,5 +319,13 @@ $error-red: #ec5c5c;
     .error {
       display: none;
     }
+  }
+}
+
+.select2-dropdown {
+  @extend %input-defaults;
+
+  .select2-results__option {
+    min-height: rem(36px);
   }
 }
