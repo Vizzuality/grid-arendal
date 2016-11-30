@@ -4,6 +4,8 @@ class ActivitiesController < ApplicationController
 
   def index
     @activities = Activity.order(:title).published
+    @content_types = ContentType.where(for_content: ContentType::ACTIVITY).or(ContentType.where(for_content: ContentType::BOTH))
+    @partners = Partner.order(:name)
   end
 
   def show

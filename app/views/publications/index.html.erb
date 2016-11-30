@@ -19,7 +19,27 @@
 </div>
 
 <div class="l-main-content -publications">
-  <%= render 'shared/filters', years: @years %>
+  <% filters = [
+    {
+      data: @content_types,
+      title: 'FILTER BY',
+      placeholder: 'Filter by type',
+      type: 'select'
+    },
+    {
+      data: @tags,
+      title: 'FILTER BY',
+      placeholder: 'Filter by tags',
+      type: 'tags'
+    },
+    {
+      data: @years,
+      title: '',
+      placeholder: '',
+      type: 'years'
+    }
+  ] %>
+  <%= render 'shared/filters', filters: filters %>
   <div class="row">
     <div class="small-12 small-centered columns -fix">
       <div id="masonry-layout" class="masonry-layout" hidden data-columns>

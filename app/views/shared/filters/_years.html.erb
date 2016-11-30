@@ -1,6 +1,6 @@
-<div class="filter -type-years <%= js_trigger %>">
+<div class="filter -type-years js-filter" data-filter-type="years">
   <ul class="list">
-    <% years.each do |year| %>
+    <% data.each do |year| %>
       <li class="text -filter-year" data-value="<%= year %>"><%= year %></li>
     <% end %>
   </ul>

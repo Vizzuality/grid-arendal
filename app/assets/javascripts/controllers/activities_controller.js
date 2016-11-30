@@ -10,6 +10,7 @@
       var masonryView = new App.View.Masonry({
         el: '#masonry-layout'
       });
+      var filtersView = new App.View.MediaFilters({});
     },
 
     show: function(params) {

@@ -15,7 +15,8 @@
     options: {
       opened: false,
       showFiltersClass: "-show-filters",
-      openFiltersAnimateSpeed: 0.5
+      openFiltersAnimateSpeed: 0.5,
+      filterTriggerClass: ".js-filter"
     },
 
     initialize: function(settings) {
@@ -31,38 +32,38 @@
     },
 
     _loadFilters: function() {
-      _.each(this.options.filters, function(filter) {
-        switch (filter.type) {
+      _.each(this.$el.find(this.options.filterTriggerClass), function(item) {
+        var filter = $(item);
+        switch (filter.data("filter-type")) {
           case "select":
-            this._loadSelect(filter);
+            this._loadSelect(this._getHelperFilterObject(filter));
             break;
-          case "tag":
-            this._loadTag(filter);
+          case "tags":
+            this._loadTag(this._getHelperFilterObject(filter));
             break;
           case "years":
-            this._loadYears(filter);
+            this._loadYears(this._getHelperFilterObject(filter));
             break;
         }
       }.bind(this));
     },
 
-    _loadSelect: function(filter) {
-      new App.Helper.SelectHandler(this._getHelperFilterObject(filter));
+    _loadSelect: function(helperFilter) {
+      new App.Helper.SelectHandler(helperFilter);
     },
 
-    _loadTag: function(filter) {
-      new App.Helper.TagSelectHandler(this._getHelperFilterObject(filter));
+    _loadTag: function(helperFilter) {
+      new App.Helper.TagSelectHandler(helperFilter);
     },
 
-    _loadYears: function(filter) {
-      new App.Helper.YearsFilter(this._getHelperFilterObject(filter));
+    _loadYears: function(helperFilter) {
+      new App.Helper.YearsFilter(helperFilter);
     },
 
     _getHelperFilterObject: function(filter) {
       return {
-        el: filter.triggerClass,
+        el: filter,
         options: {
-          filter: filter,
           callback: this._filterMedia
         }
       };

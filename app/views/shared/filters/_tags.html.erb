@@ -1,0 +1,20 @@
+<div class="filter -type-tags js-filter" data-filter-type="tags">
+  <div class="type text -filter-title"><%= title %></div>
+  <span class="speaker">
+    <span class="text -filter" data-placeholder="<%= placeholder %>"><%= placeholder %></span>
+    <svg class="icon">
+      <use xlink:href="#icon-dropdown_arrow_down"></use>
+    </svg>
+  </span>
+  <div class="dropdown">
+    <div class="type text -filter-title"><%= title %></div>
+    <svg class="icon js-tags-select-closer">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-dropdown_arrow_down"></use>
+    </svg>
+    <ul class="list">
+      <% data.each do |option| %>
+        <li class="text -filter" data-value="<%= option.id %>" data-name="<%= option.name %>"><%= option.name %> (<%= option.taggings_count %>)</li>
+      <% end %>
+    </ul>
+  </div>
+</div>

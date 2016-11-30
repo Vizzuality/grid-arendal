@@ -44,6 +44,10 @@
         .change();
     },
 
+    _setHaveValue: function () {
+      this.$el.addClass(this.options.haveValueClass);
+    },
+
     _openDropdown: function() {
       this.$el.addClass(this.options.showDropdownClass);
       this._showCloser();
@@ -87,7 +91,7 @@
 
     _onChangeSelectValue: function() {
       this.$select.change(function(e) {
-        this.$el.addClass(this.options.haveValueClass);
+        this._setHaveValue();
         this._setSpeaker($(e.currentTarget).val());
         this._closeProcess();
         this._runCallback();

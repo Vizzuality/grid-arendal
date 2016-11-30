@@ -1,7 +1,7 @@
-<div class="filter -type-select <%= js_trigger %>">
+<div class="filter -type-select js-filter" data-filter-type="select">
   <div class="type text -filter-title"><%= title %></div>
   <span class="speaker">
-    <span class="text -filter"><%= placeholder %></span>
+    <span class="text -filter" data-placeholder="<%= placeholder %>"><%= placeholder %></span>
     <svg class="icon">
       <use xlink:href="#icon-dropdown_arrow_down"></use>
     </svg>
@@ -9,33 +9,17 @@
   <div class="dropdown">
     <div class="type text -filter-title"><%= title %></div>
     <ul class="list">
-      <li class="text -filter" data-value="Popularity">Popularity</li>
-      <li class="text -filter" data-value="Rapid Response Assessments">Rapid Response Assessments</li>
-      <li class="text -filter" data-value="Last published">Last published</li>
-      <li class="text -filter" data-value="Mountains Outlook">Mountains Outlook</li>
-      <li class="text -filter" data-value="Environment Atlas">Environment Atlas</li>
-      <li class="text -filter" data-value="Environment Times">Environment Times</li>
-      <li class="text -filter" data-value="Environment and Security">Environment and Security</li>
-      <li class="text -filter" data-value="Story Maps">Story Maps</li>
-      <li class="text -filter" data-value="Brochures and Flyers">Brochures and Flyers</li>
-      <li class="text -filter" data-value="Web & CD-ROM productions">Web & CD-ROM productions</li>
-      <li class="text -filter" data-value="E-Books (Interactive)">E-Books (Interactive)</li>
-      <li class="text -filter" data-value="Partner Publications">Partner Publications</li>
+      <% data.each do |option| %>
+        <% text = (defined? option.title) ? option.title : option.name %>
+        <li class="text -filter" data-value="<%= option.id %>"><%= text %></li>
+      <% end %>
     </ul>
   </div>
   <select class="text -filter">
     <option value="" disabled selected><%= placeholder %></option>
-    <option value="Popularity">Popularity</option>
-    <option value="Rapid Response Assessments">Rapid Response Assessments</option>
-    <option value="Last published">Last published</option>
-    <option value="Mountains Outlook">Mountains Outlook</option>
-    <option value="Environment Atlas">Environment Atlas</option>
-    <option value="Environment Times">Environment Times</option>
-    <option value="Environment and Security">Environment and Security</option>
-    <option value="Story Maps">Story Maps</option>
-    <option value="Brochures and Flyers">Brochures and Flyers</option>
-    <option value="Web & CD-ROM productions">Web & CD-ROM productions</option>
-    <option value="E-Books (Interactive)">E-Books (Interactive)</option>
-    <option value="Partner Publications">Partner Publications</option>
+    <% data.each do |option| %>
+      <% text = (defined? option.title) ? option.title : option.name %>
+      <option value="<%= option.id %>"><%= text %></option>
+    <% end %>
   </select>
 </div>

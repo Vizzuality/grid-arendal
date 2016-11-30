@@ -11,27 +11,42 @@
     },
 
     selectedTags: [],
+    selectedTagsNames: [],
 
     _setSelectValue: function(e) {
       var element = $(e.currentTarget);
       var isSelected = element.hasClass(this.options.selectedClass);
       element.toggleClass(this.options.selectedClass);
 
-      this._updateSelectedTags(isSelected, element.data("value"));
+      this._updateSelectedTags(isSelected, element);
       this._setSpeaker();
-      this.$el.addClass(this.options.haveValueClass);
+      this._setHaveValue();
     },
 
-    _updateSelectedTags: function(drop, value) {
+    _updateSelectedTags: function(drop, element) {
+      var value = element.data("value");
+      var name = element.data("name");
       if (drop) {
         this.selectedTags = _.without(this.selectedTags, value);
+        this.selectedTagsNames = _.without(this.selectedTagsNames, name);
       } else {
         this.selectedTags.push(value);
+        this.selectedTagsNames.push(name);
       }
     },
 
     _setSpeaker: function() {
-      this.$speakerText.html(this.selectedTags.join(", "));
+      this.$speakerText.html(
+        this.selectedTagsNames.length > 0
+          ? this.selectedTagsNames.join(", ")
+          : this.$speakerText.data("placeholder")
+      );
+    },
+
+    _setHaveValue: function () {
+      this.selectedTags.length > 0
+        ? this.$el.addClass(this.options.haveValueClass)
+        : this.$el.removeClass(this.options.haveValueClass)
     },
 
     _openDropdown: function() {

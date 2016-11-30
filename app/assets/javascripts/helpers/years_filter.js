@@ -47,8 +47,12 @@
       element.toggleClass(this.options.selectedClass);
 
       this._updateSelectedYears(isSelected, element.data("value"));
-      this.$el.addClass(this.options.haveValueClass);
+      this._setHaveValue();
       this._runCallback();
+    },
+
+    _setHaveValue: function () {
+      this.$el.addClass(this.options.haveValueClass);
     },
 
     _runCallback: function() {
