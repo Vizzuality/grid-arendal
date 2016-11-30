@@ -68,14 +68,14 @@ $error-red: #ec5c5c;
     &[data-fields='1'] {
 
       > .input {
-        max-width: calc(100% - #{rem(18px)});
+        max-width: calc(100% - #{rem(23px)});
       }
     }
 
     &[data-fields='2'] {
 
       > .input {
-        max-width: calc(50% - #{rem(9px)});
+        max-width: calc(50% - #{rem(11.5px)});
 
         &:first-of-type {
           padding-right: rem(10px);
