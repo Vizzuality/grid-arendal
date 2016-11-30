@@ -282,6 +282,10 @@ $filters-screen-m-width: 18%;
         @media screen and (min-width: $screen-m) {
           width: $filters-screen-m-width * 2;
           position: static;
+
+          > .type {
+            top: rem(12px);
+          }
         }
 
         @extend %dropdown-tags;
