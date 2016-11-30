@@ -68,14 +68,14 @@ $error-red: #ec5c5c;
     &[data-fields='1'] {
 
       > .input {
-        max-width: calc(100% - #{rem(18px)});
+        max-width: calc(100% - #{rem(23px)});
       }
     }
 
     &[data-fields='2'] {
 
       > .input {
-        max-width: calc(50% - #{rem(9px)});
+        max-width: calc(50% - #{rem(11.5px)});
 
         &:first-of-type {
           padding-right: rem(10px);
@@ -271,6 +271,20 @@ $error-red: #ec5c5c;
           width: calc(50% - #{$picture-input-margin});
           height: $picture-input-height;
           margin-left: $picture-input-margin;
+        }
+      }
+
+      &[data-type="tags"] {
+
+        .select2-container--default {
+
+          .select2-selection--multiple {
+
+            .select2-selection__choice {
+              padding-left: rem(10px);
+              border-radius: rem(15px);
+            }
+          }
         }
       }
     }

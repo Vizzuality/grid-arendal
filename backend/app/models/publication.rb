@@ -19,5 +19,7 @@
 #
 
 class Publication < Content
+  acts_as_taggable
+
   scope :order_by_title, -> { order('title ASC') }
 end
