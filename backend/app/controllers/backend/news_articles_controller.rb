@@ -23,6 +23,7 @@ module Backend
       if @news_article.update(news_article_params)
         redirect_to news_articles_url, notice: 'NewsArticle updated'
       else
+        set_objects
         render :edit
       end
     end
@@ -32,6 +33,7 @@ module Backend
       if @news_article.save
         redirect_to news_articles_url
       else
+        set_objects
         render :new
       end
     end
