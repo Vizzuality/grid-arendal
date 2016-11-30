@@ -92,7 +92,7 @@
     _onChangeSelectValue: function() {
       this.$select.change(function(e) {
         this._setHaveValue();
-        this._setSpeaker($(e.currentTarget).val());
+        this._setSpeaker(this.$el.find("option:selected").text());
         this._closeProcess();
         this._runCallback();
       }.bind(this));
