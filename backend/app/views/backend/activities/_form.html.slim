@@ -1,13 +1,16 @@
 = render 'backend/shared/form/header', form: form, inputs: [{value: :title, title_placeholder: 'Activity title'}]
 
 div.fields
+
   = render 'backend/shared/form/field_input', form: form, value: :tag_list
 
   = render 'backend/shared/form/field_association', form: form, value: :content_type,
     collection: content_types, label_method: :title, js_trigger_class: 'js-select-tags',
     note_txt: 'Choose type'
 
-  = render 'backend/shared/form/field_upload_img', form: form, value: :picture, label_txt: 'Picture', have_picture: have_picture, picture_url: picture_url
+  = form.simple_fields_for :media_content do |media_content|
+
+    = render 'backend/shared/form/field_upload_img', form: media_content, value: :photo_file, label_txt: 'Picture', have_picture: false, picture_url: nil
 
   = render 'backend/shared/form/field_limited_input', form: form, value: :short_description, maxlength: 140
 
