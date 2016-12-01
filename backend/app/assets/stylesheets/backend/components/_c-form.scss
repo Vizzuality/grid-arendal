@@ -298,10 +298,26 @@ $error-red: #ec5c5c;
                 cursor: pointer;
 
                 .picture {
+                  position: relative;
                   width: 100%;
                   height: 100%;
                   background-size: cover;
                   background-repeat: no-repeat;
+                }
+
+                &.-selected {
+
+                  .picture {
+                    box-shadow: 0 0 rem(5px) 0 rgba($black, 0.5);
+
+                    &:before {
+                      content: "";
+                      position: absolute;
+                      width: 100%;
+                      height: 100%;
+                      border: rem(4px) solid $white;
+                    }
+                  }
                 }
               }
             }

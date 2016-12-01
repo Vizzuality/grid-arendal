@@ -11,6 +11,7 @@ module Backend
 
     def search
       @media_contents = MediaContent.where("UPPER(title) like UPPER(?)", "#{params[:query]}%").limit(20)
+      @selected_id = params[:selected_id]
       respond_to do |format|
         format.js
       end

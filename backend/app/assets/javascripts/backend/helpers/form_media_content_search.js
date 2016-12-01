@@ -12,7 +12,8 @@
     },
 
     options: {
-      dataFieldTriggerClass: ".js-media-content-field"
+      dataFieldTriggerClass: ".js-media-content-field",
+      selectedClass: "-selected",
     },
 
     initialize: function() {
@@ -28,12 +29,25 @@
     },
 
     _search: function (e) {
-      $.get('/manage/media_contents/search', {query: $(e.target).val()});
+      $.get('/manage/media_contents/search', {
+        query: $(e.target).val(),
+        selected_id: this.$dataField.val()
+      });
     },
 
     _onClickSetDataField: function (e) {
       this.$dataField.val($(e.currentTarget).data("value"));
-    }
+      this._removeHighlight();
+      this._setHighlight($(e.currentTarget));
+    },
+
+    _removeHighlight: function () {
+      this.$el.find("." + this.options.selectedClass).removeClass(this.options.selectedClass);
+    },
+
+    _setHighlight: function (element) {
+      element.addClass(this.options.selectedClass);
+    },
 
   });
 

@@ -6,7 +6,7 @@ div.fields
 
   = render 'backend/shared/form/field_association', form: form, value: :tags, collection: tags, label_method: :name, js_trigger_class: 'js-select-tags', data_type: 'tags'
 
-  = render 'backend/shared/form/field_media_content', form: form, value: :media_content_id, media_contents: @media_contents, label_txt: 'Cover picture'
+  = render 'backend/shared/form/field_media_content', form: form, value: :media_content_id, media_content_id: media_content_id, media_contents: @media_contents, label_txt: 'Cover picture'
 
   = render 'backend/shared/form/field_limited_input', form: form, value: :short_description, maxlength: 140
 
