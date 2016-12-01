@@ -1,7 +1,7 @@
-- if not(defined? js_trigger_class)
-  - js_trigger_class = ''
+- js_trigger_class ||= ''
+- data_type ||= ''
 
-.field
+.field data-type="#{data_type}"
   = form.association value,
     collection: collection,
     label_method: label_method,
