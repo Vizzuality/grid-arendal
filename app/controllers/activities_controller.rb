@@ -16,5 +16,6 @@ class ActivitiesController < ApplicationController
 
     def set_activity
       @activity = Activity.find(params[:id])
+      @media_content = MediaContent.find(@activity.media_content_id)
     end
 end
