@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   mount Backend::Engine, at: 'manage'
 
   resources :staff,                        controller: 'users',          only: [:index, :show]
-  resources :activities,                                                 only: [:index, :show, :filter]
+  resources :activities,                                                 only: [:index, :show, :filters]
   resources :publications,                                               only: [:index, :show, :filter]
   resources :media, path: 'media-library', controller: 'media_library',  only: [:index, :show]
   resources :news,                         controller: 'news_articles',  only: [:index, :show]

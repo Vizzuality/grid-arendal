@@ -77,7 +77,8 @@
     },
 
     _setHash: function () {
-      window.location.hash = '#filters-' + this.getStringifyFiltersValue();
+      var url = '?' + this.getFilterValues();
+      window.history.pushState('', '', url);
     },
 
     _onClickToggleFilters: function() {
@@ -102,15 +103,26 @@
       return height;
     },
 
-    getStringifyFiltersValue: function () {
-      var hashFilters = {};
-      _.each(this.filters, function (filter) {
-        if (filter.selectedValues.length > 0) {
-          hashFilters[filter.key] = filter.selectedValues;
+    getFilterValues: function () {
+      var queryStr = '';
+      var filterNum = this.filters.length;
+      console.log(filterNum);
+      _.each(this.filters, function (filter, index) {
+        if ( filter.selectedValues.length > 0 ) {
+        queryStr += filter.key + '=';
+        filter.selectedValues.forEach(function (value, index) {
+          queryStr += value;
+          if ( index < filter.selectedValues.length - 1 ) {
+            queryStr += ',';
+          }
+        });
+        if ( index < filterNum - 1 ) {
+          queryStr += '&';
         }
+      }
       });
-
-      return JSON.stringify(hashFilters);
+      console.log(queryStr);
+      return queryStr;
     },
 
   });

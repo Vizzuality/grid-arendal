@@ -6,6 +6,10 @@ class ActivitiesController < ApplicationController
     @activities = Activity.order(:title).published
     @content_types = ContentType.where(for_content: ContentType::ACTIVITY).or(ContentType.where(for_content: ContentType::BOTH))
     @partners = Partner.order(:name)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def show
@@ -14,11 +18,7 @@ class ActivitiesController < ApplicationController
     @users = @activity.users
   end
 
-  def filter
-    respond_to do |format|
-      format.html
-      format.js
-    end
+  def filters
   end
 
   private

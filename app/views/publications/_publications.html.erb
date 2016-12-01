@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="small-12 small-centered columns -fix">
+    <div id="masonry-layout" class="masonry-layout" hidden data-columns>
+      <% @publications.each do |publication| %>
+        <%= link_to publication_path(publication) do %>
+          <div class="item">
+            <article class="c-card">
+              <div class="card-pic" style="background-image: url('<%= publication.picture %>')"></div>
+              <div class="card-descrition">
+                <h3 class="text -title-card"><%= publication.title %></h3>
+                <p class="text -summary"><%= publication.short_description %></p>
+                <p class="text -meta"><%= time_ago_in_words(publication.created_at) %></p>
+              </div>
+            </article>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
