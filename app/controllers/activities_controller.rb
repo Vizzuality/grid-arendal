@@ -14,6 +14,13 @@ class ActivitiesController < ApplicationController
     @users = @activity.users
   end
 
+  def filter
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
   private
 
     def set_activity
