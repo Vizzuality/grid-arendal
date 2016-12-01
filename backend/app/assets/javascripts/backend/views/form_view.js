@@ -13,8 +13,7 @@
       adjustableTriggerClass: ".js-adjustable-input",
       mediumEditorTriggerClass: ".js-textarea-editable",
       selectTriggerClass: ".js-select",
-      selectTagsTriggerClass: ".js-select-tags",
-      searchMediaContentId: "#search-media-contents"
+      selectTagsTriggerClass: ".js-select-tags"
     },
 
     initialize: function() {

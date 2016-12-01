@@ -1,5 +1,7 @@
-<ul>
+<ul class="list">
   <% media_contents.each do |mc| %>
-    <li class="js-select-media-content"><%= image_tag mc.mediable_photo_url, style: 'width: 90px; height: 60px;' %></li>
+    <li class="js-select-media-content" data-value="<%= mc.id %>">
+      <div class="picture" style="background-image: url('<%= mc.mediable_photo_url %>')"></div>
+    </li>
   <% end %>
 </ul>
