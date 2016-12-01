@@ -7,6 +7,7 @@ module Backend
 
     before_action :set_news_article,  except: [:index, :new, :create]
     before_action :set_news_articles, except: :index
+    before_action :set_objects, only: [:new, :edit]
 
     def index
     end
@@ -22,6 +23,7 @@ module Backend
       if @news_article.update(news_article_params)
         redirect_to news_articles_url, notice: 'NewsArticle updated'
       else
+        set_objects
         render :edit
       end
     end
@@ -31,6 +33,7 @@ module Backend
       if @news_article.save
         redirect_to news_articles_url
       else
+        set_objects
         render :new
       end
     end
@@ -54,6 +57,10 @@ module Backend
 
       def news_article_params
         params.require(:news_article).permit!
+      end
+
+      def set_objects
+        @tags = Tag.order(:name)
       end
   end
 end

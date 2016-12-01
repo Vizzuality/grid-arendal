@@ -34,5 +34,7 @@ class Content < ApplicationRecord
   belongs_to :content_type
   belongs_to :media_content
 
+  has_many :tags, through: :taggings
+
   validates :title, presence: true
 end

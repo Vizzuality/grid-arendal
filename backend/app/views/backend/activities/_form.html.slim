@@ -2,11 +2,9 @@
 
 div.fields
 
-  = render 'backend/shared/form/field_input', form: form, value: :tag_list
+  = render 'backend/shared/form/field_association', form: form, value: :content_type, collection: content_types, label_method: :title, js_trigger_class: 'js-select-tags'
 
-  = render 'backend/shared/form/field_association', form: form, value: :content_type,
-    collection: content_types, label_method: :title, js_trigger_class: 'js-select-tags',
-    note_txt: 'Choose type'
+  = render 'backend/shared/form/field_association', form: form, value: :tags, collection: tags, label_method: :name, js_trigger_class: 'js-select-tags', data_type: 'tags'
 
   = render 'backend/shared/form/field_media_content', form: form, value: :media_content_id, media_contents: @media_contents, label_txt: 'Picture'
 
@@ -14,7 +12,7 @@ div.fields
 
   = render 'backend/shared/form/field_textarea', form: form, value: :description
 
-  = render 'backend/shared/form/field_input', form: form, value: :content_date, js_trigger_class: 'js-select'
+  = render 'backend/shared/form/field_input', form: form, value: :content_date
 
   = render 'backend/shared/form/field_input', form: form, value: :story_map_url
 

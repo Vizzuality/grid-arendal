@@ -8,4 +8,6 @@ div.fields
 
   = render 'backend/shared/form/field_input', form: form, value: :exposure_slug
 
-  = render 'backend/shared/form/field_input', form: form, value: :publication_date, js_trigger_class: 'js-select'
+  = render 'backend/shared/form/field_input', form: form, value: :publication_date
+
+  = render 'backend/shared/form/field_association', form: form, value: :tags, collection: tags, label_method: :name, js_trigger_class: 'js-select-tags', data_type: 'tags'
