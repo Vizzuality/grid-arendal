@@ -14,6 +14,6 @@ class PublicationsController < ApplicationController
   private
     def set_publication
       @publication = Publication.find(params[:id])
-      @media_content = MediaContent.find(@publication.media_content_id)
+      @media_content = @publication.media_content_id.present? ? MediaContent.find(@publication.media_content_id) : nil
     end
 end
