@@ -32,9 +32,7 @@ class Content < ApplicationRecord
   has_many :content_partners
   has_many :partners, through: :content_partners
   belongs_to :content_type
-  belongs_to :media_content, foreign_key: :media_content_id, touch: true
-
-  accepts_nested_attributes_for :media_content
+  belongs_to :media_content
 
   validates :title, presence: true
 end

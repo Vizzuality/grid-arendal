@@ -8,9 +8,7 @@ div.fields
     collection: content_types, label_method: :title, js_trigger_class: 'js-select-tags',
     note_txt: 'Choose type'
 
-  = form.simple_fields_for :media_content do |media_content|
-
-    = render 'backend/shared/form/field_upload_img', form: media_content, value: :photo_file, label_txt: 'Picture', have_picture: false, picture_url: nil
+  = render 'backend/shared/form/field_media_content', form: form, value: :media_content_id, media_contents: @media_contents, label_txt: 'Picture'
 
   = render 'backend/shared/form/field_limited_input', form: form, value: :short_description, maxlength: 140
 

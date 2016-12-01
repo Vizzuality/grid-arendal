@@ -201,7 +201,8 @@ $error-red: #ec5c5c;
         }
       }
 
-      &[data-type="picture"] {
+      &[data-type="picture"],
+      &[data-type="media-content"] {
 
         input {
           position: absolute;

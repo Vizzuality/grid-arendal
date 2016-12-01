@@ -6,8 +6,15 @@ module Backend
     load_and_authorize_resource
 
     before_action :set_flickr
-    before_action :set_media_content,  except: [:index, :new, :create]
+    before_action :set_media_content,  except: [:index, :new, :create, :search]
     before_action :set_media_contents, except: :index
+
+    def search
+      @media_contents = MediaContent.where("UPPER(title) like UPPER(?)", "#{params[:query]}%").limit(20)
+      respond_to do |format|
+        format.js
+      end
+    end
 
     def index
       redirect_to new_media_content_url(mediable: 'photo')

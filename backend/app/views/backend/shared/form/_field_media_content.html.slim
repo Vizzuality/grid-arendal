@@ -1,0 +1,22 @@
+.field data-type="media-content"
+
+  = form.label value, label_txt, class: 'text -field-label -bold -dark'
+
+  = form.hidden_field value
+
+  .fake-input
+    div.tip
+      svg.icon
+        use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-img"
+      p.text.-plain-text.-dark Drag and drop an image or click here to upload one.
+
+  = link_to "Add a new picture to the Media Library", new_media_content_path, target: "_blank"
+
+  div.searcher
+
+    = text_field_tag :query, params[:query] || nil, id: "search-media-contents"
+
+    .pictures
+
+      = render 'matching_pictures', media_contents: media_contents
+
