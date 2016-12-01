@@ -14,6 +14,8 @@
       screenMWidth: 768
     },
 
+    selectedValues: [],
+
     initialize: function(settings) {
       if (!this.el) {
         return;
@@ -32,6 +34,7 @@
       this.$speaker = this.$el.find(".speaker");
       this.$speakerText = this.$el.find(".speaker .text");
       this.$dropdown = this.$el.find(".dropdown");
+      this.key = this.$el.data("filter-key");
     },
 
     _setSpeaker: function(value) {
@@ -39,13 +42,19 @@
     },
 
     _setSelectValue: function(element) {
+      var value = $(element.currentTarget).data("value");
+      this._updateSelectedValue(value);
       this.$select
-        .val($(element.currentTarget).data("value"))
+        .val(value)
         .change();
     },
 
     _setHaveValue: function () {
       this.$el.addClass(this.options.haveValueClass);
+    },
+
+    _updateSelectedValue: function(value) {
+      this.selectedValues = [value];
     },
 
     _openDropdown: function() {

@@ -22,21 +22,22 @@
   <% filters = [
     {
       data: @content_types,
+      type: 'select',
       title: 'FILTER BY',
       placeholder: 'Filter by type',
-      type: 'select'
+      key: 'content-types'
     },
     {
       data: @tags,
+      type: 'tags',
       title: 'FILTER BY',
       placeholder: 'Filter by tags',
-      type: 'tags'
+      key: 'tags'
     },
     {
       data: @years,
-      title: '',
-      placeholder: '',
-      type: 'years'
+      type: 'years',
+      key: 'years'
     }
   ] %>
   <%= render 'shared/filters', filters: filters %>

@@ -10,7 +10,6 @@
       'click .js-tags-select-closer' : '_closeProcess'
     },
 
-    selectedTags: [],
     selectedTagsNames: [],
 
     _setSelectValue: function(e) {
@@ -27,10 +26,10 @@
       var value = element.data("value");
       var name = element.data("name");
       if (drop) {
-        this.selectedTags = _.without(this.selectedTags, value);
+        this.selectedValues = _.without(this.selectedValues, value);
         this.selectedTagsNames = _.without(this.selectedTagsNames, name);
       } else {
-        this.selectedTags.push(value);
+        this.selectedValues.push(value);
         this.selectedTagsNames.push(name);
       }
     },
@@ -44,7 +43,7 @@
     },
 
     _setHaveValue: function () {
-      this.selectedTags.length > 0
+      this.selectedValues.length > 0
         ? this.$el.addClass(this.options.haveValueClass)
         : this.$el.removeClass(this.options.haveValueClass)
     },

@@ -5,8 +5,7 @@ class PublicationsController < ApplicationController
   def index
     @publications = Publication.order(:title).published
     @content_types = ContentType.where(for_content: ContentType::PUBLICATION).or(ContentType.where(for_content: ContentType::BOTH))
-    #@years = (Publication.minimum(:created_at).year...Publication.maximum(:created_at).year)
-    @years = (2012..2016)
+    @years = (Publication.minimum(:created_at).year...Publication.maximum(:created_at).year)
     @tags = Tag.order(:name)
   end
 

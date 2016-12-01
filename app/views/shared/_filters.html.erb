@@ -9,7 +9,15 @@
       </div>
       <div class="container">
         <% filters.each do |filter| %>
-          <%= render "shared/filters/#{filter[:type]}", data: filter[:data], js_trigger: filter[:js_trigger], title: filter[:title], placeholder: filter[:placeholder] %>
+          <% filter[:title] ||= ''
+             filter[:placeholder] ||= ''
+          %>
+          <%= render "shared/filters/#{filter[:type]}",
+            data: filter[:data],
+            js_trigger: filter[:js_trigger],
+            title: filter[:title],
+            placeholder: filter[:placeholder],
+            key: filter[:key] %>
         <% end %>
         <%#=render 'shared/filters/search', placeholder: "Search media" %>
       </div>

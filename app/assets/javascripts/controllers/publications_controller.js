@@ -7,36 +7,21 @@
   App.Controller.Publications = App.Controller.Page.extend({
 
     index: function(params) {
-      var masonryView = new App.View.Masonry({
+      new App.View.Masonry({
         el: '#masonry-layout'
       });
-      var filtersView = new App.View.MediaFilters({
-        options: {
-          filters: [
-            {
-              type: "select",
-              triggerClass: ".js-dropdown-order-by"
-            },
-            {
-              type: "select",
-              triggerClass: ".js-dropdown-filter-by-type"
-            },
-            {
-              type: "tag",
-              triggerClass: ".js-dropdown-filter-by-tags"
-            },
-            {
-              type: "years",
-              triggerClass: ".js-years-filter"
-            }
-          ]
-        }
+      this.filtersView = new App.View.MediaFilters({
+        callback: this._filter.bind(this)
       });
     },
 
     show: function(params) {
-      console.log('publications#show');
       this.initSliders();
+    },
+
+    _filter: function() {
+      console.log(this.filtersView.filters);
+      console.log("_filter!!");
     },
 
     initSliders: function() {

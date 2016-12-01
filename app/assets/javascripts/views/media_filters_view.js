@@ -22,6 +22,7 @@
     initialize: function(settings) {
       var opts = settings && settings.options ? settings.options : {};
       this.options = _.extend({}, this.options, opts);
+      this.callback = settings.callback;
 
       this._loadFilters();
       this._cache();
@@ -32,6 +33,7 @@
     },
 
     _loadFilters: function() {
+      this.filters = [];
       _.each(this.$el.find(this.options.filterTriggerClass), function(item) {
         var filter = $(item);
         switch (filter.data("filter-type")) {
@@ -49,28 +51,28 @@
     },
 
     _loadSelect: function(helperFilter) {
-      new App.Helper.SelectHandler(helperFilter);
+      this.filters.push(new App.Helper.SelectHandler(helperFilter));
     },
 
     _loadTag: function(helperFilter) {
-      new App.Helper.TagSelectHandler(helperFilter);
+      this.filters.push(new App.Helper.TagSelectHandler(helperFilter));
     },
 
     _loadYears: function(helperFilter) {
-      new App.Helper.YearsFilter(helperFilter);
+      this.filters.push(new App.Helper.YearsFilter(helperFilter));
     },
 
     _getHelperFilterObject: function(filter) {
       return {
         el: filter,
         options: {
-          callback: this._filterMedia
+          callback: this._filterMedia.bind(this)
         }
       };
     },
 
     _filterMedia: function() {
-      console.log("_filterMedia!!");
+      this.callback();
     },
 
     _onClickToggleFilters: function() {

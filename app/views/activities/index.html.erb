@@ -22,15 +22,17 @@
   <% filters = [
     {
       data: @content_types,
+      type: 'select',
       title: 'FILTER BY',
       placeholder: 'Filter by type',
-      type: 'select'
+      key: 'content-types'
     },
     {
       data: @partners,
+      type: 'select',
       title: 'FILTER BY',
       placeholder: 'Filter by partner',
-      type: 'select'
+      key: 'partners'
     }
   ] %>
   <%= render 'shared/filters', filters: filters %>

@@ -7,15 +7,22 @@
   App.Controller.Activities = App.Controller.Page.extend({
 
     index: function(params) {
-      var masonryView = new App.View.Masonry({
+      new App.View.Masonry({
         el: '#masonry-layout'
       });
-      var filtersView = new App.View.MediaFilters({});
+      this.filtersView = new App.View.MediaFilters({
+        callback: this._filter.bind(this)
+      });
     },
 
     show: function(params) {
-      var activitiesAnchorsView = new App.View.ActivitiesAnchors({});
+      new App.View.ActivitiesAnchors({});
       this.initSliders();
+    },
+
+    _filter: function() {
+      console.log(this.filtersView.filters);
+      console.log("_filter!!");
     },
 
     initSliders: function() {

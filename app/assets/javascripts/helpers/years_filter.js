@@ -10,7 +10,7 @@
       selectedClass: "selected"
     },
 
-    selectedYears: [],
+    selectedValues: [],
 
     initialize: function(settings) {
       if (!this.el) {
@@ -29,9 +29,9 @@
 
     _updateSelectedYears: function(drop, value) {
       if (drop) {
-        this.selectedYears = _.without(this.selectedYears, value);
+        this.selectedValues = _.without(this.selectedValues, value);
       } else {
-        this.selectedYears.push(value);
+        this.selectedValues.push(value);
       }
     },
 
