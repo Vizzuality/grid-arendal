@@ -37,8 +37,12 @@
   ] %>
   <%= render 'shared/filters', filters: filters %>
 
-  <div id="activities">
-    <%= render 'activities' %>
+  <div class="row">
+    <div class="small-12 small-centered columns -fix">
+      <div id="masonry-layout" class="masonry-layout" hidden data-columns>
+        <%= render 'activities' %>
+      </div>
+    </div>
   </div>
 
 </div>

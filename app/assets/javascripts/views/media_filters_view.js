@@ -106,7 +106,6 @@
     getFilterValues: function () {
       var queryStr = '';
       var filterNum = this.filters.length;
-      console.log(filterNum);
       _.each(this.filters, function (filter, index) {
         if ( filter.selectedValues.length > 0 ) {
         queryStr += filter.key + '=';
@@ -121,7 +120,6 @@
         }
       }
       });
-      console.log(queryStr);
       return queryStr;
     },
 
