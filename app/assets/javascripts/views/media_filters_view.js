@@ -72,7 +72,12 @@
     },
 
     _filterMedia: function() {
+      this._setHash();
       this.callback();
+    },
+
+    _setHash: function () {
+      window.location.hash = '#filters-' + this.getStringifyFiltersValue();
     },
 
     _onClickToggleFilters: function() {
@@ -95,7 +100,18 @@
       elem.remove();
 
       return height;
-    }
+    },
+
+    getStringifyFiltersValue: function () {
+      var hashFilters = {};
+      _.each(this.filters, function (filter) {
+        if (filter.selectedValues.length > 0) {
+          hashFilters[filter.key] = filter.selectedValues;
+        }
+      });
+
+      return JSON.stringify(hashFilters);
+    },
 
   });
 

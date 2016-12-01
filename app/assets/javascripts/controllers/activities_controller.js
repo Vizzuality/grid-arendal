@@ -21,7 +21,7 @@
     },
 
     _filter: function() {
-      console.log(this.filtersView.filters);
+      console.log(this.filtersView.getStringifyFiltersValue());
       console.log("_filter!!");
     },
 
