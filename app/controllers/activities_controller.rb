@@ -16,6 +16,5 @@ class ActivitiesController < ApplicationController
 
     def set_activity
       @activity = Activity.find(params[:id])
-      @media_content = @activity.media_content_id.present? ? MediaContent.find(@activity.media_content_id) : nil
     end
 end
