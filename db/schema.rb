@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161125121452) do
+ActiveRecord::Schema.define(version: 20161129144032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 20161125121452) do
     t.text     "short_description"
     t.date     "content_date"
     t.integer  "content_type_id"
+    t.integer  "media_content_id"
   end
 
   create_table "events", force: :cascade do |t|

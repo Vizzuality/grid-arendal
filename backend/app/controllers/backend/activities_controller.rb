@@ -84,6 +84,7 @@ module Backend
           where(for_content: [ContentType::BOTH, ContentType::ACTIVITY]).
           order(:title)
         @tags = Tag.order(:name)
+        @media_contents = MediaContent.all
       end
   end
 end

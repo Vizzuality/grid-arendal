@@ -32,6 +32,7 @@ class Content < ApplicationRecord
   has_many :content_partners
   has_many :partners, through: :content_partners
   belongs_to :content_type
+  belongs_to :media_content
 
   has_many :tags, through: :taggings
 

@@ -54,6 +54,7 @@ Backend::Engine.routes.draw do
   resources :media_contents, except: :show do
     patch 'publish',   on: :member
     patch 'unpublish', on: :member
+    get 'search', on: :collection
   end
 
   root to: 'admin_home#index'
