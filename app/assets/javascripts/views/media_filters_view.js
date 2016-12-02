@@ -26,6 +26,7 @@
 
       this._loadFilters();
       this._cache();
+      // this._setFiltersFromUrl();
     },
 
     _cache: function() {
@@ -103,21 +104,44 @@
       return height;
     },
 
-    getFilterValues: function () {
+    _getFiltersFromUrl: function() {
+      var vars = [], hash;
+      var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+      debugger
+      for ( var i = 0; i < hashes.length; i++ ) {
+          hash = hashes[i].split('=');
+          vars.push(hash[0]);
+          vars[hash[0]] = hash[1];
+      }
+      return vars;
+    },
+
+    _setFiltersFromUrl: function() {
+      var activeFilters = this._getFiltersFromUrl();
+      console.log('ready');
+      $.each(activeFilters, function(value, index) {
+        debugger
+        var activeFilterItem = $('.filter [data-filter-key="' + index + '"]').find('.-filter[data-value="' + value + '"]');
+        $('#' + index).text(activeFilterItem.text());
+        console.log(value);
+      });
+    },
+
+    getFilterValues: function() {
       var queryStr = '';
       var filterNum = this.filters.length;
       _.each(this.filters, function (filter, index) {
         if ( filter.selectedValues.length > 0 ) {
-        queryStr += filter.key + '=';
-        filter.selectedValues.forEach(function (value, index) {
+          if ( index > 0 ) {
+            queryStr += '&';
+          }
+          queryStr += filter.key + '=';
+          filter.selectedValues.forEach(function (value, index) {
           queryStr += value;
           if ( index < filter.selectedValues.length - 1 ) {
             queryStr += ',';
           }
         });
-        if ( index < filterNum - 1 ) {
-          queryStr += '&';
-        }
       }
       });
       return queryStr;

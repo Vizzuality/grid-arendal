@@ -20,8 +20,9 @@
     },
 
     _filter: function() {
-      console.log(this.filtersView.getStringifyFiltersValue());
-      console.log("_filter!!");
+      jQuery.ajaxSetup({cache: true});
+      $.getScript($(location).attr('href'));
+      return false;
     },
 
     initSliders: function() {
