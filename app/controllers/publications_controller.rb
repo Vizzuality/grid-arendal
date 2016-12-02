@@ -4,12 +4,12 @@ class PublicationsController < ApplicationController
 
   def index
     @publications = Publication.order(:title).published
-    # if params['content-types']
-    #   @publications = @publications.where(content_type_id: params['content-types'])
-    # end
-    # if params[:tags]
-    #   @publications = @publications.joins(:tags).where(tags: {id: params[:tags].split(/,/)})
-    # end
+    if params['content-types']
+      @publications = @publications.where(content_type_id: params['content-types'])
+    end
+    if params[:tags]
+      @publications = @publications.joins(:tags).where(tags: {id: params[:tags].split(/,/)})
+    end
     @content_types = ContentType.where(for_content: ContentType::PUBLICATION).or(ContentType.where(for_content: ContentType::BOTH))
     @years = (Publication.minimum(:created_at).year...Publication.maximum(:created_at).year)
     @tags = Tag.order(:name)
