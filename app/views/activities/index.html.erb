@@ -27,7 +27,7 @@
           <%= link_to activity do %>
             <div class="item">
               <article class="c-card">
-                <div class="card-pic" style="background-image: url('<%= activity.picture %>')"></div>
+                <div class="card-pic" <% if activity.media_content && activity.media_content.mediable_photo_url.present? %>style="background-image: url('<%= activity.media_content.mediable_photo_url %>');"<% end %>></div>
                 <div class="card-descrition">
                   <h3 class="text -title-card"><%= activity.title %></h3>
                   <p class="text -summary"><%= activity.short_description %></p>

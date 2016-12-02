@@ -27,7 +27,7 @@
           <%= link_to publication_path(publication) do %>
             <div class="item">
               <article class="c-card">
-                <div class="card-pic" style="background-image: url('<%= publication.picture %>')"></div>
+                <div class="card-pic" <% if publication.media_content && publication.media_content.mediable_photo_url.present? %>style="background-image: url('<%= publication.media_content.mediable_photo_url %>');"<% end %>></div>
                 <div class="card-descrition">
                   <h3 class="text -title-card"><%= publication.title %></h3>
                   <p class="text -summary"><%= publication.short_description %></p>
