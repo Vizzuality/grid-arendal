@@ -11,7 +11,11 @@ class PublicationsController < ApplicationController
       @publications = @publications.joins(:tags).where(tags: {id: params[:tags].split(/,/)})
     end
     @content_types = ContentType.where(for_content: ContentType::PUBLICATION).or(ContentType.where(for_content: ContentType::BOTH))
-    @years = (Publication.minimum(:created_at).year...Publication.maximum(:created_at).year)
+    @years = if Publication.any?
+               (Publication.minimum(:created_at).year...Publication.maximum(:created_at).year)
+             else
+               [Date.today.year]
+             end
     @tags = Tag.order(:name)
   end
 
