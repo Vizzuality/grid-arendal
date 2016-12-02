@@ -39,26 +39,8 @@
 
   <div class="row">
     <div class="small-12 small-centered columns -fix">
-<<<<<<< HEAD
       <div id="masonry-layout" class="masonry-layout" data-columns="3">
         <%= render 'activities' %>
-=======
-      <div id="masonry-layout" class="masonry-layout" hidden data-columns>
-        <% @activities.each do |activity| %>
-          <%= link_to activity do %>
-            <div class="item">
-              <article class="c-card">
-                <div class="card-pic" <% if activity.media_content && activity.media_content.mediable_photo_url.present? %>style="background-image: url('<%= activity.media_content.mediable_photo_url %>');"<% end %>></div>
-                <div class="card-descrition">
-                  <h3 class="text -title-card"><%= activity.title %></h3>
-                  <p class="text -summary"><%= activity.short_description %></p>
-                  <p class="text -meta"><%= time_ago_in_words(activity.created_at) %></p>
-                </div>
-              </article>
-            </div>
-          <% end %>
-        <% end %>
->>>>>>> 1c36895919ae2d736d975af0e4ddfc82acbeace8
       </div>
     </div>
   </div>
