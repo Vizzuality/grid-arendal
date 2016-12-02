@@ -26,7 +26,7 @@
 
       this._loadFilters();
       this._cache();
-      // this._setFiltersFromUrl();
+      this._setFiltersFromUrl();
     },
 
     _cache: function() {
@@ -105,12 +105,10 @@
     },
 
     _getFiltersFromUrl: function() {
-      var vars = [], hash;
+      var vars = {}, hash;
       var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-      debugger
       for ( var i = 0; i < hashes.length; i++ ) {
           hash = hashes[i].split('=');
-          vars.push(hash[0]);
           vars[hash[0]] = hash[1];
       }
       return vars;
@@ -118,13 +116,19 @@
 
     _setFiltersFromUrl: function() {
       var activeFilters = this._getFiltersFromUrl();
-      console.log('ready');
-      $.each(activeFilters, function(value, index) {
-        debugger
-        var activeFilterItem = $('.filter [data-filter-key="' + index + '"]').find('.-filter[data-value="' + value + '"]');
-        $('#' + index).text(activeFilterItem.text());
+      console.log(activeFilters);
+      var i = 0;
+      _.each(activeFilters, function(value, filter) {
+        this.filters[i].selectedValues = value;
+        // set active class
+        console.log(filter);
         console.log(value);
-      });
+
+        $('.filter[data-filter-key="' + filter + '"]').addClass('-have-value');
+        var activeFilterItem = $('.filter[data-filter-key="' + filter + '"]').find('.-filter[data-value="' + value + '"]');
+        $('#' + filter).text(activeFilterItem.text());
+        i++;
+      }.bind(this));
     },
 
     getFilterValues: function() {
@@ -136,13 +140,13 @@
             queryStr += '&';
           }
           queryStr += filter.key + '=';
-          filter.selectedValues.forEach(function (value, index) {
-          queryStr += value;
-          if ( index < filter.selectedValues.length - 1 ) {
-            queryStr += ',';
-          }
-        });
-      }
+          _.each(filter.selectedValues, function (value, index) {
+            queryStr += value;
+            if ( index < filter.selectedValues.length - 1 ) {
+              queryStr += ',';
+            }
+          });
+        }
       });
       return queryStr;
     },
