@@ -1,4 +1,4 @@
-<div class="l-header-single -activities-article" <% if @activity.picture_file_name %>style="background-image: url('<%= @activity.picture %>');"<% end %>>
+<div class="l-header-single -activities-article" <% if @activity.media_content && @activity.media_content.mediable_photo_url.present? %>style="background-image: url('<%= @activity.media_content.mediable_photo_url %>');"<% end %>>
   <div class="overlay"></div>
   <%= render 'shared/menu' %>
   <div class="row">

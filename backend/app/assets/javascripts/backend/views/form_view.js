@@ -23,6 +23,7 @@
       this._loadMediumEditor();
       this._loadSelect();
       this._loadTaggingSelect();
+      this._loadMediaContentSearch();
     },
 
     _cache: function () {
@@ -64,6 +65,12 @@
     _loadTaggingSelect: function () {
       $(this.options.selectTagsTriggerClass).select2({
         tags: true
+      });
+    },
+
+    _loadMediaContentSearch: function() {
+      new App.Helper.FormMediaContentSearch({
+        el: $(this.$el.find('[data-type="media-content"]'))
       });
     },
 
