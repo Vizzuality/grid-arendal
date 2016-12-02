@@ -107,6 +107,11 @@
     _getFiltersFromUrl: function() {
       var vars = {}, hash;
       var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+      var route = 'http://' + window.location.host + window.location.pathname;
+      debugger
+      if ( hashes[0] === route ) {
+        return false
+      }
       for ( var i = 0; i < hashes.length; i++ ) {
           hash = hashes[i].split('=');
           vars[hash[0]] = hash[1];
@@ -116,14 +121,12 @@
 
     _setFiltersFromUrl: function() {
       var activeFilters = this._getFiltersFromUrl();
-      console.log(activeFilters);
+      if ( activeFilters === false ) {
+        return false
+      }
       var i = 0;
       _.each(activeFilters, function(value, filter) {
         this.filters[i].selectedValues = value;
-        // set active class
-        console.log(filter);
-        console.log(value);
-
         $('.filter[data-filter-key="' + filter + '"]').addClass('-have-value');
         var activeFilterItem = $('.filter[data-filter-key="' + filter + '"]').find('.-filter[data-value="' + value + '"]');
         $('#' + filter).text(activeFilterItem.text());

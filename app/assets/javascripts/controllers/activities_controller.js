@@ -7,9 +7,9 @@
   App.Controller.Activities = App.Controller.Page.extend({
 
     index: function(params) {
-      new App.View.Masonry({
-        el: '#masonry-layout'
-      });
+      // new App.View.Masonry({
+      //   el: '#masonry-layout'
+      // });
       this.filtersView = new App.View.MediaFilters({
         callback: this._filter.bind(this)
       });
