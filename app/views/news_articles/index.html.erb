@@ -25,16 +25,18 @@
       <div id="masonry-layout" class="masonry-layout" hidden data-columns>
         <% @articles.each do |article| %>
           <div class="item">
-            <article class="c-card">
-              <div class="card-pic" style="background-image: url('<%= article.cover_src %>')"></div>
-              <div class="card-descrition">
-                <h3 class="text -title-card"><%= article.title %></h3>
-                <p class="text -summary"><%= article.short_description %></p>
-                <p class="text -meta">
-                  <%= time_ago_in_words(article.publication_date) %>
-                </p>
-              </div>
-            </article>
+            <%= link_to news_path(article) do %>
+              <article class="c-card">
+                <div class="card-pic" style="background-image: url('<%= article.cover_src %>')"></div>
+                <div class="card-descrition">
+                  <h3 class="text -title-card"><%= article.title %></h3>
+                  <p class="text -summary"><%= article.short_description %></p>
+                  <p class="text -meta">
+                    <%= time_ago_in_words(article.publication_date) %>
+                  </p>
+                </div>
+              </article>
+            <% end %>
           </div>
         <% end %>
       </div>

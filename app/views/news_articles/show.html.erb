@@ -1,3 +1,68 @@
-<h2><%= @article.title %></h2>
+<div class="l-header-single -activities-article" <% if @article.cover_src.present? %> style="background-image: url('<%= @article.cover_src %>');"<% end %>>
+  <div class="overlay"></div>
+  <%= render 'shared/menu' %>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="title-block">
+        <div class="c-breadcrumbs">
+          <a href="/">
+            <svg class="icon-home">
+              <use xlink:href="#icon-breadcrumb-home"></use>
+            </svg>
+          </a>
+          <svg class="icon">
+            <use xlink:href="#icon-breadcrumb-chevron-right"></use>
+          </svg>
+          <%= link_to "News", news_path, class: "text -meta" %>
+          <svg class="icon">
+            <use xlink:href="#icon-breadcrumb-chevron-right"></use>
+          </svg>
+          <span class="text -meta"><%= @article.title %></span>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<iframe src="https://GRIDArendal.exposure.co/<%= @article.exposure_slug %>?embed=true" style="width:100%;height:600px;margin-bottom:5px;border:solid 1px #ccc;border-radius:2px;"></iframe><br><a href="https://gridarendal.exposure.co/plastic-can-end-up-on-your-dinner-plate">Plastic can end up on your dinner plate</a> by <a href="https://gridarendal.exposure.co/">GRID-Arendal</a> on <a href="https://exposure.co" style="text-transform:uppercase">Exposure</a>
+  <div class="section-menu">
+    <div class="row">
+      <div class="small-12 columns">
+        <div class="title-block">
+          <div class="small-8 medium-7">
+            <h2 class="text -title-single-alt"><%= @article.title %></h2>
+          </div>
+          <div class="share">
+            <svg class="icon">
+              <use xlink:href="#icon-share"></use>
+            </svg>
+          </div>
+        </div>
+
+        <ul class="anchors">
+          <li class="text -section-menu js-anchor" data-section-belongs="overview">Overview</li>
+          <li class="text -section-menu js-anchor">
+            <%= link_to "Read on Exposure", "http://news.grida.no/#{@article.exposure_slug}", target: '_blank' %>
+          </li>
+          <% if @article.activities.any? %>
+            <li class="text -section-menu js-anchor" data-section-belongs="posts">Activities</li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="l-single-article -activities" data-section="overview">
+
+  <div class="row">
+    <div class="small-12 column">
+      <div class="text -summary-alt"><%= raw @article.description %></div>
+    </div>
+  </div>
+</section>
+
+<% if @article.activities.any? %>
+  <%= render 'shared/posts', collection: @article.activities, title: 'activities',
+    link: publications_path %>
+<% end %>
+
+<%= render 'shared/footer' %>
