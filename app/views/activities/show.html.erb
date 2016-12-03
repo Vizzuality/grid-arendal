@@ -39,8 +39,12 @@
 
         <ul class="anchors">
           <li class="text -section-menu js-anchor" data-section-belongs="overview">Overview</li>
-          <li class="text -section-menu js-anchor" data-section-belongs="users">Staff involved</li>
-          <li class="text -section-menu js-anchor" data-section-belongs="posts">Publications</li>
+          <% if @users %>
+            <li class="text -section-menu js-anchor" data-section-belongs="users">Staff involved</li>
+          <% end %>
+          <% if @publications %>
+            <li class="text -section-menu js-anchor" data-section-belongs="posts">Publications</li>
+          <% end %>
           <li class="text -section-menu js-anchor" data-section-belongs="news">Related News</li>
           <li class="text -section-menu js-anchor" data-section-belongs="media">Related media</li>
           <li class="text -section-menu js-anchor" data-section-belongs="partners">Partners & Links</li>
@@ -59,9 +63,14 @@
   </div>
 </section>
 
-<%= render 'shared/users' %>
+<% if @users %>
+  <%= render 'shared/users' %>
+<% end %>
 
-<%= render 'shared/posts', collection: @publications, title: 'publications', link: publications_path %>
+<% if @publications %>
+  <%= render 'shared/posts', collection: @publications, title: 'publications',
+    link: publications_path %>
+<% end %>
 
 <%= render 'shared/news' %>
 
