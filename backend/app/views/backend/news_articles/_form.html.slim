@@ -10,4 +10,9 @@ div.fields
 
   = render 'backend/shared/form/field_input', form: form, value: :publication_date
 
+.fields.-grey
   = render 'backend/shared/form/field_tags', form: form, collection: tags
+
+  = render 'backend/shared/form/field_association', form: form,
+    value: :activities, collection: activities, label_method: :title,
+    js_trigger_class: 'js-select-tags', note_txt: '(Choose related activities)'

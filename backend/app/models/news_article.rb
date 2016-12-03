@@ -13,6 +13,9 @@
 #
 
 class NewsArticle < ApplicationRecord
+  has_many :activity_news
+  has_many :activities, through: :activity_news
+
   validates :title, presence: true
   acts_as_taggable
 end

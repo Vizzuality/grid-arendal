@@ -10,6 +10,7 @@
   <%= simple_form_for @news_article, html: { class: 'c-form' } do |f| %>
     <%= render 'form',
       form: f,
-      tags: @tags %>
+      tags: @tags,
+      activities: @activities %>
   <% end %>
 </div>

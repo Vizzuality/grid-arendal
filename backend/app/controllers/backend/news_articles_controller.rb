@@ -21,7 +21,7 @@ module Backend
 
     def update
       if @news_article.update(news_article_params)
-        redirect_to news_articles_url, notice: 'NewsArticle updated'
+        redirect_to news_articles_url, notice: 'News Article updated'
       else
         set_objects
         render :edit
@@ -61,6 +61,7 @@ module Backend
 
       def set_objects
         @tags = Tag.order(:name)
+        @activities = Activity.order(:title)
       end
   end
 end
