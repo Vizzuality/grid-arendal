@@ -20,6 +20,7 @@ class Partner < ApplicationRecord
   include Attachable::Logo
 
   has_many :events
+  has_many :content_partners, dependent: :destroy
 
   validates :name, presence: true
 

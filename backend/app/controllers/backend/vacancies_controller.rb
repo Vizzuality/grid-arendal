@@ -34,13 +34,19 @@ module Backend
     end
 
     def publish
-      @vacancy.try(:publish)
-      redirect_to vacancies_url
+      @item = @vacancy
+      @item.try(:publish)
+      respond_to do |format|
+        format.js { render 'backend/shared/index_options' }
+      end
     end
 
     def unpublish
-      @vacancy.try(:unpublish)
-      redirect_to vacancies_url
+      @item = @vacancy
+      @item.try(:unpublish)
+      respond_to do |format|
+        format.js { render 'backend/shared/index_options' }
+      end
     end
 
     private

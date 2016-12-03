@@ -1,0 +1,4 @@
+$(function(){
+  $('#options-for-<%= @item.id %>').
+    html('<%= escape_javascript(render 'backend/shared/index_options', item: @item) %>');
+});

@@ -47,23 +47,35 @@ module Backend
     end
 
     def publish
-      @publication.try(:publish)
-      redirect_to publications_url
+      @item = @publication
+      @item.try(:publish)
+      respond_to do |format|
+        format.js { render 'backend/shared/index_options' }
+      end
     end
 
     def unpublish
-      @publication.try(:unpublish)
-      redirect_to publications_url
+      @item = @publication
+      @item.try(:unpublish)
+      respond_to do |format|
+        format.js { render 'backend/shared/index_options' }
+      end
     end
 
     def make_featured
-      @publication.try(:make_featured)
-      redirect_to publications_url
+      @item = @publication
+      @item.try(:make_featured)
+      respond_to do |format|
+        format.js { render 'backend/shared/index_options' }
+      end
     end
 
     def remove_featured
-      @publication.try(:remove_featured)
-      redirect_to publications_url
+      @item = @publication
+      @item.try(:remove_featured)
+      respond_to do |format|
+        format.js { render 'backend/shared/index_options' }
+      end
     end
 
     private

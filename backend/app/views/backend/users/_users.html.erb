@@ -9,8 +9,6 @@
   <% users.each do |user| %>
     <%= render 'backend/shared/index_item',
       item: user,
-      title: "#{user.full_name} - #{user.email} (#{user.status})",
-      edit_path: edit_user_path(user),
-      delete_path: user_path(user) %>
+      title: "#{user.full_name} - #{user.email} (#{user.status})" %>
   <% end %>
 </ul>

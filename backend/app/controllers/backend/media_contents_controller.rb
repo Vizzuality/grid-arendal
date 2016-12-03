@@ -58,18 +58,18 @@ module Backend
     end
 
     def unpublish
-      if @media_content.try(:unpublish)
-        redirect_to media_contents_url
-      else
-        redirect_to media_content_url(@media_content)
+      @item = @media_content
+      @item.try(:unpublish)
+      respond_to do |format|
+        format.js { render 'backend/shared/index_options' }
       end
     end
 
     def publish
-      if @media_content.try(:publish)
-        redirect_to media_contents_url
-      else
-        redirect_to media_content_url(@media_content)
+      @item = @media_content
+      @item.try(:publish)
+      respond_to do |format|
+        format.js { render 'backend/shared/index_options' }
       end
     end
 

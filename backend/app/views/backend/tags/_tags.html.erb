@@ -20,8 +20,6 @@
   <% @tags.each do |tag| %>
     <%= render 'backend/shared/index_item',
       item: tag,
-      title: tag.name,
-      edit_path: edit_tag_path(tag),
-      delete_path: tag_path(tag) %>
+      title: tag.name %>
   <% end %>
 </ul>
