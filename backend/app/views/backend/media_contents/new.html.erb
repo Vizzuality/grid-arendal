@@ -1,14 +1,13 @@
+<div class="l-navigation">
+  <%= render 'backend/shared/nav_bar' %>
+</div>
+
 <div class="l-items-index">
   <%= render 'media_contents', media_contents: @media_contents %>
 </div>
 
 <div class="l-items-detail">
-  <h2>New Media content</h2>
-
-  <%= simple_form_for @media_content do |f| %>
+  <%= simple_form_for @media_content, html: { class: 'c-form' } do |f| %>
     <%= render 'form', form: f %>
-    <div class="actions">
-      <%= f.submit 'Create media content' %>
-    </div>
   <% end %>
 </div>
