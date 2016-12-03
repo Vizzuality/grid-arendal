@@ -10,16 +10,16 @@
   <div class="options">
     <% if ['activities', 'publications'].include?(controller_name) %>
       <% if can?(:make_featured, item) && item.not_featured? %>
-          <%= link_to raw('<svg class="icon" data-type="Make featured"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-star_outline"></use></svg>'), make_featured_path, method: :patch, class: "MakeFeatured" %>
+          <%= link_to raw('<svg class="icon" data-type="Make featured"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-star_outline"></use></svg>'), make_featured_path, method: :patch, class: "MakeFeatured", title: "Make featured" %>
       <% end %>
       <% if can?(:remove_featured, item) && item.featured? %>
-          <%= link_to raw('<svg class="icon" data-type="Remove featured"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-star"></use></svg>'), remove_featured_path, method: :patch, class: "RemoveFeatured" %>
+          <%= link_to raw('<svg class="icon" data-type="Remove featured"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-star"></use></svg>'), remove_featured_path, method: :patch, class: "RemoveFeatured", title: "Remove featured" %>
       <% end %>
       <% if can?(:publish, item) && item.unpublished? %>
-          <%= link_to raw('<svg class="icon" data-type="Publish"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-visibility_off"></use></svg>'), publishn_path, method: :patch, class: "Publish" %>
+          <%= link_to raw('<svg class="icon" data-type="Publish"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-visibility"></use></svg>'), publishn_path, method: :patch, class: "Publish", title: "Publish" %>
       <% end %>
       <% if can?(:unpublish, item) && item.published? %>
-          <%= link_to raw('<svg class="icon" data-type="Unpublish"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-visibility"></use></svg>'), unpublish_path, method: :patch, class: "Unpublish" %>
+          <%= link_to raw('<svg class="icon" data-type="Unpublish"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-visibility_off"></use></svg>'), unpublish_path, method: :patch, class: "Unpublish", title: "Unpublish" %>
       <% end %>
     <% end %>
 
