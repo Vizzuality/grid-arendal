@@ -7,9 +7,7 @@ div.fields
     value: :content_type, collection: content_types, label_method: :title,
     js_trigger_class: 'js-select-tags'
 
-  = render 'backend/shared/form/field_association', form: form, value: :tags,
-    collection: tags, label_method: :name, js_trigger_class: 'js-select-tags',
-    data_type: 'tags'
+  = render 'backend/shared/form/field_tags', form: form, collection: tags
 
   = render 'backend/shared/form/field_media_content', form: form,
     value: :media_content_id, media_content_id: media_content_id,

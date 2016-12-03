@@ -6,7 +6,7 @@ module Backend
     load_and_authorize_resource
 
     before_action :set_news_article,  except: [:index, :new, :create]
-    before_action :set_news_articles, except: :index
+    before_action :set_news_articles, except: :destroy
     before_action :set_objects, only: [:new, :edit]
 
     def index
