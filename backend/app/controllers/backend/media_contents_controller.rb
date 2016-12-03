@@ -18,7 +18,7 @@ module Backend
     end
 
     def index
-      redirect_to new_media_content_url(mediable: 'photo')
+      @media_contents = MediaContent.order(:title)
     end
 
     def edit
