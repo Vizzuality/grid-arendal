@@ -1,36 +1,16 @@
-<div class="l-items-index">
-  <h2>Media contents</h2>
+<h2 class="text -main-title -light">Media Library</h2>
 
-  <% if can?(:create, MediaContent) %>
-    <div class="span">
-      <%= link_to 'New photo', new_media_content_path(mediable: 'photo') %>
-    </div>
-    <div class="span">
-      <%= link_to 'New album', new_media_content_path(mediable: 'album') %>
-    </div>
+<%= render 'backend/shared/index_items_buttons.html',
+  havePermissionToCreate: can?(:create, MediaContent),
+  createPath: new_media_content_path(mediable: 'photo')
+%>
+<ul class="items-list">
+  <% media_contents.each do |media_content| %>
+    <%= render 'backend/shared/index_item',
+      item: media_content,
+      title: media_content.title,
+      edit_path: edit_media_content_path(media_content, mediable: media_content.mediable_type),
+      delete_path: media_content
+    %>
   <% end %>
-  <ul>
-    <% @media_contents.each do |media_content| %>
-      <li>
-        <%= "#{media_content.title} (#{media_content.mediable_type})" %>
-        <% if media_content.mediable_photo_url.present? %>
-          <div class="photo_thumb"></div>
-            <%= image_tag media_content.mediable_photo_url, style: 'width: 150px; height: 100px;' %>
-        <div class="edit_links">
-          <div>
-            <%= link_to 'Edit', edit_media_content_path(media_content, mediable: media_content.mediable_type) %>
-          </div>
-          <div>
-            <%= link_to 'Delete', media_content, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </div>
-        </div>
-      <% end %>
-      <% if can? [:publish, :unpublish], media_content %>
-        <div class="publish_unpublish">
-          <%= render 'backend/shared/publishable_links', location: media_content %>
-        </div>
-      <% end %>
-      </li>
-    <% end %>
-  </ul>
-</div>
+</ul>
