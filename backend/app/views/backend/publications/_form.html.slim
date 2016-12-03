@@ -20,4 +20,5 @@ div.fields.-grey
 
   = render 'backend/shared/form/field_association', form: form, value: :users, collection: users, label_method: :display_name, js_trigger_class: 'js-select-tags'
 
-  = render 'backend/shared/form/field_association', form: form, value: :partners, collection: partners, label_method: :name
+  = render 'backend/shared/form/field_association', form: form, value: :partners,
+    collection: partners, label_method: :name, js_trigger_class: 'js-select-tags'
