@@ -1,14 +1,22 @@
-= render 'backend/shared/form/header', form: form, inputs: [{value: :title, title_placeholder: 'Activity title'}]
+= render 'backend/shared/form/header', form: form,
+  inputs: [{value: :title, title_placeholder: 'Activity title'}]
 
 div.fields
 
-  = render 'backend/shared/form/field_association', form: form, value: :content_type, collection: content_types, label_method: :title, js_trigger_class: 'js-select-tags'
+  = render 'backend/shared/form/field_association', form: form,
+    value: :content_type, collection: content_types, label_method: :title,
+    js_trigger_class: 'js-select-tags'
 
-  = render 'backend/shared/form/field_association', form: form, value: :tags, collection: tags, label_method: :name, js_trigger_class: 'js-select-tags', data_type: 'tags'
+  = render 'backend/shared/form/field_association', form: form, value: :tags,
+    collection: tags, label_method: :name, js_trigger_class: 'js-select-tags',
+    data_type: 'tags'
 
-  = render 'backend/shared/form/field_media_content', form: form, value: :media_content_id, media_content_id: media_content_id, media_contents: @media_contents, label_txt: 'Picture'
+  = render 'backend/shared/form/field_media_content', form: form,
+    value: :media_content_id, media_content_id: media_content_id,
+    media_contents: @media_contents, label_txt: 'Picture'
 
-  = render 'backend/shared/form/field_limited_input', form: form, value: :short_description, maxlength: 140
+  = render 'backend/shared/form/field_limited_input', form: form,
+    value: :short_description, maxlength: 140
 
   = render 'backend/shared/form/field_textarea', form: form, value: :description
 
@@ -20,10 +28,17 @@ div.fields
 
 div.fields.-grey
 
-  = render 'backend/shared/form/field_association', form: form, value: :publications, collection: publications, label_method: :title, js_trigger_class: 'js-select-tags', note_txt: '(Choose specific publications or tags)'
+  = render 'backend/shared/form/field_association', form: form,
+    value: :publications, collection: publications, label_method: :title,
+    js_trigger_class: 'js-select-tags', note_txt: '(Choose specific publications)'
 
-  = render 'backend/shared/form/field_association', form: form, value: :news_articles, collection: news_articles, label_method: :title, js_trigger_class: 'js-select-tags', note_txt: '(Choose specific publications or tags)'
+  = render 'backend/shared/form/field_association', form: form,
+    value: :news_articles, collection: news_articles, label_method: :title,
+    js_trigger_class: 'js-select-tags', note_txt: '(Choose specific news articles)'
 
-  = render 'backend/shared/form/field_association', form: form, value: :users, collection: users, label_method: :display_name, js_trigger_class: 'js-select-tags'
+  = render 'backend/shared/form/field_association', form: form, value: :users,
+    collection: users, label_method: :display_name,
+    js_trigger_class: 'js-select-tags'
 
-  = render 'backend/shared/form/field_association', form: form, value: :partners, collection: partners, label_method: :name
+  = render 'backend/shared/form/field_association', form: form,
+    value: :partners, collection: partners, label_method: :name
