@@ -65,6 +65,18 @@
             </div>
           </div>
         </div>
+        <div class="row">
+          <div class="small-6 medium-12 large-12 columns">
+            <div class="title text -meta desktop">External links</div>
+            <div class="download-links">
+              <% @publication.weblinks.each do |wl| %>
+                <div class="btn -dark">
+                  <%= link_to wl.label, wl.url %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
