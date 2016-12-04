@@ -6,7 +6,9 @@ div.fields
 
   = render 'backend/shared/form/field_tags', form: form, collection: tags
 
-  = render 'backend/shared/form/field_media_content', form: form, value: :media_content_id, media_content_id: media_content_id, media_contents: @media_contents, label_txt: 'Cover picture'
+  = render 'backend/shared/form/field_media_content', form: form,
+    value: :media_content_id, media_content_id: media_content_id,
+    media_contents: @media_contents, label_txt: 'Background picture'
 
   = render 'backend/shared/form/field_limited_input', form: form, value: :short_description, maxlength: 140
 
