@@ -112,7 +112,8 @@ module Attachable
         has_attached_file :document
       end
 
-      validates_attachment :document, content_type: ['application/pdf', 'application/postscript']
+      validates_attachment_content_type :document,
+        content_type: ['application/pdf', 'application/postscript']
     end
   end
 end

@@ -14,8 +14,7 @@
 #
 
 class Document < ApplicationRecord
-  include Attachable::Picture
+  include Attachable::Document
 
-  PRE_DEFINED_LABELS = ["PDF", "E-Book"]
   belongs_to :publication
 end
