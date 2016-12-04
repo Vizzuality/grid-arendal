@@ -2,7 +2,8 @@
 
 div.fields
 
-  = render 'backend/shared/form/field_association', form: form, value: :content_type, collection: content_types, label_method: :title, js_trigger_class: 'js-select-tags'
+  = render 'backend/shared/form/field_association', form: form, value: :content_type,
+    collection: content_types, label_method: :title, js_trigger_class: 'js-select-tags'
 
   = render 'backend/shared/form/field_tags', form: form, collection: tags
 
@@ -23,6 +24,10 @@ div.fields
   = render 'backend/shared/form/field_input', form: form, value: :content_date
 
 div.fields.-grey
+
+  = render 'backend/shared/form/field_association', form: form, value: :lead_user,
+    collection: users, label_method: :display_name, label: "Staff lead",
+    js_trigger_class: 'js-select-tags'
 
   = render 'backend/shared/form/field_association', form: form, value: :users,
     collection: users, label_method: :display_name, label: "Staff involved",

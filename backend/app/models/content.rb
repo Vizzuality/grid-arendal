@@ -28,6 +28,7 @@ class Content < ApplicationRecord
 
   has_many :participants
   has_many :users, through: :participants
+  belongs_to :lead_user, class_name: 'User'
 
   has_many :content_partners
   has_many :partners, through: :content_partners
