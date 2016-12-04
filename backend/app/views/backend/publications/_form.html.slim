@@ -25,6 +25,10 @@ div.fields
   = render 'backend/shared/form/field_input', form: form, value: :content_date
 
 div.fields.-grey
+  = render 'backend/shared/form/field_association', form: form,
+    value: :news_articles, collection: news_articles, label_method: :title,
+    js_trigger_class: 'js-select-tags', note_txt: '(Choose specific news articles)'
+
   = form.simple_fields_for :documents do |builder|
     = render 'document_fields', f: builder
   .links.fields

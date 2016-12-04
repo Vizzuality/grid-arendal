@@ -53,6 +53,7 @@ module Backend
       def set_objects
         @tags = Tag.order(:name)
         @activities = Activity.order(:title)
+        @publications = Publication.order(:title)
       end
   end
 end

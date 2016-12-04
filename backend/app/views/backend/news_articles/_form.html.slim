@@ -19,3 +19,7 @@ div.fields
   = render 'backend/shared/form/field_association', form: form,
     value: :activities, collection: activities, label_method: :title,
     js_trigger_class: 'js-select-tags', note_txt: '(Choose related activities)'
+
+  = render 'backend/shared/form/field_association', form: form,
+    value: :publications, collection: publications, label_method: :title,
+    js_trigger_class: 'js-select-tags', note_txt: '(Choose related publications)'

@@ -15,8 +15,9 @@ require 'rss'
 require 'open-uri'
 
 class NewsArticle < ApplicationRecord
-  has_many :activity_news, dependent: :destroy
-  has_many :activities, through: :activity_news
+  has_many :content_news, dependent: :destroy
+  has_many :activities, through: :content_news, source: :activity
+  has_many :publications, through: :content_news, source: :publication
 
   validates :title, presence: true
   acts_as_taggable

@@ -96,6 +96,7 @@ module Backend
           order(:title)
         @tags = Tag.order(:name)
         @media_contents = MediaContent.all
+        @news_articles = NewsArticle.order(:title)
       end
   end
 end

@@ -35,5 +35,9 @@ class Content < ApplicationRecord
   belongs_to :content_type
   belongs_to :media_content
 
+  has_many :content_news
+  has_many :news_articles, through: :content_news
+
+
   validates :title, presence: true
 end
