@@ -43,7 +43,7 @@ module Backend
       end
 
       def set_news_articles
-        @news_articles = NewsArticle.order(:title)
+        @news_articles = NewsArticle.order('publication_date DESC')
       end
 
       def news_article_params
