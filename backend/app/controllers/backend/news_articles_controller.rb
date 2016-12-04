@@ -5,7 +5,7 @@ module Backend
   class NewsArticlesController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_news_article,  except: [:index, :new, :create]
+    before_action :set_news_article,  except: [:index, :fetch]
     before_action :set_news_articles, except: :destroy
     before_action :set_objects, only: [:new, :edit]
 
@@ -13,10 +13,6 @@ module Backend
     end
 
     def edit
-    end
-
-    def new
-      @news_article = NewsArticle.new
     end
 
     def update
@@ -28,21 +24,16 @@ module Backend
       end
     end
 
-    def create
-      @news_article = NewsArticle.create(news_article_params)
-      if @news_article.save
-        redirect_to news_articles_url
-      else
-        set_objects
-        render :new
-      end
-    end
-
     def destroy
       @news_article = NewsArticle.find(params[:id])
       if @news_article.destroy
         redirect_to news_articles_url
       end
+    end
+
+    def fetch
+      total_imported = NewsArticle.fetch_from_rss
+      redirect_to news_articles_url, notice: "#{total_imported} articles imported"
     end
 
     private
