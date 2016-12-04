@@ -65,4 +65,9 @@
     link: publications_path %>
 <% end %>
 
+<% if @article.publications.any? %>
+  <%= render 'shared/posts', collection: @article.publications, title: 'publications',
+    link: publications_path %>
+<% end %>
+
 <%= render 'shared/footer' %>

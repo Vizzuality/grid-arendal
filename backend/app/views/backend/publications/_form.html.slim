@@ -26,6 +26,10 @@ div.fields
 
 div.fields.-grey
   = render 'backend/shared/form/field_association', form: form,
+    value: :activities, collection: activities, label_method: :title,
+    js_trigger_class: 'js-select-tags', note_txt: '(Choose specific activities)'
+
+  = render 'backend/shared/form/field_association', form: form,
     value: :news_articles, collection: news_articles, label_method: :title,
     js_trigger_class: 'js-select-tags', note_txt: '(Choose specific news articles)'
 
