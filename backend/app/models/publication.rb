@@ -23,6 +23,7 @@ class Publication < Content
 
   has_many :related_contents
   has_many :activities, through: :related_contents
+  has_many :documents
 
   scope :order_by_title, -> { order('title ASC') }
 end
