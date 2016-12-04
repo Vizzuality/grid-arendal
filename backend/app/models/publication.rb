@@ -24,6 +24,8 @@ class Publication < Content
   has_many :related_contents
   has_many :activities, through: :related_contents
   has_many :documents
+  accepts_nested_attributes_for :documents, reject_if: :all_blank,
+    allow_destroy: true
 
   scope :order_by_title, -> { order('title ASC') }
 end
