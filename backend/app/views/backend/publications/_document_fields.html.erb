@@ -1,13 +1,8 @@
-<div class="nested-fields">
-  <div class="field">
-    <%= f.label :label, class: 'text -field-label -bold -dark' %>
-    <%= f.input :label, collection: Document::PRE_DEFINED_LABELS,
-      label: false, as: :collection_select,
-      input_html: {class: 'basic-input text -plain-text -dark js-select-tags'} %>
-  </div>
+<div class="nested-fields fields">
+  <%= f.label :label, class: 'text -field-label -bold -dark' %>
+  <%= f.input :label, label: false,
+    input_html: {value: 'PDF', class: 'basic-input text -plain-text -dark js-select-tags'} %>
 
-  <div class="field">
-    <%= f.label :document %>
-    <%= f.file_field :document %>
-  </div>
+  <%= f.label :document %>
+  <%= f.file_field :document %>
 </div>

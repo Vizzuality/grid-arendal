@@ -24,12 +24,13 @@ div.fields
 
   = render 'backend/shared/form/field_input', form: form, value: :content_date
 
+div.fields.-grey
   = form.simple_fields_for :documents do |builder|
     = render 'document_fields', f: builder
-  .links
-    = link_to_add_association 'Add document', form, :documents
+  .links.fields
+    = link_to_add_association 'ADD DOCUMENT', form, :documents,
+      class: 'btn -dark'
 
-div.fields.-grey
   = render 'backend/shared/form/field_association', form: form, value: :lead_user,
     collection: users, label_method: :display_name, label: "Staff lead",
     js_trigger_class: 'js-select-tags'
