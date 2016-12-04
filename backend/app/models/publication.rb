@@ -27,5 +27,9 @@ class Publication < Content
   accepts_nested_attributes_for :documents, reject_if: :all_blank,
     allow_destroy: true
 
+  has_many :weblinks
+  accepts_nested_attributes_for :weblinks, reject_if: :all_blank,
+    allow_destroy: true
+
   scope :order_by_title, -> { order('title ASC') }
 end
