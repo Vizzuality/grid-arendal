@@ -72,9 +72,14 @@
     <% end %>
   </ul>
 
-  <%= render 'shared/users' %>
+  <% if @users.any? || @publication.lead_user %>
+    <%= render 'shared/users', users: @users, lead_user: @publication.lead_user %>
+  <% end %>
 
-  <%= render 'shared/posts', collection: @publications, title: 'publications', link: publications_path %>
+  <% if @publication.activities.any? %>
+    <%= render 'shared/posts', collection: @publication.activities,
+      title: 'activities', link: activities_path %>
+  <% end %>
 
   <%= render 'shared/media' %>
 

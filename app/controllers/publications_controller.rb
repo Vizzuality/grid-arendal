@@ -7,7 +7,6 @@ class PublicationsController < ApplicationController
   end
 
   def show
-    @publications = Publication.order(:title).published
     @users = @publication.users
   end
 

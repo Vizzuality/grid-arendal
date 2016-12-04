@@ -21,5 +21,8 @@
 class Publication < Content
   acts_as_taggable
 
+  has_many :related_contents
+  has_many :activities, through: :related_contents
+
   scope :order_by_title, -> { order('title ASC') }
 end
