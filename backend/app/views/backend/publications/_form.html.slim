@@ -31,6 +31,12 @@ div.fields.-grey
     = link_to_add_association 'ADD DOCUMENT', form, :documents,
       class: 'btn -dark'
 
+  = form.simple_fields_for :weblinks do |builder|
+    = render 'weblink_fields', f: builder
+  .links.fields
+    = link_to_add_association 'ADD WEBLINK', form, :weblinks,
+      class: 'btn -dark'
+
   = render 'backend/shared/form/field_association', form: form, value: :lead_user,
     collection: users, label_method: :display_name, label: "Staff lead",
     js_trigger_class: 'js-select-tags'
