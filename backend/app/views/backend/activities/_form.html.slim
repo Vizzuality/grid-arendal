@@ -35,7 +35,7 @@ div.fields.-grey
     js_trigger_class: 'js-select-tags', note_txt: '(Choose specific news articles)'
 
   = render 'backend/shared/form/field_association', form: form, value: :users,
-    collection: users, label_method: :display_name,
+    collection: users, label_method: :display_name, label: "Staff involved",
     js_trigger_class: 'js-select-tags'
 
   = render 'backend/shared/form/field_association', form: form,

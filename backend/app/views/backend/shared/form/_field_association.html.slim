@@ -1,10 +1,12 @@
 - js_trigger_class ||= ''
 - data_type ||= ''
+- label ||= value.to_s.titleize
 
 .field data-type="#{data_type}"
   = form.association value,
     collection: collection,
     label_method: label_method,
+    label: label,
     value_method: :id,
     label_html: { class: 'text -field-label -bold -dark' },
     input_html: { class: js_trigger_class }
