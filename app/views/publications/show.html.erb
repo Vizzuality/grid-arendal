@@ -56,9 +56,12 @@
           <div class="small-6 medium-9 large-8 columns">
             <div class="title text -meta desktop">Download</div>
             <div class="download-links">
-              <div class="btn -dark">pdf</div>
-              <div class="btn -dark">e-book</div>
-              <div class="btn">graphics</div>
+              <% @publication.documents.each do |doc| %>
+                <div class="btn -dark">
+                  <%= link_to doc.label, doc.document.url %>
+                </div>
+              <% end %>
+              <!--div class="btn">graphics</div-->
             </div>
           </div>
         </div>
