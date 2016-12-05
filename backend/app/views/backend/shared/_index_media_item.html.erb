@@ -11,11 +11,11 @@
   <div class="options">
     <% if can?(:publish, item) && item.unpublished? %>
       <%= link_to raw('<svg class="icon" data-type="Publish"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-visibility_off"></use></svg>'),
-        [:publish, item], method: :patch, class: "Publish" %>
+        [:publish, item], remote: true, method: :patch, class: "Publish" %>
     <% end %>
     <% if can?(:unpublish, item) && item.published? %>
       <%= link_to raw('<svg class="icon" data-type="Unpublish"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-visibility"></use></svg>'),
-        [:unpublish, item], method: :patch, class: "Unpublish" %>
+        [:unpublish, item], remote: true, method: :patch, class: "Unpublish" %>
     <% end %>
     <%= link_to raw('<svg class="icon" data-type="Delete"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-delete"></use></svg>'), item, method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
