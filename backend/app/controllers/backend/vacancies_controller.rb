@@ -21,6 +21,7 @@ module Backend
       if @vacancy.update(vacancy_params)
         redirect_to vacancies_url, notice: 'Vacancy updated'
       else
+        set_vacancies
         render :edit
       end
     end
@@ -30,6 +31,7 @@ module Backend
       if @vacancy.save
         redirect_to vacancies_url
       else
+        set_vacancies
         render :new
       end
     end
