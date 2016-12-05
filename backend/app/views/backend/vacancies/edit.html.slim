@@ -1,9 +1,0 @@
-h2
-  | Edit
-  '
-  = @vacancy.title || 'Vacancy'
-
-= simple_form_for @vacancy do |f|
-  = render 'form', form: f
-  .actions
-    = f.submit 'Update'

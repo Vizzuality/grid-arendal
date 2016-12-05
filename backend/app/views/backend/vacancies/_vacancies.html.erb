@@ -1,0 +1,14 @@
+<h2 class="text -main-title -light">Vacancies</h2>
+
+<%= render 'backend/shared/index_items_buttons.html',
+  havePermissionToCreate: can?(:create, Vacancy),
+  createPath: new_vacancy_path
+%>
+
+<ul class="items-list">
+  <% vacancies.each do |vacancy| %>
+    <%= render 'backend/shared/index_item',
+      item: vacancy,
+      title: vacancy.title %>
+  <% end %>
+</ul>

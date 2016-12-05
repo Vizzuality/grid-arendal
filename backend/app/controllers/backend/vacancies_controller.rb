@@ -5,8 +5,9 @@ module Backend
   class VacanciesController < ::Backend::ApplicationController
     load_and_authorize_resource
 
+    before_action :set_vacancies, only: [:index, :edit, :new]
+
     def index
-      @vacancies = Vacancy.order(:title)
     end
 
     def edit
@@ -53,6 +54,10 @@ module Backend
 
       def vacancy_params
         params.require(:vacancy).permit!
+      end
+
+      def set_vacancies
+        @vacancies = Vacancy.order(:title)
       end
   end
 end
