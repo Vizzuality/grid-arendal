@@ -1,1 +1,8 @@
-$("#masonry-layout").html("<%= escape_javascript(render("activities")) %>");
+$(function() {
+  $("#masonry-layout").find("a").remove();
+  var grid = document.querySelector('#masonry-layout');
+  salvattore.appendElements(grid, $('<div/>').
+                            html("<%= escape_javascript(render("activities")) %>").
+                            contents());
+});
+

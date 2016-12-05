@@ -15,6 +15,7 @@ class ActivitiesController < ApplicationController
     respond_to do |format|
       format.html
       format.js
+      format.json { render json: @activities.to_json }
     end
   end
 
