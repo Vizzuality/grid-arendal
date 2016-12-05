@@ -27,36 +27,6 @@
       this._onClickOpenDropdown();
       this._onClickOptions();
       this._onChangeSelectValue();
-      this._setSelectFromUrl();
-    },
-
-    _setSelectFromUrl: function() {
-      var activeFilters = this._getFiltersFromUrl();
-      if ( activeFilters === false ) {
-        return false
-      }
-      _.each(activeFilters, function(value, filter) {
-        if ( filter !== 'tags' ) {
-          this._updateSelectedValue(value);
-          this.$select
-            .val(value)
-            .change();
-        }
-      }.bind(this));
-    },
-
-    _getFiltersFromUrl: function() {
-      var vars = {}, hash;
-      var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-      var route = 'http://' + window.location.host + window.location.pathname;
-      if ( hashes[0] === route ) {
-        return false
-      }
-      for ( var i = 0; i < hashes.length; i++ ) {
-          hash = hashes[i].split('=');
-          vars[hash[0]] = hash[1];
-      }
-      return vars;
     },
 
     _cache: function() {

@@ -1,7 +1,13 @@
-<div class="filter -type-select js-filter" data-filter-type="select" data-filter-key="<%= key %>">
+<div class="filter -type-select js-filter <%= "-have-value" if params['content-types'].present? %>" data-filter-type="select" data-filter-key="<%= key %>">
   <div class="type text -filter-title"><%= title %></div>
   <span class="speaker">
-    <span id="<%= key %>" class="text -filter" data-placeholder="<%= placeholder %>"><%= placeholder %></span>
+    <span id="<%= key %>" class="text -filter" data-placeholder="<%= placeholder %>">
+      <% if params['content-types'].present? %>
+        <%= data.select{|t| params['content-types'].include?(t.id.to_s)}.map(&:title) %>
+      <% else %>
+        <%= placeholder %>
+      <% end %>
+    </span>
     <svg class="icon">
       <use xlink:href="#icon-dropdown_arrow_down"></use>
     </svg>

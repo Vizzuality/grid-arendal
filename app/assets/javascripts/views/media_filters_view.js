@@ -26,7 +26,7 @@
 
       this._loadFilters();
       this._cache();
-      // this._setFiltersFromUrl();
+      this._setSelectFilters();
     },
 
     _cache: function() {
@@ -122,6 +122,39 @@
         }
       });
       return queryStr;
+    },
+
+    _getFiltersFromUrl: function() {
+      var vars = {}, hash;
+      var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+      var route = 'http://' + window.location.host + window.location.pathname;
+      if ( hashes[0] === route ) {
+        return false
+      }
+      for ( var i = 0; i < hashes.length; i++ ) {
+          hash = hashes[i].split('=');
+          vars[hash[0]] = hash[1];
+      }
+      return vars;
+    },
+
+    _setSelectFilters: function() {
+      var activeFilters = this._getFiltersFromUrl();
+      if ( activeFilters === false ) {
+        return false
+      }
+      var i = 0;
+      _.each(activeFilters, function(value, filter) {
+        var selectedValues = value.split(",").map(Number);
+        this.filters[i]["selectedValues"] = selectedValues;
+        // $('.filter[data-filter-key="' + filter + '"]').addClass('-have-value');
+        // _.each(selectedValues, function(dataValue) {
+        //   // var activeFilterItem = $('.filter[data-filter-key="' + filter + '"]').find('.-filter[data-value="' + dataValue + '"]');
+        //   // activeFilterItem.addClass('selected');
+        //   // $('#' + filter).text(activeFilterItem.text());
+        // }.bind(this));
+        i++;
+      }.bind(this));
     },
 
   });
