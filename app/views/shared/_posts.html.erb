@@ -31,7 +31,7 @@
           <li class="js_slide slide">
             <%= link_to post do %>
               <article class="c-card">
-                <div class="card-pic" style="background-image: url('<%= post.picture %>')"></div>
+                <div class="card-pic" style="<%= "background-image: url('#{post.picture}')" if post.picture.exists?%>"></div>
                 <div class="card-descrition">
                   <h3 class="text -title-card"><%= post.title %></h3>
                   <p class="text -summary"><%= post.short_description %></p>
