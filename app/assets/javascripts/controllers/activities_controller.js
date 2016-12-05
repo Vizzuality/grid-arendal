@@ -32,7 +32,8 @@
         lory(element, {
           infinite: 3,
           slidesToScroll: 1,
-          enableMouseEvents: true
+          enableMouseEvents: true,
+          offsetLeft: 0
         });
       });
     }

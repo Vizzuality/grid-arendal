@@ -26,7 +26,7 @@
 
       this._loadFilters();
       this._cache();
-      this._setFiltersFromUrl();
+      // this._setFiltersFromUrl();
     },
 
     _cache: function() {
@@ -102,35 +102,6 @@
       elem.remove();
 
       return height;
-    },
-
-    _getFiltersFromUrl: function() {
-      var vars = {}, hash;
-      var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-      var route = 'http://' + window.location.host + window.location.pathname;
-      if ( hashes[0] === route ) {
-        return false
-      }
-      for ( var i = 0; i < hashes.length; i++ ) {
-          hash = hashes[i].split('=');
-          vars[hash[0]] = hash[1];
-      }
-      return vars;
-    },
-
-    _setFiltersFromUrl: function() {
-      var activeFilters = this._getFiltersFromUrl();
-      if ( activeFilters === false ) {
-        return false
-      }
-      var i = 0;
-      _.each(activeFilters, function(value, filter) {
-        this.filters[i].selectedValues = value;
-        $('.filter[data-filter-key="' + filter + '"]').addClass('-have-value');
-        var activeFilterItem = $('.filter[data-filter-key="' + filter + '"]').find('.-filter[data-value="' + value + '"]');
-        $('#' + filter).text(activeFilterItem.text());
-        i++;
-      }.bind(this));
     },
 
     getFilterValues: function() {

@@ -6,6 +6,10 @@
 
   App.Helper.TagSelectHandler = App.Helper.SelectHandler.extend({
 
+    initialize: function() {
+      this._setTagsFromUrl();
+    },
+
     events: {
       'click .js-tags-select-closer' : '_closeProcess'
     },
@@ -22,6 +26,24 @@
       this._setHaveValue();
     },
 
+    _setTagsFromUrl: function() {
+      var activeFilters = this._getFiltersFromUrl();
+      if ( activeFilters === false ) {
+        return false
+      }
+      _.each(activeFilters, function(value, filter) {
+        if ( filter === 'tags' ) {
+          var element = $('.filter[data-filter-key="' + filter + '"]').find('.-filter[data-value="' + value + '"]');
+          var isSelected = true;
+          element.toggleClass(this.options.selectedClass);
+          this._updateSelectedTags(isSelected, element);
+          this._setSpeaker();
+          this._setHaveValue();
+          // this._updateSelectedTags(activeFilterItem);
+        }
+      }.bind(this));
+    },
+
     _updateSelectedTags: function(drop, element) {
       var value = element.data("value");
       var name = element.data("name");
@@ -29,7 +51,9 @@
         this.selectedValues = _.without(this.selectedValues, value);
         this.selectedTagsNames = _.without(this.selectedTagsNames, name);
       } else {
-        this.selectedValues.push(value);
+        if ( $.inArray( value, this.selectedValues ) === -1 ) {
+          this.selectedValues.push(value);
+        }
         this.selectedTagsNames.push(name);
       }
     },
