@@ -1,7 +1,0 @@
-= render 'backend/shared/form/header', form: form, inputs: [{value: :title, title_placeholder: 'Content type title'}]
-
-.fields
-  = render 'backend/shared/form/field_select', form: form, value: :for_content,
-    collection: ContentType::FOR_CONTENT, include_blank: false,
-    label_txt: "For content", input_as: :select
-  = render 'backend/shared/form/field_textarea', form: form, value: :description

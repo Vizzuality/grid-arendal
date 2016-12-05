@@ -1,0 +1,42 @@
+<ul class="basic-nav">
+  <% if user_signed_in? %>
+    <% links = [{"name" => "Activities", "path" => activities_path, "key" => "activities"},
+            {"name" => "Publications", "path" => publications_path, "key" => "publications"},
+            {"name" => "News", "path" => news_articles_path, "key" => "news_articles"},
+            {"name" => "Media library", "path" => media_contents_path, "key" => "media_contents"},
+            {"name" => "Events", "path" => events_path, "key" => "events"},
+            {"name" => "Partners", "path" => partners_path, "key" => "partners"},
+            {"name" => "Users", "path" => users_path, "key" => "users"},
+            {"name" => "About Sections", "path" => about_sections_path, "key" => "about_sections"},
+            {"name" => "Content types", "path" => content_types_path, "key" => "content_types"},
+            {"name" => "Tags", "path" => tags_path, "key" => "tags"},
+            {"name" => "Vacancies", "path" => vacancies_path, "key" => "vacancies"}]
+    %>
+    <li class="-user -no-hover">
+      <img class="avatar" src="<%= current_user.avatar %>" />
+      <div class="texts-container">
+        <div class="user-name text -nav-text -light">
+          <%= current_user.display_name %>
+          <%= link_to 'Sign out', destroy_user_session_path, method: 'delete',
+            class: 'text -nav-text -light' %>
+        </div>
+      </div>
+    </li>
+    <li class="-separator"></li>
+    <li class="-logo -no-hover">
+      <svg class="icon">
+        <use xlink:href="#icon-logo"></use>
+      </svg>
+    <li class="-separator"></li>
+    <% links.each do |link| %>
+      <li class="<%= (controller_name == link['key'] ? 'selected' : '')%>">
+        <%= link_to '', link['path'], class: 'linker' %>
+        <%= link_to link['name'], link['path'], class: 'text -nav-text -light' %>
+      </li>
+    <% end %>
+  <% else %>
+    <li>
+      <%= link_to 'Log In', new_user_session_path %>
+    </li>
+  <% end %>
+</div>

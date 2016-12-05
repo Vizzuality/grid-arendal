@@ -1,9 +1,0 @@
-= render 'backend/shared/form/header', form: form, inputs: [{value: :name, title_placeholder: 'Partner name'}]
-
-div.fields
-
-  = render 'backend/shared/form/field_upload_img', form: form, value: :logo, label_txt: 'Logo', have_picture: have_logo, picture_url: logo_url
-
-  = render 'backend/shared/form/field_input', form: form, value: :web_url
-
-  = render 'backend/shared/form/field_textarea', form: form, value: :description

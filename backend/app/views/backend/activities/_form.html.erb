@@ -1,0 +1,47 @@
+<%= render 'backend/shared/form/header', form: form,
+  inputs: [{value: :title, title_placeholder: 'Activity title'}] %>
+
+<div class="fields">
+  <%= render 'backend/shared/form/field_association', form: form,
+    value: :content_type, collection: content_types, label_method: :title,
+    js_trigger_class: 'js-select-tags' %>
+
+  <%= render 'backend/shared/form/field_tags', form: form, collection: tags %>
+
+  <%= render 'backend/shared/form/field_media_content', form: form,
+    value: :media_content_id, media_content_id: media_content_id,
+    media_contents: @media_contents, label_txt: 'Background picture' %>
+
+  <%= render 'backend/shared/form/field_limited_input', form: form,
+    value: :short_description, maxlength: 140 %>
+
+  <%= render 'backend/shared/form/field_textarea', form: form,
+    value: :description %>
+
+  <%= render 'backend/shared/form/field_input', form: form,
+    value: :content_date %>
+
+  <%= render 'backend/shared/form/field_input', form: form,
+    value: :story_map_url %>
+
+  <%= render 'backend/shared/form/field_input', form: form,
+    value: :project_number %>
+</div>
+
+<div class="fields">
+  <%= render 'backend/shared/form/field_association', form: form,
+    value: :publications, collection: publications, label_method: :title,
+    js_trigger_class: 'js-select-tags', note_txt: '(Choose specific publications)' %>
+
+  <%= render 'backend/shared/form/field_association', form: form,
+    value: :news_articles, collection: news_articles, label_method: :title,
+    js_trigger_class: 'js-select-tags', note_txt: '(Choose specific news articles)' %>
+
+  <%= render 'backend/shared/form/field_association', form: form, value: :users,
+    collection: users, label_method: :display_name, label: "Staff involved",
+    js_trigger_class: 'js-select-tags' %>
+
+  <%= render 'backend/shared/form/field_association', form: form,
+    value: :partners, collection: partners, label_method: :name,
+    js_trigger_class: 'js-select-tags' %>
+</div>
