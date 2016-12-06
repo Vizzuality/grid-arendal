@@ -240,7 +240,7 @@ $error-red: #ec5c5c;
           z-index: 1;
 
           .tip {
-            position: absolute;
+            max-width: 70%;
             text-align: center;
 
             .icon {
@@ -258,6 +258,8 @@ $error-red: #ec5c5c;
 
           .current_picture {
             position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             background-size: cover;
