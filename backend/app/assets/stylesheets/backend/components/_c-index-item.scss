@@ -73,6 +73,11 @@
   &:hover,
   &.-selected {
     background-color: rgba($white, 0.2);
+
+    .title {
+      opacity: 1;
+      font-weight: 700;
+    }
   }
 
   &.-blocked {

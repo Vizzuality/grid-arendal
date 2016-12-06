@@ -7,7 +7,7 @@ module Backend
 
     before_action :set_flickr
     before_action :set_media_content,  except: [:index, :new, :create, :search]
-    before_action :set_media_contents, except: :index
+    before_action :set_media_contents, except: [:search]
 
     def search
       @media_contents = MediaContent.where("UPPER(title) like UPPER(?)", "#{params[:query]}%").limit(20)
@@ -18,11 +18,9 @@ module Backend
     end
 
     def index
-      @media_contents = MediaContent.order(:title)
     end
 
     def edit
-      @media_contents = MediaContent.includes_mediable.order(:title)
     end
 
     def new
@@ -58,18 +56,18 @@ module Backend
     end
 
     def unpublish
-      @item = @media_content
-      @item.try(:unpublish)
-      respond_to do |format|
-        format.js { render 'backend/shared/index_options' }
+      if @media_content.try(:unpublish)
+        redirect_to media_contents_url
+      else
+        redirect_to media_content_url(@media_content)
       end
     end
 
     def publish
-      @item = @media_content
-      @item.try(:publish)
-      respond_to do |format|
-        format.js { render 'backend/shared/index_options' }
+      if @media_content.try(:publish)
+        redirect_to media_contents_url
+      else
+        redirect_to media_content_url(@media_content)
       end
     end
 
@@ -85,23 +83,24 @@ module Backend
 
     private
 
-      def set_media_content
-        @media_content = MediaContent.find(params[:id])
-      end
+    def set_media_content
+      @media_content = MediaContent.find(params[:id])
+    end
 
-      def set_media_contents
-        @media_contents = MediaContent.order(:title)
-      end
+    def set_media_contents
+      @albums = MediaContent.includes([:album]).order(:title)
+      @photos = MediaContent.includes([:photo]).order(:title)
+    end
 
-      def set_flickr
-        FlickRaw.api_key       = ENV['FLICKR_API_KEY']
-        FlickRaw.shared_secret = ENV['FLICKR_SHARED_SECRET']
-        flickr.access_token    = ENV['FLICKR_ACCESS_TOKEN']
-        flickr.access_secret   = ENV['FLICKR_ACCESS_SECRET']
-      end
+    def set_flickr
+      FlickRaw.api_key       = ENV['FLICKR_API_KEY']
+      FlickRaw.shared_secret = ENV['FLICKR_SHARED_SECRET']
+      flickr.access_token    = ENV['FLICKR_ACCESS_TOKEN']
+      flickr.access_secret   = ENV['FLICKR_ACCESS_SECRET']
+    end
 
-      def media_content_params
-        params.require(:media_content).permit!
-      end
+    def media_content_params
+      params.require(:media_content).permit!
+    end
   end
 end
