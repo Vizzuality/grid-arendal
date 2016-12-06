@@ -24,15 +24,13 @@ selected_tab = if params[:mediable].present?
 
     <ul class="items-list">
       <% tab['data'].each do |media_content| %>
-        <% if media_content.mediable_type == tab['key'] %>
-          <%= render 'backend/shared/index_item',
-            item: media_content,
-            title: media_content.title,
-            publishn_path: publish_media_content_path(media_content),
-            unpublish_path: unpublish_media_content_path(media_content),
-            edit_path: edit_media_content_path(media_content, "mediable" => media_content.mediable_type),
-            delete_path: media_content_path(media_content) %>
-        <% end %>
+        <%= render 'backend/shared/index_item',
+          item: media_content,
+          title: media_content.title,
+          publishn_path: publish_media_content_path(media_content),
+          unpublish_path: unpublish_media_content_path(media_content),
+          edit_path: edit_media_content_path(media_content, "mediable" => media_content.mediable_type),
+          delete_path: media_content_path(media_content) %>
       <% end %>
     </ul>
   </div>

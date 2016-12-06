@@ -21,11 +21,12 @@ module Backend
     end
 
     def edit
+      @tags = Tag.order(:name)
     end
 
     def new
-      @media_contents = MediaContent.includes_mediable.order(:title)
       @media_content = MediaContent.new
+      @tags = Tag.order(:name)
     end
 
     def update
@@ -88,8 +89,8 @@ module Backend
     end
 
     def set_media_contents
-      @albums = MediaContent.includes([:album]).order(:title)
-      @photos = MediaContent.includes([:photo]).order(:title)
+      @albums = MediaContent.includes([:album]).joins(:album).order(:title)
+      @photos = MediaContent.includes([:photo]).joins(:photo).order(:title)
     end
 
     def set_flickr

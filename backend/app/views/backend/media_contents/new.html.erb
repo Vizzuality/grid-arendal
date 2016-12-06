@@ -3,14 +3,17 @@
 </div>
 
 <div class="l-items-index">
-  <%= render 'media_contents', albums: @albums, photos: @photos %>
+  <%= render 'media_contents', media_content: @media_content, albums: @albums, photos: @photos %>
 </div>
 
 <div class="l-items-detail">
   <%= simple_form_for @media_content, html: { class: 'c-form' } do |f| %>
-    <%= render 'form',
+    <%= render "form_#{params[:mediable]}",
       form: f,
+      albums: @albums,
+      photos: @photos,
       have_picture: false,
-      picture_url: nil %>
+      picture_url: nil,
+      tags: @tags %>
   <% end %>
 </div>

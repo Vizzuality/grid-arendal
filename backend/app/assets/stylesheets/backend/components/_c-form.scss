@@ -345,7 +345,7 @@ $error-red: #ec5c5c;
       }
     }
 
-    &:nth-child(2n) {
+    &.-grey {
       background-color: $grey;
     }
   }
