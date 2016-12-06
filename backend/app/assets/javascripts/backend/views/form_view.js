@@ -22,6 +22,7 @@
       this._loadLimitedInput();
       this._loadMediumEditor();
       this._loadSelect();
+      this._loadDatepicker();
       this._loadTaggingSelect();
       this._loadMediaContentSearch();
     },
@@ -46,6 +47,14 @@
       new App.Helper.FormInputCharLimited({
         el: $(this.$el.find('[data-type="limited_input"]'))
       });
+    },
+
+    _loadDatepicker: function() {
+      _.each($(this.$el.find('[data-type="datepicker"]')), function(element) {
+        new App.Helper.FormDatepicker({
+          el: element
+        });
+      }.bind(this));
     },
 
     _loadMediumEditor: function () {
