@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="small-12 column">
+    <div class="c-filters">
+      <div class="maximizer js-filters-maximizer">
+        <svg class="icon">
+          <use class="-show" xlink:href="#icon-filter"></use>
+          <use class="-collapse" xlink:href="#icon-filter-collapse"></use>
+        </svg>
+      </div>
+      <div class="container">
+        <% filters.each do |filter| %>
+          <% filter[:title] ||= ''
+             filter[:placeholder] ||= ''
+          %>
+          <%= render "shared/filters/#{filter[:type]}",
+            data: filter[:data],
+            js_trigger: filter[:js_trigger],
+            title: filter[:title],
+            placeholder: filter[:placeholder],
+            key: filter[:key] %>
+        <% end %>
+        <%#=render 'shared/filters/search', placeholder: "Search media" %>
+      </div>
+    </div>
+  </div>
+</div>

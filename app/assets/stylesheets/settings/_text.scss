@@ -188,16 +188,29 @@
 
     @media screen and (min-width: $screen-m) {
       font-size: 14px;
+      line-height: 1.43;
     }
   }
 
   &.-filter-title {
     font-size: 12px;
-    letter-spacing: 0.5px;
+    line-height: 0.83;
+    letter-spacing: 0.6px;
 
     @media screen and (min-width: $screen-m) {
       font-size: 10px;
+      line-height: 1;
+      letter-spacing: 0.5px;
     }
+  }
+
+  &.-filter-year {
+    font-family: $font-family-1;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.23;
+    letter-spacing: 0.3px;
+    color: $font-color-1;
   }
 
   &.-read-more {
