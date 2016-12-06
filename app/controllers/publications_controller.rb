@@ -19,7 +19,6 @@ class PublicationsController < ApplicationController
   end
 
   def show
-    @publications = Publication.order(:title).published
     @users = @publication.users
   end
 
@@ -27,6 +26,7 @@ class PublicationsController < ApplicationController
     def options_filter
       params.permit(:type, :tags, :years)
     end
+
     def set_publication
       @publication = Publication.find(params[:id])
     end
