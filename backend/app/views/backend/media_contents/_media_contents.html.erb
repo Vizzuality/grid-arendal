@@ -2,7 +2,13 @@
   {"title" => "Albums", "key" => "album", "data" => albums},
   {"title" => "Pictures", "key" => "photo", "data" => photos},
 ]
-selected_tab = (defined? media_content) ? media_content.mediable_type : "album" %>
+selected_tab = if params[:mediable].present?
+                params[:mediable]
+              elsif (defined? media_content)
+                media_content.mediable_type
+              else
+                "album"
+              end %>
 <div class="tabs">
   <% tabs.each do |tab| %>
     <div class="tab text -main-title -light js-select-tab <% if tab['key'] == selected_tab %>-selected<% end %>" data-type="<%= tab['key'] %>"><%= tab['title'] %></div>
