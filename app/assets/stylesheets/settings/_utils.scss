@@ -54,6 +54,12 @@
   pointer-events: none;
 }
 
+@mixin ellipsis($max-width) {
+  max-width: $max-width;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+} 
 
 %clearfix {
   &:before, &:after {

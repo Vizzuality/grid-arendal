@@ -23,4 +23,18 @@ class Activity < Content
   has_many :publications, through: :related_contents
 
   acts_as_taggable
+
+  scope :by_partners, ->(partners) { joins(:content_partners).where(content_partners: {id: partners})}
+
+  class << self
+    def fetch_all(options)
+      type = options['type']                          if options['type'].present?
+      partners = options['partners']                  if options['partners'].present?
+
+      activities = Activity.by_published.order_by_title
+      activities = activities.by_type(type)   if type.present?
+      activities = activities.by_partners(partners)   if partners.present?
+      activities
+    end
+  end
 end

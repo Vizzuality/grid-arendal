@@ -1,0 +1,31 @@
+<div class="filter -type-select js-filter <%= "-have-value" if params[key].present? %>" data-filter-type="select" data-filter-key="<%= key %>">
+  <div class="type text -filter-title"><%= title %></div>
+  <span class="speaker">
+    <span id="<%= key %>" class="text -filter" data-placeholder="<%= placeholder %>">
+      <% if params[key].present? %>
+        <%= data.select{|t| params[key] == t.id.to_s }.first.send(display_method) %>
+      <% else %>
+        <%= placeholder %>
+      <% end %>
+    </span>
+    <svg class="icon">
+      <use xlink:href="#icon-dropdown_arrow_down"></use>
+    </svg>
+  </span>
+  <div class="dropdown">
+    <div class="type text -filter-title"><%= title %></div>
+    <ul class="list">
+      <% data.each do |option| %>
+        <% text = (defined? option.title) ? option.title : option.name %>
+        <li class="text -filter" data-value="<%= option.id %>"><%= text %></li>
+      <% end %>
+    </ul>
+  </div>
+  <select class="text -filter">
+    <option value="" disabled selected><%= placeholder %></option>
+    <% data.each do |option| %>
+      <% text = (defined? option.title) ? option.title : option.name %>
+      <option value="<%= option.id %>"><%= text %></option>
+    <% end %>
+  </select>
+</div>
