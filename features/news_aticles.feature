@@ -17,18 +17,3 @@ I want to edit, create, view news_articles
     And I press "SAVE"
     Then I should see "About section edited"
 
-  Scenario: Adminuser can create news_article
-    Given I am authenticated adminuser
-    When I go to the new news_article page
-    And I fill in "Title" with "My new about section"
-    And I press "SAVE"
-    Then I should have one news_article
-    And I should see "My new about section"
-
-  Scenario: Adminuser can not create news_article without title
-    Given I am authenticated adminuser
-    When I go to the new news_article page
-    And I fill in "Title" with ""
-    And I press "SAVE"
-    Then I should have zero news_articles
-    And I should see "can't be blank"

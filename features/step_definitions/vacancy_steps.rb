@@ -10,3 +10,7 @@ end
 Given /^vacancy$/ do
   FactoryGirl.create(:vacancy, title: 'Researcher')
 end
+
+Then /^I should have one published vacancy$/ do
+  expect(Vacancy.published.size).to eq(1)
+end
