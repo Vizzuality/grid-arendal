@@ -13,7 +13,11 @@
       users: @users,
       partners: @partners,
       content_types: @content_types,
-      have_picture: @publication.picture_file_name ? true : false,
-      picture_url: @publication.picture %>
+      activities: @activities,
+      news_articles: @news_articles,
+      tags: @tags,
+      have_picture: @publication.picture.exists? ? true : false,
+      picture_url: @publication.picture,
+      media_content_id: @publication.media_content_id %>
   <% end %>
 </div>

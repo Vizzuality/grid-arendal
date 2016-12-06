@@ -28,10 +28,19 @@ class Content < ApplicationRecord
 
   has_many :participants
   has_many :users, through: :participants
+  belongs_to :lead_user, class_name: 'User'
 
   has_many :content_partners
   has_many :partners, through: :content_partners
   belongs_to :content_type
+  belongs_to :media_content
+
+  has_many :content_news
+  has_many :news_articles, through: :content_news
+
+  scope :order_by_title, -> { order('title ASC')        }
+  scope :by_published,   -> { where(is_published: true) }
+  scope :by_type, ->(type) { where(content_type_id: type) }
 
   validates :title, presence: true
 end

@@ -54,31 +54,35 @@ module Backend
 
       it 'Publishes activity' do
         unpublished = create(:activity, is_published: false)
-        process :publish, method: :patch, params: { id: @activity.id }
-        expect(response).to be_redirect
-        expect(response).to have_http_status(302)
+        process :publish, method: :patch, xhr: true,
+          params: { id: @activity.id }
+        expect(response).to be_success
+        expect(response).to have_http_status(200)
         expect(@activity.reload.published?).to be(true)
       end
 
       it 'Unpublishes activity' do
-        process :unpublish, method: :patch, params: { id: @activity.id }
-        expect(response).to be_redirect
-        expect(response).to have_http_status(302)
+        process :unpublish, method: :patch, xhr: true,
+          params: { id: @activity.id }
+        expect(response).to be_success
+        expect(response).to have_http_status(200)
         expect(@activity.reload.unpublished?).to be(true)
       end
 
       it 'Feature activity' do
         create(:activity, is_featured: false)
-        process :make_featured, method: :patch, params: { id: @activity.id }
-        expect(response).to be_redirect
-        expect(response).to have_http_status(302)
+        process :make_featured, method: :patch, xhr: true,
+          params: { id: @activity.id }
+        expect(response).to be_success
+        expect(response).to have_http_status(200)
         expect(@activity.reload.featured?).to be(true)
       end
 
       it 'Remove featured status from activity' do
-        process :remove_featured, method: :patch, params: { id: @activity.id }
-        expect(response).to be_redirect
-        expect(response).to have_http_status(302)
+        process :remove_featured, method: :patch, xhr: true,
+          params: { id: @activity.id }
+        expect(response).to be_success
+        expect(response).to have_http_status(200)
         expect(@activity.reload.not_featured?).to be(true)
       end
     end

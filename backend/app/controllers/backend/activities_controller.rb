@@ -50,23 +50,35 @@ module Backend
     end
 
     def publish
-      @activity.try(:publish)
-      redirect_to activities_url
+      @item = @activity
+      @item.try(:publish)
+      respond_to do |format|
+        format.js { render 'backend/shared/index_options' }
+      end
     end
 
     def unpublish
-      @activity.try(:unpublish)
-      redirect_to activities_url
+      @item = @activity
+      @item.try(:unpublish)
+      respond_to do |format|
+        format.js { render 'backend/shared/index_options' }
+      end
     end
 
     def make_featured
-      @activity.try(:make_featured)
-      redirect_to activities_url
+      @item = @activity
+      @item.try(:make_featured)
+      respond_to do |format|
+        format.js { render 'backend/shared/index_options' }
+      end
     end
 
     def remove_featured
-      @activity.try(:remove_featured)
-      redirect_to activities_url
+      @item = @activity
+      @item.try(:remove_featured)
+      respond_to do |format|
+        format.js { render 'backend/shared/index_options' }
+      end
     end
 
     private
@@ -83,6 +95,8 @@ module Backend
         @content_types = ContentType.
           where(for_content: [ContentType::BOTH, ContentType::ACTIVITY]).
           order(:title)
+        @tags = Tag.order(:name)
+        @media_contents = MediaContent.all
       end
   end
 end

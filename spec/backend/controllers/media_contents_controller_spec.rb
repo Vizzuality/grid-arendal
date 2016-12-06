@@ -26,8 +26,8 @@ module Backend
 
       it 'GET index returns http success' do
         process :index
-        expect(response).to be_redirect
-        expect(response).to have_http_status(302)
+        expect(response).to be_success
+        expect(response).to have_http_status(200)
       end
 
       it 'GET edit returns http success' do
@@ -64,17 +64,19 @@ module Backend
       end
 
       it 'Publish media content' do
-        process :publish, params: { id: @album_content.id }
-        expect(response).to be_redirect
-        expect(response).to have_http_status(302)
+        process :publish, method: :patch, xhr: true,
+          params: { id: @album_content.id }
+        expect(response).to be_success
+        expect(response).to have_http_status(200)
         @album_content.reload
         expect(@album_content.published?).to eq(true)
       end
 
       it 'Unpublish media content' do
-        process :unpublish, params: { id: @photo_content.id }
-        expect(response).to be_redirect
-        expect(response).to have_http_status(302)
+        process :unpublish, method: :patch, xhr: true,
+          params: { id: @photo_content.id }
+        expect(response).to be_success
+        expect(response).to have_http_status(200)
         @photo_content.reload
         expect(@photo_content.unpublished?).to eq(true)
       end

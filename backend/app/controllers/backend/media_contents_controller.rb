@@ -6,11 +6,19 @@ module Backend
     load_and_authorize_resource
 
     before_action :set_flickr
-    before_action :set_media_content,  except: [:index, :new, :create]
+    before_action :set_media_content,  except: [:index, :new, :create, :search]
     before_action :set_media_contents, except: :index
 
+    def search
+      @media_contents = MediaContent.where("UPPER(title) like UPPER(?)", "#{params[:query]}%").limit(20)
+      @selected_id = params[:selected_id]
+      respond_to do |format|
+        format.js
+      end
+    end
+
     def index
-      redirect_to new_media_content_url(mediable: 'photo')
+      @media_contents = MediaContent.order(:title)
     end
 
     def edit
@@ -50,18 +58,18 @@ module Backend
     end
 
     def unpublish
-      if @media_content.try(:unpublish)
-        redirect_to media_contents_url
-      else
-        redirect_to media_content_url(@media_content)
+      @item = @media_content
+      @item.try(:unpublish)
+      respond_to do |format|
+        format.js { render 'backend/shared/index_options' }
       end
     end
 
     def publish
-      if @media_content.try(:publish)
-        redirect_to media_contents_url
-      else
-        redirect_to media_content_url(@media_content)
+      @item = @media_content
+      @item.try(:publish)
+      respond_to do |format|
+        format.js { render 'backend/shared/index_options' }
       end
     end
 

@@ -11,13 +11,13 @@
      */
     routes: {
       '': 'Home#index',
-      'publications': 'Publications#index',
+      'publications(/)': 'Publications#index',
       'publications/:id': 'Publications#show',
-      'activities': 'Activities#index',
+      'activities(/)': 'Activities#index',
       'activities/:id': 'Activities#show',
-      'media-library': 'Media#index',
+      'media-library(/)': 'Media#index',
       'media-library/:id': 'Media#show',
-      'news': 'News#index',
+      'news(/)': 'News#index',
       'news/:id': 'News#show'
     },
 

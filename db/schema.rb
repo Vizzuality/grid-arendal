@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161125121452) do
+ActiveRecord::Schema.define(version: 20161204224602) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,13 +21,6 @@ ActiveRecord::Schema.define(version: 20161125121452) do
     t.integer  "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "activity_news", force: :cascade do |t|
-    t.integer  "activity_id"
-    t.integer  "news_article_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
   end
 
   create_table "album_relations", force: :cascade do |t|
@@ -50,6 +43,13 @@ ActiveRecord::Schema.define(version: 20161125121452) do
     t.string   "main_photo_id"
     t.string   "main_photo_url"
     t.index ["media_content_id"], name: "index_albums_on_media_content_id", using: :btree
+  end
+
+  create_table "content_news", force: :cascade do |t|
+    t.integer  "content_id"
+    t.integer  "news_article_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "content_partners", force: :cascade do |t|
@@ -80,11 +80,24 @@ ActiveRecord::Schema.define(version: 20161125121452) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
-    t.boolean  "is_featured"
     t.integer  "project_number"
     t.text     "short_description"
+    t.boolean  "is_featured"
     t.date     "content_date"
     t.integer  "content_type_id"
+    t.integer  "media_content_id"
+    t.integer  "lead_user_id"
+  end
+
+  create_table "documents", force: :cascade do |t|
+    t.string   "label"
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
+    t.integer  "publication_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "events", force: :cascade do |t|
@@ -126,9 +139,8 @@ ActiveRecord::Schema.define(version: 20161125121452) do
   create_table "participants", force: :cascade do |t|
     t.integer  "content_id"
     t.integer  "user_id"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.boolean  "is_lead",    default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "partners", force: :cascade do |t|
@@ -225,9 +237,17 @@ ActiveRecord::Schema.define(version: 20161125121452) do
     t.datetime "updated_at",                   null: false
   end
 
-  add_foreign_key "activity_news", "contents", column: "activity_id"
-  add_foreign_key "activity_news", "news_articles"
+  create_table "weblinks", force: :cascade do |t|
+    t.string   "url"
+    t.string   "label"
+    t.string   "publication_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
   add_foreign_key "albums", "media_contents"
+  add_foreign_key "content_news", "contents"
+  add_foreign_key "content_news", "news_articles"
   add_foreign_key "content_partners", "contents"
   add_foreign_key "content_partners", "partners"
   add_foreign_key "participants", "contents"

@@ -105,14 +105,15 @@ module Attachable
                           storage: :dropbox,
                           dropbox_credentials: Rails.root.join('config/dropbox.yml'),
                           dropbox_options: {
-                            path: "#{Rails.env}/documents/#{self.class.to_s}/#{id}_#{document.original_filename}",
+                            path: proc{ |style| "#{Rails.env}/documents/#{self.class.to_s}/#{id}_#{document.original_filename}"},
                             unique_filename: true
                           }
       else
         has_attached_file :document
       end
 
-      validates_attachment :document, content_type: ['application/pdf', 'application/postscript']
+      validates_attachment_content_type :document,
+        content_type: ['application/pdf', 'application/postscript']
     end
   end
 end

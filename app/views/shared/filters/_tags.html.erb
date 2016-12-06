@@ -1,0 +1,28 @@
+<div class="filter -type-tags js-filter <%= "-have-value" if params[:tags].present? %>" data-filter-type="tags" data-filter-key="<%= key %>">
+  <div class="type text -filter-title"><%= title %></div>
+  <span class="speaker">
+    <span id="<%= key %>" class="text -filter" data-placeholder="<%= placeholder %>">
+      <% if params[:tags].present? %>
+        <%= data.select{|t| params[:tags].split(",").include?(t.id.to_s)}.map(&:name).join(", ") %>
+      <% else %>
+        <%= placeholder %>
+      <% end %>
+    </span>
+    <svg class="icon">
+      <use xlink:href="#icon-dropdown_arrow_down"></use>
+    </svg>
+  </span>
+  <div class="dropdown">
+    <div class="type text -filter-title"><%= title %></div>
+    <svg class="icon js-tags-select-closer">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-dropdown_arrow_down"></use>
+    </svg>
+    <ul class="list">
+      <% data.each do |option| %>
+        <li class="text -filter <%= "selected" if params[:tags] && params[:tags].split(",").include?(option.id.to_s) %>" data-value="<%= option.id %>" data-name="<%= option.name %>">
+          <%= option.name %> (<%= option.taggings_count %>)
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

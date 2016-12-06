@@ -33,7 +33,7 @@
 
   <div class="row">
     <div class="small-12 column">
-      <div class="c-article-image" <% if @publication.picture_file_name %>style="background-image: url('<%= @publication.picture %>');"<% end %>></div>
+      <div class="c-article-image" <% if @publication.media_content && @publication.media_content.mediable_photo_url.present? %>style="background-image: url('<%= @publication.media_content.mediable_photo_url %>');"<% end %>></div>
     </div>
   </div>
 
@@ -49,14 +49,31 @@
       <div class="meta">
         <div class="row">
           <div class="small-6 medium-3 large-4 columns">
-            <div class="cover"></div>
+            <% if @publication.picture.present? %>
+              <div class="cover" style="<%= "background-image: url('#{@publication.picture.url}')" if @publication.picture %>"></div>
+            <% end %>
           </div>
           <div class="small-6 medium-9 large-8 columns">
             <div class="title text -meta desktop">Download</div>
             <div class="download-links">
-              <div class="btn -dark">pdf</div>
-              <div class="btn -dark">e-book</div>
-              <div class="btn">graphics</div>
+              <% @publication.documents.each do |doc| %>
+                <div class="btn -dark">
+                  <%= link_to doc.label, doc.document.url %>
+                </div>
+              <% end %>
+              <!--div class="btn">graphics</div-->
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="small-6 medium-12 large-12 columns">
+            <div class="title text -meta desktop">External links</div>
+            <div class="download-links">
+              <% @publication.weblinks.each do |wl| %>
+                <div class="btn -dark">
+                  <%= link_to wl.label, wl.url %>
+                </div>
+              <% end %>
             </div>
           </div>
         </div>
@@ -70,9 +87,14 @@
     <% end %>
   </ul>
 
-  <%= render 'shared/users' %>
+  <% if @users.any? || @publication.lead_user %>
+    <%= render 'shared/users', users: @users, lead_user: @publication.lead_user %>
+  <% end %>
 
-  <%= render 'shared/posts', collection: @publications, title: 'publications', link: publications_path %>
+  <% if @publication.activities.any? %>
+    <%= render 'shared/posts', collection: @publication.activities,
+      title: 'activities', link: activities_path %>
+  <% end %>
 
   <%= render 'shared/media' %>
 

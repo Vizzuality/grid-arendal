@@ -8,7 +8,7 @@ I want to create user
     And I am on the new user page
     When I fill in "Email" with "user1@sample.com"
     And I select "publisher" from "Role"
-    And I press "Create user"
+    And I press "SAVE"
     Then I should be on the users page
     And I should have one publisheruser
     And "user1@sample.com" should receive no email
@@ -23,7 +23,7 @@ I want to create user
     And I fill in "Position" with "GM"
     And I select "publisher" from "Role"
     And I check "user_active"
-    And I press "Create user"
+    And I press "SAVE"
     Then I should be on the users page
     And I should have one publisheruser
     And I should have sign_in_count zero for "user1@sample.com"

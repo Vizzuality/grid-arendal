@@ -13,7 +13,11 @@
       users: @users,
       partners: @partners,
       content_types: @content_types,
-      have_picture: false,
-      picture_url: nil %>
+      activities: @activities,
+      news_articles: @news_articles,
+      tags: @tags,
+      have_picture: @publication.picture_file_name ? true : false,
+      picture_url: nil,
+      media_content_id: nil%>
   <% end %>
 </div>

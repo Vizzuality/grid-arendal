@@ -1,6 +1,7 @@
-- if not(defined? js_trigger_class)
-  - js_trigger_class = ''
+- js_trigger_class ||= ''
+- required ||= false
+- label_txt ||= nil
 
 .field
-  = form.label value, class: 'text -field-label -bold -dark'
-  = form.input value, label: false, input_html: {class: "basic-input text -plain-text -dark #{js_trigger_class}"}
+  = form.label value, label_txt, class: 'text -field-label -bold -dark'
+  = form.input value, required: required, label: false, html5: true, input_html: {class: "basic-input text -plain-text -dark #{js_trigger_class}"}

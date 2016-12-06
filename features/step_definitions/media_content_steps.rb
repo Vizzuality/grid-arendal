@@ -47,3 +47,11 @@ Given(/^I stub flickr$/) do
   allow(FlickrService).to receive(:update_asset).and_return(true)
   allow(FlickrService).to receive(:set_asset).and_return(true)
 end
+
+Then /^I should have one published media content$/ do
+  expect(MediaContent.published.size).to eq(1)
+end
+
+Then /^I should have one unpublished media content$/ do
+  expect(MediaContent.unpublished.size).to eq(1)
+end
