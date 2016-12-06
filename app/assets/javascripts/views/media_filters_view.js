@@ -149,7 +149,6 @@
         this.filters[i]["selectedValues"] = selectedValues;
         i++;
       }.bind(this));
-      console.log(this.filters);
     },
 
   });
