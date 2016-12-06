@@ -25,14 +25,16 @@
       type: 'select',
       title: 'FILTER BY',
       placeholder: 'Filter by type',
-      key: 'content-types'
+      key: 'type',
+      display_method: 'title'
     },
     {
       data: @partners,
       type: 'select',
       title: 'FILTER BY',
       placeholder: 'Filter by partner',
-      key: 'partners'
+      key: 'partners',
+      display_method: 'name'
     }
   ] %>
   <%= render 'shared/filters', filters: filters %>

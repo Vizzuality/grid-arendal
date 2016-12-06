@@ -17,6 +17,9 @@ class ContentType < ApplicationRecord
   PUBLICATION = "Publication"
   FOR_CONTENT = [BOTH, ACTIVITY, PUBLICATION]
 
+  scope :by_publication, -> { where(for_content: ContentType::PUBLICATION).or(ContentType.where(for_content: ContentType::BOTH)) }
+  scope :by_activity, -> { where(for_content: ContentType::ACTIVITY).or(ContentType.where(for_content: ContentType::BOTH)) }
+
   validates :title, presence: true
   validates :for_content, presence: true
   validates :for_content,

@@ -1,9 +1,9 @@
-<div class="filter -type-select js-filter <%= "-have-value" if params['content-types'].present? %>" data-filter-type="select" data-filter-key="<%= key %>">
+<div class="filter -type-select js-filter <%= "-have-value" if params[key].present? %>" data-filter-type="select" data-filter-key="<%= key %>">
   <div class="type text -filter-title"><%= title %></div>
   <span class="speaker">
     <span id="<%= key %>" class="text -filter" data-placeholder="<%= placeholder %>">
-      <% if params['content-types'].present? %>
-        <%= data.select{|t| params['content-types'].include?(t.id.to_s)}.map(&:title) %>
+      <% if params[key].present? %>
+        <%= data.select{|t| params[key] == t.id.to_s }.first.send(display_method) %>
       <% else %>
         <%= placeholder %>
       <% end %>

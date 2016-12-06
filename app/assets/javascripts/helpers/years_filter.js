@@ -26,13 +26,16 @@
 
     _cache: function() {
       this.$years = this.$el.find("li");
+      this.key = this.$el.data("filter-key");
     },
 
     _updateSelectedYears: function(drop, value) {
       if (drop) {
         this.selectedValues = _.without(this.selectedValues, value);
       } else {
-        this.selectedValues.push(value);
+        if ( $.inArray( value, this.selectedValues ) === -1 ) {
+          this.selectedValues.push(value);
+        }
       }
     },
 

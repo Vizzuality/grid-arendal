@@ -147,14 +147,9 @@
       _.each(activeFilters, function(value, filter) {
         var selectedValues = value.split(",").map(Number);
         this.filters[i]["selectedValues"] = selectedValues;
-        // $('.filter[data-filter-key="' + filter + '"]').addClass('-have-value');
-        // _.each(selectedValues, function(dataValue) {
-        //   // var activeFilterItem = $('.filter[data-filter-key="' + filter + '"]').find('.-filter[data-value="' + dataValue + '"]');
-        //   // activeFilterItem.addClass('selected');
-        //   // $('#' + filter).text(activeFilterItem.text());
-        // }.bind(this));
         i++;
       }.bind(this));
+      console.log(this.filters);
     },
 
   });

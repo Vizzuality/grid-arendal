@@ -11,13 +11,15 @@
         <% filters.each do |filter| %>
           <% filter[:title] ||= ''
              filter[:placeholder] ||= ''
+             filter[:display_method] ||= 'title'
           %>
           <%= render "shared/filters/#{filter[:type]}",
             data: filter[:data],
             js_trigger: filter[:js_trigger],
             title: filter[:title],
             placeholder: filter[:placeholder],
-            key: filter[:key] %>
+            key: filter[:key],
+            display_method: filter[:display_method] %>
         <% end %>
         <%#=render 'shared/filters/search', placeholder: "Search media" %>
       </div>
