@@ -8,6 +8,26 @@ $items-border: rem(1px) solid rgba($white, 0.2);
     padding: rem(15px) 0 0 $index-horizontal-padding;
   }
 
+  .tabs {
+    font-size: 0;
+    height: rem(60px);
+    background-color: #15516a;
+
+    .tab {
+      display: inline-block;
+      width: 50%;
+      height: 100%;
+      padding: rem(15px) 0 0 rem(12px);
+      opacity: 0.3;
+      cursor: pointer;
+
+      &.-selected {
+        background-color: $color-2;
+        opacity: 1;
+      }
+    }
+  }
+
   .buttons-bar {
     width: 100%;
     height: rem(30px);
@@ -28,6 +48,14 @@ $items-border: rem(1px) solid rgba($white, 0.2);
         width: rem(14px);
         height: rem(14px);
       }
+    }
+  }
+
+  .tabs-content {
+    display: none;
+
+    &.-selected {
+      display: block;
     }
   }
 

@@ -25,6 +25,8 @@
       this._loadDatepicker();
       this._loadTaggingSelect();
       this._loadMediaContentSearch();
+      this._loadImgUploader();
+      this._loadAlbumPictures();
     },
 
     _cache: function () {
@@ -34,11 +36,7 @@
     _loadHeaderAdjustableInput: function () {
       _.each($(this.$el.find(this.options.adjustableTriggerClass)), function(element) {
         new App.Helper.FormAdjustableInput({
-          el: element,
-          events: {
-            'focusin': this._setFocusHeader.bind(this),
-            'focusout': this._setFocusHeader.bind(this),
-          },
+          el: element
         });
       }.bind(this));
     },
@@ -80,6 +78,20 @@
     _loadMediaContentSearch: function() {
       new App.Helper.FormMediaContentSearch({
         el: $(this.$el.find('[data-type="media-content"]'))
+      });
+    },
+
+    _loadImgUploader: function() {
+      _.each($(this.$el.find('[data-type="picture"]')), function(element) {
+        new App.Helper.FormImgUploader({
+          el: element
+        });
+      }.bind(this));
+    },
+
+    _loadAlbumPictures: function() {
+      new App.Helper.FormAlbumPictures({
+        el: $(this.$el.find('[data-type="album_pictures"]'))
       });
     },
 

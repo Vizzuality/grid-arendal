@@ -3,14 +3,18 @@
 </div>
 
 <div class="l-items-index">
-  <%= render 'media_contents', media_contents: @media_contents %>
+  <%= render 'media_contents', media_content: @media_content, albums: @albums, photos: @photos %>
 </div>
 
 <div class="l-items-detail">
   <%= simple_form_for @media_content, html: { class: 'c-form' } do |f| %>
-    <%= render 'form',
+    <%= render "form_#{@media_content.mediable_type}",
       form: f,
+      albums: @albums,
+      photos: @photos,
       have_picture: @media_content.mediable_photo_url.present? ? true : false,
-      picture_url: @media_content.mediable_photo_url.present? ? @media_content.mediable_photo_url : nil %>
+      picture_url: @media_content.mediable_photo_url.present? ? @media_content.mediable_photo_url : nil,
+      album_photos: @album_photos,
+      tags: @tags %>
   <% end %>
 </div>
