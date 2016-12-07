@@ -7,7 +7,7 @@ module Backend
 
     before_action :set_flickr
     before_action :set_media_content,  except: [:index, :new, :create, :search]
-    before_action :set_media_contents, except: :index
+    before_action :set_media_contents, except: [:search]
 
     def search
       @media_contents = MediaContent.where("UPPER(title) like UPPER(?)", "#{params[:query]}%").limit(20)
@@ -18,16 +18,16 @@ module Backend
     end
 
     def index
-      @media_contents = MediaContent.order(:title)
     end
 
     def edit
-      @media_contents = MediaContent.includes_mediable.order(:title)
+      @tags = Tag.order(:name)
+      @album_photos = @media_content.mediable_type == "album" ? MediaContent.find(params[:id]).album_photos.map(&:photo) : nil
     end
 
     def new
-      @media_contents = MediaContent.includes_mediable.order(:title)
       @media_content = MediaContent.new
+      @tags = Tag.order(:name)
     end
 
     def update
@@ -90,7 +90,8 @@ module Backend
       end
 
       def set_media_contents
-        @media_contents = MediaContent.order(:title)
+        @albums = MediaContent.joins(:album).order(:title)
+        @photos = MediaContent.joins(:photo).order(:title)
       end
 
       def set_flickr

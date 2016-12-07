@@ -1,29 +1,37 @@
-<h2 class="text -main-title -light">Media Library</h2>
-
-<div class="buttons-bar">
-  <% if can?(:create, MediaContent) %>
-    <%= link_to "New photo", new_media_content_path(mediable: 'photo'), class: 'btn -light -no-border -create-new' %>
-    <%= link_to "New album", new_media_content_path(mediable: 'album'), class: 'btn -light -no-border -create-new' %>
+<% tabs = [
+  {"title" => "Albums", "key" => "album", "data" => albums},
+  {"title" => "Pictures", "key" => "photo", "data" => photos},
+]
+selected_tab = if params[:mediable].present?
+                params[:mediable]
+              elsif (defined? media_content)
+                media_content.mediable_type
+              else
+                "album"
+              end %>
+<div class="tabs">
+  <% tabs.each do |tab| %>
+    <div class="tab text -main-title -light js-select-tab <% if tab['key'] == selected_tab %>-selected<% end %>" data-type="<%= tab['key'] %>"><%= tab['title'] %></div>
   <% end %>
-  <div class="btn">
-    <svg class="icon">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"></use>
-    </svg>
-  </div>
-  <div class="btn">
-    <svg class="icon">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-sort"></use>
-    </svg>
-  </div>
 </div>
 
-<ul class="items-list">
-  <% @media_contents.each do |media_content| %>
-    <%= render 'backend/shared/index_media_item',
-      item: media_content,
-      title: media_content.title,
-      type: media_content.mediable_type,
-      media_photo_url: media_content.mediable_photo_url.present? ? media_content.mediable_photo_url : nil,
-      edit_path: edit_media_content_path(media_content, "mediable" => media_content.mediable_type) %>
-  <% end %>
-</ul>
+<% tabs.each do |tab| %>
+  <div class="tabs-content <% if tab['key'] == selected_tab %>-selected<% end %>" data-type="<%= tab['key'] %>">
+    <%= render 'backend/shared/index_items_buttons.html',
+      havePermissionToCreate: can?(:create, MediaContent),
+      createPath: new_media_content_path(mediable: tab['key'])
+    %>
+
+    <ul class="items-list">
+      <% tab['data'].each do |media_content| %>
+        <%= render 'backend/shared/index_item',
+          item: media_content,
+          title: media_content.title,
+          publishn_path: publish_media_content_path(media_content),
+          unpublish_path: unpublish_media_content_path(media_content),
+          edit_path: edit_media_content_path(media_content, "mediable" => media_content.mediable_type),
+          delete_path: media_content_path(media_content) %>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

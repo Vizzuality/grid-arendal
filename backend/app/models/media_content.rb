@@ -16,6 +16,8 @@ class MediaContent < ApplicationRecord
   include Sanitizable
   include Mediable
 
+  acts_as_taggable
+
   attr_accessor :photo_file, :main_photo_file, :mediable
 
   has_many :album_photos_as_album, class_name: 'AlbumRelation', foreign_key: :photoset_id
