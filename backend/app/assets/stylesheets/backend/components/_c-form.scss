@@ -211,7 +211,7 @@ $error-red: #ec5c5c;
       }
 
       .pictures-grid {
-        margin: 0 rem(-2.5px) 0 rem(-2.5px);
+        margin: rem(-2.5px) rem(-2.5px) 0 rem(-2.5px);
         min-height: rem(60px);
         overflow: auto;
         font-size: 0;
@@ -219,7 +219,7 @@ $error-red: #ec5c5c;
         li {
           display: inline-block;
           width: 16.66%;
-          padding: 0 rem(2.5px) rem(5px) rem(2.5px);
+          padding: rem(2.5px);
           height: rem(60px);
           cursor: pointer;
 
