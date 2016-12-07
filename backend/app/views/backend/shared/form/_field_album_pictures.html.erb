@@ -2,23 +2,20 @@
   <div class="fields">
     <div class="field">
       <%= form.label "Pictures", class: 'text -field-label -bold -dark' %>
-      <ul class="pictures-grid">
+      <ul class="pictures-grid <% if album_photos.size > 0 %>-have-items<% end %>">
+        <span class="text -plain-text -dark placeholder">To include pictures inside the album, click on Add Pictures</span>
         <% album_photos.each do |photo| %>
           <li><div class="picture" data-media-content-id="<%= photo.media_content_id %>" style="background-image: url('<%= photo.photo_url %>');"></div></li>
         <% end %>
       </ul>
+      <%= form.simple_fields_for value do |album_photo|%>
+        <%= render 'album_photo_fields', f: album_photo, current_picture: true %>
+      <% end %>
       <div class="options">
         <div class="btn -dark -disable js-remove-pictures">Remove Pictures</div>
         <div class="btn -dark -disable js-set-thumbnail">Use as Thumbnail</div>
       </div>
     </div>
-  </div>
-
-  <%= form.simple_fields_for value do |album_photo|%>
-    <%= render 'album_photo_fields', f: album_photo, current_picture: true %>
-  <% end %>
-
-  <div class="links fields">
-    <%= link_to_add_association 'ADD PHOTO', form, value, class: 'btn -dark js-add-nested-fields' %>
+    <%= link_to_add_association 'ADD PICTURES', form, value, class: 'btn -dark js-add-nested-fields' %>
   </div>
 </div>

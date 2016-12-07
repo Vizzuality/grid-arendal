@@ -212,7 +212,7 @@ $error-red: #ec5c5c;
 
       .pictures-grid {
         margin: 0 rem(-2.5px) 0 rem(-2.5px);
-        height: rem(190px);
+        min-height: rem(60px);
         overflow: auto;
         font-size: 0;
 
@@ -244,6 +244,21 @@ $error-red: #ec5c5c;
                 border: rem(4px) solid $white;
               }
             }
+          }
+        }
+
+        .placeholder {
+          display: flex;
+          width: 100%;
+          height: rem(60px);
+          align-items: center;
+          padding: 0 rem(2.5px);
+        }
+
+        &.-have-items {
+
+          .placeholder {
+            display: none;
           }
         }
       }
@@ -429,6 +444,7 @@ $error-red: #ec5c5c;
   .nested-fields {
     position: absolute;
     bottom: -100%;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: $white;
@@ -450,6 +466,10 @@ $error-red: #ec5c5c;
         width: rem(142px);
         margin-left: rem(8px);
       }
+    }
+
+    .add_fields {
+      width: rem(160px);
     }
 
     .remove_fields {

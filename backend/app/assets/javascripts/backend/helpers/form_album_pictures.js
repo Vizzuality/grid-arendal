@@ -17,6 +17,7 @@
       itemsClass: "picture",
       selectedClass: "-selected",
       buttonDisableClass: "-disable",
+      haveItemsClass: "-have-items",
       picturesGridClass: ".pictures-grid",
       hiddenClass: "-hidden",
       removeButtonTriggerClass: ".js-remove-pictures",
@@ -75,6 +76,14 @@
       }
     },
 
+    _checksetPicturesGridPlaceholder: function () {
+      if (this.$picturesGrid.find(".picture").length > 0) {
+        this.$picturesGrid.addClass(this.options.haveItemsClass);
+      } else {
+        this.$picturesGrid.removeClass(this.options.haveItemsClass);
+      }
+    },
+
     _onClickSelectItem: function (e) {
       var target = $(e.target);
       if (target.hasClass(this.options.itemsClass)) {
@@ -91,6 +100,7 @@
           this._updateSelected(true, value);
         }.bind(this));
         this._checkButtonsAvailability();
+        this._checksetPicturesGridPlaceholder();
       }
     },
 
@@ -149,7 +159,9 @@
       var reader = new FileReader();
 
       reader.onload = function (e) {
-        this.$picturesGrid.append('<li><div class="picture" data-media-content-id="' + id + '" style="background-image: url(\'' + e.target.result + '\');"></div></li>');
+        this.$picturesGrid
+          .addClass(this.options.haveItemsClass)
+          .append('<li><div class="picture" data-media-content-id="' + id + '" style="background-image: url(\'' + e.target.result + '\');"></div></li>');
         this._hideNewNestedField(newForm);
       }.bind(this);
 
