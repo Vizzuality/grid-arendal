@@ -117,6 +117,15 @@ $error-red: #ec5c5c;
         position: absolute;
         top: 0;
         right: 0;
+
+        .btn {
+          height: rem(24px);
+
+          &.-disable {
+            opacity: 0.3;
+            cursor: not-allowed;
+          }
+        }
       }
 
       .textarea {
@@ -197,6 +206,44 @@ $error-red: #ec5c5c;
 
           .select2-selection__rendered {
             padding: rem(4px) rem(5px) rem(8px) rem(8px);
+          }
+        }
+      }
+
+      .pictures-grid {
+        margin: 0 rem(-2.5px) 0 rem(-2.5px);
+        height: rem(190px);
+        overflow: auto;
+        font-size: 0;
+
+        li {
+          display: inline-block;
+          width: 16.66%;
+          padding: 0 rem(2.5px) rem(5px) rem(2.5px);
+          height: rem(60px);
+          cursor: pointer;
+
+          .picture {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+          }
+
+          &.-selected {
+
+            .picture {
+              box-shadow: 0 0 rem(5px) 0 rgba($black, 0.5);
+
+              &:before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                border: rem(4px) solid $white;
+              }
+            }
           }
         }
       }
@@ -343,12 +390,30 @@ $error-red: #ec5c5c;
           }
         }
       }
+
+      &[data-type="album_pictures"] {
+
+        .options {
+          top: rem(-8px);
+
+          .btn {
+            display: inline-flex;
+            width: rem(142px);
+            margin-left: rem(8px);
+          }
+        }
+      }
     }
 
     &.-grey {
       background-color: $grey;
     }
+
+    &.-hidden {
+      display: none;
+    }
   }
+
   .links {
     padding: rem(30px) rem(75px);
 

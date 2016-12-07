@@ -14,6 +14,7 @@
       photos: @photos,
       have_picture: @media_content.mediable_photo_url.present? ? true : false,
       picture_url: @media_content.mediable_photo_url.present? ? @media_content.mediable_photo_url : nil,
+      album_photos: @album_photos,
       tags: @tags %>
   <% end %>
 </div>

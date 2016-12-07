@@ -1,0 +1,22 @@
+<div class="fields">
+  <div class="field" data-type="album_pictures">
+    <%= form.label "Pictures", class: 'text -field-label -bold -dark' %>
+    <ul class="pictures-grid">
+      <% album_photos.each do |photo| %>
+        <li><div class="picture" data-media-content-id="<%= photo.media_content_id %>" style="background-image: url('<%= photo.photo_url %>');"></div></li>
+      <% end %>
+    </ul>
+    <div class="options">
+      <div class="btn -dark -disable">Remove Pictures</div>
+      <div class="btn -dark -disable">Use as Thumbnail</div>
+    </div>
+  </div>
+</div>
+
+<%= form.simple_fields_for value do |album_photo|%>
+  <%= render 'album_photo_fields', f: album_photo, current_picture: true %>
+<% end %>
+
+<div class="links fields">
+  <%= link_to_add_association 'ADD PHOTO', form, value, class: 'btn -dark' %>
+</div>

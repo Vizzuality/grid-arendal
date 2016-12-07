@@ -22,6 +22,7 @@ module Backend
 
     def edit
       @tags = Tag.order(:name)
+      @album_photos = @media_content.mediable_type == "album" ? MediaContent.find(params[:id]).album_photos.map(&:photo) : nil
     end
 
     def new
@@ -89,8 +90,8 @@ module Backend
     end
 
     def set_media_contents
-      @albums = MediaContent.includes([:album]).joins(:album).order(:title)
-      @photos = MediaContent.includes([:photo]).joins(:photo).order(:title)
+      @albums = MediaContent.joins(:album).order(:title)
+      @photos = MediaContent.joins(:photo).order(:title)
     end
 
     def set_flickr

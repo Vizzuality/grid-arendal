@@ -24,6 +24,7 @@
       this._loadSelect();
       this._loadTaggingSelect();
       this._loadMediaContentSearch();
+      this._loadAlbumPictures();
     },
 
     _cache: function () {
@@ -71,6 +72,12 @@
     _loadMediaContentSearch: function() {
       new App.Helper.FormMediaContentSearch({
         el: $(this.$el.find('[data-type="media-content"]'))
+      });
+    },
+
+    _loadAlbumPictures: function() {
+      new App.Helper.FormAlbumPictures({
+        el: $(this.$el.find('[data-type="album_pictures"]'))
       });
     },
 
