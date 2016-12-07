@@ -142,6 +142,9 @@
       new App.Helper.FormAdjustableInput({
         el: newForm.find(".js-adjustable-input")
       });
+      new App.Helper.FormImgUploader({
+        el: newForm.find('[data-type="picture"]')
+      });
     },
     
     _showNewNestedField: function (newForm) {
