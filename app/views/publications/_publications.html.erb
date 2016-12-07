@@ -2,7 +2,8 @@
   <%= link_to publication_path(publication) do %>
     <div class="item">
       <article class="c-card">
-        <div class="card-pic" style="background-image: url('<%= publication.picture %>')"></div>
+        <% photo_url = publication.media_content.try(:mediable_photo_url) || '' %>
+        <div class="card-pic" style="background-image: url('<%= photo_url %>')"></div>
         <div class="card-descrition">
           <h3 class="text -title-card"><%= publication.title %></h3>
           <p class="text -summary"><%= publication.short_description %></p>
