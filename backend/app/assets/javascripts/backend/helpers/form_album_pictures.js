@@ -128,6 +128,10 @@
       }.bind(this));
       newForm.attr('data-media-content-id', this._getNewNestedFieldId());
       newForm.removeClass("tmp_form");
+
+      new App.Helper.FormAdjustableInput({
+        el: newForm.find(".js-adjustable-input")
+      });
     },
     
     _showNewNestedField: function (newForm) {

@@ -35,11 +35,7 @@
     _loadHeaderAdjustableInput: function () {
       _.each($(this.$el.find(this.options.adjustableTriggerClass)), function(element) {
         new App.Helper.FormAdjustableInput({
-          el: element,
-          events: {
-            'focusin': this._setFocusHeader.bind(this),
-            'focusout': this._setFocusHeader.bind(this),
-          },
+          el: element
         });
       }.bind(this));
     },
