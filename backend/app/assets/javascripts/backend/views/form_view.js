@@ -25,6 +25,7 @@
       this._loadDatepicker();
       this._loadTaggingSelect();
       this._loadMediaContentSearch();
+      this._loadImgUploader();
       this._loadAlbumPictures();
     },
 
@@ -78,6 +79,14 @@
       new App.Helper.FormMediaContentSearch({
         el: $(this.$el.find('[data-type="media-content"]'))
       });
+    },
+
+    _loadImgUploader: function() {
+      _.each($(this.$el.find('[data-type="picture"]')), function(element) {
+        new App.Helper.FormImgUploader({
+          el: element
+        });
+      }.bind(this));
     },
 
     _loadAlbumPictures: function() {
