@@ -38,6 +38,9 @@ class Content < ApplicationRecord
   has_many :content_news
   has_many :news_articles, through: :content_news
 
+  scope :order_by_title, -> { order('title ASC')        }
+  scope :by_published,   -> { where(is_published: true) }
+  scope :by_type, ->(type) { where(content_type_id: type) }
 
   validates :title, presence: true
 end
