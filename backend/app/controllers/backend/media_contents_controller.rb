@@ -85,24 +85,24 @@ module Backend
 
     private
 
-    def set_media_content
-      @media_content = MediaContent.find(params[:id])
-    end
+      def set_media_content
+        @media_content = MediaContent.find(params[:id])
+      end
 
-    def set_media_contents
-      @albums = MediaContent.joins(:album).order(:title)
-      @photos = MediaContent.joins(:photo).order(:title)
-    end
+      def set_media_contents
+        @albums = MediaContent.joins(:album).order(:title)
+        @photos = MediaContent.joins(:photo).order(:title)
+      end
 
-    def set_flickr
-      FlickRaw.api_key       = ENV['FLICKR_API_KEY']
-      FlickRaw.shared_secret = ENV['FLICKR_SHARED_SECRET']
-      flickr.access_token    = ENV['FLICKR_ACCESS_TOKEN']
-      flickr.access_secret   = ENV['FLICKR_ACCESS_SECRET']
-    end
+      def set_flickr
+        FlickRaw.api_key       = ENV['FLICKR_API_KEY']
+        FlickRaw.shared_secret = ENV['FLICKR_SHARED_SECRET']
+        flickr.access_token    = ENV['FLICKR_ACCESS_TOKEN']
+        flickr.access_secret   = ENV['FLICKR_ACCESS_SECRET']
+      end
 
-    def media_content_params
-      params.require(:media_content).permit!
-    end
+      def media_content_params
+        params.require(:media_content).permit!
+      end
   end
 end
