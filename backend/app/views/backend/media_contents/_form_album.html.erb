@@ -1,8 +1,8 @@
 <%= render 'backend/shared/form/header', form: form, inputs: [{value: :title, title_placeholder: 'Album title'}] %>
 
-<%= render 'backend/shared/form/field_album_pictures', form: form, value: :album_photos, album_photos: album_photos %>
+<div class="fields" data-type="album_pictures">
+  <%= render 'backend/shared/form/field_album_pictures', form: form, value: :album_photos, album_photos: album_photos %>
 
-<div class="fields">
   <%= render 'backend/shared/form/field_limited_input', form: form, value: :description, maxlength: 140 %>
 
   <%= render 'backend/shared/form/field_tags', form: form, collection: tags %>
