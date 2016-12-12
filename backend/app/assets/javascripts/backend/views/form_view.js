@@ -13,7 +13,8 @@
       adjustableTriggerClass: ".js-adjustable-input",
       mediumEditorTriggerClass: ".js-textarea-editable",
       selectTriggerClass: ".js-select",
-      selectTagsTriggerClass: ".js-select-tags"
+      selectTagsTriggerClass: ".js-select-tags",
+      selectTagsInlineClass: "js-inline-tags"
     },
 
     initialize: function() {
@@ -70,9 +71,17 @@
     },
 
     _loadTaggingSelect: function () {
-      $(this.options.selectTagsTriggerClass).select2({
-        tags: true
-      });
+      _.each($(this.options.selectTagsTriggerClass), function(element) {
+        var params = {
+          tags: true
+        };
+        if(!$(element).hasClass(this.options.selectTagsInlineClass)) {
+          params.createTag = function() {
+            return undefined;
+          };
+        }
+        $(element).select2(params);
+      }.bind(this));
     },
 
     _loadMediaContentSearch: function() {
