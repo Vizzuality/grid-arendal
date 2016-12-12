@@ -11,7 +11,6 @@
     },
 
     options: {
-      minHeight: 607,
       descriptionClass: ".description",
       descriptionNeedMoreClass: "-need-more",
       descriptionShowMoreClass: "-show-more"
@@ -24,11 +23,12 @@
 
     _cache: function() {
       this.$description = this.$el.find(this.options.descriptionClass);
-      this.descriptionHeight = this.$description[0].scrollHeight;
+      this.descriptionHeight = this.$description.height();
+      this.descriptionRealHeight = this.$description[0].scrollHeight;
     },
 
     _checkReadMore: function() {
-      if(this.descriptionHeight > this.options.minHeight) {
+      if(this.descriptionRealHeight > this.descriptionHeight) {
         this.$description.addClass(this.options.descriptionNeedMoreClass);
       }
     },

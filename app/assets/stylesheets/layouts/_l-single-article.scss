@@ -77,8 +77,12 @@
         width: 100%;
         cursor: pointer;
         color: $font-color-1;
-        background-color: $white;
+        background-color: #F7F6F4;
         display: none;
+
+        @media screen and (min-width: $screen-l) {
+          background-color: $white;
+        }
 
         .icon {
           width: rem(18px);
