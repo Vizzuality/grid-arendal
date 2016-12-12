@@ -3,7 +3,7 @@ class NewsArticlesController < ApplicationController
   before_action :set_article, only: [:show]
 
   def index
-    @articles = NewsArticle.order(:publication_date)
+    @articles = NewsArticle.order(publication_date: :desc)
   end
 
   def show
