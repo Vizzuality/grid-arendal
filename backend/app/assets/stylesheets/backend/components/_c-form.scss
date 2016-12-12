@@ -207,6 +207,15 @@ $error-red: #ec5c5c;
           .select2-selection__rendered {
             padding: rem(4px) rem(5px) rem(8px) rem(8px);
           }
+
+          .select2-search--inline {
+            height: rem(30px);
+            margin-top: rem(5px);
+            font-family: $font-family-1;
+            font-size: rem(14px);
+            line-height: 2.2;
+            color: $font-color-1;
+          }
         }
       }
 
