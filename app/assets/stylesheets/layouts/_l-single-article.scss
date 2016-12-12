@@ -128,14 +128,16 @@
 
     .sidebar-content {
 
-      &.-fixed {
-        position: fixed;
-        top: 0;
-      }
+      @media screen and (min-width: $screen-l) {
+        &.-fixed {
+          position: fixed;
+          top: 0;
+        }
 
-      &.-fixoluted {
-        position: absolute;
-        bottom: 0;
+        &.-fixoluted {
+          position: absolute;
+          bottom: 0;
+        }
       }
 
       .meta {
