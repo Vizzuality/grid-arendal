@@ -101,6 +101,7 @@
   }
 
   .sidebar {
+    position: relative;
     width: 100%;
 
     @media screen and (max-width: 1023px) {
@@ -121,70 +122,80 @@
       width: 50%;
     }
 
-    .meta {
+    .sidebar-content {
 
-      @media screen and (min-width: $screen-l) {
-        margin-right: calc(100% - (970px / 2) - 15px);
+      &.-fixed {
+        position: fixed;
+        top: 0;
       }
 
-    }
-
-    .cover {
-      background-image: image-url('cover_demo.jpg');
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      max-width: rem(160px);
-      height: rem(200px);
-      margin-top: rem(10px);
-      margin-left: rem(5px);
-
-      @media screen and (min-width: $screen-l) {
-        margin-top: rem(20px);
-      }
-    }
-
-    .title {
-      margin-top: rem(20px);
-      margin-left: rem(20px);
-      margin-bottom: rem(5px);
-      font-weight: 600;
-
-      &.desktop {
-        display: none;
+      &.-fixoluted {
+        position: absolute;
+        bottom: 0;
       }
 
-      @media screen and (min-width: $screen-l) {
-        margin-top: rem(30px);
-        margin-left: 0;
+      .meta {
 
-        &.desktop {
-          display: block;
+        @media screen and (min-width: $screen-l) {
+          margin-right: calc(100% - #{rem(970px / 2)} - #{rem(15px)});
         }
 
-        &.mobile {
-          display: none;
-        }
-      }
-    }
-
-    .download-links {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      align-items: flex-start;
-      justify-content: space-between;
-
-      @media screen and (min-width: $screen-m) {
-        flex-direction: row;
       }
 
-      .btn {
-        width: 100%;
+      .cover {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: rem(200px);
         margin-top: rem(10px);
 
+        @media screen and (min-width: $screen-l) {
+          margin-top: rem(15px);
+        }
+      }
+
+      .title {
+        margin-top: rem(20px);
+        margin-left: rem(20px);
+        margin-bottom: rem(5px);
+        font-weight: 600;
+
+        &.desktop {
+          display: none;
+        }
+
+        @media screen and (min-width: $screen-l) {
+          margin-top: rem(30px);
+          margin-left: 0;
+
+          &.desktop {
+            display: block;
+          }
+
+          &.mobile {
+            display: none;
+          }
+        }
+      }
+
+      .download-links {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: space-between;
+
         @media screen and (min-width: $screen-m) {
-          width: 48%;
+          flex-direction: row;
+        }
+
+        .btn {
+          width: 100%;
+          margin-top: rem(10px);
+
+          @media screen and (min-width: $screen-m) {
+            width: 48%;
+          }
         }
       }
     }
