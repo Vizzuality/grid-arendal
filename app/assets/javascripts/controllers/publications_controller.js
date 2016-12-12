@@ -15,8 +15,10 @@
       });
     },
 
-    show: function(params) {
-      console.log('publications#show');
+    show: function() {
+      new App.View.DescriptionView({
+        el: '.content'
+      });
       this.initSliders();
     },
 
