@@ -24,9 +24,11 @@
     </li>
     <li class="-separator"></li>
     <li class="-logo -no-hover">
+      <%= link_to '', "/", class: 'linker' %>
       <svg class="icon">
         <use xlink:href="#icon-logo"></use>
       </svg>
+    </li>
     <li class="-separator"></li>
     <% links.each do |link| %>
       <li class="<%= (controller_name == link['key'] ? 'selected' : '')%>">
@@ -39,4 +41,4 @@
       <%= link_to 'Log In', new_user_session_path %>
     </li>
   <% end %>
-</div>
+</ul>
