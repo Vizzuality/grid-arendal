@@ -12,6 +12,7 @@ $picture-input-height: rem(230px);
 $error-red: #ec5c5c;
 
 .c-form {
+  padding-top: rem(81px);
 
   input,
   textarea {
@@ -19,9 +20,14 @@ $error-red: #ec5c5c;
   }
 
   .form_header {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 40%;
+    width: 60%;
     padding: rem(15px) rem(240px) rem(15px) rem(19px);
     border-bottom: rem(1px) solid rgba($color-1, 0.2);
+    background-color: $white;
+    z-index: 2;
 
     label {
       display: none;
