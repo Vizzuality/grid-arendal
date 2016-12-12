@@ -49,7 +49,7 @@
     @media screen and (min-width: $screen-l) {
       padding: rem(40px) rem(40px) rem(40px) 0;
       width: 50%;
-      margin-top: rem(-80px);
+      margin-top: rem(-110px);
       z-index: 15;
       background: $white;
     }
@@ -61,7 +61,45 @@
     .text {
 
       @media screen and (min-width: $screen-l) {
-        margin-left: calc(100% - (970px / 2) + 40px);
+        margin-left: calc(100% - #{rem((970px / 2))} + #{rem(40px)});
+      }
+    }
+
+    .description {
+      position: relative;
+      max-height: rem(607px);
+      overflow: hidden;
+      color: rgba($font-color-1, .8);
+
+      .read-more {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        cursor: pointer;
+        color: $font-color-1;
+        background-color: #F7F6F4;
+        display: none;
+
+        @media screen and (min-width: $screen-l) {
+          background-color: $white;
+        }
+
+        .icon {
+          width: rem(18px);
+          height: rem(18px);
+          margin-bottom: rem(-3px);
+        }
+      }
+
+      &.-need-more {
+
+        .read-more {
+          display: block;
+        }
+      }
+
+      &.-show-more {
+        max-height: none;
       }
     }
   }

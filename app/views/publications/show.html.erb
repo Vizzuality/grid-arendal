@@ -41,7 +41,15 @@
 
     <div class="content">
       <h2 class="text -title-single-alt"><%= @publication.title %></h2>
-      <div class="text -body-single"><%= raw @publication.description %></div>
+      <div class="text -body-single-alt description">
+        <%= raw @publication.description %>
+        <div class="read-more">
+          <svg class="icon">
+            <use xlink:href="#icon-read-more-plus"></use>
+          </svg>
+          Read More
+        </div>
+      </div>
     </div>
 
     <div class="sidebar -publications">
