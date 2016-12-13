@@ -17,7 +17,7 @@
 
     show: function() {
       new App.View.DescriptionView({
-        el: '.content'
+        el: '.content-wrapper'
       });
       this.initSliders();
     },

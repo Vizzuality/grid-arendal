@@ -136,7 +136,6 @@ ActiveRecord::Schema.define(version: 20161213074434) do
     t.datetime "updated_at",        null: false
     t.date     "publication_date"
     t.text     "short_description"
-    t.text     "description"
     t.string   "cover_src"
   end
 

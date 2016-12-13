@@ -25,7 +25,7 @@
       <div id="masonry-layout" class="masonry-layout" hidden data-columns>
         <% @articles.each do |article| %>
           <div class="item">
-            <%= link_to news_path(article) do %>
+            <%= link_to "http://news.grida.no/#{article.exposure_slug}" do %>
               <article class="c-card">
                 <div class="card-pic" style="background-image: url('<%= article.cover_src %>')"></div>
                 <div class="card-descrition">
