@@ -40,8 +40,7 @@ class NewsArticle < ApplicationRecord
 
         html_description = Nokogiri::HTML(item.description)
         article.cover_src = html_description.xpath("//img").attribute("src").value
-        article.description = html_description.text
-        article.short_description = html_description.text
+        article.short_description = html_description.text[0, 140]
 
         article.publication_date = item.pubDate
         article.save
