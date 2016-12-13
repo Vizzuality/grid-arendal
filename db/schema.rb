@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161213104750) do
+ActiveRecord::Schema.define(version: 20161213105419) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -96,6 +96,18 @@ ActiveRecord::Schema.define(version: 20161213104750) do
     t.datetime "created_at",                                    null: false
     t.datetime "updated_at",                                    null: false
     t.index ["partner_id"], name: "index_events_on_partner_id", using: :btree
+  end
+
+  create_table "media_contents", force: :cascade do |t|
+    t.integer  "external_id"
+    t.string   "external_url"
+    t.string   "type"
+    t.string   "author"
+    t.string   "licence"
+    t.date     "publication_date"
+    t.text     "description"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "news_articles", force: :cascade do |t|
