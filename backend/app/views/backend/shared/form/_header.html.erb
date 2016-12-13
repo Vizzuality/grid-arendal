@@ -4,6 +4,9 @@
   end %>
 
 <div class="form_header" data-fields="<%= fields %>">
+  <% if flash[:notice] %>
+    <li><%= flash[:notice] %></li>
+  <% end %>
   <% inputs.each do |input| %>
     <%= form.label input.values[0] %>
     <%= form.input input.values[0], label: false, input_html: { class: 'text -main-title -dark title js-adjustable-input', placeholder: input.values[1] } %>

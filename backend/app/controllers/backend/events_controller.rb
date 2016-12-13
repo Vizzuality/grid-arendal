@@ -21,7 +21,8 @@ module Backend
 
     def update
       if @event.update(event_params)
-        redirect_to events_url, notice: 'Event updated'
+        redirect_to edit_event_url(@event),
+          notice: 'Event updated'
       else
         render :edit
       end
@@ -30,7 +31,8 @@ module Backend
     def create
       @event = Event.create(event_params)
       if @event.save
-        redirect_to events_url
+        redirect_to edit_event_url(@event),
+          notice: 'Event created'
       else
         render :new
       end
