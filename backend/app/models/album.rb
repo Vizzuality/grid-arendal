@@ -17,5 +17,5 @@
 class Album < MediaContent
   acts_as_taggable
 
-  has_many :photo
+  has_many :photos
 end

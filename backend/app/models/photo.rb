@@ -17,6 +17,6 @@
 class Photo < MediaContent
   acts_as_taggable
 
-  has_many :photo_size
+  has_many :photo_sizes
   belongs_to :album
 end

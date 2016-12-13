@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161213160743) do
+ActiveRecord::Schema.define(version: 20161213190554) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,9 +58,9 @@ ActiveRecord::Schema.define(version: 20161213160743) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
-    t.boolean  "is_featured"
     t.integer  "project_number"
     t.text     "short_description"
+    t.boolean  "is_featured"
     t.date     "content_date"
     t.integer  "content_type_id"
     t.integer  "media_content_id"
@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(version: 20161213160743) do
   end
 
   create_table "media_contents", force: :cascade do |t|
-    t.integer  "external_id"
+    t.string   "external_id"
     t.string   "external_url"
     t.string   "type"
     t.string   "author"
@@ -145,9 +145,10 @@ ActiveRecord::Schema.define(version: 20161213160743) do
   create_table "photo_sizes", force: :cascade do |t|
     t.integer "photo_id"
     t.string  "size"
-    t.string  "width"
-    t.string  "height"
+    t.integer "width"
+    t.integer "height"
     t.string  "url"
+    t.string  "label"
   end
 
   create_table "related_contents", force: :cascade do |t|
