@@ -127,6 +127,7 @@
     }
 
     .sidebar-content {
+      padding-bottom: rem(15px);
 
       @media screen and (min-width: $screen-l) {
         &.-fixed {
@@ -190,6 +191,7 @@
         flex-wrap: wrap;
         align-items: flex-start;
         justify-content: space-between;
+        margin-top: rem(5px);
 
         @media screen and (min-width: $screen-m) {
           flex-direction: row;
