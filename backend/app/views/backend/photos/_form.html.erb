@@ -1,0 +1,23 @@
+<%= render 'backend/shared/form/header', form: form, inputs: [{value: :title, title_placeholder: 'Photo title'}] %>
+
+<div class="fields">
+
+  <div class="field" data-type="picture">
+    <%= form.label '', "Picture", class: 'text -field-label -bold -dark' %>
+    <%= form.label '', class: 'fake-input' do %>
+        <div class="tip">
+          <div class="current_picture" style="background-image: url('<%= thumbnail %>');"></div>
+        </div>
+    <% end %>
+  </div>
+
+  <%= render 'backend/shared/form/field_textarea', form: form, value: :description %>
+
+  <%= render 'backend/shared/form/field_input', form: form, value: :author %>
+
+  <%= render 'backend/shared/form/field_input', form: form, value: :licence %>
+
+  <%= render 'backend/shared/form/field_datepicker', form: form, value: :publication_date %>
+
+  <%= render 'backend/shared/form/field_tags', form: form, collection: tags %>
+</div>

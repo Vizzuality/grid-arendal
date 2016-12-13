@@ -53,10 +53,15 @@ Backend::Engine.routes.draw do
 
   resources :tags, except: :show
 
-  resources :media_contents, except: :show do
+  resources :photos, except: :show do
     patch 'publish',   on: :member
     patch 'unpublish', on: :member
     get 'search', on: :collection
+  end
+
+  resources :albums, except: :show do
+    patch 'publish',   on: :member
+    patch 'unpublish', on: :member
   end
 
   root to: 'admin_home#index'

@@ -1,0 +1,22 @@
+<% tabs = [
+  {"title" => "Albums", "key" => "albums", "path" => albums_path},
+  {"title" => "Pictures", "key" => "photos", "path" => photos_path},
+] %>
+<div class="tabs">
+  <% tabs.each do |tab| %>
+    <a href="<%= tab['path'] %>">
+      <div class="tab text -main-title -light <% if tab['key'] == key %>-selected<% end %>" data-type="<%= tab['key'] %>"><%= tab['title'] %></div>
+    </a>
+  <% end %>
+</div>
+
+<%= render 'backend/shared/index_items_buttons.html',
+           havePermissionToCreate: can?(:create, MediaContent),
+           createPath: new_photo_path
+%>
+
+<ul class="items-list">
+  <% items.each do |media_content| %>
+    <%= render 'backend/shared/index_item', item: media_content, title: media_content.title %>
+  <% end %>
+</ul>
