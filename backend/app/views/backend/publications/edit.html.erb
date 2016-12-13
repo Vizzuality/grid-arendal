@@ -12,9 +12,9 @@
       activities: @activities,
       news_articles: @news_articles,
       tags: @tags,
-      have_cover_picture: @publication.cover_picture.exists?,
+      have_cover_picture: @publication.cover_picture.present?,
       cover_picture_url: @publication.cover_picture,
-      have_picture: @publication.picture.exists?,
+      have_picture: @publication.picture.present?,
       picture_url: @publication.picture,
       media_content_id: @publication.media_content_id %>
   <% end %>
