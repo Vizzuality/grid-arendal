@@ -1,8 +1,8 @@
-<% @activities.each do |activity| %>
+<% activities.each do |activity| %>
   <%= link_to activity do %>
     <div class="item">
       <article class="c-card">
-        <% photo_url = activity.media_content.try(:mediable_photo_url) || '' %>
+        <% photo_url = activity.media_content.try(:mediable_photo_url) || "/assets/original/missing2.png" %>
         <div class="card-pic" style="background-image: url('<%= photo_url %>')"></div>
         <div class="card-descrition">
           <h3 class="text -title-card"><%= activity.title %></h3>

@@ -1,8 +1,14 @@
-<% @publications.each do |publication| %>
+<% publications.each do |publication| %>
   <%= link_to publication_path(publication) do %>
     <div class="item">
       <article class="c-card">
-        <% photo_url = publication.picture.presence || publication.media_content.try(:mediable_photo_url) %>
+        <% photo_url = if publication.picture.exists?
+                         publication.picture.url(:medium)
+                       elsif publication.media_content
+                         publication.media_content.mediable_photo_url
+                       else
+                         "/assets/original/missing2.png"
+                       end %>
         <div class="card-pic" style="background-image: url('<%= photo_url %>')"></div>
         <div class="card-descrition">
           <h3 class="text -title-card"><%= publication.title %></h3>
