@@ -91,7 +91,7 @@
     },
 
     _loadImgUploader: function() {
-      _.each($(this.$el.find('[data-type="picture"]')), function(element) {
+      _.each($(this.$el.find('[data-type="picture"],[data-type="media-content"]')), function(element) {
         new App.Helper.FormImgUploader({
           el: element
         });
