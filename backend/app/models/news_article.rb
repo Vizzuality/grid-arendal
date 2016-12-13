@@ -25,8 +25,10 @@ class NewsArticle < ApplicationRecord
   def self.fetch_from_rss
     existing = NewsArticle.count
     domain = "http://news.grida.no/"
-    url = "#{domain}feed.rss"
-    open(url) do |rss|
+    url = "#{domain}feed.rss?page="
+    page = 1
+    begin
+      rss = open(url+page.to_s)
       feed = RSS::Parser.parse(rss)
       puts "Channel Title: #{feed.channel.title}"
       feed.items.each do |item|
@@ -44,7 +46,8 @@ class NewsArticle < ApplicationRecord
         article.publication_date = item.pubDate
         article.save
       end
-    end
+      page += 1
+    end while feed.items.any?
     NewsArticle.count - existing # articles fetch
   end
 end

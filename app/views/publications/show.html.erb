@@ -53,37 +53,32 @@
     </div>
 
     <div class="sidebar -publications">
-      <div class="title text -title-block mobile">Download</div>
-      <div class="meta">
-        <div class="row">
-          <div class="small-6 medium-3 large-4 columns">
-            <% if @publication.picture.present? %>
-              <div class="cover" style="<%= "background-image: url('#{@publication.picture.url}')" if @publication.picture %>"></div>
-            <% end %>
-          </div>
-          <div class="small-6 medium-9 large-8 columns">
-            <div class="title text -meta desktop">Download</div>
-            <div class="download-links">
-              <% @publication.documents.each do |doc| %>
-                <div class="btn -dark">
-                  <%= link_to doc.label, doc.document.url %>
+      <div class="sidebar-content">
+        <div class="meta">
+          <% if @publication.documents.any? || @publication.weblinks.any? %>
+            <div class="row">
+              <div class="small-6 medium-3 large-4 columns">
+                <% if @publication.picture.present? %>
+                  <div class="cover" style="<%= "background-image: url('#{@publication.picture.url}')" if @publication.picture %>"></div>
+                <% end %>
+              </div>
+              <div class="small-6 medium-9 large-8 columns">
+                <div class="download-links">
+                  <% @publication.documents.each do |doc| %>
+                    <div class="btn -dark">
+                      <%= link_to doc.label, doc.document.url %>
+                    </div>
+                  <% end %>
+                  <% @publication.weblinks.each do |wl| %>
+                    <div class="btn -dark">
+                      <%= link_to wl.label, wl.url %>
+                    </div>
+                  <% end %>
+                  <!--div class="btn">graphics</div-->
                 </div>
-              <% end %>
-              <!--div class="btn">graphics</div-->
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="small-6 medium-12 large-12 columns">
-            <div class="title text -meta desktop">External links</div>
-            <div class="download-links">
-              <% @publication.weblinks.each do |wl| %>
-                <div class="btn -dark">
-                  <%= link_to wl.label, wl.url %>
-                </div>
-              <% end %>
-            </div>
-          </div>
+          <% end %>
         </div>
       </div>
     </div>
