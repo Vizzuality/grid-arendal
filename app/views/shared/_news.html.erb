@@ -20,7 +20,7 @@
   <ul class="row">
     <% @articles.each do |article| %>
       <li class="small-12 medium-3 columns">
-        <%= link_to news_path(article) do %>
+        <%= link_to "http://news.grida.no/#{article.exposure_slug}" do %>
           <article class="c-card">
             <div class="card-pic" style="background-image: url('<%= article.cover_src %>')"></div>
             <div class="card-descrition">
