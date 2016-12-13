@@ -54,12 +54,6 @@
         var scrollTop = $(window).scrollTop();
         var sidebarLimit = this.sidebarOffsetTop + this.sidebarHeight - this.sidebarContentHeight;
 
-        console.log("scrollTop", scrollTop);
-        console.log("this.sidebarOffsetTop", this.sidebarOffsetTop);
-        console.log("this.sidebarHeight", this.sidebarHeight);
-        console.log("this.sidebarContentHeight", this.sidebarContentHeight);
-        console.log("this.sidebarOffsetTop + this.sidebarHeight - this.sidebarContentHeight", this.sidebarOffsetTop + this.sidebarHeight - this.sidebarContentHeight);
-
         this.$sidebarContent
           .removeClass(this.options.sidebarContentFixedClass)
           .removeClass(this.options.sidebarContentFixolutedClass);
