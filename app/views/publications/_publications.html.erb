@@ -7,7 +7,7 @@
                        elsif publication.media_content
                          publication.media_content.mediable_photo_url
                        else
-                         "/assets/original/missing2.png"
+                         asset_path('original/missing2.png')
                        end %>
         <div class="card-pic" style="background-image: url('<%= photo_url %>')"></div>
         <div class="card-descrition">

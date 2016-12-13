@@ -34,7 +34,7 @@
                            elsif post.media_content
                              post.media_content.mediable_photo_url
                            else
-                             "/assets/original/missing2.png"
+                             asset_path('original/missing2.png')
                            end %>
             <%= link_to post do %>
               <article class="c-card">
