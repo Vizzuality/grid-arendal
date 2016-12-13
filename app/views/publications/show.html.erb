@@ -33,7 +33,15 @@
 
   <div class="row">
     <div class="small-12 column">
-      <div class="c-article-image" <% if @publication.media_content && @publication.media_content.mediable_photo_url.present? %>style="background-image: url('<%= @publication.media_content.mediable_photo_url %>');"<% end %>></div>
+      <%
+        picture_url = nil
+        if @publication.picture.exists?
+          picture_url = @publication.picture.url
+        elsif @publication.media_content && @publication.media_content.mediable_photo_url.present?
+          picture_url = @publication.media_content.mediable_photo_url
+        end
+      %>
+      <div class="c-article-image" <% if picture_url != nil %>style="background-image: url('<%= picture_url %>');"<% end %>></div>
     </div>
   </div>
 
@@ -58,8 +66,8 @@
           <% if @publication.documents.any? || @publication.weblinks.any? %>
             <div class="row">
               <div class="small-6 medium-3 large-4 columns">
-                <% if @publication.picture.present? %>
-                  <div class="cover" style="<%= "background-image: url('#{@publication.picture.url}')" if @publication.picture %>"></div>
+                <% if @publication.cover_picture.exists? %>
+                  <div class="cover" style="<%= "background-image: url('#{@publication.cover_picture.url}')" %>"></div>
                 <% end %>
               </div>
               <div class="small-6 medium-9 large-8 columns">
