@@ -86,12 +86,6 @@ module NavigationHelpers
       backend.new_event_path
     when /the edit event page for "(.*)"$/
       backend.edit_event_path(Event.find_by(title: $1).id)
-    when /the media contents page/
-      backend.media_contents_path
-    when /the new media content page/
-      backend.new_media_content_path
-    when /the edit media content page for "(.*)"$/
-      backend.edit_media_content_path(MediaContent.find_by(title: $1).id)
     else
       if path = match_rails_path_for(page_name)
         path

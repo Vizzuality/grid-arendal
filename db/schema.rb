@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161213074434) do
+ActiveRecord::Schema.define(version: 20161213104750) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,28 +21,6 @@ ActiveRecord::Schema.define(version: 20161213074434) do
     t.integer  "position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "album_relations", force: :cascade do |t|
-    t.integer  "photoset_id",                 comment: "ID media content of type album"
-    t.integer  "album_photo_id",              comment: "ID media content of type photo"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["album_photo_id"], name: "index_album_relations_on_album_photo_id", using: :btree
-    t.index ["photoset_id", "album_photo_id"], name: "index_album_relations_on_photoset_id_and_album_photo_id", unique: true, using: :btree
-    t.index ["photoset_id"], name: "index_album_relations_on_photoset_id", using: :btree
-  end
-
-  create_table "albums", force: :cascade do |t|
-    t.integer  "media_content_id"
-    t.string   "photoset_id"
-    t.string   "photoset_url"
-    t.integer  "albumable_count",  default: 0
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.string   "main_photo_id"
-    t.string   "main_photo_url"
-    t.index ["media_content_id"], name: "index_albums_on_media_content_id", using: :btree
   end
 
   create_table "content_news", force: :cascade do |t|
@@ -80,9 +58,9 @@ ActiveRecord::Schema.define(version: 20161213074434) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
-    t.boolean  "is_featured"
     t.integer  "project_number"
     t.text     "short_description"
+    t.boolean  "is_featured"
     t.date     "content_date"
     t.integer  "content_type_id"
     t.integer  "media_content_id"
@@ -120,14 +98,6 @@ ActiveRecord::Schema.define(version: 20161213074434) do
     t.index ["partner_id"], name: "index_events_on_partner_id", using: :btree
   end
 
-  create_table "media_contents", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.boolean  "is_published", default: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-  end
-
   create_table "news_articles", force: :cascade do |t|
     t.string   "exposure_slug"
     t.string   "title"
@@ -156,15 +126,6 @@ ActiveRecord::Schema.define(version: 20161213074434) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
-  end
-
-  create_table "photos", force: :cascade do |t|
-    t.integer  "media_content_id"
-    t.string   "photo_id"
-    t.string   "photo_url"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.index ["media_content_id"], name: "index_photos_on_media_content_id", using: :btree
   end
 
   create_table "related_contents", force: :cascade do |t|
@@ -248,12 +209,10 @@ ActiveRecord::Schema.define(version: 20161213074434) do
     t.datetime "updated_at",     null: false
   end
 
-  add_foreign_key "albums", "media_contents"
   add_foreign_key "content_news", "contents"
   add_foreign_key "content_news", "news_articles"
   add_foreign_key "content_partners", "contents"
   add_foreign_key "content_partners", "partners"
   add_foreign_key "participants", "contents"
   add_foreign_key "participants", "users"
-  add_foreign_key "photos", "media_contents"
 end
