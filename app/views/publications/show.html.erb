@@ -34,14 +34,15 @@
   <div class="row">
     <div class="small-12 column">
       <%
-        picture_url = nil
-        if @publication.picture.exists?
-          picture_url = @publication.picture.url
-        elsif @publication.media_content && @publication.media_content.mediable_photo_url.present?
-          picture_url = @publication.media_content.mediable_photo_url
-        end
+        picture_url = if @publication.picture.present?
+                        @publication.picture.url
+                      elsif @publication.media_content && @publication.media_content.mediable_photo_url.present?
+                        @publication.media_content.mediable_photo_url
+                      else
+                        "/assets/original/missing2.png"
+                      end
       %>
-      <div class="c-article-image" <% if picture_url != nil %>style="background-image: url('<%= picture_url %>');"<% end %>></div>
+      <div class="c-article-image" style="background-image: url('<%= picture_url %>');"></div>
     </div>
   </div>
 

@@ -2,7 +2,7 @@
   <%= link_to publication_path(publication) do %>
     <div class="item">
       <article class="c-card">
-        <% photo_url = if publication.picture.exists?
+        <% photo_url = if publication.picture.present?
                          publication.picture.url(:medium)
                        elsif publication.media_content
                          publication.media_content.mediable_photo_url
@@ -13,7 +13,7 @@
         <div class="card-descrition">
           <h3 class="text -title-card"><%= publication.title %></h3>
           <p class="text -summary"><%= publication.short_description %></p>
-          <p class="text -meta"><%= time_ago_in_words(publication.created_at) %></p>
+          <p class="text -meta"><%= time_ago_in_words(publication.content_date) %></p>
         </div>
       </article>
     </div>

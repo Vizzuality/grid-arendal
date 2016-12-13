@@ -29,7 +29,7 @@
       <ul class="slides js_slides">
         <% collection.each do |post| %>
           <li class="js_slide slide">
-            <% photo_url = if post.picture.exists?
+            <% photo_url = if post.picture.present?
                              post.picture.url(:medium)
                            elsif post.media_content
                              post.media_content.mediable_photo_url
