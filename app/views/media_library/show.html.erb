@@ -1,13 +1,13 @@
 <%
-  picture_url = case @media_content.type
-                when MediaContent::TYPE_ALBUM
-                  photo = @media_content.photos.first
-                  photo && photo.photo_sizes.where(size: PhotoSize::LARGE).first.try(:url)
-    when MediaContent::TYPE_PHOTO
-      @media_content.photo_sizes.where(size: PhotoSize::LARGE).first.try(:url)
-    else
-      nil
-  end
+    picture_url = case @media_content.type
+                  when MediaContent::TYPE_ALBUM
+                    photo = @media_content.photos.first
+                    photo && photo.photo_sizes.where(label: PhotoSize::LARGE).first.try(:url)
+                  when MediaContent::TYPE_PHOTO
+                    @media_content.photo_sizes.where(label: PhotoSize::LARGE).first.try(:url)
+                  else
+                    nil
+                  end
 %>
 <div class="l-header-single -media-library">
   <div class="overlay"></div>

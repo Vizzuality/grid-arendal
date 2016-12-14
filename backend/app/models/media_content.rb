@@ -18,6 +18,12 @@ class MediaContent < ApplicationRecord
   TYPE_ALBUM = "Album"
   TYPE_PHOTO = "Photo"
 
+  scope :wo_photos_in_album, -> { where("type <> 'Photo' OR (type = 'Photo' AND album_id IS NULL)")}
+
+  # relations added here to allow lazy loading on media_library_controller
+  has_many :photo_sizes, foreign_key: :photo_id
+  has_many :photos, foreign_key: :album_id
+
   def self.set_flickr
     FlickRaw.api_key       = ENV['FLICKR_API_KEY']
     FlickRaw.shared_secret = ENV['FLICKR_SHARED_SECRET']

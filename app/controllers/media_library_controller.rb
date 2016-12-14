@@ -3,7 +3,8 @@ class MediaLibraryController < ApplicationController
   before_action :media_content, only: :show
 
   def index
-    @media_contents = MediaContent.order(:publication_date)
+    @media_contents = MediaContent.wo_photos_in_album.
+      includes(:photo_sizes, :photos).order(:publication_date)
   end
 
   def show
