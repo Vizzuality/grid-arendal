@@ -57,7 +57,7 @@ class Album < MediaContent
               psize = pic.photo_sizes.find_or_initialize_by(label: size.label)
               psize.width = size.width
               psize.height = size.height
-              psize.url = size.url
+              psize.url = size.source
               psize.save
             end
           end

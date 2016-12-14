@@ -10,10 +10,22 @@
   <% end %>
 </div>
 
-<%= render 'backend/shared/index_items_buttons.html',
-           havePermissionToCreate: can?(:create, MediaContent),
-           createPath: new_photo_path
-%>
+<div class="buttons-bar">
+  <% if controller_name == 'Album' %>
+    <%= link_to "Fetch from flickr", [:fetch, controller_name],
+      class: 'btn -light -no-border -create-new js-create-new' %>
+  <% end %>
+  <div class="btn">
+    <svg class="icon">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"></use>
+    </svg>
+  </div>
+  <div class="btn">
+    <svg class="icon">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-sort"></use>
+    </svg>
+  </div>
+</div>
 
 <ul class="items-list">
   <% items.each do |media_content| %>
