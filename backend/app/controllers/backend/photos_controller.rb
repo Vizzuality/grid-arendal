@@ -21,7 +21,7 @@ module Backend
     end
 
     def edit
-      @thumbnail = @photo.photo_size.where(size: PhotoSize::MEDIUM)[0].url
+      @thumbnail = @photo.photo_sizes.where(size: PhotoSize::MEDIUM)[0].url
     end
 
     def new

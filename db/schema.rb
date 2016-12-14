@@ -58,9 +58,9 @@ ActiveRecord::Schema.define(version: 20161213221918) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.boolean  "is_featured"
     t.integer  "project_number"
     t.text     "short_description"
-    t.boolean  "is_featured"
     t.date     "content_date"
     t.integer  "content_type_id"
     t.integer  "media_content_id"
@@ -146,8 +146,8 @@ ActiveRecord::Schema.define(version: 20161213221918) do
   create_table "photo_sizes", force: :cascade do |t|
     t.integer "photo_id"
     t.string  "size"
-    t.integer "width"
-    t.integer "height"
+    t.string  "width"
+    t.string  "height"
     t.string  "url"
     t.string  "label"
   end

@@ -21,7 +21,7 @@ module Backend
           key: "publications", count: Publication.count},
         {name: "News", path: news_articles_path,
           key: "news_articles", count: NewsArticle.count},
-        {name: "Media library", path: photos_path,
+        {name: "Media library", path: albums_path,
           key: "photos", count: Photo.count},
         {name: "Events", path: events_path,
           key: "events", count: Event.count},
