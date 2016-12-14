@@ -22,7 +22,7 @@ module Backend
         {name: "News", path: news_articles_path,
           key: "news_articles", count: NewsArticle.count},
         {name: "Media library", path: albums_path,
-          key: "photos", count: Photo.count},
+         key: "photos", count: MediaContent.wo_photos_in_album.count},
         {name: "Events", path: events_path,
           key: "events", count: Event.count},
         {name: "Partners", path: partners_path,

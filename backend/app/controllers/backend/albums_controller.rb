@@ -59,7 +59,7 @@ module Backend
       end
 
       def set_albums
-        @albums = Album.order(:id)
+        @albums = Album.order("publication_date DESC")
       end
 
       def set_objects
