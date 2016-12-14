@@ -17,6 +17,8 @@
 class Photo < MediaContent
   acts_as_taggable
 
+  scope :not_in_album, -> { where(album_id: nil)}
+
   has_many :photo_sizes
   belongs_to :album
 end

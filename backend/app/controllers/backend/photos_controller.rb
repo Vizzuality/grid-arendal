@@ -21,7 +21,7 @@ module Backend
     end
 
     def edit
-      @thumbnail = @photo.photo_sizes.where(size: PhotoSize::MEDIUM).first.url
+      @thumbnail = @photo.photo_sizes.where(label: PhotoSize::MEDIUM).first.try(:url)
     end
 
     def new
@@ -64,7 +64,7 @@ module Backend
       end
 
       def set_photos
-        @photos = Photo.order(:id)
+        @photos = Photo.not_in_album.order("publication_date DESC")
       end
 
       def set_objects
