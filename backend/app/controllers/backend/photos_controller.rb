@@ -29,15 +29,14 @@ module Backend
     end
 
     def update
-
-    end
-
-    def create
-
-    end
-
-    def destroy
-
+      if @photo.update(photo_params)
+        redirect_to edit_photo_url(@photo),
+          notice: 'Activity updated'
+      else
+        set_photos
+        set_objects
+        render :edit
+      end
     end
 
     def unpublish
@@ -55,6 +54,10 @@ module Backend
     end
 
     private
+
+    def photo_params
+      params.require(:photo).permit!
+    end
 
     def set_photo
       @photo = Photo.find(params[:id])
