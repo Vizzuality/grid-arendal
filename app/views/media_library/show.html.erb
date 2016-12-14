@@ -1,9 +1,9 @@
 <%
   puts case @media_content.type
     when MediaContent::TYPE_ALBUM
-      picture_url = @media_content.photos.first.photo_sizes.where(size: PhotoSize::MEDIUM).first.url
+      picture_url = @media_content.photos.first.photo_sizes.where(size: PhotoSize::LARGE).first.url
     when MediaContent::TYPE_PHOTO
-      picture_url = @media_content.photo_sizes.where(size: PhotoSize::MEDIUM).first.url
+      picture_url = @media_content.photo_sizes.where(size: PhotoSize::LARGE).first.url
     else
       picture_url = nil
   end
