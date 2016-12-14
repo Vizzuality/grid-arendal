@@ -31,7 +31,7 @@ module Backend
     def update
       if @photo.update(photo_params)
         redirect_to edit_photo_url(@photo),
-          notice: 'Activity updated'
+          notice: 'Picture updated'
       else
         set_photos
         set_objects
@@ -55,22 +55,22 @@ module Backend
 
     private
 
-    def photo_params
-      params.require(:photo).permit!
-    end
+      def photo_params
+        params.require(:photo).permit!
+      end
 
-    def set_photo
-      @photo = Photo.find(params[:id])
-    end
+      def set_photo
+        @photo = Photo.find(params[:id])
+      end
 
-    def set_photos
-      @photos = Photo.order(:id)
-    end
+      def set_photos
+        @photos = Photo.order(:id)
+      end
 
-    def set_objects
-      @albums = Album.order(:id)
-      @tags = Tag.order(:name)
-    end
+      def set_objects
+        @albums = Album.order(:id)
+        @tags = Tag.order(:name)
+      end
 
   end
 end

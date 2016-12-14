@@ -410,6 +410,33 @@ $error-red: #ec5c5c;
         }
       }
 
+      &[data-type="show-pictures"] {
+        $gutter: rem(10px);
+        $picture-height: rem(60px);
+
+        .list {
+          display: flex;
+          flex-wrap: wrap;
+          width: calc(100% + #{$gutter});
+          max-height: ($picture-height + $gutter) * 3;
+          overflow: auto;
+          margin-bottom: -$gutter;
+
+          li {
+            width: calc(20% - #{$gutter});
+            height: $picture-height;
+            margin: 0 $gutter $gutter 0;
+
+            .picture {
+              width: 100%;
+              height: 100%;
+              background-size: cover;
+              background-repeat: no-repeat;
+            }
+          }
+        }
+      }
+
       &[data-type="tags"] {
 
         .select2-container--default {

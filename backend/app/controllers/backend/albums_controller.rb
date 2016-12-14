@@ -20,15 +20,14 @@ module Backend
     end
 
     def update
-
-    end
-
-    def create
-
-    end
-
-    def destroy
-
+      if @album.update(album_params)
+        redirect_to edit_album_url(@album),
+          notice: 'Album updated'
+      else
+        set_albums
+        set_objects
+        render :edit
+      end
     end
 
     def unpublish
@@ -47,18 +46,22 @@ module Backend
 
     private
 
-    def set_album
-      @album = Album.find(params[:id])
-    end
+      def album_params
+        params.require(:album).permit!
+      end
 
-    def set_albums
-      @albums = Album.order(:id)
-    end
+      def set_album
+        @album = Album.find(params[:id])
+        @album_photos = @album.photos
+      end
 
-    def set_objects
-      @photos = Photo.order(:id)
-      @tags = Tag.order(:name)
-    end
+      def set_albums
+        @albums = Album.order(:id)
+      end
+
+      def set_objects
+        @tags = Tag.order(:name)
+      end
 
   end
 end
