@@ -20,7 +20,7 @@ module Backend
 
     def update
       if @tag.update(tag_params)
-        redirect_to tags_url, notice: 'Tag updated'
+        redirect_to edit_tag_url(@tag), notice: 'Tag updated'
       else
         render :edit
       end
@@ -29,7 +29,7 @@ module Backend
     def create
       @tag = Tag.create(tag_params)
       if @tag.save
-        redirect_to tags_url
+        redirect_to edit_tag_url(@tag), notice: 'Tag created'
       else
         render :new
       end

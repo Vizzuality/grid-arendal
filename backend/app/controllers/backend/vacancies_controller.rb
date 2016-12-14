@@ -19,7 +19,7 @@ module Backend
 
     def update
       if @vacancy.update(vacancy_params)
-        redirect_to vacancies_url, notice: 'Vacancy updated'
+        redirect_to edit_vacancy_url(@vacancy), notice: 'Vacancy updated'
       else
         set_vacancies
         render :edit
@@ -29,7 +29,7 @@ module Backend
     def create
       @vacancy = Vacancy.create(vacancy_params)
       if @vacancy.save
-        redirect_to vacancies_url
+        redirect_to edit_vacancy_url(@vacancy), notice: 'Vacancy created'
       else
         set_vacancies
         render :new

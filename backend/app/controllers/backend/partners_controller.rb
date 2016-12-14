@@ -20,7 +20,8 @@ module Backend
 
     def update
       if @partner.update(partner_params)
-        redirect_to partners_url, notice: 'Partner updated'
+        redirect_to edit_partner_url(@partner),
+          notice: 'Partner updated'
       else
         render :edit
       end
@@ -29,7 +30,8 @@ module Backend
     def create
       @partner = Partner.create(partner_params)
       if @partner.save
-        redirect_to partners_url
+        redirect_to edit_partner_url(@partner),
+          notice: 'Partner created'
       else
         render :new
       end

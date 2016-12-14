@@ -23,7 +23,8 @@ module Backend
 
     def update
       if @activity.update(activity_params)
-        redirect_to activities_url, notice: 'Activity updated'
+        redirect_to edit_activity_url(@activity),
+          notice: 'Activity updated'
       else
         set_objects
         @activities = Activity.order(:title)
@@ -34,7 +35,8 @@ module Backend
     def create
       @activity = Activity.create(activity_params)
       if @activity.save
-        redirect_to activities_url
+        redirect_to edit_activity_url(@activity),
+          notice: 'Activity created'
       else
         set_objects
         @activities = Activity.order(:title)
