@@ -32,7 +32,7 @@
             <% photo_url = if post.picture.present?
                              post.picture.url(:medium)
                            elsif post.media_content
-                             post.media_content.photo_sizes.where(size: PhotoSize::MEDIUM).first.url
+                             post.media_content.photo_sizes.where(label: PhotoSize::MEDIUM).first.url
                            else
                              asset_path('original/missing2.png')
                            end %>
