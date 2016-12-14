@@ -2,7 +2,13 @@
   <%= link_to activity do %>
     <div class="item">
       <article class="c-card">
-        <% photo_url = activity.media_content.try(:mediable_photo_url) || asset_path('original/missing2.png') %>
+        <%
+          photo_url = if activity.media_content
+                        activity.media_content.photo_sizes.where(size: PhotoSize::MEDIUM).first.url
+                        else
+                          asset_path('original/missing2.png')
+                        end
+        %>
         <div class="card-pic" style="background-image: url(<%= photo_url %>)"></div>
         <div class="card-descrition">
           <h3 class="text -title-card"><%= activity.title %></h3>

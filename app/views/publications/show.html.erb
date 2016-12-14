@@ -36,8 +36,8 @@
       <%
         picture_url = if @publication.picture.present?
                         @publication.picture.url
-                      elsif @publication.media_content && @publication.media_content.mediable_photo_url.present?
-                        @publication.media_content.mediable_photo_url
+                      elsif @publication.media_content
+                        @publication.media_content.photos.first.photo_sizes.where(size: PhotoSize::LARGE).first.url
                       else
                         asset_path('original/missing2.png')
                       end

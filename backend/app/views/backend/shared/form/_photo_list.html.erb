@@ -5,7 +5,7 @@
       <% if external_link %>
         <%= link_to '', photo.external_url, class: 'linker', target: "_blank" %>
       <% end %>
-      <div class="photo" style="background-image: url('<%= photo.photo_sizes.where(size: PhotoSize::SMALL)[0].url %>')"></div>
+      <div class="photo" style="background-image: url('<%= photo.photo_sizes.where(size: PhotoSize::SMALL).first.url %>')"></div>
     </li>
   <% end %>
 </ul>

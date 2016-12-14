@@ -5,7 +5,7 @@
         <% photo_url = if publication.picture.present?
                          publication.picture.url(:medium)
                        elsif publication.media_content
-                         publication.media_content.mediable_photo_url
+                         publication.media_content.photo_sizes.where(size: PhotoSize::MEDIUM).first.url
                        else
                          asset_path('original/missing2.png')
                        end %>

@@ -32,7 +32,7 @@
 
   <div class="row">
     <div class="small-12 column">
-      <div class="c-article-image" <% if @media_content.mediable_url %>style="background-image: url('<%= @media_content.mediable_photo_url %>');"<% end %>></div>
+      <div class="c-article-image" style="background-image: url('<%= @media_content.photo_sizes.where(size: PhotoSize::MEDIUM).first.url %>');"></div>
     </div>
   </div>
 
