@@ -59,9 +59,10 @@ Backend::Engine.routes.draw do
     get 'search', on: :collection
   end
 
-  resources :albums, except: :show do
+  resources :albums, except: [:new, :create, :show] do
     patch 'publish',   on: :member
     patch 'unpublish', on: :member
+    get :fetch, on: :collection
   end
 
   root to: 'admin_home#index'
