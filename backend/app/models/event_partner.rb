@@ -1,0 +1,2 @@
+class EventPartner < ApplicationRecord
+end

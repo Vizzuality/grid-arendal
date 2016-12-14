@@ -97,7 +97,8 @@ module Backend
           where(for_content: [ContentType::BOTH, ContentType::PUBLICATION]).
           order(:title)
         @tags = Tag.order(:name)
-        @photos = Photo.order(:id)
+        @photos = Photo.order("publication_date DESC").includes(:photo_sizes).
+          limit(20)
         @news_articles = NewsArticle.order(:title)
         @activities = Activity.order(:title)
       end

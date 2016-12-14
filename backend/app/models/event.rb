@@ -13,7 +13,6 @@
 #  background_image_updated_at   :datetime
 #  active                        :boolean          default(FALSE), not null
 #  deactivated_at                :datetime
-#  partner_id                    :integer
 #  created_at                    :datetime         not null
 #  updated_at                    :datetime         not null
 #
@@ -27,7 +26,8 @@ class Event < ApplicationRecord
   include Sanitizable
   include Attachable::BackgroundImage
 
-  belongs_to :partner, optional: true
+  has_many :event_partners
+  has_many :partners, through: :event_partners
 
   validates :title, presence: true
 

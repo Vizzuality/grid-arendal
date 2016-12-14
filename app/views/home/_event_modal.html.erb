@@ -14,8 +14,13 @@
             <div class="btn -dark">
               <%= link_to "Find out more", @event.web_url, target: "_blank" %>
             </div>
-            <% if @event.partner %>
-              <p class="text -body-single">sponsored by <%= link_to @event.partner.name, @event.partner.web_url, target: "_blank" %></p>
+            <% if @event.partners.any? %>
+              <p class="text -body-single">
+                sponsored by
+                <% @event.partners.each do |partner| %>
+                  <%= link_to partner.name, partner.web_url, target: "_blank" %>
+                <% end %>
+              </p>
             <% end %>
           </div>
           <div class="event-logo"></div>

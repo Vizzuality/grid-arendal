@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161214223433) do
+ActiveRecord::Schema.define(version: 20161214234909) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,6 +82,13 @@ ActiveRecord::Schema.define(version: 20161214223433) do
     t.datetime "updated_at",            null: false
   end
 
+  create_table "event_partners", force: :cascade do |t|
+    t.integer  "event_id"
+    t.integer  "partner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "events", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -92,10 +99,8 @@ ActiveRecord::Schema.define(version: 20161214223433) do
     t.datetime "background_image_updated_at"
     t.boolean  "active",                        default: false, null: false
     t.datetime "deactivated_at"
-    t.integer  "partner_id"
     t.datetime "created_at",                                    null: false
     t.datetime "updated_at",                                    null: false
-    t.index ["partner_id"], name: "index_events_on_partner_id", using: :btree
   end
 
   create_table "media_contents", force: :cascade do |t|
