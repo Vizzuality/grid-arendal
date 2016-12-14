@@ -1,12 +1,12 @@
 <%
-needSteps = (photos_count + videos_count) > 2
-meta = []
-if photos_count > 0
-  meta.push("#{photos_count} photos")
-end
-if videos_count > 0
-  meta.push("#{videos_count} videos")
-end
+  needSteps = (photos_count + videos_count) > 2
+  meta = []
+  if photos_count > 0
+    meta.push("#{photos_count} photos")
+  end
+  if videos_count > 0
+    meta.push("#{videos_count} videos")
+  end
 %>
 
 <%= link_to link do %>

@@ -23,21 +23,22 @@
       <div id="masonry-layout" class="masonry-layout" hidden data-columns>
         <% @media_contents.each do |media| %>
           <%
-            puts case media.type
-              when MediaContent::TYPE_ALBUM
-                picture_url = media.photos.first.photo_sizes.where(size: PhotoSize::MEDIUM).first.url
-              when MediaContent::TYPE_PHOTO
-                picture_url = media.photo_sizes.where(size: PhotoSize::MEDIUM).first.url
-              else
-                picture_url = nil
-              end
+              picture_url = case media.type
+                            when MediaContent::TYPE_ALBUM
+                              photo = media.photos.first
+                              photo && photo.photo_sizes.where(size: PhotoSize::MEDIUM).first.try(:url)
+                            when MediaContent::TYPE_PHOTO
+                              media.photo_sizes.where(size: PhotoSize::MEDIUM).first.try(:url)
+                            else
+                              nil
+                            end
           %>
-          <%= render 'shared/media-card',
+          <%= render 'shared/media_card',
             picture: picture_url,
             title: media.title,
             link: medium_path(media),
-            photos_count: 2,
-            videos_count: 2 %>
+            photos_count: media.type == 'Album' ? media.photos.size : 0,
+            videos_count: 0 %>
         <% end %>
       </div>
     </div>
