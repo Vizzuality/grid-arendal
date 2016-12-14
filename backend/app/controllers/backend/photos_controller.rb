@@ -5,9 +5,9 @@ module Backend
   class PhotosController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_photo, except: [:index, :new, :create, :search]
-    before_action :set_photos, only: [:index, :new, :edit]
-    before_action :set_objects, only: [:new, :edit]
+    before_action :set_photo, except: [:index, :search]
+    before_action :set_photos, only: [:index, :edit]
+    before_action :set_objects, only: [:edit]
 
     def search
       @photos = Photo.where("UPPER(title) like UPPER(?)", "#{params[:query]}%").limit(20)
@@ -24,10 +24,6 @@ module Backend
       @thumbnail = @photo.photo_sizes.where(label: PhotoSize::MEDIUM).first.try(:url)
     end
 
-    def new
-      @photo = Photo.new
-    end
-
     def update
       if @photo.update(photo_params)
         redirect_to edit_photo_url(@photo),
@@ -39,15 +35,17 @@ module Backend
       end
     end
 
-    def unpublish
-      @photo.try(:unpublish)
+    def make_featured
+      @item = @photo
+      @item.try(:make_featured)
       respond_to do |format|
         format.js { render 'backend/shared/index_options' }
       end
     end
 
-    def publish
-      @photo.try(:publish)
+    def remove_featured
+      @item = @photo
+      @item.try(:remove_featured)
       respond_to do |format|
         format.js { render 'backend/shared/index_options' }
       end

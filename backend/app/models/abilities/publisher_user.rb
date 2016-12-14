@@ -22,6 +22,8 @@ module Abilities
         can [:publish, :unpublish, :make_featured, :remove_featured], ::Publication
         can [:publish, :unpublish], ::Vacancy
         can [:activate, :deactivate], ::Event
+        can [:make_featured, :remove_featured], ::Album
+        can [:make_featured, :remove_featured], ::Photo
       end
 
       cannot :make_contributor,        ::User, id: user.id

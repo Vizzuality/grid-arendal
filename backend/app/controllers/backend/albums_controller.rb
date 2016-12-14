@@ -5,9 +5,9 @@ module Backend
   class AlbumsController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_album, except: [:index, :new, :create, :fetch]
-    before_action :set_albums, only: [:index, :new, :edit]
-    before_action :set_objects, only: [:new, :edit]
+    before_action :set_album, except: [:index, :fetch]
+    before_action :set_albums, only: [:index, :edit]
+    before_action :set_objects, only: [:edit]
 
     def index
     end
@@ -26,15 +26,17 @@ module Backend
       end
     end
 
-    def unpublish
-      @album.try(:unpublish)
+    def make_featured
+      @item = @album
+      @item.try(:make_featured)
       respond_to do |format|
         format.js { render 'backend/shared/index_options' }
       end
     end
 
-    def publish
-      @album.try(:publish)
+    def remove_featured
+      @item = @album
+      @item.try(:remove_featured)
       respond_to do |format|
         format.js { render 'backend/shared/index_options' }
       end

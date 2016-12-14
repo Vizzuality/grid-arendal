@@ -15,6 +15,8 @@
 #
 
 class MediaContent < ApplicationRecord
+  include Featurable
+
   TYPE_ALBUM = "Album"
   TYPE_PHOTO = "Photo"
 
