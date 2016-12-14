@@ -2,18 +2,7 @@
 
 <div class="fields">
 
-  <div class="field" data-type="show-pictures">
-    <%= form.label '', "Pictures", class: 'text -field-label -bold -dark' %>
-    <ul class="list">
-      <% album_photos.each do |photo| %>
-        <li>
-          <a href="<%= photo.external_url %>" target="_blank">
-            <div class="picture" style="background-image: url('<%= photo.photo_sizes.where(size: PhotoSize::SMALL)[0].url %>')"></div>
-          </a>
-        </li>
-      <% end %>
-    </ul>
-  </div>
+  <%= render 'backend/shared/form/field_photos', form: form, label_txt: 'Pictures', photos: @album_photos, external_link: true %>
 
   <%= render 'backend/shared/form/field_textarea', form: form, value: :description %>
 

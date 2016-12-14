@@ -47,6 +47,8 @@ $items-border: rem(1px) solid rgba($white, 0.2);
       .icon {
         width: rem(14px);
         height: rem(14px);
+        fill: $white;
+        opacity: 0.5;
       }
     }
   }

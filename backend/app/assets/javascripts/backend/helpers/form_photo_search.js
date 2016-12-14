@@ -4,15 +4,15 @@
 
   App.Helper = App.Helper || {};
 
-  App.Helper.FormMediaContentSearch = Backbone.View.extend({
+  App.Helper.FormPhotoSearch = Backbone.View.extend({
 
     events: {
       'keyup': '_search',
-      'click .js-select-media-content': '_onClickSetDataField'
+      'click .js-select-photo': '_onClickSetDataField'
     },
 
     options: {
-      dataFieldTriggerClass: ".js-media-content-field",
+      dataFieldTriggerClass: ".js-photo-field",
       selectedClass: "-selected",
     },
 
@@ -29,16 +29,22 @@
     },
 
     _search: function (e) {
-      $.get('/manage/media_contents/search', {
+      $.get('/manage/photos/search', {
         query: $(e.target).val(),
         selected_id: this.$dataField.val()
       });
     },
 
     _onClickSetDataField: function (e) {
-      this.$dataField.val($(e.currentTarget).data("value"));
+      var currentTarget = $(e.currentTarget);
+
       this._removeHighlight();
-      this._setHighlight($(e.currentTarget));
+      if(this.$dataField.val() == currentTarget.data("value")) {
+        this.$dataField.removeAttr('value')
+      } else {
+        this.$dataField.val(currentTarget.data("value"));
+        this._setHighlight($(e.currentTarget));
+      }
     },
 
     _removeHighlight: function () {
