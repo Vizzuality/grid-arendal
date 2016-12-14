@@ -17,7 +17,8 @@ module Backend
 
     def update
       if @news_article.update(news_article_params)
-        redirect_to news_articles_url, notice: 'News Article updated'
+        redirect_to edit_news_article_url(@news_article),
+          notice: 'News article updated'
       else
         set_objects
         render :edit
@@ -27,7 +28,8 @@ module Backend
     def destroy
       @news_article = NewsArticle.find(params[:id])
       if @news_article.destroy
-        redirect_to news_articles_url
+        redirect_to edit_news_article_url(@news_article),
+          notice: 'News article created'
       end
     end
 

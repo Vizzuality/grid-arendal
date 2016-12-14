@@ -20,7 +20,7 @@ module Backend
 
     def update
       if @about_section.update(about_section_params)
-        redirect_to about_sections_url, notice: 'AboutSection updated'
+        redirect_to [:edit, @about_section], notice: 'Section updated'
       else
         render :edit
       end
@@ -29,7 +29,7 @@ module Backend
     def create
       @about_section = AboutSection.create(about_section_params)
       if @about_section.save
-        redirect_to about_sections_url
+        redirect_to [:edit, @about_section], notice: 'Section created'
       else
         render :new
       end
