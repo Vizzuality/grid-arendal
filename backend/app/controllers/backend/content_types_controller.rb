@@ -20,7 +20,8 @@ module Backend
 
     def update
       if @content_type.update(content_type_params)
-        redirect_to content_types_url, notice: 'ContentType updated'
+        redirect_to edit_content_type_url(@content_type),
+          notice: 'Content Type updated'
       else
         render :edit
       end
@@ -29,7 +30,8 @@ module Backend
     def create
       @content_type = ContentType.create(content_type_params)
       if @content_type.save
-        redirect_to content_types_url
+        redirect_to edit_content_type_url(@content_type),
+          notice: 'Content Type created'
       else
         render :new
       end

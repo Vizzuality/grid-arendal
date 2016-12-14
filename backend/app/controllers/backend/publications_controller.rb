@@ -22,7 +22,8 @@ module Backend
 
     def update
       if @publication.update(publication_params)
-        redirect_to publications_url, notice: 'Publication updated'
+        redirect_to edit_publication_url(@publication),
+          notice: 'Publication updated'
       else
         set_objects
         render :edit
@@ -32,7 +33,8 @@ module Backend
     def create
       @publication = Publication.create(publication_params)
       if @publication.save
-        redirect_to publications_url
+        redirect_to edit_publication_url(@publication),
+          notice: 'Publication created'
       else
         set_objects
         render :new
@@ -95,7 +97,7 @@ module Backend
           where(for_content: [ContentType::BOTH, ContentType::PUBLICATION]).
           order(:title)
         @tags = Tag.order(:name)
-        @media_contents = MediaContent.all
+        @photos = Photo.order(:id)
         @news_articles = NewsArticle.order(:title)
         @activities = Activity.order(:title)
       end

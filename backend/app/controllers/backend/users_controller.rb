@@ -21,7 +21,7 @@ module Backend
 
     def update
       if @user.update(user_params)
-        redirect_to users_url, notice: 'User updated'
+        redirect_to edit_user_url(@user), notice: 'User updated'
       else
         @users = current_user&.admin? ? User.filter_users(user_filters) : User.filter_actives
         render :edit
@@ -31,7 +31,7 @@ module Backend
     def create
       @user = User.create_with_password(user_params)
       if @user.save
-        redirect_to users_url
+        redirect_to edit_user_url(@user), notice: 'User created'
       else
         @users = current_user&.admin? ? User.filter_users(user_filters) : User.filter_actives
         render :new

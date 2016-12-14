@@ -53,10 +53,16 @@ Backend::Engine.routes.draw do
 
   resources :tags, except: :show
 
-  resources :media_contents, except: :show do
-    patch 'publish',   on: :member
-    patch 'unpublish', on: :member
+  resources :photos, except: :show do
+    patch 'make_featured',   on: :member
+    patch 'remove_featured', on: :member
     get 'search', on: :collection
+  end
+
+  resources :albums, except: [:new, :create, :show] do
+    patch 'make_featured',   on: :member
+    patch 'remove_featured', on: :member
+    get :fetch, on: :collection
   end
 
   root to: 'admin_home#index'

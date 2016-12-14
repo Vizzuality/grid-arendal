@@ -29,12 +29,12 @@
       <ul class="slides js_slides">
         <% collection.each do |post| %>
           <li class="js_slide slide">
-            <% photo_url = if post.picture.exists?
+            <% photo_url = if post.picture.present?
                              post.picture.url(:medium)
                            elsif post.media_content
-                             post.media_content.mediable_photo_url
+                             post.media_content.photo_sizes.where(label: PhotoSize::MEDIUM).first.url
                            else
-                             "/assets/original/missing2.png"
+                             asset_path('original/missing2.png')
                            end %>
             <%= link_to post do %>
               <article class="c-card">

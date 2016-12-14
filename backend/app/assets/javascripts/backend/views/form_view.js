@@ -14,7 +14,8 @@
       mediumEditorTriggerClass: ".js-textarea-editable",
       selectTriggerClass: ".js-select",
       selectTagsTriggerClass: ".js-select-tags",
-      selectTagsInlineClass: "js-inline-tags"
+      selectTagsInlineClass: "js-inline-tags",
+      selectPhotoTriggerClass: ".js-select-photo",
     },
 
     initialize: function() {
@@ -25,7 +26,7 @@
       this._loadSelect();
       this._loadDatepicker();
       this._loadTaggingSelect();
-      this._loadMediaContentSearch();
+      this._loadPhotoSearch();
       this._loadImgUploader();
       this._loadAlbumPictures();
     },
@@ -84,9 +85,9 @@
       }.bind(this));
     },
 
-    _loadMediaContentSearch: function() {
-      new App.Helper.FormMediaContentSearch({
-        el: $(this.$el.find('[data-type="media-content"]'))
+    _loadPhotoSearch: function() {
+      new App.Helper.FormPhotoSearch({
+        el: $(this.$el.find(this.options.selectPhotoTriggerClass))
       });
     },
 

@@ -16,9 +16,6 @@
 </div>
 
 <ul class="items-list">
-  <% if flash[:notice] %>
-    <li><%= flash[:notice] %></li>
-  <% end %>
   <% @news_articles.each do |news_article| %>
     <%= render 'backend/shared/index_item',
       item: news_article,

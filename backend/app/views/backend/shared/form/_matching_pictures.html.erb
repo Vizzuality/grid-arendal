@@ -1,7 +1,0 @@
-<ul class="list">
-  <% media_contents.each do |mc| %>
-    <li class="js-select-media-content <% if mc.id == selected_id %>-selected<% end %>" data-value="<%= mc.id %>">
-      <div class="picture" style="background-image: url('<%= mc.mediable_photo_url %>')"></div>
-    </li>
-  <% end %>
-</ul>
