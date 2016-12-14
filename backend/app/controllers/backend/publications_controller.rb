@@ -97,7 +97,7 @@ module Backend
           where(for_content: [ContentType::BOTH, ContentType::PUBLICATION]).
           order(:title)
         @tags = Tag.order(:name)
-        @media_contents = MediaContent.all
+        @photos = Photo.order(:id)
         @news_articles = NewsArticle.order(:title)
         @activities = Activity.order(:title)
       end

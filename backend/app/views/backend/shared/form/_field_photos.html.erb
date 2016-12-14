@@ -1,0 +1,25 @@
+<%
+  js_trigger_class ||= ''
+  field_class ||= ''
+  with_search ||= false
+  value ||= nil
+  selected_id ||= nil
+  external_link ||= false
+%>
+<div class="field <%= field_class %> <%= js_trigger_class %>" data-type="uploaded-photos">
+  <%= form.label label_txt, class: 'text -field-label -bold -dark' %>
+
+  <%= form.hidden_field value, class: 'js-photo-field' if value != nil %>
+
+  <% if with_search %>
+    <div class="searcher">
+      <%= text_field_tag :query, params[:query] || nil, class: 'text -plain-text -dark searcher', placeholder: "Search Media Library" %>
+      <svg class="icon">
+        <use xlink:href="#icon-search"></use>
+      </svg>
+    </div>
+
+  <% end %>
+
+  <%= render 'backend/shared/form/photo_list', photos: photos, selected_id: selected_id, external_link: external_link %>
+</div>

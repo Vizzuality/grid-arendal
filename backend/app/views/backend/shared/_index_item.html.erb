@@ -2,8 +2,18 @@
   <svg class="dragger icon">
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-row_dragger"></use>
   </svg>
-  <div class="text -index-item -light title -short"><%= truncate(title, length: 30) %></div>
-  <div class="text -index-item -light title -long"><%= truncate(title, length: 50) %></div>
+  <div class="text -index-item -light title -short">
+    <%= truncate(title, length: 30) %>
+    <% if item.is_a?(Album) %>
+      (<%= pluralize(item.photos.count, 'photo') %>)
+    <% end %>
+  </div>
+  <div class="text -index-item -light title -long">
+    <%= truncate(title, length: 50) %>
+    <% if item.is_a?(Album) %>
+      (<%= pluralize(item.photos.count, 'photo') %>)
+    <% end %>
+  </div>
   <% edit_path ||= [:edit, item] %>
   <%= link_to '', [:edit, item], class: 'linker js-linker' %>
   <div id="options-for-<%= item.id %>" class="options">

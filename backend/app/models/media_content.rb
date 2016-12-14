@@ -1,36 +1,48 @@
-# frozen_string_literal: true
 # == Schema Information
 #
 # Table name: media_contents
 #
-#  id           :integer          not null, primary key
-#  title        :string
-#  description  :text
-#  is_published :boolean
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
+#  id               :integer          not null, primary key
+#  external_id      :integer
+#  external_url     :string
+#  type             :string
+#  author           :string
+#  licence          :string
+#  publication_date :date
+#  description      :text
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
 #
 
 class MediaContent < ApplicationRecord
-  include Publishable
-  include Sanitizable
-  include Mediable
+  include Featurable
 
-  acts_as_taggable
+  TYPE_ALBUM = "Album"
+  TYPE_PHOTO = "Photo"
 
-  attr_accessor :photo_file, :main_photo_file, :mediable
+  scope :wo_photos_in_album, -> { where("type <> 'Photo' OR (type = 'Photo' AND album_id IS NULL)")}
 
-  has_many :album_photos_as_album, class_name: 'AlbumRelation', foreign_key: :photoset_id
-  has_many :photosets_as_photo,    class_name: 'AlbumRelation', foreign_key: :album_photo_id
+  # relations added here to allow lazy loading on media_library_controller
+  has_many :photo_sizes, foreign_key: :photo_id
+  has_many :photos, foreign_key: :album_id
 
-  has_many :album_photos, through: :album_photos_as_album
-  has_many :photosets,    through: :photosets_as_photo
+  def self.set_flickr
+    FlickRaw.api_key       = ENV['FLICKR_API_KEY']
+    FlickRaw.shared_secret = ENV['FLICKR_SHARED_SECRET']
+    flickr.access_token    = ENV['FLICKR_ACCESS_TOKEN']
+    flickr.access_secret   = ENV['FLICKR_ACCESS_SECRET']
+  end
 
-  accepts_nested_attributes_for :album_photos, reject_if: :all_blank, allow_destroy: true
-  accepts_nested_attributes_for :photosets,    reject_if: :all_blank, allow_destroy: true
+  def get_url(size)
+    puts case self.type
+      when MediaContent::TYPE_ALBUM
+        picture_url = nil
+      when MediaContent::TYPE_PHOTO
+        picture_url = media.photo_sizes.where(size: size).first.url
+      else
+        picture_url = nil
+      end
 
-  validates :title, presence: true
-
-  scope :includes_mediable, -> { includes([:photo, :album]) }
-  scope :order_by_title,    -> { order('title ASC')         }
+    return picture_url
+  end
 end

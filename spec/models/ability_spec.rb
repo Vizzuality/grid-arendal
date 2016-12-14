@@ -50,6 +50,8 @@ module Account
         Abilities::PublisherUser.any_instance.should_receive(:can).with(:manage, ::MediaContent)
         Abilities::PublisherUser.any_instance.should_receive(:can).with([:publish, :unpublish], ::MediaContent)
         Abilities::PublisherUser.any_instance.should_receive(:can).with([:publish, :unpublish, :make_featured, :remove_featured], ::Publication)
+        Abilities::PublisherUser.any_instance.should_receive(:can).with([:make_featured, :remove_featured], ::Album)
+        Abilities::PublisherUser.any_instance.should_receive(:can).with([:make_featured, :remove_featured], ::Photo)
         Abilities::PublisherUser.any_instance.should_receive(:can).with(:manage, ::Vacancy)
         Abilities::PublisherUser.any_instance.should_receive(:can).with([:publish, :unpublish], ::Vacancy)
         Abilities::PublisherUser.any_instance.should_receive(:can).with(:manage, ::Tag)
