@@ -55,8 +55,7 @@
           <%= raw @media_content.description %>
           <br>
           <p><strong>Year:</strong> <%= @media_content.publication_date.year %></p>
-          <!--p><strong>Taken by:</strong> Peter Prokosch</p-->
-          <!--<p><strong>Downloads:</strong> 4509 <span class="rating"><strong>Rating:</strong></span></p>-->
+          <% if @media_content.author.present? %><p><strong>Taken by:</strong> <%= @media_content.author %></p><% end %>
           <% if @media_content.tags.any? %>
             <p class="tags">
               <strong>Tags:</strong>
@@ -85,7 +84,7 @@
         </div>
         <div class="constraints">
           <div class="text -sidebar-title">Use Constraints</div>
-          <div class="text -meta">Using this item and referring to it is encouraged, and please use it in presentations, web pages, newspapers, blogs and reports.<br><br>For any form of publication, please include the link to this page and give the creator credit (in this case Peter Prokosch)</div>
+          <div class="text -meta">Using this item and referring to it is encouraged, and please use it in presentations, web pages, newspapers, blogs and reports.<br><br>For any form of publication, please include the link to this page and give the creator credit <% if @media_content.author.present? %>(in this case <%= @media_content.author %>)<% end %></div>
         </div>
       </div>
     </div>
