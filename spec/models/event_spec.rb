@@ -47,11 +47,11 @@ RSpec.describe Event, type: :model do
 
   it 'Build event withot partner' do
     expect(event).to         be_valid
-    expect(event.partner).to be_nil
+    expect(event.partners).to be_empty
   end
 
   it 'Build event owned by partner' do
     expect(partner_event).to         be_valid
-    expect(partner_event.partner).to be_present
+    expect(partner_event.partners).to be_present
   end
 end

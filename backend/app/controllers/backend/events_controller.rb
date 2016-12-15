@@ -72,7 +72,7 @@ module Backend
       end
 
       def set_partners_selection
-        @partners = Partner.order_by_name.map { |r| [r.name, r.id] }
+        @partners = Partner.order_by_name
       end
 
       def event_params
