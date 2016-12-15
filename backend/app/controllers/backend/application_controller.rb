@@ -36,7 +36,9 @@ module Backend
         {name: "Tags", path: tags_path,
           key: "tags", count: Tag.count},
         {name: "Vacancies", path: vacancies_path,
-          key: "vacancies", count: Vacancy.count}
+          key: "vacancies", count: Vacancy.count},
+        {name: "Sections", path: site_sections_path,
+          key: "sections", count: SiteSection.count}
       ]
     end
   end
