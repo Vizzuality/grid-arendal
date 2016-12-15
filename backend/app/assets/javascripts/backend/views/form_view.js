@@ -27,7 +27,7 @@
       this._loadDatepicker();
       this._loadTaggingSelect();
       this._loadPhotoSearch();
-      this._loadImgUploader();
+      this._loadFilesUploader();
     },
 
     _cache: function () {
@@ -90,9 +90,9 @@
       });
     },
 
-    _loadImgUploader: function() {
-      _.each($(this.$el.find('[data-type="picture"],[data-type="media-content"]')), function(element) {
-        new App.Helper.FormImgUploader({
+    _loadFilesUploader: function() {
+      _.each($(this.$el.find('input[type="file"]')), function(element) {
+        new App.Helper.FormInputFileUploader({
           el: element
         });
       }.bind(this));
