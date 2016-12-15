@@ -11,12 +11,15 @@
   <%= render 'backend/shared/form/field_upload_img', form: form, value: :picture, field_class: '-half',
     label_txt: 'Background picture', have_picture: have_picture, picture_url: picture_url %>
 
-  <%= render 'backend/shared/form/field_photos', form: form, value: :media_content_id, label_txt: 'Background picture',
+  <%= render 'backend/shared/form/field_photos', form: form, value: :media_content_id, label_txt: ' ',
     field_class: '-half', photos: photos, selected_id: media_content_id, with_search: true, js_trigger_class: 'js-select-photo' %>
 
-  <%= render 'backend/shared/form/field_upload_img', form: form, value: :cover_picture,
+  <%= render 'backend/shared/form/field_upload_img', form: form, value: :cover_picture, field_class: '-half',
     label_txt: 'Publication cover', have_picture: have_cover_picture,
     picture_url: cover_picture_url %>
+
+  <%= render 'backend/shared/form/field_attach_documents', form: form, documents: :documents, weblinks: :weblinks,
+    field_class: '-half', label_txt: 'Files' %>
 
   <%= render 'backend/shared/form/field_limited_input', form: form,
     value: :short_description, maxlength: 140 %>
@@ -41,24 +44,6 @@
     value: :news_articles, collection: news_articles, label_method: :title,
     js_trigger_class: 'js-select-tags',
     note_txt: '(Choose specific news articles)' %>
-
-  <%= form.simple_fields_for :documents do |builder| %>
-    <%= render 'document_fields', f: builder %>
-  <% end %>
-
-  <div class="links fields">
-    <%= link_to_add_association 'ADD DOCUMENT', form, :documents,
-      class: 'btn -dark' %>
-  </div>
-
-  <%= form.simple_fields_for :weblinks do |builder| %>
-    <%= render 'weblink_fields', f: builder %>
-  <% end %>
-
-  <div class="links fields">
-    <%= link_to_add_association 'ADD WEBLINK', form, :weblinks,
-      class: 'btn -dark' %>
-  </div>
 
   <%= render 'backend/shared/form/field_association', form: form, value: :lead_user,
     collection: users, label_method: :display_name, label: "Staff lead",

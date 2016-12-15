@@ -66,6 +66,12 @@
           opacity: 1;
         }
       }
+
+      &[data-method="delete"] {
+        .icon {
+          fill: $white;
+        }
+      }
     }
   }
 

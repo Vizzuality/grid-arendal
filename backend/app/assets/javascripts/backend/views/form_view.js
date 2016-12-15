@@ -28,7 +28,7 @@
       this._loadTaggingSelect();
       this._loadPhotoSearch();
       this._loadImgUploader();
-      this._loadAlbumPictures();
+      //this._loadAlbumPictures();
     },
 
     _cache: function () {

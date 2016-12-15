@@ -1,13 +1,13 @@
-<div class="nested-fields fields">
-  <%= f.label :label, class: 'text -field-label -bold -dark' %>
-  <%= f.input :label, label: false,
-    input_html: {value: 'Weblink', class: 'basic-input text -plain-text -dark js-select-tags'} %>
-
-  <%= f.label :url, class: 'text -field-label -bold -dark' %>
-  <%= f.input :url, label: false,
-    input_html: {class: 'basic-input text -plain-text -dark js-select-tags'} %>
-
-  <div class="links">
-    <%= link_to_remove_association 'REMOVE WEBLINK', f, class: 'btn -light' %>
+<div class="nested-fields attach_documents_field">
+  <div class="label_field">
+    <%= f.label :label, class: 'text -field-label -dark' %>
+    <%= f.input :label, label: false, input_html: {value: 'Weblink', class: 'basic-input text -plain-text -dark'} %>
   </div>
+
+  <div class="file_field">
+    <%= f.label :url, class: 'text -field-label -dark' %>
+    <%= f.input :url, label: false, input_html: {class: 'basic-input text -plain-text -dark'} %>
+  </div>
+
+  <%= link_to_remove_association raw('<svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-delete"></use></svg>'), f, class: 'remove_field_btn' %>
 </div>
