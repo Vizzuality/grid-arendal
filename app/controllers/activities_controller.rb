@@ -6,6 +6,7 @@ class ActivitiesController < ApplicationController
     @activities = Activity.fetch_all(options_filter)
     @content_types = ContentType.by_activity
     @partners = Partner.order(:name)
+    @section = SiteSection.where(section: "activities").first
     respond_to do |format|
       format.html
       format.js

@@ -1,0 +1,9 @@
+<h2 class="text -main-title -light">Site sections</h2>
+
+<ul class="items-list">
+  <% @site_sections.each do |site_section| %>
+    <%= render 'backend/shared/index_item',
+      item: site_section,
+      title: site_section.section.titleize %>
+  <% end %>
+</ul>

@@ -1,0 +1,9 @@
+<div class="l-items-index">
+  <%= render 'site_sections', site_sections: @site_sections %>
+</div>
+
+<div class="l-items-detail">
+  <%= simple_form_for @site_section, html: { class: 'c-form' } do |f| %>
+    <%= render 'form', form: f %>
+  <% end %>
+</div>
