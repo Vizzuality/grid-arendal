@@ -4,7 +4,7 @@
       <article class="c-card">
         <%
           photo_url = if activity.media_content
-                        activity.media_content.photo_sizes.where(size: PhotoSize::MEDIUM).first.url
+                        activity.media_content.photo_sizes.where(label: PhotoSize::MEDIUM).first.try(:url)
                         else
                           asset_path('original/missing2.png')
                         end
