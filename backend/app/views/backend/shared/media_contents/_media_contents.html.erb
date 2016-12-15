@@ -1,11 +1,16 @@
 <% tabs = [
-  {"title" => "Albums", "key" => "albums", "path" => albums_path},
-  {"title" => "Pictures", "key" => "photos", "path" => photos_path}
+  {title: "Albums", key: "albums", path: albums_path,
+  count: Album.count},
+  {title: "Pictures", key: "photos", path: photos_path,
+  count: Photo.count}
 ] %>
 <div class="tabs">
   <% tabs.each do |tab| %>
-    <a href="<%= tab['path'] %>">
-      <div class="tab text -main-title -light <% if tab['key'] == key %>-selected<% end %>" data-type="<%= tab['key'] %>"><%= tab['title'] %></div>
+    <a href="<%= tab[:path] %>">
+      <div class="tab text -main-title -light <% if tab[:key] == key %>-selected<% end %>" data-type="<%= tab[:key] %>">
+        <%= tab[:title] %>
+        (<%= tab[:count] %>)
+      </div>
     </a>
   <% end %>
 </div>
