@@ -6,7 +6,7 @@ module Backend
     load_and_authorize_resource
 
     before_action :set_objects, only: [:new, :edit]
-    before_action :publications,
+    before_action :publications
 
 
     def index

@@ -12,12 +12,12 @@ module Backend
     end
 
     def edit
-      @activities = Activity.order(:title)
+      @activities = Activity.order("content_date DESC")
       @activity = Activity.find(params[:id])
     end
 
     def new
-      @activities = Activity.order(:title)
+      @activities = Activity.order("content_date DESC")
       @activity = Activity.new
     end
 
@@ -27,7 +27,7 @@ module Backend
           notice: 'Activity updated'
       else
         set_objects
-        @activities = Activity.order(:title)
+        @activities = Activity.order("content_date DESC")
         render :edit
       end
     end
@@ -39,7 +39,7 @@ module Backend
           notice: 'Activity created'
       else
         set_objects
-        @activities = Activity.order(:title)
+        @activities = Activity.order("content_date DESC")
         render :new
       end
     end
