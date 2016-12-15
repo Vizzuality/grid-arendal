@@ -1,33 +1,28 @@
+<%
+  social_links = [
+    {key: "twitter", url: "https://twitter.com/GRIDArendal"},
+    {key: "facebook", url: "https://www.facebook.com/ArendalGRID/"},
+    {key: "instagram", url: "https://www.instagram.com/gridarendal/"},
+    {key: "flickr", url: "https://www.flickr.com/people/gridarendal"},
+    {key: "linkedin", url: "https://www.linkedin.com/company/109106"},
+    {key: "youtube", url: "https://www.youtube.com/user/GridArendalNorway"},
+    {key: "vimeo", url: "https://vimeo.com/gridarendal"},
+    {key: "email", url: "mailto:grid@grida.no"},
+  ]
+%>
 <div class="l-footer">
   <div class="overlay"></div>
   <div class="footer-slider"></div>
   <div class="links">
     <div class="text -menu -light">Contact Us</div>
     <div class="social-links">
-      <svg class="icon">
-        <use xlink:href="#icon-rrss-twitter"></use>
-      </svg>
-      <svg class="icon">
-        <use xlink:href="#icon-rrss-facebook"></use>
-      </svg>
-      <svg class="icon">
-        <use xlink:href="#icon-rrss-instagram"></use>
-      </svg>
-      <svg class="icon">
-        <use xlink:href="#icon-rrss-flickr"></use>
-      </svg>
-      <svg class="icon">
-        <use xlink:href="#icon-rrss-linkedin"></use>
-      </svg>
-      <svg class="icon">
-        <use xlink:href="#icon-rrss-youtube"></use>
-      </svg>
-      <svg class="icon">
-        <use xlink:href="#icon-rrss-vimeo"></use>
-      </svg>
-      <svg class="icon">
-        <use xlink:href="#icon-rrss-email"></use>
-      </svg>
+      <% social_links.each do |link| %>
+        <a href="<%= link[:url] %>" target="_blank">
+          <svg class="icon">
+            <use xlink:href="#icon-rrss-<%= link[:key] %>"></use>
+          </svg>
+        </a>
+      <% end %>
     </div>
     <ul class="info-links text -meta -light">
       <li>2016 GRID Arendal</li>
