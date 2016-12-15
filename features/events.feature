@@ -19,11 +19,9 @@ I want to edit, create, view events
 
   Scenario: Adminuser can create event
     Given I am authenticated adminuser
-    And partner
     When I go to the new event page
     And I fill in "Title" with "Event new"
     And I fill in "Web url" with "event-new-sample.org"
-    And I select "Partner one" from "Partner"
     And I press "SAVE"
     Then I should have one event
     And I should see "Event new"
