@@ -122,6 +122,7 @@ $photo-list-shadow-gap: rem(4px);
       label {
         display: block;
         width: 100%;
+        min-height: rem(20px);
       }
 
       .options {
@@ -410,6 +411,96 @@ $photo-list-shadow-gap: rem(4px);
         }
       }
 
+      &[data-type="attach_documents"] {
+
+        .add_weblink_btn {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: rem(100px);
+          height: rem(24px);
+        }
+
+        .add_document_btn {
+          position: absolute;
+          top: 0;
+          right: rem(108px);
+          width: rem(120px);
+          height: rem(24px);
+        }
+
+        .nested-fields {
+          margin-top: rem(10px);
+
+          &:first-of-type {
+            margin-top: rem(15px);
+          }
+        }
+
+        .attach_documents_field {
+          position: relative;
+
+          .label_field {
+            display: inline-block;
+            width: 30%;
+            padding-right: rem(12px);
+          }
+
+          .file_field {
+            position: relative;
+            display: inline-block;
+            width: 70%;
+            padding-right: rem(24px);
+
+            .file_input {
+              position: absolute;
+              width: calc(100%);
+              height: rem(40px);
+              opacity: 0;
+              cursor: pointer;
+              z-index: 2;
+            }
+
+            .fake-input {
+              position: relative;
+              display: inline-flex;
+              justify-content: center;
+              align-items: center;
+              flex-direction: column;
+              width: 100%;
+              height: rem(40px);
+              padding: 0 rem(10px);
+              border-radius: 4px;
+              background-color: rgba($color-1, 0.1);
+              border: solid 1px rgba($color-1, 0.2);
+              cursor: pointer;
+              z-index: 1;
+
+              .text {
+                width: 100%;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+              }
+            }
+          }
+
+          .remove_field_btn {
+            position: absolute;
+            bottom: rem(16px);
+            right: rem(4px);
+            z-index: 2;
+
+            .icon {
+              width: rem(12px);
+              height: rem(12px);
+              fill: $color-1;
+              opacity: 0.3;
+            }
+          }
+        }
+      }
+
       &.-half {
         width: 50%;
         display: inline-block;
@@ -460,42 +551,6 @@ $photo-list-shadow-gap: rem(4px);
     }
 
     .error {
-      display: none;
-    }
-  }
-
-  .nested-fields {
-    //position: absolute;
-    //bottom: -100%;
-    //left: 0;
-    //width: 100%;
-    //height: 100%;
-    //background-color: $white;
-    //z-index: 2;
-    //transition: bottom 0.5s ease-in;
-
-    &.-hidden {
-      display: none;
-    }
-  }
-
-  [data-type="album_pictures"] {
-
-    .options {
-      top: rem(-8px) !important;
-
-      .btn {
-        display: inline-flex;
-        width: rem(142px);
-        margin-left: rem(8px);
-      }
-    }
-
-    .add_fields {
-      width: rem(160px);
-    }
-
-    .remove_fields {
       display: none;
     }
   }
