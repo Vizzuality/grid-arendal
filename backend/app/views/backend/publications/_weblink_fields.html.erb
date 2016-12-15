@@ -1,11 +1,11 @@
 <div class="nested-fields fields">
   <%= f.label :label, class: 'text -field-label -bold -dark' %>
   <%= f.input :label, label: false,
-    input_html: {value: 'Weblink', class: 'basic-input text -plain-text -dark js-select-tags'} %>
+    input_html: {value: 'Weblink', class: 'basic-input text -plain-text -dark'} %>
 
   <%= f.label :url, class: 'text -field-label -bold -dark' %>
   <%= f.input :url, label: false,
-    input_html: {class: 'basic-input text -plain-text -dark js-select-tags'} %>
+    input_html: {class: 'basic-input text -plain-text -dark'} %>
 
   <div class="links">
     <%= link_to_remove_association 'REMOVE WEBLINK', f, class: 'btn -light' %>
