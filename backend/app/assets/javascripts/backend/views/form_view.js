@@ -28,7 +28,6 @@
       this._loadTaggingSelect();
       this._loadPhotoSearch();
       this._loadImgUploader();
-      //this._loadAlbumPictures();
     },
 
     _cache: function () {
@@ -97,12 +96,6 @@
           el: element
         });
       }.bind(this));
-    },
-
-    _loadAlbumPictures: function() {
-      new App.Helper.FormAlbumPictures({
-        el: $(this.$el.find('[data-type="album_pictures"]'))
-      });
     },
 
     _setFocusHeader: function (e) {
