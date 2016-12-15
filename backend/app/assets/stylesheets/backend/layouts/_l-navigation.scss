@@ -3,6 +3,8 @@ $nav-horizontal-padding: rem(19px);
 .l-navigation {
 
   .basic-nav {
+    height: 100%;
+    overflow: auto;
 
     li {
       position: relative;
