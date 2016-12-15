@@ -1,7 +1,9 @@
 <div class="nested-fields attach_documents_field">
   <div class="label_field">
     <%= f.label :label, class: 'text -field-label -dark' %>
-    <%= f.input :label, label: false, input_html: {class: 'basic-input text -plain-text -dark'} %>
+    <%= f.input :label, label: false,
+      input_html: {value: f.object.label || 'PDF',
+                   class: 'basic-input text -plain-text -dark'} %>
   </div>
 
   <div class="file_field">
