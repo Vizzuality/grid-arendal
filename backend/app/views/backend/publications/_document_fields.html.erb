@@ -8,7 +8,7 @@
     <%= f.label 'File', class: 'text -field-label -dark' %>
     <%= f.file_field :document, label: false, class: 'file_input' %>
     <%= f.label :document, class: 'fake-input' do %>
-      <p class="text -plain-text -dark">Drag and drop a file or click here</p>
+      <p class="text -plain-text -dark"><%= f.object.document_file_name.present? ? f.object.document_file_name : 'Drag and drop a file or click here' %></p>
     <% end %>
   </div>
 
