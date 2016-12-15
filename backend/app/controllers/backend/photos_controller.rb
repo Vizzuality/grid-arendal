@@ -62,7 +62,7 @@ module Backend
       end
 
       def set_photos
-        @photos = Photo.not_in_album.order("publication_date DESC")
+        @photos = Photo.order("publication_date DESC").limit(200)
       end
 
       def set_objects
