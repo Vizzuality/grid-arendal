@@ -6,7 +6,7 @@ module Backend
     load_and_authorize_resource
 
     before_action :set_objects, only: [:new, :edit]
-    before_action :publications,
+    before_action :publications
 
 
     def index
@@ -87,7 +87,7 @@ module Backend
       end
 
       def publications
-        @publications = Publication.order(:title)
+        @publications = Publication.order("content_date DESC")
       end
 
       def set_objects
