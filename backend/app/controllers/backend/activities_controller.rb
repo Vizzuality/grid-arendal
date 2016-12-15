@@ -8,7 +8,7 @@ module Backend
     before_action :set_objects, only: [:new, :edit]
 
     def index
-      @activities = Activity.order(:title)
+      @activities = Activity.order("content date DESC")
     end
 
     def edit

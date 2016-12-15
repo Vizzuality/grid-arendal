@@ -87,7 +87,7 @@ module Backend
       end
 
       def publications
-        @publications = Publication.order(:title)
+        @publications = Publication.order("content_date DESC")
       end
 
       def set_objects
