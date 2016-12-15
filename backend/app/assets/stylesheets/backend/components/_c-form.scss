@@ -465,14 +465,14 @@ $photo-list-shadow-gap: rem(4px);
   }
 
   .nested-fields {
-    position: absolute;
-    bottom: -100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: $white;
-    z-index: 2;
-    transition: bottom 0.5s ease-in;
+    //position: absolute;
+    //bottom: -100%;
+    //left: 0;
+    //width: 100%;
+    //height: 100%;
+    //background-color: $white;
+    //z-index: 2;
+    //transition: bottom 0.5s ease-in;
 
     &.-hidden {
       display: none;
