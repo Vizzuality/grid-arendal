@@ -11,6 +11,7 @@ class PublicationsController < ApplicationController
                [Date.today.year]
              end
     @tags = Tag.order(:name)
+    @section = SiteSection.where(section: "activities").first
     respond_to do |format|
       format.html
       format.js
