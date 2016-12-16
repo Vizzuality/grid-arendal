@@ -10,13 +10,9 @@
     </div>
     <div class="small-12 large-6 columns">
       <div class="logos">
-        <span><img src="https://worldvectorlogo.com/logos/slack-1.svg"></span>
-        <span><img src="https://worldvectorlogo.com/logos/slack-1.svg"></span>
-        <span><img src="https://worldvectorlogo.com/logos/slack-1.svg"></span>
-        <span><img src="https://worldvectorlogo.com/logos/slack-1.svg"></span>
-        <span><img src="https://worldvectorlogo.com/logos/slack-1.svg"></span>
-        <span><img src="https://worldvectorlogo.com/logos/slack-1.svg"></span>
-        <span><img src="https://worldvectorlogo.com/logos/slack-1.svg"></span>
+        <% partners.each do |partner| %>
+          <span><img src="<%= partner.logo.present? ? partner.logo.url : asset_path('original/missing2.png') %>"></span>
+        <% end %>
       </div>
     </div>
   </div>
