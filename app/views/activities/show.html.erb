@@ -83,7 +83,7 @@
 <%#= render 'shared/media' %>
 
 <% if @activity.partners.any? %>
-  <%= render 'shared/partners' %>
+  <%= render 'shared/partners', partners: @activity.partners %>
 <% end %>
 
 <%= render 'shared/footer' %>
