@@ -104,6 +104,10 @@
       title: 'activities', link: activities_path %>
   <% end %>
 
+  <% if @publication.news_articles.any? %>
+    <%= render 'shared/news', news: @publication.news_articles %>
+  <% end %>
+
   <%#= render 'shared/media' %>
 
 </div>

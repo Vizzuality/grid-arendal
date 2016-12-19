@@ -76,8 +76,8 @@
     link: publications_path %>
 <% end %>
 
-<% if @news.any? %>
-  <%= render 'shared/news' %>
+<% if @activity.news_articles.any? %>
+  <%= render 'shared/news', news: @activity.news_articles %>
 <% end %>
 
 <%#= render 'shared/media' %>
