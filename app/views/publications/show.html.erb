@@ -100,8 +100,8 @@
   <% end %>
 
   <% if @publication.activities.any? %>
-    <%= render 'shared/posts', collection: @publication.activities,
-      title: 'activities', link: activities_path %>
+    <%= render 'shared/related', content: @publication.activities, title: 'activities',
+      link: activities_path %>
   <% end %>
 
   <% if @publication.news_articles.any? %>
