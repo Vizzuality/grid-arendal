@@ -7,7 +7,7 @@ class ActivitiesController < ApplicationController
     @content_types = ContentType.by_activity
     @programmes = Tag.where(category: Tag::PROGRAMME).order(:name)
     @partners = Partner.order(:name)
-    @tags = Tag.order(:name)
+    @tags = Tag.where.not(category: Tag::PROGRAMME).order(:name)
     @section = SiteSection.where(section: "activities").first
     respond_to do |format|
       format.html
