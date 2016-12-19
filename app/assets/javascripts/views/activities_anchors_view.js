@@ -4,7 +4,7 @@
 
   App.View = App.View || {};
 
-  App.View.ActivitiesAnchors = Backbone.View.extend({
+  App.View.Anchors = Backbone.View.extend({
 
     el: '.anchors',
 

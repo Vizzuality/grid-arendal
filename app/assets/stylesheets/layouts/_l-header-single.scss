@@ -24,7 +24,8 @@
     background-color: rgba($color-1, 0.04);
   }
 
-  &.-activities-article {
+  &.-activities-article,
+  &.-about {
     height: rem(530px);
 
     @media screen and (min-width: $screen-m) {
@@ -96,7 +97,6 @@
     bottom: 0;
     width: 100%;
     padding: rem(16px) 0 rem(38px) 0;
-    background-color: rgba($color-1, 0.6);
 
     @media screen and (min-width: $screen-s) {
       padding: rem(27px) 0;
@@ -136,5 +136,16 @@
         }
       }
     }
+  }
+
+  &.-activities-article {
+
+    .section-menu {
+      background-color: rgba($color-1, 0.6);
+    }
+  }
+
+  &.-about {
+    background-image: image-url('header2.jpg');
   }
 }

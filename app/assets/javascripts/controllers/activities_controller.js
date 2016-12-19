@@ -16,7 +16,7 @@
     },
 
     show: function(params) {
-      new App.View.ActivitiesAnchors({});
+      new App.View.Anchors({});
       this.initSliders();
     },
 

@@ -35,9 +35,6 @@
           <% if @publications.any?%>
             <li class="text -section-menu js-anchor" data-section-belongs="posts">Publications</li>
           <% end %>
-          <% if @news.any? %>
-            <li class="text -section-menu js-anchor" data-section-belongs="news">Related News</li>
-          <% end %>
           <li class="text -section-menu js-anchor" data-section-belongs="media">Related media</li>
           <% if @activity.partners.any? %>
             <li class="text -section-menu js-anchor" data-section-belongs="partners">Partners & Links</li>
@@ -49,7 +46,6 @@
 </div>
 
 <section class="l-single-article -activities" data-section="overview">
-
   <div class="row">
     <div class="small-12 column">
       <div class="text -summary-alt"><%= raw @activity.description %></div>

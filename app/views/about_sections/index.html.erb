@@ -1,4 +1,4 @@
-<div class="l-header-library -about">
+<div class="l-header-single -about">
   <div class="overlay"></div>
   <%= render 'shared/menu' %>
   <div class="row">
@@ -8,28 +8,40 @@
           {'text' => 'About', 'link' => about_index_path}
         ] %>
         <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
+      </div>
+    </div>
+  </div>
+  <div class="section-menu">
+    <div class="row">
+      <div class="small-12 columns">
         <div class="share">
           <svg class="icon">
             <use xlink:href="#icon-share"></use>
           </svg>
         </div>
+        <ul class="anchors">
+          <% @sections.each do |section| %>
+            <li class="text -section-menu js-anchor" data-section-belongs="<%= section.title %>"><%= section.title %></li>
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>
 </div>
 
 <% @sections.each do |section| %>
-  <h2><%= section.title %></h2>
-  <section>
-    <%= section.body %>
+  <section class="l-main-content"  data-section="<%= section.title %>">
+    <div class="row">
+      <div class="small-12 column">
+        <div class="text -title-event"><%= section.title %></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="small-12 column">
+        <div class="text -summary-alt"><%= raw(section.body) %></div>
+      </div>
+    </div>
   </section>
 <% end %>
-
-<h3>Vacancies</h3>
-<ul>
-  <% @vacancies.each do |vacancy| %>
-    <li><%= vacancy.title %></li>
-  <% end %>
-</ul>
 
 <%= render 'shared/footer' %>
