@@ -34,16 +34,10 @@
 
     initSliders: function() {
       Array.prototype.slice.call(document.querySelectorAll('.js_slider')).forEach(function (element, index) {
-        var loryOptions = {
+        lory(element, {
+          rewind: true,
           enableMouseEvents: true
-        };
-        if(false) {
-          loryOptions['infinite'] = 1;
-        } else {
-          loryOptions['rewind'] = true;
-        }
-
-        lory(element, loryOptions);
+        });
       });
     }
 
