@@ -76,11 +76,6 @@
     link: publications_path %>
 <% end %>
 
-<% if @publications.any? %>
-  <%= render 'shared/posts', collection: @publications, title: 'publications',
-    link: publications_path %>
-<% end %>
-
 <% if @activity.news_articles.any? %>
   <%= render 'shared/news', news: @activity.news_articles %>
 <% end %>
