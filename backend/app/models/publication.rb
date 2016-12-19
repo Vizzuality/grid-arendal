@@ -41,7 +41,7 @@ class Publication < Content
       type = options['type']                          if options['type'].present?
       years = options['years'].split(',').map(&:to_i) if options['years'].present?
 
-      publications = Publication.by_published.order_by_title
+      publications = Publication.by_published.order("content_date DESC")
       publications = publications.by_tags(tags)   if tags.present?
       publications = publications.by_type(type)   if type.present?
       publications = publications.by_years(years) if years.present?
