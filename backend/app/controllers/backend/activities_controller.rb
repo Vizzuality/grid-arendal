@@ -95,7 +95,7 @@ module Backend
         @news_articles = NewsArticle.order(:title)
         @publications = Publication.order(:title)
         @content_types = ContentType.
-          where(for_content: [ContentType::BOTH, ContentType::ACTIVITY]).
+          where(for_content: ContentType::ACTIVITY).
           order(:title)
         @tags = Tag.order(:name)
         @photos = Photo.order("publication_date DESC").includes(:photo_sizes).

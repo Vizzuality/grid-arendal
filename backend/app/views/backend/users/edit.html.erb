@@ -8,6 +8,9 @@
       form: f,
       user_roles: @user_roles,
       have_picture: @user.avatar_file_name ? true : false,
-      picture_url: @user.avatar %>
+      have_thumbnail: @user.thumbnail_file_name ? true : false,
+      picture_url: @user.avatar,
+      thumbnail_url: @user.thumbnail
+    %>
   <% end %>
 </div>
