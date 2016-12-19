@@ -10,6 +10,7 @@
       'click .js-tags-select-closer' : '_closeProcess'
     },
 
+    selectedValues: [],
     selectedTagsNames: [],
 
     _setSelectValue: function(e) {
