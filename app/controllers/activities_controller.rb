@@ -16,9 +16,6 @@ class ActivitiesController < ApplicationController
   end
 
   def show
-    @activities = Activity.order(:title).published
-    @publications = @activity.publications.order(:title)
-    @users = @activity.users
   end
 
   private

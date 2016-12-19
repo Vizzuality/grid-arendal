@@ -42,7 +42,9 @@
                 <div class="card-descrition">
                   <h3 class="text -title-card"><%= post.title %></h3>
                   <p class="text -summary"><%= post.short_description %></p>
-                  <p class="text -meta"><%= time_ago_in_words(post.content_date) if post.content_date %></p>
+                  <% if post.is_a?(Publication) && post.content_date %>
+                    <p class="text -meta"><%= time_ago_in_words(post.content_date) %></p>
+                  <% end %>
                 </div>
               </article>
             <% end %>

@@ -8,16 +8,16 @@ module Backend
     before_action :set_objects, only: [:new, :edit]
 
     def index
-      @activities = Activity.order("content_date DESC")
+      @activities = Activity.order(:title)
     end
 
     def edit
-      @activities = Activity.order("content_date DESC")
+      @activities = Activity.order(:title)
       @activity = Activity.find(params[:id])
     end
 
     def new
-      @activities = Activity.order("content_date DESC")
+      @activities = Activity.order(:title)
       @activity = Activity.new
     end
 
@@ -27,7 +27,7 @@ module Backend
           notice: 'Activity updated'
       else
         set_objects
-        @activities = Activity.order("content_date DESC")
+        @activities = Activity.order(:title)
         render :edit
       end
     end
@@ -39,7 +39,7 @@ module Backend
           notice: 'Activity created'
       else
         set_objects
-        @activities = Activity.order("content_date DESC")
+        @activities = Activity.order(:title)
         render :new
       end
     end
