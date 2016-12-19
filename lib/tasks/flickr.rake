@@ -46,8 +46,9 @@ namespace :import do
     do_upload = false
     summary.each do |f|
       al = f[:album]
-      if "93c0fd68-1ba4-4b2b-bc8e-ddc91524819d" == al[0]
+      if "0af4ecb2-6781-441e-9a3b-5633549e978c" == al[0]
         do_upload = true
+        next
       end
       next if !do_upload
 
