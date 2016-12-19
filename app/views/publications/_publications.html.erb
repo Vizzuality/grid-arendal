@@ -2,8 +2,8 @@
   <%= link_to publication_path(publication) do %>
     <div class="item">
       <article class="c-card">
-        <% photo_url = if publication.picture.present?
-                         publication.picture.url(:medium)
+        <% photo_url = if publication.db_medium_picture.present?
+                         publication.db_medium_picture
                        elsif publication.media_content
                          publication.media_content.photo_sizes.where(label: PhotoSize::MEDIUM).first.try(:url)
                        else

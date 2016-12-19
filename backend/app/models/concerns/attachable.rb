@@ -11,7 +11,7 @@ module Attachable
                           storage: :dropbox,
                           dropbox_credentials: Rails.root.join('config/dropbox.yml'),
                           dropbox_options: {
-                            path: proc { |style| "#{Rails.env}/#{self.class.to_s}/#{style}/#{id}_#{picture.original_filename}"},
+                            path: proc { |style| "production/#{self.class.to_s}/#{style}/#{id}_#{picture.original_filename}"},
                             unique_filename: true
                           }
       else
@@ -35,7 +35,7 @@ module Attachable
                           storage: :dropbox,
                           dropbox_credentials: Rails.root.join('config/dropbox.yml'),
                           dropbox_options: {
-                            path: proc { |style| "#{Rails.env}/#{self.class.to_s}/#{style}/#{id}_#{cover_picture.original_filename}"},
+                            path: proc { |style| "production/#{self.class.to_s}/#{style}/#{id}_#{cover_picture.original_filename}"},
                             unique_filename: true
                           }
       else
