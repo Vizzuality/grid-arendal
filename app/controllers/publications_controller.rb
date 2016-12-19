@@ -5,11 +5,9 @@ class PublicationsController < ApplicationController
   def index
     @publications = Publication.fetch_all(options_filter).limit(20)
     @content_types = ContentType.by_publication
-    @years = if Publication.any?
-               (Publication.minimum(:content_date).year...Publication.maximum(:content_date).year)
-             else
-               [Date.today.year]
-             end
+    max = (Publication.maximum(:content_date) || Date.today).year
+    @years = ((max-5)...max).to_a.reverse
+    @years << "older"
     @tags = Tag.order(:name)
     @section = SiteSection.where(section: "activities").first
     respond_to do |format|

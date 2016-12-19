@@ -32,17 +32,21 @@ class Publication < Content
   accepts_nested_attributes_for :weblinks, reject_if: :all_blank,
     allow_destroy: true
 
+  scope :older_pubs, -> { where('EXTRACT(year from content_date) < ?', Date.today.year - 5)}
   scope :by_years, ->(years) { where('EXTRACT(year from content_date) IN (?)', years) }
 
   class << self
     def fetch_all(options)
       tags = options['tags'].split(',')               if options['tags'].present?
       type = options['type']                          if options['type'].present?
+      older = options['years'] && options['years'].include?('older')
+      options['years'].delete('older') if older
       years = options['years'].split(',').map(&:to_i) if options['years'].present?
 
       publications = Publication.by_published.order("content_date DESC")
       publications = publications.by_tags(tags)   if tags.present?
       publications = publications.by_type(type)   if type.present?
+      publications = publications.older_pubs if older
       publications = publications.by_years(years) if years.present?
       publications
     end
