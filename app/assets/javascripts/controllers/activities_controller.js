@@ -17,7 +17,13 @@
 
     show: function(params) {
       new App.View.ActivitiesAnchors({});
-      this.initSliders();
+      if(this.isMobile) {
+        this.initSliders();
+      } else {
+        new App.View.Masonry({
+          el: '#masonry-layouts'
+        });
+      }
     },
 
     _filter: function() {
@@ -27,14 +33,17 @@
     },
 
     initSliders: function() {
-
       Array.prototype.slice.call(document.querySelectorAll('.js_slider')).forEach(function (element, index) {
-        lory(element, {
-          infinite: 3,
-          slidesToScroll: 1,
-          enableMouseEvents: true,
-          offsetLeft: 0
-        });
+        var loryOptions = {
+          enableMouseEvents: true
+        };
+        if(false) {
+          loryOptions['infinite'] = 1;
+        } else {
+          loryOptions['rewind'] = true;
+        }
+
+        lory(element, loryOptions);
       });
     }
 

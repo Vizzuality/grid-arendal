@@ -1,13 +1,8 @@
 .c-slider {
   position: relative;
-  width: 1000px;
   margin: 0 auto;
 
   .frame {
-    max-width: calc(62.5rem - 2*(0.9375rem));
-    margin: 0 auto;
-    padding: 0 0.9375rem;
-
     position: relative;
     font-size: 0;
     line-height: 0;
@@ -20,13 +15,18 @@
   }
 
   .slide {
+    position: relative;
     display: inline-block;
-    width: 270px;
-    margin: 0 10px;
+    width: rem(270px);
+    margin-right: rem(20px);
     vertical-align: top;
 
     @media (min-width: $screen-m){
       width: 310px;
+    }
+
+    &:last-child {
+      margin-right: 0;
     }
   }
 }

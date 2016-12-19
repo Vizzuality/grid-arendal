@@ -25,18 +25,15 @@
 
     initialize: function() {
       var mobileMenuView = new App.View.MobileMenu();
-      // if (window.matchMedia("(max-width: 768px)").matches) {
-        $('body').addClass('slide-' + (parseInt(Math.floor(Math.random() * 6)) + 1) );
-      // }
+      $('body').addClass('slide-' + (parseInt(Math.floor(Math.random() * 6)) + 1) );
+      this.isMobile = ($(window).width() < 768);
     },
 
     /**
      * Instance common and global view here
      * @return {[type]} [description]
      */
-    _instanceCommonViews: function() {
-      // new App.View.Modal({ el: '#modalView' });
-    }
+    _instanceCommonViews: function() {}
 
   });
 

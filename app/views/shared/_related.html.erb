@@ -1,0 +1,37 @@
+<section class="l-main-content -activities">
+
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="c-main-content-header">
+        <h2 class="text -title-block">
+          Related <%= title %>
+        </h2>
+        <p class="text -view-all">
+          <%= link_to link do %>
+            <span>
+              View all <%= title %>
+            </span>
+              <svg class="icon -arrow">
+                <use xlink:href="#icon-arrow"></use>
+              </svg>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 small-centered columns -fix">
+      <div class="c-slider slider js_slider">
+        <div class="frame js_frame">
+          <div id="masonry-layouts" class="masonry-layout slides js_slides" data-columns="3">
+            <% content.each do |item| %>
+              <%= render 'shared/content_card', item: item %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
