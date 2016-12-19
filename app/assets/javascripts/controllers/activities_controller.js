@@ -8,7 +8,7 @@
 
     index: function(params) {
       new App.View.Masonry({
-        el: '#masonry-layout'
+        el: '.masonry-layout'
       });
       this.filtersView = new App.View.MediaFilters({
         callback: this._filter.bind(this)
@@ -21,7 +21,7 @@
         this.initSliders();
       } else {
         new App.View.Masonry({
-          el: '#masonry-layouts'
+          el: '.masonry-layout'
         });
       }
     },

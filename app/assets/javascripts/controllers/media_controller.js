@@ -8,7 +8,7 @@
 
     index: function(params) {
       var masonryView = new App.View.Masonry({
-        el: '#masonry-layout'
+        el: '.masonry-layout'
       });
       var filtersView = new App.View.MediaFilters({
         options: {
@@ -32,7 +32,7 @@
 
     show: function(params) {
       var masonryView = new App.View.Masonry({
-        el: '#masonry-layout'
+        el: '.masonry-layout'
       });
     },
 

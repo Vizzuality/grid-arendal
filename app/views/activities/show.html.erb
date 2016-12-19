@@ -72,7 +72,7 @@
 <% end %>
 
 <% if @publications.any? %>
-  <%= render 'shared/related', content: @publications, title: 'publications',
+  <%= render 'shared/posts', collection: @publications, title: 'publications',
     link: publications_path %>
 <% end %>
 

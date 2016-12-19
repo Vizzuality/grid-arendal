@@ -22,7 +22,7 @@
 
   <div class="row">
     <div class="small-12 small-centered columns -fix">
-      <div id="masonry-layout" class="masonry-layout" hidden data-columns>
+      <div class="masonry-layout" hidden data-columns>
         <% @articles.each do |article| %>
           <div class="item">
             <%= link_to "http://news.grida.no/#{article.exposure_slug}" do %>
