@@ -7,6 +7,7 @@ class HomeController < ApplicationController
     @publications = Publication.featured.published.order(content_date: :desc)
     @event = Event.where(active: true).order(:created_at).limit(1)&.first
     @media_contents = MediaContent.wo_photos_in_album.featured
+    @section = SiteSection.where(section: "home").first
   end
 
   def menu_logo_view

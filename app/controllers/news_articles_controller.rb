@@ -4,7 +4,7 @@ class NewsArticlesController < ApplicationController
 
   def index
     @articles = NewsArticle.order(publication_date: :desc)
-    @section = SiteSection.where(section: "activities").first
+    @section = SiteSection.where(section: "news").first
   end
 
   def show
