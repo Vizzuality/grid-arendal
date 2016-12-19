@@ -23,7 +23,7 @@ I want to edit, create, view publications
     When I go to the new publication page
     And I fill in "Title" with "My new publication"
     And I fill in "Description" with "My description"
-    And I select "Gonca A." from "Staff involved"
+    And I select "Gonca Ama" from "Staff involved"
     And I select "Partner one" from "Partners"
     And I press "SAVE"
     Then I should have one publication

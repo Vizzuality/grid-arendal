@@ -109,11 +109,11 @@
       var filterNum = this.filters.length;
       _.each(this.filters, function (filter, index) {
         if ( filter.selectedValues.length > 0 ) {
-          if ( index > 0 ) {
+          if ( queryStr !== '' ) {
             queryStr += '&';
           }
           queryStr += filter.key + '=';
-          _.each(filter.selectedValues, function (value, index) {
+          _.each(filter.selectedValues.sort(), function (value, index) {
             queryStr += value;
             if ( index < filter.selectedValues.length - 1 ) {
               queryStr += ',';
