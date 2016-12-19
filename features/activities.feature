@@ -24,7 +24,7 @@ I want to edit, create, view activities
     When I go to the new activity page
     And I fill in "Title" with "My new activity"
     And I fill in "Description" with "My description"
-    And I select "Gonca A." from "Staff involved"
+    And I select "Gonca Ama" from "Staff involved"
     And I select "Partner one" from "Partners"
     And I select "About the Company" from "News Articles"
     And I press "SAVE"
@@ -37,7 +37,7 @@ I want to edit, create, view activities
     When I go to the new activity page
     And I fill in "Title" with ""
     And I fill in "Description" with "My description"
-    And I select "Gonca A." from "Staff involved"
+    And I select "Gonca Ama" from "Staff involved"
     And I select "Partner one" from "Partners"
     And I select "About the Company" from "News Articles"
     And I press "SAVE"
