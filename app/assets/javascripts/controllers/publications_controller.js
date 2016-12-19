@@ -19,7 +19,7 @@
       new App.View.DescriptionView({
         el: '.content-wrapper'
       });
-      if(this.isMobile) {
+      if(this.isScreen_s) {
         this.initSliders();
       } else {
         new App.View.Masonry({

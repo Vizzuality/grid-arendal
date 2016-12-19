@@ -17,7 +17,7 @@
 
     show: function(params) {
       new App.View.ActivitiesAnchors({});
-      if(this.isMobile) {
+      if(this.isScreen_s) {
         this.initSliders();
       } else {
         new App.View.Masonry({

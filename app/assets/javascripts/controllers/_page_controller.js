@@ -24,9 +24,10 @@
   App.Controller.Page = Controller.extend({
 
     initialize: function() {
-      var mobileMenuView = new App.View.MobileMenu();
+      new App.View.MobileMenu();
       $('body').addClass('slide-' + (parseInt(Math.floor(Math.random() * 6)) + 1) );
-      this.isMobile = ($(window).width() < 768);
+      this.isScreen_s = ($(window).width() < 768);
+
     },
 
     /**
