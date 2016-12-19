@@ -106,7 +106,7 @@
 
     getFilterValues: function() {
       var queryStr = '';
-      _.each(this.filters, function (filter, index) {
+      _.each(this.filters, function (filter) {
         if ( filter.selectedValues.length > 0 ) {
           if ( queryStr !== '' ) {
             queryStr += '&';
@@ -142,11 +142,9 @@
       if ( activeFilters === false ) {
         return false
       }
-      var i = 0;
       _.each(activeFilters, function(value, filter) {
         var selectedValues = value.split(",").map(Number);
-        this.filters[i]["selectedValues"] = selectedValues;
-        i++;
+        _.findWhere(this.filters, {key: filter}).selectedValues = selectedValues;
       }.bind(this));
     },
 
