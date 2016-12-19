@@ -24,6 +24,30 @@ module Attachable
     end
   end
 
+  module Thumbnail
+    extend ActiveSupport::Concern
+
+    included do
+      if ENV['DROPBOX_APP_KEY'].present?
+        has_attached_file :thumbnail,
+                          styles: { thumb: '100x100>' },
+                          default_url: '/assets/:style/missing2.png',
+                          storage: :dropbox,
+                          dropbox_credentials: Rails.root.join('config/dropbox.yml'),
+                          dropbox_options: {
+                            path: proc { |style| "#{Rails.env}/#{self.class.to_s}/#{style}/#{id}_#{picture.original_filename}"},
+                            unique_filename: true
+                          }
+      else
+        has_attached_file :thumbnail, styles: { thumb: '100x100>' },
+                                    default_url: '/assets/:style/missing2.png'
+      end
+
+      validates_attachment_content_type :picture, content_type: /\Aimage/
+      validates_attachment_file_name :picture, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
+    end
+  end
+
   module CoverPicture
     extend ActiveSupport::Concern
 
