@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161214235936) do
+ActiveRecord::Schema.define(version: 20161219113645) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,9 +58,9 @@ ActiveRecord::Schema.define(version: 20161214235936) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.boolean  "is_featured"
     t.integer  "project_number"
     t.text     "short_description"
-    t.boolean  "is_featured"
     t.date     "content_date"
     t.integer  "content_type_id"
     t.integer  "media_content_id"
@@ -69,6 +69,10 @@ ActiveRecord::Schema.define(version: 20161214235936) do
     t.string   "cover_picture_content_type"
     t.integer  "cover_picture_file_size"
     t.datetime "cover_picture_update_at"
+    t.string   "db_medium_picture"
+    t.string   "db_original_picture"
+    t.string   "db_medium_cover_picture"
+    t.string   "db_original_cover_picture"
   end
 
   create_table "documents", force: :cascade do |t|
@@ -226,6 +230,10 @@ ActiveRecord::Schema.define(version: 20161214235936) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "thumbnail_file_name"
+    t.string   "thumbnail_content_type"
+    t.integer  "thumbnail_file_size"
+    t.datetime "thumbnail_updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

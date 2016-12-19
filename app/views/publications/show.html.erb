@@ -34,8 +34,8 @@
   <div class="row">
     <div class="small-12 column">
       <%
-        picture_url = if @publication.picture.present?
-                        @publication.picture.url
+        picture_url = if @publication.db_original_picture.present?
+                        @publication.db_original_picture
                       elsif @publication.media_content
                         @publication.media_content.photos.first.photo_sizes.where(label: PhotoSize::LARGE).first.url
                       else
@@ -66,8 +66,8 @@
         <div class="meta">
           <div class="row">
             <div class="small-6 medium-3 large-4 columns">
-              <% if @publication.cover_picture.present? %>
-                <div class="cover" style="<%= "background-image: url('#{@publication.cover_picture.url(:medium)}')" %>"></div>
+              <% if @publication.db_medium_cover_picture.present? %>
+                <div class="cover" style="<%= "background-image: url('#{@publication.db_medium_cover_picture}')" %>"></div>
               <% end %>
             </div>
             <div class="small-6 medium-9 large-8 columns">
