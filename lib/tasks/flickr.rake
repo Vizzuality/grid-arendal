@@ -43,8 +43,14 @@ namespace :import do
 
     directories = Dir.entries(File.join(Rails.root, folder, files))
 
+    do_upload = false
     summary.each do |f|
       al = f[:album]
+      if "dd5b082d-f4fb-4d8c-b5bc-fd86bd967b02" == al[0]
+        do_upload = true
+      end
+      next if !do_upload
+
       album_photos = f[:photos]
       puts "Processing album #{al[0]} - #{al[2]}"
       puts "Description: #{al[5]}"
@@ -55,6 +61,7 @@ namespace :import do
       # Upload the photos first
       photos_ids = []
       primary_photo_id = nil
+      i = 0
       album_photos.each do |photo|
         path = File.join(Rails.root, folder, files, photo[5], photo[0]+photo[6])
         if File.exists?(path)
@@ -82,6 +89,12 @@ namespace :import do
             primary_photo_id = id
           end
           puts " ## NEXT PHOTO ## "
+          if i == 10
+            sleep(10)
+            i = 0
+          else
+            i += 1
+          end
         end
       end
       if photos_ids.any?
@@ -93,8 +106,10 @@ namespace :import do
                                     primary_photo_id: primary_photo_id,
                                     photo_ids: photos_ids.join(","))
         puts "Rest a bit before the next album"
-        sleep(60)
+        sleep(25)
       end
+      puts "###############################"
+      puts "###### TO THE NEXT ALBUM ######"
       puts "###############################"
     end
     summary.each do |t|
