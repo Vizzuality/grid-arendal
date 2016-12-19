@@ -94,7 +94,7 @@ module Backend
         @users    = User.order_by_fullname
         @partners = Partner.order_by_name
         @content_types = ContentType.
-          where(for_content: [ContentType::BOTH, ContentType::PUBLICATION]).
+          where(for_content: ContentType::PUBLICATION).
           order(:title)
         @tags = Tag.order(:name)
         @photos = Photo.order("publication_date DESC").includes(:photo_sizes).
