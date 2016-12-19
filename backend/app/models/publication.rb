@@ -32,7 +32,6 @@ class Publication < Content
   accepts_nested_attributes_for :weblinks, reject_if: :all_blank,
     allow_destroy: true
 
-  scope :by_tags, ->(tags) { joins(:tags).where(tags: { id: tags }) }
   scope :by_years, ->(years) { where('EXTRACT(year from content_date) IN (?)', years) }
 
   class << self

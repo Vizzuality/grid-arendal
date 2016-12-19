@@ -35,6 +35,13 @@
       placeholder: 'Filter by partner',
       key: 'partners',
       display_method: 'name'
+    },
+    {
+      data: @tags,
+      type: 'tags',
+      title: 'FILTER BY',
+      placeholder: 'Filter by tags',
+      key: 'tags'
     }
   ] %>
   <%= render 'shared/filters', filters: filters %>
