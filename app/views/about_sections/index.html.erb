@@ -4,10 +4,10 @@
   <div class="row">
     <div class="small-12 columns">
       <div class="title-block">
-        <h1 class="text -title-library">About</h1>
-        <div class="text -summary">
-          GRID-Arendal has produced publications, in both printed and electronic formats, on a wide range of issues related to the environment.
-        </div>
+        <% breadcrumbs_links = [
+          {'text' => 'About', 'link' => about_index_path}
+        ] %>
+        <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
         <div class="share">
           <svg class="icon">
             <use xlink:href="#icon-share"></use>
