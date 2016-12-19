@@ -23,6 +23,11 @@
     background-color: rgba($color-2, 0.05);
   }
 
+  &.-about {
+    background-color: rgba($color-2, 0.05);
+    background-image: image-url('header1.jpg');
+  }
+
   .title-block {
     position: relative;
 
