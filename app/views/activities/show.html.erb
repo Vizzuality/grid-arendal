@@ -45,7 +45,7 @@
           <% if @publications.any?%>
             <li class="text -section-menu js-anchor" data-section-belongs="posts">Publications</li>
           <% end %>
-          <% if @news.any? %>
+          <% if @activity.news_articles.any? %>
             <li class="text -section-menu js-anchor" data-section-belongs="news">Related News</li>
           <% end %>
           <li class="text -section-menu js-anchor" data-section-belongs="media">Related media</li>
