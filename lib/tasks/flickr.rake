@@ -46,7 +46,7 @@ namespace :import do
     do_upload = false
     summary.each do |f|
       al = f[:album]
-      if "dd5b082d-f4fb-4d8c-b5bc-fd86bd967b02" == al[0]
+      if "93c0fd68-1ba4-4b2b-bc8e-ddc91524819d" == al[0]
         do_upload = true
       end
       next if !do_upload
@@ -81,10 +81,24 @@ namespace :import do
                         else
                           photo[8]
                         end
-          id = flickr.upload_photo(path, title: photo[7], description: description)
+          id = nil
+          begin
+            id = flickr.upload_photo(path, title: photo[7], description: description)
+          rescue Exception => e
+            puts "Crashed uploading picture.... going to sleep and try again"
+            sleep(10)
+            id = flickr.upload_photo(path, title: photo[7], description: description)
+          end
           photos_ids << id
 
-          flickr.photos.setDates(photo_id: id, date_taken: new_date)
+          begin
+            flickr.photos.setDates(photo_id: id, date_taken: new_date)
+          rescue Exception => e
+            puts "Crashed setting dates... going to sleep and will try again"
+            sleep(5)
+            flickr.photos.setDates(photo_id: id, date_taken: new_date)
+          end
+
           if primary_photo_id.nil?
             primary_photo_id = id
           end
@@ -98,15 +112,33 @@ namespace :import do
         end
       end
       if photos_ids.any?
-        photoset = flickr.photosets.create(primary_photo_id: primary_photo_id,
-                                title: al[2],
-                                description: al[5])
+        begin
+          photoset = flickr.photosets.create(primary_photo_id: primary_photo_id,
+                                  title: al[2],
+                                  description: al[5])
+        rescue Exception => e
+          puts "Crashed creating photoset...."
+          sleep(5)
+          photoset = flickr.photosets.create(primary_photo_id: primary_photo_id,
+                                  title: al[2],
+                                  description: al[5])
+        end
         puts "Created this #{photoset.id}"
-        flickr.photosets.editPhotos(photoset_id: photoset.id,
-                                    primary_photo_id: primary_photo_id,
-                                    photo_ids: photos_ids.join(","))
+
+        begin
+          flickr.photosets.editPhotos(photoset_id: photoset.id,
+                                      primary_photo_id: primary_photo_id,
+                                      photo_ids: photos_ids.join(","))
+        rescue Exception => e
+          puts "Crashed setting pictures to album"
+          sleep(5)
+          flickr.photosets.editPhotos(photoset_id: photoset.id,
+                                      primary_photo_id: primary_photo_id,
+                                      photo_ids: photos_ids.join(","))
+        end
+
         puts "Rest a bit before the next album"
-        sleep(25)
+        sleep(35)
       end
       puts "###############################"
       puts "###### TO THE NEXT ALBUM ######"
