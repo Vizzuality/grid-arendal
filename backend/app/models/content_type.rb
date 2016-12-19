@@ -12,13 +12,12 @@
 class ContentType < ApplicationRecord
   has_many :contents
 
-  BOTH = "Activity and Publication"
   ACTIVITY = "Activity"
   PUBLICATION = "Publication"
-  FOR_CONTENT = [BOTH, ACTIVITY, PUBLICATION]
+  FOR_CONTENT = [ACTIVITY, PUBLICATION]
 
-  scope :by_publication, -> { where(for_content: ContentType::PUBLICATION).or(ContentType.where(for_content: ContentType::BOTH)) }
-  scope :by_activity, -> { where(for_content: ContentType::ACTIVITY).or(ContentType.where(for_content: ContentType::BOTH)) }
+  scope :by_publication, -> { where(for_content: ContentType::PUBLICATION)}
+  scope :by_activity, -> { where(for_content: ContentType::ACTIVITY)}
 
   validates :title, presence: true
   validates :for_content, presence: true
