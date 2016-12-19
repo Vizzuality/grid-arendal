@@ -6,7 +6,7 @@ module Display
     def display_name
       return "#{half_email}" if first_name.blank? && last_name.blank?
       return "#{first_name}" if last_name.blank?
-      "#{first_name} #{last_name[0,1]}."
+      "#{first_name} #{last_name}"
     end
 
     def full_name
