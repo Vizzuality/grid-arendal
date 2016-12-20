@@ -20,6 +20,10 @@ class MediaContent < ApplicationRecord
   TYPE_ALBUM = "Album"
   TYPE_PHOTO = "Photo"
 
+  has_many :media_supports, dependent: :destroy
+  has_many :activities, through: :media_supports, source: :activity
+  has_many :publications, through: :media_supports, source: :publication
+
   scope :wo_photos_in_album, -> { where("type <> 'Photo' OR (type = 'Photo' AND album_id IS NULL)")}
 
   # relations added here to allow lazy loading on media_library_controller
@@ -44,5 +48,9 @@ class MediaContent < ApplicationRecord
       end
 
     return picture_url
+  end
+
+  def info_title
+    "#{title} (#{type})"
   end
 end

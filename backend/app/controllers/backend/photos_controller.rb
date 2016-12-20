@@ -68,7 +68,8 @@ module Backend
       def set_objects
         @albums = Album.order(:id)
         @tags = Tag.order(:name)
+        @publications = Publication.order(:title)
+        @activities = Activity.order(:title)
       end
-
   end
 end
