@@ -22,7 +22,7 @@
     <% if lead_user %>
       <li class="small-6 medium-3 large-2 columns">
         <div class="c-staff">
-          <div class="staff-pic" style="background-image: url('<%= lead_user.thumbnail(:original) %>')"></div>
+          <div class="staff-pic" style="background-image: url('<%= lead_user.avatar(:medium) %>')"></div>
           <p class="text -author"><%= lead_user.display_name %></p>
           <p class="text -meta"><%= lead_user.current_position %></p>
         </div>
@@ -31,7 +31,7 @@
     <% users.each do |user| %>
       <li class="small-6 medium-3 large-2 columns">
         <div class="c-staff">
-          <div class="staff-pic" style="background-image: url('<%= user.thumbnail(:original) %>')"></div>
+          <div class="staff-pic" style="background-image: url('<%= user.avatar(:medium) %>')"></div>
           <p class="text -author"><%= user.display_name %></p>
           <p class="text -meta"><%= user.current_position %></p>
         </div>
