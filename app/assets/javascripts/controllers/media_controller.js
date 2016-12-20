@@ -7,9 +7,11 @@
   App.Controller.Media = App.Controller.Page.extend({
 
     index: function(params) {
-      new App.View.Masonry({
-        el: '.masonry-layout'
-      });
+      if($('.masonry-layout').find('.masonry-column').length === 0) {
+        new App.View.Masonry({
+          el: '.masonry-layout'
+        });
+      }
       new App.View.MediaFilters({
         options: {
           filters: [
@@ -31,9 +33,11 @@
     },
 
     show: function(params) {
-      new App.View.Masonry({
-        el: '.masonry-layout'
-      });
+      if($('.masonry-layout').find('.masonry-column').length === 0) {
+        new App.View.Masonry({
+          el: '.masonry-layout'
+        });
+      }
       this.initSliders();
     },
 
