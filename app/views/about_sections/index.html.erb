@@ -43,7 +43,7 @@
   </div>
   <div class="row">
     <div class="small-12 column">
-      <div class="text -summary-alt"><%= raw @sections.where("title ilike 'About%'").first.body %></div>
+      <div class="text -summary-alt"><%= raw @sections.where("title ilike 'About%'").first.try(:body) %></div>
     </div>
   </div>
 </section>
@@ -56,7 +56,7 @@
   </div>
   <div class="row">
     <div class="small-12 column">
-      <div class="text -summary-alt"><%= raw @sections.where("title ilike 'Strategy%'").first.body %></div>
+      <div class="text -summary-alt"><%= raw @sections.where("title ilike 'Strategy%'").first.try(:body) %></div>
     </div>
   </div>
 </section>
@@ -92,7 +92,7 @@
   </div>
   <div class="row">
     <div class="small-12 column">
-      <div class="text -summary-alt"><%= raw @sections.where("title ilike 'Board%'").first.body %></div>
+      <div class="text -summary-alt"><%= raw @sections.where("title ilike 'Board%'").first.try(:body) %></div>
     </div>
   </div>
 </section>
