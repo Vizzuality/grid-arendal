@@ -105,6 +105,7 @@
   &.-publications .masonry-layout,
   &.-activities .masonry-layout,
   &.-news .masonry-layout ,
+  &.-about .masonry-layout,
   &[data-section="posts"] .masonry-layout {
 
     @include masonry-layout(1, 1, 2, 3, rem(10px) 0, rem(10px));

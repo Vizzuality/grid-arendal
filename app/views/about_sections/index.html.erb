@@ -63,7 +63,39 @@
 
 <%= render 'programmes', programmes: @programmes %>
 
-<%= render 'shared/users', users: @users %>
+<section class="l-main-content -about" data-section="users">
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="c-main-content-header">
+        <div class="text -title-event">Staff</div>
+      </div>
+    </div>
+  </div>
+  <ul class="row">
+    <% @users.each do |user| %>
+      <li class="small-6 medium-3 large-2 columns">
+        <div class="c-staff">
+          <div class="staff-pic" style="background-image: url('<%= user.thumbnail(:original) %>')"></div>
+          <p class="text -author"><%= user.display_name %></p>
+          <p class="text -meta"><%= user.current_position %></p>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</section>
+
+<section class="l-main-content -about"  data-section="board">
+  <div class="row">
+    <div class="small-12 column">
+      <div class="text -title-event">Board of Directors</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 column">
+      <div class="text -summary-alt"><%= raw @sections.where("title ilike 'Board%'").first.body %></div>
+    </div>
+  </div>
+</section>
 
 <% if @vacancies.any? %>
   <section class="l-main-content -about"  data-section="vacancies">
@@ -74,7 +106,7 @@
     </div>
     <div class="row">
       <div class="small-12 column">
-        <div class="text -summary-alt">
+        <div class="text -summary-alt -bold">
           <ul>
             <% @vacancies.each do |vacancy| %>
               <li><%= vacancy.title %></li>
