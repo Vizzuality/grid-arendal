@@ -16,8 +16,8 @@
       photos: @photos,
       have_cover_picture: @publication.cover_picture.present?,
       cover_picture_url: @publication.cover_picture,
-      have_picture: @publication.picture.present?,
-      picture_url: @publication.picture,
+      have_picture: @publication.s_picture.present?,
+      picture_url: @publication.s_picture,
       media_content_id: @publication.media_content_id %>
   <% end %>
 </div>
