@@ -19,6 +19,11 @@ class NewsArticle < ApplicationRecord
   has_many :activities, through: :content_news, source: :activity
   has_many :publications, through: :content_news, source: :publication
 
+  has_many :news_media_contents, dependent: :destroy
+  has_many :media_contents, through: :news_media_contents
+  has_many :albums, through: :content_news, source: :album
+  has_many :photos, through: :content_news, source: :photo
+
   validates :title, presence: true
   acts_as_taggable
 

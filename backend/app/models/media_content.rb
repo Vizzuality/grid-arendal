@@ -24,6 +24,9 @@ class MediaContent < ApplicationRecord
   has_many :activities, through: :media_supports, source: :activity
   has_many :publications, through: :media_supports, source: :publication
 
+  has_many :news_media_contents, dependent: :destroy
+  has_many :news_articles, through: :news_media_contents
+
   scope :wo_photos_in_album, -> { where("type <> 'Photo' OR (type = 'Photo' AND album_id IS NULL)")}
 
   # relations added here to allow lazy loading on media_library_controller

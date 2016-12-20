@@ -101,4 +101,9 @@
     link: publications_path %>
 <% end %>
 
+<% if @media_content.news_articles.any? %>
+  <%= render 'shared/news', news: @media_content.news_articles,
+    title: "Related news" %>
+<% end %>
+
 <%= render 'shared/footer' %>

@@ -66,6 +66,7 @@ module Backend
         @tags = Tag.order(:name)
         @publications = Publication.order(:title)
         @activities = Activity.order(:title)
+        @news_articles = NewsArticle.order(:title)
       end
   end
 end
