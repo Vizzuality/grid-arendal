@@ -38,7 +38,6 @@
 
         if(needLoadSlider) {
           lory(element, {
-            rewind: true,
             enableMouseEvents: true
           });
         }

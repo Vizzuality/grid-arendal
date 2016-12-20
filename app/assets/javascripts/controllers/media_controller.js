@@ -49,7 +49,6 @@
     initSliders: function() {
       _.each($('.js_slider'), function(element) {
         lory(element, {
-          rewind: true,
           enableMouseEvents: true
         });
       }.bind(this));

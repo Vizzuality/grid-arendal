@@ -37,7 +37,6 @@
     initSliders: function() {
       Array.prototype.slice.call(document.querySelectorAll('.js_slider')).forEach(function (element, index) {
         lory(element, {
-          rewind: true,
           enableMouseEvents: true
         });
       });
