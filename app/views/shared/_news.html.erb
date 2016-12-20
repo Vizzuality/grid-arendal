@@ -2,7 +2,10 @@
   <div class="row">
     <div class="small-12 columns">
       <div class="c-main-content-header">
-        <h2 class="text -title-block">Latest news</h2>
+        <h2 class="text -title-block">
+          <% title ||= "Latest news" %>
+          <%= title %>
+        </h2>
         <p class="text -view-all">
           <%= link_to news_index_path do %>
             <span>

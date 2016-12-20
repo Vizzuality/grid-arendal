@@ -19,6 +19,11 @@
   <%= render 'backend/shared/form/field_tags', form: form, collection: tags %>
 
   <%= render 'backend/shared/form/field_association', form: form,
+    label: "Media Library", value: :media_contents, collection: media_contents,
+    label_method: :info_title,
+    js_trigger_class: 'js-select-tags', note_txt: '(Choose related media)' %>
+
+  <%= render 'backend/shared/form/field_association', form: form,
     value: :activities, collection: activities, label_method: :title,
     js_trigger_class: 'js-select-tags', note_txt: '(Choose related activities)' %>
 
