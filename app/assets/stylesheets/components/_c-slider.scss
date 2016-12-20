@@ -6,7 +6,6 @@
     position: relative;
     font-size: 0;
     line-height: 0;
-    overflow: hidden;
     white-space: nowrap;
   }
 
@@ -48,10 +47,6 @@
 
     @extend %default-slider-styles;
     padding: rem(15px) 0 rem(32px) 0;
-
-    .frame {
-      overflow: visible;
-    }
 
     .slides {
       width: 100%;
