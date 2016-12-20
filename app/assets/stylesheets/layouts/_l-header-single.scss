@@ -144,8 +144,10 @@
     background-image: image-url('header7.jpg');
 
     .section-menu {
+      display: none;
 
-      @media screen and (min-width: $screen-s) {
+      @media screen and (min-width: $screen-m) {
+        display: block;
         padding-top: 0;
       }
 
