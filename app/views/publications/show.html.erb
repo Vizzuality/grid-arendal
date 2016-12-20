@@ -27,7 +27,13 @@
         picture_url = if @publication.s_picture.exists?
                         @publication.s_picture.url(:original)
                       elsif @publication.media_content
-                        @publication.media_content.photos.first.photo_sizes.where(label: PhotoSize::LARGE).first.url
+                        photo = if @publication.media_content.is_a?(Photo)
+                                  @publication.media_content
+                                else
+                                  @publication.media_content.photos.first
+                                end
+
+                        photo.photo_sizes.where(label: PhotoSize::LARGE).first.try(:url)
                       else
                         asset_path('original/missing2.png')
                       end
