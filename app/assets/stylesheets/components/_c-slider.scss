@@ -1,30 +1,77 @@
+@mixin default-slider-styles {
+  position: relative;
+  margin: 0 auto;
+
+  .frame {
+    position: relative;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .slides {
+    display: inline-block;
+  }
+
+  .slide {
+    position: relative;
+    display: inline-block;
+  }
+}
+
+%default-slider-styles {
+  @include default-slider-styles;
+}
+
 .c-slider {
 
-  @media screen and (max-width: $screen-m) {
-    position: relative;
-    margin: 0 auto;
+  &[data-slider-type="card"] {
+
+    @media screen and (max-width: $screen-m) {
+
+      @include default-slider-styles;
+
+      .slide {
+        width: rem(270px);
+        margin-right: rem(20px);
+        vertical-align: top;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  &[data-slider-type="related-media"] {
+
+    @extend %default-slider-styles;
+    padding: rem(15px) 0 rem(32px) 0;
 
     .frame {
-      position: relative;
-      font-size: 0;
-      line-height: 0;
-      overflow: hidden;
-      white-space: nowrap;
+      overflow: visible;
     }
 
     .slides {
-      display: inline-block;
+      width: 100%;
     }
 
     .slide {
-      position: relative;
-      display: inline-block;
-      width: rem(270px);
-      margin-right: rem(20px);
+      width: calc(100% + #{rem(20px)});
+      height: rem(600px);
+      padding-right: rem(20px);
       vertical-align: top;
 
-      &:last-child {
-        margin-right: 0;
+      &.-active {
+
+      }
+    }
+
+    @media screen and (max-width: $screen-m) {
+      .slide {
+        width: rem(290px);
+        height: rem(350px);
       }
     }
   }

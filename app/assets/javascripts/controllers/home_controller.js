@@ -6,15 +6,19 @@
 
   App.Controller.Home = App.Controller.Page.extend({
 
+    options: {
+      sliderContentCardType: "card",
+      sliderMediaItemType: "related-media"
+    },
+
     index: function() {
-      var eventsModalView = new App.View.EventsModal();
+      new App.View.EventsModal();
       $('.l-main-content').addClass('home');
       $('.cta-mobile').addClass('home');
       $('.footer-slider').addClass('home');
 
-      if(this.isScreen_s) {
-        this.initSliders();
-      } else {
+      this.initSliders();
+      if(!this.isScreen_s) {
         _.each($('.masonry-layout'), function(element) {
           new App.View.Masonry({
             el: element
@@ -24,12 +28,21 @@
     },
 
     initSliders: function() {
-      _.each(document.querySelectorAll('.js_slider'), function(element) {
-        lory(element, {
-          rewind: true,
-          enableMouseEvents: true
-        });
-      });
+      _.each($('.js_slider'), function(element) {
+        var sliderType = $(element).data("slider-type");
+        var needLoadSlider = true;
+
+        if(sliderType == this.options.sliderContentCardType && !this.isScreen_s) {
+          needLoadSlider = false;
+        }
+
+        if(needLoadSlider) {
+          lory(element, {
+            rewind: true,
+            enableMouseEvents: true
+          });
+        }
+      }.bind(this));
     }
 
   });
