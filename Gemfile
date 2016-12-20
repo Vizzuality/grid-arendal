@@ -26,9 +26,9 @@ gem 'simple_form'
 gem 'kaminari'
 
 # File upload
-gem 'paperclip'
-gem 'aws-sdk', '~> 2.3'
+gem "paperclip", github: "thoughtbot/paperclip", ref: "c38bb31"
 gem 'paperclip-dropbox'
+gem 'aws-sdk', '~> 2.3'
 gem 'flickraw'
 gem 'cocoon'
 
