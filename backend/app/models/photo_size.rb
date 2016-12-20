@@ -5,4 +5,6 @@ class PhotoSize < ApplicationRecord
   LARGE = "Large"
   MEDIUM = "Medium"
   SMALL = "Small"
+
+  LABELS = [ORIGINAL, LARGE, MEDIUM, SMALL]
 end
