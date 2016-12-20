@@ -82,7 +82,9 @@
   <%= render 'shared/news', news: @activity.news_articles %>
 <% end %>
 
-<%#= render 'shared/media' %>
+<% if @activity.media_contents.any? %>
+  <%= render 'shared/media', media_contents: @activity.media_contents %>
+<% end %>
 
 <% if @activity.partners.any? %>
   <%= render 'shared/partners', partners: @activity.partners %>
