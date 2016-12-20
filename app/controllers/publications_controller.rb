@@ -3,7 +3,7 @@ class PublicationsController < ApplicationController
   before_action :set_publication, only: [:show]
 
   def index
-    @publications = Publication.fetch_all(options_filter).limit(60)
+    @publications = Publication.fetch_all(options_filter).limit(45)
     @content_types = ContentType.by_publication
     max = (Publication.maximum(:content_date) || Date.today).year
     @years = ((max-5)..max).to_a.reverse
