@@ -14,15 +14,15 @@
   <div class="section-menu">
     <div class="row">
       <div class="small-12 columns">
-        <div class="share">
-          <svg class="icon">
-            <use xlink:href="#icon-share"></use>
-          </svg>
-        </div>
         <ul class="anchors">
           <% @sections.each do |section| %>
             <li class="text -section-menu js-anchor" data-section-belongs="<%= section.title %>"><%= section.title %></li>
           <% end %>
+          <div class="share">
+            <svg class="icon">
+              <use xlink:href="#icon-share"></use>
+            </svg>
+          </div>
         </ul>
       </div>
     </div>
@@ -30,7 +30,7 @@
 </div>
 
 <% @sections.each do |section| %>
-  <section class="l-main-content"  data-section="<%= section.title %>">
+  <section class="l-main-content -about"  data-section="<%= section.title %>">
     <div class="row">
       <div class="small-12 column">
         <div class="text -title-event"><%= section.title %></div>

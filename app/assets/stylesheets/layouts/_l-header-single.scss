@@ -16,31 +16,6 @@
     height: auto;
   }
 
-  &.-publications {
-    background-color: rgba($color-3, 0.04);
-  }
-
-  &.-activities {
-    background-color: rgba($color-1, 0.04);
-  }
-
-  &.-activities-article,
-  &.-about {
-    height: rem(530px);
-
-    @media screen and (min-width: $screen-m) {
-      height: rem(650px);
-    }
-  }
-
-  &.-news {
-    background-color: rgba($color-2, 0.04);
-  }
-
-  &.-media-library {
-    background-color: rgba($color-2, 0.05);
-  }
-
   .overlay {
     width: 100%;
     height: 100%;
@@ -58,37 +33,37 @@
     @media screen and (min-width: $screen-m) {
       position: relative;
     }
+  }
 
-    .share {
-      background-color: $white;
-      width: rem(60px);
-      height: rem(60px);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      right: rem(20px);
-      bottom: rem(-30px);
-      cursor: pointer;
-      z-index: 20;
-      box-shadow: 0 2px 4px 0 rgba($black, 0.1);
+  .share {
+    background-color: $white;
+    width: rem(60px);
+    height: rem(60px);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: rem(20px);
+    bottom: rem(-30px);
+    cursor: pointer;
+    z-index: 20;
+    box-shadow: 0 2px 4px 0 rgba($black, 0.1);
 
-      @media screen and (min-width: $screen-s) {
-        width: rem(50px);
-        height: rem(50px);
-        bottom: rem(-25px);
-        box-shadow: none;
-      }
+    @media screen and (min-width: $screen-s) {
+      width: rem(50px);
+      height: rem(50px);
+      bottom: rem(-25px);
+      box-shadow: none;
+    }
 
-      @media screen and (min-width: 1050px) {
-        right: rem(-25px);
-      }
+    @media screen and (min-width: 1050px) {
+      right: rem(-25px);
+    }
 
-      .icon {
-        width: rem(20px);
-        height: rem(20px);
-      }
+    .icon {
+      width: rem(20px);
+      height: rem(20px);
     }
   }
 
@@ -97,6 +72,7 @@
     bottom: 0;
     width: 100%;
     padding: rem(16px) 0 rem(38px) 0;
+    background-color: rgba($color-1, 0.6);
 
     @media screen and (min-width: $screen-s) {
       padding: rem(27px) 0;
@@ -119,6 +95,7 @@
     }
 
     .anchors {
+      position: relative;
       margin-top: rem(33px);
       font-size: 0;
       display: none;
@@ -138,14 +115,48 @@
     }
   }
 
-  &.-activities-article {
+  &.-publications {
+    background-color: rgba($color-3, 0.04);
+  }
 
-    .section-menu {
-      background-color: rgba($color-1, 0.6);
+  &.-activities {
+    background-color: rgba($color-1, 0.04);
+  }
+
+  &.-news {
+    background-color: rgba($color-2, 0.04);
+  }
+
+  &.-media-library {
+    background-color: rgba($color-2, 0.05);
+  }
+
+  &.-activities-article,
+  &.-about {
+    height: rem(530px);
+
+    @media screen and (min-width: $screen-m) {
+      height: rem(650px);
     }
   }
 
   &.-about {
-    background-image: image-url('header2.jpg');
+    background-image: image-url('header7.jpg');
+
+    .section-menu {
+
+      @media screen and (min-width: $screen-s) {
+        padding-top: 0;
+      }
+
+      .anchors {
+        margin-top: 28px;
+      }
+    }
+
+    .share {
+      top: auto;
+      bottom: rem(18px);
+    }
   }
 }

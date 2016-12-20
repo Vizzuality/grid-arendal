@@ -75,6 +75,25 @@
     }
   }
 
+  &.-about {
+
+    &:nth-last-of-type(2n-1) {
+      background-color: #F2F5F6;
+    }
+
+    @media screen and (min-width: $screen-m) {
+      padding: rem(28px) 0 rem(31px) 0;
+
+      &:first-of-type {
+        padding-top: rem(55px);
+      }
+
+      .-summary-alt {
+        padding-top: 21px;
+      }
+    }
+  }
+
   .-fix {
 
     @media screen and (min-width: $screen-m) {
