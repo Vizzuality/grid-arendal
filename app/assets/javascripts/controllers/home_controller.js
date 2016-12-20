@@ -16,9 +16,11 @@
         this.initSliders();
       } else {
         _.each($('.masonry-layout'), function(element) {
-          new App.View.Masonry({
-            el: element
-          });
+          if($(element).find('.masonry-column').length === 0) {
+            new App.View.Masonry({
+              el: element
+            });
+          }
         });
       }
     },
