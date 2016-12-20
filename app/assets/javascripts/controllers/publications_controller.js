@@ -7,9 +7,11 @@
   App.Controller.Publications = App.Controller.Page.extend({
 
     index: function(params) {
-      new App.View.Masonry({
-        el: '.masonry-layout'
-      });
+      if($('.masonry-layout').find('.masonry-column').length === 0) {
+        new App.View.Masonry({
+          el: '.masonry-layout'
+        });
+      }
       this.filtersView = new App.View.MediaFilters({
         callback: this._filter.bind(this)
       });
