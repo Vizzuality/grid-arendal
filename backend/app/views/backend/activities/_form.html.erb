@@ -30,7 +30,8 @@
     js_trigger_class: 'js-select-tags', note_txt: '(Choose related publications)' %>
 
   <%= render 'backend/shared/form/field_association', form: form,
-    value: :media_contents, collection: media_contents, label_method: :info_title,
+    label: "Media Library", value: :media_contents, collection: media_contents,
+    label_method: :info_title,
     js_trigger_class: 'js-select-tags', note_txt: '(Choose related media)' %>
 
   <%= render 'backend/shared/form/field_association', form: form,
