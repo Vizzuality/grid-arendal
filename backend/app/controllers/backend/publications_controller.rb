@@ -14,6 +14,9 @@ module Backend
 
     def edit
       @publication = Publication.find(params[:id])
+      if @publication.media_content
+        @media_contents = @media_contents.where(id: @publication.media_content_id)
+      end
     end
 
     def new
@@ -26,6 +29,10 @@ module Backend
           notice: 'Publication updated'
       else
         set_objects
+        if @publication.media_content
+          @media_contents = @media_contents.
+            where(id: @publication.media_content_id)
+        end
         render :edit
       end
     end
