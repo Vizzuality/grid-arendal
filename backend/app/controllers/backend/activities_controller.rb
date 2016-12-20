@@ -14,9 +14,6 @@ module Backend
     def edit
       @activities = Activity.order(:title)
       @activity = Activity.find(params[:id])
-      if @activity.media_content
-        @media_contents = @media_contents.where(id: @activity.media_content_id)
-      end
     end
 
     def new
@@ -31,9 +28,6 @@ module Backend
       else
         set_objects
         @activities = Activity.order(:title)
-        if @activity.media_content
-          @media_contents = @media_contents.where(id: @activity.media_content_id)
-        end
         render :edit
       end
     end
