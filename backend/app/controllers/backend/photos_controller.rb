@@ -10,7 +10,8 @@ module Backend
     before_action :set_objects, only: [:edit]
 
     def search
-      @photos = Photo.where("UPPER(title) like UPPER(?)", "#{params[:query]}%").limit(20)
+      @photos = Photo.where("UPPER(title) like UPPER(?)", "#{params[:query]}%").
+        limit(20)
       @selected_id = params[:selected_id]
       respond_to do |format|
         format.js
