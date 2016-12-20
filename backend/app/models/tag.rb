@@ -1,3 +1,4 @@
 class Tag < ApplicationRecord
-  CATEGORIES = ["Activity Area", "Programme", "Region", "Theme"]
+  PROGRAMME = "Programme"
+  CATEGORIES = ["Activity Area", PROGRAMME, "Region", "Theme"]
 end
