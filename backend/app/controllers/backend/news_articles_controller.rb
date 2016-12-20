@@ -56,6 +56,7 @@ module Backend
         @tags = Tag.order(:name)
         @activities = Activity.order(:title)
         @publications = Publication.order(:title)
+        @media_contents = MediaContent.wo_photos_in_album.order(:title)
       end
   end
 end
