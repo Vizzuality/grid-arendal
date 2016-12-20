@@ -1,35 +1,100 @@
-<div class="l-header-library -activities">
+<div class="l-header-single -activities-article" style="background-image: url(<%= asset_path('header4.jpg') %>);">
   <div class="overlay"></div>
   <%= render 'shared/menu' %>
   <div class="row">
     <div class="small-12 columns">
       <div class="title-block">
-        <h1 class="text -title-library">About</h1>
-        <div class="text -summary">
-          GRID-Arendal has produced publications, in both printed and electronic formats, on a wide range of issues related to the environment.
-        </div>
-        <div class="share">
+        <div class="c-breadcrumbs">
+          <a href="/">
+            <svg class="icon-home">
+              <use xlink:href="#icon-breadcrumb-home"></use>
+            </svg>
+          </a>
           <svg class="icon">
-            <use xlink:href="#icon-share"></use>
+            <use xlink:href="#icon-breadcrumb-chevron-right"></use>
           </svg>
+          <span class="text -meta">About</span>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-menu">
+    <div class="row">
+      <div class="small-12 columns">
+        <div class="title-block">
+          <div class="share">
+            <svg class="icon">
+              <use xlink:href="#icon-share"></use>
+            </svg>
+          </div>
+        </div>
+
+        <ul class="anchors">
+          <li class="text -section-menu js-anchor" data-section-belongs="about">About</li>
+          <li class="text -section-menu js-anchor" data-section-belongs="strategy">Strategy 2014-2017</li>
+          <li class="text -section-menu js-anchor" data-section-belongs="programmes">Programmes</li>
+          <li class="text -section-menu js-anchor" data-section-belongs="users">Staff</li>
+          <li class="text -section-menu js-anchor" data-section-belongs="board">Board of Directors</li>
+          <% if @vacancies.any? %>
+            <li class="text -section-menu js-anchor" data-section-belongs="vacancies">Vacancies</li>
+          <% end %>
+          <li class="text -section-menu js-anchor" data-section-belongs="reports">Reports</li>
+        </ul>
       </div>
     </div>
   </div>
 </div>
 
-<% @sections.each do |section| %>
-  <h2><%= section.title %></h2>
-  <section>
-    <%= section.body %>
-  </section>
+<section class="l-single-article -activities" data-section="about">
+  <div class="row">
+    <div class="small-12 column">
+      <div class="c-main-content-header">
+        <h2 class="text -title-block">
+          About
+        </h2>
+      </div>
+      <div class="text -summary-alt">
+        <%= raw @sections.where("title ilike 'About%'").first.body %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="row" data-section="strategy">
+  <div class="small-12 column">
+    <div class="c-main-content-header">
+      <h2 class="text -title-block">
+        Strategy 2014-2017
+      </h2>
+    </div>
+    <div class="text -summary-alt">
+      <%= raw @sections.where("title ilike 'Strategy%'").first.body %>
+    </div>
+  </div>
+</div>
+
+<%= render 'programmes', programmes: @programmes %>
+
+<%= render 'shared/users', users: @users %>
+
+<% if @vacancies.any? %>
+  <div class="row" data-section="vacancies">
+    <div class="small-12 column">
+      <div class="c-main-content-header">
+        <h2 class="text -title-block">
+          Vacancies
+        </h2>
+      </div>
+      <div class="text -summary-alt">
+        <ul>
+          <% @vacancies.each do |vacancy| %>
+            <li><%= vacancy.title %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
 <% end %>
 
-<h3>Vacancies</h3>
-<ul>
-  <% @vacancies.each do |vacancy| %>
-    <li><%= vacancy.title %></li>
-  <% end %>
-</ul>
-
-<%= render 'shared/footer' %>
+<%= render 'shared/footer', users: @users %>
