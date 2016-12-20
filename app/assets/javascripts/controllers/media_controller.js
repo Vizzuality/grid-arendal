@@ -7,10 +7,10 @@
   App.Controller.Media = App.Controller.Page.extend({
 
     index: function(params) {
-      var masonryView = new App.View.Masonry({
+      new App.View.Masonry({
         el: '.masonry-layout'
       });
-      var filtersView = new App.View.MediaFilters({
+      new App.View.MediaFilters({
         options: {
           filters: [
             {
@@ -31,10 +31,20 @@
     },
 
     show: function(params) {
-      var masonryView = new App.View.Masonry({
+      new App.View.Masonry({
         el: '.masonry-layout'
       });
+      this.initSliders();
     },
+
+    initSliders: function() {
+      _.each($('.js_slider'), function(element) {
+        lory(element, {
+          rewind: true,
+          enableMouseEvents: true
+        });
+      }.bind(this));
+    }
 
   });
 
