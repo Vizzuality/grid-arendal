@@ -5,21 +5,24 @@ $pics: 'pic-1', 'pic-2', 'pic-3', 'pic-4', 'pic-5', 'pic-6';
   text-align: center;
 
   .staff-pic {
+    position: relative;
     width: rem(120px);
     height: rem(120px);
     margin: 0 auto;
     border-radius: 50%;
-    border: rem(3px) solid rgba($white, .3);
-
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    border-radius: 100%;
 
-    @for $i from 1 through length($pics) {
-      &.#{nth($pics, $i)} {
-        background-image: image-url('staff/#{nth($pics, $i)}.jpg');
-      }
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: rem(3px) solid rgba($white, .3);
+      border-radius: 50%;
     }
   }
 

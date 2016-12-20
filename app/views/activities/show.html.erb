@@ -4,21 +4,11 @@
   <div class="row">
     <div class="small-12 columns">
       <div class="title-block">
-        <div class="c-breadcrumbs">
-          <a href="/">
-            <svg class="icon-home">
-              <use xlink:href="#icon-breadcrumb-home"></use>
-            </svg>
-          </a>
-          <svg class="icon">
-            <use xlink:href="#icon-breadcrumb-chevron-right"></use>
-          </svg>
-          <%= link_to "Activities", activities_path, class: "text -meta" %>
-          <svg class="icon">
-            <use xlink:href="#icon-breadcrumb-chevron-right"></use>
-          </svg>
-          <span class="text -meta"><%= @activity.title %></span>
-        </div>
+        <% breadcrumbs_links = [
+          {'text' => 'Activities', 'link' => activities_path},
+          {'text' => @activity.title}
+        ] %>
+        <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
       </div>
     </div>
   </div>
