@@ -38,7 +38,9 @@
           <% if @activity.news_articles.any? %>
             <li class="text -section-menu js-anchor" data-section-belongs="news">Related News</li>
           <% end %>
-          <li class="text -section-menu js-anchor" data-section-belongs="media">Related media</li>
+          <% if @activity.media_contents.any? %>
+            <li class="text -section-menu js-anchor" data-section-belongs="media">Related media</li>
+          <% end %>
           <% if @activity.partners.any? %>
             <li class="text -section-menu js-anchor" data-section-belongs="partners">Partners & Links</li>
           <% end %>
