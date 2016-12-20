@@ -14,10 +14,10 @@
       news_articles: @news_articles,
       tags: @tags,
       photos: @photos,
-      have_cover_picture: @publication.cover_picture.present?,
-      cover_picture_url: @publication.cover_picture,
+      have_cover_picture: @publication.cover_picture.exists?,
+      cover_picture_url: (@publication.cover_picture.exists? ? @publication.cover_picture : nil),
       have_picture: @publication.s_picture.present?,
-      picture_url: @publication.s_picture,
+      picture_url: @publication.s_picture.present? ? @publication.s_picture : nil,
       media_content_id: @publication.media_content_id %>
   <% end %>
 </div>
