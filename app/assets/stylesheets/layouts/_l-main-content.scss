@@ -7,23 +7,6 @@
     @media screen and (min-width: $screen-m) {
       border-bottom: rem(1px) solid $white;
       padding: rem(35px) 0 rem(50px);
-      animation: $loop-length slidybackground infinite;
-    }
-
-    @keyframes slidybackground {
-      0% { background-color: #E5EBED }
-      12% { background-color: #E5EBED }
-      17% { background-color: #F6F3E5 }
-      29% { background-color: #F6F3E5 }
-      34% { background-color: #F2EFEB }
-      46% { background-color: #F2EFEB }
-      51% { background-color: #E5EDE5 }
-      63% { background-color: #E5EDE5 }
-      68% { background-color: #F5EEEF }
-      80% { background-color: #F5EEEF }
-      85% { background-color: #F0ECF4 }
-      95% { background-color: #F0ECF4 }
-      100% { background-color: #E5EBED }
     }
   }
 
