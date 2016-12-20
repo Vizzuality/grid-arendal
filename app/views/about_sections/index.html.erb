@@ -90,11 +90,17 @@
       <div class="text -title-event">Board of Directors</div>
     </div>
   </div>
-  <div class="row">
-    <div class="small-12 column">
-      <div class="text -summary-alt"><%= raw @sections.where("title ilike 'Board%'").first.try(:body) %></div>
-    </div>
-  </div>
+  <ul class="row">
+    <% @board_members.each do |user| %>
+      <li class="small-6 medium-3 large-2 columns">
+        <div class="c-staff">
+          <div class="staff-pic" style="background-image: url('<%= user.avatar(:medium) %>')"></div>
+          <p class="text -author"><%= user.display_name %></p>
+          <p class="text -meta"><%= user.current_position %></p>
+        </div>
+      </li>
+    <% end %>
+  </ul>
 </section>
 
 <% if @vacancies.any? %>
