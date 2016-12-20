@@ -34,19 +34,20 @@ module Attachable
                           default_url: '/assets/:style/missing2.png',
                           storage: :s3,
                           s3_credentials: {
-                            bucket: ENV.fetch('S3_BUCKET_NAME'),
-                            access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
-                            secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
-                            s3_region: ENV.fetch('AWS_REGION'),
+                            bucket: ENV['S3_BUCKET_NAME'],
+                            access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+                            secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+                            s3_region: ENV['AWS_REGION'],
                           },
-                          path: proc { |style| "#{Rails.env}/#{self.class.to_s}/#{style}/#{id}_#{picture.original_filename}"}
+                          url: ':s3_domain_url',
+                          path: "#{Rails.env}/:class/:s_picture/:id/:style/:basename.:extension"
       else
         has_attached_file :s_picture, styles: { medium: '300x300>', thumb: '100x100>' },
                                     default_url: '/assets/:style/missing2.png'
       end
 
-      validates_attachment_content_type :picture, content_type: /\Aimage/
-      validates_attachment_file_name :picture, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
+      validates_attachment_content_type :s_picture, content_type: /\Aimage/
+      validates_attachment_file_name :s_picture, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
     end
   end
 
