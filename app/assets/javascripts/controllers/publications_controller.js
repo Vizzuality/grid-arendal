@@ -12,7 +12,7 @@
           el: '.masonry-layout'
         });
       }
-      this.filtersView = new App.View.MediaFilters({
+      new App.View.MediaFilters({
         callback: this._filter.bind(this)
       });
     },
@@ -21,11 +21,12 @@
       new App.View.DescriptionView({
         el: '.content-wrapper'
       });
-      if(this.isScreen_s) {
-        this.initSliders();
-      } else {
-        new App.View.Masonry({
-          el: '.masonry-layout'
+      this.initSliders();
+      if(!this.isScreen_s) {
+        _.each($('.masonry-layout'), function(element) {
+          new App.View.Masonry({
+            el: element
+          });
         });
       }
     },
@@ -37,7 +38,7 @@
     },
 
     initSliders: function() {
-      Array.prototype.slice.call(document.querySelectorAll('.js_slider')).forEach(function (element, index) {
+      _.each($('.js_slider'), function(element) {
         lory(element, {
           rewind: true,
           enableMouseEvents: true

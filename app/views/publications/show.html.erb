@@ -24,13 +24,8 @@
   <div class="row">
     <div class="small-12 column">
       <%
-        picture_url = if @publication.s_picture.exists?
-                        @publication.s_picture.url(:original)
-                      elsif @publication.media_content
-                        @publication.media_content.photos.first.photo_sizes.where(label: PhotoSize::LARGE).first.url
-                      else
-                        asset_path('original/missing2.png')
-                      end
+        picture_url = asset_path('original/missing2.png')
+
       %>
       <div class="c-article-image" style="background-image: url('<%= picture_url %>');"></div>
     </div>
@@ -99,7 +94,7 @@
   <% end %>
 
   <% if @publication.media_contents.any? %>
-    <%= render 'shared/media', media_contents: @publication.media_contents %>
+    <%= render 'shared/related_media', media_contents: @publication.media_contents %>
   <% end %>
 
 </div>
