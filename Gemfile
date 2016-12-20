@@ -27,6 +27,7 @@ gem 'kaminari'
 
 # File upload
 gem 'paperclip'
+gem 'aws-sdk', '~> 2.3'
 gem 'paperclip-dropbox'
 gem 'flickraw'
 gem 'cocoon'
