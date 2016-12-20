@@ -21,3 +21,5 @@ div.fields
   = render 'backend/shared/form/field_select', form: form, value: :role, collection: user_roles, as: :collection_select, label_txt: 'Role'
 
   = render 'backend/shared/form/field_checkbox', form: form, value: :active
+
+  = render 'backend/shared/form/field_checkbox', form: form, value: :is_board_member
