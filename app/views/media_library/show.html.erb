@@ -74,8 +74,8 @@
           <% if @media_content.is_a?(Photo) %>
             <div class="text -sidebar-title">Download</div>
             <ul class="button-list">
-              <% @media_content.photo_sizes.each do |size| %>
-                <%= link_to size.url do %>
+              <% @media_content.photo_sizes.where(label: PhotoSize::LABELS).each do |size| %>
+                <%= link_to size.url, title: size.label do %>
                   <li class="btn -dark" data-file-size="<%= "#{size.width}x#{size.height}"%>"><%= size.label %></li>
                 <% end %>
               <% end %>
@@ -92,6 +92,23 @@
 
 </div>
 
-<%= render 'shared/related_media' %>
+<% if @media_content.is_a?(Album) %>
+  <%= render 'shared/related_media', media_contents: @media_content.photos,
+  title: "Photos included in album" %>
+<% end %>
+
+<% if @media_content.activities.any? %>
+  <%= render 'shared/posts', collection: @media_content.activities.
+    order(:title),
+    title: 'activities',
+    link: activities_path %>
+<% end %>
+
+<% if @media_content.publications.any? %>
+  <%= render 'shared/posts', collection: @media_content.publications.
+    order(content_date: :desc),
+    title: 'publications',
+    link: publications_path %>
+<% end %>
 
 <%= render 'shared/footer' %>

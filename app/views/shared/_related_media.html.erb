@@ -2,7 +2,10 @@
   <div class="row">
     <div class="small-12 columns">
       <div class="c-main-content-header">
-        <h2 class="text -title-block">Related Media</h2>
+        <h2 class="text -title-block">
+          <% title ||= "Related Media" %>
+          <%= title %>
+        </h2>
         <p class="text -view-all">
           <%= link_to root_path do %>
             <span>
@@ -19,10 +22,25 @@
   <div class="row">
     <div class="small-12 small-centered columns -fix">
       <div class="masonry-layout" hidden data-columns>
-        <%= render 'shared/media_card', picture: 'http://www.audubon.org/sites/default/files/styles/engagement_card/public/sfw_apa_2013_28342_232388_briankushner_blue_jay_kk_high.jpg', title: "Bear Island, Svalbard", link: "#", photos_count: 0, videos_count: 0 %>
-        <%= render 'shared/media_card', picture: 'http://www.audubon.org/sites/default/files/styles/engagement_card/public/sfw_apa_2013_28342_232388_briankushner_blue_jay_kk_high.jpg', title: "Life and culture in Uummannaq, Greenland", link: "#", photos_count: 0, videos_count: 0 %>
-        <%= render 'shared/media_card', picture: 'http://www.audubon.org/sites/default/files/styles/engagement_card/public/sfw_apa_2013_28342_232388_briankushner_blue_jay_kk_high.jpg', title: "Traditional Culture and Dog-Sledding in Greenland", link: "#", photos_count: 0, videos_count: 0 %>
-        <%= render 'shared/media_card', picture: 'http://www.audubon.org/sites/default/files/styles/engagement_card/public/sfw_apa_2013_28342_232388_briankushner_blue_jay_kk_high.jpg', title: "Norwegian Landscapes and biodiversity", link: "#", photos_count: 0, videos_count: 0 %>
+        <% media_contents.each do |media| %>
+          <%
+              picture_url = case media.type
+                            when MediaContent::TYPE_ALBUM
+                              photo = media.photos.first
+                              photo ? photo.photo_sizes.where(label: PhotoSize::MEDIUM).first.try(:url) : nil
+                            when MediaContent::TYPE_PHOTO
+                              media.photo_sizes.where(label: PhotoSize::MEDIUM).first.try(:url)
+                            else
+                              nil
+                            end
+                          %>
+          <%= render 'shared/media_card',
+            picture: picture_url,
+            title: media.title,
+            link: medium_path(media),
+            photos_count: media.type == 'Album' ? media.photos.size : 0,
+            videos_count: 0 %>
+        <% end %>
       </div>
     </div>
   </div>
