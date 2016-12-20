@@ -6,8 +6,8 @@ class PublicationsController < ApplicationController
     @publications = Publication.fetch_all(options_filter).limit(20)
     @content_types = ContentType.by_publication
     max = (Publication.maximum(:content_date) || Date.today).year
-    @years = ((max-5)...max).to_a.reverse
-    @years << "older"
+    @years = ((max-5)..max).to_a.reverse
+    @years << -1
     @tags = Tag.order(:name)
     @section = SiteSection.where(section: "activities").first
     respond_to do |format|

@@ -33,21 +33,33 @@ class Publication < Content
     allow_destroy: true
 
   scope :older_pubs, -> { where('EXTRACT(year from content_date) < ?', Date.today.year - 5)}
+  scope :filter_or_older_pubs, ->(years) {where('EXTRACT(year from content_date) IN (?) OR EXTRACT(year from content_date) < ?', years, Date.today.year-5)}
   scope :by_years, ->(years) { where('EXTRACT(year from content_date) IN (?)', years) }
 
   class << self
     def fetch_all(options)
       tags = options['tags'].split(',')               if options['tags'].present?
       type = options['type']                          if options['type'].present?
-      older = options['years'] && options['years'].include?('older')
-      options['years'].delete('older') if older
-      years = options['years'].split(',').map(&:to_i) if options['years'].present?
+      older = nil
+      years = nil
+      if options['years'].present?
+        years = options['years'].split(',').map(&:to_i)
+        if years.include?(-1)
+          older = true
+          years.delete(-1)
+        end
+      end
 
       publications = Publication.by_published.order("content_date DESC")
       publications = publications.by_tags(tags)   if tags.present?
       publications = publications.by_type(type)   if type.present?
-      publications = publications.older_pubs if older
-      publications = publications.by_years(years) if years.present?
+      if older && years.present?
+        publications = publications.filter_or_older_pubs(years)
+      elsif years.present?
+        publications = publications.by_years(years)
+      elsif older
+        publications = publications.older_pubs
+      end
       publications
     end
   end
