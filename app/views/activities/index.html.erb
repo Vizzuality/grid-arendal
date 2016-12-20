@@ -37,6 +37,14 @@
       display_method: 'name'
     },
     {
+      data: @programmes,
+      type: 'select',
+      title: 'FILTER BY',
+      placeholder: 'Filter by programme',
+      key: 'programme',
+      display_method: 'name'
+    },
+    {
       data: @tags,
       type: 'tags',
       title: 'FILTER BY',
@@ -48,7 +56,7 @@
 
   <div class="row">
     <div class="small-12 small-centered columns -fix">
-      <div id="masonry-layout" class="masonry-layout" data-columns="3">
+      <div class="masonry-layout" data-columns="3">
         <%= render 'activities', activities: @activities %>
       </div>
     </div>

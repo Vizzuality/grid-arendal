@@ -1,24 +1,10 @@
-<section class="l-main-content" data-section="posts">
+<section class="l-main-content" data-section="programmes">
   <div class="row">
     <div class="small-12 columns">
       <div class="c-main-content-header">
         <h2 class="text -title-block">
-          <% if current_page?('/') %>
-              Featured <%= title %>
-          <% else %>
-              Related <%= title %>
-          <% end %>
+          Programmes
         </h2>
-        <p class="text -view-all">
-          <%= link_to link do %>
-            <span>
-              View all <%= title %>
-            </span>
-              <svg class="icon -arrow">
-                <use xlink:href="#icon-arrow"></use>
-              </svg>
-          <% end %>
-        </p>
       </div>
     </div>
   </div>
@@ -28,7 +14,7 @@
       <div class="c-slider slider js_slider">
         <div class="frame js_frame">
           <div class="masonry-layout slides js_slides" data-columns="3">
-            <% collection.each do |item| %>
+            <% programmes.each do |item| %>
               <%= render 'shared/content_card', item: item %>
             <% end %>
           </div>

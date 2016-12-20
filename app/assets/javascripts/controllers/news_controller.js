@@ -8,7 +8,7 @@
 
     index: function(params) {
       var masonryView = new App.View.Masonry({
-        el: '#masonry-layout'
+        el: '.masonry-layout'
       });
     },
 

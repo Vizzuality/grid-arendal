@@ -19,7 +19,7 @@
       'media-library/:id': 'Media#show',
       'news(/)': 'News#index',
       'news/:id': 'News#show',
-      'about(/)': 'About#index'
+      'about(/)': 'About#index',
     },
 
     initialize: function() {

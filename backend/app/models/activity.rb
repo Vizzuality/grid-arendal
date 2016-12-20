@@ -31,11 +31,13 @@ class Activity < Content
       tags = options['tags'].split(',')               if options['tags'].present?
       type = options['type']                          if options['type'].present?
       partners = options['partners']                  if options['partners'].present?
+      programme = options['programme'] if options['programme'].present?
 
       activities = Activity.by_published.order_by_title
       activities = activities.by_tags(tags)   if tags.present?
       activities = activities.by_type(type)   if type.present?
       activities = activities.by_partners(partners)   if partners.present?
+      activities = activities.by_tags(programme) if programme.present?
       activities
     end
   end

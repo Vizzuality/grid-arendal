@@ -29,11 +29,14 @@
 
         <ul class="anchors">
           <li class="text -section-menu js-anchor" data-section-belongs="overview">Overview</li>
-          <% if @users.any? %>
+          <% if @activity.users.any? %>
             <li class="text -section-menu js-anchor" data-section-belongs="users">Staff involved</li>
           <% end %>
-          <% if @publications.any?%>
+          <% if @activity.publications.any?%>
             <li class="text -section-menu js-anchor" data-section-belongs="posts">Publications</li>
+          <% end %>
+          <% if @activity.news_articles.any? %>
+            <li class="text -section-menu js-anchor" data-section-belongs="news">Related News</li>
           <% end %>
           <li class="text -section-menu js-anchor" data-section-belongs="media">Related media</li>
           <% if @activity.partners.any? %>
@@ -46,6 +49,7 @@
 </div>
 
 <section class="l-single-article -activities" data-section="overview">
+
   <div class="row">
     <div class="small-12 column">
       <div class="text -summary-alt"><%= raw @activity.description %></div>
@@ -53,12 +57,14 @@
   </div>
 </section>
 
-<% if @users.any? %>
-  <%= render 'shared/users', users: @users %>
+<% if @activity.users.any? %>
+  <%= render 'shared/users', users: @activity.users %>
 <% end %>
 
-<% if @publications.any? %>
-  <%= render 'shared/posts', collection: @publications, title: 'publications',
+<% if @activity.publications.any? %>
+  <%= render 'shared/posts', collection: @activity.publications.
+    order(content_date: :desc),
+    title: 'publications',
     link: publications_path %>
 <% end %>
 

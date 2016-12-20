@@ -1,0 +1,21 @@
+<div class="item js_slide slide">
+  <%= link_to item do %>
+    <article class="c-card">
+      <% photo_url = if item.picture_file_name && item.picture.present?
+                       item.picture.url(:medium)
+                     elsif item.media_content
+                       item.media_content.photo_sizes.where(label: PhotoSize::MEDIUM).first.try(:url)
+                     else
+                       asset_path('original/missing2.png')
+                     end %>
+      <div class="card-pic" style="background-image: url('<%= photo_url %>')"></div>
+      <div class="card-descrition">
+        <h3 class="text -title-card"><%= item.title %></h3>
+        <p class="text -summary"><%= item.short_description %></p>
+        <% if item.is_a?(Publication) && item.content_date %>
+          <p class="text -meta"><%= time_ago_in_words(item.content_date) %></p>
+        <% end %>
+      </div>
+    </article>
+  <% end %>
+</div>

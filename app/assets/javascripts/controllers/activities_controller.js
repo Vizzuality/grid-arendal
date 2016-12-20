@@ -8,7 +8,7 @@
 
     index: function(params) {
       new App.View.Masonry({
-        el: '#masonry-layout'
+        el: '.masonry-layout'
       });
       this.filtersView = new App.View.MediaFilters({
         callback: this._filter.bind(this)
@@ -17,7 +17,13 @@
 
     show: function(params) {
       new App.View.Anchors({});
-      this.initSliders();
+      if(this.isScreen_s) {
+        this.initSliders();
+      } else {
+        new App.View.Masonry({
+          el: '.masonry-layout'
+        });
+      }
     },
 
     _filter: function() {
@@ -27,13 +33,10 @@
     },
 
     initSliders: function() {
-
       Array.prototype.slice.call(document.querySelectorAll('.js_slider')).forEach(function (element, index) {
         lory(element, {
-          infinite: 3,
-          slidesToScroll: 1,
-          enableMouseEvents: true,
-          offsetLeft: 0
+          rewind: true,
+          enableMouseEvents: true
         });
       });
     }

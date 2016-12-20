@@ -7,19 +7,26 @@
   App.Controller.Home = App.Controller.Page.extend({
 
     index: function() {
-      this.initSliders();
       var eventsModalView = new App.View.EventsModal();
       $('.l-main-content').addClass('home');
       $('.cta-mobile').addClass('home');
       $('.footer-slider').addClass('home');
+
+      if(this.isScreen_s) {
+        this.initSliders();
+      } else {
+        _.each($('.masonry-layout'), function(element) {
+          new App.View.Masonry({
+            el: element
+          });
+        });
+      }
     },
 
     initSliders: function() {
-
-      Array.prototype.slice.call(document.querySelectorAll('.js_slider')).forEach(function (element, index) {
+      _.each(document.querySelectorAll('.js_slider'), function(element) {
         lory(element, {
-          infinite: 3,
-          slidesToScroll: 1,
+          rewind: true,
           enableMouseEvents: true
         });
       });
