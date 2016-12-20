@@ -25,9 +25,7 @@
 
     initialize: function() {
       new App.View.MobileMenu();
-      $('body').addClass('slide-' + (parseInt(Math.floor(Math.random() * 6)) + 1) );
       this.isScreen_s = ($(window).width() < 768);
-
     },
 
     /**
