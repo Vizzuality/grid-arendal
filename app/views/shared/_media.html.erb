@@ -3,7 +3,8 @@
     <div class="small-12 columns">
       <div class="c-main-content-header">
         <h2 class="text -title-block">
-          Featured Media
+          <% title ||= "Featured Media" %>
+          <%= title %>
         </h2>
         <p class="text -view-all">
           <%= link_to root_path do %>

@@ -83,7 +83,7 @@
 </div>
 
 <% if @media_content.is_a?(Album) %>
-  <%= render 'shared/related_media', media_contents: @media_content.photos,
+  <%= render 'shared/media', media_contents: @media_content.photos,
   title: "Photos included in album" %>
 <% end %>
 

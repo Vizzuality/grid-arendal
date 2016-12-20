@@ -33,12 +33,17 @@
     },
 
     show: function(params) {
-      if($('.masonry-layout').find('.masonry-column').length === 0) {
-        new App.View.Masonry({
-          el: '.masonry-layout'
-        });
+      if(this.isScreen_s) {
+        this.initSliders();
+      } else {
+        if($('.masonry-layout').find('.masonry-column').length === 0) {
+          _.each($('.masonry-layout'), function(element) {
+            new App.View.Masonry({
+              el: element
+            });
+          });
+        }
       }
-      this.initSliders();
     },
 
     initSliders: function() {
