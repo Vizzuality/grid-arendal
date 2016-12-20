@@ -5,9 +5,9 @@
       <div class="c-main-content-header">
         <h2 class="text -title-block">
           <% if current_page?('/') %>
-            Featured <%= title %>
+              Featured <%= title %>
           <% else %>
-            Related <%= title %>
+              Related <%= title %>
           <% end %>
         </h2>
         <p class="text -view-all">
@@ -15,42 +15,26 @@
             <span>
               View all <%= title %>
             </span>
-            <svg class="icon -arrow">
-              <use xlink:href="#icon-arrow"></use>
-            </svg>
+              <svg class="icon -arrow">
+                <use xlink:href="#icon-arrow"></use>
+              </svg>
           <% end %>
         </p>
       </div>
     </div>
   </div>
 
-  <div class="c-slider slider js_slider">
-    <div class="frame js_frame">
-      <ul class="slides js_slides">
-        <% collection.each do |post| %>
-          <li class="js_slide slide">
-            <% photo_url = if post.picture.present?
-                             post.picture.url(:medium)
-                           elsif post.media_content
-                             post.media_content.photo_sizes.where(label: PhotoSize::MEDIUM).first.url
-                           else
-                             asset_path('original/missing2.png')
-                           end %>
-            <%= link_to post do %>
-              <article class="c-card">
-                <div class="card-pic" style="<%= "background-image: url('#{photo_url}')" %>"></div>
-                <div class="card-descrition">
-                  <h3 class="text -title-card"><%= post.title %></h3>
-                  <p class="text -summary"><%= post.short_description %></p>
-                  <% if post.is_a?(Publication) && post.content_date %>
-                    <p class="text -meta"><%= time_ago_in_words(post.content_date) %></p>
-                  <% end %>
-                </div>
-              </article>
+  <div class="row">
+    <div class="small-12 small-centered columns -fix">
+      <div class="c-slider slider js_slider">
+        <div class="frame js_frame">
+          <div class="masonry-layout slides js_slides" data-columns="3">
+            <% collection.each do |item| %>
+              <%= render 'shared/content_card', item: item %>
             <% end %>
-          </li>
-        <% end %>
-      </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 

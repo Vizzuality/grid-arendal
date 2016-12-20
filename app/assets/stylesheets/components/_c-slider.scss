@@ -1,32 +1,31 @@
 .c-slider {
-  position: relative;
-  width: 1000px;
-  margin: 0 auto;
 
-  .frame {
-    max-width: calc(62.5rem - 2*(0.9375rem));
-    margin: 0 auto;
-    padding: 0 0.9375rem;
-
+  @media screen and (max-width: $screen-m) {
     position: relative;
-    font-size: 0;
-    line-height: 0;
-    overflow: hidden;
-    white-space: nowrap;
-  }
+    margin: 0 auto;
 
-  .slides {
-    display: inline-block;
-  }
+    .frame {
+      position: relative;
+      font-size: 0;
+      line-height: 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
 
-  .slide {
-    display: inline-block;
-    width: 270px;
-    margin: 0 10px;
-    vertical-align: top;
+    .slides {
+      display: inline-block;
+    }
 
-    @media (min-width: $screen-m){
-      width: 310px;
+    .slide {
+      position: relative;
+      display: inline-block;
+      width: rem(270px);
+      margin-right: rem(20px);
+      vertical-align: top;
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 }
