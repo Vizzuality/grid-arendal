@@ -103,12 +103,12 @@
   &[data-section="posts"] .masonry-layout,
   &[data-section="media"] .masonry-layout {
 
-    @include masonry-layout(1, 1, 2, 3, rem(10px) 0, rem(10px));
+    @include masonry-layout(1, 1, 2, 3, rem(10px) rem(10px) rem(10px) 0, rem(10px) rem(20px) rem(10px) 0);
   }
 
   &.-news .masonry-layout {
 
-    @include masonry-layout(1, 1, 2, 4, rem(10px) 0, rem(10px));
+    @include masonry-layout(1, 1, 2, 4, rem(10px) rem(10px) rem(10px) 0, rem(10px) rem(20px) rem(10px) 0);
   }
 
   &.-media-library .masonry-layout {

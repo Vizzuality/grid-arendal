@@ -32,8 +32,8 @@
       @include default-slider-styles;
 
       .slide {
-        width: rem(270px);
-        margin-right: rem(20px);
+        width: rem(280px);
+        padding-right: rem(10px);
         vertical-align: top;
 
         &:last-child {
@@ -55,18 +55,15 @@
     .slide {
       width: calc(100% + #{rem(20px)});
       height: rem(600px);
-      padding-right: rem(20px);
+      padding-right: rem(10px);
       vertical-align: top;
-
-      &.-active {
-
-      }
     }
 
     @media screen and (max-width: $screen-m) {
       .slide {
         width: rem(290px);
         height: rem(350px);
+        padding-right: rem(20px);
       }
     }
   }

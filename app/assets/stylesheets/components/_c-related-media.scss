@@ -2,7 +2,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: calc(100% - #{rem(20px)});
+  width: calc(100% - #{rem(10px)});
   height: rem(560px);
   margin: auto;
   background-repeat: no-repeat;
@@ -38,6 +38,10 @@
 
   @media screen and (max-width: $screen-m) {
     height: rem(350px);
+  }
+
+  @media screen and (min-width: $screen-m) {
+    width: calc(100% - #{rem(20px)});
   }
 }
 
