@@ -1,5 +1,18 @@
+<% picture_url = if @publication.s_picture.exists?
+                  @publication.s_picture.url(:original)
+                elsif @publication.media_content
+                  photo = if @publication.media_content.is_a?(Photo)
+                            @publication.media_content
+                          else
+                            @publication.media_content.photos.first
+                          end
+
+                  photo.photo_sizes.where(label: PhotoSize::LARGE).first.try(:url)
+                else
+                  asset_path('original/missing2.png')
+                end %>
 <div class="l-header-single -publications">
-  <div class="overlay"></div>
+  <div class="overlay" style="background-image: url('<%= picture_url %>');"></div>
   <%= render 'shared/menu' %>
   <div class="row">
     <div class="small-12 columns">
@@ -9,11 +22,7 @@
           {'text' => @publication.title}
         ] %>
         <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
-        <div class="share">
-          <svg class="icon">
-            <use xlink:href="#icon-share"></use>
-          </svg>
-        </div>
+        <%= render 'shared/share' %>
       </div>
     </div>
   </div>
@@ -23,21 +32,6 @@
 
   <div class="row">
     <div class="small-12 column">
-      <%
-        picture_url = if @publication.s_picture.exists?
-                        @publication.s_picture.url(:original)
-                      elsif @publication.media_content
-                        photo = if @publication.media_content.is_a?(Photo)
-                                  @publication.media_content
-                                else
-                                  @publication.media_content.photos.first
-                                end
-
-                        photo.photo_sizes.where(label: PhotoSize::LARGE).first.try(:url)
-                      else
-                        asset_path('original/missing2.png')
-                      end
-      %>
       <div class="c-article-image" style="background-image: url('<%= picture_url %>');"></div>
     </div>
   </div>

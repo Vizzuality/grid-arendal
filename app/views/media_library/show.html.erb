@@ -20,11 +20,7 @@
           {'text' => @media_content.title}
         ] %>
         <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
-        <div class="share">
-          <svg class="icon">
-            <use xlink:href="#icon-share"></use>
-          </svg>
-        </div>
+        <%= render 'shared/share' %>
       </div>
     </div>
   </div>

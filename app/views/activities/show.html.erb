@@ -20,11 +20,7 @@
           <div class="small-8 medium-7">
             <h2 class="text -title-single-alt"><%= @activity.title %></h2>
           </div>
-          <div class="share">
-            <svg class="icon">
-              <use xlink:href="#icon-share"></use>
-            </svg>
-          </div>
+          <%= render 'shared/share' %>
         </div>
 
         <ul class="anchors">

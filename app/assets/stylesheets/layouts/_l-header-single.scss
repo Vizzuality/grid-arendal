@@ -1,9 +1,6 @@
 .l-header-single {
   display: block;
   position: relative;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
   height: rem(320px);
   z-index: 10;
 
@@ -17,10 +14,15 @@
   }
 
   .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.2);
-    position: absolute;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     z-index: 5;
 
     @media screen and (min-width: $screen-m) {
@@ -35,35 +37,17 @@
     }
   }
 
-  .share {
-    background-color: $white;
-    width: rem(60px);
-    height: rem(60px);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
+  .c-share {
+    top: auto;
     right: rem(20px);
     bottom: rem(-30px);
-    cursor: pointer;
-    z-index: 20;
-    box-shadow: 0 2px 4px 0 rgba($black, 0.1);
 
     @media screen and (min-width: $screen-s) {
-      width: rem(50px);
-      height: rem(50px);
       bottom: rem(-25px);
-      box-shadow: none;
     }
 
     @media screen and (min-width: 1050px) {
       right: rem(-25px);
-    }
-
-    .icon {
-      width: rem(20px);
-      height: rem(20px);
     }
   }
 
@@ -83,7 +67,7 @@
       color: $skull-white;
     }
 
-    .share {
+    .c-share {
 
       @media screen and (min-width: $screen-s) {
         top: rem(-25px);
@@ -156,7 +140,7 @@
       }
     }
 
-    .share {
+    .c-share {
       top: auto;
       bottom: rem(18px);
     }
