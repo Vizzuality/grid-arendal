@@ -69,9 +69,11 @@
             <div class="small-6 medium-9 large-8 columns">
               <div class="download-links">
                 <% @publication.documents.each do |doc| %>
-                  <div class="btn -dark">
-                    <%= link_to doc.label, doc.document.url %>
-                  </div>
+                  <% if doc.document.exists? %>
+                    <div class="btn -dark">
+                      <%= link_to doc.label, doc.document.url %>
+                    </div>
+                  <% end %>
                 <% end %>
                 <% @publication.weblinks.each do |wl| %>
                   <div class="btn -dark">

@@ -1,7 +1,7 @@
 <div class="item js_slide slide">
   <%= link_to item do %>
     <article class="c-card">
-      <% photo_url = if item.picture_file_name && item.picture.present?
+      <% photo_url = if item.picture_file_name && item.picture.exists?
                        item.picture.url(:medium)
                      elsif item.media_content
                        item.media_content.photo_sizes.where(label: PhotoSize::MEDIUM).first.try(:url)
