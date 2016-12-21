@@ -101,12 +101,13 @@ $filters-screen-m-width: 18%;
 .c-filters {
   display: block;
   position: relative;
-  padding: rem(12px) 0 rem(28px) 0;
+  padding: rem(12px) 0 rem(19px) 0;
   transition: height 0.5s ease-out;
 
   @media screen and (min-width: $screen-m) {
     display: flex;
     flex-wrap: wrap;
+    padding: rem(37px) 0 rem(18px) 0;
   }
 
   .container {
@@ -343,13 +344,13 @@ $filters-screen-m-width: 18%;
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: -30px;
-    right: 0;
+    top: rem(-30px);
+    right: rem(5px);
     width: rem(60px);
     height: rem(60px);
     border-radius: 50%;
     background-color: $white;
-    box-shadow: 0 2px 4px 0 rgba($black, 0.1);
+    box-shadow: 0 rem(2px) rem(4px) 0 rgba($black, 0.1);
 
     @media screen and (min-width: $screen-m) {
       display: none;
@@ -367,7 +368,7 @@ $filters-screen-m-width: 18%;
   }
 
   &.-show-filters {
-    padding-bottom: rem(30px);
+    padding-bottom: rem(28px);
 
     .filter {
       opacity: 1;
