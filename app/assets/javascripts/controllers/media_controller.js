@@ -8,11 +8,11 @@
 
     index: function(params) {
       if($('.masonry-layout').find('.masonry-column').length === 0) {
-        var masonryView = new App.View.Masonry({
+        new App.View.Masonry({
           el: '.masonry-layout'
         });
       }
-      var filtersView = new App.View.MediaFilters({
+      new App.View.MediaFilters({
         options: {
           filters: [
             {
@@ -33,10 +33,26 @@
     },
 
     show: function(params) {
-      var masonryView = new App.View.Masonry({
-        el: '.masonry-layout'
-      });
+      if(this.isScreen_s) {
+        this.initSliders();
+      } else {
+        if($('.masonry-layout').find('.masonry-column').length === 0) {
+          _.each($('.masonry-layout'), function(element) {
+            new App.View.Masonry({
+              el: element
+            });
+          });
+        }
+      }
     },
+
+    initSliders: function() {
+      _.each($('.js_slider'), function(element) {
+        lory(element, {
+          enableMouseEvents: true
+        });
+      }.bind(this));
+    }
 
   });
 

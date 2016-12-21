@@ -127,6 +127,13 @@
     }
   }
 
+  &.-related-image-meta {
+    font-family: $font-family-1;
+    font-size: 12px;
+    line-height: 1.33;
+    opacity: 0.7;
+  }
+
   &.-author {
     font-size: 18px;
     font-family: $font-family-2;

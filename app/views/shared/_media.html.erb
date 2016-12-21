@@ -3,7 +3,8 @@
     <div class="small-12 columns">
       <div class="c-main-content-header">
         <h2 class="text -title-block">
-          Featured Media
+          <% title ||= "Featured Media" %>
+          <%= title %>
         </h2>
         <p class="text -view-all">
           <%= link_to root_path do %>
@@ -20,8 +21,8 @@
   </div>
 
   <div class="row">
-    <div class="small-12 small-centered columns -fix">
-      <div class="c-slider slider js_slider">
+    <div class="small-12 small-centered columns">
+      <div class="c-slider slider js_slider" data-slider-type="card">
         <div class="frame js_frame">
           <div class="masonry-layout slides js_slides" data-columns="3">
             <% media_contents.each do |media| %>

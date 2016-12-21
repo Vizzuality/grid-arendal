@@ -1,0 +1,10 @@
+<div class="js_slide slide <% if index == 0 %>active<% end %>">
+  <%= link_to link do %>
+      <div class="c-related-media-item" style="background-image: url('<%= picture %>')">
+        <div class="text -image-cap name"><%= title %></div>
+        <div class="text -related-image-meta meta">
+          <%= author.present? ? author + ' | ' : ''%>
+          <%= date.strftime("%d %b %Y") %></div>
+      </div>
+  <% end %>
+</div>

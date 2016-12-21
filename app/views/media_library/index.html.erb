@@ -19,11 +19,10 @@
 </div>
 <div class="l-main-content -media-library">
   <div class="row">
-    <div class="small-12 small-centered columns -fix">
+    <div class="small-12 small-centered columns">
       <div class="masonry-layout" data-columns="4">
         <% @media_contents.each do |media| %>
-          <%
-            picture_url = case media.type
+          <% picture_url = case media.type
                             when MediaContent::TYPE_ALBUM
                               photo = media.photos.first
                               photo ? photo.photo_sizes.where(label: PhotoSize::MEDIUM).first.try(:url) : nil
@@ -31,8 +30,7 @@
                               media.photo_sizes.where(label: PhotoSize::MEDIUM).first.try(:url)
                             else
                               nil
-                          end
-          %>
+                            end %>
           <%= render 'shared/media_card',
             picture: picture_url,
             title: media.title,
