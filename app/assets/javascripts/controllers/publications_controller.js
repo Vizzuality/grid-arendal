@@ -6,6 +6,11 @@
 
   App.Controller.Publications = App.Controller.Page.extend({
 
+    options: {
+      sliderContentCardType: "card",
+      sliderMediaItemType: "related-media"
+    },
+
     index: function(params) {
       if($('.masonry-layout').find('.masonry-column').length === 0) {
         new App.View.Masonry({
@@ -24,9 +29,11 @@
       this.initSliders();
       if(!this.isScreen_s) {
         _.each($('.masonry-layout'), function(element) {
-          new App.View.Masonry({
-            el: element
-          });
+          if($(element).find('.masonry-column').length === 0) {
+            new App.View.Masonry({
+              el: element
+            });
+          }
         });
       }
     },
@@ -39,10 +46,19 @@
 
     initSliders: function() {
       _.each($('.js_slider'), function(element) {
-        lory(element, {
-          enableMouseEvents: true
-        });
-      });
+        var sliderType = $(element).data("slider-type");
+        var needLoadSlider = true;
+
+        if(sliderType == this.options.sliderContentCardType && !this.isScreen_s) {
+          needLoadSlider = false;
+        }
+
+        if(needLoadSlider) {
+          lory(element, {
+            enableMouseEvents: true
+          });
+        }
+      }.bind(this));
     }
 
   });
