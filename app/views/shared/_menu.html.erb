@@ -9,11 +9,9 @@
 <div class="row">
   <div class="small-12 columns">
     <div class="c-menu">
-      <div class="js-btn-mobile-menu mobile">
-        <svg class="icon">
-          <use xlink:href="#icon-menu"></use>
-        </svg>
-      </div>
+      <svg class="btn-menu js-btn-mobile-menu mobile">
+        <use xlink:href="#icon-menu"></use>
+      </svg>
       <div class="logo-menu mobile">
         <a href="/">
           <svg class="icon">
@@ -21,7 +19,7 @@
           </svg>
         </a>
       </div>
-      <ul class="desktop text -menu">
+      <ul class="list desktop text -menu">
         <li class="logo-menu">
           <a href="/">
             <svg class="icon">
@@ -33,14 +31,14 @@
           <li class="<% if controller_name == section[:key] %>-selected<% end %>"><%= link_to section[:title], section[:path] %></li>
         <% end %>
       </ul>
-      <svg class="icon">
+      <svg class="btn-search">
         <use xlink:href="#icon-search"></use>
       </svg>
     </div>
   </div>
 </div>
 <div class="c-mobile-menu">
-  <ul class="text -menu -light">
+  <ul class="list text -menu -light">
     <li class="js-btn-close">
       <svg class="icon">
         <use xlink:href="#icon-close"></use>

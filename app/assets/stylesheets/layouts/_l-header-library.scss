@@ -5,7 +5,6 @@
   display: block;
   position: relative;
   padding-bottom: rem(50px);
-  min-height: rem(280px);
 
   &.-publications {
     background-color: rgba($color-3, 0.04);
@@ -27,7 +26,11 @@
     position: relative;
 
     .-title-library{
-      margin: rem(10px) 0;
+      margin: rem(17px) 0 rem(7px) 0;
+
+      @media screen and (min-width: $screen-m) {
+        margin: rem(26px) 0 rem(7px) 0;
+      }
     }
 
     .-summary {
@@ -35,7 +38,7 @@
     }
 
     .c-share {
-      top: 0;
+      top: rem(-2px);
       display: none;
 
       @media screen and (min-width: $screen-m) {
@@ -43,9 +46,13 @@
         right: 0;
       }
 
-      @media screen and (min-width: 1050px) {
-        right: rem(-25px);
+      @media screen and (min-width: $screen-l) {
+        right: rem(-15px);
       }
     }
+  }
+
+  @media screen and (min-width: $screen-m) {
+    padding-bottom: rem(36px);
   }
 }
