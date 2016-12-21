@@ -1,3 +1,11 @@
+<% sections = [
+  {title: "Activities", key: "activities", path: activities_path},
+  {title: "Publications", key: "publications", path: publications_path},
+  {title: "Media Library", key: "media", path: media_path},
+  {title: "News", key: "news_index", path: news_index_path},
+  {title: "About", key: "about_index", path: about_index_path}
+] %>
+
 <div class="row">
   <div class="small-12 columns">
     <div class="c-menu">
@@ -21,11 +29,9 @@
             </svg>
           </a>
         </li>
-        <li><%= link_to "Activities", activities_path %></li>
-        <li><%= link_to "Publications", publications_path %></li>
-        <li><%= link_to "Media Library", media_path %></li>
-        <li><%= link_to "News", news_index_path %></li>
-        <li><%= link_to "About", about_index_path %></li>
+        <% sections.each do |section| %>
+          <li class="<% if controller_name == section[:key] %>-selected<% end %>"><%= link_to section[:title], section[:path] %></li>
+        <% end %>
       </ul>
       <svg class="icon">
         <use xlink:href="#icon-search"></use>
@@ -40,10 +46,8 @@
         <use xlink:href="#icon-close"></use>
       </svg>
     </li>
-    <li><%= link_to "Activities", activities_path %></li>
-    <li><%= link_to "Publications", publications_path %></li>
-    <li><%= link_to "Media Library", media_path %></li>
-    <li><%= link_to "News", news_index_path %></li>
-    <li><%= link_to "About", about_index_path %></li>
+    <% sections.each do |section| %>
+      <li><%= link_to section[:title], section[:path] %></li>
+    <% end %>
   </ul>
 </div>
