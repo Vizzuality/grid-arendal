@@ -1,4 +1,4 @@
-<section class="l-main-content" data-section="news">
+<section class="l-main-content -news" data-section="news">
   <div class="row">
     <div class="small-12 columns">
       <div class="c-main-content-header">
@@ -20,21 +20,17 @@
     </div>
   </div>
 
-  <ul class="row">
-    <% news.each do |article| %>
-      <li class="small-12 medium-3 columns">
-        <%= link_to "http://news.grida.no/#{article.exposure_slug}" do %>
-          <article class="c-card">
-            <div class="card-pic" style="background-image: url('<%= article.cover_src %>')"></div>
-            <div class="card-descrition">
-              <h3 class="text -title-card"><%= article.title %></h3>
-              <p class="text -meta">
-                <%= time_ago_in_words(article.publication_date) %>
-              </p>
-            </div>
-          </article>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
+  <div class="row">
+    <div class="small-12 small-centered columns">
+      <div class="c-slider slider js_slider" data-slider-type="card">
+        <div class="frame js_frame">
+          <div class="masonry-layout slides js_slides" data-columns="4">
+            <% news.each do |article| %>
+                <%= render 'shared/news_card', article: article %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

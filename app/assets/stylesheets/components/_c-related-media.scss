@@ -1,0 +1,60 @@
+.c-related-media-item {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: calc(100% - #{rem(10px)});
+  height: rem(560px);
+  margin: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  transition: height 0.2s ease-in;
+
+  .name,
+  .meta {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+  }
+
+  .name {
+    left: 0;
+    bottom: rem(-35px);
+
+    @media screen and (min-width: $screen-m) {
+      bottom: rem(-36px);
+    }
+  }
+
+  .meta {
+    right: 0;
+    display: none;
+
+    @media screen and (min-width: $screen-m) {
+      bottom: rem(-34px);
+      display: block;
+    }
+  }
+
+  @media screen and (max-width: $screen-m) {
+    height: rem(350px);
+  }
+
+  @media screen and (min-width: $screen-m) {
+    width: calc(100% - #{rem(20px)});
+  }
+}
+
+.active {
+
+  @media screen and (min-width: $screen-m) {
+    .c-related-media-item {
+      height: rem(600px);
+    }
+  }
+
+  .name,
+  .meta {
+    opacity: 1;
+  }
+}

@@ -44,10 +44,15 @@
 
   .item {
     break-inside: avoid;
-    padding: $item-padding;
+    padding: nth($item-padding, 1) nth($item-padding, 2) nth($item-padding, 3) nth($item-padding, 4);
 
-    @media screen and (min-width: $screen-m) {
-      padding: $item-padding-screen-m;
+
+  }
+  @media screen and (min-width: $screen-m) {
+    width: calc(100% + #{nth($item-padding-screen-m, 2)});
+
+    .item {
+      padding: nth($item-padding-screen-m, 1) nth($item-padding-screen-m, 2) nth($item-padding-screen-m, 3) nth($item-padding-screen-m, 4);
     }
   }
 }
