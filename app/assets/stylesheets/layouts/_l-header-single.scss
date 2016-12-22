@@ -45,10 +45,6 @@
     right: rem(20px);
     bottom: rem(-30px);
 
-    @media screen and (min-width: $screen-s) {
-      bottom: rem(-25px);
-    }
-
     @media screen and (min-width: 1050px) {
       right: rem(-25px);
     }
@@ -71,10 +67,6 @@
     }
 
     .c-share {
-
-      @media screen and (min-width: $screen-s) {
-        top: rem(-25px);
-      }
 
       @media screen and (min-width: $screen-m) {
         top: rem(-52px);
