@@ -43,18 +43,19 @@
     max-width: rem(580px);
     margin: auto;
     height: calc(100% - 70px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
     text-align: center;
     z-index: 10;
 
-
     .logo {
+      padding-top: rem(63px);
+
       .icon {
         width: rem(170px);
         height: rem(55px);
+      }
+
+      @media screen and (min-width: $screen-m) {
+        padding-top: 0;
       }
     }
 
@@ -105,12 +106,19 @@
         }
       }
     }
+
+    @media screen and (min-width: $screen-m) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
   }
 }
 
 .cta-mobile {
   display: block;
-  padding: rem(53px) rem(10px) rem(53px) rem(10px);
+  padding: rem(53px) rem(10px) rem(65px) rem(10px);
   text-align: center;
 
   @media screen and (min-width: $screen-m) {

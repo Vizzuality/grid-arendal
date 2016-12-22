@@ -1920,3 +1920,10 @@ button {
 .long-delay {
   -webkit-animation-delay: 700ms !important;
           animation-delay: 700ms !important; }
+
+@media screen and (max-width: 767px) {
+  .column, .columns {
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+  }
+}

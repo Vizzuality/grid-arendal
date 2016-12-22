@@ -56,6 +56,20 @@
   &.-title-card {
     white-space: normal;
     font-size: 18px;
+    line-height: 1.39;
+    font-family: $font-family-2;
+    font-weight: 600;
+
+    @media screen and (min-width: $screen-m) {
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1.15;
+    }
+  }
+
+  &.-title-card-small {
+    white-space: normal;
+    font-size: 18px;
     font-family: $font-family-2;
     font-weight: 600;
     line-height: 1.39;
@@ -63,24 +77,6 @@
     @media screen and (min-width: $screen-m) {
       font-size: 16px;
       line-height: 1.25;
-    }
-  }
-
-  &.-title-card-small {
-    font-size: 16px;
-    font-family: $font-family-2;
-    font-weight: 600;
-    white-space: normal;
-    word-break: break-word;
-  }
-
-  &.-title-card-alt {
-    font-size: 18px;
-    font-weight: 600;
-    font-family: $font-family-2;
-
-    @media screen and (min-width: $screen-m) {
-      font-size: 16px;
     }
   }
 

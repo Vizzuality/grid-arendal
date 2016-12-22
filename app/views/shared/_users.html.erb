@@ -1,4 +1,7 @@
-<% sectionClass ||= '' %>
+<%
+  sectionClass ||= ''
+  lead_user ||= nil
+%>
 <section class="l-main-content <%= sectionClass %>" data-section="users">
   <div class="row">
     <div class="small-12 columns">
@@ -17,11 +20,10 @@
       </div>
     </div>
   </div>
-  <% lead_user ||= nil %>
-  <ul class="row">
+  <ul class="c-staff row">
     <% if lead_user %>
       <li class="small-6 medium-3 large-2 columns">
-        <div class="c-staff">
+        <div class="staff">
           <% avatar_url = if lead_user.avatar.exists?
                             lead_user.avatar(:medium)
                           else
@@ -35,7 +37,7 @@
     <% end %>
     <% users.each do |user| %>
       <li class="small-6 medium-3 large-2 columns">
-        <div class="c-staff">
+        <div class="staff">
           <% avatar_url = if user.avatar.exists?
                             user.avatar(:medium)
                           else

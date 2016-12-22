@@ -107,7 +107,7 @@ $filters-screen-m-width: 18%;
   @media screen and (min-width: $screen-m) {
     display: flex;
     flex-wrap: wrap;
-    padding: rem(37px) 0 rem(18px) 0;
+    padding: rem(38px) 0 rem(7px) 0;
   }
 
   .container {
@@ -307,7 +307,7 @@ $filters-screen-m-width: 18%;
 
       &.-type-years {
         flex: 1 100%;
-        padding-top: rem(27px);
+        padding-top: rem(28px);
         display: none;
 
         @media screen and (min-width: $screen-m) {

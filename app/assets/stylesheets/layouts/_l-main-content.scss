@@ -10,7 +10,11 @@
     }
 
     @media screen and (min-width: $screen-m) {
-      padding: rem(37px) 0 rem(60px);
+      padding: rem(35px) 0 rem(40px);
+
+      .c-slider {
+        margin-top: rem(4px);
+      }
     }
   }
 
@@ -38,7 +42,7 @@
     background-color: rgba($color-2, .1);
 
     @media screen and (min-width: $screen-m) {
-      padding: rem(37px) 0 rem(70px);
+      padding: rem(37px) 0 rem(50px);
     }
   }
 
