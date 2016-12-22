@@ -21,11 +21,7 @@
 </div>
 
 <div class="cta-mobile text -cta">
-  GRID-Arendal works closely with the United Nations Environment Programme (UNEP),
-  other UN agencies and partners around the world to connect science to policy.
-  Our goal is to reduce the time between when new knowledge is produced and when it is used.
-  We believe it’s important influence thinking and action at the global level
-  because our greatest challenges require collective action.
+  <%= @section.description %>
 </div>
 
 <%= render 'shared/news', news: @news %>
@@ -34,7 +30,7 @@
 
 <%= render 'shared/posts', collection: @publications, title: 'publications', link: publications_path %>
 
-<%= render 'shared/media', media_contents: @media_contents  %>
+<%= render 'shared/related_media', media_contents: @media_contents, title: 'Featured media' %>
 
 <%= render 'shared/users', users: @users %>
 

@@ -101,7 +101,7 @@
   <% end %>
 
   <% if @publication.media_contents.any? %>
-    <%= render 'shared/media', media_contents: @publication.media_contents %>
+    <%= render 'shared/related_media', media_contents: @publication.media_contents %>
   <% end %>
 
 </div>
