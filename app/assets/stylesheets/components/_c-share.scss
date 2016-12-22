@@ -1,23 +1,55 @@
+$share-btn-size: rem(50px);
 .c-share {
   position: absolute;
-  background-color: $white;
-  width: rem(50px);
-  height: rem(50px);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
   z-index: 20;
 
-  .icon {
-    width: rem(20px);
-    height: rem(20px);
+  .share-btn {
+    position: relative;
+    right: $share-btn-size;
+    width: $share-btn-size;
+    height: $share-btn-size;
+    margin-right: -$share-btn-size;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    z-index: 1;
+
+    .icon {
+      width: rem(20px);
+      height: rem(20px);
+    }
+
+    &.-share {
+      z-index: 2;
+    }
+
+    @media screen and (max-width: $screen-m) {
+      width: rem(60px);
+      height: rem(60px);
+      box-shadow: 0 2px 4px 0 rgba($black, 0.1);
+    }
   }
 
-  @media screen and (max-width: $screen-m) {
-    width: rem(60px);
-    height: rem(60px);
-    box-shadow: 0 2px 4px 0 rgba($black, 0.1);
+  &:hover {
+
+    .share-btn {
+      right: 0;
+
+      &:not(.-share) {
+        margin-right: rem(10px);
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      &.-share {
+        opacity: 0;
+      }
+    }
   }
 }
