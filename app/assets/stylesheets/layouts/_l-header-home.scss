@@ -108,8 +108,8 @@
 
 .cta-mobile {
   display: block;
-  padding: rem(50px) rem(10px);
-  background-color: rgba(0, 61, 83, 0.1);
+  padding: rem(53px) rem(10px) rem(53px) rem(10px);
+  text-align: center;
 
   @media screen and (min-width: $screen-m) {
     display: none;

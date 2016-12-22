@@ -3,9 +3,21 @@
   transition:background-color 1s ease;
 
   &.home {
+    padding-bottom: rem(47px);
+
+    .c-slider {
+      margin-top: rem(7px);
+    }
+
+    @media screen and (min-width: $screen-m) {
+      padding: rem(37px) 0 rem(50px);
+    }
+  }
+
+  &.-bordered {
+
     @media screen and (min-width: $screen-m) {
       border-bottom: rem(1px) solid $white;
-      padding: rem(35px) 0 rem(50px);
     }
   }
 
@@ -22,7 +34,7 @@
   }
 
   &.-media-library {
-    padding: 0;
+    padding-bottom: rem(57px);
     background-color: rgba($color-2, .1);
 
     @media screen and (min-width: $screen-m) {
@@ -61,10 +73,6 @@
 
     &:nth-of-type(1) {
       background-color: #F2F5F6;
-    }
-
-    &:nth-of-type(1n+2):not(:last-of-type) {
-      border-bottom: rem(1px) solid #F2F5F6;
     }
 
     @media screen and (min-width: $screen-m) {

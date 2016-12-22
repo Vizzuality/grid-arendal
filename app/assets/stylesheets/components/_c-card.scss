@@ -35,7 +35,7 @@ $pics: 'pic-1', 'pic-2', 'pic-3', 'pic-4';
 
   .card-descrition {
     background-color: $white;
-    padding: rem(24px) rem(20px);
+    padding: rem(21px) rem(20px) rem(16px) rem(20px);
   }
 
   .-summary {
@@ -43,11 +43,12 @@ $pics: 'pic-1', 'pic-2', 'pic-3', 'pic-4';
   }
 
   .-meta {
-    margin-top: rem(13px);
+    margin-top: rem(10px);
     text-align: right;
   }
 
   &.-card-steps {
+
     &:before {
       @extend %step;
       width: calc(100% -  #{rem(10px)});
