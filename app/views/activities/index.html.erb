@@ -14,7 +14,7 @@
   </div>
 </div>
 
-<div class="l-main-content -activities">
+<div class="l-main-content -activities -only-grid">
   <% filters = [
     {
       data: @content_types,
@@ -51,7 +51,7 @@
   <%= render 'shared/filters', filters: filters %>
 
   <div class="row">
-    <div class="small-12 small-centered columns">
+    <div class="small-12 small-centered columns grid-column">
       <div class="masonry-layout" data-columns="3">
         <%= render 'activities', activities: @activities %>
       </div>

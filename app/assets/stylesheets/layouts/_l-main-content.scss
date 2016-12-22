@@ -1,6 +1,5 @@
 .l-main-content {
   background-color: #E5EBED;
-  transition:background-color 1s ease;
 
   &.home {
     padding-bottom: rem(47px);
@@ -126,5 +125,22 @@
       (0, 0, rem(20px), 0),
       (rem(8px), rem(10px), rem(12px), rem(10px))
     );
+  }
+
+  &.-only-grid {
+
+    @media screen and (max-width: $screen-m - 1) {
+
+      .grid-column {
+        padding: 0 0 rem(15px) 0;
+
+        .masonry-layout {
+
+          .item {
+            padding: rem(15px) 0;
+          }
+        }
+      }
+    }
   }
 }
