@@ -13,7 +13,18 @@
     </div>
   </div>
 </div>
-<div class="l-main-content -media-library">
+<div class="l-main-content -media-library -only-grid">
+  <% filters = [
+    {
+      data: @tags,
+      type: 'tags',
+      title: 'FILTER BY',
+      placeholder: 'Filter by tags',
+      key: 'tags'
+    }
+  ] %>
+  <%= render 'shared/filters', filters: filters %>
+
   <div class="row">
     <div class="small-12 small-centered columns grid-column">
       <div class="masonry-layout" data-columns="4">

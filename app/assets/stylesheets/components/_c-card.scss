@@ -18,10 +18,6 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-
-    [data-card-type="media"] & {
-      height: rem(200px);
-    }
   }
 
   .card-description {
@@ -103,5 +99,9 @@
     }
   }
 
-
+  &[data-card-type="media"] {
+    .card-pic {
+      height: rem(200px);
+    }
+  }
 }

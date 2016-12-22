@@ -5,6 +5,7 @@ class MediaLibraryController < ApplicationController
   def index
     @media_contents = MediaContent.wo_photos_in_album.
       includes(:photo_sizes, :photos).order("publication_date DESC")
+    @tags = Tag.order(:name)
     @section = SiteSection.where(section: "media_library").first
   end
 
