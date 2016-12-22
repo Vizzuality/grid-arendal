@@ -1,6 +1,13 @@
-$share-btn-size: rem(50px);
+$share-btn-size: rem(60px);
+$share-btn-size-screen-m: rem(50px);
+
+$share-twitter-color: #61c5ec;
+$share-facebook-color: #3B5998;
+$share-mail-color: #ea4335;
+
 .c-share {
   position: absolute;
+  display: flex;
   z-index: 20;
 
   .share-btn {
@@ -14,6 +21,7 @@ $share-btn-size: rem(50px);
     align-items: center;
     justify-content: center;
     background-color: $white;
+    box-shadow: 0 2px 4px 0 rgba($black, 0.1);
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     z-index: 1;
@@ -27,10 +35,27 @@ $share-btn-size: rem(50px);
       z-index: 2;
     }
 
-    @media screen and (max-width: $screen-m) {
-      width: rem(60px);
-      height: rem(60px);
-      box-shadow: 0 2px 4px 0 rgba($black, 0.1);
+    &:hover {
+
+      &.-twitter {
+        background-color: $share-twitter-color;
+      }
+
+      &.-facebook {
+        background-color: $share-facebook-color;
+      }
+
+      &.-mail {
+        background-color: $share-mail-color;
+      }
+    }
+
+    @media screen and (min-width: $screen-m) {
+      right: $share-btn-size-screen-m;
+      width: $share-btn-size-screen-m;
+      height: $share-btn-size-screen-m;
+      margin-right: -$share-btn-size-screen-m;
+      box-shadow: none;
     }
   }
 
@@ -49,6 +74,7 @@ $share-btn-size: rem(50px);
 
       &.-share {
         opacity: 0;
+        z-index: 1;
       }
     }
   }
