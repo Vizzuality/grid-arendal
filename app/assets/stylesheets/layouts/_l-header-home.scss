@@ -39,15 +39,17 @@
   }
 
   .cta {
+    position: relative;
+    max-width: rem(580px);
+    margin: auto;
+    height: calc(100% - 70px);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    max-width: rem(580px);
-    margin: auto;
-    height: calc(100% - 70px);
+    text-align: center;
     z-index: 10;
-    position: relative;
+
 
     .logo {
       .icon {

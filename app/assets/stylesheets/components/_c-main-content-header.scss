@@ -4,6 +4,8 @@
   align-items: center;
 
   .-view-all {
+    position: relative;
+    top: rem(1px);
 
     span {
       display: none;
@@ -20,14 +22,15 @@
       position: relative;
       width: rem(63px);
       height: rem(12px);
-      top: rem(2px);
+      top: rem(1px);
       padding-left: rem(10px);
       fill: $color-1;
 
       @media screen and (min-width: $screen-m) {
-        top: rem(1px);
-        width: rem(40px);
-        height: rem(10px);
+        top: rem(5px);
+        width: rem(46px);
+        height: rem(17px);
+        padding-left: rem(4px);
       }
     }
   }
