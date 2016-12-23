@@ -87,6 +87,7 @@ $filters-screen-m-width: 18%;
 
         &.selected {
           color: $creamy-grey;
+          background-color: $color-1;
 
           &:before {
             @extend %filter-tag-background;
@@ -207,7 +208,8 @@ $filters-screen-m-width: 18%;
             line-height: 2.14;
             cursor: pointer;
 
-            &:hover {
+            &:hover,
+            &.selected {
               background-color: $white;
             }
           }

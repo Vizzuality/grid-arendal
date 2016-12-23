@@ -42,8 +42,17 @@
     },
 
     _setSelectValue: function(element) {
-      var value = $(element.currentTarget).data("value");
-      this._updateSelectedValue(value);
+      var element = $(element.currentTarget);
+      var value = element.data("value");
+      var isSelected = element.hasClass(this.options.selectedClass);
+      this._removeSelected();
+
+      if(isSelected) {
+        value = null;
+      } else {
+        element.addClass(this.options.selectedClass);
+      }
+
       this.$select
         .val(value)
         .change();
@@ -53,8 +62,20 @@
       this.$el.addClass(this.options.haveValueClass);
     },
 
+    _removeHaveValue: function () {
+      this.$el.removeClass(this.options.haveValueClass);
+    },
+
+    _removeSelected: function () {
+      this.$el.find('.' + this.options.selectedClass).removeClass(this.options.selectedClass);
+    },
+
     _updateSelectedValue: function(value) {
-      this.selectedValues = [value];
+      var selectedValues = [];
+      if(value !== null) {
+        selectedValues = [value];
+      }
+      this.selectedValues = selectedValues;
     },
 
     _openDropdown: function() {
@@ -100,10 +121,24 @@
 
     _onChangeSelectValue: function() {
       this.$select.change(function(e) {
-        this._setHaveValue();
-        this._setSpeaker(this.$el.find("option:selected").text());
-        this._closeProcess();
-        this._runCallback();
+        var value = this.$select.val();
+        if(value === "") {
+          this.$select.val(null).change();
+        } else {
+          this._updateSelectedValue(value);
+
+          if(value === null) {
+            this._removeHaveValue();
+          } else {
+            this._setHaveValue();
+          }
+
+          this._setSpeaker(this.$el.find("option:selected").text());
+          this._closeProcess();
+          this._runCallback();
+        }
+
+
       }.bind(this));
     },
 
