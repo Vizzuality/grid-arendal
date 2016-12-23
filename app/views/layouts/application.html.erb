@@ -7,7 +7,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-  <body class="slide-<%= rand(1..7) %>">
+  <body class="slide-<%= rand(1..6) %>">
     <%= render 'shared/icons' %>
     <%= yield %>
   </body>

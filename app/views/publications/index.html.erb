@@ -8,17 +8,13 @@
         <div class="text -summary">
           <%= @section.description %>
         </div>
-        <!-- <div class="share">
-          <svg class="icon">
-            <use xlink:href="#icon-share"></use>
-          </svg>
-        </div> -->
+        <%= render 'shared/share' %>
       </div>
     </div>
   </div>
 </div>
 
-<div class="l-main-content -publications">
+<div class="l-main-content -publications -only-grid -color-2">
   <% filters = [
     {
       data: @content_types,
@@ -43,7 +39,7 @@
   <%= render 'shared/filters', filters: filters %>
 
   <div class="row">
-    <div class="small-12 small-centered columns">
+    <div class="small-12 small-centered columns grid-column">
       <div class="masonry-layout" data-columns="3">
         <%= render 'publications', publications: @publications %>
       </div>

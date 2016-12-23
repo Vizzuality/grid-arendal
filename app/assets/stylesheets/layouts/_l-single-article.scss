@@ -10,12 +10,9 @@
     .-summary-alt {
       padding: rem(52px) 0 rem(29px) 0;
 
-      @media screen and (min-width: $screen-s) {
-        padding: rem(29px) 0;
-      }
-
       @media screen and (min-width: $screen-m) {
         width: 70%;
+        padding: rem(29px) 0;
       }
     }
   }

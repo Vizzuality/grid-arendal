@@ -1,5 +1,18 @@
+<% picture_url = if @publication.s_picture.exists?
+                  @publication.s_picture.url(:original)
+                elsif @publication.media_content
+                  photo = if @publication.media_content.is_a?(Photo)
+                            @publication.media_content
+                          else
+                            @publication.media_content.photos.first
+                          end
+
+                  photo.photo_sizes.where(label: PhotoSize::LARGE).first.try(:url)
+                else
+                  asset_path('original/missing2.png')
+                end %>
 <div class="l-header-single -publications">
-  <div class="overlay"></div>
+  <div class="overlay" style="background-image: url('<%= picture_url %>');"></div>
   <%= render 'shared/menu' %>
   <div class="row">
     <div class="small-12 columns">
@@ -9,11 +22,7 @@
           {'text' => @publication.title}
         ] %>
         <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
-        <div class="share">
-          <svg class="icon">
-            <use xlink:href="#icon-share"></use>
-          </svg>
-        </div>
+        <%= render 'shared/share' %>
       </div>
     </div>
   </div>
@@ -23,21 +32,6 @@
 
   <div class="row">
     <div class="small-12 column">
-      <%
-        picture_url = if @publication.s_picture.exists?
-                        @publication.s_picture.url(:original)
-                      elsif @publication.media_content
-                        photo = if @publication.media_content.is_a?(Photo)
-                                  @publication.media_content
-                                else
-                                  @publication.media_content.photos.first
-                                end
-
-                        photo.photo_sizes.where(label: PhotoSize::LARGE).first.try(:url)
-                      else
-                        asset_path('original/missing2.png')
-                      end
-      %>
       <div class="c-article-image" style="background-image: url('<%= picture_url %>');"></div>
     </div>
   </div>
@@ -88,28 +82,27 @@
       </div>
     </div>
   </div>
-
-  <% if @publication.partners.any? %>
-      <%= render 'shared/partners', partners: @publication.partners %>
-  <% end %>
-
-  <% if @users.any? || @publication.lead_user %>
-    <%= render 'shared/users', users: @users, lead_user: @publication.lead_user %>
-  <% end %>
-
-  <% if @publication.activities.any? %>
-    <%= render 'shared/posts', collection: @publication.activities, title: 'activities',
-      link: activities_path %>
-  <% end %>
-
-  <% if @publication.news_articles.any? %>
-    <%= render 'shared/news', news: @publication.news_articles %>
-  <% end %>
-
-  <% if @publication.media_contents.any? %>
-    <%= render 'shared/related_media', media_contents: @publication.media_contents %>
-  <% end %>
-
 </div>
+
+<% if @publication.partners.any? %>
+    <%= render 'shared/partners', partners: @publication.partners, sectionClass: 'content -color-2' %>
+<% end %>
+
+<% if @users.any? || @publication.lead_user %>
+  <%= render 'shared/users', users: @users, lead_user: @publication.lead_user, sectionClass: 'content -color-2' %>
+<% end %>
+
+<% if @publication.activities.any? %>
+  <%= render 'shared/posts', collection: @publication.activities, title: 'activities',
+    link: activities_path, sectionClass: 'content -color-2' %>
+<% end %>
+
+<% if @publication.news_articles.any? %>
+  <%= render 'shared/news', news: @publication.news_articles, sectionClass: 'content -color-2' %>
+<% end %>
+
+<% if @publication.media_contents.any? %>
+  <%= render 'shared/related_media', media_contents: @publication.media_contents, sectionClass: 'content -color-2' %>
+<% end %>
 
 <%= render 'shared/footer' %>

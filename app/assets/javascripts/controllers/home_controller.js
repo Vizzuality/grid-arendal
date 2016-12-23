@@ -13,9 +13,6 @@
 
     index: function() {
       new App.View.EventsModal();
-      $('.l-main-content').addClass('home');
-      $('.cta-mobile').addClass('home');
-      $('.footer-slider').addClass('home');
 
       this.initSliders();
       if(!this.isScreen_s) {

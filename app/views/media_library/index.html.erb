@@ -8,18 +8,25 @@
         <div class="text -summary">
           <%= @section.description %>
         </div>
-        <div class="share">
-          <svg class="icon">
-            <use xlink:href="#icon-share"></use>
-          </svg>
-        </div>
+        <%= render 'shared/share' %>
       </div>
     </div>
   </div>
 </div>
-<div class="l-main-content -media-library">
+<div class="l-main-content -media-library -only-grid -color-4">
+  <% filters = [
+    {
+      data: @tags,
+      type: 'tags',
+      title: 'FILTER BY',
+      placeholder: 'Filter by tags',
+      key: 'tags'
+    }
+  ] %>
+  <%= render 'shared/filters', filters: filters %>
+
   <div class="row">
-    <div class="small-12 small-centered columns">
+    <div class="small-12 small-centered columns grid-column">
       <div class="masonry-layout" data-columns="4">
         <% @media_contents.each do |media| %>
           <% picture_url = case media.type
