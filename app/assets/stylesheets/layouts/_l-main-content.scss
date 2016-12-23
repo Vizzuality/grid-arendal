@@ -113,6 +113,23 @@
   }
 
   &.-about {
+    padding-bottom: rem(47px);
+
+    .-summary-alt {
+      padding-top: rem(10px);
+    }
+
+    .list {
+
+      li:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+
+    &:first-of-type,
+    &:nth-of-type(2) {
+      padding-top: rem(47px);
+    }
 
     @media screen and (min-width: $screen-m) {
       padding: rem(28px) 0 rem(31px) 0;
@@ -121,15 +138,12 @@
         padding-top: rem(55px);
       }
 
-      .-summary-alt {
-        padding-top: 21px;
+      &:nth-of-type(2) {
+        padding-top: rem(28px);
       }
-    }
 
-    .list {
-
-      li:not(:last-child) {
-        margin-bottom: 30px;
+      .-summary-alt {
+        padding-top: rem(21px);
       }
     }
   }

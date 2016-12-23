@@ -56,26 +56,26 @@
 </section>
 
 <% if @activity.users.any? %>
-  <%= render 'shared/users', users: @activity.users, sectionClass: 'content' %>
+  <%= render 'shared/users', users: @activity.users, sectionClass: 'content -color-3' %>
 <% end %>
 
 <% if @activity.publications.any? %>
   <%= render 'shared/posts', collection: @activity.publications.
     order(content_date: :desc),
     title: 'publications',
-    link: publications_path, sectionClass: 'content' %>
+    link: publications_path, sectionClass: 'content -color-3' %>
 <% end %>
 
 <% if @activity.news_articles.any? %>
-  <%= render 'shared/news', news: @activity.news_articles, sectionClass: 'content' %>
+  <%= render 'shared/news', news: @activity.news_articles, sectionClass: 'content -color-3' %>
 <% end %>
 
 <% if @activity.media_contents.any? %>
-  <%= render 'shared/media', media_contents: @activity.media_contents, sectionClass: 'content' %>
+  <%= render 'shared/media', media_contents: @activity.media_contents, sectionClass: 'content -color-3' %>
 <% end %>
 
 <% if @activity.partners.any? %>
-  <%= render 'shared/partners', partners: @activity.partners, sectionClass: 'content' %>
+  <%= render 'shared/partners', partners: @activity.partners, sectionClass: 'content -color-3' %>
 <% end %>
 
 <%= render 'shared/footer' %>
