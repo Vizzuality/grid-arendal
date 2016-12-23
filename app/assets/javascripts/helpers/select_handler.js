@@ -72,7 +72,7 @@
 
     _updateSelectedValue: function(value) {
       var selectedValues = [];
-      if(value != null) {
+      if(value !== null) {
         selectedValues = [value];
       }
       this.selectedValues = selectedValues;
