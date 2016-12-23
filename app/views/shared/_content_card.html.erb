@@ -1,8 +1,8 @@
 <div class="item js_slide slide">
   <%= link_to item do %>
     <article class="c-card" data-card-type="<%= item.type.downcase %>">
-      <% photo_url = if item.picture_file_name && item.picture.exists?
-                       item.picture.url(:medium)
+      <% photo_url = if item.s_picture_file_name && item.s_picture.exists?
+                       item.s_picture.url(:medium)
                      elsif item.media_content
                        item.media_content.photo_sizes.where(label: PhotoSize::MEDIUM).first.try(:url)
                      else
