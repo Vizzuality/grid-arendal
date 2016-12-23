@@ -31,7 +31,7 @@
   </div>
 </div>
 
-<section class="l-main-content -about" data-section="about">
+<section class="l-main-content -about -no-border -color-6" data-section="about">
   <div class="row">
     <div class="small-12 column">
       <div class="text -title-event">About</div>
@@ -44,7 +44,7 @@
   </div>
 </section>
 
-<section class="l-main-content -about -bordered" data-section="strategy">
+<section class="l-main-content -about -color-7" data-section="strategy">
   <div class="row">
     <div class="small-12 column">
       <div class="text -title-event">Strategy 2014-2017</div>
@@ -59,7 +59,7 @@
 
 <%= render 'programmes', programmes: @programmes %>
 
-<section class="l-main-content -about -bordered" data-section="users">
+<section class="l-main-content -about -color-7" data-section="users">
   <div class="row">
     <div class="small-12 columns">
       <div class="c-main-content-header">
@@ -85,7 +85,7 @@
   </ul>
 </section>
 
-<section class="l-main-content -about <% if @vacancies.any? %>-bordered<% end %>" data-section="board">
+<section class="l-main-content -about -color-7" data-section="board">
   <div class="row">
     <div class="small-12 column">
       <div class="text -title-event">Board of Directors</div>
@@ -110,7 +110,7 @@
 </section>
 
 <% if @vacancies.any? %>
-  <section class="l-main-content -about" data-section="vacancies">
+  <section class="l-main-content -about -color-7" data-section="vacancies">
     <div class="row">
       <div class="small-12 column">
         <div class="text -title-event">Vacancies</div>

@@ -82,28 +82,27 @@
       </div>
     </div>
   </div>
-
-  <% if @publication.partners.any? %>
-      <%= render 'shared/partners', partners: @publication.partners %>
-  <% end %>
-
-  <% if @users.any? || @publication.lead_user %>
-    <%= render 'shared/users', users: @users, lead_user: @publication.lead_user %>
-  <% end %>
-
-  <% if @publication.activities.any? %>
-    <%= render 'shared/posts', collection: @publication.activities, title: 'activities',
-      link: activities_path %>
-  <% end %>
-
-  <% if @publication.news_articles.any? %>
-    <%= render 'shared/news', news: @publication.news_articles %>
-  <% end %>
-
-  <% if @publication.media_contents.any? %>
-    <%= render 'shared/related_media', media_contents: @publication.media_contents %>
-  <% end %>
-
 </div>
+
+<% if @publication.partners.any? %>
+    <%= render 'shared/partners', partners: @publication.partners, sectionClass: 'content' %>
+<% end %>
+
+<% if @users.any? || @publication.lead_user %>
+  <%= render 'shared/users', users: @users, lead_user: @publication.lead_user, sectionClass: 'content' %>
+<% end %>
+
+<% if @publication.activities.any? %>
+  <%= render 'shared/posts', collection: @publication.activities, title: 'activities',
+    link: activities_path, sectionClass: 'content' %>
+<% end %>
+
+<% if @publication.news_articles.any? %>
+  <%= render 'shared/news', news: @publication.news_articles, sectionClass: 'content' %>
+<% end %>
+
+<% if @publication.media_contents.any? %>
+  <%= render 'shared/related_media', media_contents: @publication.media_contents, sectionClass: 'content' %>
+<% end %>
 
 <%= render 'shared/footer' %>

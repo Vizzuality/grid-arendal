@@ -1,7 +1,7 @@
 .l-main-content {
-  background-color: #E5EBED;
 
-  &.home {
+  &.home,
+  &.content {
     padding-bottom: rem(47px);
 
     .c-slider {
@@ -17,15 +17,46 @@
     }
   }
 
-  &.-bordered {
+  &:not(:last-of-type) {
 
     @media screen and (min-width: $screen-m) {
       border-bottom: rem(1px) solid $white;
     }
   }
 
-  &.-publications {
+  &.-no-border {
+    border-bottom: none;
+  }
+
+  &.-color-1 {
+    background-color: #E5EBE8;
+  }
+
+  &.-color-2 {
     background-color: rgba($color-3, .08);
+  }
+
+  &.-color-3 {
+    background-color: rgba($color-1, .08);
+  }
+
+  &.-color-4 {
+    background-color: rgba($color-2, .08);
+  }
+
+  &.-color-5 {
+    background-color: rgba($color-2, .1);
+  }
+
+  &.-color-6 {
+    background-color: #F2F5F6;
+  }
+
+  &.-color-7 {
+    background-color: #E5EBED;
+  }
+
+  &.-publications {
 
     @media screen and (min-width: $screen-m) {
       padding: 0 0 rem(10px) 0;
@@ -33,7 +64,6 @@
   }
 
   &.-activities {
-    background-color: rgba($color-1, .08);
 
     @media screen and (min-width: $screen-m) {
       padding: 0 0 rem(10px) 0;
@@ -41,7 +71,6 @@
   }
 
   &.-news {
-    background-color: rgba($color-2, .08);
 
     @media screen and (min-width: $screen-m) {
       padding: rem(28px) 0 rem(10px) 0;
@@ -49,7 +78,6 @@
   }
 
   &.-media-library {
-    background-color: rgba($color-2, .1);
 
     @media screen and (min-width: $screen-m) {
       padding: 0 0 rem(10px) 0;
@@ -57,6 +85,7 @@
   }
 
   &.-partners {
+
     .-summary-alt {
       margin-top: rem(20px);
     }
@@ -84,10 +113,6 @@
   }
 
   &.-about {
-
-    &:nth-of-type(1) {
-      background-color: #F2F5F6;
-    }
 
     @media screen and (min-width: $screen-m) {
       padding: rem(28px) 0 rem(31px) 0;
