@@ -1,5 +1,6 @@
 .c-breadcrumbs {
-  padding-bottom: rem(25px);
+  margin-top: rem(1px);
+  padding-bottom: rem(24px);
   display: none;
 
   @media screen and (min-width: $screen-m) {
@@ -7,11 +8,17 @@
   }
 
   .icon {
-    width: rem(7px);
-    height: rem(7px);
+    position: relative;
+    left: rem(1px);
+    width: rem(8px);
+    height: rem(8px);
   }
+
   .icon-home {
-    width: rem(10px);
-    height: rem(10px);
+    position: relative;
+    left: rem(1px);
+    top: rem(1px);
+    width: rem(12px);
+    height: rem(12px);
   }
 }

@@ -20,11 +20,7 @@
           <div class="small-8 medium-7">
             <h2 class="text -title-single-alt"><%= @activity.title %></h2>
           </div>
-          <div class="share">
-            <svg class="icon">
-              <use xlink:href="#icon-share"></use>
-            </svg>
-          </div>
+          <%= render 'shared/share' %>
         </div>
 
         <ul class="anchors">
@@ -60,26 +56,26 @@
 </section>
 
 <% if @activity.users.any? %>
-  <%= render 'shared/users', users: @activity.users %>
+  <%= render 'shared/users', users: @activity.users, sectionClass: 'content -color-3' %>
 <% end %>
 
 <% if @activity.publications.any? %>
   <%= render 'shared/posts', collection: @activity.publications.
     order(content_date: :desc),
     title: 'publications',
-    link: publications_path %>
+    link: publications_path, sectionClass: 'content -color-3' %>
 <% end %>
 
 <% if @activity.news_articles.any? %>
-  <%= render 'shared/news', news: @activity.news_articles %>
+  <%= render 'shared/news', news: @activity.news_articles, sectionClass: 'content -color-3' %>
 <% end %>
 
 <% if @activity.media_contents.any? %>
-  <%= render 'shared/media', media_contents: @activity.media_contents %>
+  <%= render 'shared/media', media_contents: @activity.media_contents, sectionClass: 'content -color-3' %>
 <% end %>
 
 <% if @activity.partners.any? %>
-  <%= render 'shared/partners', partners: @activity.partners %>
+  <%= render 'shared/partners', partners: @activity.partners, sectionClass: 'content -color-3' %>
 <% end %>
 
 <%= render 'shared/footer' %>

@@ -5,7 +5,6 @@
   display: block;
   position: relative;
   padding-bottom: rem(50px);
-  min-height: rem(280px);
 
   &.-publications {
     background-color: rgba($color-3, 0.04);
@@ -27,31 +26,33 @@
     position: relative;
 
     .-title-library{
-      margin: rem(10px) 0;
+      margin: rem(17px) 0 rem(7px) 0;
+
+      @media screen and (min-width: $screen-m) {
+        margin: rem(26px) 0 rem(7px) 0;
+      }
     }
 
     .-summary {
       max-width: rem(500px);
     }
 
-    .share {
-      background-color: $white;
-      width: rem(50px);
-      height: rem(50px);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      right: rem(-25px);
-      top: 0;
-      z-index: 20;
-      cursor: pointer;
+    .c-share {
+      top: rem(-2px);
+      display: none;
 
-      .icon {
-        width: rem(20px);
-        height: rem(20px);
+      @media screen and (min-width: $screen-m) {
+        display: flex;
+        right: 0;
+      }
+
+      @media screen and (min-width: $screen-l) {
+        right: rem(-15px);
       }
     }
+  }
+
+  @media screen and (min-width: $screen-m) {
+    padding-bottom: rem(36px);
   }
 }

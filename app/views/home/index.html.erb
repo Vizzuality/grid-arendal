@@ -24,14 +24,14 @@
   <%= @section.description %>
 </div>
 
-<%= render 'shared/news', news: @news %>
+<%= render 'shared/news', news: @news, sectionClass: 'home' %>
 
-<%= render 'shared/posts', collection: @activities, title: 'activities', link: activities_path %>
+<%= render 'shared/posts', collection: @activities, title: 'activities', link: activities_path, sectionClass: 'home' %>
 
-<%= render 'shared/posts', collection: @publications, title: 'publications', link: publications_path %>
+<%= render 'shared/posts', collection: @publications, title: 'publications', link: publications_path, sectionClass: 'home' %>
 
-<%= render 'shared/related_media', media_contents: @media_contents, title: 'Featured media' %>
+<%= render 'shared/related_media', media_contents: @media_contents, title: 'Featured media', sectionClass: 'home' %>
 
-<%= render 'shared/users', users: @users %>
+<%= render 'shared/users', users: @users, sectionClass: 'home' %>
 
 <%= render 'shared/footer' %>

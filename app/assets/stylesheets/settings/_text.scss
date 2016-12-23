@@ -26,21 +26,25 @@
 
   &.-cta {
     font-size: 16px;
-    line-height: 1.4;
-    text-align: center;
+    line-height: 1.56;
+    letter-spacing: -0.1px;
 
     @media screen and (min-width: $screen-m) {
       font-size: 14px;
+      line-height: 1.43;
     }
   }
 
   &.-title-block {
     font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 0.3px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.4px;
 
     @media screen and (min-width: $screen-m) {
       font-size: 13px;
+      line-height: 1.23;
+      letter-spacing: 0.3px;
     }
   }
 
@@ -50,33 +54,29 @@
   }
 
   &.-title-card {
-    width: 90%;
     white-space: normal;
-    word-break: break-word;
     font-size: 18px;
+    line-height: 1.39;
     font-family: $font-family-2;
     font-weight: 600;
 
     @media screen and (min-width: $screen-m) {
-      font-size: 16px;
+      font-size: 26px;
+      font-weight: 600;
+      line-height: 1.15;
     }
   }
 
   &.-title-card-small {
-    font-size: 16px;
-    font-family: $font-family-2;
-    font-weight: 600;
     white-space: normal;
-    word-break: break-word;
-  }
-
-  &.-title-card-alt {
     font-size: 18px;
-    font-weight: 600;
     font-family: $font-family-2;
+    font-weight: 600;
+    line-height: 1.39;
 
     @media screen and (min-width: $screen-m) {
       font-size: 16px;
+      line-height: 1.25;
     }
   }
 
@@ -89,15 +89,20 @@
     }
   }
 
+  &.-breadcrumb {
+    font-size: 12px;
+  }
+
   &.-summary {
     font-size: 16px;
     opacity: 0.8;
     width: 90%;
+    line-height: 1.56;
     white-space: normal;
-    word-break: break-word;
 
     @media screen and (min-width: $screen-m) {
       font-size: 14px;
+      line-height: 1.43;
     }
   }
   &.-summary-alt {
@@ -188,9 +193,14 @@
   }
 
   &.-title-library {
-    font-size: 46px;
+    font-size: 36px;
     font-weight: 600;
     font-family: $font-family-2;
+    line-height: 1.11;
+
+    @media screen and (min-width: $screen-m) {
+      font-size: 46px;
+    }
   }
 
   &.-filter {

@@ -10,9 +10,9 @@
 %>
 <div class="item js_slide slide">
   <%= link_to link do %>
-    <article class="c-card <% if needSteps %>-card-steps<% end %>">
+    <article class="c-card <% if needSteps %>-card-steps<% end %>" data-card-type="media">
       <div class="card-pic" style="background-image: url('<%= picture %>')"></div>
-      <div class="card-descrition">
+      <div class="card-description">
         <h3 class="text -title-card-small"><%= title %></h3>
         <p class="text -meta"><%= meta.join(" | ") %></p>
       </div>

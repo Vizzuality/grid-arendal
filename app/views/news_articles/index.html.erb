@@ -8,36 +8,18 @@
         <div class="text -summary">
           <%= @section.description %>
         </div>
-        <!-- <div class="share">
-          <svg class="icon">
-            <use xlink:href="#icon-share"></use>
-          </svg>
-        </div> -->
+        <%= render 'shared/share' %>
       </div>
     </div>
   </div>
 </div>
 
-<div class="l-main-content -news">
-
+<div class="l-main-content -news -only-grid -color-4">
   <div class="row">
-    <div class="small-12 small-centered columns">
+    <div class="small-12 small-centered columns grid-column">
       <div class="masonry-layout" hidden data-columns>
         <% @articles.each do |article| %>
-          <div class="item">
-            <%= link_to "http://news.grida.no/#{article.exposure_slug}" do %>
-              <article class="c-card">
-                <div class="card-pic" style="background-image: url('<%= article.cover_src %>')"></div>
-                <div class="card-descrition">
-                  <h3 class="text -title-card"><%= article.title %></h3>
-                  <p class="text -summary"><%= article.short_description %></p>
-                  <p class="text -meta">
-                    <%= time_ago_in_words(article.publication_date) %>
-                  </p>
-                </div>
-              </article>
-            <% end %>
-          </div>
+          <%= render 'shared/news_card', article: article %>
         <% end %>
       </div>
     </div>

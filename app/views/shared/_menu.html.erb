@@ -1,11 +1,17 @@
+<% sections = [
+  {title: "Activities", key: "activities", path: activities_path},
+  {title: "Publications", key: "publications", path: publications_path},
+  {title: "Media Library", key: "media_library", path: media_path},
+  {title: "News", key: "news_articles", path: news_index_path},
+  {title: "About", key: "about_sections", path: about_index_path}
+] %>
+
 <div class="row">
   <div class="small-12 columns">
     <div class="c-menu">
-      <div class="js-btn-mobile-menu mobile" onclick="">
-        <svg class="icon">
-          <use xlink:href="#icon-menu"></use>
-        </svg>
-      </div>
+      <svg class="btn-menu js-btn-mobile-menu mobile" onclick="">
+        <use xlink:href="#icon-menu"></use>
+      </svg>
       <div class="logo-menu mobile">
         <a href="/">
           <svg class="icon">
@@ -13,7 +19,7 @@
           </svg>
         </a>
       </div>
-      <ul class="desktop text -menu">
+      <ul class="list desktop text -menu">
         <li class="logo-menu">
           <a href="/">
             <svg class="icon">
@@ -21,29 +27,25 @@
             </svg>
           </a>
         </li>
-        <li><%= link_to "Activities", activities_path %></li>
-        <li><%= link_to "Publications", publications_path %></li>
-        <li><%= link_to "Media Library", media_path %></li>
-        <li><%= link_to "News", news_index_path %></li>
-        <li><%= link_to "About", about_index_path %></li>
+        <% sections.each do |section| %>
+          <li class="<% if controller_name == section[:key] %>-selected<% end %>"><%= link_to section[:title], section[:path] %></li>
+        <% end %>
       </ul>
-      <svg class="icon">
+      <svg class="btn-search">
         <use xlink:href="#icon-search"></use>
       </svg>
     </div>
   </div>
 </div>
 <div class="c-mobile-menu">
-  <ul class="text -menu -light">
+  <ul class="list text -menu -light">
     <li class="js-btn-close">
       <svg class="icon">
         <use xlink:href="#icon-close"></use>
       </svg>
     </li>
-    <li><%= link_to "Activities", activities_path %></li>
-    <li><%= link_to "Publications", publications_path %></li>
-    <li><%= link_to "Media Library", media_path %></li>
-    <li><%= link_to "News", news_index_path %></li>
-    <li><%= link_to "About", about_index_path %></li>
+    <% sections.each do |section| %>
+      <li><%= link_to section[:title], section[:path] %></li>
+    <% end %>
   </ul>
 </div>

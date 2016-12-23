@@ -1,21 +1,3 @@
 <% publications.each do |publication| %>
-  <%= link_to publication_path(publication) do %>
-    <div class="item">
-      <article class="c-card">
-        <% photo_url = if publication.s_picture.exists?
-                         publication.s_picture.url(:medium)
-                       elsif publication.media_content
-                         publication.media_content.photo_sizes.where(label: PhotoSize::MEDIUM).first.try(:url)
-                       else
-                         asset_path('original/missing2.png')
-                       end %>
-        <div class="card-pic" style="background-image: url('<%= photo_url %>')"></div>
-        <div class="card-descrition">
-          <h3 class="text -title-card"><%= publication.title %></h3>
-          <p class="text -summary"><%= publication.short_description %></p>
-          <p class="text -meta"><%= time_ago_in_words(publication.content_date) if publication.content_date %></p>
-        </div>
-      </article>
-    </div>
-  <% end %>
+  <%= render 'shared/content_card', item: publication %>
 <% end %>

@@ -1,9 +1,9 @@
 <div class="item js_slide slide">
   <%= link_to "http://news.grida.no/#{article.exposure_slug}" do %>
-    <article class="c-card">
+    <article class="c-card" data-card-type="news">
       <div class="card-pic" style="background-image: url('<%= article.cover_src %>')"></div>
-      <div class="card-descrition">
-        <h3 class="text -title-card"><%= article.title %></h3>
+      <div class="card-description">
+        <h3 class="text -title-card-small"><%= article.title %></h3>
         <p class="text -meta">
           <%= time_ago_in_words(article.publication_date) %>
         </p>

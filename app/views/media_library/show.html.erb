@@ -20,11 +20,7 @@
           {'text' => @media_content.title}
         ] %>
         <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
-        <div class="share">
-          <svg class="icon">
-            <use xlink:href="#icon-share"></use>
-          </svg>
-        </div>
+        <%= render 'shared/share' %>
       </div>
     </div>
   </div>
@@ -84,26 +80,26 @@
 
 <% if @media_content.is_a?(Album) %>
   <%= render 'shared/media', media_contents: @media_content.photos,
-  title: "Photos included in album" %>
+  title: "Photos included in album", sectionClass: 'content -color-4' %>
 <% end %>
 
 <% if @media_content.activities.any? %>
   <%= render 'shared/posts', collection: @media_content.activities.
     order(:title),
     title: 'activities',
-    link: activities_path %>
+    link: activities_path, sectionClass: 'content -color-4' %>
 <% end %>
 
 <% if @media_content.publications.any? %>
   <%= render 'shared/posts', collection: @media_content.publications.
     order(content_date: :desc),
     title: 'publications',
-    link: publications_path %>
+    link: publications_path, sectionClass: 'content -color-4' %>
 <% end %>
 
 <% if @media_content.news_articles.any? %>
   <%= render 'shared/news', news: @media_content.news_articles,
-    title: "Related news" %>
+    title: "Related news", sectionClass: 'content -color-4' %>
 <% end %>
 
 <%= render 'shared/footer' %>

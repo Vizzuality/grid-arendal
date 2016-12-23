@@ -4,7 +4,7 @@
   justify-content: space-between;
   flex-direction: row;
   height: rem(70px);
-  padding: 0 rem(5px);
+  padding: 0 rem(13px);
   z-index: 10;
   position: relative;
 
@@ -33,11 +33,20 @@
   }
 
   .logo-menu {
-    margin-top: rem(5px);
+    margin-top: rem(7px);
 
     .icon {
-      width: rem(100px);
+      width: rem(126px);
       height: rem(40px);
+    }
+
+    @media screen and (min-width: $screen-m) {
+      margin-top: rem(5px);
+
+      .icon {
+        width: rem(110px);
+        height: rem(35px);
+      }
     }
   }
 
@@ -49,12 +58,32 @@
     list-style: none;
 
     li {
+      position: relative;
       margin-right: rem(40px);
+      text-align: center;
+
+      &.-selected {
+
+        &:before {
+          content: "";
+          position: absolute;
+          bottom: rem(-5px);
+          left: 0;
+          width: 100%;
+          height: rem(2px);
+          background-color: rgba($color-1, 0.8);
+        }
+      }
     }
   }
 
-  .icon {
-    width: rem(15px);
-    height: rem(15px);
+  .btn-menu {
+    width: rem(18px);
+    height: rem(18px);
+  }
+
+  .btn-search {
+    width: rem(18px);
+    height: rem(18px);
   }
 }
