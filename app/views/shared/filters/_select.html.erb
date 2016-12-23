@@ -17,15 +17,16 @@
     <ul class="list">
       <% data.each do |option| %>
         <% text = (defined? option.title) ? option.title : option.name %>
-        <li class="text -filter" data-value="<%= option.id %>"><%= text %></li>
+        <li class="text -filter <% if params[key] && (params[key] == option.id.to_s) %>selected<% end %>" data-value="<%= option.id %>"><%= text %></li>
       <% end %>
     </ul>
   </div>
   <select class="text -filter">
-    <option value="" disabled selected><%= placeholder %></option>
+    <option value="" disabled <% if not(params[key]) %>selected<% end %>><%= placeholder %></option>
+    <option value=""></option>
     <% data.each do |option| %>
       <% text = (defined? option.title) ? option.title : option.name %>
-      <option value="<%= option.id %>"><%= text %></option>
+      <option value="<%= option.id %>" <% if params[key] && (params[key] == option.id.to_s) %>selected<% end %>><%= text %></option>
     <% end %>
   </select>
 </div>
