@@ -122,12 +122,12 @@
     _onChangeSelectValue: function() {
       this.$select.change(function(e) {
         var value = this.$select.val();
-        if(value == "") {
+        if(value === "") {
           this.$select.val(null).change();
         } else {
           this._updateSelectedValue(value);
 
-          if(value == null) {
+          if(value === null) {
             this._removeHaveValue();
           } else {
             this._setHaveValue();
