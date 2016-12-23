@@ -29,6 +29,8 @@ $share-mail-color: #ea4335;
     .icon {
       width: rem(20px);
       height: rem(20px);
+      fill: $color-1;
+      transition: fill 0.3s ease-in-out;
     }
 
     &.-share {
@@ -47,6 +49,10 @@ $share-mail-color: #ea4335;
 
       &.-mail {
         background-color: $share-mail-color;
+      }
+
+      .icon {
+        fill: $white;
       }
     }
 
