@@ -40,7 +40,9 @@
   </div>
 </section>
 
-<%= render 'shared/posts', collection: @publications, title: 'Publications', sectionClass: 'content -color-7' %>
+<% if @publications.any? %>
+  <%= render 'shared/posts', collection: @publications, title: 'Publications', sectionClass: 'content -color-7' %>
+<% end%>
 
 <%= render 'shared/news', news: @news, sectionClass: 'content -color-7' %>
 
