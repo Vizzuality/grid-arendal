@@ -11,7 +11,7 @@
       sliderMediaItemType: "related-media"
     },
 
-    index: function(params) {
+    index: function() {
       if($('.masonry-layout').find('.masonry-column').length === 0) {
         new App.View.Masonry({
           el: '.masonry-layout'
@@ -26,6 +26,8 @@
       new App.View.DescriptionView({
         el: '.content-wrapper'
       });
+      new App.View.RelatedMedia();
+
       this.initSliders();
       if(!this.isScreen_s) {
         _.each($('.masonry-layout'), function(element) {

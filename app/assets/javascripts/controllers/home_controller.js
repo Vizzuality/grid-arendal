@@ -13,6 +13,7 @@
 
     index: function() {
       new App.View.EventsModal();
+      new App.View.RelatedMedia();
 
       this.initSliders();
       if(!this.isScreen_s) {
