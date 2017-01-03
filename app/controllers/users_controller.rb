@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @publications = Publication.joins(:participants).where(participants: { user_id: params[:id] })
+    @publications = @user.publications
     @news = NewsArticle.limit(4).order(publication_date: :desc)
     @media_contents = MediaContent.wo_photos_in_album.featured
   end
