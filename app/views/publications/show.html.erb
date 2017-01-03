@@ -93,7 +93,7 @@
 <% end %>
 
 <% if @publication.activities.any? %>
-  <%= render 'shared/posts', collection: @publication.activities, title: 'activities',
+  <%= render 'shared/posts', collection: @publication.activities, title: 'Related activities',
     link: activities_path, sectionClass: 'content -color-2' %>
 <% end %>
 
@@ -102,7 +102,7 @@
 <% end %>
 
 <% if @publication.media_contents.any? %>
-  <%= render 'shared/related_media', media_contents: @publication.media_contents, sectionClass: 'content -color-2' %>
+  <%= render 'shared/related_media', media_contents: @publication.media_contents, link: media_path, sectionClass: 'content -color-2' %>
 <% end %>
 
 <%= render 'shared/footer' %>

@@ -1,7 +1,12 @@
 <ul class="basic-nav">
   <% if user_signed_in? %>
+    <% avatar_url = if current_user.avatar.exists?
+                      current_user.avatar(:medium)
+                    else
+                      asset_path('original/missing2.png')
+                    end %>
     <li class="-user -no-hover">
-      <img class="avatar" src="<%= current_user.avatar %>" />
+      <img class="avatar" src="<%= avatar_url %>" />
       <div class="texts-container">
         <div class="user-name text -nav-text -light">
           <%= current_user.display_name %>

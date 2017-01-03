@@ -1,3 +1,51 @@
-<h2><%= @user.display_name %></h2>
+<% avatar_url = if @user.avatar.exists?
+                  @user.avatar(:medium)
+                else
+                  asset_path('original/missing2.png')
+                end %>
 
-<%= @user.current_position %>
+<div class="l-header-library -staff">
+  <div class="overlay"></div>
+  <%= render 'shared/menu' %>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="title-block">
+        <% breadcrumbs_links = [
+          {'text' => 'About', 'link' => about_index_path},
+          {'text' => @user.display_name}
+        ] %>
+        <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
+        <div class="text -title-staff"><%= @user.display_name %></div>
+        <div class="text -contact-staff"><strong><%= @user.current_position %></strong></div>
+        <div class="text -contact-staff"><strong>Phone:</strong> <%= @user.phone %></div>
+        <div class="text -contact-staff"><strong>Email:</strong> <%= @user.email %></div>
+        <%= render 'shared/share' %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="-relativize">
+        <div class="header-avatar" style="background-image: url('<%= avatar_url %>')"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="l-main-content content -color-7">
+  <div class="row">
+    <div class="small-8 column">
+      <div class="text -summary-alt"><%= raw(@user.description) %></div>
+    </div>
+  </div>
+</section>
+
+<% if @publications.any? %>
+  <%= render 'shared/posts', collection: @publications, title: 'Publications', sectionClass: 'content -color-7' %>
+<% end%>
+
+<%= render 'shared/news', news: @news, sectionClass: 'content -color-7' %>
+
+<%= render 'shared/related_media', media_contents: @media_contents, title: 'Related media', link: media_path, sectionClass: 'content -color-7' %>
+
+<%= render 'shared/footer' %>

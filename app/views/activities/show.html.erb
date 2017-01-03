@@ -62,7 +62,7 @@
 <% if @activity.publications.any? %>
   <%= render 'shared/posts', collection: @activity.publications.
     order(content_date: :desc),
-    title: 'publications',
+    title: 'Related publications',
     link: publications_path, sectionClass: 'content -color-3' %>
 <% end %>
 
