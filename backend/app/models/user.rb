@@ -41,6 +41,10 @@
 class User < ApplicationRecord
   enum role: { contributor: 0, publisher: 1, admin: 2 }
 
+  has_many :participants, dependent: :destroy
+  has_many :publications, through: :participants, source: :publication
+  has_many :activities, through: :participants, source: :activity
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :recoverable,

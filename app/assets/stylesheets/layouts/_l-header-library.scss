@@ -1,3 +1,10 @@
+$header-library-staff-padding-bottom: rem(20px);
+$header-avatar-border-width: rem(3px);
+$header-avatar-size: rem(100px);
+$header-avatar-size-screen-s: rem(170px);
+$header-avatar-size-screen-m: rem(250px);
+$header-avatar-size-screen-l: rem(340px);
+
 .l-header-library {
   background-position: center center;
   background-repeat: no-repeat;
@@ -20,6 +27,61 @@
 
   &.-media-library {
     background-color: rgba($color-2, 0.05);
+  }
+
+  &.-staff {
+    background-color: rgba($color-1, 0.05);
+    padding-bottom: $header-library-staff-padding-bottom !important;
+
+    .c-breadcrumbs {
+      padding-bottom: rem(13px);
+    }
+
+    .-title-staff {
+      margin-bottom: rem(7px);
+    }
+
+    .header-avatar {
+      position: absolute;
+      right: 0;
+      bottom: -(($header-avatar-size / 2) + $header-library-staff-padding-bottom);
+      width: $header-avatar-size;
+      height: $header-avatar-size;
+      margin: 0 auto;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: -$header-avatar-border-width;
+        left: -$header-avatar-border-width;
+        width: calc(100% + #{$header-avatar-border-width * 2});
+        height: calc(100% + #{$header-avatar-border-width * 2});
+        border: $header-avatar-border-width solid rgba($white, .3);
+        border-radius: 50%;
+      }
+
+      @media screen and (min-width: $screen-s) {
+        bottom: -(($header-avatar-size-screen-s / 2) + $header-library-staff-padding-bottom);
+        width: $header-avatar-size-screen-s;
+        height: $header-avatar-size-screen-s;
+      }
+
+      @media screen and (min-width: $screen-m) {
+        bottom: -(($header-avatar-size-screen-m / 2) + $header-library-staff-padding-bottom);
+        width: $header-avatar-size-screen-m;
+        height: $header-avatar-size-screen-m;
+      }
+
+      @media screen and (min-width: $screen-l) {
+        bottom: -(($header-avatar-size-screen-l / 2) + $header-library-staff-padding-bottom);
+        width: $header-avatar-size-screen-l;
+        height: $header-avatar-size-screen-l;
+      }
+    }
   }
 
   .title-block {

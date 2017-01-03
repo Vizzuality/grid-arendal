@@ -23,30 +23,12 @@
   <ul class="c-staff row">
     <% if lead_user %>
       <li class="small-6 medium-3 large-2 columns">
-        <div class="staff">
-          <% avatar_url = if lead_user.avatar.exists?
-                            lead_user.avatar(:medium)
-                          else
-                            asset_path('original/missing2.png')
-                          end %>
-          <div class="staff-pic" style="background-image: url('<%= avatar_url %>')"></div>
-          <p class="text -author"><%= lead_user.display_name %></p>
-          <p class="text -meta"><%= lead_user.current_position %></p>
-        </div>
+        <%= render 'shared/user', user: lead_user %>
       </li>
     <% end %>
     <% users.each do |user| %>
       <li class="small-6 medium-3 large-2 columns">
-        <div class="staff">
-          <% avatar_url = if user.avatar.exists?
-                            user.avatar(:medium)
-                          else
-                            asset_path('original/missing2.png')
-                          end %>
-          <div class="staff-pic" style="background-image: url('<%= avatar_url %>')"></div>
-          <p class="text -author"><%= user.display_name %></p>
-          <p class="text -meta"><%= user.current_position %></p>
-        </div>
+        <%= render 'shared/user', user: user %>
       </li>
     <% end %>
   </ul>

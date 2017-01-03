@@ -203,6 +203,20 @@
     }
   }
 
+  &.-title-staff {
+    font-size: 36px;
+    font-weight: 600;
+    font-family: $font-family-2;
+    line-height: 1.11;
+  }
+
+  &.-contact-staff {
+    font-size: 18px;
+    font-family: $font-family-1;
+    line-height: 1.67;
+    opacity: 0.8;
+  }
+
   &.-filter {
     font-size: 20px;
 
@@ -214,7 +228,6 @@
 
   &.-filter-title {
     font-size: 12px;
-    letter-spacing: 0.5px;
     line-height: 0.83;
     letter-spacing: 0.6px;
 
