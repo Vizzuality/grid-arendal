@@ -6,24 +6,40 @@
 
   App.Controller.Users = App.Controller.Page.extend({
 
+    options: {
+      sliderContentCardType: "card"
+    },
+
     show: function() {
-      if(this.isScreen_s) {
-        this.initSliders();
-      } else {
+      new App.View.RelatedMedia();
+
+      this.initSliders();
+      if(!this.isScreen_s) {
         _.each($('.masonry-layout'), function(element) {
-          new App.View.Masonry({
-            el: element
-          });
+          if($(element).find('.masonry-column').length === 0) {
+            new App.View.Masonry({
+              el: element
+            });
+          }
         });
       }
     },
 
     initSliders: function() {
-      Array.prototype.slice.call(document.querySelectorAll('.js_slider')).forEach(function (element, index) {
-        lory(element, {
-          enableMouseEvents: true
-        });
-      });
+      _.each($('.js_slider'), function(element) {
+        var sliderType = $(element).data("slider-type");
+        var needLoadSlider = true;
+
+        if(sliderType == this.options.sliderContentCardType && !this.isScreen_s) {
+          needLoadSlider = false;
+        }
+
+        if(needLoadSlider) {
+          lory(element, {
+            enableMouseEvents: true
+          });
+        }
+      }.bind(this));
     }
 
   });

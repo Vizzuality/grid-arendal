@@ -7,16 +7,18 @@
           <% title ||= "Related Media" %>
           <%= title %>
         </h2>
-        <p class="text -view-all">
-          <%= link_to media_path do %>
-            <span>
-              View all media
-            </span>
-              <svg class="icon -arrow">
-                <use xlink:href="#icon-arrow"></use>
-              </svg>
-          <% end %>
-        </p>
+        <% if(defined? link) %>
+          <p class="text -view-all">
+            <%= link_to link do %>
+              <span>
+                View all media
+              </span>
+                <svg class="icon -arrow">
+                  <use xlink:href="#icon-arrow"></use>
+                </svg>
+            <% end %>
+          </p>
+        <% end %>
       </div>
     </div>
   </div>

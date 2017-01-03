@@ -86,7 +86,7 @@ $filters-screen-m-width: 18%;
         }
 
         &.selected {
-          color: $creamy-grey;
+          color: $skull-white;
           background-color: $color-1;
 
           &:before {
@@ -189,7 +189,7 @@ $filters-screen-m-width: 18%;
         top: rem(-9px);
         left: rem(-10px);
         padding-top: rem(9px);
-        background-color: $creamy-grey;
+        background-color: $skull-white;
         box-shadow: 0 2px 4px 0 rgba($black, 0.2);
         white-space: nowrap;
         z-index: 2;
