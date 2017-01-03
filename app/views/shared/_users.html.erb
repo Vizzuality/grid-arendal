@@ -22,29 +22,13 @@
   </div>
   <ul class="c-staff row">
     <% if lead_user %>
-      <% avatar_url = if lead_user.avatar.exists?
-                        lead_user.avatar(:medium)
-                      else
-                        asset_path('original/missing2.png')
-                      end %>
       <li class="small-6 medium-3 large-2 columns">
-        <%= render 'shared/user',
-          name: lead_user.display_name,
-          position: lead_user.current_position,
-          avatar_url: avatar_url %>
+        <%= render 'shared/user', user: lead_user %>
       </li>
     <% end %>
     <% users.each do |user| %>
-      <% avatar_url = if user.avatar.exists?
-                        user.avatar(:medium)
-                      else
-                        asset_path('original/missing2.png')
-                      end %>
       <li class="small-6 medium-3 large-2 columns">
-        <%= render 'shared/user',
-          name: user.display_name,
-          position: user.current_position,
-          avatar_url: avatar_url %>
+        <%= render 'shared/user', user: user %>
       </li>
     <% end %>
   </ul>
