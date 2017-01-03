@@ -20,6 +20,7 @@
       'news(/)': 'News#index',
       'news/:id': 'News#show',
       'about(/)': 'About#index',
+      'staff/:id': 'Users#show',
     },
 
     initialize: function() {

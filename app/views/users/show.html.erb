@@ -1,3 +1,37 @@
-<h2><%= @user.display_name %></h2>
+<div class="l-header-library -activities">
+  <div class="overlay"></div>
+  <%= render 'shared/menu' %>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="title-block">
+        <h1 class="text -title-library"><%= @user.display_name %></h1>
+        <div class="text"><%= @user.current_position %></div>
+        <div class="text">Phone: <span><%= @user.current_position %></span></div>
+        <div class="text">Email: <span>peter.harris@grida.no</span></div>
+        <%= render 'shared/share' %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= @user.current_position %>
+<section class="l-main-content content -color-3">
+  <div class="row">
+    <div class="small-12 column">
+      <div class="text -summary-alt">
+        The Board of Directors appointed in September 2014 Dr. Peter Harris as the Managing Director of GRID-Arendal for a four year term.
+        <br/><br/>
+        Dr. Harris has been serving as a senior manager of the environmental division of Australia’s national geoscience agency, Geoscience Australia. Peter Harris, a native of the USA, has a background in marine conservation and environmental science. He has worked on climate-change in Antarctica as well as serving since 2010 as Australia’s member of the Group of Experts for the United Nations World Ocean Assessment.
+        <br/><br/>
+        Peter Harris graduated from the University of Washington (Seattle USA) in 1981 and completed a PhD at the University of Wales (Swansea UK) in1984. He worked at the University of Sydney from 1986 to 1994 on marine geology of the Great Barrier Reef and the Fly River Delta (Papua New Guinea). In 1994 he was appointed by Geoscience Australia to lead the Palaeo-environment Program at the Antarctic Cooperative Research Centre in Hobart Tasmania, where he worked from 1994-2003. In July 2003 he was appointed Group Leader of Geoscience Australia’s Marine & Coastal Environment Group based in Canberra, which employed some 50 staff with programs in maritime boundaries (Law of the Sea), coastal geochemistry, OzCoasts web delivery of coastal science for managers, seabed mapping and characterisation, marine biodiversity and Antarctic research. In 2006 he was elected as Australia’s representative and co-chair of the United Nations Ad Hoc Steering Group established under UNGA resolution 60/30 to progress Global Reporting and Assessment of the State of the Marine Environment (GRAME). In 2010 he was elected to be a member of the Group of Experts established under UNGA resolution 65/37 to oversee the first cycle of the GRAME Regular Process and produce the first report by 2014. Peter has been seconded by the Australian Government to GRID-Arendal for 1 year to participate in the development of a web page and create a new seafloor geomorphology map to in support of the GRAME Regular Process.
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= render 'shared/posts', collection: @publications, title: 'publications', link: publications_path, sectionClass: 'content -color-3' %>
+
+<%= render 'shared/news', news: @news, sectionClass: 'content -color-3' %>
+
+<%= render 'shared/related_media', media_contents: @media_contents, title: 'Related media', sectionClass: 'content -color-3' %>
+
+<%= render 'shared/footer' %>

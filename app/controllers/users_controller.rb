@@ -7,6 +7,9 @@ class UsersController < ApplicationController
   end
 
   def show
+    @publications = Publication.featured.published.order(content_date: :desc).limit(3)
+    @news = NewsArticle.limit(4).order(publication_date: :desc)
+    @media_contents = MediaContent.wo_photos_in_album.featured
   end
 
   private
