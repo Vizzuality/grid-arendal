@@ -3,13 +3,7 @@
   <div class="row">
     <div class="small-12 columns">
       <div class="c-main-content-header">
-        <h2 class="text -title-block">
-          <% if current_page?('/') %>
-              Featured <%= title %>
-          <% else %>
-              Related <%= title %>
-          <% end %>
-        </h2>
+        <h2 class="text -title-block"><%= title %></h2>
         <% if(defined? link) %>
           <p class="text -view-all">
             <%= link_to link do %>

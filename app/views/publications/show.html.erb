@@ -93,7 +93,7 @@
 <% end %>
 
 <% if @publication.activities.any? %>
-  <%= render 'shared/posts', collection: @publication.activities, title: 'activities',
+  <%= render 'shared/posts', collection: @publication.activities, title: 'Related activities',
     link: activities_path, sectionClass: 'content -color-2' %>
 <% end %>
 
