@@ -69,17 +69,16 @@
   </div>
   <ul class="c-staff row">
     <% @users.each do |user| %>
+      <% avatar_url = if user.avatar.exists?
+                        user.avatar(:medium)
+                      else
+                        asset_path('original/missing2.png')
+                      end %>
       <li class="small-6 medium-3 large-2 columns">
-        <div class="staff">
-          <% avatar_url = if user.avatar.exists?
-                            user.avatar(:medium)
-                          else
-                            asset_path('original/missing2.png')
-                          end %>
-          <div class="staff-pic" style="background-image: url('<%= avatar_url %>')"></div>
-          <p class="text -author"><%= user.display_name %></p>
-          <p class="text -meta"><%= user.current_position %></p>
-        </div>
+        <%= render 'shared/user',
+          name: user.display_name,
+          position: user.current_position,
+          avatar_url: avatar_url %>
       </li>
     <% end %>
   </ul>
@@ -93,17 +92,16 @@
   </div>
   <ul class="c-staff row">
     <% @board_members.each do |user| %>
+      <% avatar_url = if user.avatar.exists?
+                        user.avatar(:medium)
+                      else
+                        asset_path('original/missing2.png')
+                      end %>
       <li class="small-6 medium-3 large-2 columns">
-        <div class="staff">
-          <% avatar_url = if user.avatar.exists?
-                            user.avatar(:medium)
-                          else
-                            asset_path('original/missing2.png')
-                          end %>
-          <div class="staff-pic" style="background-image: url('<%= avatar_url %>')"></div>
-          <p class="text -author"><%= user.display_name %></p>
-          <p class="text -meta"><%= user.current_position %></p>
-        </div>
+        <%= render 'shared/user',
+          name: user.display_name,
+          position: user.current_position,
+          avatar_url: avatar_url %>
       </li>
     <% end %>
   </ul>
