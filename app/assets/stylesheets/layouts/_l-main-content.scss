@@ -1,22 +1,5 @@
 .l-main-content {
 
-  &.home,
-  &.content {
-    padding-bottom: rem(47px);
-
-    .c-slider {
-      margin-top: rem(7px);
-    }
-
-    @media screen and (min-width: $screen-m) {
-      padding: rem(35px) 0 rem(40px);
-
-      .c-slider {
-        margin-top: rem(4px);
-      }
-    }
-  }
-
   &:not(:last-of-type) {
 
     @media screen and (min-width: $screen-m) {
@@ -144,6 +127,23 @@
 
       .-summary-alt {
         padding-top: rem(21px);
+      }
+    }
+  }
+
+  &.home,
+  &.content {
+    padding-bottom: rem(47px);
+
+    .c-slider {
+      margin-top: rem(7px);
+    }
+
+    @media screen and (min-width: $screen-m) {
+      padding: rem(35px) 0 rem(40px);
+
+      .c-slider {
+        margin-top: rem(4px);
       }
     }
   }
