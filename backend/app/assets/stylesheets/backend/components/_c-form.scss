@@ -23,6 +23,10 @@ $photo-list-shadow-gap: rem(4px);
     outline: 0;
   }
 
+  iframe {
+    border: 0;
+  }
+
   .form_header {
     position: fixed;
     top: 0;
