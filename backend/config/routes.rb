@@ -71,5 +71,10 @@ Backend::Engine.routes.draw do
     patch 'remove_featured', on: :member
   end
 
+  resources :graphics, except: :show do
+    patch 'make_featured',   on: :member
+    patch 'remove_featured', on: :member
+  end
+
   root to: 'admin_home#index'
 end
