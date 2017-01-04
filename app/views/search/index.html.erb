@@ -13,6 +13,16 @@
 
 <div class="l-header-library-separator"></div>
 
+<% if @news.empty? && @activities.empty? && @publications.empty? && @media_contents.empty? %>
+  <section class="l-main-content content -news -color-7">
+    <div class="row">
+      <div class="small-12 small-centered columns">
+        No results for your search
+      </div>
+    </div>
+  </section>
+<% end%>
+
 <% if @news.any? %>
   <%= render 'shared/news', news: @news, title: 'News', sectionClass: 'content -color-7' %>
 <% end%>
