@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :media, path: 'media-library', controller: 'media_library',  only: [:index, :show]
   resources :news,                         controller: 'news_articles',  only: [:index]
   resources :about,                        controller: 'about_sections', only: [:index]
+  resources :search,                                                     only: [:index]
 
   root 'home#index'
 end

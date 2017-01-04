@@ -21,6 +21,7 @@
       'news/:id': 'News#show',
       'about(/)': 'About#index',
       'staff/:id': 'Users#show',
+      'search(/)': 'Search#index',
     },
 
     initialize: function() {

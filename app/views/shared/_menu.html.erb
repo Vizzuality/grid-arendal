@@ -31,9 +31,7 @@
           <li class="<% if controller_name == section[:key] %>-selected<% end %>"><%= link_to section[:title], section[:path] %></li>
         <% end %>
       </ul>
-      <svg class="btn-search">
-        <use xlink:href="#icon-search"></use>
-      </svg>
+      <%= render 'shared/search' %>
     </div>
   </div>
 </div>
