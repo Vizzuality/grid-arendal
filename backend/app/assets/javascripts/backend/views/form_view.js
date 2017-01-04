@@ -65,8 +65,8 @@
           'iframe': new MediumButton({
             label:'iframe',
             action: function(html, mark, parent){
-              var width = prompt("Please enter set the iframe width", "");
-              var height = prompt("Please enter set the iframe height", "");
+              var width = prompt("Please set the iframe width", "");
+              var height = prompt("Please set the iframe height", "");
 
               return '<iframe src="' + html +'" width="' + width + '" height="' + height + '"></iframe>';
             }
