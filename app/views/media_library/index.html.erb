@@ -31,7 +31,7 @@
         <% @media_contents.each do |media| %>
           <% picture_url = case media.type
                             when MediaContent::TYPE_ALBUM
-                              photo = media.photos.first
+                              photo = media.photos.order("id ASC").first
                               photo ? photo.photo_sizes.where(label: PhotoSize::MEDIUM).first.try(:url) : nil
                             when MediaContent::TYPE_PHOTO
                               media.photo_sizes.where(label: PhotoSize::MEDIUM).first.try(:url)

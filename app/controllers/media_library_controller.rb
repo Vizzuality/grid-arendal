@@ -16,8 +16,6 @@ class MediaLibraryController < ApplicationController
   private
 
     def media_content
-      @media_content = MediaContent.wo_photos_in_album
-                         .includes(:photo_sizes, :photos)
-                         .find(params[:id])
+      @media_content = MediaContent.find(params[:id])
     end
 end
