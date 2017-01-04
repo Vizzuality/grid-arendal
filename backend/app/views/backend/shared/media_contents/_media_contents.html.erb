@@ -2,7 +2,9 @@
   {title: "Albums", key: "albums", path: albums_path,
   count: Album.count},
   {title: "Pictures", key: "photos", path: photos_path,
-  count: Photo.count}
+  count: Photo.count},
+  {title: "Videos", key: "videos", path: videos_path,
+  count: Video.count}
 ] %>
 <div class="tabs">
   <% tabs.each do |tab| %>
@@ -19,6 +21,8 @@
   <% if controller_name == 'albums' %>
     <%= link_to "Fetch from flickr", [:fetch, controller_name],
       class: 'btn -light -no-border -create-new js-create-new' %>
+  <% elsif controller_name == 'videos' && can?(:create, Video) %>
+    <%= link_to "Create New", new_video_path, class: 'btn -light -no-border -create-new js-create-new' %>
   <% end %>
   <div class="btn">
     <svg class="icon">
