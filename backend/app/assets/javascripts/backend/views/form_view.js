@@ -59,7 +59,17 @@
     _loadMediumEditor: function () {
       new MediumEditor(this.options.mediumEditorTriggerClass, {
         toolbar: {
-          buttons: ['bold', 'italic', 'underline', 'h1', 'h2', 'quote', 'anchor']
+          buttons: ['bold', 'italic', 'underline', 'quote', 'anchor', 'iframe']
+        },
+        extensions: {
+          'iframe': new MediumButton({
+            label:'iframe',
+            action: function(html, mark, parent){
+              var height = prompt("Please set the iframe height", "");
+
+              return '<iframe src="' + html +'" width="100%" height="' + height + '"></iframe>';
+            }
+          }),
         }
       });
     },
