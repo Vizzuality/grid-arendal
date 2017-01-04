@@ -84,6 +84,10 @@ $header-avatar-size-screen-l: rem(340px);
     }
   }
 
+  &.-search {
+    background-color: rgba($color-1, 0.05);
+  }
+
   .title-block {
     position: relative;
 
@@ -116,5 +120,15 @@ $header-avatar-size-screen-l: rem(340px);
 
   @media screen and (min-width: $screen-m) {
     padding-bottom: rem(36px);
+  }
+}
+
+.l-header-library-separator {
+  width: 100%;
+  height: rem(47px);
+  background-color: #E5EBED;
+
+  @media screen and (min-width: $screen-m) {
+    display: none;
   }
 }
