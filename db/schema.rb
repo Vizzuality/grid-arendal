@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170105121009) do
+ActiveRecord::Schema.define(version: 20170105122805) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -101,10 +101,14 @@ ActiveRecord::Schema.define(version: 20170105121009) do
     t.string   "background_image_content_type"
     t.integer  "background_image_file_size"
     t.datetime "background_image_updated_at"
-    t.boolean  "active",                        default: false, null: false
+    t.boolean  "active",                          default: false, null: false
     t.datetime "deactivated_at"
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.string   "s_background_image_file_name"
+    t.string   "s_background_image_content_type"
+    t.integer  "s_background_image_file_size"
+    t.datetime "s_background_image_updated_at"
   end
 
   create_table "media_contents", force: :cascade do |t|
