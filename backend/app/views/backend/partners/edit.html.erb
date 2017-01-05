@@ -6,7 +6,7 @@
   <%= simple_form_for @partner, html: { class: 'c-form' } do |f| %>
     <%= render 'form',
       form: f,
-      have_logo: @partner.logo_file_name ? true : false,
-      logo_url: @partner.logo %>
+      have_logo: @partner.s_logo_file_name ? true : false,
+      logo_url: @partner.s_logo %>
   <% end %>
 </div>

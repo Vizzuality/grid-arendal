@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170105105906) do
+ActiveRecord::Schema.define(version: 20170105113735) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(version: 20170105105906) do
     t.boolean  "is_published"
     t.integer  "position"
     t.string   "story_map_url"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.boolean  "is_featured"
     t.integer  "project_number"
     t.text     "short_description"
@@ -155,12 +155,16 @@ ActiveRecord::Schema.define(version: 20170105105906) do
     t.string   "name"
     t.string   "web_url"
     t.text     "description"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.string   "logo_file_name"
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
+    t.string   "s_logo_file_name"
+    t.string   "s_logo_content_type"
+    t.integer  "s_logo_file_size"
+    t.datetime "s_logo_updated_at"
   end
 
   create_table "photo_sizes", force: :cascade do |t|
