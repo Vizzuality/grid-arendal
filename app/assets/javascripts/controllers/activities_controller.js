@@ -51,6 +51,7 @@
       var params = _.extend({}, App.Helper.Utils.getGetParams(), { page: this.scrollPaginationView.page });
       $.ajax({
         method: "GET",
+        cache: true,
         url: '/activities/paginate',
         data: params,
         complete: function(response) {
