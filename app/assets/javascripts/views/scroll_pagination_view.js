@@ -6,12 +6,24 @@
 
   App.View.ScrollPagination = Backbone.View.extend({
 
+    el: 'body',
+
+    options: {
+      footerClass: ".l-footer",
+    },
+
     initialize: function(settings) {
       this.callback = settings.callback;
 
+      this._cache();
       this._initVariables();
       this._checkCurrentPage();
       this._loadOnScrollEvent();
+      this.toggleFooter();
+    },
+
+    _cache: function() {
+      this.$footer = this.$el.find(this.options.footerClass);
     },
 
     _initVariables: function() {
@@ -50,7 +62,7 @@
     },
 
     _onScrollLoadPage: function() {
-      var pageScrollLimit = $(document).height() - $(window).height() - 500;
+      var pageScrollLimit = $(document).height() - ($(window).height() * 2);
       if(
         !this.blockPagination &&
         !this.doingCallback &&
@@ -68,6 +80,10 @@
 
     toggleBlockPagination: function() {
       this.blockPagination = !this.blockPagination;
+    },
+
+    toggleFooter: function() {
+      this.$footer.toggle();
     },
 
   });
