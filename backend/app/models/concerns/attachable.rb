@@ -4,32 +4,8 @@ module Attachable
     extend ActiveSupport::Concern
 
     included do
-      if ENV['DROPBOX_APP_KEY'].present?
-        has_attached_file :picture,
-                          styles: { medium: '300x300>', thumb: '100x100>' },
-                          default_url: '/assets/:style/missing2.png',
-                          storage: :dropbox,
-                          dropbox_credentials: Rails.root.join('config/dropbox.yml'),
-                          dropbox_options: {
-                            path: proc { |style| "#{Rails.env}/#{self.class.to_s}/#{style}/#{id}_#{picture.original_filename}"},
-                            unique_filename: true
-                          }
-      else
-        has_attached_file :picture, styles: { medium: '300x300>', thumb: '100x100>' },
-                                    default_url: '/assets/:style/missing2.png'
-      end
-
-      validates_attachment_content_type :picture, content_type: /\Aimage/
-      validates_attachment_file_name :picture, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
-    end
-  end
-
-  module SPicture
-    extend ActiveSupport::Concern
-
-    included do
       if ENV['AWS_ACCESS_KEY_ID'].present?
-        has_attached_file :s_picture,
+        has_attached_file :picture,
                           styles: { medium: '300x300>', thumb: '100x100>' },
                           default_url: '/assets/:style/missing2.png',
                           storage: :s3,
@@ -42,12 +18,12 @@ module Attachable
                           url: ':s3_domain_url',
                           path: "#{Rails.env}/:class/:s_picture/:id/:style/:basename.:extension"
       else
-        has_attached_file :s_picture, styles: { medium: '300x300>', thumb: '100x100>' },
+        has_attached_file :picture, styles: { medium: '300x300>', thumb: '100x100>' },
                                     default_url: '/assets/:style/missing2.png'
       end
 
-      validates_attachment_content_type :s_picture, content_type: /\Aimage/
-      validates_attachment_file_name :s_picture, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
+      validates_attachment_content_type :picture, content_type: /\Aimage/
+      validates_attachment_file_name :picture, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
     end
   end
 
