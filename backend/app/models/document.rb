@@ -14,6 +14,7 @@
 #
 
 class Document < ApplicationRecord
+  include Attachable::Document
   include Attachable::SDocument
 
   belongs_to :publication
