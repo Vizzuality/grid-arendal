@@ -18,6 +18,7 @@
 class Partner < ApplicationRecord
   include Sanitizable
   include Attachable::Logo
+  include Attachable::SLogo
 
   has_many :events
   has_many :content_partners, dependent: :destroy

@@ -1,7 +1,7 @@
 <ul class="basic-nav">
   <% if user_signed_in? %>
-    <% avatar_url = if current_user.avatar.exists?
-                      current_user.avatar(:medium)
+    <% avatar_url = if current_user.s_avatar.exists?
+                      current_user.s_avatar(:medium)
                     else
                       asset_path('original/missing2.png')
                     end %>
