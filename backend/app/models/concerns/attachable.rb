@@ -302,4 +302,28 @@ module Attachable
         content_type: ['application/pdf', 'application/postscript']
     end
   end
+
+  module SDocument
+    extend ActiveSupport::Concern
+
+    included do
+      if ENV['AWS_ACCESS_KEY_ID'].present?
+        has_attached_file :s_document,
+                          storage: :s3,
+                          s3_credentials: {
+                            bucket: ENV['S3_BUCKET_NAME'],
+                            access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+                            secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+                            s3_region: ENV['AWS_REGION'],
+                          },
+                          url: ':s3_domain_url',
+                          path: "#{Rails.env}/:class/:s_document/:id/:style/:basename.:extension"
+      else
+        has_attached_file :s_document
+      end
+
+      validates_attachment_content_type :s_document,
+        content_type: ['application/pdf', 'application/postscript']
+    end
+  end
 end

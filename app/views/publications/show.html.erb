@@ -63,9 +63,9 @@
             <div class="small-6 medium-9 large-8 columns">
               <div class="download-links">
                 <% @publication.documents.each do |doc| %>
-                  <% if doc.document.exists? %>
+                  <% if doc.s_document.exists? %>
                     <div class="btn -dark">
-                      <%= link_to doc.label, doc.document.url %>
+                      <%= link_to doc.label, doc.s_document.url %>
                     </div>
                   <% end %>
                 <% end %>
