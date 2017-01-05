@@ -56,8 +56,8 @@
         <div class="meta">
           <div class="row">
             <div class="small-6 medium-3 large-4 columns">
-              <% if @publication.cover_picture.exists? %>
-                <div class="cover" style="<%= "background-image: url('#{@publication.cover_picture.url(:medium)}')" %>"></div>
+              <% if @publication.s_cover_picture.exists? %>
+                <div class="cover" style="<%= "background-image: url('#{@publication.s_cover_picture.url(:medium)}')" %>"></div>
               <% end %>
             </div>
             <div class="small-6 medium-9 large-8 columns">

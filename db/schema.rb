@@ -69,6 +69,10 @@ ActiveRecord::Schema.define(version: 20170105113735) do
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
+    t.string   "s_cover_picture_file_name"
+    t.string   "s_cover_picture_content_type"
+    t.integer  "s_cover_picture_file_size"
+    t.datetime "s_cover_picture_updated_at"
   end
 
   create_table "documents", force: :cascade do |t|

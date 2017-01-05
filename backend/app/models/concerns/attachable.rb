@@ -51,6 +51,33 @@ module Attachable
     end
   end
 
+  module SCoverPicture
+    extend ActiveSupport::Concern
+
+    included do
+      if ENV['DROPBOX_APP_KEY'].present?
+        has_attached_file :s_cover_picture,
+                          styles: { medium: '300x300>', thumb: '100x100>' },
+                          default_url: '/assets/:style/missing2.png',
+                          storage: :s3,
+                          s3_credentials: {
+                            bucket: ENV['S3_BUCKET_NAME'],
+                            access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+                            secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+                            s3_region: ENV['AWS_REGION'],
+                          },
+                          url: ':s3_domain_url',
+                          path: "#{Rails.env}/:class/:s_cover_picture/:id/:style/:basename.:extension"
+      else
+        has_attached_file :s_cover_picture, styles: { medium: '300x300>', thumb: '100x100>' },
+                          default_url: '/assets/:style/missing2.png'
+      end
+
+      validates_attachment_content_type :s_cover_picture, content_type: /\Aimage/
+      validates_attachment_file_name :s_cover_picture, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
+    end
+  end
+
   module Logo
     extend ActiveSupport::Concern
 
