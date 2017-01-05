@@ -4,32 +4,8 @@ module Attachable
     extend ActiveSupport::Concern
 
     included do
-      if ENV['DROPBOX_APP_KEY'].present?
-        has_attached_file :picture,
-                          styles: { medium: '300x300>', thumb: '100x100>' },
-                          default_url: '/assets/:style/missing2.png',
-                          storage: :dropbox,
-                          dropbox_credentials: Rails.root.join('config/dropbox.yml'),
-                          dropbox_options: {
-                            path: proc { |style| "#{Rails.env}/#{self.class.to_s}/#{style}/#{id}_#{picture.original_filename}"},
-                            unique_filename: true
-                          }
-      else
-        has_attached_file :picture, styles: { medium: '300x300>', thumb: '100x100>' },
-                                    default_url: '/assets/:style/missing2.png'
-      end
-
-      validates_attachment_content_type :picture, content_type: /\Aimage/
-      validates_attachment_file_name :picture, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
-    end
-  end
-
-  module SPicture
-    extend ActiveSupport::Concern
-
-    included do
       if ENV['AWS_ACCESS_KEY_ID'].present?
-        has_attached_file :s_picture,
+        has_attached_file :picture,
                           styles: { medium: '300x300>', thumb: '100x100>' },
                           default_url: '/assets/:style/missing2.png',
                           storage: :s3,
@@ -42,12 +18,12 @@ module Attachable
                           url: ':s3_domain_url',
                           path: "#{Rails.env}/:class/:s_picture/:id/:style/:basename.:extension"
       else
-        has_attached_file :s_picture, styles: { medium: '300x300>', thumb: '100x100>' },
+        has_attached_file :picture, styles: { medium: '300x300>', thumb: '100x100>' },
                                     default_url: '/assets/:style/missing2.png'
       end
 
-      validates_attachment_content_type :s_picture, content_type: /\Aimage/
-      validates_attachment_file_name :s_picture, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
+      validates_attachment_content_type :picture, content_type: /\Aimage/
+      validates_attachment_file_name :picture, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
     end
   end
 
@@ -75,6 +51,33 @@ module Attachable
     end
   end
 
+  module SCoverPicture
+    extend ActiveSupport::Concern
+
+    included do
+      if ENV['AWS_ACCESS_KEY_ID'].present?
+        has_attached_file :s_cover_picture,
+                          styles: { medium: '300x300>', thumb: '100x100>' },
+                          default_url: '/assets/:style/missing2.png',
+                          storage: :s3,
+                          s3_credentials: {
+                            bucket: ENV['S3_BUCKET_NAME'],
+                            access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+                            secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+                            s3_region: ENV['AWS_REGION'],
+                          },
+                          url: ':s3_domain_url',
+                          path: "#{Rails.env}/:class/:s_cover_picture/:id/:style/:basename.:extension"
+      else
+        has_attached_file :s_cover_picture, styles: { medium: '300x300>', thumb: '100x100>' },
+                          default_url: '/assets/:style/missing2.png'
+      end
+
+      validates_attachment_content_type :s_cover_picture, content_type: /\Aimage/
+      validates_attachment_file_name :s_cover_picture, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
+    end
+  end
+
   module Logo
     extend ActiveSupport::Concern
 
@@ -96,6 +99,33 @@ module Attachable
 
       validates_attachment_content_type :logo, content_type: /\Aimage/
       validates_attachment_file_name :logo, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
+    end
+  end
+
+  module SLogo
+    extend ActiveSupport::Concern
+
+    included do
+      if ENV['AWS_ACCESS_KEY_ID'].present?
+        has_attached_file :s_logo,
+                          styles: { medium: '300x300>', thumb: '100x100>' },
+                          default_url: '/assets/:style/missing2.png',
+                          storage: :s3,
+                          s3_credentials: {
+                            bucket: ENV['S3_BUCKET_NAME'],
+                            access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+                            secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+                            s3_region: ENV['AWS_REGION'],
+                          },
+                          url: ':s3_domain_url',
+                          path: "#{Rails.env}/:class/:s_logo/:id/:style/:basename.:extension"
+      else
+        has_attached_file :s_logo, styles: { medium: '300x300>', thumb: '100x100>' },
+                                 default_url: '/assets/:style/missing2.png'
+      end
+
+      validates_attachment_content_type :s_logo, content_type: /\Aimage/
+      validates_attachment_file_name :s_logo, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
     end
   end
 
@@ -123,6 +153,33 @@ module Attachable
     end
   end
 
+  module SBackgroundImage
+    extend ActiveSupport::Concern
+
+    included do
+      if ENV['AWS_ACCESS_KEY_ID'].present?
+        has_attached_file :s_background_image,
+                          styles: { medium: '300x300>', thumb: '100x100>' },
+                          default_url: '/assets/:style/missing2.png',
+                          storage: :s3,
+                          s3_credentials: {
+                            bucket: ENV['S3_BUCKET_NAME'],
+                            access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+                            secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+                            s3_region: ENV['AWS_REGION'],
+                          },
+                          url: ':s3_domain_url',
+                          path: "#{Rails.env}/:class/:s_background_image/:id/:style/:basename.:extension"
+      else
+        has_attached_file :s_background_image, styles: { medium: '300x300>', thumb: '100x100>' },
+                                             default_url: '/assets/:style/missing2.png'
+      end
+
+      validates_attachment_content_type :s_background_image, content_type: /\Aimage/
+      validates_attachment_file_name :s_background_image, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
+    end
+  end
+
   module Avatar
     extend ActiveSupport::Concern
 
@@ -147,6 +204,33 @@ module Attachable
     end
   end
 
+  module SAvatar
+    extend ActiveSupport::Concern
+
+    included do
+      if ENV['AWS_ACCESS_KEY_ID'].present?
+        has_attached_file :s_avatar,
+                          styles: { medium: '300x300>', thumb: '100x100>' },
+                          default_url: '/assets/:style/missing2.png',
+                          storage: :s3,
+                          s3_credentials: {
+                            bucket: ENV['S3_BUCKET_NAME'],
+                            access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+                            secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+                            s3_region: ENV['AWS_REGION'],
+                          },
+                          url: ':s3_domain_url',
+                          path: "#{Rails.env}/:class/:s_avatar/:id/:style/:basename.:extension"
+      else
+        has_attached_file :s_avatar, styles: { medium: '300x300>', thumb: '100x100>' },
+                                    default_url: '/assets/:style/missing2.png'
+      end
+
+      validates_attachment_content_type :s_avatar, content_type: /\Aimage/
+      validates_attachment_file_name :s_avatar, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
+    end
+  end
+
   module Thumbnail
     extend ActiveSupport::Concern
 
@@ -168,6 +252,33 @@ module Attachable
 
       validates_attachment_content_type :thumbnail, content_type: /\Aimage/
       validates_attachment_file_name :thumbnail, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
+    end
+  end
+
+  module SThumbnail
+    extend ActiveSupport::Concern
+
+    included do
+      if ENV['AWS_ACCESS_KEY_ID'].present?
+        has_attached_file :s_thumbnail,
+                          styles: { medium: '300x300>', thumb: '100x100>' },
+                          default_url: '/assets/:style/missing2.png',
+                          storage: :s3,
+                          s3_credentials: {
+                            bucket: ENV['S3_BUCKET_NAME'],
+                            access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+                            secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
+                            s3_region: ENV['AWS_REGION'],
+                          },
+                          url: ':s3_domain_url',
+                          path: "#{Rails.env}/:class/:s_thumbnail/:id/:style/:basename.:extension"
+      else
+        has_attached_file :s_thumbnail, styles: { medium: '300x300>', thumb: '100x100>' },
+                                   default_url: '/assets/:style/missing2.png'
+      end
+
+      validates_attachment_content_type :s_thumbnail, content_type: /\Aimage/
+      validates_attachment_file_name :s_thumbnail, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
     end
   end
 

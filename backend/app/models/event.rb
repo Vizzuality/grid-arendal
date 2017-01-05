@@ -25,6 +25,7 @@ class Event < ApplicationRecord
   include Activable
   include Sanitizable
   include Attachable::BackgroundImage
+  include Attachable::SBackgroundImage
 
   has_many :event_partners
   has_many :partners, through: :event_partners

@@ -17,7 +17,7 @@
       <div class="logos">
         <% partners.each do |partner| %>
           <%= link_to partner.web_url || "#" do %>
-            <span><img src="<%= partner.logo.exists? ? partner.logo.url : asset_path('original/missing2.png') %>"></span>
+            <span><img src="<%= partner.s_logo.exists? ? partner.s_logo.url : asset_path('original/missing2.png') %>"></span>
           <% end %>
         <% end %>
       </div>

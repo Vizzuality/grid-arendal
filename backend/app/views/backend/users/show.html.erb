@@ -3,7 +3,7 @@
   <p><%= " (admin)"   if @user.admin? %></p>
   <p><%= " (publisher)" if @user.publisher? %></p>
 
-  <%= image_tag @user.avatar.url(:thumb) %>
+  <%= image_tag @user.s_avatar.url(:thumb) %>
 
   <% if (can? :make_contributor, @user) && (@user.admin? || @user.publisher?) %>
     <%= link_to 'Make contributor', make_contributor_user_path(@user), method: :patch %>
