@@ -1,5 +1,5 @@
-<% avatar_url = if user.avatar.exists?
-                  user.avatar(:medium)
+<% avatar_url = if user.s_avatar.exists?
+                  user.s_avatar(:medium)
                 else
                   asset_path('original/missing2.png')
                 end %>
