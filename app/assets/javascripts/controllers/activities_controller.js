@@ -20,6 +20,10 @@
       new App.View.MediaFilters({
         callback: this._filter.bind(this)
       });
+
+      this.scrollPaginationView = new App.View.ScrollPagination({
+        callback: this._paginate.bind(this)
+      });
     },
 
     show: function(params) {
@@ -39,7 +43,27 @@
     _filter: function() {
       jQuery.ajaxSetup({cache: true});
       $.getScript($(location).attr('href'));
+      this.scrollPaginationView._initVariables();
       return false;
+    },
+
+    _paginate: function() {
+      var params = _.extend({}, App.Helper.Utils.getGetParams(), { page: this.scrollPaginationView.page });
+      $.ajax({
+        method: "GET",
+        url: '/activities/paginate',
+        data: params,
+        complete: function(response) {
+          this.scrollPaginationView.toggleDoingCallback();
+
+          if(response.status === 204) {
+            this.scrollPaginationView.toggleBlockPagination();
+          } else {
+            this.scrollPaginationView._setHash();
+          }
+
+        }.bind(this)
+      });
     },
 
     initSliders: function() {
