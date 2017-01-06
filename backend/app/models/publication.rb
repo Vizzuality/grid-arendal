@@ -20,7 +20,6 @@
 
 class Publication < Content
   include Attachable::CoverPicture
-  include Attachable::SCoverPicture
   include Attachable::Picture
   acts_as_taggable
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170105193246) do
+ActiveRecord::Schema.define(version: 20170106110259) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(version: 20170105193246) do
     t.boolean  "is_published"
     t.integer  "position"
     t.string   "story_map_url"
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.boolean  "is_featured"
     t.integer  "project_number"
     t.text     "short_description"
@@ -61,33 +61,25 @@ ActiveRecord::Schema.define(version: 20170105193246) do
     t.integer  "content_type_id"
     t.integer  "media_content_id"
     t.integer  "lead_user_id"
-    t.string   "cover_picture_file_name"
-    t.string   "cover_picture_content_type"
-    t.integer  "cover_picture_file_size"
-    t.datetime "cover_picture_update_at"
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
-    t.string   "s_cover_picture_file_name"
-    t.string   "s_cover_picture_content_type"
-    t.integer  "s_cover_picture_file_size"
-    t.datetime "s_cover_picture_updated_at"
+    t.string   "cover_picture_file_name"
+    t.string   "cover_picture_content_type"
+    t.integer  "cover_picture_file_size"
+    t.datetime "cover_picture_updated_at"
   end
 
   create_table "documents", force: :cascade do |t|
     t.string   "label"
+    t.integer  "publication_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.string   "document_file_name"
     t.string   "document_content_type"
     t.integer  "document_file_size"
     t.datetime "document_updated_at"
-    t.integer  "publication_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.string   "s_document_file_name"
-    t.string   "s_document_content_type"
-    t.integer  "s_document_file_size"
-    t.datetime "s_document_updated_at"
   end
 
   create_table "event_partners", force: :cascade do |t|
@@ -101,18 +93,14 @@ ActiveRecord::Schema.define(version: 20170105193246) do
     t.string   "title"
     t.text     "description"
     t.string   "web_url"
+    t.boolean  "active",                        default: false, null: false
+    t.datetime "deactivated_at"
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
     t.string   "background_image_file_name"
     t.string   "background_image_content_type"
     t.integer  "background_image_file_size"
     t.datetime "background_image_updated_at"
-    t.boolean  "active",                          default: false, null: false
-    t.datetime "deactivated_at"
-    t.datetime "created_at",                                      null: false
-    t.datetime "updated_at",                                      null: false
-    t.string   "s_background_image_file_name"
-    t.string   "s_background_image_content_type"
-    t.integer  "s_background_image_file_size"
-    t.datetime "s_background_image_updated_at"
   end
 
   create_table "media_contents", force: :cascade do |t|
@@ -167,16 +155,12 @@ ActiveRecord::Schema.define(version: 20170105193246) do
     t.string   "name"
     t.string   "web_url"
     t.text     "description"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
     t.string   "logo_file_name"
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
-    t.string   "s_logo_file_name"
-    t.string   "s_logo_content_type"
-    t.integer  "s_logo_file_size"
-    t.datetime "s_logo_updated_at"
   end
 
   create_table "photo_sizes", force: :cascade do |t|
@@ -229,29 +213,32 @@ ActiveRecord::Schema.define(version: 20170105193246) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                    default: "",    null: false
-    t.string   "encrypted_password",       default: "",    null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",            default: 0,     null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                               null: false
-    t.datetime "updated_at",                               null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.string   "first_name"
     t.string   "last_name"
     t.string   "organization"
     t.string   "current_position"
     t.string   "web_url"
-    t.boolean  "active",                   default: false, null: false
+    t.boolean  "active",                 default: false, null: false
     t.datetime "deactivated_at"
-    t.integer  "role",                     default: 0,     null: false, comment: "User role { contributor: 0, publisher: 1, admin: 2 }"
+    t.integer  "role",                   default: 0,     null: false, comment: "User role { contributor: 0, publisher: 1, admin: 2 }"
     t.datetime "locked_at"
-    t.integer  "failed_attempts",          default: 0,     null: false
+    t.integer  "failed_attempts",        default: 0,     null: false
     t.string   "unlock_token"
+    t.boolean  "is_board_member",        default: false
+    t.string   "phone"
+    t.text     "description"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
@@ -260,17 +247,6 @@ ActiveRecord::Schema.define(version: 20170105193246) do
     t.string   "thumbnail_content_type"
     t.integer  "thumbnail_file_size"
     t.datetime "thumbnail_updated_at"
-    t.boolean  "is_board_member",          default: false
-    t.string   "phone"
-    t.text     "description"
-    t.string   "s_avatar_file_name"
-    t.string   "s_avatar_content_type"
-    t.integer  "s_avatar_file_size"
-    t.datetime "s_avatar_updated_at"
-    t.string   "s_thumbnail_file_name"
-    t.string   "s_thumbnail_content_type"
-    t.integer  "s_thumbnail_file_size"
-    t.datetime "s_thumbnail_updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

@@ -14,8 +14,8 @@
       news_articles: @news_articles,
       tags: @tags,
       photos: @photos,
-      have_cover_picture: @publication.s_cover_picture.exists?,
-      cover_picture_url: (@publication.s_cover_picture.exists? ? @publication.s_cover_picture : nil),
+      have_cover_picture: @publication.cover_picture.exists?,
+      cover_picture_url: (@publication.cover_picture.exists? ? @publication.cover_picture : nil),
       have_picture: @publication.picture.present?,
       picture_url: @publication.picture.present? ? @publication.picture : nil,
       media_content_id: @publication.media_content_id %>
