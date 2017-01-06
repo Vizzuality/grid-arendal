@@ -20,7 +20,7 @@
 
 class Publication < Content
   include Attachable::CoverPicture
-  include Attachable::SPicture
+  include Attachable::Picture
   acts_as_taggable
 
   has_many :related_contents

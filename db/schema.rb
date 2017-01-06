@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170104114932) do
+ActiveRecord::Schema.define(version: 20170106110259) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,25 +61,25 @@ ActiveRecord::Schema.define(version: 20170104114932) do
     t.integer  "content_type_id"
     t.integer  "media_content_id"
     t.integer  "lead_user_id"
+    t.string   "picture_file_name"
+    t.string   "picture_content_type"
+    t.integer  "picture_file_size"
+    t.datetime "picture_updated_at"
     t.string   "cover_picture_file_name"
     t.string   "cover_picture_content_type"
     t.integer  "cover_picture_file_size"
-    t.datetime "cover_picture_update_at"
-    t.string   "s_picture_file_name"
-    t.string   "s_picture_content_type"
-    t.integer  "s_picture_file_size"
-    t.datetime "s_picture_updated_at"
+    t.datetime "cover_picture_updated_at"
   end
 
   create_table "documents", force: :cascade do |t|
     t.string   "label"
+    t.integer  "publication_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.string   "document_file_name"
     t.string   "document_content_type"
     t.integer  "document_file_size"
     t.datetime "document_updated_at"
-    t.integer  "publication_id"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
   end
 
   create_table "event_partners", force: :cascade do |t|
@@ -93,14 +93,14 @@ ActiveRecord::Schema.define(version: 20170104114932) do
     t.string   "title"
     t.text     "description"
     t.string   "web_url"
-    t.string   "background_image_file_name"
-    t.string   "background_image_content_type"
-    t.integer  "background_image_file_size"
-    t.datetime "background_image_updated_at"
     t.boolean  "active",                        default: false, null: false
     t.datetime "deactivated_at"
     t.datetime "created_at",                                    null: false
     t.datetime "updated_at",                                    null: false
+    t.string   "background_image_file_name"
+    t.string   "background_image_content_type"
+    t.integer  "background_image_file_size"
+    t.datetime "background_image_updated_at"
   end
 
   create_table "media_contents", force: :cascade do |t|
@@ -236,6 +236,9 @@ ActiveRecord::Schema.define(version: 20170104114932) do
     t.datetime "locked_at"
     t.integer  "failed_attempts",        default: 0,     null: false
     t.string   "unlock_token"
+    t.boolean  "is_board_member",        default: false
+    t.string   "phone"
+    t.text     "description"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
@@ -244,9 +247,6 @@ ActiveRecord::Schema.define(version: 20170104114932) do
     t.string   "thumbnail_content_type"
     t.integer  "thumbnail_file_size"
     t.datetime "thumbnail_updated_at"
-    t.boolean  "is_board_member",        default: false
-    t.string   "phone"
-    t.text     "description"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
