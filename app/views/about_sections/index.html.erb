@@ -63,7 +63,17 @@
   <div class="row">
     <div class="small-12 columns">
       <div class="c-main-content-header">
-        <div class="text -title-event">Staff</div>
+        <h2 class="text -title-event">Staff</h2>
+        <p class="text -view-all">
+          <%= link_to staff_index_path do %>
+            <span>
+              Meet our staff
+            </span>
+            <svg class="icon -arrow">
+              <use xlink:href="#icon-arrow"></use>
+            </svg>
+          <% end %>
+        </p>
       </div>
     </div>
   </div>
