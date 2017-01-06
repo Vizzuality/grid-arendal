@@ -10,13 +10,13 @@
       if(this.isScreen_s) {
         this.initSliders();
       } else {
-        if($('.masonry-layout').find('.masonry-column').length === 0) {
-          _.each($('.masonry-layout'), function(element) {
+        _.each($('.masonry-layout'), function(element) {
+          if($(element).find('.masonry-column').length === 0) {
             new App.View.Masonry({
               el: element
             });
-          });
-        }
+          }
+        });
       }
     },
 
