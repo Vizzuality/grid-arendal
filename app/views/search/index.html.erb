@@ -13,7 +13,7 @@
 
 <div class="l-header-library-separator"></div>
 
-<% if @news.empty? && @activities.empty? && @publications.empty? && @media_contents.empty? %>
+<% unless @news.any? || @activities.any? || @publications.any? || @media_contents.any? || @staff.any? %>
   <section class="l-main-content content -news -color-7">
     <div class="row">
       <div class="small-12 small-centered columns">
@@ -34,6 +34,10 @@
 <% if @publications.any? %>
   <%= render 'shared/posts', collection: @publications, title: 'Publications', link: publications_path, sectionClass: 'content -color-7' %>
 <% end%>
+
+<% if @staff.any? %>
+  <%= render 'shared/users', users: @staff, sectionClass: 'content -color-7' %>
+<% end %>
 
 <% if @media_contents.any? %>
   <section class="l-main-content content -news -color-7">
