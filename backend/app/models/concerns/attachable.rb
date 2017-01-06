@@ -31,32 +31,8 @@ module Attachable
     extend ActiveSupport::Concern
 
     included do
-      if ENV['DROPBOX_APP_KEY'].present?
-        has_attached_file :cover_picture,
-                          styles: { medium: '300x300>', thumb: '100x100>' },
-                          default_url: '/assets/:style/missing2.png',
-                          storage: :dropbox,
-                          dropbox_credentials: Rails.root.join('config/dropbox.yml'),
-                          dropbox_options: {
-                            path: proc { |style| "#{Rails.env}/#{self.class.to_s}/#{style}/#{id}_#{cover_picture.original_filename}"},
-                            unique_filename: true
-                          }
-      else
-        has_attached_file :cover_picture, styles: { medium: '300x300>', thumb: '100x100>' },
-                          default_url: '/assets/:style/missing2.png'
-      end
-
-      validates_attachment_content_type :cover_picture, content_type: /\Aimage/
-      validates_attachment_file_name :cover_picture, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
-    end
-  end
-
-  module SCoverPicture
-    extend ActiveSupport::Concern
-
-    included do
       if ENV['AWS_ACCESS_KEY_ID'].present?
-        has_attached_file :s_cover_picture,
+        has_attached_file :cover_picture,
                           styles: { medium: '300x300>', thumb: '100x100>' },
                           default_url: '/assets/:style/missing2.png',
                           storage: :s3,
@@ -69,12 +45,12 @@ module Attachable
                           url: ':s3_domain_url',
                           path: "#{Rails.env}/:class/:s_cover_picture/:id/:style/:basename.:extension"
       else
-        has_attached_file :s_cover_picture, styles: { medium: '300x300>', thumb: '100x100>' },
+        has_attached_file :cover_picture, styles: { medium: '300x300>', thumb: '100x100>' },
                           default_url: '/assets/:style/missing2.png'
       end
 
-      validates_attachment_content_type :s_cover_picture, content_type: /\Aimage/
-      validates_attachment_file_name :s_cover_picture, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
+      validates_attachment_content_type :cover_picture, content_type: /\Aimage/
+      validates_attachment_file_name :cover_picture, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
     end
   end
 
@@ -82,32 +58,8 @@ module Attachable
     extend ActiveSupport::Concern
 
     included do
-      if ENV['DROPBOX_APP_KEY'].present?
-        has_attached_file :logo,
-                          styles: { medium: '300x300>', thumb: '100x100>' },
-                          default_url: '/assets/:style/missing2.png',
-                          storage: :dropbox,
-                          dropbox_credentials: Rails.root.join('config/dropbox.yml'),
-                          dropbox_options: {
-                            path: proc { |style| "#{Rails.env}/#{self.class.to_s}/#{style}/#{id}_#{logo.original_filename}"},
-                            unique_filename: true
-                          }
-      else
-        has_attached_file :logo, styles: { medium: '300x300>', thumb: '100x100>' },
-                                 default_url: '/assets/:style/missing2.png'
-      end
-
-      validates_attachment_content_type :logo, content_type: /\Aimage/
-      validates_attachment_file_name :logo, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
-    end
-  end
-
-  module SLogo
-    extend ActiveSupport::Concern
-
-    included do
       if ENV['AWS_ACCESS_KEY_ID'].present?
-        has_attached_file :s_logo,
+        has_attached_file :logo,
                           styles: { medium: '300x300>', thumb: '100x100>' },
                           default_url: '/assets/:style/missing2.png',
                           storage: :s3,
@@ -120,12 +72,12 @@ module Attachable
                           url: ':s3_domain_url',
                           path: "#{Rails.env}/:class/:s_logo/:id/:style/:basename.:extension"
       else
-        has_attached_file :s_logo, styles: { medium: '300x300>', thumb: '100x100>' },
+        has_attached_file :logo, styles: { medium: '300x300>', thumb: '100x100>' },
                                  default_url: '/assets/:style/missing2.png'
       end
 
-      validates_attachment_content_type :s_logo, content_type: /\Aimage/
-      validates_attachment_file_name :s_logo, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
+      validates_attachment_content_type :logo, content_type: /\Aimage/
+      validates_attachment_file_name :logo, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
     end
   end
 
@@ -133,32 +85,8 @@ module Attachable
     extend ActiveSupport::Concern
 
     included do
-      if ENV['DROPBOX_APP_KEY'].present?
-        has_attached_file :background_image,
-                          styles: { medium: '300x300>', thumb: '100x100>' },
-                          default_url: '/assets/:style/missing2.png',
-                          storage: :dropbox,
-                          dropbox_credentials: Rails.root.join('config/dropbox.yml'),
-                          dropbox_options: {
-                            path: proc { |style| "#{Rails.env}/#{self.class.to_s}/#{style}/#{id}_#{background_image.original_filename}"},
-                            unique_filename: true
-                          }
-      else
-        has_attached_file :background_image, styles: { medium: '300x300>', thumb: '100x100>' },
-                                             default_url: '/assets/:style/missing2.png'
-      end
-
-      validates_attachment_content_type :background_image, content_type: /\Aimage/
-      validates_attachment_file_name :background_image, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
-    end
-  end
-
-  module SBackgroundImage
-    extend ActiveSupport::Concern
-
-    included do
       if ENV['AWS_ACCESS_KEY_ID'].present?
-        has_attached_file :s_background_image,
+        has_attached_file :background_image,
                           styles: { medium: '300x300>', thumb: '100x100>' },
                           default_url: '/assets/:style/missing2.png',
                           storage: :s3,
@@ -171,12 +99,12 @@ module Attachable
                           url: ':s3_domain_url',
                           path: "#{Rails.env}/:class/:s_background_image/:id/:style/:basename.:extension"
       else
-        has_attached_file :s_background_image, styles: { medium: '300x300>', thumb: '100x100>' },
+        has_attached_file :background_image, styles: { medium: '300x300>', thumb: '100x100>' },
                                              default_url: '/assets/:style/missing2.png'
       end
 
-      validates_attachment_content_type :s_background_image, content_type: /\Aimage/
-      validates_attachment_file_name :s_background_image, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
+      validates_attachment_content_type :background_image, content_type: /\Aimage/
+      validates_attachment_file_name :background_image, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
     end
   end
 
@@ -184,32 +112,8 @@ module Attachable
     extend ActiveSupport::Concern
 
     included do
-      if ENV['DROPBOX_APP_KEY'].present?
-        has_attached_file :avatar,
-                          styles: { medium: '300x300>', thumb: '100x100>' },
-                          default_url: '/assets/:style/missing2.png',
-                          storage: :dropbox,
-                          dropbox_credentials: Rails.root.join('config/dropbox.yml'),
-                          dropbox_options: {
-                            path: proc { |style| "#{Rails.env}/#{self.class.to_s}/#{style}/#{id}_#{avatar.original_filename}"},
-                            unique_filename: true
-                          }
-      else
-        has_attached_file :avatar, styles: { medium: '300x300>', thumb: '100x100>' },
-                                   default_url: '/assets/:style/missing2.png'
-      end
-
-      validates_attachment_content_type :avatar, content_type: /\Aimage/
-      validates_attachment_file_name :avatar, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
-    end
-  end
-
-  module SAvatar
-    extend ActiveSupport::Concern
-
-    included do
       if ENV['AWS_ACCESS_KEY_ID'].present?
-        has_attached_file :s_avatar,
+        has_attached_file :avatar,
                           styles: { medium: '300x300>', thumb: '100x100>' },
                           default_url: '/assets/:style/missing2.png',
                           storage: :s3,
@@ -222,12 +126,12 @@ module Attachable
                           url: ':s3_domain_url',
                           path: "#{Rails.env}/:class/:s_avatar/:id/:style/:basename.:extension"
       else
-        has_attached_file :s_avatar, styles: { medium: '300x300>', thumb: '100x100>' },
+        has_attached_file :avatar, styles: { medium: '300x300>', thumb: '100x100>' },
                                     default_url: '/assets/:style/missing2.png'
       end
 
-      validates_attachment_content_type :s_avatar, content_type: /\Aimage/
-      validates_attachment_file_name :s_avatar, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
+      validates_attachment_content_type :avatar, content_type: /\Aimage/
+      validates_attachment_file_name :avatar, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
     end
   end
 
@@ -235,32 +139,8 @@ module Attachable
     extend ActiveSupport::Concern
 
     included do
-      if ENV['DROPBOX_APP_KEY'].present?
-        has_attached_file :thumbnail,
-                          styles: { medium: '300x300>', thumb: '100x100>' },
-                          default_url: '/assets/:style/missing2.png',
-                          storage: :dropbox,
-                          dropbox_credentials: Rails.root.join('config/dropbox.yml'),
-                          dropbox_options: {
-                            path: proc { |style| "#{Rails.env}/#{self.class.to_s}/#{style}/#{id}_#{thumbnail.original_filename}"},
-                            unique_filename: true
-                          }
-      else
-        has_attached_file :thumbnail, styles: { medium: '300x300>', thumb: '100x100>' },
-                                   default_url: '/assets/:style/missing2.png'
-      end
-
-      validates_attachment_content_type :thumbnail, content_type: /\Aimage/
-      validates_attachment_file_name :thumbnail, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
-    end
-  end
-
-  module SThumbnail
-    extend ActiveSupport::Concern
-
-    included do
       if ENV['AWS_ACCESS_KEY_ID'].present?
-        has_attached_file :s_thumbnail,
+        has_attached_file :thumbnail,
                           styles: { medium: '300x300>', thumb: '100x100>' },
                           default_url: '/assets/:style/missing2.png',
                           storage: :s3,
@@ -273,12 +153,12 @@ module Attachable
                           url: ':s3_domain_url',
                           path: "#{Rails.env}/:class/:s_thumbnail/:id/:style/:basename.:extension"
       else
-        has_attached_file :s_thumbnail, styles: { medium: '300x300>', thumb: '100x100>' },
+        has_attached_file :thumbnail, styles: { medium: '300x300>', thumb: '100x100>' },
                                    default_url: '/assets/:style/missing2.png'
       end
 
-      validates_attachment_content_type :s_thumbnail, content_type: /\Aimage/
-      validates_attachment_file_name :s_thumbnail, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
+      validates_attachment_content_type :thumbnail, content_type: /\Aimage/
+      validates_attachment_file_name :thumbnail, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
     end
   end
 
@@ -286,29 +166,8 @@ module Attachable
     extend ActiveSupport::Concern
 
     included do
-      if ENV['DROPBOX_APP_KEY'].present?
-        has_attached_file :document,
-                          storage: :dropbox,
-                          dropbox_credentials: Rails.root.join('config/dropbox.yml'),
-                          dropbox_options: {
-                            path: proc{ |style| "#{Rails.env}/documents/#{self.class.to_s}/#{id}_#{document.original_filename}"},
-                            unique_filename: true
-                          }
-      else
-        has_attached_file :document
-      end
-
-      validates_attachment_content_type :document,
-        content_type: ['application/pdf', 'application/postscript']
-    end
-  end
-
-  module SDocument
-    extend ActiveSupport::Concern
-
-    included do
       if ENV['AWS_ACCESS_KEY_ID'].present?
-        has_attached_file :s_document,
+        has_attached_file :document,
                           storage: :s3,
                           s3_credentials: {
                             bucket: ENV['S3_BUCKET_NAME'],
@@ -319,10 +178,10 @@ module Attachable
                           url: ':s3_domain_url',
                           path: "#{Rails.env}/:class/:s_document/:id/:style/:basename.:extension"
       else
-        has_attached_file :s_document
+        has_attached_file :document
       end
 
-      validates_attachment_content_type :s_document,
+      validates_attachment_content_type :document,
         content_type: ['application/pdf', 'application/postscript']
     end
   end
