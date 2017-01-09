@@ -7,7 +7,7 @@
     <%= render 'form',
       form: f,
       partners: @partners,
-      have_picture: @event.s_background_image_file_name ? true : false,
-      picture_url: @event.s_background_image %>
+      have_picture: @event.background_image_file_name ? true : false,
+      picture_url: @event.background_image %>
   <% end %>
 </div>

@@ -1,7 +1,10 @@
 - js_trigger_class ||= ''
 - required ||= false
 - label_txt ||= nil
+- disabled ||= false
 
 .field
   = form.label value, label_txt, class: 'text -field-label -bold -dark'
-  = form.input value, required: required, label: false, html5: true, input_html: {class: "basic-input text -plain-text -dark #{js_trigger_class}"}
+  = form.input value, required: required, label: false, html5: true,
+    disabled: disabled,
+    input_html: {class: "basic-input text -plain-text -dark #{js_trigger_class}"}

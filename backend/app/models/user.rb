@@ -55,9 +55,7 @@ class User < ApplicationRecord
   include Sanitizable
   include Display
   include Attachable::Avatar
-  include Attachable::SAvatar
   include Attachable::Thumbnail
-  include Attachable::SThumbnail
 
   before_update :deactivate_account, if: 'deactivated? && active_changed?'
   before_update :activate_account,   if: 'activated? && active_changed?'

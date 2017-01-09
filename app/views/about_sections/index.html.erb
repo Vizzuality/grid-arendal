@@ -19,7 +19,7 @@
           <li class="text -section-menu js-anchor" data-section-belongs="strategy">Strategy 2014-2017</li>
           <li class="text -section-menu js-anchor" data-section-belongs="programmes">Programmes</li>
           <li class="text -section-menu js-anchor" data-section-belongs="users">Staff</li>
-          <li class="text -section-menu js-anchor" data-section-belongs="board">Board of Directors</li>
+          <li class="text -section-menu js-anchor" data-section-belongs="board">Board</li>
           <% if @vacancies.any? %>
             <li class="text -section-menu js-anchor" data-section-belongs="vacancies">Vacancies</li>
           <% end %>
@@ -63,7 +63,17 @@
   <div class="row">
     <div class="small-12 columns">
       <div class="c-main-content-header">
-        <div class="text -title-event">Staff</div>
+        <h2 class="text -title-event">Staff</h2>
+        <p class="text -view-all">
+          <%= link_to staff_index_path do %>
+            <span>
+              Meet our staff
+            </span>
+            <svg class="icon -arrow">
+              <use xlink:href="#icon-arrow"></use>
+            </svg>
+          <% end %>
+        </p>
       </div>
     </div>
   </div>
@@ -79,7 +89,7 @@
 <section class="l-main-content -about -color-7" data-section="board">
   <div class="row">
     <div class="small-12 column">
-      <div class="text -title-event">Board of Directors</div>
+      <div class="text -title-event">Board</div>
     </div>
   </div>
   <ul class="c-staff row">

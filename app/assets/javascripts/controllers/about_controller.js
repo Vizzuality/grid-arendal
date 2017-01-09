@@ -12,9 +12,11 @@
         this.initSliders();
       } else {
         _.each($('.masonry-layout'), function(element) {
-          new App.View.Masonry({
-            el: element
-          });
+          if($('.masonry-layout').find('.masonry-column').length === 0) {
+            new App.View.Masonry({
+              el: element
+            });
+          }
         });
       }
     },
