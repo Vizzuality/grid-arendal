@@ -18,6 +18,7 @@ module Abilities
         can :manage, ::Album
         can :manage, ::Photo
         can :manage, ::Video
+        can :manage, ::Graphic
         can :manage, ::Tag
         can :manage, ::Vacancy
         can [:publish, :unpublish], ::MediaContent
@@ -28,6 +29,7 @@ module Abilities
         can [:make_featured, :remove_featured], ::Album
         can [:make_featured, :remove_featured], ::Photo
         can [:make_featured, :remove_featured], ::Video
+        can [:make_featured, :remove_featured], ::Graphic
       end
 
       cannot :make_contributor,        ::User, id: user.id
