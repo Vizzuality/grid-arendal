@@ -161,6 +161,14 @@ $photo-list-shadow-gap: rem(4px);
         &.-size-l {
           height: rem(260px);
         }
+
+        ul {
+          padding-left: rem(20px);
+        }
+
+        li {
+          list-style-type: disc;
+        }
       }
 
       .basic-input {

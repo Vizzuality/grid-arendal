@@ -59,7 +59,7 @@
     _loadMediumEditor: function () {
       new MediumEditor(this.options.mediumEditorTriggerClass, {
         toolbar: {
-          buttons: ['bold', 'italic', 'underline', 'quote', 'anchor', 'iframe']
+          buttons: ['bold', 'italic', 'underline', 'unorderedlist', 'anchor', 'iframe', 'HTML']
         },
         extensions: {
           'iframe': new MediumButton({
@@ -70,10 +70,22 @@
               return '<iframe src="' + html +'" width="100%" height="' + height + '"></iframe>';
             }
           }),
+          'HTML': new MediumButton({
+            label:'HTML',
+            action: function(html, mark, parent){
+              var pieces = html.split("<p>");
+              var realContent = "";
+              _.each(pieces, function(piece) {
+                realContent += piece.replace('</p>', '');
+              });
+
+              return _.unescape(realContent);
+            }
+          }),
         },
         paste: {
           cleanPastedHTML: true
-        }
+        },
       });
     },
 

@@ -1,0 +1,47 @@
+.c-loader {
+  margin: auto;
+  width: rem(20px);
+  height: rem(20px);
+  position: relative;
+
+  .sk-child {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    
+    &:before {
+      content: '';
+      display: block;
+      margin: 0 auto;
+      width: 10%;
+      height: 10%;
+      background-color: $color-1;
+      border-radius: 100%;
+      animation: sk-circleFadeDelay 1.2s infinite ease-in-out both;
+    }
+  }
+
+  @for $i from 1 through 11 {
+    $delay: -1.1 + (0.1 * $i);
+    .sk-circle#{$i} {
+      transform: rotate(#{30 * $i}deg);
+
+      &:before {
+        animation-delay: #{$delay}s;
+      }
+    }
+  }
+
+}
+
+@-webkit-keyframes sk-circleFadeDelay {
+  0%, 39%, 100% { opacity: 0; }
+  40% { opacity: 1; }
+}
+
+@keyframes sk-circleFadeDelay {
+  0%, 39%, 100% { opacity: 0; }
+  40% { opacity: 1; }
+}
