@@ -18,9 +18,7 @@
   <div class="row">
     <div class="small-12 small-centered columns grid-column">
       <div class="masonry-layout" hidden data-columns>
-        <% @articles.each do |article| %>
-          <%= render 'shared/news_card', article: article %>
-        <% end %>
+        <%= render 'news', articles: @articles %>
       </div>
     </div>
   </div>
