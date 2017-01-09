@@ -22,7 +22,10 @@
       });
 
       this.scrollPaginationView = new App.View.ScrollPagination({
-        callback: this._paginate.bind(this)
+        callback: this._paginate.bind(this),
+        options: {
+          contentClass: ".l-main-content"
+        }
       });
     },
 
@@ -58,8 +61,12 @@
         cache: true,
         url: '/publications/paginate',
         data: params,
+        beforeSend: function() {
+          this.scrollPaginationView.showLoader();
+        }.bind(this),
         complete: function(response) {
           this.scrollPaginationView.toggleDoingCallback();
+          this.scrollPaginationView.hideLoader();
 
           if(response.status === 204) {
             this.scrollPaginationView.toggleBlockPagination();

@@ -10,9 +10,12 @@
 
     options: {
       footerClass: ".l-footer",
+      loaderClass: "js-scroll-pagination-loader"
     },
 
     initialize: function(settings) {
+      var opts = settings && settings.options ? settings.options : {};
+      this.options = _.extend({}, this.options, opts);
       this.callback = settings.callback;
 
       this._cache();
@@ -85,6 +88,18 @@
     toggleFooter: function() {
       this.$footer.toggle();
     },
+
+    showLoader: function() {
+      $(this.options.contentClass).append(this.getLoaderHTML());
+    },
+
+    hideLoader: function() {
+      $("." + this.options.loaderClass).remove();
+    },
+
+    getLoaderHTML: function() {
+      return '<div class="row ' + this.options.loaderClass + '"><div class="small-12 column"><div class="c-loader"><div class="sk-circle0 sk-child"></div><div class="sk-circle1 sk-child"></div><div class="sk-circle2 sk-child"></div><div class="sk-circle3 sk-child"></div><div class="sk-circle4 sk-child"></div><div class="sk-circle5 sk-child"></div><div class="sk-circle6 sk-child"></div><div class="sk-circle7 sk-child"></div><div class="sk-circle8 sk-child"></div><div class="sk-circle9 sk-child"></div><div class="sk-circle10 sk-child"></div><div class="sk-circle11 sk-child"></div></div></div></div>';
+    }
 
   });
 
