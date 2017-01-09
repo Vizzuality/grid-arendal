@@ -59,7 +59,7 @@
     _loadMediumEditor: function () {
       new MediumEditor(this.options.mediumEditorTriggerClass, {
         toolbar: {
-          buttons: ['bold', 'italic', 'underline', 'quote', 'anchor', 'iframe']
+          buttons: ['bold', 'italic', 'underline', 'quote', 'anchor', 'iframe', 'unorderedlist']
         },
         extensions: {
           'iframe': new MediumButton({
