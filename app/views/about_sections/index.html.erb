@@ -96,7 +96,7 @@
     <li class="small-6 medium-3 large-2 columns">
       <%= render 'shared/user', user: @board_members.find_by(current_position: 'Chair') %>
     </li>
-    <% @board_members.each do |user| %>
+    <% @board_members.where.not(current_position: 'Chair').each do |user| %>
       <% if user.current_position != 'Chair' %>
       <li class="small-6 medium-3 large-2 columns">
         <%= render 'shared/user', user: user %>
