@@ -1,6 +1,8 @@
 .c-breadcrumbs {
   margin-top: rem(1px);
   padding-bottom: rem(24px);
+  position: relative;
+  z-index: 10;
   display: none;
 
   @media screen and (min-width: $screen-m) {
