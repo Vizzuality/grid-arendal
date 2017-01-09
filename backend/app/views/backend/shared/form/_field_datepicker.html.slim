@@ -1,5 +1,14 @@
 - label_txt ||= nil
+- disabled ||= false
+- note_txt ||= nil
 
 .field data-type="datepicker"
   = form.label value, label_txt, class: 'text -field-label -bold -dark'
-  = form.input value, as: :string, label: false, input_html: {class: 'basic-input text -plain-text -dark'}
+  = form.input value, as: :string, label: false,
+    disabled: disabled,
+    input_html: {class: 'basic-input text -plain-text -dark'}
+
+  - if note_txt
+    div.options
+      div.text.-field-note.dark
+        = note_txt
