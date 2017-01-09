@@ -93,10 +93,15 @@
     </div>
   </div>
   <ul class="c-staff row">
+    <li class="small-6 medium-3 large-2 columns">
+      <%= render 'shared/user', user: @board_members.find_by(current_position: 'Chair') %>
+    </li>
     <% @board_members.each do |user| %>
+      <% if user.current_position != 'Chair' %>
       <li class="small-6 medium-3 large-2 columns">
         <%= render 'shared/user', user: user %>
       </li>
+      <% end %>
     <% end %>
   </ul>
 </section>
