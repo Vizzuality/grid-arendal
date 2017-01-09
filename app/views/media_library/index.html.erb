@@ -13,7 +13,7 @@
     </div>
   </div>
 </div>
-<div class="l-main-content -media-library -only-grid -color-4">
+<div class="l-main-content -media-library -only-grid -no-border -color-4">
   <% filters = [
     {
       data: @tags,
@@ -28,23 +28,7 @@
   <div class="row">
     <div class="small-12 small-centered columns grid-column">
       <div class="masonry-layout" data-columns="4">
-        <% @media_contents.each do |media| %>
-          <% picture_url = case media.type
-                            when MediaContent::TYPE_ALBUM
-                              photo = media.photos.order("id ASC").first
-                              photo ? photo.photo_sizes.where(label: PhotoSize::MEDIUM).first.try(:url) : nil
-                            when MediaContent::TYPE_PHOTO
-                              media.photo_sizes.where(label: PhotoSize::MEDIUM).first.try(:url)
-                            else
-                              nil
-                            end %>
-          <%= render 'shared/media_card',
-            picture: picture_url,
-            title: media.title,
-            link: medium_path(media),
-            photos_count: media.type == 'Album' ? media.photos.size : 0,
-            videos_count: 0 %>
-        <% end %>
+        <%= render 'media_library', media_contents: @media_contents %>
       </div>
     </div>
   </div>

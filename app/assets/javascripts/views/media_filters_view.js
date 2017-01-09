@@ -144,7 +144,10 @@
       }
       _.each(activeFilters, function(value, filter) {
         var selectedValues = value.split(",").map(Number);
-        _.findWhere(this.filters, {key: filter}).selectedValues = selectedValues;
+        var filter = _.findWhere(this.filters, {key: filter});
+        if(typeof filter != "undefined") {
+          filter.selectedValues = selectedValues;
+        }
       }.bind(this));
     },
 
