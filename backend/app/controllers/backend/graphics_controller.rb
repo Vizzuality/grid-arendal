@@ -13,6 +13,8 @@ module Backend
     end
 
     def edit
+      @graphic.build_eps unless @graphic.eps
+      @graphic.build_pdf unless @graphic.pdf
     end
 
     def update
@@ -27,9 +29,12 @@ module Backend
     end
 
     def new
+      @graphic.build_eps
+      @graphic.build_pdf
     end
 
     def create
+      debugger
       @graphic = Graphic.create(graphic_params)
       if @graphic.save
         redirect_to edit_graphic_url(@graphic),
@@ -54,6 +59,12 @@ module Backend
       @item.try(:remove_featured)
       respond_to do |format|
         format.js { render 'backend/shared/index_options' }
+      end
+    end
+
+    def destroy
+      if @graphic.destroy
+        redirect_to graphics_url
       end
     end
 

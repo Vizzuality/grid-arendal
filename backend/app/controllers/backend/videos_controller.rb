@@ -57,6 +57,12 @@ module Backend
       end
     end
 
+    def destroy
+      if @video.destroy
+        redirect_to graphics_url
+      end
+    end
+
     private
 
       def video_params

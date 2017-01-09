@@ -6,6 +6,40 @@
     label_txt: 'Image', photos: photos, selected_id: photo_id,
     with_search: true, js_trigger_class: 'js-select-photo' %>
 
+  <div class="field" data-type="attach_documents">
+    <%= form.simple_fields_for :eps do |builder| %>
+      <div class="nested-fields attach_documents_field">
+        <div class="file_field">
+          <%= builder.label :document, "EPS file",
+            class: 'text -field-label -dark' %>
+          <%= builder.file_field :document, label: false, class: 'file_input' %>
+          <%= builder.label :document, class: 'fake-input' do %>
+            <p class="text -plain-text -dark">
+            <%= builder.object && builder.object.document_file_name.present? ? builder.object.document_file_name : 'Drag and drop a file or click here' %>
+            </p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="field" data-type="attach_documents">
+    <%= form.simple_fields_for :pdf do |builder| %>
+      <div class="nested-fields attach_documents_field">
+        <div class="file_field">
+          <%= builder.label :document, "PDF file",
+            class: 'text -field-label -dark' %>
+          <%= builder.file_field :document, label: false, class: 'file_input' %>
+          <%= builder.label :document, class: 'fake-input' do %>
+            <p class="text -plain-text -dark">
+            <%= builder.object && builder.object.document_file_name.present? ? builder.object.document_file_name : 'Drag and drop a file or click here' %>
+            </p>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
   <%= render 'backend/shared/form/field_textarea', form: form, value: :description %>
 
   <%= render 'backend/shared/form/field_input', form: form, value: :author %>
