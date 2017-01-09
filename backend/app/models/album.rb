@@ -42,9 +42,27 @@ class Album < MediaContent
       album.description = photoset.description
     end
     album.add_or_update_pictures photoset.id, photoset.photos
+    album
+  end
+
+  def update_from_flickr
+    photoset = Flickr.get_photoset_by_id external_id
+    return "No Flickr photoset was found" unless photoset
+    if !publication_date
+      publication_date = Date.strptime(photoset.date_create, '%s')
+    end
+    updated_at = DateTime.strptime(photoset.date_update, '%s')
+    if external_updated_at.nil? || updated_at > external_updated_at
+      external_updated_at = updated_at
+      title = photoset.title
+      description = photoset.description
+    end
+    added = add_or_update_pictures photoset.id, photoset.photos
+    "#{added} photos added from Flickr"
   end
 
   def add_or_update_pictures photoset_id, total_photos
+    existing_photos = photos.count
     page = 1
     per_page = 500
     while(page == 1 || page*per_page <= total_photos) do
@@ -82,5 +100,6 @@ class Album < MediaContent
       page += 1
     end
     save
+    photos.count - existing_photos
   end
 end

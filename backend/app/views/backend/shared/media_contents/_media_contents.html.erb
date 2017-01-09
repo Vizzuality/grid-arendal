@@ -21,7 +21,7 @@
 
 <div class="buttons-bar">
   <% if controller_name == 'albums' %>
-    <%= link_to "Fetch from flickr", [:fetch, controller_name],
+    <%= link_to "Import from flickr", new_album_path,
       class: 'btn -light -no-border -create-new js-create-new' %>
   <% elsif ["videos", "graphics"].include?(controller_name) && can?(:create, controller_name.classify.constantize) %>
     <%= link_to "Create New", [:new, controller_name.singularize], class: 'btn -light -no-border -create-new js-create-new' %>

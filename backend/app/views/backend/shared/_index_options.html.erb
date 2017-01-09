@@ -1,3 +1,6 @@
+<% if controller_name == 'albums' %>
+  <%= link_to "flickr update", flickr_update_album_path(item) %>
+<% end %>
 <% if ['activities', 'publications', 'albums', 'photos'].include?(controller_name) %>
   <% if can?(:make_featured, item) && item.not_featured? %>
     <%= link_to raw('<svg class="icon" data-type="Make featured"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-star_outline"></use></svg>'),

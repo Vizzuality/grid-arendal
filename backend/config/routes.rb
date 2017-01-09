@@ -60,10 +60,10 @@ Backend::Engine.routes.draw do
     get 'search', on: :collection
   end
 
-  resources :albums, except: [:new, :create, :show] do
-    patch 'make_featured',   on: :member
+  resources :albums, except: [:show] do
+    patch 'make_featured', on: :member
     patch 'remove_featured', on: :member
-    get :fetch, on: :collection
+    get 'flickr_update', on: :member
   end
 
   resources :videos, except: :show do
