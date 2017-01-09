@@ -68,7 +68,7 @@
 
           if(response.status === 204) {
             this.scrollPaginationView.toggleBlockPagination();
-            this.scrollPaginationView.toggleFooter();
+            this.scrollPaginationView.showFooter();
           } else {
             this.scrollPaginationView._setHash();
           }

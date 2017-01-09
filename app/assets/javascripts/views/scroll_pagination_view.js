@@ -22,7 +22,7 @@
       this._initVariables();
       this._checkCurrentPage();
       this._loadOnScrollEvent();
-      this.toggleFooter();
+      this.hideFooter();
     },
 
     _cache: function() {
@@ -85,8 +85,12 @@
       this.blockPagination = !this.blockPagination;
     },
 
-    toggleFooter: function() {
-      this.$footer.toggle();
+    showFooter: function() {
+      this.$footer.show();
+    },
+
+    hideFooter: function() {
+      this.$footer.hide();
     },
 
     showLoader: function() {
