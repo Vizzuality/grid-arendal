@@ -1,11 +1,9 @@
-<%= render 'backend/shared/form/header', form: form, inputs: [{value: :title, title_placeholder: 'Photo title'}] %>
+<%= render 'backend/shared/form/header', form: form,
+  inputs: [{value: :title, title_placeholder: 'Video title'}] %>
 
 <div class="fields">
-
-  <%= render 'backend/shared/form/field_input', form: form, value: :external_id,
-    disabled: true, label_txt: "Flickr Album id" %>
-
-  <%= render 'backend/shared/form/field_photos', form: form, label_txt: 'Pictures', photos: @album_photos, external_link: true %>
+  <%= render 'backend/shared/form/field_input', form: form, value: :external_url,
+  label_txt: "Video embed URL" %>
 
   <%= render 'backend/shared/form/field_textarea', form: form, value: :description %>
 
@@ -13,7 +11,8 @@
 
   <%= render 'backend/shared/form/field_input', form: form, value: :licence %>
 
-  <%= render 'backend/shared/form/field_datepicker', form: form, value: :publication_date %>
+  <%= render 'backend/shared/form/field_datepicker', form: form,
+    value: :publication_date %>
 
   <%= render 'backend/shared/form/field_tags', form: form, collection: tags %>
 
