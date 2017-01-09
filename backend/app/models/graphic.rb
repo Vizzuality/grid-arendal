@@ -16,4 +16,5 @@
 
 class Graphic < MediaContent
   acts_as_taggable
+  belongs_to :photo
 end

@@ -76,6 +76,8 @@ module Backend
         @publications = Publication.order(:title)
         @activities = Activity.order(:title)
         @news_articles = NewsArticle.order(:title)
+        @photos = Photo.order("publication_date DESC").includes(:photo_sizes).
+          limit(20)
       end
   end
 end
