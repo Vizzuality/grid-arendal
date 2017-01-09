@@ -13,7 +13,10 @@
         <h3 class="text -title-card"><%= item.title %></h3>
         <p class="text -summary"><%= item.short_description %></p>
         <% if item.is_a?(Publication) && item.content_date %>
+        <div class="meta-tags">
+          <p class="text -meta"><%= item.content_type_id ? @content_types.find_by(id: item.content_type_id).title : '' %></p>
           <p class="text -meta"><%= time_ago_in_words(item.content_date) %></p>
+        </div>
         <% end %>
       </div>
     </article>
