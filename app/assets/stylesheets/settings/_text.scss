@@ -120,6 +120,14 @@
     &.-bold {
       font-weight: 600;
     }
+
+    ul {
+      padding-left: rem(40px);
+    }
+
+    li {
+      list-style-type: disc;
+    }
   }
 
   &.-image-cap {
