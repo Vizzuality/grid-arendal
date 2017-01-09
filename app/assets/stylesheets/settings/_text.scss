@@ -198,6 +198,14 @@
     @media screen and (min-width: $screen-m) {
       font-size: 18px;
     }
+
+    ul {
+      padding-left: rem(40px);
+    }
+
+    li {
+      list-style-type: disc;
+    }
   }
 
   &.-title-library {
