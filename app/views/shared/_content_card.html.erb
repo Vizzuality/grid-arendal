@@ -12,9 +12,15 @@
       <div class="card-description">
         <h3 class="text -title-card"><%= item.title %></h3>
         <p class="text -summary"><%= item.short_description %></p>
-        <% if item.is_a?(Publication) && item.content_date %>
-          <p class="text -meta"><%= time_ago_in_words(item.content_date) %></p>
+        <p class="card-meta">
+          <% if item.is_a?(Publication) && item.content_type %>
+            <span class="text -meta"><%= item.content_type.title %></span>
         <% end %>
+          <% if item.is_a?(Publication) && item.content_date %>
+            <span class="text -meta -right"><%= time_ago_in_words(item.content_date) %></span>
+        <% end %>
+        </p>
+
       </div>
     </article>
   <% end %>
