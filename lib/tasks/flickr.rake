@@ -46,13 +46,13 @@ namespace :import do
     do_upload = false
     summary.each do |f|
       al = f[:album]
-      if "00501a16-c692-45da-a6c4-fa8217e202b2" == al[0]
+      if "2c2ecdd3-30e4-402a-80fb-fdff2054c5ec" == al[0]
         do_upload = true
         #next
       end
       next if !do_upload
 
-      album_photos = f[:photos]
+      album_photos = f[:photos].sort{|a,b| a[3] <=> b[3]}
       puts "Processing album #{al[0]} - #{al[2]}"
       puts "Description: #{al[5]}"
       puts "Publication Date: #{al[11]}"
@@ -83,21 +83,26 @@ namespace :import do
                           photo[8]
                         end
           id = nil
-          begin
-            id = flickr.upload_photo(path, title: photo[7], description: description)
-          rescue Exception => e
-            puts "Crashed uploading picture.... going to sleep and try again"
-            sleep(10)
-            id = flickr.upload_photo(path, title: photo[7], description: description)
+          while id == nil do
+            begin
+              puts "uploading picture #{photo[7]}"
+              id = flickr.upload_photo(path, title: photo[7], description: description)
+            rescue Exception => e
+              puts "Crashed uploading picture.... going to sleep and try again"
+              sleep(10)
+            end
           end
           photos_ids << id
 
-          begin
-            flickr.photos.setDates(photo_id: id, date_taken: new_date)
-          rescue Exception => e
-            puts "Crashed setting dates... going to sleep and will try again"
-            sleep(5)
-            flickr.photos.setDates(photo_id: id, date_taken: new_date)
+          response = nil
+          while response == nil do
+            begin
+              response = flickr.photos.setDates(photo_id: id, date_taken: new_date)
+            rescue Exception => e
+              puts e.message
+              puts "Crashed setting dates... going to sleep and will try again"
+              sleep(10)
+            end
           end
 
           if primary_photo_id.nil?
@@ -113,29 +118,32 @@ namespace :import do
         end
       end
       if photos_ids.any?
-        begin
-          photoset = flickr.photosets.create(primary_photo_id: primary_photo_id,
-                                  title: al[2],
-                                  description: al[5])
-        rescue Exception => e
-          puts "Crashed creating photoset...."
-          sleep(5)
-          photoset = flickr.photosets.create(primary_photo_id: primary_photo_id,
-                                  title: al[2],
-                                  description: al[5])
+        puts "I have the following photo_ids for this album: #{photos_ids}"
+        photoset = nil
+        while photoset == nil do
+          begin
+            photoset = flickr.photosets.create(primary_photo_id: primary_photo_id,
+                                    title: al[2],
+                                    description: al[5])
+          rescue Exception => e
+            puts e.message
+            puts "Crashed creating photoset...."
+            sleep(10)
+          end
         end
         puts "Created this #{photoset.id}"
 
-        begin
-          flickr.photosets.editPhotos(photoset_id: photoset.id,
-                                      primary_photo_id: primary_photo_id,
-                                      photo_ids: photos_ids.join(","))
-        rescue Exception => e
-          puts "Crashed setting pictures to album"
-          sleep(5)
-          flickr.photosets.editPhotos(photoset_id: photoset.id,
-                                      primary_photo_id: primary_photo_id,
-                                      photo_ids: photos_ids.join(","))
+        edit_photos_result = nil
+        while edit_photos_result == nil do
+          begin
+            edit_photos_result = flickr.photosets.editPhotos(photoset_id: photoset.id,
+                                                             primary_photo_id: primary_photo_id,
+                                                             photo_ids: photos_ids.join(","))
+          rescue Exception => e
+            puts e.message
+            puts "Crashed setting pictures to album"
+            sleep(10)
+          end
         end
 
         puts "Rest a bit before the next album"

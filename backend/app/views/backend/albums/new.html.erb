@@ -1,0 +1,21 @@
+<div class="l-items-index">
+  <%= render 'backend/shared/media_contents/media_contents', key: "albums", items: @albums %>
+</div>
+
+<div class="l-items-detail">
+  <%= simple_form_for @album, html: { class: 'c-form' } do |f| %>
+    <div class="form_header" data-fields="1">
+      <% if flash[:notice] %>
+        <li><%= flash[:notice] %></li>
+      <% end %>
+      <div class="actions">
+        <%= f.button :submit, 'SAVE', class: '-dark' %>
+        <%= link_to "CANCEL", :back, class: 'btn -light' %>
+      </div>
+    </div>
+    <div class="fields">
+      <%= render 'backend/shared/form/field_input',
+        form: f, value: :external_id, label_txt: "Flickr Album id" %>
+    </div>
+  <% end %>
+</div>

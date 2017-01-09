@@ -5,11 +5,20 @@ module Backend
   class AlbumsController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_album, except: [:index, :fetch]
-    before_action :set_albums, only: [:index, :edit]
+    before_action :set_album, except: [:index, :new, :create]
+    before_action :set_albums, only: [:index, :edit, :new]
     before_action :set_objects, only: [:edit]
 
     def index
+    end
+
+    def new
+      @album = Album.new
+    end
+
+    def create
+      @album = Album.create_or_update_album_for(album_params[:external_id])
+      redirect_to edit_album_url(@album), notice: "Album imported"
     end
 
     def edit
@@ -42,9 +51,9 @@ module Backend
       end
     end
 
-    def fetch
-      total_imported = Album.fetch_from_flickr
-      redirect_to albums_url, notice: "#{total_imported} album imported"
+    def flickr_update
+      msg = @album.update_from_flickr
+      redirect_to [:edit, @album], notice: msg
     end
 
     private

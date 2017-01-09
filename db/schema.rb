@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170106122453) do
+ActiveRecord::Schema.define(version: 20170109013004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -103,6 +103,15 @@ ActiveRecord::Schema.define(version: 20170106122453) do
     t.datetime "background_image_updated_at"
   end
 
+  create_table "media_attachments", force: :cascade do |t|
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
   create_table "media_contents", force: :cascade do |t|
     t.string   "external_id"
     t.string   "external_url"
@@ -117,6 +126,9 @@ ActiveRecord::Schema.define(version: 20170106122453) do
     t.integer  "album_id"
     t.datetime "external_updated_at"
     t.boolean  "is_featured"
+    t.integer  "photo_id"
+    t.integer  "eps_id"
+    t.integer  "pdf_id"
   end
 
   create_table "media_supports", force: :cascade do |t|

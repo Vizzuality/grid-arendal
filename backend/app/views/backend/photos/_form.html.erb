@@ -2,6 +2,10 @@
 
 <div class="fields">
 
+  <%= render 'backend/shared/form/field_input', form: form, value: :external_id,
+    disabled: true, label_txt: "Flickr id",
+    note_txt: "Flickr id can't be changed" %>
+
   <div class="field" data-type="picture">
     <%= form.label "Picture", class: 'text -field-label -bold -dark' %>
     <%= form.label '', class: 'fake-input' do %>
@@ -13,15 +17,21 @@
     <% end %>
   </div>
 
-  <%= render 'backend/shared/form/field_textarea', form: form, value: :description %>
+  <%= render 'backend/shared/form/field_textarea', form: form,
+    value: :description, disabled: true,
+    note_txt: "Description is maintained on Flickr." %>
 
   <%= render 'backend/shared/form/field_input', form: form, value: :author %>
 
-  <%= render 'backend/shared/form/field_input', form: form, value: :licence %>
+  <%= render 'backend/shared/form/field_input', form: form, value: :licence,
+    disabled: true, note_txt: "License is maintained on Flickr" %>
 
-  <%= render 'backend/shared/form/field_datepicker', form: form, value: :publication_date %>
+  <%= render 'backend/shared/form/field_datepicker', form: form,
+    value: :publication_date, disabled: true,
+    note_txt: "Publication date can't be changed" %>
 
-  <%= render 'backend/shared/form/field_tags', form: form, collection: tags %>
+  <%= render 'backend/shared/form/field_tags', form: form, collection: tags,
+    disabled: true, note_txt: "Tags should be added on Flickr" %>
 
   <%= render 'backend/shared/form/field_association', form: form,
     value: :activities, collection: activities, label_method: :title,

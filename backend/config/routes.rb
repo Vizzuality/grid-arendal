@@ -54,16 +54,26 @@ Backend::Engine.routes.draw do
 
   resources :tags, except: :show
 
-  resources :photos, except: :show do
+  resources :photos, except: [:new, :create, :show] do
     patch 'make_featured',   on: :member
     patch 'remove_featured', on: :member
     get 'search', on: :collection
   end
 
-  resources :albums, except: [:new, :create, :show] do
+  resources :albums, except: [:show] do
+    patch 'make_featured', on: :member
+    patch 'remove_featured', on: :member
+    get 'flickr_update', on: :member
+  end
+
+  resources :videos, except: :show do
     patch 'make_featured',   on: :member
     patch 'remove_featured', on: :member
-    get :fetch, on: :collection
+  end
+
+  resources :graphics, except: :show do
+    patch 'make_featured',   on: :member
+    patch 'remove_featured', on: :member
   end
 
   root to: 'admin_home#index'
