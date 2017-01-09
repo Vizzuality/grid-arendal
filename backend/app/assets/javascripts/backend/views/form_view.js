@@ -82,7 +82,10 @@
               return _.unescape(realContent);
             }
           }),
-        }
+        },
+        paste: {
+          cleanPastedHTML: true
+        },
       });
     },
 
