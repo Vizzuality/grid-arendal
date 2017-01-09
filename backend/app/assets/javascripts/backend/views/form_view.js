@@ -70,6 +70,9 @@
               return '<iframe src="' + html +'" width="100%" height="' + height + '"></iframe>';
             }
           }),
+        },
+        paste: {
+          cleanPastedHTML: true
         }
       });
     },
