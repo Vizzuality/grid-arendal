@@ -1,5 +1,6 @@
 - include_blank ||= false
 - as ||= input_as
+- note_txt ||= false
 
 .field
   = form.label value, label_txt, class: 'text -field-label -bold -dark'
@@ -9,3 +10,8 @@
     include_blank: include_blank,
     label: false,
     input_html: {class: 'basic-input text -plain-text -dark js-select'}
+
+  - if note_txt
+    div.options
+      div.text.-field-note.dark
+        = note_txt

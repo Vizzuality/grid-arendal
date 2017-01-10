@@ -21,6 +21,7 @@
 
     initialize: function() {
       this._loadRecoveredIndexStateEvents();
+      this._enableSortable();
     },
 
     _loadRecoveredIndexStateEvents: function () {
@@ -51,6 +52,15 @@
 
     _removeHighlight: function () {
       this.$el.find("." + this.options.listClass + " ." + this.options.selectedClass).removeClass(this.options.selectedClass);
+    },
+
+    _enableSortable: function () {
+      $('.js-sortable').sortable({
+        axis: 'y',
+        update: function() {
+          $.post($(this).data('update-url'), $(this).sortable('serialize'));
+        }
+      });
     },
 
   });
