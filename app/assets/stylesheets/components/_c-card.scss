@@ -12,6 +12,10 @@
   position: relative;
   z-index: 20;
 
+  @media screen and (min-width: $screen-m) {
+    z-index: 10;
+  }
+
   .card-pic {
     width: 100%;
     height: rem(230px);

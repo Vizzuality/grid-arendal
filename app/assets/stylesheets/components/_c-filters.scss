@@ -4,7 +4,7 @@ $filters-screen-m-width: 18%;
 %filter-background {
   content: "";
   position: absolute;
-  left: rem(-10px);
+  left: rem(-3px);
   height: rem(5px);
   z-index: -1;
   background-color: $white;
@@ -17,7 +17,7 @@ $filters-screen-m-width: 18%;
 
 %filter-background-speaker {
   @extend %filter-background;
-  top: rem(1px);
+  top: rem(7px);
   width: calc(100% + #{rem(32px)});
 
   @media screen and (min-width: $screen-m) {
@@ -155,7 +155,7 @@ $filters-screen-m-width: 18%;
 
           &:before {
             @extend %filter-background-speaker;
-            top: rem(1px);
+            top: rem(5px);
 
             @media screen and (min-width: $screen-m) {
               top: rem(2px);
@@ -170,10 +170,10 @@ $filters-screen-m-width: 18%;
 
         .icon {
           position: absolute;
-          top: 0;
+          top: rem(5px);
           width: rem(11px);
           height: rem(11px);
-          margin-left: rem(5px);
+          margin-left: rem(10px);
           z-index: 2;
 
           @media screen and (min-width: $screen-m) {
