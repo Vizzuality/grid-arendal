@@ -28,6 +28,8 @@ $photo-list-shadow-gap: rem(4px);
   }
 
   .form_header {
+    display: flex;
+    align-items: center;
     position: fixed;
     top: 0;
     left: 40%;
@@ -47,10 +49,8 @@ $photo-list-shadow-gap: rem(4px);
     }
 
     .title {
-      max-width: 100%;
       padding: 0;
       border: 0;
-      // white-space: nowrap;
       overflow: hidden;
     }
 
@@ -83,8 +83,15 @@ $photo-list-shadow-gap: rem(4px);
 
       > .input,
       > textarea {
-        max-width: calc(100% - #{rem(23px)});
-        width: calc(100% - #{rem(23px)}) !important;
+        max-width: calc(100% - #{rem(30px)});
+        width: calc(100% - #{rem(30px)}) !important;
+        line-height: 1.2;
+        // Hack to center the text in the textarea.
+        padding-top: rem(13px);
+        resize: none;
+        appearance:none;
+        -moz-appearance:none;
+        -webkit-appearance:none;
       }
     }
 
