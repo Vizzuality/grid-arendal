@@ -7,5 +7,8 @@ class AboutSectionsController < ApplicationController
     @board_members = User.where(is_board_member: true).order(:last_name)
     @programmes = Activity.joins(:content_type).
       where(content_types: {title: 'Programme'}).order(:title)
+    @annual_reports = Publication.published.joins(:content_type).
+      where(content_types: {title: 'Annual Report'}).
+      order(content_date: :desc, title: :asc)
   end
 end
