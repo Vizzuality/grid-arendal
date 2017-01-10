@@ -43,7 +43,9 @@
 </section>
 
 <% if @publications.any? %>
-  <%= render 'shared/posts', collection: @publications, title: 'Publications', sectionClass: 'content -color-7' %>
+  <%= render 'shared/posts', collection: @publications, title: 'Publications',
+    link_txt: 'View all publications',
+    sectionClass: 'content -color-7' %>
 <% end%>
 
 <%= render 'shared/news', news: @news, sectionClass: 'content -color-7' %>
