@@ -28,8 +28,7 @@ $photo-list-shadow-gap: rem(4px);
   }
 
   .form_header {
-    display: flex;
-    align-items: center;
+
     position: fixed;
     top: 0;
     left: 40%;
@@ -38,6 +37,12 @@ $photo-list-shadow-gap: rem(4px);
     border-bottom: rem(1px) solid rgba($color-1, 0.2);
     background-color: $white;
     z-index: 2;
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
 
     label {
       display: none;
