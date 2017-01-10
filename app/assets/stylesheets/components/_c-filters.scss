@@ -57,13 +57,17 @@ $filters-screen-m-width: 18%;
 
     .icon {
       position: absolute;
-      top: rem(19px);
+      top: rem(24px);
       right: rem(19px);
       width: rem(12px);
       height: rem(12px);
       margin: 0;
       transform: rotateX(180deg);
       cursor: pointer;
+
+      @media screen and (min-width: $screen-m) {
+        top: rem(19px);
+      }
     }
 
     .list {
@@ -401,7 +405,7 @@ $filters-screen-m-width: 18%;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 15;
+  // z-index: 15;
 }
 
 .c-tags-dropdown-modal {
