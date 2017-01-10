@@ -49,7 +49,7 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding: rem(16px) 0 rem(32px) 0;
+    padding: rem(16px) 0 rem(38px) 0;
     background-color: rgba($color-1, 0.6);
     z-index: 10;
 
@@ -106,14 +106,6 @@
     background-color: rgba($color-2, 0.05);
   }
 
-  .-activities-article {
-    height: rem(300px);
-
-    @media screen and (min-width: $screen-m) {
-      height: rem(550px);
-    }
-  }
-
   .banner {
     position: relative;
     background-position: center center;
@@ -131,6 +123,14 @@
 
     &.-vertical {
       height: rem(450px);
+    }
+
+    &.-activities-article {
+      height: rem(400px);
+
+      @media screen and (min-width: $screen-m) {
+        height: rem(550px);
+      }
     }
 
     &.-publications, &.-media-library {
