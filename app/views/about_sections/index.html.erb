@@ -46,11 +46,13 @@
           <% when 'staff' %>
             <%= render 'staff', users: @users %>
           <% when 'programmes' %>
-            <%= render 'programmes', programmes: @programmes %>
+            <%= render 'posts', posts: @programmes %>
           <% when 'vacancies' %>
             <%= render 'vacancies', vacancies: @vacancies %>
           <% when 'board' %>
             <%= render 'board', board_members: @board_members %>
+          <% when 'annual-reports' %>
+            <%= render 'posts', posts: @annual_reports %>
         <% end %>
       <% end %>
     </div>

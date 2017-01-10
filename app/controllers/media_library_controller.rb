@@ -9,7 +9,7 @@ class MediaLibraryController < ApplicationController
                         .includes(:photo_sizes, :photos)
                         .order("publication_date DESC, id ASC")
                         .limit(@media_contents_limit * @page)
-    @tags = Tag.order(:name)
+    @tags = Tag.for_media_content
     @section = SiteSection.where(section: "media_library").first
   end
 
