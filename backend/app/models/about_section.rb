@@ -13,4 +13,6 @@
 
 class AboutSection < ApplicationRecord
   validates :title, presence: true
+
+  CATEGORIES = ["staff", "programmes", "board", "vacancies"]
 end
