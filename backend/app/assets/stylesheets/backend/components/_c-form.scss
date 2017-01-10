@@ -44,6 +44,17 @@ $photo-list-shadow-gap: rem(4px);
       width: 100%;
     }
 
+    textarea {
+      line-height: 1.2;
+      // Hack to center the text in the textarea.
+      padding-top: rem(22px) !important;
+      min-height: 0 !important;
+      resize: none;
+      appearance:none;
+      -moz-appearance:none;
+      -webkit-appearance:none;
+    }
+
     label {
       display: none;
     }
@@ -86,24 +97,15 @@ $photo-list-shadow-gap: rem(4px);
 
     &[data-fields='1'] {
 
-      > .input,
-      > textarea {
+      textarea {
         max-width: calc(100% - #{rem(30px)});
-        width: calc(100% - #{rem(30px)}) !important;
-        line-height: 1.2;
-        // Hack to center the text in the textarea.
-        padding-top: rem(20px);
-        resize: none;
-        appearance:none;
-        -moz-appearance:none;
-        -webkit-appearance:none;
       }
     }
 
     &[data-fields='2'] {
 
-      > .input {
-        max-width: calc(50% - #{rem(11.5px)});
+      .input {
+        max-width: calc(50% - #{rem(15px)});
 
         &:first-of-type {
           padding-right: rem(10px);
@@ -121,11 +123,20 @@ $photo-list-shadow-gap: rem(4px);
           }
         }
       }
+
+      // Those are the rules for the "user section" textarea.
+      // There is a bug that makes short words drop a letter sometimes, even if there is enough space. That is why we need to use "white-space: no-wrap". But the problem is that this very rule, avoids the text input to split in two lines.
+      textarea {
+        max-width: calc(50% - #{rem(15px)});
+        box-sizing: content-box;
+        margin-right: rem(10px);
+        white-space: nowrap;
+      }
     }
   }
 
   .fields {
-    padding: rem(30px) rem(75px);
+    padding: rem(60px) rem(75px) rem(30px);
     font-size: 0;
 
     .field {
