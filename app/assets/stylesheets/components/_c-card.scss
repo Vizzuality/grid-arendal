@@ -38,11 +38,21 @@
     }
   }
 
-  .-meta {
+  .card-meta {
     margin-top: rem(10px);
-    text-align: right;
+    font-size: 0;
+
     @media screen and (min-width: $screen-m) {
       margin-top: rem(15px);
+    }
+
+    span {
+      display: inline-block;
+      width: 50%;
+    }
+
+    .-right {
+      text-align: right;
     }
   }
 
