@@ -1,5 +1,5 @@
 <div class="l-header-single">
-  <div class="l-menu">
+  <div class="navigation -about">
     <%= render 'shared/menu' %>
     <div class="row">
       <div class="small-12 columns">
@@ -8,11 +8,12 @@
             {'text' => 'About', 'link' => about_index_path}
           ] %>
           <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
+          <%= render 'shared/share' %>
         </div>
       </div>
     </div>
   </div>
-  <div class="l-image -about">
+  <div class="banner -about">
     <div class="section-menu">
       <div class="row">
         <div class="small-12 columns">
@@ -26,7 +27,6 @@
               <li class="text -section-menu js-anchor" data-section-belongs="vacancies">Vacancies</li>
             <% end %>
             <li class="text -section-menu js-anchor" data-section-belongs="reports">Reports</li>
-            <%= render 'shared/share' %>
           </ul>
         </div>
       </div>

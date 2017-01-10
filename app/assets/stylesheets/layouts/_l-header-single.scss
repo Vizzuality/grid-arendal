@@ -94,7 +94,7 @@
     background-color: rgba(83, 48, 0, 0.04);
   }
 
-  .-activities {
+  .-activities, .-about {
     background-color: rgba($color-1, 0.04);
   }
 
@@ -127,6 +127,10 @@
 
     @media screen and (min-width: $screen-m) {
       height: rem(550px);
+    }
+
+    &.-vertical {
+      height: rem(450px);
     }
 
     &.-publications, &.-media-library {
