@@ -52,10 +52,10 @@
 
       var query = '';
       _.each(params, function (value, index) {
-        query = '&' + index + '=' + value;
+        query += '&' + index + '=' + value;
       });
 
-      window.history.pushState('', '', query.replace('&', '?'));
+      window.history.replaceState('', '', query.replace('&', '?'));
     },
 
     _loadOnScrollEvent: function() {
