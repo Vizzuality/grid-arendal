@@ -13,6 +13,7 @@
         });
       }
       new App.View.MediaFilters({
+        callback: this._filter.bind(this),
         options: {
           filters: [
             {
@@ -50,6 +51,13 @@
           }
         });
       }
+    },
+
+    _filter: function() {
+      jQuery.ajaxSetup({cache: true});
+      $.getScript($(location).attr('href'));
+      this.scrollPaginationView._initVariables();
+      return false;
     },
 
     _paginate: function() {
