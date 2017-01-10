@@ -18,6 +18,17 @@
     cursor: pointer;
   }
 
+  .icon {
+    position: absolute;
+    top: rem(20px);
+    right: rem(20px);
+    z-index: 20;
+    width: rem(15px);
+    height: rem(15px);
+    fill: $white;
+    cursor: pointer;
+  }
+
   .c-home-video-container {
     width: 100%;
     height: rem(250px);
