@@ -1,0 +1,11 @@
+<div class="small-12 column">
+  <% if @vacancies.any? %>
+    <ul class="list text -summary-alt -bold">
+      <% @vacancies.each do |vacancy| %>
+        <li><%= vacancy.title %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <p class="text -summary-alt">No vacancies published at this time.</p>
+  <% end %>
+</div>

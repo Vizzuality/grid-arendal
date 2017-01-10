@@ -2,5 +2,9 @@
   inputs: [{value: :title, title_placeholder: 'About section title'}] %>
 
 <div class="fields">
+  <%= render 'backend/shared/form/field_select', form: form, value: :category,
+    collection: AboutSection::CATEGORIES, include_blank: true,
+    label_txt: "Category", input_as: :select,
+    note_txt: "Select only for sections with dynamic content (e.g.: staff, board)" %>
   <%= render 'backend/shared/form/field_textarea', form: form, value: :body %>
 </div>

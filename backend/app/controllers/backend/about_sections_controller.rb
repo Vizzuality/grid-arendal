@@ -5,8 +5,8 @@ module Backend
   class AboutSectionsController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_about_section,  except: [:index, :new, :create]
-    before_action :set_about_sections, except: :index
+    before_action :set_about_section,  except: [:index, :new, :create, :sort]
+    before_action :set_about_sections, except: [:destroy, :create, :update, :sort]
 
     def index
     end
@@ -22,6 +22,7 @@ module Backend
       if @about_section.update(about_section_params)
         redirect_to [:edit, @about_section], notice: 'Section updated'
       else
+        set_about_sections
         render :edit
       end
     end
@@ -31,6 +32,7 @@ module Backend
       if @about_section.save
         redirect_to [:edit, @about_section], notice: 'Section created'
       else
+        set_about_sections
         render :new
       end
     end
@@ -42,6 +44,13 @@ module Backend
       end
     end
 
+    def sort
+      params[:item].each_with_index do |id, index|
+        AboutSection.where(id: id).update_all(position: index+1)
+      end
+      render nothing: true
+    end
+
     private
 
       def set_about_section
@@ -49,7 +58,7 @@ module Backend
       end
 
       def set_about_sections
-        @about_sections = AboutSection.order(:title)
+        @about_sections = AboutSection.order(:position)
       end
 
       def about_section_params
