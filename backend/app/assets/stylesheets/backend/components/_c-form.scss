@@ -50,7 +50,7 @@ $photo-list-shadow-gap: rem(4px);
       max-width: 100%;
       padding: 0;
       border: 0;
-      white-space: nowrap;
+      // white-space: nowrap;
       overflow: hidden;
     }
 
@@ -81,8 +81,10 @@ $photo-list-shadow-gap: rem(4px);
 
     &[data-fields='1'] {
 
-      > .input {
+      > .input,
+      > textarea {
         max-width: calc(100% - #{rem(23px)});
+        width: calc(100% - #{rem(23px)}) !important;
       }
     }
 
