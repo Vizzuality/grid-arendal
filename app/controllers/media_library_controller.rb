@@ -10,6 +10,7 @@ class MediaLibraryController < ApplicationController
                         .order("publication_date DESC, id ASC")
                         .limit(@media_contents_limit * @page)
     @tags = Tag.for_media_content
+    @content_types = ContentType.by_media_content
     @section = SiteSection.where(section: "media_library").first
   end
 

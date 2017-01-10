@@ -16,6 +16,13 @@
 <div class="l-main-content -media-library -only-grid -no-border -color-4">
   <% filters = [
     {
+      data: @@content_types,
+      type: 'select',
+      title: 'FILTER BY',
+      placeholder: 'Filter by type',
+      key: 'type'
+    },
+    {
       data: @tags,
       type: 'tags',
       title: 'FILTER BY',
@@ -23,6 +30,7 @@
       key: 'tags'
     }
   ] %>
+
   <%= render 'shared/filters', filters: filters %>
 
   <div class="row">
