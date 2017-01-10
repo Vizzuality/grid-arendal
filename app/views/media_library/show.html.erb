@@ -19,8 +19,9 @@
     <div class="small-12 columns">
       <div class="title-block">
         <% breadcrumbs_links = [
-          {'text' => 'Media library', 'link' => media_path},
-          {'text' => @media_content.title}
+          {text: 'Media library', link: media_path},
+          {text: @media_content.title,
+           edit_path: backend.url_for([:edit, @media_content]) }
         ] %>
         <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
         <%= render 'shared/share' %>
