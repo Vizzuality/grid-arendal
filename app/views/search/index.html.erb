@@ -28,11 +28,15 @@
 <% end%>
 
 <% if @activities.any? %>
-  <%= render 'shared/posts', collection: @activities, title: 'Activities', link: activities_path, sectionClass: 'content -color-7' %>
+  <%= render 'shared/posts', collection: @activities, title: 'Activities',
+    link_txt: 'View all activities',
+    link: activities_path, sectionClass: 'content -color-7' %>
 <% end%>
 
 <% if @publications.any? %>
-  <%= render 'shared/posts', collection: @publications, title: 'Publications', link: publications_path, sectionClass: 'content -color-7' %>
+  <%= render 'shared/posts', collection: @publications, title: 'Publications',
+    link_txt: 'View all publications',
+    link: publications_path, sectionClass: 'content -color-7' %>
 <% end%>
 
 <% if @staff.any? %>

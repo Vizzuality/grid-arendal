@@ -90,6 +90,7 @@
   <%= render 'shared/posts', collection: @media_content.activities.
     order(:title),
     title: 'Related activities',
+    link_txt: 'View all activities',
     link: activities_path, sectionClass: 'content -color-4' %>
 <% end %>
 
@@ -97,6 +98,7 @@
   <%= render 'shared/posts', collection: @media_content.publications.
     order(content_date: :desc),
     title: 'Related publications',
+    link_txt: 'View all publications',
     link: publications_path, sectionClass: 'content -color-4' %>
 <% end %>
 

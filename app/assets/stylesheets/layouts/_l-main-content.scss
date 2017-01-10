@@ -97,6 +97,12 @@
 
   &.-about {
     padding-bottom: rem(47px);
+    background-color: #E5EBED;
+    border-bottom: none;
+
+    &:first-of-type {
+      background-color: #F2F5F6;
+    }
 
     .-summary-alt {
       padding-top: rem(10px);
