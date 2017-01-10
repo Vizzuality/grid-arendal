@@ -14,9 +14,11 @@
 
     options: {
       opened: false,
+      isFixed: false,
       showFiltersClass: "-show-filters",
       openFiltersAnimateSpeed: 0.5,
-      filterTriggerClass: ".js-filter"
+      filterTriggerClass: ".js-filter",
+      fixedClass: "-fixed",
     },
 
     initialize: function(settings) {
@@ -27,10 +29,12 @@
       this._loadFilters();
       this._cache();
       this._setSelectFilters();
+      this._loadStickyEvent();
     },
 
     _cache: function() {
       this.$container = this.$el.find('.container');
+      this.offsetTop = this.$el.offset().top + 20;
     },
 
     _loadFilters: function() {
@@ -150,6 +154,20 @@
         }
       }.bind(this));
     },
+
+    _loadStickyEvent: function () {
+      $(window).scroll(function () {
+        var scrollTop = $(window).scrollTop();
+
+        if(!this.options.isFixed && scrollTop >= this.offsetTop) {
+          this.$el.addClass(this.options.fixedClass);
+          this.options.isFixed = true;
+        } else if(this.options.isFixed && scrollTop < this.offsetTop) {
+          this.$el.removeClass(this.options.fixedClass);
+          this.options.isFixed = false;
+        }
+      }.bind(this));
+    }
 
   });
 

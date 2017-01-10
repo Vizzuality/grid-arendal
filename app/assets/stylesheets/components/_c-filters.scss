@@ -102,13 +102,54 @@ $filters-screen-m-width: 18%;
 .c-filters {
   display: block;
   position: relative;
+  top: 0;
+  width: 100%;
   padding: rem(12px) 0 rem(14px) 0;
   transition: height 0.5s ease-out;
+  z-index: 16;
 
   @media screen and (min-width: $screen-m) {
+    position: absolute;
     display: flex;
     flex-wrap: wrap;
     padding: rem(38px) 0 rem(7px) 0;
+
+    .border {
+      position: fixed;
+      left: 0;
+      top: rem(62px);
+      width: 100%;
+      height: rem(5px);
+      box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+      display: none;
+
+      .-publications & {
+        top: rem(105px);
+      }
+    }
+
+    &.-fixed {
+      position: fixed;
+      top: rem(-20px);
+      max-width: rem(1000px);
+      padding-right: rem(30px);
+
+      .border {
+        display: block;
+      }
+    }
+
+    .-color-2 & {
+      background-color: #F1EEEA;
+    }
+
+    .-color-3 & {
+      background-color: #EAEFF1;
+    }
+
+    .-color-4 & {
+      background-color: #EAF0EA;
+    }
   }
 
   .container {
@@ -192,7 +233,6 @@ $filters-screen-m-width: 18%;
         background-color: $skull-white;
         box-shadow: 0 2px 4px 0 rgba($black, 0.2);
         white-space: nowrap;
-        z-index: 2;
         display: none;
 
         .type {
@@ -394,8 +434,22 @@ $filters-screen-m-width: 18%;
   }
 }
 
+.c-filters-spacer {
+  position: relative;
+  height: rem(87px);
+  display: none;
+
+  @media screen and (min-width: $screen-m) {
+    display: block;
+
+    .-publications & {
+      height: rem(130px);
+    }
+  }
+}
+
 .c-filters-closer {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
