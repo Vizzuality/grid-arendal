@@ -74,13 +74,10 @@
 
         li {
           position: relative;
-          width: 100%;
+          width: 24%;
           display: inline-flex;
           margin-bottom: rem(40px);
-
-          @media screen and (min-width: $screen-l) {
-            width: 25%;
-          }
+          margin-right: 1%;
 
           &:not(:last-child) {
             margin-right: rem(20px);

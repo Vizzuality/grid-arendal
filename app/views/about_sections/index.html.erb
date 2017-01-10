@@ -8,6 +8,7 @@
             {'text' => 'About', 'link' => about_index_path}
           ] %>
           <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
+          <%= render 'shared/share' %>
         </div>
       </div>
     </div>
@@ -22,7 +23,6 @@
                 <%= section.title %>
               </li>
             <% end %>
-            <%= render 'shared/share' %>
           </ul>
         </div>
       </div>
