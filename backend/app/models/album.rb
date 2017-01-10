@@ -85,7 +85,9 @@ class Album < MediaContent
           end
           pic.external_url = photo_info.urls.first["_content"]
           pic.licence = photo_info.license
-          pic.tag_list = photo.tags
+          if photo_info.tags.any?
+            pic.tag_list = photo_info.tags.map{|t| t["raw"]}
+          end
           Flickr.get_sizes_for(photo_info.id).each do |size|
             psize = pic.photo_sizes.find_or_initialize_by(label: size.label)
             psize.width = size.width

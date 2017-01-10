@@ -49,7 +49,7 @@ module Flickr
         begin
           photos = flickr.photosets.getPhotos(photoset_id: photoset_id,
                                               page: page,
-                                              extras: "last_update,license,date_taken,tags")
+                                              extras: "last_update,license,date_taken")
         rescue FlickRaw::FailedResponse => e
           puts "Something wrong with this query, maybe there are no more pages"
           puts e.message
