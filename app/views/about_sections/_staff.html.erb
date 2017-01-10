@@ -1,0 +1,7 @@
+<ul class="c-staff row">
+  <% users.each do |user| %>
+    <li class="small-6 medium-3 large-2 columns">
+      <%= render 'shared/user', user: user %>
+    </li>
+  <% end %>
+</ul>

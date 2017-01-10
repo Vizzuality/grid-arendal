@@ -15,15 +15,11 @@
     <div class="row">
       <div class="small-12 columns">
         <ul class="anchors">
-          <li class="text -section-menu js-anchor" data-section-belongs="about">About</li>
-          <li class="text -section-menu js-anchor" data-section-belongs="strategy">Strategy 2014-2017</li>
-          <li class="text -section-menu js-anchor" data-section-belongs="programmes">Programmes</li>
-          <li class="text -section-menu js-anchor" data-section-belongs="users">Staff</li>
-          <li class="text -section-menu js-anchor" data-section-belongs="board">Board</li>
-          <% if @vacancies.any? %>
-            <li class="text -section-menu js-anchor" data-section-belongs="vacancies">Vacancies</li>
+          <% @sections.each do |section| %>
+            <li class="text -section-menu js-anchor" data-section-belongs="<%= "section-#{section.id}" %>">
+              <%= section.title %>
+            </li>
           <% end %>
-          <li class="text -section-menu js-anchor" data-section-belongs="reports">Reports</li>
           <%= render 'shared/share' %>
         </ul>
       </div>
@@ -31,98 +27,36 @@
   </div>
 </div>
 
-<section class="l-main-content -about -no-border -color-6" data-section="about">
-  <div class="row">
-    <div class="small-12 column">
-      <div class="text -title-event">About</div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="small-12 column">
-      <div class="text -summary-alt"><%= raw @sections.where("title ilike 'About%'").first.try(:body) %></div>
-    </div>
-  </div>
-</section>
-
-<section class="l-main-content -about -color-7" data-section="strategy">
-  <div class="row">
-    <div class="small-12 column">
-      <div class="text -title-event">Strategy 2014-2017</div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="small-12 column">
-      <div class="text -summary-alt"><%= raw @sections.where("title ilike 'Strategy%'").first.try(:body) %></div>
-    </div>
-  </div>
-</section>
-
-<%= render 'programmes', programmes: @programmes %>
-
-<section class="l-main-content -about -color-7" data-section="users">
-  <div class="row">
-    <div class="small-12 columns">
-      <div class="c-main-content-header">
-        <h2 class="text -title-event">Staff</h2>
-        <p class="text -view-all">
-          <%= link_to staff_index_path do %>
-            <span>
-              Meet our staff
-            </span>
-            <svg class="icon -arrow">
-              <use xlink:href="#icon-arrow"></use>
-            </svg>
-          <% end %>
-        </p>
-      </div>
-    </div>
-  </div>
-  <ul class="c-staff row">
-    <% @users.each do |user| %>
-      <li class="small-6 medium-3 large-2 columns">
-        <%= render 'shared/user', user: user %>
-      </li>
-    <% end %>
-  </ul>
-</section>
-
-<section class="l-main-content -about -color-7" data-section="board">
-  <div class="row">
-    <div class="small-12 column">
-      <div class="text -title-event">Board</div>
-    </div>
-  </div>
-  <ul class="c-staff row">
-    <li class="small-6 medium-3 large-2 columns">
-      <%= render 'shared/user', user: @board_members.find_by(current_position: 'Chair') %>
-    </li>
-    <% @board_members.where.not(current_position: 'Chair').each do |user| %>
-      <li class="small-6 medium-3 large-2 columns">
-        <%= render 'shared/user', user: user %>
-      </li>
-    <% end %>
-  </ul>
-</section>
-
-<% if @vacancies.any? %>
-  <section class="l-main-content -about -color-7" data-section="vacancies">
+<% @sections.each do |section| %>
+  <section class="l-main-content -about -no-border -color-6" data-section="<%= "section-#{section.id}" %>">
     <div class="row">
       <div class="small-12 column">
-        <div class="text -title-event">Vacancies</div>
+        <div class="text -title-event"><%= section.title %></div>
       </div>
     </div>
     <div class="row">
-      <div class="small-12 column">
-        <div class="text -summary-alt -bold">
-          <ul class="list">
-            <% @vacancies.each do |vacancy| %>
-              <li><%= vacancy.title %></li>
-            <% end %>
-          </ul>
-        </div>
+      <% if section.category.blank? %>
+       <div class="small-12 column">
+        <% if section.body.present? %>
+          <div class="text -summary-alt"><%= raw section.body %></div>
+        <% end %>
       </div>
+      <% else %>
+        <% case section.category %>
+          <% when 'staff' %>
+            <%= render 'staff', users: @users %>
+          <% when 'programmes' %>
+            <%= render 'programmes', programmes: @programmes %>
+          <% when 'vacancies' %>
+            <%= render 'vacancies', vacancies: @vacancies %>
+          <% when 'board' %>
+            <%= render 'board', board_members: @board_members %>
+        <% end %>
+      <% end %>
     </div>
   </section>
 <% end %>
+
+
 
 <%= render 'shared/footer' %>
