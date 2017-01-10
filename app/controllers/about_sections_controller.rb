@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 class AboutSectionsController < ApplicationController
   def index
-    @sections  = AboutSection.order(:title)
+    @sections  = AboutSection.order(:position)
     @vacancies = Vacancy.published
     @users = User.where(is_board_member: false).limit(6)
     @board_members = User.where(is_board_member: true).order(:last_name)

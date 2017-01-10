@@ -3,29 +3,23 @@
   display: flex;
   align-items: center;
   height: $items-height;
-  padding: 0 rem(95px) 0 rem(30px);
+  padding: 0 rem(95px) 0 rem(12px);
   cursor: pointer;
   border-bottom: $items-border;
   overflow: hidden;
 
   .dragger {
-    position: absolute;
-    left: rem(10px);
-    top: 0;
-    bottom: 0;
     width: rem(10px);
     height: rem(10px);
-    margin: auto;
+    margin-right: rem(10px);
   }
 
   .title {
-
     &.-long {
       display: none;
     }
 
     @media screen and (min-width: $screen-xl) {
-
       &.-short {
         display: none;
       }

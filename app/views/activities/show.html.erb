@@ -5,8 +5,9 @@
     <div class="small-12 columns">
       <div class="title-block">
         <% breadcrumbs_links = [
-          {'text' => 'Activities', 'link' => activities_path},
-          {'text' => @activity.title}
+          {text: 'Activities', link: activities_path},
+          {text: @activity.title,
+           edit_path: backend.edit_activity_path(@activity) }
         ] %>
         <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
       </div>

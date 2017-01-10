@@ -2,7 +2,7 @@
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
   # Backend
-  mount Backend::Engine, at: 'manage'
+  mount Backend::Engine, at: 'manage', as: 'backend'
 
   resources :staff, controller: 'users', only: [:index, :show]
   resources :about, controller: 'about_sections', only: [:index]
