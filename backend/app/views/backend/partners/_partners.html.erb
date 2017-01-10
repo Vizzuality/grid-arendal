@@ -9,7 +9,6 @@
   <% @partners.each do |partner| %>
     <%= render 'backend/shared/index_item',
     item: partner,
-    sortable: false,
     title: partner.name
   %>
   <% end %>

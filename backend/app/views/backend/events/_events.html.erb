@@ -9,7 +9,6 @@
   <% @events.each do |event| %>
     <%= render 'backend/shared/index_item',
       item: event,
-      sortable: false,
       title: event.title
     %>
   <% end %>

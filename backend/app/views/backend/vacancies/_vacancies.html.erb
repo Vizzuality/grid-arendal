@@ -9,7 +9,6 @@
   <% vacancies.each do |vacancy| %>
     <%= render 'backend/shared/index_item',
       item: vacancy,
-      sortable: false,
       title: vacancy.title %>
   <% end %>
 </ul>

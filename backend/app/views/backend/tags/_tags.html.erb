@@ -20,7 +20,6 @@
   <% @tags.each do |tag| %>
     <%= render 'backend/shared/index_item',
       item: tag,
-      sortable: false,
       title: tag.name %>
   <% end %>
 </ul>

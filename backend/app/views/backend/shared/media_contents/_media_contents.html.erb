@@ -42,7 +42,6 @@
   <% items.each do |media_content| %>
     <%= render 'backend/shared/index_item',
       item: media_content,
-      sortable: false,
       title: media_content.title
     %>
   <% end %>

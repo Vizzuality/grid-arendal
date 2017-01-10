@@ -9,7 +9,6 @@
   <% activities.each do |activity| %>
     <%= render 'backend/shared/index_item',
       item: activity,
-      sortable: false,
       title: activity.title
     %>
   <% end %>
