@@ -22,6 +22,7 @@ module Backend
       if @about_section.update(about_section_params)
         redirect_to [:edit, @about_section], notice: 'Section updated'
       else
+        set_about_sections
         render :edit
       end
     end
@@ -31,6 +32,7 @@ module Backend
       if @about_section.save
         redirect_to [:edit, @about_section], notice: 'Section created'
       else
+        set_about_sections
         render :new
       end
     end
