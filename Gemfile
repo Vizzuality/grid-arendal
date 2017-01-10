@@ -26,10 +26,13 @@ gem 'simple_form'
 gem 'kaminari'
 
 # File upload
-gem 'paperclip'
-gem 'paperclip-dropbox'
+gem "paperclip", github: "thoughtbot/paperclip", ref: "c38bb31"
+gem 'aws-sdk', '~> 2.3'
 gem 'flickraw'
 gem 'cocoon'
+
+# Content
+gem 'acts-as-taggable-on', '~> 4.0'
 
 group :development, :test do
   gem 'hirb'
@@ -70,7 +73,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Assets pipeline
 gem 'jquery-rails'
-gem 'select2-rails'
+gem 'select2-rails', '~> 4.0'
 gem 'sass-rails', '~> 5.0'
 gem 'autoprefixer-rails', '~> 6.5.1'
 gem 'handlebars_assets'

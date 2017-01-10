@@ -23,7 +23,7 @@ I want to edit, create, view publications
     When I go to the new publication page
     And I fill in "Title" with "My new publication"
     And I fill in "Description" with "My description"
-    And I select "Gonca A." from "Users"
+    And I select "Gonca Ama" from "Staff involved"
     And I select "Partner one" from "Partners"
     And I press "SAVE"
     Then I should have one publication
@@ -40,23 +40,28 @@ I want to edit, create, view publications
     Then I should have zero publications
     And I should see "can't be blank"
 
+  @javascript
   Scenario: Publisheruser can publish and unpublish an publication
     Given I am authenticated publisheruser
     And publication
     When I go to the publications page
     Then I should see "My publication"
-    When I click on ".Unpublish"
+    When I click on overlapping ".Unpublish"
+    And I wait for the ajax request to finish
     And I should see "My publication"
     And I should have one unpublished publication
-    When I click on ".Publish"
+    When I click on overlapping ".Publish"
+    And I wait for the ajax request to finish
     And I should see "My publication"
     And I should have one published publication
 
+  @javascript
   Scenario: Publisheruser can make and remove featured status from publication
     Given I am authenticated publisheruser
     And publication
     When I go to the publications page
     Then I should see "My publication"
-    And I click on ".RemoveFeatured"
+    And I click on overlapping ".RemoveFeatured"
+    And I wait for the ajax request to finish
     And I should see "My publication"
     And I should have one not_featured publication

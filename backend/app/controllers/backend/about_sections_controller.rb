@@ -9,10 +9,6 @@ module Backend
     before_action :set_about_sections, except: :index
 
     def index
-      @about_section = AboutSection.order(:title).first
-      if @about_section
-        redirect_to edit_about_section_url(@about_section) and return
-      end
     end
 
     def edit
@@ -24,7 +20,7 @@ module Backend
 
     def update
       if @about_section.update(about_section_params)
-        redirect_to about_sections_url, notice: 'AboutSection updated'
+        redirect_to [:edit, @about_section], notice: 'Section updated'
       else
         render :edit
       end
@@ -33,9 +29,16 @@ module Backend
     def create
       @about_section = AboutSection.create(about_section_params)
       if @about_section.save
-        redirect_to about_sections_url
+        redirect_to [:edit, @about_section], notice: 'Section created'
       else
         render :new
+      end
+    end
+
+    def destroy
+      @about_section = AboutSection.find(params[:id])
+      if @about_section.destroy
+        redirect_to about_sections_url
       end
     end
 

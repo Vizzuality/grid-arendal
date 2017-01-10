@@ -19,9 +19,26 @@
 #
 
 class Activity < Content
-  has_many :activity_news
-  has_many :news_articles, through: :activity_news
-
   has_many :related_contents
   has_many :publications, through: :related_contents
+
+  acts_as_taggable
+
+  scope :by_partners, ->(partners) { joins(:content_partners).where(content_partners: {id: partners})}
+
+  class << self
+    def fetch_all(options)
+      tags = options['tags'].split(',')               if options['tags'].present?
+      type = options['type']                          if options['type'].present?
+      partners = options['partners']                  if options['partners'].present?
+      programme = options['programme'] if options['programme'].present?
+
+      activities = Activity.by_published.order_by_title
+      activities = activities.by_tags(tags)   if tags.present?
+      activities = activities.by_type(type)   if type.present?
+      activities = activities.by_partners(partners)   if partners.present?
+      activities = activities.by_tags(programme) if programme.present?
+      activities
+    end
+  end
 end

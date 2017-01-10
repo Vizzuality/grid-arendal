@@ -1,30 +1,14 @@
 <h2 class="text -main-title -light">Activities</h2>
 
-<div class="buttons-bar">
-  <% if can?(:create, Activity) %>
-      <%= link_to "Create New", new_activity_path, class: 'btn -light -no-border -create-new' %>
-  <% end %>
-  <div class="btn">
-    <svg class="icon">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"></use>
-    </svg>
-  </div>
-  <div class="btn">
-    <svg class="icon">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-sort"></use>
-    </svg>
-  </div>
-</div>
+<%= render 'backend/shared/index_items_buttons.html',
+  havePermissionToCreate: can?(:create, Activity),
+  createPath: new_activity_path
+%>
 
 <ul class="items-list">
   <% activities.each do |activity| %>
     <%= render 'backend/shared/index_item',
       item: activity,
-      title: activity.title,
-      make_featured_path: make_featured_activity_path(activity),
-      remove_featured_path: remove_featured_activity_path(activity),
-      publishn_path: publish_activity_path(activity),
-      unpublish_path: unpublish_activity_path(activity),
-      edit_path: edit_activity_path(activity)%>
+      title: activity.title %>
   <% end %>
 </ul>

@@ -1,4 +1,0 @@
-- if (can? :make_featured, location) && location.featured?
-  = link_to 'Remove featured', "/manage/#{location.model_name.route_key}/#{location.id}/remove_featured", method: :patch
-- if (can? :remove_featured, location) && location.not_featured?
-  = link_to 'Make featured', "/manage/#{location.model_name.route_key}/#{location.id}/make_featured", method: :patch

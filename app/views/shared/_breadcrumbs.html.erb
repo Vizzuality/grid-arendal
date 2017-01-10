@@ -1,0 +1,17 @@
+<div class="c-breadcrumbs">
+  <a href="/">
+    <svg class="icon-home">
+      <use xlink:href="#icon-breadcrumb-home"></use>
+    </svg>
+  </a>
+  <% links.each do |link| %>
+    <svg class="icon">
+      <use xlink:href="#icon-breadcrumb-chevron-right"></use>
+    </svg>
+    <% if link['link'].present? %>
+      <%= link_to link['text'], link['link'], class: 'text -breadcrumb' %>
+    <% else %>
+      <span class="text -breadcrumb"><%= link['text'] %></span>
+    <% end %>
+  <% end %>
+</div>

@@ -1,0 +1,38 @@
+<ul class="basic-nav">
+  <% if user_signed_in? %>
+    <% avatar_url = if current_user.avatar.exists?
+                      current_user.avatar(:medium)
+                    else
+                      asset_path('original/missing2.png')
+                    end %>
+    <li class="-user -no-hover">
+      <img class="avatar" src="<%= avatar_url %>" />
+      <div class="texts-container">
+        <div class="user-name text -nav-text -light">
+          <%= current_user.display_name %>
+          <%= link_to 'Sign out', destroy_user_session_path, method: 'delete',
+            class: 'text -nav-text -light' %>
+        </div>
+      </div>
+    </li>
+    <li class="-separator"></li>
+    <li class="-logo -no-hover">
+      <%= link_to '', "/", class: 'linker' %>
+      <svg class="icon">
+        <use xlink:href="#icon-logo"></use>
+      </svg>
+    </li>
+    <li class="-separator"></li>
+    <% links.each do |link| %>
+      <li class="<%= (controller_name == link[:key] ? 'selected' : '')%>">
+        <%= link_to '', link[:path], class: 'linker' %>
+        <%= link_to "#{link[:name]} (#{link[:count]})", link[:path],
+          class: 'text -nav-text -light' %>
+      </li>
+    <% end %>
+  <% else %>
+    <li>
+      <%= link_to 'Log In', new_user_session_path %>
+    </li>
+  <% end %>
+</ul>

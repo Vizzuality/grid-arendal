@@ -28,8 +28,8 @@ module Backend
 
       it 'GET index returns http success' do
         process :index
-        expect(response).to be_redirect
-        expect(response).to have_http_status(302)
+        expect(response).to be_success
+        expect(response).to have_http_status(200)
       end
 
       it 'GET edit returns http success' do
@@ -54,31 +54,35 @@ module Backend
 
       it 'Publishes publication' do
         unpublished = create(:publication, is_published: false)
-        process :publish, method: :patch, params: { id: @publication.id }
-        expect(response).to be_redirect
-        expect(response).to have_http_status(302)
+        process :publish, method: :patch, xhr: true,
+          params: { id: @publication.id }
+        expect(response).to be_success
+        expect(response).to have_http_status(200)
         expect(@publication.reload.published?).to be(true)
       end
 
       it 'Unpublishes publication' do
-        process :unpublish, method: :patch, params: { id: @publication.id }
-        expect(response).to be_redirect
-        expect(response).to have_http_status(302)
+        process :unpublish, method: :patch, xhr: true,
+          params: { id: @publication.id }
+        expect(response).to be_success
+        expect(response).to have_http_status(200)
         expect(@publication.reload.unpublished?).to be(true)
       end
 
       it 'Feature publication' do
         not_featured = create(:publication, is_featured: false)
-        process :make_featured, method: :patch, params: { id: @publication.id }
-        expect(response).to be_redirect
-        expect(response).to have_http_status(302)
+        process :make_featured, method: :patch, xhr: true,
+          params: { id: @publication.id }
+        expect(response).to be_success
+        expect(response).to have_http_status(200)
         expect(@publication.reload.featured?).to be(true)
       end
 
       it 'Remove featured status from publication' do
-        process :remove_featured, method: :patch, params: { id: @publication.id }
-        expect(response).to be_redirect
-        expect(response).to have_http_status(302)
+        process :remove_featured, method: :patch, xhr: true,
+          params: { id: @publication.id }
+        expect(response).to be_success
+        expect(response).to have_http_status(200)
         expect(@publication.reload.not_featured?).to be(true)
       end
     end

@@ -4,6 +4,20 @@
 
 <div class="l-items-detail">
   <%= simple_form_for @publication, html: { class: 'c-form' } do |f| %>
-    <%= render 'form', form: f, users: @users, partners: @partners %>
+    <%= render 'form',
+      form: f,
+      users: @users,
+      partners: @partners,
+      media_contents: @media_contents,
+      content_types: @content_types,
+      activities: @activities,
+      news_articles: @news_articles,
+      tags: @tags,
+      photos: @photos,
+      have_cover_picture: @publication.cover_picture.exists?,
+      cover_picture_url: (@publication.cover_picture.exists? ? @publication.cover_picture : nil),
+      have_picture: @publication.picture.present?,
+      picture_url: @publication.picture.present? ? @publication.picture : nil,
+      media_content_id: @publication.media_content_id %>
   <% end %>
 </div>

@@ -6,24 +6,29 @@
       <div class="title-block">
         <h1 class="text -title-library">Media library</h1>
         <div class="text -summary">
-          The GRID-Arendal Content Library is an on-going project to collect and catalogue environmental photos, videos and graphics from all around the world. The library currently contains 3622 photos.
+          <%= @section.description %>
         </div>
-        <div class="share">
-          <svg class="icon">
-            <use xlink:href="#icon-share"></use>
-          </svg>
-        </div>
+        <%= render 'shared/share' %>
       </div>
     </div>
   </div>
 </div>
-<div class="l-main-content -media-library">
+<div class="l-main-content -media-library -only-grid -no-border -color-4">
+  <% filters = [
+    {
+      data: @tags,
+      type: 'tags',
+      title: 'FILTER BY',
+      placeholder: 'Filter by tags',
+      key: 'tags'
+    }
+  ] %>
+  <%= render 'shared/filters', filters: filters %>
+
   <div class="row">
-    <div class="small-12 small-centered columns -fix">
-      <div id="masonry-layout" class="masonry-layout" hidden data-columns>
-        <% @publications.each do |publication| %>
-            <%= render 'shared/media-card', picture: 'http://www.audubon.org/sites/default/files/styles/engagement_card/public/sfw_apa_2013_28342_232388_briankushner_blue_jay_kk_high.jpg', title: publication.title, link: publication_path(publication) %>
-        <% end %>
+    <div class="small-12 small-centered columns grid-column">
+      <div class="masonry-layout" data-columns="4">
+        <%= render 'media_library', media_contents: @media_contents %>
       </div>
     </div>
   </div>

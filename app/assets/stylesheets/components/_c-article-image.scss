@@ -1,11 +1,15 @@
 .c-article-image {
-  background-image: image-url('bg5.jpg');
+  background-color: rgba($color-2, 0.05);
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   height: rem(580px);
   z-index: 10;
   display: none;
+
+  &.-vertical {
+    background-size: contain;
+  }
 
   @media screen and (min-width: $screen-m) {
     display: block;

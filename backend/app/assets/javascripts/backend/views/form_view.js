@@ -8,43 +8,127 @@
 
     el: 'form',
 
-    events: {
-      'click .js-cancel-process': '_cancelProcess'
-    },
-
     options: {
+      formHeaderIconClass: ".form_header .icon",
+      adjustableTriggerClass: ".js-adjustable-input",
       mediumEditorTriggerClass: ".js-textarea-editable",
-      selectTagsTriggerClass: ".js-select-tags"
+      selectTriggerClass: ".js-select",
+      selectTagsTriggerClass: ".js-select-tags",
+      selectTagsInlineClass: "js-inline-tags",
+      selectPhotoTriggerClass: ".js-select-photo",
     },
 
     initialize: function() {
-      this._loadShortDescription();
+      this._cache();
+      this._loadHeaderAdjustableInput();
+      this._loadLimitedInput();
       this._loadMediumEditor();
+      this._loadSelect();
+      this._loadDatepicker();
       this._loadTaggingSelect();
+      this._loadPhotoSearch();
+      this._loadFilesUploader();
     },
 
-    _loadShortDescription: function() {
+    _cache: function () {
+      this.$headerIcon = $(this.$el.find(this.options.formHeaderIconClass));
+    },
+
+    _loadHeaderAdjustableInput: function () {
+      _.each($(this.$el.find(this.options.adjustableTriggerClass)), function(element) {
+        new App.Helper.FormAdjustableInput({
+          el: element
+        });
+      }.bind(this));
+    },
+
+    _loadLimitedInput: function() {
       new App.Helper.FormInputCharLimited({
-        el: $(this.$el.find('[data-type="short_description"]'))
+        el: $(this.$el.find('[data-type="limited_input"]'))
       });
+    },
+
+    _loadDatepicker: function() {
+      _.each($(this.$el.find('[data-type="datepicker"]')), function(element) {
+        new App.Helper.FormDatepicker({
+          el: element
+        });
+      }.bind(this));
     },
 
     _loadMediumEditor: function () {
       new MediumEditor(this.options.mediumEditorTriggerClass, {
         toolbar: {
-          buttons: ['bold', 'italic', 'underline', 'h1', 'h2', 'quote', 'anchor']
-        }
+          buttons: ['bold', 'italic', 'underline', 'unorderedlist', 'anchor', 'iframe', 'HTML', 'removeFormat']
+        },
+        extensions: {
+          'iframe': new MediumButton({
+            label:'iframe',
+            action: function(html, mark, parent){
+              var height = prompt("Please set the iframe height", "");
+
+              return '<iframe src="' + html +'" width="100%" height="' + height + '"></iframe>';
+            }
+          }),
+          'HTML': new MediumButton({
+            label:'HTML',
+            action: function(html, mark, parent){
+              var pieces = html.split("<p>");
+              var realContent = "";
+              _.each(pieces, function(piece) {
+                realContent += piece.replace('</p>', '');
+              });
+
+              return _.unescape(realContent);
+            }
+          }),
+        },
+        paste: {
+          cleanPastedHTML: true
+        },
+      });
+    },
+
+    _loadSelect: function () {
+      $(this.options.selectTriggerClass).select2({
+        minimumResultsForSearch: Infinity
       });
     },
 
     _loadTaggingSelect: function () {
-      $(this.options.selectTagsTriggerClass).select2({
-        tags: true
+      _.each($(this.options.selectTagsTriggerClass), function(element) {
+        var params = {
+          tags: true
+        };
+        if(!$(element).hasClass(this.options.selectTagsInlineClass)) {
+          params.createTag = function() {
+            return undefined;
+          };
+        }
+        $(element).select2(params);
+      }.bind(this));
+    },
+
+    _loadPhotoSearch: function() {
+      new App.Helper.FormPhotoSearch({
+        el: $(this.$el.find(this.options.selectPhotoTriggerClass))
       });
     },
 
-    _cancelProcess: function () {
-      location.reload();
+    _loadFilesUploader: function() {
+      _.each($(this.$el.find('input[type="file"]')), function(element) {
+        new App.Helper.FormInputFileUploader({
+          el: element
+        });
+      }.bind(this));
+    },
+
+    _setFocusHeader: function (e) {
+      if (e.type == "focusin") {
+        this.$headerIcon.css("opacity", 0);
+      } else {
+        this.$headerIcon.removeAttr("style");
+      }
     },
 
   });

@@ -1,0 +1,437 @@
+$dropdown-modal-title-height: rem(60px);
+$filters-screen-m-width: 18%;
+
+%filter-background {
+  content: "";
+  position: absolute;
+  left: rem(-10px);
+  height: rem(5px);
+  z-index: -1;
+  background-color: $white;
+
+  @media screen and (min-width: $screen-m) {
+    left: rem(-8px);
+    color: transparent;
+  }
+}
+
+%filter-background-speaker {
+  @extend %filter-background;
+  top: rem(1px);
+  width: calc(100% + #{rem(32px)});
+
+  @media screen and (min-width: $screen-m) {
+    top: rem(2px);
+    width: calc(100% + #{rem(28px)});
+  }
+}
+
+%filter-background-default {
+  @extend %filter-background;
+  top: rem(5px);
+  width: calc(100% + #{rem(16px)});
+}
+
+%filter-tag-background {
+  content: "";
+  position: absolute;
+  left: rem(-9px);
+  width: calc(100% + #{rem(18px)});
+  height: 100%;
+  border-radius: rem(100px);
+  z-index: -1;
+}
+
+%dropdown-tags {
+
+  .dropdown {
+    width: 100%;
+    left: 0;
+    padding: rem(19px) 0 rem(13px) rem(21px);
+    font-size: 0;
+    white-space: normal;
+
+    .type {
+      padding: 0;
+    }
+
+    .icon {
+      position: absolute;
+      top: rem(19px);
+      right: rem(19px);
+      width: rem(12px);
+      height: rem(12px);
+      margin: 0;
+      transform: rotateX(180deg);
+      cursor: pointer;
+    }
+
+    .list {
+      margin-top: rem(14px);
+
+      li {
+        position: relative;
+        display: inline-block;
+        line-height: 1.8;
+        margin: 0 rem(27px) rem(6px) 0;
+        padding: 0;
+
+        &:hover {
+          background-color: transparent;
+
+          &:before {
+            @extend %filter-tag-background;
+            background-color: $white;
+          }
+        }
+
+        &.selected {
+          color: $skull-white;
+          background-color: $color-1;
+
+          &:before {
+            @extend %filter-tag-background;
+            background-color: $color-1;
+          }
+        }
+      }
+    }
+  }
+}
+
+.c-filters {
+  display: block;
+  position: relative;
+  padding: rem(12px) 0 rem(14px) 0;
+  transition: height 0.5s ease-out;
+
+  @media screen and (min-width: $screen-m) {
+    display: flex;
+    flex-wrap: wrap;
+    padding: rem(38px) 0 rem(7px) 0;
+  }
+
+  .container {
+    width: 100%;
+    height: 0;
+    transition: height 0.5s ease-out;
+
+    @media screen and (min-width: $screen-m) {
+      display: flex;
+      flex-wrap: wrap;
+      flex: 1 100%;
+      height: auto;
+      overflow: visible;
+    }
+
+    .filter {
+      position: relative;
+      width: 100%;
+      padding-top: rem(18px);
+      margin-top: rem(10px);
+      opacity: 0;
+      transition: opacity 0.5s;
+
+      @media screen and (min-width: $screen-m) {
+        width: $filters-screen-m-width;
+        padding-top: rem(16px);
+        padding-right: rem(15px);
+        margin-top: 0;
+        opacity: 1;
+      }
+
+      > .type {
+        position: absolute;
+        top: 0;
+      }
+
+      .speaker {
+        position: relative;
+        z-index: 1;
+        cursor: pointer;
+
+        &:hover {
+
+          &:before {
+            @extend %filter-background-speaker;
+            top: rem(1px);
+
+            @media screen and (min-width: $screen-m) {
+              top: rem(2px);
+            }
+          }
+        }
+
+        .text {
+          display: inline-block;
+          @include ellipsis(calc(100% - #{rem(18px)}));
+        }
+
+        .icon {
+          position: absolute;
+          top: 0;
+          width: rem(11px);
+          height: rem(11px);
+          margin-left: rem(5px);
+          z-index: 2;
+
+          @media screen and (min-width: $screen-m) {
+            top: rem(1px);
+            width: rem(8px);
+            height: rem(8px);
+            margin-left: rem(8px);
+          }
+        }
+      }
+
+      .dropdown {
+        position: absolute;
+        top: rem(-9px);
+        left: rem(-10px);
+        padding-top: rem(9px);
+        background-color: $skull-white;
+        box-shadow: 0 2px 4px 0 rgba($black, 0.2);
+        white-space: nowrap;
+        z-index: 2;
+        display: none;
+
+        .type {
+          padding: 0 rem(10px);
+        }
+
+        .list {
+          margin-top: rem(3px);
+
+          li {
+            position: relative;
+            padding: 0 rem(10px);
+            line-height: 2.14;
+            cursor: pointer;
+
+            &:hover,
+            &.selected {
+              background-color: $white;
+            }
+          }
+        }
+      }
+
+      select {
+        position: absolute;
+        top: rem(18px);
+        left: rem(-4px);
+        background-color: transparent;
+        border: none;
+        outline: none;
+        z-index: 2;
+
+        @media screen and (min-width: $screen-m) {
+          display: none;
+        }
+      }
+
+      &.-show-dropdown {
+
+        .dropdown {
+          display: block;
+          z-index: 16;
+        }
+      }
+
+      &.-have-value {
+
+        .speaker {
+
+          &:before {
+            @extend %filter-background-speaker;
+          }
+
+          .text {
+            font-weight: 500;
+          }
+        }
+
+        select {
+          font-weight: 500;
+        }
+      }
+
+      &:not(.-have-value) > .type {
+        display: none;
+      }
+
+      &.-type-search {
+        flex-grow: 2;
+        text-align: right;
+        display: none;
+
+        @media screen and (min-width: $screen-m) {
+          display: block;
+        }
+
+        .speaker {
+
+          &:hover {
+
+            &:before {
+              width: calc(100% + #{rem(16px)});
+            }
+          }
+        }
+      }
+
+      &.-type-tags {
+
+        @media screen and (min-width: $screen-m) {
+          width: $filters-screen-m-width * 2;
+          position: static;
+
+          > .type {
+            top: rem(38px);
+          }
+        }
+
+        @extend %dropdown-tags;
+      }
+
+      &.-type-select {
+
+        .speaker {
+
+          .text {
+
+            @media screen and (max-width: $screen-m) {
+              color: transparent;
+            }
+          }
+        }
+      }
+
+      &.-type-years {
+        flex: 1 100%;
+        padding-top: rem(28px);
+        display: none;
+
+        @media screen and (min-width: $screen-m) {
+          display: block;
+        }
+
+        .list {
+          display: flex;
+
+          li {
+            position: relative;
+            z-index: 1;
+            cursor: pointer;
+
+            &:not(:first-child) {
+              margin-left: rem(29px);
+            }
+
+            &:hover,
+            &.selected {
+
+              &:before {
+                @extend %filter-background-default;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .maximizer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: rem(-30px);
+    right: rem(5px);
+    width: rem(60px);
+    height: rem(60px);
+    border-radius: 50%;
+    background-color: $white;
+    box-shadow: 0 rem(2px) rem(4px) 0 rgba($black, 0.1);
+
+    @media screen and (min-width: $screen-m) {
+      display: none;
+    }
+
+    .icon {
+      margin-top: rem(4px);
+      width: rem(26px);
+      height: rem(20px);
+
+      .-collapse {
+        display: none;
+      }
+    }
+  }
+
+  &.-show-filters {
+    padding-bottom: rem(28px);
+
+    .filter {
+      opacity: 1;
+    }
+
+    .maximizer {
+
+      .icon {
+        width: rem(28px);
+        height: rem(28px);
+
+        .-show {
+          display: none;
+        }
+
+        .-collapse {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.c-filters-closer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+}
+
+.c-tags-dropdown-modal {
+  background-color: $skull-white;
+
+  @extend %dropdown-tags;
+
+  .dropdown {
+    padding: 0;
+    height: 100%;
+
+    .-filter-title {
+      display: flex;
+      align-items: center;
+      height: $dropdown-modal-title-height;
+      padding-left: rem(19px);
+      box-shadow: 0 2px 4px 0 rgba($black, 0.2);
+    }
+
+    .list {
+      height: calc(100% - #{$dropdown-modal-title-height});
+      padding: rem(7px) 0 0 rem(18px);
+      margin-top: 0;
+      overflow: auto;
+
+      li {
+        line-height: 2.9;
+        height: rem(45px);
+        margin-right: rem(24px);
+        font-size: 16px;
+      }
+    }
+  }
+}

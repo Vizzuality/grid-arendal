@@ -1,14 +1,24 @@
-<h2>News</h2>
+<h2 class="text -main-title -light">News</h2>
 
-<% if can?(:create, NewsArticle) %>
-  <%= link_to "New", new_news_article_path %>
-<% end %>
+<div class="buttons-bar">
+  <%= link_to "Fetch from exposure", fetch_news_articles_path,
+    class: 'btn -light -no-border -create-new js-create-new' %>
+  <div class="btn">
+    <svg class="icon">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"></use>
+    </svg>
+  </div>
+  <div class="btn">
+    <svg class="icon">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-sort"></use>
+    </svg>
+  </div>
+</div>
 
-<ul>
+<ul class="items-list">
   <% @news_articles.each do |news_article| %>
-    <li>
-      <h2><%= news_article.title %></h2>
-      <%= link_to 'Edit', edit_news_article_path(news_article) %>
-    </li>
+    <%= render 'backend/shared/index_item',
+      item: news_article,
+      title: news_article.title %>
   <% end %>
 </ul>

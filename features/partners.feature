@@ -14,7 +14,7 @@ I want to edit, create, view partners
     And I am authenticated adminuser
     When I go to the edit partner page for "Partner one"
     And I fill in "Name" with "Partner edited"
-    And I press "Update"
+    And I press "SAVE"
     Then I should see "Partner edited"
 
   Scenario: Adminuser can create partner
@@ -22,7 +22,7 @@ I want to edit, create, view partners
     When I go to the new partner page
     And I fill in "Name" with "Partner new"
     And I fill in "Web url" with "partner-new-sample.org"
-    And I press "Create Partner"
+    And I press "SAVE"
     Then I should have one partner
     And I should see "Partner new"
 
@@ -31,6 +31,6 @@ I want to edit, create, view partners
     When I go to the new partner page
     And I fill in "Name" with ""
     And I fill in "Web url" with "partner-new-sample.org"
-    And I press "Create Partner"
+    And I press "SAVE"
     Then I should have zero partners
     And I should see "can't be blank"

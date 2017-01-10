@@ -1,0 +1,29 @@
+<%
+phrases = {
+  "default" => [
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "Aliquam varius bibendum aliquet.",
+    "Phasellus tincidunt porttitor tincidunt.",
+    "Suspendisse condimentum luctus arcu id tincidunt."
+  ],
+  "activities" => [
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "Aliquam varius bibendum aliquet.",
+    "Phasellus tincidunt porttitor tincidunt.",
+    "Suspendisse condimentum luctus arcu id tincidunt."
+  ],
+  "publications" => [
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "Aliquam varius bibendum aliquet.",
+    "Phasellus tincidunt porttitor tincidunt.",
+    "Suspendisse condimentum luctus arcu id tincidunt."
+  ]
+}
+current_phrases = phrases[controller_name].present? ? phrases[controller_name] : phrases['default']
+%>
+
+<div class="c-phrases">
+  <% current_phrases.each do |phrase| %>
+    <div class="item text -main-title -dark"><%= phrase %></div>
+  <% end %>
+</div>

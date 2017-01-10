@@ -19,6 +19,10 @@
   &.-light {
     background-color: $color-3;
     color: rgba($font-color-1, 0.5);
+
+    &.-solid-font {
+      color: $font-color-1;
+    }
   }
 
   &.-no-border {

@@ -3,6 +3,8 @@ $nav-horizontal-padding: rem(19px);
 .l-navigation {
 
   .basic-nav {
+    height: 100%;
+    overflow: auto;
 
     li {
       position: relative;
@@ -11,6 +13,13 @@ $nav-horizontal-padding: rem(19px);
       height: rem(40px);
       padding: 0 rem(19px);
       cursor: pointer;
+
+      .linker {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
 
       &.-separator {
         width: 100%;

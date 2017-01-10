@@ -11,11 +11,11 @@
   .dragger {
     position: absolute;
     left: rem(10px);
-
-    .icon {
-      width: rem(10px);
-      height: rem(10px);
-    }
+    top: 0;
+    bottom: 0;
+    width: rem(10px);
+    height: rem(10px);
+    margin: auto;
   }
 
   .title {
@@ -47,7 +47,11 @@
 
   .options {
     position: absolute;
+    top: 0;
+    bottom: 0;
     right: rem(9px);
+    margin: auto;
+    height: rem(20px);
     z-index: 2;
 
     a {
@@ -62,6 +66,12 @@
           opacity: 1;
         }
       }
+
+      &[data-method="delete"] {
+        .icon {
+          fill: $white;
+        }
+      }
     }
   }
 
@@ -73,15 +83,10 @@
   &:hover,
   &.-selected {
     background-color: rgba($white, 0.2);
-  }
 
-  &.-selected {
-
-    .-edit {
-
-      .icon {
-        opacity: 1;
-      }
+    .title {
+      opacity: 1;
+      font-weight: 700;
     }
   }
 

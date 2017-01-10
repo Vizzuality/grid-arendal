@@ -6,37 +6,54 @@
       <div class="title-block">
         <h1 class="text -title-library">Activities</h1>
         <div class="text -summary">
-          GRID-Arendal has produced publications, in both printed and electronic formats, on a wide range of issues related to the environment.
+          <%= @section.description %>
         </div>
-        <!-- <div class="share">
-          <svg class="icon">
-            <use xlink:href="#icon-share"></use>
-          </svg>
-        </div> -->
+        <%= render 'shared/share' %>
       </div>
     </div>
   </div>
 </div>
 
-<div class="l-main-content -activities">
+<div class="l-main-content -activities -only-grid -no-border -color-3">
+  <% filters = [
+    {
+      data: @content_types,
+      type: 'select',
+      title: 'FILTER BY',
+      placeholder: 'Filter by type',
+      key: 'type',
+      display_method: 'title'
+    },
+    {
+      data: @partners,
+      type: 'select',
+      title: 'FILTER BY',
+      placeholder: 'Filter by partner',
+      key: 'partners',
+      display_method: 'name'
+    },
+    {
+      data: @programmes,
+      type: 'select',
+      title: 'FILTER BY',
+      placeholder: 'Filter by programme',
+      key: 'programme',
+      display_method: 'name'
+    },
+    {
+      data: @tags,
+      type: 'tags',
+      title: 'FILTER BY',
+      placeholder: 'Filter by tags',
+      key: 'tags'
+    }
+  ] %>
+  <%= render 'shared/filters', filters: filters %>
 
   <div class="row">
-    <div class="small-12 small-centered columns -fix">
-      <div id="masonry-layout" class="masonry-layout" hidden data-columns>
-        <% @activities.each do |activity| %>
-          <%= link_to activity do %>
-            <div class="item">
-              <article class="c-card">
-                <div class="card-pic" style="background-image: url('<%= activity.picture %>')"></div>
-                <div class="card-descrition">
-                  <h3 class="text -title-card"><%= activity.title %></h3>
-                  <p class="text -summary"><%= activity.short_description %></p>
-                  <p class="text -meta">1 week ago</p>
-                </div>
-              </article>
-            </div>
-          <% end %>
-        <% end %>
+    <div class="small-12 small-centered columns grid-column">
+      <div class="masonry-layout" data-columns="3">
+        <%= render 'activities', activities: @activities %>
       </div>
     </div>
   </div>

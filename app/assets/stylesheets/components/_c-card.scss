@@ -1,5 +1,3 @@
-$pics: 'pic-1', 'pic-2', 'pic-3', 'pic-4';
-
 %step {
   content: "";
   position: absolute;
@@ -12,7 +10,6 @@ $pics: 'pic-1', 'pic-2', 'pic-3', 'pic-4';
 
 .c-card {
   position: relative;
-  margin-top: rem(20px);
 
   .card-pic {
     width: 100%;
@@ -21,33 +18,36 @@ $pics: 'pic-1', 'pic-2', 'pic-3', 'pic-4';
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-
-    @for $i from 1 through length($pics) {
-      &.#{nth($pics, $i)} {
-        background-image: image-url('news/#{nth($pics, $i)}.jpg');
-      }
-    }
-
-    .-media-library & {
-      height: rem(200px);
-    }
   }
 
-  .card-descrition {
+  .card-description {
     background-color: $white;
-    padding: rem(24px) rem(20px);
+    padding: rem(21px) rem(20px) rem(16px) rem(20px);
+
+    @media screen and (min-width: $screen-m) {
+      padding-top: rem(24px);
+    }
   }
 
   .-summary {
     margin-top: rem(10px);
+    display: none;
+
+    @media screen and (min-width: $screen-m) {
+      display: block;
+    }
   }
 
   .-meta {
-    margin-top: rem(13px);
+    margin-top: rem(10px);
     text-align: right;
+    @media screen and (min-width: $screen-m) {
+      margin-top: rem(15px);
+    }
   }
 
   &.-card-steps {
+
     &:before {
       @extend %step;
       width: calc(100% -  #{rem(10px)});
@@ -61,7 +61,47 @@ $pics: 'pic-1', 'pic-2', 'pic-3', 'pic-4';
     }
   }
 
-  .masonry-layout & {
-    margin-top: 0;
+  &[data-card-type="activity"] {
+
+    .card-description {
+      padding-top: rem(21px);
+      padding-bottom: rem(24px);
+    }
+
+    @media screen and (min-width: $screen-m) {
+
+      .card-description {
+        padding-top: rem(16px);
+        padding-bottom: rem(26px);
+      }
+
+      .card-pic {
+        height: rem(270px);
+      }
+    }
+  }
+
+  &[data-card-type="publication"] {
+
+    .card-description {
+      padding-top: rem(21px);
+    }
+
+    @media screen and (min-width: $screen-m) {
+
+      .card-description {
+        padding-top: rem(16px);
+      }
+
+      .card-pic {
+        height: rem(270px);
+      }
+    }
+  }
+
+  &[data-card-type="media"] {
+    .card-pic {
+      height: rem(200px);
+    }
   }
 }

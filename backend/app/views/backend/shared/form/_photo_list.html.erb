@@ -1,0 +1,11 @@
+<% external_link ||= false %>
+<ul class="photo-list">
+  <% photos.each do |photo| %>
+    <li class="js-select-photo <% if photo.id == selected_id %>-selected<% end %>" data-value="<%= photo.id %>">
+      <% if external_link %>
+        <%= link_to '', edit_photo_path(photo), class: 'linker', title: 'Edit picture' %>
+      <% end %>
+      <div class="photo" style="background-image: url('<%= photo.photo_sizes.where(label: PhotoSize::SMALL).first.try(:url) %>')"></div>
+    </li>
+  <% end %>
+</ul>

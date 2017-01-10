@@ -1,0 +1,6 @@
+<%= render 'backend/shared/form/header', form: form,
+  inputs: [{value: :title, title_placeholder: 'About section title'}] %>
+
+<div class="fields">
+  <%= render 'backend/shared/form/field_textarea', form: form, value: :body %>
+</div>

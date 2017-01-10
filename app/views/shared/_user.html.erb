@@ -1,0 +1,12 @@
+<% avatar_url = if user.avatar.exists?
+                  user.avatar(:medium)
+                else
+                  asset_path('original/missing2.png')
+                end %>
+<div class="staff">
+  <%= link_to staff_path(user) do %>
+    <div class="staff-pic" style="background-image: url('<%= avatar_url %>')"></div>
+    <p class="text -author"><%= user.display_name %></p>
+    <p class="text -meta"><%= user.current_position %></p>
+  <% end %>
+</div>

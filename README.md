@@ -34,6 +34,8 @@ First time execute:
     bundle exec rake db:migrate
 
     rails import:activities
+    rails import:rss
+    rails initialize:site_sections
 
 ## OS Sierra
 

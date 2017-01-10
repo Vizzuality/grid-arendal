@@ -1,0 +1,28 @@
+<% fields ||= 1 %>
+<% if not(defined? default_actions)
+    default_actions = true
+  end %>
+
+<div class="form_header" data-fields="<%= fields %>">
+  <% if flash[:notice] %>
+    <li><%= flash[:notice] %></li>
+  <% end %>
+  <% inputs.each do |input| %>
+    <%= form.label input.values[0] %>
+    <%= form.input input.values[0], label: false, input_html: { class: 'text -main-title -dark title js-adjustable-input', placeholder: input.values[1] } %>
+  <% end %>
+
+  <svg class="icon">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-edit"></use>
+  </svg>
+
+  <div class="actions">
+    <% if default_actions %>
+      <%= form.button :submit, 'SAVE', class: '-dark' %>
+      <%= link_to "CANCEL", :back, class: 'btn -light' %>
+    <% else %>
+      <div class="btn -dark js-form-save">SAVE</div>
+      <div class="btn -light js-form-cancel">CANCEL</div>
+    <% end %>
+  </div>
+</div>

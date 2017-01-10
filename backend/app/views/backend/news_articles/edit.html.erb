@@ -3,14 +3,13 @@
 </div>
 
 <div class="l-items-detail">
-  <h2> Edit</h2>
-  <p><%= @news_article.title || 'news_article' %></p>
-  <%= simple_form_for @news_article do |f| %>
-    <%= render partial: f %>
-    <div class="actions">
-      <%=  f.submit  do %>
-        <button>Update</button>
-      <% end %>
-    </div>
+  <%= simple_form_for @news_article, html: { class: 'c-form' } do |f| %>
+    <%= render 'form',
+      form: f,
+      tags: @tags,
+      activities: @activities,
+      publications: @publications,
+      media_contents: @media_contents
+    %>
   <% end %>
 </div>

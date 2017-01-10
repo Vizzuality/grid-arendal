@@ -6,37 +6,24 @@ module Backend
     load_and_authorize_resource
 
     before_action :set_user,            except: [:index, :new, :create]
+    before_action :set_users, only:   [:index, :edit, :new]
     before_action :set_roles_selection, only:   [:update, :create, :new, :edit]
 
     def index
-      @users = if current_user&.admin?
-                 User.filter_users(user_filters)
-               else
-                 User.filter_actives
-               end
     end
 
     def edit
-      @users = if current_user&.admin?
-                 User.filter_users(user_filters)
-               else
-                 User.filter_actives
-               end
     end
 
     def new
-      @users = if current_user&.admin?
-                 User.filter_users(user_filters)
-               else
-                 User.filter_actives
-               end
       @user = User.new
     end
 
     def update
       if @user.update(user_params)
-        redirect_to user_path(@user), notice: 'User updated'
+        redirect_to edit_user_url(@user), notice: 'User updated'
       else
+        @users = current_user&.admin? ? User.filter_users(user_filters) : User.filter_actives
         render :edit
       end
     end
@@ -44,9 +31,17 @@ module Backend
     def create
       @user = User.create_with_password(user_params)
       if @user.save
-        redirect_to users_url
+        redirect_to edit_user_url(@user), notice: 'User created'
       else
+        @users = current_user&.admin? ? User.filter_users(user_filters) : User.filter_actives
         render :new
+      end
+    end
+
+    def destroy
+      @user = User.find(params[:id])
+      if @user.destroy
+        redirect_to users_url
       end
     end
 
@@ -92,6 +87,11 @@ module Backend
 
       def set_user
         @user = User.find(params[:id])
+      end
+
+      def set_users
+        @users = current_user&.admin? ? User.filter_users(user_filters) : User.filter_actives
+        @users = @users.order(:first_name, :last_name)
       end
 
       def set_roles_selection

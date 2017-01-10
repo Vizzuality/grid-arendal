@@ -54,6 +54,12 @@
   pointer-events: none;
 }
 
+@mixin ellipsis($max-width) {
+  max-width: $max-width;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+} 
 
 %clearfix {
   &:before, &:after {
@@ -98,4 +104,8 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.-relativize {
+ position: relative;
 }

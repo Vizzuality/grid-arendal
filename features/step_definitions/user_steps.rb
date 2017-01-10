@@ -46,7 +46,7 @@ Given /^I am authenticated user$/ do
   visit '/manage/account/login'
   fill_in "user_email", with: email
   fill_in "user_password", with: password
-  click_button "Log in"
+  click_button "LOGIN"
 end
 
 Given /^I am authenticated adminuser$/ do
@@ -56,7 +56,7 @@ Given /^I am authenticated adminuser$/ do
   visit '/manage/account/login'
   fill_in "user_email", with: email
   fill_in "user_password", with: password
-  click_button "Log in"
+  click_button "LOGIN"
 end
 
 Given /^I am registrated user$/ do
@@ -83,5 +83,5 @@ Given /^I am authenticated publisheruser$/ do
   visit '/manage/account/login'
   fill_in "user_email", with: email
   fill_in "user_password", with: password
-  click_button "Log in"
+  click_button "LOGIN"
 end

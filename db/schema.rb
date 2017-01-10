@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161104164400) do
+ActiveRecord::Schema.define(version: 20170109013004) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,33 +23,11 @@ ActiveRecord::Schema.define(version: 20161104164400) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "activity_news", force: :cascade do |t|
-    t.integer  "activity_id"
+  create_table "content_news", force: :cascade do |t|
+    t.integer  "content_id"
     t.integer  "news_article_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-  end
-
-  create_table "album_relations", force: :cascade do |t|
-    t.integer  "photoset_id",                 comment: "ID media content of type album"
-    t.integer  "album_photo_id",              comment: "ID media content of type photo"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-    t.index ["album_photo_id"], name: "index_album_relations_on_album_photo_id", using: :btree
-    t.index ["photoset_id", "album_photo_id"], name: "index_album_relations_on_photoset_id_and_album_photo_id", unique: true, using: :btree
-    t.index ["photoset_id"], name: "index_album_relations_on_photoset_id", using: :btree
-  end
-
-  create_table "albums", force: :cascade do |t|
-    t.integer  "media_content_id"
-    t.string   "photoset_id"
-    t.string   "photoset_url"
-    t.integer  "albumable_count",  default: 0
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.string   "main_photo_id"
-    t.string   "main_photo_url"
-    t.index ["media_content_id"], name: "index_albums_on_media_content_id", using: :btree
   end
 
   create_table "content_partners", force: :cascade do |t|
@@ -59,6 +37,14 @@ ActiveRecord::Schema.define(version: 20161104164400) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "content_types", force: :cascade do |t|
+    t.string   "for_content", null: false
+    t.string   "title",       null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.text     "description"
+  end
+
   create_table "contents", force: :cascade do |t|
     t.string   "type"
     t.string   "title"
@@ -66,56 +52,115 @@ ActiveRecord::Schema.define(version: 20161104164400) do
     t.boolean  "is_published"
     t.integer  "position"
     t.string   "story_map_url"
-    t.datetime "created_at",           null: false
-    t.datetime "updated_at",           null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "is_featured"
+    t.integer  "project_number"
+    t.text     "short_description"
+    t.date     "content_date"
+    t.integer  "content_type_id"
+    t.integer  "media_content_id"
+    t.integer  "lead_user_id"
     t.string   "picture_file_name"
     t.string   "picture_content_type"
     t.integer  "picture_file_size"
     t.datetime "picture_updated_at"
-    t.boolean  "is_featured"
-    t.integer  "project_number"
-    t.text     "short_description"
+    t.string   "cover_picture_file_name"
+    t.string   "cover_picture_content_type"
+    t.integer  "cover_picture_file_size"
+    t.datetime "cover_picture_updated_at"
+  end
+
+  create_table "documents", force: :cascade do |t|
+    t.string   "label"
+    t.integer  "publication_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
+  end
+
+  create_table "event_partners", force: :cascade do |t|
+    t.integer  "event_id"
+    t.integer  "partner_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "events", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.string   "web_url"
+    t.boolean  "active",                        default: false, null: false
+    t.datetime "deactivated_at"
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
     t.string   "background_image_file_name"
     t.string   "background_image_content_type"
     t.integer  "background_image_file_size"
     t.datetime "background_image_updated_at"
-    t.boolean  "active",                        default: false, null: false
-    t.datetime "deactivated_at"
-    t.integer  "partner_id"
-    t.datetime "created_at",                                    null: false
-    t.datetime "updated_at",                                    null: false
-    t.index ["partner_id"], name: "index_events_on_partner_id", using: :btree
+  end
+
+  create_table "media_attachments", force: :cascade do |t|
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "media_contents", force: :cascade do |t|
-    t.string   "title"
+    t.string   "external_id"
+    t.string   "external_url"
+    t.string   "type"
+    t.string   "author"
+    t.string   "licence"
+    t.date     "publication_date"
     t.text     "description"
-    t.boolean  "is_published"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "title"
+    t.integer  "album_id"
+    t.datetime "external_updated_at"
+    t.boolean  "is_featured"
+    t.integer  "photo_id"
+    t.integer  "eps_id"
+    t.integer  "pdf_id"
+  end
+
+  create_table "media_supports", force: :cascade do |t|
+    t.integer  "content_id"
+    t.integer  "media_content_id"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "news_articles", force: :cascade do |t|
     t.string   "exposure_slug"
     t.string   "title"
     t.integer  "position"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.date     "publication_date"
+    t.text     "short_description"
+    t.string   "cover_src"
+  end
+
+  create_table "news_media_contents", force: :cascade do |t|
+    t.integer  "news_article_id"
+    t.integer  "media_content_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.date     "publication_date"
   end
 
   create_table "participants", force: :cascade do |t|
     t.integer  "content_id"
     t.integer  "user_id"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.boolean  "is_lead",    default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "partners", force: :cascade do |t|
@@ -130,13 +175,13 @@ ActiveRecord::Schema.define(version: 20161104164400) do
     t.datetime "logo_updated_at"
   end
 
-  create_table "photos", force: :cascade do |t|
-    t.integer  "media_content_id"
-    t.string   "photo_id"
-    t.string   "photo_url"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.index ["media_content_id"], name: "index_photos_on_media_content_id", using: :btree
+  create_table "photo_sizes", force: :cascade do |t|
+    t.integer "photo_id"
+    t.string  "size"
+    t.integer "width"
+    t.integer "height"
+    t.string  "url"
+    t.string  "label"
   end
 
   create_table "related_contents", force: :cascade do |t|
@@ -144,6 +189,39 @@ ActiveRecord::Schema.define(version: 20161104164400) do
     t.integer  "publication_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+  end
+
+  create_table "site_sections", force: :cascade do |t|
+    t.string   "section"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "taggings", force: :cascade do |t|
+    t.integer  "tag_id"
+    t.string   "taggable_type"
+    t.integer  "taggable_id"
+    t.string   "tagger_type"
+    t.integer  "tagger_id"
+    t.string   "context",       limit: 128
+    t.datetime "created_at"
+    t.index ["context"], name: "index_taggings_on_context", using: :btree
+    t.index ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
+    t.index ["tag_id"], name: "index_taggings_on_tag_id", using: :btree
+    t.index ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context", using: :btree
+    t.index ["taggable_id", "taggable_type", "tagger_id", "context"], name: "taggings_idy", using: :btree
+    t.index ["taggable_id"], name: "index_taggings_on_taggable_id", using: :btree
+    t.index ["taggable_type"], name: "index_taggings_on_taggable_type", using: :btree
+    t.index ["tagger_id", "tagger_type"], name: "index_taggings_on_tagger_id_and_tagger_type", using: :btree
+    t.index ["tagger_id"], name: "index_taggings_on_tagger_id", using: :btree
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string  "name"
+    t.integer "taggings_count", default: 0
+    t.string  "category"
+    t.index ["name"], name: "index_tags_on_name", unique: true, using: :btree
   end
 
   create_table "users", force: :cascade do |t|
@@ -170,10 +248,18 @@ ActiveRecord::Schema.define(version: 20161104164400) do
     t.datetime "locked_at"
     t.integer  "failed_attempts",        default: 0,     null: false
     t.string   "unlock_token"
+    t.boolean  "is_board_member",        default: false
+    t.string   "phone"
+    t.text     "description"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "thumbnail_file_name"
+    t.string   "thumbnail_content_type"
+    t.integer  "thumbnail_file_size"
+    t.datetime "thumbnail_updated_at"
+    t.string   "middle_name"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
@@ -186,12 +272,18 @@ ActiveRecord::Schema.define(version: 20161104164400) do
     t.datetime "updated_at",                   null: false
   end
 
-  add_foreign_key "activity_news", "contents", column: "activity_id"
-  add_foreign_key "activity_news", "news_articles"
-  add_foreign_key "albums", "media_contents"
+  create_table "weblinks", force: :cascade do |t|
+    t.string   "url"
+    t.string   "label"
+    t.string   "publication_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_foreign_key "content_news", "contents"
+  add_foreign_key "content_news", "news_articles"
   add_foreign_key "content_partners", "contents"
   add_foreign_key "content_partners", "partners"
   add_foreign_key "participants", "contents"
   add_foreign_key "participants", "users"
-  add_foreign_key "photos", "media_contents"
 end

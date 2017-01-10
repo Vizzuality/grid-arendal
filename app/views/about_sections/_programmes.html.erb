@@ -1,0 +1,20 @@
+<section class="l-main-content -about -color-7"  data-section="programmes">
+  <div class="row">
+    <div class="small-12 column">
+      <div class="text -title-event">Programmes</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 small-centered columns">
+      <div class="c-slider slider js_slider" data-slider-type="card">
+        <div class="frame js_frame">
+          <div class="masonry-layout slides js_slides" data-columns="4">
+            <% programmes.each do |item| %>
+              <%= render 'shared/content_card', item: item %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

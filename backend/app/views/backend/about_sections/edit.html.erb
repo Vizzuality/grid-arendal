@@ -3,14 +3,7 @@
 </div>
 
 <div class="l-items-detail">
-  <h2>Edit</h2>
-  <p><%= @about_section.title || 'about_section' %></p>
-  <%= simple_form_for @about_section do |f| %>
-    <%= render partial: f %>
-    <div class="actions">
-      <%=  f.submit  do %>
-        <button>Update</button>
-      <% end %>
-    </div>
+  <%= simple_form_for @about_section, html: { class: 'c-form' } do |f| %>
+    <%= render 'form', form: f %>
   <% end %>
 </div>

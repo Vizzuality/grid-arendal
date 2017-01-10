@@ -1,34 +1,52 @@
-# frozen_string_literal: true
 # == Schema Information
 #
 # Table name: media_contents
 #
-#  id           :integer          not null, primary key
-#  title        :string
-#  description  :text
-#  is_published :boolean
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
+#  id               :integer          not null, primary key
+#  external_id      :integer
+#  external_url     :string
+#  type             :string
+#  author           :string
+#  licence          :string
+#  publication_date :date
+#  description      :text
+#  created_at       :datetime         not null
+#  updated_at       :datetime         not null
 #
 
 class MediaContent < ApplicationRecord
-  include Publishable
-  include Sanitizable
-  include Mediable
+  include Featurable
 
-  attr_accessor :photo_file, :main_photo_file, :mediable
+  TYPE_ALBUM = "Album"
+  TYPE_PHOTO = "Photo"
 
-  has_many :album_photos_as_album, class_name: 'AlbumRelation', foreign_key: :photoset_id
-  has_many :photosets_as_photo,    class_name: 'AlbumRelation', foreign_key: :album_photo_id
+  has_many :media_supports, dependent: :destroy
+  has_many :activities, through: :media_supports, source: :activity
+  has_many :publications, through: :media_supports, source: :publication
 
-  has_many :album_photos, through: :album_photos_as_album
-  has_many :photosets,    through: :photosets_as_photo
+  has_many :news_media_contents, dependent: :destroy
+  has_many :news_articles, through: :news_media_contents
 
-  accepts_nested_attributes_for :album_photos, reject_if: :all_blank, allow_destroy: true
-  accepts_nested_attributes_for :photosets,    reject_if: :all_blank, allow_destroy: true
+  scope :wo_photos_in_album, -> { where("type <> 'Photo' OR (type = 'Photo' AND album_id IS NULL)")}
 
-  validates :title, presence: true
+  # relations added here to allow lazy loading on media_library_controller
+  has_many :photo_sizes, foreign_key: :photo_id
+  has_many :photos, foreign_key: :album_id
 
-  scope :includes_mediable, -> { includes([:photo, :album]) }
-  scope :order_by_title,    -> { order('title ASC')         }
+  def get_url(size)
+    puts case self.type
+      when MediaContent::TYPE_ALBUM
+        picture_url = nil
+      when MediaContent::TYPE_PHOTO
+        picture_url = media.photo_sizes.where(size: size).first.url
+      else
+        picture_url = nil
+      end
+
+    return picture_url
+  end
+
+  def info_title
+    "#{title} (#{type})"
+  end
 end

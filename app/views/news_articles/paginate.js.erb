@@ -1,0 +1,8 @@
+<% if @articles.any? %>
+  $(function(){
+    salvattore.appendElements(document.querySelector('.masonry-layout'), $('<div/>')
+      .html("<%= escape_javascript(render("news", articles: @articles)) %>")
+      .contents()
+    );
+  });
+<% end %>

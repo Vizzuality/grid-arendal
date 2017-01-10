@@ -1,0 +1,54 @@
+<% sectionClass ||= '' %>
+<section class="l-main-content -media-library <%= sectionClass %>">
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="c-main-content-header">
+        <h2 class="text -title-block">
+          <% title ||= "Related Media" %>
+          <%= title %>
+        </h2>
+        <% if(defined? link) %>
+          <p class="text -view-all">
+            <%= link_to link do %>
+              <span>
+                View all media
+              </span>
+                <svg class="icon -arrow">
+                  <use xlink:href="#icon-arrow"></use>
+                </svg>
+            <% end %>
+          </p>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="c-slider slider js_slider" data-slider-type="related-media">
+        <div class="frame js_frame">
+          <div class="slides js_slides">
+            <% media_contents.each_with_index do |media, index| %>
+              <% picture_url = case media.type
+                                 when MediaContent::TYPE_ALBUM
+                                   photo = media.photos.first
+                                   photo ? photo.photo_sizes.where(label: PhotoSize::LARGE).first.try(:url) : nil
+                                 when MediaContent::TYPE_PHOTO
+                                   media.photo_sizes.where(label: PhotoSize::LARGE).first.try(:url)
+                                 else
+                                   nil
+                               end %>
+              <%= render 'shared/related_media_item',
+                picture: picture_url,
+                title: media.title,
+                link: medium_path(media),
+                author: media.author,
+                date: media.publication_date,
+                index: index %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

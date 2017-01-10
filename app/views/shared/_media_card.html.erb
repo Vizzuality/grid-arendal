@@ -1,0 +1,21 @@
+<%
+  needSteps = (photos_count + videos_count) > 2
+  meta = []
+  if photos_count > 0
+    meta.push("#{photos_count} photos")
+  end
+  if videos_count > 0
+    meta.push("#{videos_count} videos")
+  end
+%>
+<div class="item js_slide slide">
+  <%= link_to link do %>
+    <article class="c-card <% if needSteps %>-card-steps<% end %>" data-card-type="media">
+      <div class="card-pic" style="background-image: url('<%= picture %>')"></div>
+      <div class="card-description">
+        <h3 class="text -title-card-small"><%= title %></h3>
+        <p class="text -meta"><%= meta.join(" | ") %></p>
+      </div>
+    </article>
+  <% end %>
+</div>

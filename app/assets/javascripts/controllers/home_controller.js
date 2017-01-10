@@ -6,19 +6,42 @@
 
   App.Controller.Home = App.Controller.Page.extend({
 
+    options: {
+      sliderContentCardType: "card",
+      sliderMediaItemType: "related-media"
+    },
+
     index: function() {
+      new App.View.EventsModal();
+      new App.View.RelatedMedia();
+
       this.initSliders();
+      if(!this.isScreen_s) {
+        _.each($('.masonry-layout'), function(element) {
+          if($(element).find('.masonry-column').length === 0) {
+            new App.View.Masonry({
+              el: element
+            });
+          }
+        });
+      }
     },
 
     initSliders: function() {
+      _.each($('.js_slider'), function(element) {
+        var sliderType = $(element).data("slider-type");
+        var needLoadSlider = true;
 
-      Array.prototype.slice.call(document.querySelectorAll('.js_slider')).forEach(function (element, index) {
-        lory(element, {
-          infinite: 3,
-          slidesToScroll: 1,
-          enableMouseEvents: true
-        });
-      });
+        if(sliderType == this.options.sliderContentCardType && !this.isScreen_s) {
+          needLoadSlider = false;
+        }
+
+        if(needLoadSlider) {
+          lory(element, {
+            enableMouseEvents: true
+          });
+        }
+      }.bind(this));
     }
 
   });

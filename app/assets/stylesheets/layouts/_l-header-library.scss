@@ -1,3 +1,10 @@
+$header-library-staff-padding-bottom: rem(20px);
+$header-avatar-border-width: rem(3px);
+$header-avatar-size: rem(100px);
+$header-avatar-size-screen-s: rem(170px);
+$header-avatar-size-screen-m: rem(250px);
+$header-avatar-size-screen-l: rem(340px);
+
 .l-header-library {
   background-position: center center;
   background-repeat: no-repeat;
@@ -5,7 +12,6 @@
   display: block;
   position: relative;
   padding-bottom: rem(50px);
-  min-height: rem(280px);
 
   &.-publications {
     background-color: rgba($color-3, 0.04);
@@ -23,35 +29,106 @@
     background-color: rgba($color-2, 0.05);
   }
 
+  &.-staff {
+    background-color: rgba($color-1, 0.05);
+    padding-bottom: $header-library-staff-padding-bottom !important;
+
+    .c-breadcrumbs {
+      padding-bottom: rem(13px);
+    }
+
+    .-title-staff {
+      margin-bottom: rem(7px);
+    }
+
+    .header-avatar {
+      position: absolute;
+      right: 0;
+      bottom: -(($header-avatar-size / 2) + $header-library-staff-padding-bottom);
+      width: $header-avatar-size;
+      height: $header-avatar-size;
+      margin: 0 auto;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: -$header-avatar-border-width;
+        left: -$header-avatar-border-width;
+        width: calc(100% + #{$header-avatar-border-width * 2});
+        height: calc(100% + #{$header-avatar-border-width * 2});
+        border: $header-avatar-border-width solid rgba($white, .3);
+        border-radius: 50%;
+      }
+
+      @media screen and (min-width: $screen-s) {
+        bottom: -(($header-avatar-size-screen-s / 2) + $header-library-staff-padding-bottom);
+        width: $header-avatar-size-screen-s;
+        height: $header-avatar-size-screen-s;
+      }
+
+      @media screen and (min-width: $screen-m) {
+        bottom: -(($header-avatar-size-screen-m / 2) + $header-library-staff-padding-bottom);
+        width: $header-avatar-size-screen-m;
+        height: $header-avatar-size-screen-m;
+      }
+
+      @media screen and (min-width: $screen-l) {
+        bottom: -(($header-avatar-size-screen-l / 2) + $header-library-staff-padding-bottom);
+        width: $header-avatar-size-screen-l;
+        height: $header-avatar-size-screen-l;
+      }
+    }
+  }
+
+  &.-search {
+    background-color: rgba($color-1, 0.05);
+  }
+
   .title-block {
     position: relative;
 
     .-title-library{
-      margin: rem(10px) 0;
+      margin: rem(17px) 0 rem(7px) 0;
+
+      @media screen and (min-width: $screen-m) {
+        margin: rem(26px) 0 rem(7px) 0;
+      }
     }
 
     .-summary {
       max-width: rem(500px);
     }
 
-    .share {
-      background-color: $white;
-      width: rem(50px);
-      height: rem(50px);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      right: rem(-25px);
-      top: 0;
-      z-index: 20;
-      cursor: pointer;
+    .c-share {
+      top: rem(-2px);
+      display: none;
 
-      .icon {
-        width: rem(20px);
-        height: rem(20px);
+      @media screen and (min-width: $screen-m) {
+        display: flex;
+        right: 0;
+      }
+
+      @media screen and (min-width: $screen-l) {
+        right: rem(-15px);
       }
     }
+  }
+
+  @media screen and (min-width: $screen-m) {
+    padding-bottom: rem(36px);
+  }
+}
+
+.l-header-library-separator {
+  width: 100%;
+  height: rem(47px);
+  background-color: #E5EBED;
+
+  @media screen and (min-width: $screen-m) {
+    display: none;
   }
 }

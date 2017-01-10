@@ -1,29 +1,29 @@
+<%
+  is_vertical = false
+  picture_url = case @media_content.type
+                when MediaContent::TYPE_ALBUM
+                  photo = @media_content.photos.first
+                  is_vertical = photo.photo_sizes.where(label: PhotoSize::LARGE).first.is_vertical
+                  photo && photo.photo_sizes.where(label: PhotoSize::LARGE).first.try(:url)
+                when MediaContent::TYPE_PHOTO
+                  is_vertical = @media_content.photo_sizes.where(label: PhotoSize::LARGE).first.is_vertical
+                  @media_content.photo_sizes.where(label: PhotoSize::LARGE).first.try(:url)
+                else
+                  nil
+                end
+%>
 <div class="l-header-single -media-library">
   <div class="overlay"></div>
   <%= render 'shared/menu' %>
   <div class="row">
     <div class="small-12 columns">
       <div class="title-block">
-        <div class="c-breadcrumbs">
-          <a href="/">
-            <svg class="icon-home">
-              <use xlink:href="#icon-breadcrumb-home"></use>
-            </svg>
-          </a>
-          <svg class="icon">
-            <use xlink:href="#icon-breadcrumb-chevron-right"></use>
-          </svg>
-          <%= link_to "Media library", media_path, class: "text -meta" %>
-          <svg class="icon">
-            <use xlink:href="#icon-breadcrumb-chevron-right"></use>
-          </svg>
-          <span class="text -meta">Arctic Biodiversity</span>
-        </div>
-        <div class="share">
-          <svg class="icon">
-            <use xlink:href="#icon-share"></use>
-          </svg>
-        </div>
+        <% breadcrumbs_links = [
+          {'text' => 'Media library', 'link' => media_path},
+          {'text' => @media_content.title}
+        ] %>
+        <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
+        <%= render 'shared/share' %>
       </div>
     </div>
   </div>
@@ -32,27 +32,27 @@
 
   <div class="row">
     <div class="small-12 column">
-      <div class="c-article-image"></div>
+      <div class="c-article-image <% if is_vertical %>-vertical<% end %>" style="background-image: url('<%= picture_url %>');"></div>
     </div>
   </div>
 
   <div class="row">
     <div class="small-12 large-6 column">
       <div class="content">
-        <h2 class="text -title-single">Polar bear (Ursus maritimus), Northwest Spitsbergen National Park, Svalbard</h2>
+        <h2 class="text -title-single"><% @media_content.title %></h2>
         <div class="text -body-single">
-          <p>Svalbard is the best example of Linking Tourism & Conservation and where totally protected polar bears can be observed under well-regulated and -managed conditions.</p>
+          <%= raw @media_content.description %>
           <br>
-          <p><strong>Year:</strong> 2014</p>
-          <p><strong>From collection:</strong> Arctic Biodiversity</p>
-          <p><strong>Taken by:</strong> Peter Prokosch</p>
-          <p><strong>Downloads:</strong> 4509 <span class="rating"><strong>Rating:</strong></span></p>
-          <p class="tags">
-            <strong>Tags:</strong>
-            <span class="tag text -meta">Arctic</span>
-            <span class="tag text -meta">Biodiversity</span>
-            <span class="tag text -meta">Conservation</span>
-          </p>
+          <p><strong>Year:</strong> <%= @media_content.publication_date.year %></p>
+          <% if @media_content.author.present? %><p><strong>Taken by:</strong> <%= @media_content.author %></p><% end %>
+          <% if @media_content.tags.any? %>
+            <p class="tags">
+              <strong>Tags:</strong>
+              <% @media_content.tags.each do |tag| %>
+                <span class="tag text -meta"><%= tag %></span>
+              <% end %>
+            </p>
+          <% end %>
         </div>
       </div>
     </div>
@@ -60,17 +60,20 @@
     <div class="small-12 large-6 column">
       <div class="sidebar">
         <div class="download-links">
-          <div class="text -sidebar-title">Download</div>
-          <ul class="button-list">
-            <li class="btn -dark" data-file-size="500x320">S</li>
-            <li class="btn -dark" data-file-size="2200x1460">M</li>
-            <li class="btn -dark" data-file-size="3500x2343">L</li>
-            <li class="btn -dark" data-file-size="4288x2848">XL</li>
-          </ul>
+          <% if @media_content.is_a?(Photo) %>
+            <div class="text -sidebar-title">Download</div>
+            <ul class="button-list">
+              <% @media_content.photo_sizes.where(label: PhotoSize::LABELS).each do |size| %>
+                <%= link_to size.url, title: size.label do %>
+                  <li class="btn -dark" data-file-size="<%= "#{size.width}x#{size.height}"%>"><%= size.label %></li>
+                <% end %>
+              <% end %>
+            </ul>
+          <% end %>
         </div>
         <div class="constraints">
           <div class="text -sidebar-title">Use Constraints</div>
-          <div class="text -meta">Using this item and referring to it is encouraged, and please use it in presentations, web pages, newspapers, blogs and reports.<br><br>For any form of publication, please include the link to this page and give the creator credit (in this case Peter Prokosch)</div>
+          <div class="text -meta">Using this item and referring to it is encouraged, and please use it in presentations, web pages, newspapers, blogs and reports.<br><br>For any form of publication, please include the link to this page and give the creator credit <% if @media_content.author.present? %>(in this case <%= @media_content.author %>)<% end %></div>
         </div>
       </div>
     </div>
@@ -78,6 +81,28 @@
 
 </div>
 
-<%= render 'shared/related-media' %>
+<% if @media_content.is_a?(Album) %>
+  <%= render 'shared/media', media_contents: @media_content.photos,
+  title: "Photos included in album", sectionClass: 'content -color-4' %>
+<% end %>
+
+<% if @media_content.activities.any? %>
+  <%= render 'shared/posts', collection: @media_content.activities.
+    order(:title),
+    title: 'Related activities',
+    link: activities_path, sectionClass: 'content -color-4' %>
+<% end %>
+
+<% if @media_content.publications.any? %>
+  <%= render 'shared/posts', collection: @media_content.publications.
+    order(content_date: :desc),
+    title: 'Related publications',
+    link: publications_path, sectionClass: 'content -color-4' %>
+<% end %>
+
+<% if @media_content.news_articles.any? %>
+  <%= render 'shared/news', news: @media_content.news_articles,
+    title: "Related news", sectionClass: 'content -color-4' %>
+<% end %>
 
 <%= render 'shared/footer' %>

@@ -1,5 +1,7 @@
 <div class="l-header-home">
   <div class="overlay"></div>
+  <div class="header-slider"></div>
+  <%= render 'event_modal' %>
   <%= render 'shared/menu' %>
   <div class="cta">
     <div class="logo">
@@ -8,11 +10,7 @@
       </svg>
     </div>
     <div class="cta-desktop text -cta">
-      GRID-Arendal works closely with the United Nations Environment Programme (UNEP),
-      other UN agencies and partners around the world to connect science to policy.<br>
-      Our goal is to reduce the time between when new knowledge is produced and when it is used.<br>
-      We believe it’s important influence thinking and action at the global level
-      because our greatest challenges require collective action.
+      <%= @section.description %>
     </div>
     <div class="media">
       <svg class="icon">
@@ -23,33 +21,17 @@
 </div>
 
 <div class="cta-mobile text -cta">
-  GRID-Arendal works closely with the United Nations Environment Programme (UNEP),
-  other UN agencies and partners around the world to connect science to policy.
-  Our goal is to reduce the time between when new knowledge is produced and when it is used.
-  We believe it’s important influence thinking and action at the global level
-  because our greatest challenges require collective action.
+  <%= @section.description %>
 </div>
 
-<% if @event %>
-  <div>
-    <h3><%= @event.title %></h3>
-    <%= @event.description %>
-    <br />
-    <%= link_to "Learn more", @event.web_url %>
-    <% if @event.partner %>
-      <p>sponsored by <%= link_to @event.partner.name, @event.partner.web_url %></p>
-    <% end %>
-  </div>
-<% end %>
+<%= render 'shared/news', news: @news, sectionClass: 'home' %>
 
-<%= render 'shared/news' %>
+<%= render 'shared/posts', collection: @activities, title: 'Featured activities', link: activities_path, sectionClass: 'home' %>
 
-<%= render 'shared/posts', collection: @activities, title: 'activities', link: activities_path %>
+<%= render 'shared/posts', collection: @publications, title: 'publications', link: publications_path, sectionClass: 'home' %>
 
-<%= render 'shared/posts', collection: @publications, title: 'publications', link: publications_path %>
+<%= render 'shared/related_media', media_contents: @media_contents, title: 'Featured media', link: media_path, sectionClass: 'home' %>
 
-<%= render 'shared/media' %>
-
-<%= render 'shared/users' %>
+<%= render 'shared/users', users: @users, sectionClass: 'home' %>
 
 <%= render 'shared/footer' %>

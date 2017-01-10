@@ -54,16 +54,18 @@ module Backend
 
       it 'Publishes vacancy' do
         unpublished = create(:vacancy, is_published: false)
-        process :publish, method: :patch, params: { id: @vacancy.id }
-        expect(response).to be_redirect
-        expect(response).to have_http_status(302)
+        process :publish, method: :patch, xhr: true,
+          params: { id: @vacancy.id }
+        expect(response).to be_success
+        expect(response).to have_http_status(200)
         expect(@vacancy.reload.published?).to be(true)
       end
 
       it 'Unpublishes vacancy' do
-        process :unpublish, method: :patch, params: { id: @vacancy.id }
-        expect(response).to be_redirect
-        expect(response).to have_http_status(302)
+        process :unpublish, method: :patch, xhr: true,
+          params: { id: @vacancy.id }
+        expect(response).to be_success
+        expect(response).to have_http_status(200)
         expect(@vacancy.reload.unpublished?).to be(true)
       end
     end

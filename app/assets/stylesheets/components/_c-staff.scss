@@ -1,34 +1,56 @@
-$pics: 'pic-1', 'pic-2', 'pic-3', 'pic-4', 'pic-5', 'pic-6';
+$staff-border-width: rem(3px);
 
 .c-staff {
-  margin-top: rem(16px);
-  text-align: center;
+  margin-top: rem(1px);
 
-  .staff-pic {
-    width: rem(120px);
-    height: rem(120px);
-    margin: 0 auto;
-    border-radius: 50%;
-    border: rem(3px) solid rgba($white, .3);
+  .staff {
+    margin-top: rem(16px);
+    text-align: center;
 
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    border-radius: 100%;
+    .staff-pic {
+      position: relative;
+      width: rem(90px);
+      height: rem(90px);
+      margin: 0 auto;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
 
-    @for $i from 1 through length($pics) {
-      &.#{nth($pics, $i)} {
-        background-image: image-url('staff/#{nth($pics, $i)}.jpg');
+      &:before {
+        content: "";
+        position: absolute;
+        top: -$staff-border-width;
+        left: -$staff-border-width;
+        width: calc(100% + #{$staff-border-width * 2});
+        height: calc(100% + #{$staff-border-width * 2});
+        border: $staff-border-width solid rgba($white, .3);
+        border-radius: 50%;
+      }
+    }
+
+    .-author {
+      margin-top: rem(12px);
+    }
+
+    .-meta {
+      margin-top: rem(5px);
+      opacity: 0.8;
+    }
+
+    @media screen and (min-width: $screen-m) {
+      .staff-pic {
+        width: rem(120px);
+        height: rem(120px);
+      }
+
+      .-author {
+        margin-top: rem(15px);
       }
     }
   }
 
-  .-author {
-    margin-top: rem(15px);
+  @media screen and (min-width: $screen-m) {
+    margin-top: rem(-3px);
   }
-
-  .-meta {
-    margin-top: rem(4px);
-  }
-
 }

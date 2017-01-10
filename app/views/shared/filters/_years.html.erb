@@ -1,0 +1,9 @@
+<div class="filter -type-years js-filter" data-filter-type="years" data-filter-key="<%= key %>">
+  <ul class="list">
+    <% data.each do |year| %>
+      <li class="text -filter-year <%= "selected" if params[:years] && params[:years].split(",").include?(year.to_s) %>" data-value="<%= year %>">
+        <%= year == -1 ? "older" : year %>
+      </li>
+    <% end %>
+  </ul>
+</div>

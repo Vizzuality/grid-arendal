@@ -26,7 +26,10 @@ Backend::Engine.routes.draw do
 
   resources :partners,       except: :show
   resources :about_sections, except: :show
-  resources :news_articles,  except: :show
+  resources :site_sections, except: [:show, :new, :create]
+  resources :news_articles,  except: [:show, :new, :create] do
+    get :fetch, on: :collection
+  end
 
   [:publications, :activities].each do |res|
     resources res, except: [:show] do
@@ -47,9 +50,30 @@ Backend::Engine.routes.draw do
     patch 'activate',   on: :member
   end
 
-  resources :media_contents, except: :show do
-    patch 'publish',   on: :member
-    patch 'unpublish', on: :member
+  resources :content_types, except: :show
+
+  resources :tags, except: :show
+
+  resources :photos, except: [:new, :create, :show] do
+    patch 'make_featured',   on: :member
+    patch 'remove_featured', on: :member
+    get 'search', on: :collection
+  end
+
+  resources :albums, except: [:show] do
+    patch 'make_featured', on: :member
+    patch 'remove_featured', on: :member
+    get 'flickr_update', on: :member
+  end
+
+  resources :videos, except: :show do
+    patch 'make_featured',   on: :member
+    patch 'remove_featured', on: :member
+  end
+
+  resources :graphics, except: :show do
+    patch 'make_featured',   on: :member
+    patch 'remove_featured', on: :member
   end
 
   root to: 'admin_home#index'

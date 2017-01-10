@@ -10,10 +10,6 @@ module Backend
     before_action :set_events,             except: :index
 
     def index
-      @event = Event.order(:title).first
-      if @event
-        redirect_to edit_event_url(@event) and return
-      end
     end
 
     def edit
@@ -25,7 +21,8 @@ module Backend
 
     def update
       if @event.update(event_params)
-        redirect_to events_url, notice: 'Event updated'
+        redirect_to edit_event_url(@event),
+          notice: 'Event updated'
       else
         render :edit
       end
@@ -34,9 +31,17 @@ module Backend
     def create
       @event = Event.create(event_params)
       if @event.save
-        redirect_to events_url
+        redirect_to edit_event_url(@event),
+          notice: 'Event created'
       else
         render :new
+      end
+    end
+
+    def destroy
+      @event = Event.find(params[:id])
+      if @event.destroy
+        redirect_to events_url
       end
     end
 
@@ -67,7 +72,7 @@ module Backend
       end
 
       def set_partners_selection
-        @partners = Partner.order_by_name.map { |r| [r.name, r.id] }
+        @partners = Partner.order_by_name
       end
 
       def event_params

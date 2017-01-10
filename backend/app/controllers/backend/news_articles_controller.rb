@@ -5,38 +5,37 @@ module Backend
   class NewsArticlesController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_news_article,  except: [:index, :new, :create]
-    before_action :set_news_articles, except: :index
+    before_action :set_news_article,  except: [:index, :fetch]
+    before_action :set_news_articles, except: :destroy
+    before_action :set_objects, only: [:new, :edit]
 
     def index
-      @news_article = NewsArticle.order(:title).first
-      if @news_article
-        redirect_to edit_news_article_url(@news_article) and return
-      end
     end
 
     def edit
     end
 
-    def new
-      @news_article = NewsArticle.new
-    end
-
     def update
       if @news_article.update(news_article_params)
-        redirect_to news_articles_url, notice: 'NewsArticle updated'
+        redirect_to edit_news_article_url(@news_article),
+          notice: 'News article updated'
       else
+        set_objects
         render :edit
       end
     end
 
-    def create
-      @news_article = NewsArticle.create(news_article_params)
-      if @news_article.save
-        redirect_to news_articles_url
-      else
-        render :new
+    def destroy
+      @news_article = NewsArticle.find(params[:id])
+      if @news_article.destroy
+        redirect_to edit_news_article_url(@news_article),
+          notice: 'News article created'
       end
+    end
+
+    def fetch
+      total_imported = NewsArticle.fetch_from_rss
+      redirect_to news_articles_url, notice: "#{total_imported} articles imported"
     end
 
     private
@@ -46,11 +45,18 @@ module Backend
       end
 
       def set_news_articles
-        @news_articles = NewsArticle.order(:title)
+        @news_articles = NewsArticle.order('publication_date DESC')
       end
 
       def news_article_params
         params.require(:news_article).permit!
+      end
+
+      def set_objects
+        @tags = Tag.order(:name)
+        @activities = Activity.order(:title)
+        @publications = Publication.order(:title)
+        @media_contents = MediaContent.wo_photos_in_album.order(:title)
       end
   end
 end

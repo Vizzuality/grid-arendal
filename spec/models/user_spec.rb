@@ -61,7 +61,7 @@ RSpec.describe User, type: :model do
   let(:user) { create(:user, first_name: 'Tobias', last_name: 'Thomas', email: 'tobias.thomas@example.com') }
 
   it 'should calculate display names' do
-    expect(user.display_name).to eq('Tobias T.')
+    expect(user.display_name).to eq('Tobias Thomas')
     expect(user.full_name).to eq('Tobias Thomas')
 
     # No name display email prefix

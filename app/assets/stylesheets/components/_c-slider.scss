@@ -1,17 +1,11 @@
-.c-slider {
+@mixin default-slider-styles {
   position: relative;
-  width: 1000px;
   margin: 0 auto;
 
   .frame {
-    max-width: calc(62.5rem - 2*(0.9375rem));
-    margin: 0 auto;
-    padding: 0 0.9375rem;
-
     position: relative;
     font-size: 0;
     line-height: 0;
-    overflow: hidden;
     white-space: nowrap;
   }
 
@@ -20,13 +14,57 @@
   }
 
   .slide {
+    position: relative;
     display: inline-block;
-    width: 270px;
-    margin: 0 10px;
-    vertical-align: top;
+  }
+}
 
-    @media (min-width: $screen-m){
-      width: 310px;
+%default-slider-styles {
+  @include default-slider-styles;
+}
+
+.c-slider {
+
+  &[data-slider-type="card"] {
+
+    @media screen and (max-width: $screen-m) {
+
+      @include default-slider-styles;
+
+      .slide {
+        width: rem(280px);
+        padding-right: rem(10px);
+        vertical-align: top;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  &[data-slider-type="related-media"] {
+
+    @extend %default-slider-styles;
+    padding: rem(15px) 0 rem(32px) 0;
+
+    .slides {
+      width: 100%;
+    }
+
+    .slide {
+      width: calc(100% + #{rem(20px)});
+      height: rem(600px);
+      padding-right: rem(10px);
+      vertical-align: top;
+    }
+
+    @media screen and (max-width: $screen-m) {
+      .slide {
+        width: rem(290px);
+        height: rem(350px);
+        padding-right: rem(20px);
+      }
     }
   }
 }
