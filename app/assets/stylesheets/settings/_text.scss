@@ -164,10 +164,14 @@
   }
 
   &.-title-single-alt {
-    font-size: 36px;
+    font-size: 26px;
     font-weight: 600;
     font-family: $font-family-2;
     line-height: 1.1;
+
+    @media screen and (min-width: $screen-m) {
+      font-size: 36px;
+    }
   }
 
   &.-title-event {

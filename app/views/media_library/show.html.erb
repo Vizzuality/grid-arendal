@@ -12,21 +12,23 @@
                   nil
                 end
 %>
-<div class="l-header-single -media-library">
-  <div class="overlay"></div>
-  <%= render 'shared/menu' %>
-  <div class="row">
-    <div class="small-12 columns">
-      <div class="title-block">
-        <% breadcrumbs_links = [
-          {'text' => 'Media library', 'link' => media_path},
-          {'text' => @media_content.title}
-        ] %>
-        <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
-        <%= render 'shared/share' %>
+<div class="l-header-single">
+  <div class="navigation -media-library">
+    <%= render 'shared/menu' %>
+    <div class="row">
+      <div class="small-12 columns">
+        <div class="title-block">
+          <% breadcrumbs_links = [
+            {'text' => 'Media library', 'link' => media_path},
+            {'text' => @media_content.title}
+          ] %>
+          <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
+          <%= render 'shared/share' %>
+        </div>
       </div>
     </div>
   </div>
+  <div class="banner -media-library" style="background-image: url('<%= picture_url %>');"></div>
 </div>
 <div class="l-media-article -media-library">
 

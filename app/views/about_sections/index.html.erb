@@ -1,31 +1,34 @@
-<div class="l-header-single -about">
-  <div class="overlay"></div>
-  <%= render 'shared/menu' %>
-  <div class="row">
-    <div class="small-12 columns">
-      <div class="title-block">
-        <% breadcrumbs_links = [
-          {'text' => 'About', 'link' => about_index_path}
-        ] %>
-        <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
+<div class="l-header-single">
+  <div class="l-menu">
+    <%= render 'shared/menu' %>
+    <div class="row">
+      <div class="small-12 columns">
+        <div class="title-block">
+          <% breadcrumbs_links = [
+            {'text' => 'About', 'link' => about_index_path}
+          ] %>
+          <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
+        </div>
       </div>
     </div>
   </div>
-  <div class="section-menu">
-    <div class="row">
-      <div class="small-12 columns">
-        <ul class="anchors">
-          <li class="text -section-menu js-anchor" data-section-belongs="about">About</li>
-          <li class="text -section-menu js-anchor" data-section-belongs="strategy">Strategy 2014-2017</li>
-          <li class="text -section-menu js-anchor" data-section-belongs="programmes">Programmes</li>
-          <li class="text -section-menu js-anchor" data-section-belongs="users">Staff</li>
-          <li class="text -section-menu js-anchor" data-section-belongs="board">Board</li>
-          <% if @vacancies.any? %>
-            <li class="text -section-menu js-anchor" data-section-belongs="vacancies">Vacancies</li>
-          <% end %>
-          <li class="text -section-menu js-anchor" data-section-belongs="reports">Reports</li>
-          <%= render 'shared/share' %>
-        </ul>
+  <div class="l-image -about">
+    <div class="section-menu">
+      <div class="row">
+        <div class="small-12 columns">
+          <ul class="anchors">
+            <li class="text -section-menu js-anchor" data-section-belongs="about">About</li>
+            <li class="text -section-menu js-anchor" data-section-belongs="strategy">Strategy 2014-2017</li>
+            <li class="text -section-menu js-anchor" data-section-belongs="programmes">Programmes</li>
+            <li class="text -section-menu js-anchor" data-section-belongs="users">Staff</li>
+            <li class="text -section-menu js-anchor" data-section-belongs="board">Board</li>
+            <% if @vacancies.any? %>
+              <li class="text -section-menu js-anchor" data-section-belongs="vacancies">Vacancies</li>
+            <% end %>
+            <li class="text -section-menu js-anchor" data-section-belongs="reports">Reports</li>
+            <%= render 'shared/share' %>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
