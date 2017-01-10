@@ -20,8 +20,8 @@ class Tag < ApplicationRecord
       SELECT tags.id, tags.name, COUNT(*) AS taggings_count
       FROM tags
       INNER JOIN taggings ON taggings.tag_id = tags.id
-      INNER JOIN contents ON taggable_type = 'MediaContent' AND
-        taggable_id = contents.id
+      INNER JOIN media_contents ON taggable_type = 'MediaContent' AND
+        taggable_id = media_contents.id
       GROUP by tags.id, tags.name
       ORDER BY UPPER(tags.name)
     SQL
