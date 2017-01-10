@@ -9,7 +9,7 @@ class ActivitiesController < ApplicationController
     @content_types = ContentType.by_activity
     @programmes = Tag.where(category: Tag::PROGRAMME).order(:name)
     @partners = Partner.order(:name)
-    @tags = Tag.where.not(category: Tag::PROGRAMME).order(:name)
+    @tags = Tag.find_by_sql("SELECT tags.* FROM tags INNER JOIN taggings ON taggings.tag_id = tags.id INNER JOIN contents ON taggable_type = 'Content' AND taggable_id = contents.id AND contents.type = 'Activity' WHERE tags.category <> 'Programme' GROUP by tags.id, tags.name ORDER BY UPPER(tags.name)")
     @section = SiteSection.where(section: "activities").first
     respond_to do |format|
       format.html

@@ -5,12 +5,13 @@ class PublicationsController < ApplicationController
   before_action :set_page_param, only: [:index, :paginate]
 
   def index
-    @publications = Publication.fetch_all(options_filter).limit(@publications_limit * @page)
+    @publications = Publication.fetch_all(options_filter).
+      limit(@publications_limit * @page)
     @content_types = ContentType.by_publication
     max = (Publication.maximum(:content_date) || Date.today).year
     @years = ((max-5)..max).to_a.reverse
     @years << -1
-    @tags = Tag.order(:name)
+    @tags = Tag.find_by_sql("SELECT tags.* FROM tags INNER JOIN taggings ON taggings.tag_id = tags.id INNER JOIN contents ON taggable_type = 'Content' AND taggable_id = contents.id AND contents.type = 'Publication' GROUP by tags.id, tags.name ORDER BY UPPER(tags.name)")
     @section = SiteSection.where(section: "activities").first
     respond_to do |format|
       format.html
