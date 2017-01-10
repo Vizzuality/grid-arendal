@@ -30,10 +30,15 @@
 
     li {
       margin-right: rem(40px);
-      margin-bottom: rem(20px);
+      margin-bottom: rem(25px);
+      padding-bottom: rem(3px);
 
       @media screen and (min-width: $screen-m) {
         margin-bottom: 0;
+      }
+
+      &.-selected {
+        border-bottom: solid 2px $white;
       }
     }
   }

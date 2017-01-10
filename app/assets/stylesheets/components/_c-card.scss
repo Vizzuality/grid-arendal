@@ -10,6 +10,7 @@
 
 .c-card {
   position: relative;
+  z-index: 20;
 
   .card-pic {
     width: 100%;
@@ -22,7 +23,7 @@
 
   .card-description {
     background-color: $white;
-    padding: rem(21px) rem(20px) rem(16px) rem(20px);
+    padding: rem(21px) rem(20px) rem(21px) rem(20px);
 
     @media screen and (min-width: $screen-m) {
       padding-top: rem(24px);
