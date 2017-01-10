@@ -25,7 +25,11 @@ Backend::Engine.routes.draw do
   end
 
   resources :partners,       except: :show
-  resources :about_sections, except: :show
+
+  resources :about_sections, except: :show do
+    post :sort, on: :collection
+  end
+
   resources :site_sections, except: [:show, :new, :create]
   resources :news_articles,  except: [:show, :new, :create] do
     get :fetch, on: :collection
