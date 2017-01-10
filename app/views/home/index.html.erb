@@ -26,9 +26,13 @@
 
 <%= render 'shared/news', news: @news, sectionClass: 'home' %>
 
-<%= render 'shared/posts', collection: @activities, title: 'Featured activities', link: activities_path, sectionClass: 'home' %>
+<%= render 'shared/posts', collection: @activities, title: 'Featured activities',
+  link_txt: 'View all activities',
+  link: activities_path, sectionClass: 'home' %>
 
-<%= render 'shared/posts', collection: @publications, title: 'publications', link: publications_path, sectionClass: 'home' %>
+<%= render 'shared/posts', collection: @publications, title: 'Featured publications',
+  link_txt: 'View all publications',
+  link: publications_path, sectionClass: 'home' %>
 
 <%= render 'shared/related_media', media_contents: @media_contents, title: 'Featured media', link: media_path, sectionClass: 'home' %>
 
