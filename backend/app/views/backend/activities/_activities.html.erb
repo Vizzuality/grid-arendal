@@ -9,6 +9,8 @@
   <% activities.each do |activity| %>
     <%= render 'backend/shared/index_item',
       item: activity,
-      title: activity.title %>
+      sortable: false,
+      title: activity.title
+    %>
   <% end %>
 </ul>

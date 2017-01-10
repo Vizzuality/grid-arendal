@@ -9,6 +9,7 @@
   <% publications.each do |publication| %>
     <%= render 'backend/shared/index_item',
       item: publication,
+      sortable: false,
       title: publication.title %>
   <% end %>
 </ul>

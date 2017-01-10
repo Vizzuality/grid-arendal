@@ -20,6 +20,8 @@
   <% @content_types.each do |content_type| %>
     <%= render 'backend/shared/index_item',
       item: content_type,
-      title: content_type.title %>
+      sortable: false,
+      title: content_type.title
+    %>
   <% end %>
 </ul>

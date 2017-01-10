@@ -5,10 +5,12 @@
   createPath: new_about_section_path
 %>
 
-<ul class="items-list js-sortable"  data-update-url="<%= sort_about_sections_url %>">
+<ul class="items-list js-sortable is-sortable"  data-update-url="<%= sort_about_sections_url %>">
   <% @about_sections.each do |about_section| %>
     <%= render 'backend/shared/index_item',
       item: about_section,
-      title: about_section.title %>
+      sortable: true,
+      title: about_section.title
+    %>
   <% end %>
 </ul>

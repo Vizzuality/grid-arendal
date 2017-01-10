@@ -1,7 +1,9 @@
 <li id="item_<%= item.id %>" class="c-index-item" data-item-id="<%= item.id %>">
-  <svg class="dragger icon">
-    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-row_dragger"></use>
-  </svg>
+  <% if sortable %>
+    <svg class="dragger icon">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-row_dragger"></use>
+    </svg>
+  <% end %>
   <div class="text -index-item -light title -short">
     <%= truncate(title, length: 30) %>
     <% if item.is_a?(Album) %>

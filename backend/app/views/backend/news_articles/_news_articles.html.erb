@@ -19,6 +19,7 @@
   <% @news_articles.each do |news_article| %>
     <%= render 'backend/shared/index_item',
       item: news_article,
+      sortable: false,
       title: news_article.title %>
   <% end %>
 </ul>

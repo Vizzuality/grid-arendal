@@ -9,6 +9,7 @@
   <% users.each do |user| %>
     <%= render 'backend/shared/index_item',
       item: user,
+      sortable: false,
       title: "#{user.full_name} - #{user.email} (#{user.status})" %>
   <% end %>
 </ul>

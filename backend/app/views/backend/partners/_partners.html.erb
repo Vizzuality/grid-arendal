@@ -9,6 +9,8 @@
   <% @partners.each do |partner| %>
     <%= render 'backend/shared/index_item',
     item: partner,
-    title: partner.name %>
+    sortable: false,
+    title: partner.name
+  %>
   <% end %>
 </ul>

@@ -4,6 +4,7 @@
   <% @site_sections.each do |site_section| %>
     <%= render 'backend/shared/index_item',
       item: site_section,
+      sortable: false,
       title: site_section.section.titleize %>
   <% end %>
 </ul>
