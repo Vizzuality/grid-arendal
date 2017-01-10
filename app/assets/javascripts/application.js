@@ -12,8 +12,6 @@
 //
 //= require jquery
 //= require turbolinks
-
-//= require jquery
 //= require URIjs
 //= require handlebars
 //= require underscore/underscore
