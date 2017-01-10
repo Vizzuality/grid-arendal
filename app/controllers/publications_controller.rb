@@ -11,7 +11,7 @@ class PublicationsController < ApplicationController
     max = (Publication.maximum(:content_date) || Date.today).year
     @years = ((max-5)..max).to_a.reverse
     @years << -1
-    @tags = Tag.find_by_sql("SELECT tags.* FROM tags INNER JOIN taggings ON taggings.tag_id = tags.id INNER JOIN contents ON taggable_type = 'Content' AND taggable_id = contents.id AND contents.type = 'Publication' GROUP by tags.id, tags.name ORDER BY UPPER(tags.name)")
+    @tags = Tag.find_by_sql("SELECT tags.id, tags.name, COUNT(*) AS taggings_count FROM tags INNER JOIN taggings ON taggings.tag_id = tags.id INNER JOIN contents ON taggable_type = 'Content' AND taggable_id = contents.id AND contents.type = 'Publication' GROUP by tags.id, tags.name ORDER BY UPPER(tags.name)")
     @section = SiteSection.where(section: "activities").first
     respond_to do |format|
       format.html
