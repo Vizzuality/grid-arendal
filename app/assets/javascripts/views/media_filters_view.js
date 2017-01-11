@@ -83,7 +83,6 @@
 
     _setHash: function () {
       var url = '?' + this.getFilterValues();
-      console.log(url);
       Turbolinks.visit(url, {})
       // window.history.pushState('', '', url);
     },

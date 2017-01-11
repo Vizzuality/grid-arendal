@@ -20,7 +20,6 @@
       new App.View.MediaFilters({
         callback: this._filter.bind(this)
       });
-
       this.scrollPaginationView = new App.View.ScrollPagination({
         callback: this._paginate.bind(this),
         options: {
