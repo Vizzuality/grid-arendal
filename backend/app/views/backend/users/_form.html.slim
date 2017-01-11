@@ -16,6 +16,8 @@ div.fields
 
   = render 'backend/shared/form/field_input', form: form, value: :current_position, label_txt: 'Position'
 
+  = render 'backend/shared/form/field_select', form: form, value: :position_category, collection: User::POSITION_CATEGORIES, include_blank: true, label_txt: "Position Category", input_as: :select
+
   = render 'backend/shared/form/field_input', form: form, value: :phone
 
   = render 'backend/shared/form/field_textarea', form: form, value: :description
