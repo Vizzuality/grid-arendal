@@ -1,15 +1,17 @@
 <% activities.each do |activity| %>
+  <%
+    photo_url = if activity.media_content
+                  activity.media_content.photo_sizes.where(label: PhotoSize::MEDIUM).first.try(:url)
+                else
+                  nil
+                end
+  %>
   <%= link_to activity do %>
     <div class="item">
       <article class="c-card">
-        <%
-          photo_url = if activity.media_content
-                        activity.media_content.photo_sizes.where(label: PhotoSize::MEDIUM).first.try(:url)
-                        else
-                          asset_path('original/missing2.png')
-                        end
-        %>
-        <div class="card-pic" style="background-image: url(<%= photo_url %>)"></div>
+        <% if photo_url.present? %>
+            <div class="card-pic" style="background-image: url('<%= photo_url %>')"></div>
+        <% end %>
         <div class="card-description">
           <h3 class="text -title-card"><%= activity.title %></h3>
           <p class="text -summary"><%= activity.short_description %></p>
