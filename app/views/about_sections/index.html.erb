@@ -30,35 +30,37 @@
   </div>
 </div>
 
-<% @sections.each do |section| %>
-  <section class="l-main-content -about -color-7" data-section="<%= "section-#{section.id}" %>">
+<% @sections.each_with_index do |section, index| %>
+  <section class="l-main-content -about -color-7 <% if index === 0 %>-no-border<% end %>" data-section="<%= "section-#{section.id}" %>">
     <div class="row">
       <div class="small-12 column">
         <div class="text -title-event"><%= section.title %></div>
       </div>
     </div>
-    <div class="row">
-      <% if section.category.blank? %>
-       <div class="small-12 column">
-        <% if section.body.present? %>
-          <div class="text -summary-alt"><%= raw section.body %></div>
+    <% if section.category === 'staff' %>
+      <%= render 'staff', users: @users, categories: @categories %>
+    <% else %>
+      <div class="row">
+        <% if section.category.blank? %>
+          <div class="small-12 column">
+            <% if section.body.present? %>
+              <div class="text -summary-alt"><%= raw section.body %></div>
+            <% end %>
+          </div>
+        <% else %>
+          <% case section.category %>
+            <% when 'programmes' %>
+              <%= render 'posts', posts: @programmes %>
+            <% when 'vacancies' %>
+              <%= render 'vacancies', vacancies: @vacancies %>
+            <% when 'board' %>
+              <%= render 'board', board_members: @board_members %>
+            <% when 'annual-reports' %>
+              <%= render 'posts', posts: @annual_reports %>
+          <% end %>
         <% end %>
       </div>
-      <% else %>
-        <% case section.category %>
-          <% when 'staff' %>
-            <%= render 'staff', users: @users %>
-          <% when 'programmes' %>
-            <%= render 'posts', posts: @programmes %>
-          <% when 'vacancies' %>
-            <%= render 'vacancies', vacancies: @vacancies %>
-          <% when 'board' %>
-            <%= render 'board', board_members: @board_members %>
-          <% when 'annual-reports' %>
-            <%= render 'posts', posts: @annual_reports %>
-        <% end %>
-      <% end %>
-    </div>
+    <% end %>
   </section>
 <% end %>
 
