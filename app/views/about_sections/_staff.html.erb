@@ -5,7 +5,7 @@
       <% User::POSITION_CATEGORIES.each do |category| %>
         <% next unless categories.include?(category) %>
         <li class="c-staff-selector-item text -filter <% if i == 0 %>-selected<% end %> js-staff-selector-item" data-category-index="<%= i %>">
-          <span><%= category[0] %></span>
+          <span><%= category %></span>
         </li>
         <% i += 1 %>
       <% end %>
