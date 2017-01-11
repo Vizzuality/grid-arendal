@@ -22,7 +22,7 @@
       this._initVariables();
       this._checkCurrentPage();
       this._loadOnScrollEvent();
-      this.hideFooter();
+      // this.hideFooter();
     },
 
     _cache: function() {
@@ -55,13 +55,17 @@
         query += '&' + index + '=' + value;
       });
 
-      window.history.replaceState('', '', query.replace('&', '?'));
+      // Turbolinks.visit(query, {})
+
+      // window.history.replaceState('', '', query.replace('&', '?'));
     },
 
     _loadOnScrollEvent: function() {
-      $(window).on('scroll', _.throttle(
-        this._onScrollLoadPage, 300).bind(this)
-      );
+      $(window).on('scroll', function() {
+        if ($(window).scrollTop() > $(document).height() - $(window).height() - 50 ) {
+          this._onScrollLoadPage();
+        }
+      }.bind(this));
     },
 
     _onScrollLoadPage: function() {

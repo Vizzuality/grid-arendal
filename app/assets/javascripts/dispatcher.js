@@ -48,6 +48,7 @@
       } else {
         console.error('specified controller doesn\'t exist');
       }
+
     }
 
   });
@@ -57,7 +58,8 @@
    */
   function initApp() {
     new Dispatcher();
-
+    // unbind all global events
+    $(window).unbind();
     if (Backbone.History.started) {
       Backbone.history.stop();
     }
