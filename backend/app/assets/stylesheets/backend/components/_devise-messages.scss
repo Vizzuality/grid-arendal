@@ -1,0 +1,18 @@
+.success, .alert {
+  position: absolute;
+  top: rem(20px);
+  left: rem(20px);
+  right: rem(20px);
+  padding: rem(10px);
+  color: $white;
+  text-align: center;
+  font-family: $font-family-1;
+
+  @media screen and (min-width: $screen-m) {
+    text-align: left;
+  }
+}
+
+.error_notification, .error {
+  color: $white;
+}
