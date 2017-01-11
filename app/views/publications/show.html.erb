@@ -11,22 +11,24 @@
                 else
                   asset_path('original/missing2.png')
                 end %>
-<div class="l-header-single -publications">
-  <div class="overlay" style="background-image: url('<%= picture_url %>');"></div>
-  <%= render 'shared/menu' %>
-  <div class="row">
-    <div class="small-12 columns">
-      <div class="title-block">
-        <% breadcrumbs_links = [
-          {text: 'Publications', link: publications_path },
-          {text: @publication.title,
-           edit_path: backend.edit_publication_path(@publication) }
-        ] %>
-        <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
-        <%= render 'shared/share' %>
+<div class="l-header-single">
+  <div class="navigation -publications">
+    <%= render 'shared/menu' %>
+    <div class="row">
+      <div class="small-12 columns">
+        <div class="title-block">
+          <% breadcrumbs_links = [
+            {text: 'Publications', link: publications_path },
+            {text: @publication.title,
+             edit_path: backend.edit_publication_path(@publication) }
+          ] %>
+          <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
+          <%= render 'shared/share' %>
+        </div>
       </div>
     </div>
   </div>
+  <div class="banner -publications" style="background-image: url('<%= picture_url %>');"></div>
 </div>
 
 <div class="l-single-article -publications">

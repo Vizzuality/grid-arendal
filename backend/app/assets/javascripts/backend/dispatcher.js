@@ -39,7 +39,7 @@
         if (currentController[actionName] &&
           typeof currentController[actionName] === 'function') {
           // Setting new params in model
-          this.updateParams(params);
+          // this.updateParams(params);
           // Executing controller#action and passing url params
           currentController[actionName](params);
         } else {

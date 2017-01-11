@@ -18,12 +18,25 @@
     cursor: pointer;
   }
 
-  .c-home-video-container {
+  .icon {
     position: absolute;
-    top: rem(70px);
-    left: 0;
+    top: rem(20px);
+    right: rem(20px);
+    z-index: 20;
+    width: rem(15px);
+    height: rem(15px);
+    fill: $white;
+    cursor: pointer;
+  }
+
+  .c-home-video-container {
     width: 100%;
     height: rem(250px);
+    max-height: calc(100% - 100px);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     @media screen and (min-width: $screen-m) {
       height: rem(541px);
@@ -37,4 +50,3 @@
     }
   }
 }
-

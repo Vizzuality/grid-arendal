@@ -1,5 +1,4 @@
 <div class="l-header-library -activities">
-  <div class="overlay"></div>
   <%= render 'shared/menu' %>
   <div class="row">
     <div class="small-12 columns">
@@ -55,6 +54,11 @@
       <div class="masonry-layout" data-columns="3">
         <%= render 'activities', activities: @activities %>
       </div>
+      <% if @activities.count < 1 %>
+        <div class="c-filter-message">
+          <h4 class="text -title-event">Sorry, there are no activities with those filters</h4>
+        </div>
+      <% end %>
     </div>
   </div>
 
