@@ -18,15 +18,9 @@
       this.options = _.extend({}, this.options, opts);
       this.callback = settings.callback;
 
-      this._cache();
       this._initVariables();
       this._checkCurrentPage();
       this._loadOnScrollEvent();
-      // this.hideFooter();
-    },
-
-    _cache: function() {
-      this.$footer = this.$el.find(this.options.footerClass);
     },
 
     _initVariables: function() {
@@ -54,10 +48,6 @@
       _.each(params, function (value, index) {
         query += '&' + index + '=' + value;
       });
-
-      // Turbolinks.visit(query, {})
-
-      // window.history.replaceState('', '', query.replace('&', '?'));
     },
 
     _loadOnScrollEvent: function() {
@@ -87,14 +77,6 @@
 
     toggleBlockPagination: function() {
       this.blockPagination = !this.blockPagination;
-    },
-
-    showFooter: function() {
-      this.$footer.show();
-    },
-
-    hideFooter: function() {
-      this.$footer.hide();
     },
 
     showLoader: function() {
