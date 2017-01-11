@@ -6,6 +6,8 @@ class PhotoSize < ApplicationRecord
   MEDIUM = "Medium"
   SMALL = "Small"
 
+  DISPLAY = { SMALL => "S", MEDIUM => "M", LARGE => "L", ORIGINAL => "XL" }
+
   LABELS = [ORIGINAL, LARGE, MEDIUM, SMALL]
 
   def is_vertical
