@@ -64,7 +64,7 @@ class User < ApplicationRecord
   scope :locked_accounts,   -> { where.not(locked_at: nil) }
   scope :order_by_fullname, -> { order(:first_name, :last_name) }
 
-  POSITION_CATEGORIES = ["Managing & Administration Team", "Staff", "Consultants & Interns"]
+  POSITION_CATEGORIES = ["Managing Director", "Administration Team", "Finance", "Staff", "Consultants & Interns"]
 
   class << self
     def filter_users(filters)
