@@ -56,6 +56,12 @@ module Backend
       redirect_to [:edit, @album], notice: msg
     end
 
+    def destroy
+      if @album.destroy
+        redirect_to albums_url
+      end
+    end
+
     private
 
       def album_params
