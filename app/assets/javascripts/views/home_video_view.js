@@ -26,8 +26,6 @@
     _cache: function() {
       this.$homeVideo = this.$el.find(this.options.homeVideoClass);
       this.$homeVideoContainer = this.$el.find(this.options.homeVideoContainerClass);
-      this.$iframe = $("iframe#homeVideo");
-      this.$iframeSrc = this.$iframe.attr('src');
       this.$html = $('html');
       this.$body = $('body');
     },
@@ -50,8 +48,9 @@
     },
 
     _stopVideo: function() {
-      this.$iframe.attr('src','');
-      this.$iframe.attr('src', this.$iframeSrc);
+      var src = $("iframe#homeVideo").attr('src');
+      $("iframe#homeVideo").attr('src','');
+      $("iframe#homeVideo").attr('src', src);
     },
 
     _checkIframe: function() {
