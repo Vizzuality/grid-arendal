@@ -4,12 +4,7 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: rem(320px);
   z-index: 10;
-
-  @media screen and (min-width: $screen-s) {
-    height: rem(400px);
-  }
 
   @media screen and (min-width: $screen-m) {
     background-image: none;
@@ -95,50 +90,80 @@
     }
   }
 
-  &.-publications {
-    background-color: rgba($color-3, 0.04);
+  .-publications {
+    background-color: rgba(83, 48, 0, 0.04);
   }
 
-  &.-activities {
+  .-activities, .-about {
     background-color: rgba($color-1, 0.04);
   }
 
-  &.-news {
+  .-news {
     background-color: rgba($color-2, 0.04);
   }
 
-  &.-media-library {
+  .-media-library {
     background-color: rgba($color-2, 0.05);
   }
 
-  &.-activities-article,
-  &.-about {
-    height: rem(530px);
+  .banner {
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: rem(250px);
+
+    @media screen and (min-width: $screen-s) {
+      height: rem(350px);
+    }
 
     @media screen and (min-width: $screen-m) {
-      height: rem(650px);
+      height: rem(550px);
     }
-  }
 
-  &.-about {
-    background-image: image-url('header7.jpg');
+    &.-vertical {
+      height: rem(450px);
+    }
 
-    .section-menu {
-      display: none;
+    &.-activities-article {
+      height: rem(400px);
 
       @media screen and (min-width: $screen-m) {
-        display: block;
-        padding-top: 0;
-      }
-
-      .anchors {
-        margin-top: 28px;
+        height: rem(550px);
       }
     }
 
-    .c-share {
-      top: auto;
-      bottom: rem(18px);
+    &.-publications, &.-media-library {
+      @media screen and (min-width: $screen-m) {
+        display: none;
+      }
+    }
+
+    &.-about {
+      background-image: image-url('header7.jpg');
+      height: rem(250px);
+
+      @media screen and (min-width: $screen-m) {
+        height: rem(550px);
+      }
+
+      .section-menu {
+        display: none;
+
+        @media screen and (min-width: $screen-m) {
+          display: block;
+          padding-top: 0;
+        }
+
+        .anchors {
+          margin-top: 28px;
+        }
+      }
+
+      .c-share {
+        top: auto;
+        bottom: rem(18px);
+      }
     }
   }
 }

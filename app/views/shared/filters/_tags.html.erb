@@ -14,9 +14,11 @@
   </span>
   <div class="dropdown">
     <div class="type text -filter-title"><%= title %></div>
-    <svg class="icon js-tags-select-closer">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-dropdown_arrow_down"></use>
-    </svg>
+    <div class="js-tags-select-closer">
+      <svg class="icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-dropdown_arrow_down"></use>
+      </svg>
+    </div>
     <ul class="list">
       <% data.each do |option| %>
         <li class="text -filter <%= "selected" if params[:tags] && params[:tags].split(",").include?(option.id.to_s) %>" data-value="<%= option.id %>" data-name="<%= option.name %>">

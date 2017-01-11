@@ -30,6 +30,11 @@
       <div class="masonry-layout" data-columns="4">
         <%= render 'media_library', media_contents: @media_contents %>
       </div>
+      <% if @media_contents.count < 1 %>
+        <div class="c-filter-message">
+          <h4 class="text -title-event">Sorry, there is no media with those filters</h4>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>

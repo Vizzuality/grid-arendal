@@ -18,15 +18,9 @@
       this.options = _.extend({}, this.options, opts);
       this.callback = settings.callback;
 
-      this._cache();
       this._initVariables();
       this._checkCurrentPage();
       this._loadOnScrollEvent();
-      this.hideFooter();
-    },
-
-    _cache: function() {
-      this.$footer = this.$el.find(this.options.footerClass);
     },
 
     _initVariables: function() {
@@ -52,16 +46,16 @@
 
       var query = '';
       _.each(params, function (value, index) {
-        query = '&' + index + '=' + value;
+        query += '&' + index + '=' + value;
       });
-
-      window.history.pushState('', '', query.replace('&', '?'));
     },
 
     _loadOnScrollEvent: function() {
-      $(window).on('scroll', _.throttle(
-        this._onScrollLoadPage, 300).bind(this)
-      );
+      $(window).on('scroll', function() {
+        if ($(window).scrollTop() > $(document).height() - $(window).height() - 50 ) {
+          this._onScrollLoadPage();
+        }
+      }.bind(this));
     },
 
     _onScrollLoadPage: function() {
@@ -83,14 +77,6 @@
 
     toggleBlockPagination: function() {
       this.blockPagination = !this.blockPagination;
-    },
-
-    showFooter: function() {
-      this.$footer.show();
-    },
-
-    hideFooter: function() {
-      this.$footer.hide();
     },
 
     showLoader: function() {

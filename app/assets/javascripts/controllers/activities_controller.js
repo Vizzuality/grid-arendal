@@ -20,7 +20,6 @@
       new App.View.MediaFilters({
         callback: this._filter.bind(this)
       });
-
       this.scrollPaginationView = new App.View.ScrollPagination({
         callback: this._paginate.bind(this),
         options: {
@@ -66,7 +65,6 @@
 
           if(response.status === 204) {
             this.scrollPaginationView.toggleBlockPagination();
-            this.scrollPaginationView.showFooter();
           } else {
             this.scrollPaginationView._setHash();
           }
