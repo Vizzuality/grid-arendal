@@ -67,8 +67,10 @@
             <div class="text -sidebar-title">Download</div>
             <ul class="button-list">
               <% @media_content.photo_sizes.where(label: PhotoSize::LABELS).each do |size| %>
-                <%= link_to size.url, title: size.label do %>
-                  <li class="btn -dark" data-file-size="<%= "#{size.width}x#{size.height}"%>"><%= size.label %></li>
+                <%= link_to size.url, title: size.label, target: '_blank' do %>
+                  <li class="btn -dark" data-file-size="<%= "#{size.width}x#{size.height}"%>">
+                    <%= PhotoSize::DISPLAY[size.label] %>
+                  </li>
                 <% end %>
               <% end %>
             </ul>

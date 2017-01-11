@@ -39,8 +39,11 @@
 
         if(needLoadSlider) {
           lory(element, {
-            enableMouseEvents: true
-          });
+            enableMouseEvents: true,
+
+          }).slideTo(1);
+          // debugger
+          // $(element).data().lory.next();
         }
       }.bind(this));
     }

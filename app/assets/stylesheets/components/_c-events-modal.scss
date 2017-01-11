@@ -3,7 +3,7 @@
   height: 100%;
 
   .event-container {
-    position: absolute;
+    position: fixed;
     top: rem(15px);
     background-color: #f2f5f6;
     box-shadow: 0 rem(20px) rem(20px) 0 rgba(0, 0, 0, 0.2);
@@ -11,18 +11,21 @@
     background-position: center bottom;
     background-repeat: no-repeat;
     z-index: 100;
-    width: 100%;
+    width: calc(100% - 20px);
     padding: rem(50px) rem(15px);
-    height: calc(100vh - 100px);
+    height: calc(100% - 20px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     @media screen and (min-width: $screen-m) {
+      position: absolute;
       padding: rem(70px) rem(90px);
       top: rem(70px);
+      left: 0;
       height: 530px;
-    }
-
-    @media screen and (min-width: $screen-l) {
-
+      width: 100%;
+      transform: none;
     }
   }
 
