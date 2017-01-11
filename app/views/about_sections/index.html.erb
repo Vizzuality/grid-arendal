@@ -31,7 +31,7 @@
 </div>
 
 <% @sections.each_with_index do |section, index| %>
-  <section class="l-main-content -about -color-7 <% if index === 0 %>-no-border<% end %>" data-section="<%= "section-#{section.id}" %>">
+  <section id="<%= section.category %>" class="l-main-content -about -color-7 <% if index === 0 %>-no-border<% end %>" data-section="<%= "section-#{section.id}" %>">
     <div class="row">
       <div class="small-12 column">
         <div class="text -title-event"><%= section.title %></div>
