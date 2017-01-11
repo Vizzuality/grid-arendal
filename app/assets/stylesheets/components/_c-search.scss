@@ -7,49 +7,4 @@
     height: rem(18px);
     cursor: pointer;
   }
-
-  input[type="text"] {
-    position: absolute;
-    top: rem(-6px);
-    right: rem(-6px);
-    width: rem(30px);
-    height: rem(30px);
-    background-color: transparent;
-    border: 0;
-    border-radius: rem(5px);
-    color: transparent;
-    transition: background-color 0.2s linear, width 0.2s ease-out;
-    outline: 0;
-    z-index: 2;
-    cursor: pointer;
-
-    &:focus {
-      background-color: $white;
-      width: rem(200px);
-      cursor: auto;
-      font-size: 13px;
-      line-height: 1.23;
-      letter-spacing: 0.3px;
-      color: $font-color-1;
-      padding: 0 rem(35px) 0 rem(10px);
-      z-index: 1;
-
-      & + label {
-        opacity: 1;
-        z-index: 2;
-      }
-    }
-  }
-
-  input[type="submit"] {
-    display: none;
-  }
-
-  label {
-    position: absolute;
-    opacity: 0;
-    transition: opacity 0.2s linear;
-    z-index: 1;
-    cursor: pointer;
-  }
 }
