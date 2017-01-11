@@ -26,6 +26,8 @@
     _cache: function() {
       this.$homeVideo = this.$el.find(this.options.homeVideoClass);
       this.$homeVideoContainer = this.$el.find(this.options.homeVideoContainerClass);
+      this.$iframe = $("iframe#homeVideo");
+      this.$iframeSrc = this.$iframe.attr('src');
       this.$html = $('html');
       this.$body = $('body');
     },
@@ -36,7 +38,6 @@
       }, 300, function() {
         this._checkIframe();
       }.bind(this));
-      this._fixBackground();
     },
 
     onClickCloseVideo: function(e) {
@@ -45,12 +46,12 @@
       }, 300, function() {
         $(this).hide();
       });
-      this._fixBackground();
+      this._stopVideo();
     },
 
-    _fixBackground: function() {
-      this.$html.toggleClass('-fixed');
-      this.$body.toggleClass('-fixed');
+    _stopVideo: function() {
+      this.$iframe.attr('src','');
+      this.$iframe.attr('src', this.$iframeSrc);
     },
 
     _checkIframe: function() {
@@ -61,7 +62,7 @@
     },
 
     _getIframeHTML: function () {
-      return '<iframe src="https://player.vimeo.com/video/' + this.$homeVideoContainer.data('video-id') + '?title=0&byline=0&portrait=0" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+      return '<iframe id="homeVideo" src="https://player.vimeo.com/video/' + this.$homeVideoContainer.data('video-id') + '?title=0&byline=0&portrait=0" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
     },
 
   });
