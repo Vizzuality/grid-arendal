@@ -4,8 +4,9 @@
       <div class="card-pic" style="background-image: url('<%= article.cover_src %>')"></div>
       <div class="card-description">
         <h3 class="text -title-card-small"><%= article.title %></h3>
-        <p class="text -meta">
-          <%= time_ago_in_words(article.publication_date) %>
+        <p class="card-meta">
+          <span class="text -meta"></span>
+          <span class="text -meta -right"><%= time_ago_in_words(article.publication_date) %></span>
         </p>
       </div>
     </article>
