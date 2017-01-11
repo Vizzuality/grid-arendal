@@ -8,10 +8,17 @@
     <li><%= flash[:notice] %></li>
   <% end %>
   <div class="header-content">
-    <% inputs.each do |input| %>
-      <%= form.label input.values[0] %>
-      <%= form.text_area input.values[0], label: false, class: 'text -main-title -dark title js-adjustable-input', placeholder: input.values[1], rows: 2 %>
-    <% end %>
+    <%if inputs.length > 1%>
+      <% inputs.each do |input| %>
+        <%= form.label input.values[0] %>
+        <%= form.input input.values[0], label: false, input_html: { class: 'text -main-title -dark title js-adjustable-input', placeholder: input.values[1] } %>
+      <% end %>
+    <% else %>
+      <% inputs.each do |input| %>
+        <%= form.label input.values[0] %>
+        <%= form.text_area input.values[0], label: false, class: 'text -main-title -dark title', placeholder: input.values[1], rows: 2 %>
+      <% end %>
+    <%end%>
 
     <svg class="icon">
       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-edit"></use>

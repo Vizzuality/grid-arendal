@@ -62,6 +62,10 @@ $photo-list-shadow-gap: rem(4px);
     > .input {
       position: relative;
       display: inline-block;
+
+      input {
+        border: 0;
+      }
     }
 
     .title {
@@ -98,13 +102,17 @@ $photo-list-shadow-gap: rem(4px);
     &[data-fields='1'] {
 
       textarea {
-        max-width: calc(100% - #{rem(30px)});
+        width: calc(100% - #{rem(30px)});
       }
     }
 
     &[data-fields='2'] {
+      .header-content {
+        min-height: rem(80px);
+      }
 
       .input {
+        position: relative;
         max-width: calc(50% - #{rem(15px)});
 
         &:first-of-type {
@@ -122,15 +130,6 @@ $photo-list-shadow-gap: rem(4px);
             color: #9f9f9f;
           }
         }
-      }
-
-      // Those are the rules for the "user section" textarea.
-      // There is a bug that makes short words drop a letter sometimes, even if there is enough space. That is why we need to use "white-space: no-wrap". But the problem is that this very rule, avoids the text input to split in two lines.
-      textarea {
-        max-width: calc(50% - #{rem(15px)});
-        box-sizing: content-box;
-        margin-right: rem(10px);
-        white-space: nowrap;
       }
     }
   }
