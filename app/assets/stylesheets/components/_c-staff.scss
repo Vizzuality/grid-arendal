@@ -54,3 +54,47 @@ $staff-border-width: rem(3px);
     margin-top: rem(-3px);
   }
 }
+
+.c-staff-container {
+  display: none;
+
+  &.-selected {
+    display: block;
+  }
+}
+
+.c-staff-selector {
+  margin-top: rem(21px);
+  font-size: 0;
+
+  .c-staff-selector-item {
+    position: relative;
+    display: inline-block;
+    margin-right: rem(63px);
+    cursor: pointer;
+
+    span {
+      position: relative;
+      z-index: 1;
+    }
+
+    &.-selected,
+    &:hover {
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: rem(7px);
+        left: rem(-10px);
+        width: calc(100% + #{rem(20px)});
+        height: rem(5px);
+        z-index: 0;
+        background-color: $white;
+      }
+    }
+
+    &.-selected {
+      font-weight: 500;
+    }
+  }
+}

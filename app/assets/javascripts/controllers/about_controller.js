@@ -8,6 +8,7 @@
 
     index: function() {
       new App.View.Anchors({});
+      new App.View.StaffCategories();
       if(this.isScreen_s) {
         this.initSliders();
       } else {

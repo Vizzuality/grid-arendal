@@ -64,6 +64,8 @@ class User < ApplicationRecord
   scope :locked_accounts,   -> { where.not(locked_at: nil) }
   scope :order_by_fullname, -> { order(:first_name, :last_name) }
 
+  POSITION_CATEGORIES = ["Managing & Administration Team", "Staff", "Consultants & Interns"]
+
   class << self
     def filter_users(filters)
       actives   = filters[:active]['true']  if filters[:active].present?
