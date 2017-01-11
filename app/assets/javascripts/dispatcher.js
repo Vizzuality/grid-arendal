@@ -39,7 +39,7 @@
         if (currentController[actionName] &&
           typeof currentController[actionName] === 'function') {
           // Setting new params in model
-          this.updateParams(params);
+          // this.updateParams(params);
           // Executing controller#action and passing url params
           currentController[actionName](params);
         } else {
@@ -48,6 +48,7 @@
       } else {
         console.error('specified controller doesn\'t exist');
       }
+
     }
 
   });
@@ -57,7 +58,8 @@
    */
   function initApp() {
     new Dispatcher();
-
+    // unbind all global events
+    $(window).unbind();
     if (Backbone.History.started) {
       Backbone.history.stop();
     }
