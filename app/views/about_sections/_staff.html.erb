@@ -1,7 +1,33 @@
-<ul class="c-staff row">
-  <% users.each do |user| %>
-    <li class="small-6 medium-3 large-2 columns">
-      <%= render 'shared/user', user: user %>
-    </li>
-  <% end %>
-</ul>
+<div class="row">
+  <div class="small-12 column">
+    <ul class="c-staff-selector">
+      <% i = 0 %>
+      <% User::POSITION_CATEGORIES.each do |category| %>
+        <% next unless categories.include?(category) %>
+        <li class="c-staff-selector-item text -filter <% if i == 0 %>-selected<% end %> js-staff-selector-item" data-category-index="<%= i %>">
+          <span><%= category %></span>
+        </li>
+        <% i += 1 %>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<% i = 0 %>
+<% User::POSITION_CATEGORIES.each do |category| %>
+  <% next unless categories.include?(category) %>
+  <div class="c-staff-container <% if i == 0 %>-selected<% end %>" data-category-index="<%= i %>">
+    <div class="row">
+      <div class="small-12 column">
+        <ul class="c-staff row">
+          <% users.select{|t| t.position_category == category}.each do |user| %>
+            <li class="small-6 medium-3 large-2 columns">
+              <%= render 'shared/user', user: user %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <% i += 1 %>
+<% end %>
+

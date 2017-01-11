@@ -54,3 +54,57 @@ $staff-border-width: rem(3px);
     margin-top: rem(-3px);
   }
 }
+
+.c-staff-container {
+  display: none;
+
+  &.-selected {
+    display: block;
+  }
+}
+
+.c-staff-selector {
+  margin-top: rem(21px);
+  font-size: 0;
+
+  .c-staff-selector-item {
+    cursor: pointer;
+
+    span {
+      position: relative;
+      z-index: 0;
+
+      &:before {
+        position: absolute;
+        top: rem(10px);
+        left: rem(-10px);
+        width: calc(100% + #{rem(20px)});
+        height: rem(5px);
+        z-index: -1;
+        background-color: $white;
+
+        @media screen and (min-width: $screen-m) {
+          top: rem(5px);
+        }
+      }
+    }
+
+    &.-selected,
+    &:hover {
+      span {
+        &:before {
+          content: "";
+        }
+      }
+    }
+
+    &.-selected {
+      font-weight: 500;
+    }
+
+    @media screen and (min-width: $screen-m) {
+      display: inline-block;
+      margin-right: rem(55px);
+    }
+  }
+}
