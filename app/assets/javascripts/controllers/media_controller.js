@@ -88,7 +88,7 @@
       _.each($('.js_slider'), function(element) {
         lory(element, {
           enableMouseEvents: true
-        });
+        }).slideTo(1);
       }.bind(this));
     }
 
