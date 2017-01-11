@@ -35,7 +35,7 @@
       </div>
     </div>
     <% if section.category === 'staff' %>
-      <%= render 'staff', users: @users %>
+      <%= render 'staff', users: @users, categories: @categories %>
     <% else %>
       <div class="row">
         <% if section.category.blank? %>
