@@ -13,6 +13,7 @@
         });
       }
       new App.View.MediaFilters({
+        callback: this._filter.bind(this),
         options: {
           filters: [
             {
@@ -52,6 +53,13 @@
       }
     },
 
+    _filter: function() {
+      jQuery.ajaxSetup({cache: true});
+      $.getScript($(location).attr('href'));
+      this.scrollPaginationView._initVariables();
+      return false;
+    },
+
     _paginate: function() {
       var params = _.extend({}, App.Helper.Utils.getGetParams(), { page: this.scrollPaginationView.page });
       $.ajax({
@@ -68,7 +76,6 @@
 
           if(response.status === 204) {
             this.scrollPaginationView.toggleBlockPagination();
-            this.scrollPaginationView.showFooter();
           } else {
             this.scrollPaginationView._setHash();
           }
@@ -81,7 +88,7 @@
       _.each($('.js_slider'), function(element) {
         lory(element, {
           enableMouseEvents: true
-        });
+        }).slideTo(1);
       }.bind(this));
     }
 

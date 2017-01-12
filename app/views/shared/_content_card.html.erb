@@ -1,14 +1,16 @@
+<% photo_url = if item.picture_file_name && item.picture.exists?
+                 item.picture.url(:medium)
+               elsif item.media_content
+                 item.media_content.photo_sizes.where(label: PhotoSize::MEDIUM).first.try(:url)
+               else
+                 nil
+               end %>
 <div class="item js_slide slide">
   <%= link_to item do %>
     <article class="c-card" data-card-type="<%= item.type.downcase %>">
-      <% photo_url = if item.picture_file_name && item.picture.exists?
-                       item.picture.url(:medium)
-                     elsif item.media_content
-                       item.media_content.photo_sizes.where(label: PhotoSize::MEDIUM).first.try(:url)
-                     else
-                       asset_path('original/missing2.png')
-                     end %>
-      <div class="card-pic" style="background-image: url('<%= photo_url %>')"></div>
+      <% if photo_url.present? %>
+        <div class="card-pic" style="background-image: url('<%= photo_url %>')"></div>
+      <% end %>
       <div class="card-description">
         <h3 class="text -title-card"><%= item.title %></h3>
         <p class="text -summary"><%= item.short_description %></p>

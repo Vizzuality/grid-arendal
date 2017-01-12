@@ -1,5 +1,5 @@
 <% avatar_url = if @user.avatar.exists?
-                  @user.avatar(:medium)
+                  @user.avatar
                 else
                   asset_path('original/missing2.png')
                 end %>
@@ -11,8 +11,8 @@
     <div class="small-12 columns">
       <div class="title-block">
         <% breadcrumbs_links = [
-          {'text' => 'About', 'link' => about_index_path},
-          {'text' => @user.display_name}
+          {text: 'About', link: about_index_path},
+          {text: @user.display_name}
         ] %>
         <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
         <div class="text -title-staff"><%= @user.display_name %></div>

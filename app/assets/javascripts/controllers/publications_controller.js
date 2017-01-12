@@ -70,7 +70,6 @@
 
           if(response.status === 204) {
             this.scrollPaginationView.toggleBlockPagination();
-            this.scrollPaginationView.showFooter();
           } else {
             this.scrollPaginationView._setHash();
           }
@@ -91,7 +90,7 @@
         if(needLoadSlider) {
           lory(element, {
             enableMouseEvents: true
-          });
+          }).slideTo(1);
         }
       }.bind(this));
     }

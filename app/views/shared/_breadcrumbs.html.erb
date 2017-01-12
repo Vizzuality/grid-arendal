@@ -8,10 +8,17 @@
     <svg class="icon">
       <use xlink:href="#icon-breadcrumb-chevron-right"></use>
     </svg>
-    <% if link['link'].present? %>
-      <%= link_to link['text'], link['link'], class: 'text -breadcrumb' %>
+    <% if link[:link].present? %>
+      <%= link_to link[:text], link[:link], class: 'text -breadcrumb' %>
     <% else %>
-      <span class="text -breadcrumb"><%= link['text'] %></span>
+      <span class="text -breadcrumb"><%= link[:text] %></span>
+      <% if current_user && link[:edit_path] %>
+        <%= link_to link[:edit_path], title: "Edit on backoffice" do %>
+          <svg class="icon">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-edit"></use>
+          </svg>
+        <% end %>
+      <% end %>
     <% end %>
   <% end %>
 </div>

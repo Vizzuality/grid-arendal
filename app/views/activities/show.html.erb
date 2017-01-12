@@ -1,46 +1,51 @@
-<div class="l-header-single -activities-article" <% if @activity.media_content %>style="background-image: url('<%= @activity.media_content.photo_sizes.where(label: PhotoSize::LARGE).first.url %>');"<% end %>>
-  <div class="overlay"></div>
-  <%= render 'shared/menu' %>
-  <div class="row">
-    <div class="small-12 columns">
-      <div class="title-block">
-        <% breadcrumbs_links = [
-          {'text' => 'Activities', 'link' => activities_path},
-          {'text' => @activity.title}
-        ] %>
-        <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
+<div class="l-header-single">
+  
+  <div class="navigation -activities">
+    <%= render 'shared/menu' %>
+    <div class="row">
+      <div class="small-12 columns">
+        <div class="title-block">
+          <% breadcrumbs_links = [
+            {text: 'Activities', link: activities_path},
+            {text: @activity.title,
+             edit_path: backend.edit_activity_path(@activity) }
+          ] %>
+          <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="section-menu">
-    <div class="row">
-      <div class="small-12 columns">
-        <div class="title-block">
-          <div class="small-8 medium-7">
-            <h2 class="text -title-single-alt"><%= @activity.title %></h2>
+  <div class="banner -activities-article" <% if @activity.media_content %>style="background-image: url('<%= @activity.media_content.photo_sizes.where(label: PhotoSize::LARGE).first.url %>');"<% end %>>
+    <div class="section-menu">
+      <div class="row">
+        <div class="small-12 columns">
+          <div class="title-block">
+            <div class="small-12 medium-7">
+              <h2 class="text -title-single-alt"><%= @activity.title %></h2>
+            </div>
+            <%= render 'shared/share' %>
           </div>
-          <%= render 'shared/share' %>
-        </div>
 
-        <ul class="anchors">
-          <li class="text -section-menu js-anchor" data-section-belongs="overview">Overview</li>
-          <% if @activity.users.any? %>
-            <li class="text -section-menu js-anchor" data-section-belongs="users">Staff involved</li>
-          <% end %>
-          <% if @activity.publications.any?%>
-            <li class="text -section-menu js-anchor" data-section-belongs="posts">Publications</li>
-          <% end %>
-          <% if @activity.news_articles.any? %>
-            <li class="text -section-menu js-anchor" data-section-belongs="news">Related News</li>
-          <% end %>
-          <% if @activity.media_contents.any? %>
-            <li class="text -section-menu js-anchor" data-section-belongs="media">Related media</li>
-          <% end %>
-          <% if @activity.partners.any? %>
-            <li class="text -section-menu js-anchor" data-section-belongs="partners">Partners & Links</li>
-          <% end %>
-        </ul>
+          <ul class="anchors">
+            <li class="text -section-menu js-anchor" data-section-belongs="overview">Overview</li>
+            <% if @activity.users.any? %>
+              <li class="text -section-menu js-anchor" data-section-belongs="users">Staff involved</li>
+            <% end %>
+            <% if @activity.publications.any?%>
+              <li class="text -section-menu js-anchor" data-section-belongs="posts">Publications</li>
+            <% end %>
+            <% if @activity.news_articles.any? %>
+              <li class="text -section-menu js-anchor" data-section-belongs="news">Related News</li>
+            <% end %>
+            <% if @activity.media_contents.any? %>
+              <li class="text -section-menu js-anchor" data-section-belongs="media">Related media</li>
+            <% end %>
+            <% if @activity.partners.any? %>
+              <li class="text -section-menu js-anchor" data-section-belongs="partners">Partners & Links</li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
