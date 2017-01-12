@@ -1,5 +1,5 @@
 <div class="l-header-single">
-  
+
   <div class="navigation -activities">
     <%= render 'shared/menu' %>
     <div class="row">
@@ -77,7 +77,7 @@
 <% end %>
 
 <% if @activity.media_contents.any? %>
-  <%= render 'shared/media', media_contents: @activity.media_contents, sectionClass: 'content -color-3' %>
+  <%= render 'shared/related_media', media_contents: @activity.media_contents,link: media_path, sectionClass: 'content -color-3' %>
 <% end %>
 
 <% if @activity.partners.any? %>
