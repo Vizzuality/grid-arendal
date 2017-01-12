@@ -8,7 +8,7 @@
         <div class="text -summary">
           <%= @section.description %>
         </div>
-        <%= render 'shared/share' %>
+        <%= render 'shared/share', current_route: @current_route  %>
       </div>
     </div>
   </div>
@@ -45,11 +45,13 @@
       </div>
       <% if @publications.count < 1 %>
         <div class="c-filter-message">
-          <h4 class="text -title-event">Sorry, there are no publications with those filters</h4>
+          <h4 class="text -nothing-to-see">Sorry, nothing to see here <img src="<%= asset_url('monete.png') %>" width="30"/></h4>
         </div>
       <% end %>
     </div>
   </div>
+
+  <%= render 'shared/scroll_to_top' %>
 
 </div>
 

@@ -12,11 +12,14 @@
     },
 
     index: function() {
+      this.initSliders();
+
       new App.View.VideoPlayer();
       new App.View.EventsModal();
-      new App.View.RelatedMedia();
+      new App.View.RelatedMedia({
+        slider: this.slider
+      });
 
-      this.initSliders();
       if(!this.isScreen_s) {
         _.each($('.masonry-layout'), function(element) {
           if($(element).find('.masonry-column').length === 0) {
@@ -38,12 +41,11 @@
         }
 
         if(needLoadSlider) {
-          lory(element, {
+          var slider = lory(element, {
             enableMouseEvents: true,
-
-          }).slideTo(1);
-          // debugger
-          // $(element).data().lory.next();
+            infinite: true
+          });
+          this.slider = slider;
         }
       }.bind(this));
     }

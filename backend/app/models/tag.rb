@@ -21,7 +21,8 @@ class Tag < ApplicationRecord
       FROM tags
       INNER JOIN taggings ON taggings.tag_id = tags.id
       INNER JOIN media_contents ON taggable_type = 'MediaContent' AND
-        taggable_id = media_contents.id
+        taggable_id = media_contents.id AND
+        (media_contents.type <> 'Photo' OR (media_contents.type = 'Photo' AND media_contents.album_id IS NULL))
       GROUP by tags.id, tags.name
       ORDER BY UPPER(tags.name)
     SQL

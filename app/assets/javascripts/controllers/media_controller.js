@@ -29,7 +29,8 @@
               triggerClass: ".js-dropdown-filter-by-tags"
             }
           ]
-        }
+        },
+        callback: this._filter.bind(this)
       });
       this.scrollPaginationView = new App.View.ScrollPagination({
         callback: this._paginate.bind(this),
@@ -87,8 +88,9 @@
     initSliders: function() {
       _.each($('.js_slider'), function(element) {
         lory(element, {
-          enableMouseEvents: true
-        }).slideTo(1);
+          enableMouseEvents: true,
+          infinite: true
+        });
       }.bind(this));
     }
 

@@ -15,6 +15,7 @@
               <% filter[:title] ||= ''
                  filter[:placeholder] ||= ''
                  filter[:display_method] ||= 'title'
+                 filter[:matching_method] ||= 'id'
               %>
               <%= render "shared/filters/#{filter[:type]}",
                          data: filter[:data],
@@ -22,7 +23,8 @@
                          title: filter[:title],
                          placeholder: filter[:placeholder],
                          key: filter[:key],
-                         display_method: filter[:display_method] %>
+                         display_method: filter[:display_method],
+                         matching_method: filter[:matching_method] %>
           <% end %>
           <%#=render 'shared/filters/search', placeholder: "Search media" %>
         </div>
