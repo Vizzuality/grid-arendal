@@ -87,8 +87,9 @@
     initSliders: function() {
       _.each($('.js_slider'), function(element) {
         lory(element, {
-          enableMouseEvents: true
-        }).slideTo(1);
+          enableMouseEvents: true,
+          infinite: true
+        });
       }.bind(this));
     }
 

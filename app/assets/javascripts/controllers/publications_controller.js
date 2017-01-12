@@ -89,8 +89,9 @@
 
         if(needLoadSlider) {
           lory(element, {
-            enableMouseEvents: true
-          }).slideTo(1);
+            enableMouseEvents: true,
+            infinite: true
+          });
         }
       }.bind(this));
     }

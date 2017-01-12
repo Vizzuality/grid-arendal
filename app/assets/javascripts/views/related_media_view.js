@@ -12,13 +12,18 @@
       'click .c-related-media-item' : 'onClickGoToMediaItem'
     },
 
+    initialize: function(settings) {
+      this.slider = settings.slider;
+    },
+
     onClickGoToMediaItem: function(e) {
-      const $slider = document.querySelector('.js_slider');
       if ( $(e.currentTarget).parent().hasClass('active') ) {
         if(e.originalEvent != null && !e.originalEvent.defaultPrevented) {
           window.location.href = $(e.currentTarget).data('link');
         }
       } else {
+        var selectedSlide = $(e.currentTarget)[0].id;
+        this.slider.slideTo(parseInt(selectedSlide));
       }
     },
 

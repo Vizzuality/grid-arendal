@@ -31,6 +31,9 @@
     show: function(params) {
       new App.View.Anchors({});
       this.initSliders();
+      new App.View.RelatedMedia({
+        slider: this.slider
+      });
       if(!this.isScreen_s) {
         _.each($('.masonry-layout'), function(element) {
           if($(element).find('.masonry-column').length === 0) {
@@ -83,9 +86,11 @@
         }
 
         if(needLoadSlider) {
-          lory(element, {
-            enableMouseEvents: true
-          }).slideTo(1);
+          var slider = lory(element, {
+            enableMouseEvents: true,
+            infinite: true
+          });
+          this.slider = slider;
         }
       }.bind(this));
     }
