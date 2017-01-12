@@ -12,7 +12,7 @@
     },
 
     index: function() {
-      new App.View.HomeVideo();
+      new App.View.VideoPlayer();
       new App.View.EventsModal();
       new App.View.RelatedMedia();
 

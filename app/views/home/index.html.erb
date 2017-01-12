@@ -12,7 +12,7 @@
     <div class="cta-desktop text -cta">
       <%= @section.description %>
     </div>
-    <div class="media js-home-video-play">
+    <div class="media js-video-player-play">
       <svg class="icon">
         <use xlink:href="#icon-play"></use>
       </svg>
@@ -38,6 +38,6 @@
 
 <%= render 'shared/users', users: @users, sectionClass: 'home' %>
 
-<%= render 'video' %>
+<%= render 'shared/video', video_id: 110577670 %>
 
 <%= render 'shared/footer' %>

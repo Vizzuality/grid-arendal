@@ -4,19 +4,19 @@
 
   App.View = App.View || {};
 
-  App.View.HomeVideo = Backbone.View.extend({
+  App.View.VideoPlayer = Backbone.View.extend({
 
     el: 'body',
 
     events: {
-      'click .js-home-video-play' : 'onClickOpenVideo',
-      'click .js-home-video-veil' : 'onClickCloseVideo'
+      'click .js-video-player-play' : 'onClickOpenVideo',
+      'click .js-video-player-veil' : 'onClickCloseVideo'
     },
 
     options: {
       isIframeLoaded: false,
-      homeVideoClass: ".c-home-video",
-      homeVideoContainerClass: ".js-home-video-container"
+      videoPlayerClass: ".c-video-player",
+      videoPayerContainerClass: ".js-video-player-container"
     },
 
     initialize: function() {
@@ -24,14 +24,14 @@
     },
 
     _cache: function() {
-      this.$homeVideo = this.$el.find(this.options.homeVideoClass);
-      this.$homeVideoContainer = this.$el.find(this.options.homeVideoContainerClass);
+      this.$videoPlayer = this.$el.find(this.options.videoPlayerClass);
+      this.$videoPlayerContainer = this.$el.find(this.options.videoPayerContainerClass);
       this.$html = $('html');
       this.$body = $('body');
     },
 
     onClickOpenVideo: function(e) {
-      this.$homeVideo.show().animate({
+      this.$videoPlayer.show().animate({
         opacity: 1
       }, 300, function() {
         this._checkIframe();
@@ -40,7 +40,7 @@
     },
 
     onClickCloseVideo: function(e) {
-      this.$homeVideo.animate({
+      this.$videoPlayer.animate({
         opacity: 0
       }, 300, function() {
         $(this).hide();
@@ -55,13 +55,13 @@
 
     _checkIframe: function() {
       if(!this.options.isIframeLoaded) {
-        this.$homeVideoContainer.html(this._getIframeHTML());
+        this.$videoPlayerContainer.html(this._getIframeHTML());
         this.options.isIframeLoaded = true;
       }
     },
 
     _getIframeHTML: function () {
-      return '<iframe src="https://player.vimeo.com/video/' + this.$homeVideoContainer.data('video-id') + '?title=0&byline=0&portrait=0" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+      return '<iframe src="https://player.vimeo.com/video/' + this.$videoPlayerContainer.data('video-id') + '?title=0&byline=0&portrait=0" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
     },
 
   });

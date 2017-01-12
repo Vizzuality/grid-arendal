@@ -1,4 +1,4 @@
-.c-home-video {
+.c-video-player {
   position: absolute;
   top: 0;
   left: 0;
@@ -8,7 +8,7 @@
   opacity: 0;
   display: none;
 
-  .c-home-video-veil {
+  .c-video-player-veil {
     position: fixed;
     top: 0;
     left: 0;
@@ -29,7 +29,7 @@
     cursor: pointer;
   }
 
-  .c-home-video-container {
+  .c-video-player-container {
     width: 100%;
     height: rem(250px);
     max-height: calc(100% - 100px);
