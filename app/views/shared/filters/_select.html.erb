@@ -3,21 +3,22 @@
   <span class="speaker">
     <span id="<%= key %>" class="text -filter" data-placeholder="<%= placeholder %>">
       <% if params[key].present? %>
-        <%= data.select{|t| params[key] == t.id.to_s }.first.send(display_method) %>
+        <% matching_element = data.select{|t| params[key] == t.send(matching_method) }.first %>
+        <%= matching_element && matching_element.send(display_method) or placeholder %>
       <% else %>
         <%= placeholder %>
       <% end %>
     </span>
     <svg class="icon">
-      <use xlink:href="#icon-dropdown_arrow_down"></use>
+      <use xlink:href="#icon-dropdown_arrow_dowpn"></use>
     </svg>
   </span>
   <div class="dropdown">
     <div class="type text -filter-title"><%= title %></div>
     <ul class="list">
       <% data.each do |option| %>
-        <% text = (defined? option.title) ? option.title : option.name %>
-        <li class="text -filter <% if params[key] && (params[key] == option.id.to_s) %>selected<% end %>" data-value="<%= option.id %>"><%= text %></li>
+        <% text = option.send(display_method) %>
+        <li class="text -filter <% if params[key] && (params[key] == option.send(matching_method).to_s) %>selected<% end %>" data-value="<%= option.send(matching_method) %>"><%= text %></li>
       <% end %>
     </ul>
   </div>
@@ -25,8 +26,8 @@
     <option value="" disabled <% if not(params[key]) %>selected<% end %>><%= placeholder %></option>
     <option value=""></option>
     <% data.each do |option| %>
-      <% text = (defined? option.title) ? option.title : option.name %>
-      <option value="<%= option.id %>" <% if params[key] && (params[key] == option.id.to_s) %>selected<% end %>><%= text %></option>
+      <% text = option.send(display_method) %>
+      <option value="<%= option.send(matching_method) %>" <% if params[key] && (params[key] == option.send(matching_method).to_s) %>selected<% end %>><%= text %></option>
     <% end %>
   </select>
 </div>
