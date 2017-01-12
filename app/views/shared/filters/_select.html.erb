@@ -9,14 +9,14 @@
       <% end %>
     </span>
     <svg class="icon">
-      <use xlink:href="#icon-dropdown_arrow_down"></use>
+      <use xlink:href="#icon-dropdown_arrow_dowpn"></use>
     </svg>
   </span>
   <div class="dropdown">
     <div class="type text -filter-title"><%= title %></div>
     <ul class="list">
       <% data.each do |option| %>
-        <% text = (defined? option.title) ? option.title : option.name %>
+        <% text = option.send(display_method) %>
         <li class="text -filter <% if params[key] && (params[key] == option.id.to_s) %>selected<% end %>" data-value="<%= option.id %>"><%= text %></li>
       <% end %>
     </ul>
@@ -25,7 +25,7 @@
     <option value="" disabled <% if not(params[key]) %>selected<% end %>><%= placeholder %></option>
     <option value=""></option>
     <% data.each do |option| %>
-      <% text = (defined? option.title) ? option.title : option.name %>
+      <% text = option.send(display_method) %>
       <option value="<%= option.id %>" <% if params[key] && (params[key] == option.id.to_s) %>selected<% end %>><%= text %></option>
     <% end %>
   </select>
