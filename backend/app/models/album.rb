@@ -15,7 +15,6 @@
 #
 
 class Album < MediaContent
-  acts_as_taggable
 
   has_many :photos
 

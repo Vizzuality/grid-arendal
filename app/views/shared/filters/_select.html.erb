@@ -3,7 +3,8 @@
   <span class="speaker">
     <span id="<%= key %>" class="text -filter" data-placeholder="<%= placeholder %>">
       <% if params[key].present? %>
-        <%= data.select{|t| params[key] == t.id.to_s }.first.send(display_method) %>
+        <% matching_element = data.select{|t| params[key] == t.send(matching_method) }.first %>
+        <%= matching_element && matching_element.send(display_method) or placeholder %>
       <% else %>
         <%= placeholder %>
       <% end %>
@@ -17,7 +18,7 @@
     <ul class="list">
       <% data.each do |option| %>
         <% text = option.send(display_method) %>
-        <li class="text -filter <% if params[key] && (params[key] == option.id.to_s) %>selected<% end %>" data-value="<%= option.id || option.type %>"><%= text %></li>
+        <li class="text -filter <% if params[key] && (params[key] == option.send(matching_method).to_s) %>selected<% end %>" data-value="<%= option.send(matching_method) %>"><%= text %></li>
       <% end %>
     </ul>
   </div>
@@ -26,7 +27,7 @@
     <option value=""></option>
     <% data.each do |option| %>
       <% text = option.send(display_method) %>
-      <option value="<%= option.id || option.type %>" <% if params[key] && (params[key] == option.id.to_s) %>selected<% end %>><%= text %></option>
+      <option value="<%= option.send(matching_method) %>" <% if params[key] && (params[key] == option.send(matching_method).to_s) %>selected<% end %>><%= text %></option>
     <% end %>
   </select>
 </div>
