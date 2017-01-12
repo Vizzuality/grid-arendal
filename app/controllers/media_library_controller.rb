@@ -21,9 +21,9 @@ class MediaLibraryController < ApplicationController
   end
 
   def paginate
-    @media_contents = MediaContent.fetch_all(options_filter)
-                        .limit(@media_contents_limit)
-                        .offset(@media_contents_limit * (@page - 1))
+    @media_contents = MediaContent.fetch_all(options_filter).
+                        limit(@media_contents_limit).
+                        offset(@media_contents_limit * (@page - 1))
     respond_to do |format|
       if(@media_contents.empty?)
         head :no_content
