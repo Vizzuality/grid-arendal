@@ -1,0 +1,23 @@
+.c-scroll-to-top {
+  display: none;
+  position: absolute;
+  bottom: rem(20px);
+  right: rem(20px);
+  background: $white;
+  border-radius: 50%;
+  width: rem(50px);
+  height: rem(50px);
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  cursor: pointer;
+
+  @media screen and (min-width: $screen-m) {
+    display: flex;
+  }
+
+  .icon {
+    width: rem(20px);
+    height: rem(10px);
+  }
+}
