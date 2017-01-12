@@ -153,6 +153,10 @@
     }
   }
 
+  &.content {
+    min-height: rem(430px);
+  }
+
   &.-publications .masonry-layout,
   &.-activities .masonry-layout,
   &.-news .masonry-layout ,
