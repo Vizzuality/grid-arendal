@@ -24,7 +24,7 @@
             <div class="small-12 medium-7">
               <h2 class="text -title-single-alt"><%= @activity.title %></h2>
             </div>
-            <%= render 'shared/share' %>
+            <%= render 'shared/share', current_route: @current_route  %>
           </div>
 
           <ul class="anchors">
