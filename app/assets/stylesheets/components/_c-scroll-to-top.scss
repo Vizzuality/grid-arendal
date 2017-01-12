@@ -1,6 +1,7 @@
 .c-scroll-to-top {
-  display: none;
-  position: absolute;
+  display: flex;
+  opacity: 0;
+  position: fixed;
   bottom: rem(20px);
   right: rem(20px);
   background: $white;
@@ -11,10 +12,7 @@
   justify-content: center;
   z-index: 1;
   cursor: pointer;
-
-  @media screen and (min-width: $screen-m) {
-    display: flex;
-  }
+  transition: opacity 0.5s ease-in;
 
   .icon {
     width: rem(20px);
