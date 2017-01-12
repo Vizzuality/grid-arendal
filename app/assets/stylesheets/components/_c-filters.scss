@@ -132,27 +132,28 @@ $filters-screen-m-width: 18%;
     position: absolute;
     display: flex;
     flex-wrap: wrap;
-    padding: rem(38px) 0 rem(7px) 0;
+    padding: rem(16px) 0 rem(7px) 0;
 
     .border {
       position: fixed;
       left: 0;
-      top: rem(62px);
+      top: rem(47px);
       width: 100%;
       height: rem(5px);
       box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2);
       display: none;
 
       .-publications & {
-        top: rem(105px);
+        top: rem(80px);
       }
     }
 
     &.-fixed {
       position: fixed;
-      top: rem(-20px);
+      top: rem(-6px);
       max-width: rem(1000px);
       padding-right: rem(30px);
+      padding-bottom: 0;
 
       .border {
         display: block;
@@ -369,7 +370,7 @@ $filters-screen-m-width: 18%;
 
       &.-type-years {
         flex: 1 100%;
-        padding-top: rem(28px);
+        padding: rem(10px) 0 rem(8px) 0;
         display: none;
 
         @media screen and (min-width: $screen-m) {
@@ -456,14 +457,14 @@ $filters-screen-m-width: 18%;
 
 .c-filters-spacer {
   position: relative;
-  height: rem(87px);
+  height: rem(65px);
   display: none;
 
   @media screen and (min-width: $screen-m) {
     display: block;
 
     .-publications & {
-      height: rem(130px);
+      height: rem(98px);
     }
   }
 }
@@ -474,7 +475,6 @@ $filters-screen-m-width: 18%;
   left: 0;
   width: 100%;
   height: 100%;
-  // z-index: 15;
 }
 
 .c-tags-dropdown-modal {

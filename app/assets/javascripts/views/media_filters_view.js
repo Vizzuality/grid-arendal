@@ -35,7 +35,7 @@
     _cache: function() {
       this.$container = this.$el.find('.container');
       if ( this.$container.length > 0 ) {
-        this.offsetTop = this.$el.offset().top + 20;
+        this.offsetTop = this.$el.offset().top + 6;
       }
     },
 
