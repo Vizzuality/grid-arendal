@@ -17,7 +17,7 @@
     <ul class="list">
       <% data.each do |option| %>
         <% text = option.send(display_method) %>
-        <li class="text -filter <% if params[key] && (params[key] == option.id.to_s) %>selected<% end %>" data-value="<%= option.id %>"><%= text %></li>
+        <li class="text -filter <% if params[key] && (params[key] == option.id.to_s) %>selected<% end %>" data-value="<%= option.id || option.type %>"><%= text %></li>
       <% end %>
     </ul>
   </div>
@@ -26,7 +26,7 @@
     <option value=""></option>
     <% data.each do |option| %>
       <% text = option.send(display_method) %>
-      <option value="<%= option.id %>" <% if params[key] && (params[key] == option.id.to_s) %>selected<% end %>><%= text %></option>
+      <option value="<%= option.id || option.type %>" <% if params[key] && (params[key] == option.id.to_s) %>selected<% end %>><%= text %></option>
     <% end %>
   </select>
 </div>

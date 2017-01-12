@@ -53,6 +53,13 @@
       }
     },
 
+    _filter: function() {
+      jQuery.ajaxSetup({cache: true});
+      $.getScript($(location).attr('href'));
+      this.scrollPaginationView._initVariables();
+      return false;
+    },
+
     _paginate: function() {
       var params = _.extend({}, App.Helper.Utils.getGetParams(), { page: this.scrollPaginationView.page });
       $.ajax({
