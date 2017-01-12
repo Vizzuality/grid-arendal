@@ -7,7 +7,7 @@
   App.View.ScrollToTop = Backbone.View.extend({
 
     defaults: {
-      showPos: 1000
+      showPos: 700
     },
 
     el: 'body',
@@ -38,7 +38,7 @@
 
         var currentScroll = $(window).scrollTop();
         var scrollBottom = $(document).height() - window.innerHeight - currentScroll;
-        
+
         if ( currentScroll < this.defaults.showPos ) {
           this.$scroll.css({
             opacity: 0
