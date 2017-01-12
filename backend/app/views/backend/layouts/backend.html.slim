@@ -16,8 +16,8 @@ html lang='en'
     - else
       .success data-alert='true'
         = notice
-
-    .l-navigation
-      = render 'backend/shared/nav_bar', links: @links
+    - if user_signed_in?
+      .l-navigation
+        = render 'backend/shared/nav_bar', links: @links
 
     = yield

@@ -38,7 +38,7 @@
         if(needLoadSlider) {
           lory(element, {
             enableMouseEvents: true
-          });
+          }).slideTo(1);
         }
       }.bind(this));
     }

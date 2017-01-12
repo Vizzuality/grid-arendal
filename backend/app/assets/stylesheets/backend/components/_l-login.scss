@@ -40,6 +40,10 @@
       .btn {
         float: right;
         width: rem(100px);
+
+        &.-full {
+          width: 100%;
+        }
       }
 
       .recover_password {
@@ -47,5 +51,17 @@
         line-height: 2.3;
       }
     }
+
+  }
+
+  a {
+    margin-top: rem(15px);
+    color: $white;
+  }
+
+  h2 {
+    color: $white;
+    font-size: rem(18px);
+    margin-top: rem(20px);
   }
 }
