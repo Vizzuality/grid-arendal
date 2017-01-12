@@ -12,6 +12,7 @@ $header-avatar-size-screen-l: rem(340px);
   display: block;
   position: relative;
   padding-bottom: rem(50px);
+  z-index: 1;
 
   &.-publications {
     background-color: rgba($color-3, 0.04);
