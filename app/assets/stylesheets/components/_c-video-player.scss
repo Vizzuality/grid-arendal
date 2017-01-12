@@ -41,7 +41,7 @@
       top: rem(70px);
       left: 0;
       height: rem(530px);
-      margin: 0;
+      margin: auto;
       padding: 0;
     }
   }
@@ -55,5 +55,20 @@
 
   &.-fixed {
     position: fixed;
+
+    .row {
+      position: relative;
+      height: 100%;
+    }
+    .-relativize {
+      position: static;
+    }
+
+    .c-video-player-container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
   }
 }
