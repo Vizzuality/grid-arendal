@@ -2,6 +2,6 @@ $(function() {
   $(".masonry-layout").find(".item").remove();
   var grid = document.querySelector('.masonry-layout');
   salvattore.appendElements(grid, $('<div/>').
-    html("<%= escape_javascript(render("media_library", media_contents: @media_contents )) %>").
+    html("<%= escape_javascript(render("media_library", media_contents: @media_contents)) %>").
     contents());
 });

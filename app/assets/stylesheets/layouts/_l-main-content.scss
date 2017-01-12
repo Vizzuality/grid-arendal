@@ -1,4 +1,5 @@
 .l-main-content {
+  position: relative;
 
   &:not(:last-of-type) {
 
@@ -97,8 +98,6 @@
 
   &.-about {
     padding-bottom: rem(47px);
-    background-color: #E5EBED;
-    border-bottom: none;
 
     &:first-of-type {
       background-color: #F2F5F6;
@@ -140,6 +139,7 @@
   &.home,
   &.content {
     padding-bottom: rem(47px);
+    padding-top: rem(20px);
 
     .c-slider {
       margin-top: rem(7px);

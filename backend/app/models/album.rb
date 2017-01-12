@@ -16,7 +16,7 @@
 
 class Album < MediaContent
 
-  has_many :photos
+  has_many :photos, dependent: :destroy
 
   def self.all_albums_from_flickr
     current_total = Album.count

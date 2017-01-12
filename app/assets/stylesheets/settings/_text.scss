@@ -164,7 +164,18 @@
   }
 
   &.-title-single-alt {
-    font-size: 36px;
+    font-size: 26px;
+    font-weight: 600;
+    font-family: $font-family-2;
+    line-height: 1.1;
+
+    @media screen and (min-width: $screen-m) {
+      font-size: 36px;
+    }
+  }
+
+  &.-nothing-to-see {
+    font-size: 24px;
     font-weight: 600;
     font-family: $font-family-2;
     line-height: 1.1;
@@ -261,6 +272,15 @@
     line-height: 1.23;
     letter-spacing: 0.3px;
     color: $font-color-1;
+  }
+
+  &.-filter-staff {
+    font-size: 18px;
+    line-height: 1.43;
+
+    @media screen and (min-width: $screen-m) {
+      font-size: 14px;
+    }
   }
 
   &.-read-more {

@@ -33,9 +33,10 @@
       new App.View.DescriptionView({
         el: '.content-wrapper'
       });
-      new App.View.RelatedMedia();
-
       this.initSliders();
+      new App.View.RelatedMedia({
+        slider: this.slider
+      });
       if(!this.isScreen_s) {
         _.each($('.masonry-layout'), function(element) {
           if($(element).find('.masonry-column').length === 0) {
@@ -70,7 +71,6 @@
 
           if(response.status === 204) {
             this.scrollPaginationView.toggleBlockPagination();
-            this.scrollPaginationView.showFooter();
           } else {
             this.scrollPaginationView._setHash();
           }
@@ -89,9 +89,11 @@
         }
 
         if(needLoadSlider) {
-          lory(element, {
-            enableMouseEvents: true
+          var slider = lory(element, {
+            enableMouseEvents: true,
+            infinite: true
           });
+          this.slider = slider;
         }
       }.bind(this));
     }

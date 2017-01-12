@@ -63,6 +63,11 @@ class User < ApplicationRecord
 
   scope :locked_accounts,   -> { where.not(locked_at: nil) }
   scope :order_by_fullname, -> { order(:first_name, :last_name) }
+  scope :board_members, -> { where(is_board_member: true)}
+  scope :regular_staff, -> { where(is_board_member: false)}
+  scope :with_category, -> { where.not(position_category: nil)}
+
+  POSITION_CATEGORIES = ["Managing Director", "Administration Team", "Finance", "Staff", "Consultants & Interns"]
 
   class << self
     def filter_users(filters)

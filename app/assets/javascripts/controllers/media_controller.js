@@ -13,6 +13,7 @@
         });
       }
       new App.View.MediaFilters({
+        callback: this._filter.bind(this),
         options: {
           filters: [
             {
@@ -76,7 +77,6 @@
 
           if(response.status === 204) {
             this.scrollPaginationView.toggleBlockPagination();
-            this.scrollPaginationView.showFooter();
           } else {
             this.scrollPaginationView._setHash();
           }
@@ -88,7 +88,8 @@
     initSliders: function() {
       _.each($('.js_slider'), function(element) {
         lory(element, {
-          enableMouseEvents: true
+          enableMouseEvents: true,
+          infinite: true
         });
       }.bind(this));
     }

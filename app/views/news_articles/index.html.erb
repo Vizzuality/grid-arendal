@@ -8,7 +8,7 @@
         <div class="text -summary">
           <%= @section.description %>
         </div>
-        <%= render 'shared/share' %>
+        <%= render 'shared/share', current_route: @current_route  %>
       </div>
     </div>
   </div>
@@ -17,11 +17,14 @@
 <div class="l-main-content -news -only-grid -color-4">
   <div class="row">
     <div class="small-12 small-centered columns grid-column">
-      <div class="masonry-layout" hidden data-columns>
+      <div class="masonry-layout" data-columns="3">
         <%= render 'news', articles: @articles %>
       </div>
     </div>
   </div>
+
+  <%= render 'shared/scroll_to_top' %>
+
 </div>
 
 <%= render 'shared/footer' %>

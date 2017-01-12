@@ -1,5 +1,5 @@
 <div class="js_slide slide <% if index == 0 %>active<% end %>">
-  <div class="c-related-media-item" style="background-image: url('<%= picture %>')" data-link="<%= link %>">
+  <div id="<%= index %>" class="c-related-media-item" style="background-image: url('<%= picture %>')" data-link="<%= link %>">
     <div class="text -image-cap name"><%= title %></div>
     <div class="text -related-image-meta meta">
       <%= author.present? ? author + ' | ' : ''%>

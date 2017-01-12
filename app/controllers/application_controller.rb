@@ -2,6 +2,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  before_action :set_current_url
   after_action  :store_location
 
   rescue_from CanCan::AccessDenied do |exception|
@@ -24,8 +25,10 @@ class ApplicationController < ActionController::Base
   end
 
   private
-
-      def after_sign_in_path_for(*)
-        session[:previous_url] || root_path
-      end
+    def after_sign_in_path_for(*)
+      session[:previous_url] || root_path
+    end
+    def set_current_url
+      @current_route = request.url
+    end
 end
