@@ -12,6 +12,7 @@
 
     show: function() {
       new App.View.RelatedMedia();
+      new App.View.VideoPlayer();
 
       this.initSliders();
       if(!this.isScreen_s) {
