@@ -56,11 +56,13 @@
       </div>
       <% if @activities.count < 1 %>
         <div class="c-filter-message">
-          <h4 class="text -title-event">Sorry, there are no activities with those filters</h4>
+          <h4 class="text -nothing-to-see">Sorry, nothing to see here <img src="<%= asset_url('monete.png') %>" width="30"/></h4>
         </div>
       <% end %>
     </div>
   </div>
+
+  <%= render 'shared/scroll_to_top' %>
 
 </div>
 
