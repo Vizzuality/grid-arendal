@@ -1,4 +1,5 @@
-<div class="c-video-player">
+<% isFixed ||= false %>
+<div class="c-video-player <% if isFixed %>-fixed<% end %>">
   <div class="c-video-player-veil js-video-player-veil">
     <svg class="icon">
       <use xlink:href="#icon-close"></use>

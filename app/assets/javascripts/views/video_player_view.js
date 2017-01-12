@@ -15,6 +15,7 @@
 
     options: {
       isIframeLoaded: false,
+      videoPlayerId: "videoPlayer",
       videoPlayerClass: ".c-video-player",
       videoPayerContainerClass: ".js-video-player-container"
     },
@@ -48,9 +49,9 @@
     },
 
     _stopVideo: function() {
-      var src = $("iframe#homeVideo").attr('src');
-      $("iframe#homeVideo").attr('src','');
-      $("iframe#homeVideo").attr('src', src);
+      var src = $("iframe#" + this.options.videoPlayerId).attr('src');
+      $("iframe#" + this.options.videoPlayerId).attr('src','');
+      $("iframe#" + this.options.videoPlayerId).attr('src', src);
     },
 
     _checkIframe: function() {
@@ -61,7 +62,7 @@
     },
 
     _getIframeHTML: function () {
-      return '<iframe id="homeVideo" src="https://player.vimeo.com/video/' + this.$videoPlayerContainer.data('video-id') + '?title=0&byline=0&portrait=0" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+      return '<iframe id="' + this.options.videoPlayerId + '" src="https://player.vimeo.com/video/' + this.$videoPlayerContainer.data('video-id') + '?title=0&byline=0&portrait=0" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
     },
 
   });
