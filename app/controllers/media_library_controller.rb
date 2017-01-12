@@ -5,23 +5,25 @@ class MediaLibraryController < ApplicationController
   before_action :set_page_param, only: [:index, :paginate]
 
   def index
-    @media_contents = MediaContent.wo_photos_in_album
-                        .includes(:photo_sizes, :photos)
-                        .order("publication_date DESC, id ASC")
-                        .limit(@media_contents_limit * @page)
+    @media_contents = MediaContent.fetch_all(options_filter).
+                        limit(@media_contents_limit * @page)
     @tags = Tag.for_media_content
+    @types = MediaContent.select(:type).distinct.wo_photos_in_album.order(:type)
     @section = SiteSection.where(section: "media_library").first
+    respond_to do |format|
+      format.html
+      format.js
+      format.json { render json: @media_contents.to_json }
+    end
   end
 
   def show
   end
 
   def paginate
-    @media_contents = MediaContent.wo_photos_in_album
-                        .includes(:photo_sizes, :photos)
-                        .order("publication_date DESC, id ASC")
-                        .limit(@media_contents_limit)
-                        .offset(@media_contents_limit * (@page - 1))
+    @media_contents = MediaContent.fetch_all(options_filter).
+                        limit(@media_contents_limit).
+                        offset(@media_contents_limit * (@page - 1))
     respond_to do |format|
       if(@media_contents.empty?)
         head :no_content
@@ -31,6 +33,9 @@ class MediaLibraryController < ApplicationController
   end
 
   private
+    def options_filter
+      params.permit(:type, :tags)
+    end
     def media_content
       @media_content = MediaContent.find(params[:id])
     end

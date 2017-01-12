@@ -5,7 +5,8 @@ class ActivitiesController < ApplicationController
   before_action :set_page_param, only: [:index, :paginate]
 
   def index
-    @activities = Activity.fetch_all(options_filter).limit(@activities_limit * @page)
+    @activities = Activity.fetch_all(options_filter)
+                          .limit(@activities_limit * @page)
     @content_types = ContentType.by_activity
     @programmes = Tag.where(category: Tag::PROGRAMME).order(:name)
     @partners = Partner.order(:name)
