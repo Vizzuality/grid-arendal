@@ -24,7 +24,7 @@
              edit_path: backend.url_for([:edit, @media_content]) }
           ] %>
           <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
-          <%= render 'shared/share' %>
+          <%= render 'shared/share', current_route: @current_route  %>
         </div>
       </div>
     </div>
