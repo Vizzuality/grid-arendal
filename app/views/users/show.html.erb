@@ -21,7 +21,7 @@
           <div class="text -contact-staff"><strong>Phone:</strong> <%= @user.phone %></div>
         <% end %>
         <div class="text -contact-staff"><strong>Email:</strong> <%= @user.email %></div>
-        <%= render 'shared/share' %>
+        <%= render 'shared/share', current_route: @current_route  %>
       </div>
     </div>
   </div>

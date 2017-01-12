@@ -8,7 +8,7 @@
             {text: 'About', link: about_index_path}
           ] %>
           <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
-          <%= render 'shared/share' %>
+          <%= render 'shared/share', current_route: @current_route  %>
         </div>
       </div>
     </div>
