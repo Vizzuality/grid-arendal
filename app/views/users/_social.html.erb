@@ -51,7 +51,7 @@
   <% end %>
   <% if(user.twitter_url.present?) %>
     <li>
-      <%= link_to user.twitter_url, :target => "_blank" do %>
+      <%= link_to "https://twitter.com/#{user.twitter_url}", :target => "_blank" do %>
         <svg class="icon">
           <use xlink:href="#icon-rrss-twitter"></use>
         </svg>
