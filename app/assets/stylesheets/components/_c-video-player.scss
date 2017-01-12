@@ -1,12 +1,13 @@
-.c-home-video {
+.c-video-player {
   position: absolute;
+  top: 0;
   width: 100%;
   height: 100%;
   z-index: 20;
   opacity: 0;
   display: none;
 
-  .c-home-video-veil {
+  .c-video-player-veil {
     position: absolute;
     top: 0;
     left: 0;
@@ -27,7 +28,7 @@
     cursor: pointer;
   }
 
-  .c-home-video-container {
+  .c-video-player-container {
     width: 100%;
     position: relative;
     height: rem(230px);
@@ -40,7 +41,7 @@
       top: rem(70px);
       left: 0;
       height: rem(530px);
-      margin: 0;
+      margin: auto;
       padding: 0;
     }
   }
@@ -49,6 +50,25 @@
 
     .columns {
       padding: 0;
+    }
+  }
+
+  &.-fixed {
+    position: fixed;
+
+    .row {
+      position: relative;
+      height: 100%;
+    }
+    .-relativize {
+      position: static;
+    }
+
+    .c-video-player-container {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
     }
   }
 }

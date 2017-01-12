@@ -21,7 +21,7 @@
         <% if @user.phone.present? %>
           <div class="text -contact-staff"><strong>Phone:</strong> <%= @user.phone %></div>
         <% end %>
-        <div class="text -contact-staff"><strong>Email:</strong> <%= @user.email %></div>
+        <%= render 'social', user: @user %>
         <%= render 'shared/share', current_route: @current_route  %>
       </div>
     </div>
@@ -50,5 +50,9 @@
 <% end%>
 
 <%= render 'shared/news', news: @news, sectionClass: 'content -color-7' %>
+
+<% if(@user.video_id.present?) %>
+    <%= render 'shared/video', video_id: @user.video_id, isFixed: true %>
+<% end %>
 
 <%= render 'shared/footer' %>

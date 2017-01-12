@@ -1,0 +1,70 @@
+<ul class="c-staff-social">
+  <li>
+    <%= link_to "mailto:#{user.email}" do %>
+      <svg class="icon">
+        <use xlink:href="#icon-rrss-email"></use>
+      </svg>
+    <% end %>
+  </li>
+  <% if(user.video_id.present?) %>
+    <li>
+      <svg class="icon js-video-player-play">
+        <use xlink:href="#icon-rrss-youtube"></use>
+      </svg>
+    </li>
+  <% end %>
+  <% if(user.facebook_url.present?) %>
+    <li>
+      <%= link_to user.facebook_url, :target => "_blank" do %>
+        <svg class="icon">
+          <use xlink:href="#icon-rrss-facebook"></use>
+        </svg>
+      <% end %>
+    </li>
+  <% end %>
+  <% if(user.linkedin_url.present?) %>
+    <li>
+      <%= link_to user.linkedin_url, :target => "_blank" do %>
+        <svg class="icon">
+          <use xlink:href="#icon-rrss-linkedin"></use>
+        </svg>
+      <% end %>
+    </li>
+  <% end %>
+  <% if(user.web_url.present?) %>
+    <li>
+      <%= link_to user.web_url, :target => "_blank" do %>
+        <svg class="icon">
+          <use xlink:href="#icon-rrss_web"></use>
+        </svg>
+      <% end %>
+    </li>
+  <% end %>
+  <% if(user.skype_user.present?) %>
+    <li>
+      <%= link_to "skype:#{user.skype_user}?call", :target => "_blank" do %>
+        <svg class="icon">
+          <use xlink:href="#icon-rrss_skype"></use>
+        </svg>
+      <% end %>
+    </li>
+  <% end %>
+  <% if(user.twitter_url.present?) %>
+    <li>
+      <%= link_to "https://twitter.com/#{user.twitter_url}", :target => "_blank" do %>
+        <svg class="icon">
+          <use xlink:href="#icon-rrss-twitter"></use>
+        </svg>
+      <% end %>
+    </li>
+  <% end %>
+  <% if(user.google_url.present?) %>
+    <li>
+      <%= link_to user.google_url, :target => "_blank" do %>
+        <svg class="icon">
+          <use xlink:href="#icon-rrss_google_plus"></use>
+        </svg>
+      <% end %>
+    </li>
+  <% end %>
+</ul>

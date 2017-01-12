@@ -13,6 +13,7 @@
     show: function() {
       this.initSliders();
 
+      new App.View.VideoPlayer();
       new App.View.RelatedMedia({
         slider: this.slider
       });

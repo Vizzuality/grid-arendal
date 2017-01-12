@@ -13,8 +13,8 @@
 
     index: function() {
       this.initSliders();
-      
-      new App.View.HomeVideo();
+
+      new App.View.VideoPlayer();
       new App.View.EventsModal();
       new App.View.RelatedMedia({
         slider: this.slider

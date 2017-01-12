@@ -1,0 +1,15 @@
+<% isFixed ||= false %>
+<div class="c-video-player <% if isFixed %>-fixed<% end %>">
+  <div class="c-video-player-veil js-video-player-veil">
+    <svg class="icon">
+      <use xlink:href="#icon-close"></use>
+    </svg>
+  </div>
+  <div class="row">
+    <div class="small-12 columns">
+      <div class="-relativize">
+        <div class="c-video-player-container js-video-player-container" data-video-id="<%= video_id %>"></div>
+      </div>
+    </div>
+  </div>
+</div>
