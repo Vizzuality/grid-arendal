@@ -13,8 +13,12 @@
     },
 
     onClickGoToMediaItem: function(e) {
-      if(e.originalEvent != null && !e.originalEvent.defaultPrevented) {
-        window.location.href = $(e.currentTarget).data('link');
+      const $slider = document.querySelector('.js_slider');
+      if ( $(e.currentTarget).parent().hasClass('active') ) {
+        if(e.originalEvent != null && !e.originalEvent.defaultPrevented) {
+          window.location.href = $(e.currentTarget).data('link');
+        }
+      } else {
       }
     },
 
