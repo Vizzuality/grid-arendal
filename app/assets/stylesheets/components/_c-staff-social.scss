@@ -1,0 +1,16 @@
+.c-staff-social {
+  font-size: 0;
+  margin-top: rem(8px);
+
+  li {
+    display: inline-block;
+    margin-right: rem(16px);
+    cursor: pointer;
+  }
+
+  .icon {
+    width: rem(15px);
+    height: rem(15px);
+    fill: rgba($color-1, 0.7);
+  }
+}
