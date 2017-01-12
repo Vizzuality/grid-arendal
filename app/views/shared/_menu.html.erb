@@ -43,7 +43,7 @@
       </svg>
     </li>
     <% sections.each do |section| %>
-      <li><%= link_to section[:title], section[:path] %></li>
+      <li class="<% if controller_name == section[:key] %>-selected<% end %>"><%= link_to section[:title], section[:path] %></li>
     <% end %>
   </ul>
 </div>

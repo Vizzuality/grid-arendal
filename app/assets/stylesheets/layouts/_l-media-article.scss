@@ -44,7 +44,7 @@
   }
 
   .sidebar {
-    float: right;
+    // float: right;
     width: 100%;
     padding: rem(10px) 0 rem(20px) 0;
 
@@ -57,7 +57,7 @@
     }
 
     .download-links {
-      float: left;
+      // float: left;
       padding-bottom: rem(20px);
 
       @media screen and (max-width: $screen-m) and (min-width: $screen-s) {
@@ -65,7 +65,7 @@
       }
 
       @media screen and (min-width: $screen-l) {
-        float: right;
+        // float: right;
       }
 
       .button-list {
@@ -74,9 +74,10 @@
 
         li {
           position: relative;
-          width: rem(70px);
+          width: 24%;
           display: inline-flex;
           margin-bottom: rem(40px);
+          margin-right: 1%;
 
           &:not(:last-child) {
             margin-right: rem(20px);
@@ -98,7 +99,7 @@
     }
 
     .constraints {
-      float: right;
+      // float: right;
 
       @media screen and (max-width: $screen-m) and (min-width: $screen-s) {
         width: 50%;

@@ -52,6 +52,12 @@ module Backend
       end
     end
 
+    def destroy
+      if @photo.destroy
+        redirect_to photos_url
+      end
+    end
+
     private
 
       def photo_params

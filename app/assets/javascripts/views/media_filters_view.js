@@ -34,7 +34,9 @@
 
     _cache: function() {
       this.$container = this.$el.find('.container');
-      this.offsetTop = this.$el.offset().top + 20;
+      if ( this.$container.length > 0 ) {
+        this.offsetTop = this.$el.offset().top + 20;
+      }
     },
 
     _loadFilters: function() {
@@ -83,7 +85,7 @@
 
     _setHash: function () {
       var url = '?' + this.getFilterValues();
-      window.history.pushState('', '', url);
+      Turbolinks.visit(url, {})
     },
 
     _onClickToggleFilters: function() {

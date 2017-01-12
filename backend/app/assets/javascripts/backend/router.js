@@ -56,7 +56,7 @@
       // Listening events
       this.params.on('change', _.bind(this.updateUrl, this));
       // Global event to update params from external actions
-      App.Events.on('params:update', _.bind(this.updateParams, this));
+      // App.Events.on('params:update', _.bind(this.updateParams, this));
     },
 
     /**

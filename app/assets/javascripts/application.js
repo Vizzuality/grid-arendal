@@ -11,9 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-//= require turbolinks
-
-//= require jquery
+// = require turbolinks
 //= require URIjs
 //= require handlebars
 //= require underscore/underscore

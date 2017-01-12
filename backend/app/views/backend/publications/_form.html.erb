@@ -14,7 +14,7 @@
   <%= render 'backend/shared/form/field_photos', form: form, value: :media_content_id, label_txt: ' ',
     field_class: '-half', photos: photos, selected_id: media_content_id, with_search: true, js_trigger_class: 'js-select-photo' %>
 
-  <%= render 'backend/shared/form/field_upload_img', form: form, value: :s_cover_picture, field_class: '-half',
+  <%= render 'backend/shared/form/field_upload_img', form: form, value: :cover_picture, field_class: '-half',
     label_txt: 'Publication cover', have_picture: have_cover_picture,
     picture_url: cover_picture_url %>
 
