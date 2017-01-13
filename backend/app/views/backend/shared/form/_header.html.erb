@@ -7,7 +7,7 @@
   <% if flash[:notice] %>
     <li><%= flash[:notice] %></li>
   <% end %>
-  <div class="header-content">
+
     <%if inputs.length > 1%>
       <% inputs.each do |input| %>
         <%= form.label input.values[0] %>
@@ -16,13 +16,9 @@
     <% else %>
       <% inputs.each do |input| %>
         <%= form.label input.values[0] %>
-        <%= form.text_area input.values[0], label: false, class: 'text -main-title -dark title', placeholder: input.values[1], rows: 2 %>
+        <%= form.input input.values[0], as: :text, label: false, input_html: { class: 'text -main-title -dark title', placeholder: input.values[1] }, rows: 2 %>
       <% end %>
     <%end%>
-
-    <svg class="icon">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-edit"></use>
-    </svg>
 
     <div class="actions">
       <% if default_actions %>
@@ -33,5 +29,5 @@
         <div class="btn -light js-form-cancel">CANCEL</div>
       <% end %>
     </div>
-  </div>
+
 </div>

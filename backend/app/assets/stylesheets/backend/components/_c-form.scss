@@ -28,7 +28,6 @@ $photo-list-shadow-gap: rem(4px);
   }
 
   .form_header {
-
     position: fixed;
     top: 0;
     left: 40%;
@@ -62,6 +61,7 @@ $photo-list-shadow-gap: rem(4px);
     > .input {
       position: relative;
       display: inline-block;
+      width: 100%;
 
       input {
         border: 0;
@@ -114,6 +114,7 @@ $photo-list-shadow-gap: rem(4px);
       .input {
         position: relative;
         max-width: calc(50% - #{rem(15px)});
+        width: auto;
 
         &:first-of-type {
           padding-right: rem(10px);
@@ -566,7 +567,8 @@ $photo-list-shadow-gap: rem(4px);
 
   .field_with_errors {
 
-    input {
+    input,
+    textarea {
       border-color: $error-red !important;
 
       &::-webkit-input-placeholder {
