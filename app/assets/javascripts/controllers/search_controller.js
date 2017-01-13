@@ -7,6 +7,8 @@
   App.Controller.Search = App.Controller.Page.extend({
 
     index: function() {
+      new App.View.SearchInput();
+
       if(this.isScreen_s) {
         this.initSliders();
       } else {

@@ -92,11 +92,16 @@ $header-avatar-size-screen-l: rem(340px);
   .title-block {
     position: relative;
 
-    .-title-library{
+    .-title-library {
+      width: 100%;
       margin: rem(17px) 0 rem(7px) 0;
+      padding: 0;
+      background-color: transparent;
+      border: 0;
+      outline: none;
 
       @media screen and (min-width: $screen-m) {
-        margin: rem(26px) 0 rem(7px) 0;
+        margin: rem(24px) 0 rem(5px) 0;
       }
     }
 
