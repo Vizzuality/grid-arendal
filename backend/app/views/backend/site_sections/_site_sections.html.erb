@@ -4,6 +4,8 @@
   <% @site_sections.each do |site_section| %>
     <%= render 'backend/shared/index_item',
       item: site_section,
-      title: site_section.section.titleize %>
+      title: site_section.section.titleize,
+      selected: action_name != "index" && @site_section == site_section
+    %>
   <% end %>
 </ul>

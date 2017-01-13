@@ -19,6 +19,8 @@
   <% @news_articles.each do |news_article| %>
     <%= render 'backend/shared/index_item',
       item: news_article,
-      title: news_article.title %>
+      title: news_article.title,
+      selected: action_name != "index" && @news_article == news_article
+    %>
   <% end %>
 </ul>

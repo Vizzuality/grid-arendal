@@ -9,7 +9,8 @@
   <% activities.each do |activity| %>
     <%= render 'backend/shared/index_item',
       item: activity,
-      title: activity.title
+      title: activity.title,
+      selected: action_name != "index" && @activity == activity
     %>
   <% end %>
 </ul>
