@@ -13,7 +13,6 @@
         });
       }
       new App.View.MediaFilters({
-        callback: this._filter.bind(this),
         options: {
           filters: [
             {
@@ -29,9 +28,9 @@
               triggerClass: ".js-dropdown-filter-by-tags"
             }
           ]
-        },
-        callback: this._filter.bind(this)
+        }
       });
+
       this.scrollPaginationView = new App.View.ScrollPagination({
         callback: this._paginate.bind(this),
         options: {
@@ -52,13 +51,6 @@
           }
         });
       }
-    },
-
-    _filter: function() {
-      jQuery.ajaxSetup({cache: true});
-      $.getScript($(location).attr('href'));
-      this.scrollPaginationView._initVariables();
-      return false;
     },
 
     _paginate: function() {

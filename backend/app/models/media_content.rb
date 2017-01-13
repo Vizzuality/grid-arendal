@@ -29,7 +29,7 @@ class MediaContent < ApplicationRecord
   has_many :news_articles, through: :news_media_contents
 
   scope :wo_photos_in_album, -> { where("type <> 'Photo' OR (type = 'Photo' AND album_id IS NULL)")}
-  scope :by_type, ->(type) { where(type: type) }
+  scope :by_type, ->(media) { where(type: media) }
   scope :by_tags, ->(tags) { joins(:tags).where(tags: { id: tags }) }
 
   # relations added here to allow lazy loading on media_library_controller
@@ -52,13 +52,13 @@ class MediaContent < ApplicationRecord
   class << self
     def fetch_all(options)
       tags = options['tags'].split(',')               if options['tags'].present?
-      type = options['type']                          if options['type'].present?
+      media = options['media']                          if options['media'].present?
 
       media_contents = MediaContent.wo_photos_in_album.
         includes(:photo_sizes, :photos).
         order("publication_date DESC, id ASC")
       media_contents = media_contents.by_tags(tags)   if tags.present?
-      media_contents = media_contents.by_type(type)   if type.present?
+      media_contents = media_contents.by_type(media)   if media.present?
       media_contents
     end
   end
