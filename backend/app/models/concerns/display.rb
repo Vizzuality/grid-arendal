@@ -5,8 +5,8 @@ module Display
   included do
     def display_name
       return "#{half_email}" if first_name.blank? && last_name.blank?
-      return "#{first_name}" if last_name.blank?
-      "#{first_name} #{last_name}"
+      return "#{first_name.split(" ")[0]}" if last_name.blank?
+      "#{first_name.split(" ")[0]} #{last_name}"
     end
 
     def full_name
