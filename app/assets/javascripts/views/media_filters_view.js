@@ -147,7 +147,10 @@
         return false
       }
       _.each(activeFilters, function(value, filter) {
-        var selectedValues = value.split(",").map(Number);
+        var selectedValues = value.split(",")
+        if(filter !== 'media') {
+          selectedValues = selectedValues.map(Number);
+        }
         var filter = _.findWhere(this.filters, {key: filter});
         if(typeof filter != "undefined") {
           filter.selectedValues = selectedValues;

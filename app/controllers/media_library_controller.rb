@@ -34,8 +34,9 @@ class MediaLibraryController < ApplicationController
 
   private
     def options_filter
-      params.permit(:type, :tags)
+      params.permit(:media, :tags)
     end
+
     def media_content
       @media_content = MediaContent.find(params[:id])
     end
