@@ -22,6 +22,12 @@ class ActivitiesController < ApplicationController
   end
 
   def show
+    if @activity.is_programme?
+      @related_activities = Activity.joins(:tags).
+        where(tags: {name: @activity.title}).
+        where.not(id: @activity.id).
+        order_by_title.limit(6)
+    end
   end
 
   def paginate
