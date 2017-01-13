@@ -16,6 +16,7 @@ $staff-border-width: rem(3px);
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
+      mix-blend-mode: luminosity;
 
       &:before {
         content: "";
