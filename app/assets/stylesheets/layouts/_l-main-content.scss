@@ -213,5 +213,9 @@
     height: rem(40px);
     margin: auto;
     text-align: center;
+
+    .icon {
+      margin: rem(-4px) 0 0 rem(10px);
+    }
   }
 }
