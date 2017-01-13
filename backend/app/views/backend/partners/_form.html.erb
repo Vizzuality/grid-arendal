@@ -1,5 +1,6 @@
 <%= render 'backend/shared/form/header', form: form,
-  inputs: [{value: :name, title_placeholder: 'Partner name'}] %>
+  inputs: [{value: :name, title_placeholder: 'Partner name'}],
+  preview_url: false %>
 
 <div class="fields">
   <%= render 'backend/shared/form/field_upload_img', form: form, value: :logo,

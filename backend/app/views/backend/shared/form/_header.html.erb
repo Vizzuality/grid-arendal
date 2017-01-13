@@ -1,9 +1,6 @@
 <% fields ||= 1 %>
-<% if not(defined? default_actions)
-    default_actions = true
-end %>
-
-<% preview_url ||= main_app.url_for(form.object) %>
+<% default_actions = true unless local_assigns.has_key?(:default_actions) %>
+<% preview_url = main_app.url_for(form.object) unless local_assigns.has_key?(:preview_url) %>
 
 <div class="form_header" data-fields="<%= fields %>">
   <% if flash[:notice] %>
@@ -26,10 +23,12 @@ end %>
       <% if default_actions %>
         <%= form.button :submit, 'SAVE', class: '-dark' %>
         <%= link_to "CANCEL", :back, class: 'btn -light' %>
-        <%= link_to preview_url, class: 'btn -light -preview' do %>
-          <svg class="icon">
-            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-preview"></use>
-          </svg>
+        <% if preview_url %>
+          <%= link_to preview_url, class: 'btn -light -preview' do %>
+            <svg class="icon">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-preview"></use>
+            </svg>
+          <% end %>
         <% end %>
       <% else %>
         <div class="btn -dark js-form-save">SAVE</div>
