@@ -24,7 +24,6 @@
     initialize: function(settings) {
       var opts = settings && settings.options ? settings.options : {};
       this.options = _.extend({}, this.options, opts);
-      this.callback = settings.callback;
 
       this._loadFilters();
       this._cache();
@@ -35,7 +34,7 @@
     _cache: function() {
       this.$container = this.$el.find('.container');
       if ( this.$container.length > 0 ) {
-        this.offsetTop = this.$el.offset().top + 20;
+        this.offsetTop = this.$el.offset().top + 6;
       }
     },
 
@@ -80,7 +79,6 @@
 
     _filterMedia: function() {
       this._setHash();
-      this.callback();
     },
 
     _setHash: function () {
@@ -149,7 +147,10 @@
         return false
       }
       _.each(activeFilters, function(value, filter) {
-        var selectedValues = value.split(",").map(Number);
+        var selectedValues = value.split(",")
+        if(filter !== 'media') {
+          selectedValues = selectedValues.map(Number);
+        }
         var filter = _.findWhere(this.filters, {key: filter});
         if(typeof filter != "undefined") {
           filter.selectedValues = selectedValues;

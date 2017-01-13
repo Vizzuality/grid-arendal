@@ -15,7 +15,6 @@
 #
 
 class Photo < MediaContent
-  acts_as_taggable
 
   scope :not_in_album, -> { where(album_id: nil)}
 

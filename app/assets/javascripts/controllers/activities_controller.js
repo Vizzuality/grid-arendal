@@ -17,9 +17,8 @@
           el: '.masonry-layout'
         });
       }
-      new App.View.MediaFilters({
-        callback: this._filter.bind(this)
-      });
+      new App.View.MediaFilters();
+
       this.scrollPaginationView = new App.View.ScrollPagination({
         callback: this._paginate.bind(this),
         options: {
@@ -31,6 +30,9 @@
     show: function(params) {
       new App.View.Anchors({});
       this.initSliders();
+      new App.View.RelatedMedia({
+        slider: this.slider
+      });
       if(!this.isScreen_s) {
         _.each($('.masonry-layout'), function(element) {
           if($(element).find('.masonry-column').length === 0) {
@@ -40,13 +42,6 @@
           }
         });
       }
-    },
-
-    _filter: function() {
-      jQuery.ajaxSetup({cache: true});
-      $.getScript($(location).attr('href'));
-      this.scrollPaginationView._initVariables();
-      return false;
     },
 
     _paginate: function() {
@@ -83,9 +78,11 @@
         }
 
         if(needLoadSlider) {
-          lory(element, {
-            enableMouseEvents: true
-          }).slideTo(1);
+          var slider = lory(element, {
+            enableMouseEvents: true,
+            infinite: true
+          });
+          this.slider = slider;
         }
       }.bind(this));
     }

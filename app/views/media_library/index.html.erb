@@ -8,13 +8,22 @@
         <div class="text -summary">
           <%= @section.description %>
         </div>
-        <%= render 'shared/share' %>
+        <%= render 'shared/share', current_route: @current_route  %>
       </div>
     </div>
   </div>
 </div>
 <div class="l-main-content -media-library -only-grid -no-border -color-4">
   <% filters = [
+    {
+      data: @types,
+      type: 'select',
+      title: 'FILTER BY',
+      placeholder: 'Filter by type',
+      key: 'media',
+      display_method: 'type',
+      matching_method: 'type'
+    },
     {
       data: @tags,
       type: 'tags',
@@ -23,6 +32,7 @@
       key: 'tags'
     }
   ] %>
+
   <%= render 'shared/filters', filters: filters %>
 
   <div class="row">
@@ -32,11 +42,14 @@
       </div>
       <% if @media_contents.count < 1 %>
         <div class="c-filter-message">
-          <h4 class="text -title-event">Sorry, there is no media with those filters</h4>
+          <h4 class="text -nothing-to-see">Sorry, nothing to see here <img src="<%= asset_url('monete.png') %>" width="30"/></h4>
         </div>
       <% end %>
     </div>
   </div>
+
+  <%= render 'shared/scroll_to_top' %>
+
 </div>
 
 <%= render 'shared/footer' %>

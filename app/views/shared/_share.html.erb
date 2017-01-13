@@ -1,22 +1,24 @@
+<% current_route ||= '' %>
+
 <div class="c-share">
   <div class="share-btn -share">
     <svg class="icon">
       <use xlink:href="#icon-share"></use>
     </svg>
   </div>
-  <div class="share-btn -mail">
+  <a class="share-btn -mail" href="mailto:?body=I think you could be interested on this website: <%= current_route %>">
     <svg class="icon">
       <use xlink:href="#icon-rrss-email"></use>
     </svg>
-  </div>
-  <div class="share-btn -facebook">
+  </a>
+  <a class="share-btn -facebook" href="http://www.facebook.com/sharer/sharer.php%>" target="_blank">
     <svg class="icon">
       <use xlink:href="#icon-rrss-facebook"></use>
     </svg>
-  </div>
-  <div class="share-btn -twitter">
+  </a>
+  <a class="share-btn -twitter" href="http://www.twitter.com/share" target="_blank">
     <svg class="icon">
       <use xlink:href="#icon-rrss-twitter"></use>
     </svg>
-  </div>
+  </a>
 </div>

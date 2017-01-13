@@ -13,7 +13,6 @@
         });
       }
       new App.View.MediaFilters({
-        callback: this._filter.bind(this),
         options: {
           filters: [
             {
@@ -31,6 +30,7 @@
           ]
         }
       });
+
       this.scrollPaginationView = new App.View.ScrollPagination({
         callback: this._paginate.bind(this),
         options: {
@@ -51,13 +51,6 @@
           }
         });
       }
-    },
-
-    _filter: function() {
-      jQuery.ajaxSetup({cache: true});
-      $.getScript($(location).attr('href'));
-      this.scrollPaginationView._initVariables();
-      return false;
     },
 
     _paginate: function() {
@@ -87,8 +80,9 @@
     initSliders: function() {
       _.each($('.js_slider'), function(element) {
         lory(element, {
-          enableMouseEvents: true
-        }).slideTo(1);
+          enableMouseEvents: true,
+          infinite: true
+        });
       }.bind(this));
     }
 

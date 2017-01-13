@@ -23,7 +23,7 @@
              edit_path: backend.edit_publication_path(@publication) }
           ] %>
           <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
-          <%= render 'shared/share' %>
+          <%= render 'shared/share', current_route: @current_route  %>
         </div>
       </div>
     </div>
