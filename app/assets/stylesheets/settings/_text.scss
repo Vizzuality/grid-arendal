@@ -311,6 +311,13 @@
     color: $font-color-4;
   }
 
+  &.-no-result {
+    font-family: $font-family-2;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.67;
+  }
+
   /*
    * COLORS
    */
