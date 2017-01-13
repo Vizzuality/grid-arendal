@@ -26,7 +26,11 @@ end %>
       <% if default_actions %>
         <%= form.button :submit, 'SAVE', class: '-dark' %>
         <%= link_to "CANCEL", :back, class: 'btn -light' %>
-        <%= link_to "PREVIEW", preview_url, class: 'btn -light' %>
+        <%= link_to preview_url, class: 'btn -light' do %>
+          <svg class="icon">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-preview"></use>
+          </svg>
+        <% end %>
       <% else %>
         <div class="btn -dark js-form-save">SAVE</div>
         <div class="btn -light js-form-cancel">CANCEL</div>
