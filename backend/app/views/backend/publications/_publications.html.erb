@@ -9,6 +9,8 @@
   <% publications.each do |publication| %>
     <%= render 'backend/shared/index_item',
       item: publication,
-      title: publication.title %>
+      title: publication.title,
+      selected: action_name != "index" && @publication == publication
+    %>
   <% end %>
 </ul>

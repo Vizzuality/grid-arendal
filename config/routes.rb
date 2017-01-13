@@ -9,16 +9,16 @@ Rails.application.routes.draw do
   resources :search, only: [:index]
 
   [:publications, :activities].each do |res|
-    resources res, except: [:filters] do
+    resources res, only: [:show, :index] do
       get :paginate, on: :collection, defaults: { format: 'js' }
     end
   end
 
-  resources :media, path: 'media-library', controller: 'media_library', except: [:filters] do
+  resources :media, path: 'media-library', controller: 'media_library', only: [:index, :show] do
     get :paginate, on: :collection, defaults: { format: 'js' }
   end
 
-  resources :news, controller: 'news_articles' do
+  resources :news, controller: 'news_articles', only: [:index] do
     get :paginate, on: :collection, defaults: { format: 'js' }
   end
 

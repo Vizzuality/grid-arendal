@@ -42,7 +42,8 @@
   <% items.each do |media_content| %>
     <%= render 'backend/shared/index_item',
       item: media_content,
-      title: media_content.title
+      title: media_content.title,
+      selected: action_name != "index" && params[:id] == media_content.id.to_s
     %>
   <% end %>
 </ul>

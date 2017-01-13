@@ -20,6 +20,8 @@
   <% @tags.each do |tag| %>
     <%= render 'backend/shared/index_item',
       item: tag,
-      title: tag.name %>
+      title: tag.name,
+      selected: action_name != "index" && @tag == tag
+    %>
   <% end %>
 </ul>

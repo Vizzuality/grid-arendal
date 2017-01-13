@@ -154,6 +154,10 @@
     }
   }
 
+  &.-no-results {
+    min-height: rem(430px);
+  }
+
   &.-publications .masonry-layout,
   &.-activities .masonry-layout,
   &.-news .masonry-layout ,
@@ -197,6 +201,21 @@
           }
         }
       }
+    }
+  }
+
+  .no-results {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: rem(40px);
+    margin: auto;
+    text-align: center;
+
+    .icon {
+      margin: rem(-4px) 0 0 rem(10px);
     }
   }
 }
