@@ -1,5 +1,6 @@
 <%= render 'backend/shared/form/header', form: form,
-  inputs: [{value: :title, title_placeholder: 'Vacancy title'}] %>
+  inputs: [{value: :title, title_placeholder: 'Vacancy title'}],
+  preview_url: main_app.about_index_path %>
 
 <div class="fields">
   <%= render 'backend/shared/form/field_textarea', form: form,

@@ -9,7 +9,8 @@
   <% @events.each do |event| %>
     <%= render 'backend/shared/index_item',
       item: event,
-      title: event.title
+      title: event.title,
+      selected: action_name != "index" && @event == event
     %>
   <% end %>
 </ul>

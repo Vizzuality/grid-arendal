@@ -9,7 +9,8 @@
   <% @partners.each do |partner| %>
     <%= render 'backend/shared/index_item',
     item: partner,
-    title: partner.name
+    title: partner.name,
+    selected: action_name != "index" && @partner == partner
   %>
   <% end %>
 </ul>

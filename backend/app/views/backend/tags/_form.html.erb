@@ -1,4 +1,5 @@
-<%= render 'backend/shared/form/header', form: form, inputs: [{value: :name, title_placeholder: 'Tag'}] %>
+<%= render 'backend/shared/form/header', form: form, inputs: [{value: :name, title_placeholder: 'Tag'}],
+  preview_url: false %>
 
 <div class="fields">
   <%= render 'backend/shared/form/field_select', form: form, value: :category,

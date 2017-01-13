@@ -10,7 +10,8 @@
     <%= render 'backend/shared/index_item',
       item: about_section,
       sortable: true,
-      title: about_section.title
+      title: about_section.title,
+      selected: action_name != "index" && @about_section == about_section
     %>
   <% end %>
 </ul>
