@@ -37,6 +37,23 @@ $photo-list-shadow-gap: rem(4px);
     background-color: $white;
     z-index: 2;
 
+    .header-content {
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    textarea {
+      line-height: 1.2;
+      // Hack to center the text in the textarea.
+      padding-top: rem(22px) !important;
+      min-height: 0 !important;
+      resize: none;
+      appearance:none;
+      -moz-appearance:none;
+      -webkit-appearance:none;
+    }
+
     label {
       display: none;
     }
@@ -44,13 +61,16 @@ $photo-list-shadow-gap: rem(4px);
     > .input {
       position: relative;
       display: inline-block;
+      width: 100%;
+
+      input {
+        border: 0;
+      }
     }
 
     .title {
-      max-width: 100%;
       padding: 0;
       border: 0;
-      white-space: nowrap;
       overflow: hidden;
     }
 
@@ -81,15 +101,20 @@ $photo-list-shadow-gap: rem(4px);
 
     &[data-fields='1'] {
 
-      > .input {
-        max-width: calc(100% - #{rem(23px)});
+      textarea {
+        width: calc(100% - #{rem(30px)});
       }
     }
 
     &[data-fields='2'] {
+      .header-content {
+        min-height: rem(80px);
+      }
 
-      > .input {
-        max-width: calc(50% - #{rem(11.5px)});
+      .input {
+        position: relative;
+        max-width: calc(50% - #{rem(15px)});
+        width: auto;
 
         &:first-of-type {
           padding-right: rem(10px);
@@ -111,7 +136,7 @@ $photo-list-shadow-gap: rem(4px);
   }
 
   .fields {
-    padding: rem(30px) rem(75px);
+    padding: rem(60px) rem(75px) rem(30px);
     font-size: 0;
 
     .field {
@@ -542,7 +567,8 @@ $photo-list-shadow-gap: rem(4px);
 
   .field_with_errors {
 
-    input {
+    input,
+    textarea {
       border-color: $error-red !important;
 
       &::-webkit-input-placeholder {
