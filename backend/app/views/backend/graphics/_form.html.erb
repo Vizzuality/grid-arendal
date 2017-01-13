@@ -1,5 +1,6 @@
 <%= render 'backend/shared/form/header', form: form,
-  inputs: [{value: :title, title_placeholder: 'Graphic title'}] %>
+  inputs: [{value: :title, title_placeholder: 'Graphic title'}],
+  preview_url: main_app.medium_path(form.object) %>
 
 <div class="fields">
   <%= render 'backend/shared/form/field_photos', form: form, value: :photo_id,

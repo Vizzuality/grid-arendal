@@ -1,7 +1,9 @@
 <% fields ||= 1 %>
 <% if not(defined? default_actions)
     default_actions = true
-  end %>
+end %>
+
+<% preview_url ||= main_app.url_for(form.object) %>
 
 <div class="form_header" data-fields="<%= fields %>">
   <% if flash[:notice] %>
@@ -24,6 +26,7 @@
       <% if default_actions %>
         <%= form.button :submit, 'SAVE', class: '-dark' %>
         <%= link_to "CANCEL", :back, class: 'btn -light' %>
+        <%= link_to "PREVIEW", preview_url, class: 'btn -light' %>
       <% else %>
         <div class="btn -dark js-form-save">SAVE</div>
         <div class="btn -light js-form-cancel">CANCEL</div>

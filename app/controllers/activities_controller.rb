@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 class ActivitiesController < ApplicationController
   before_action :set_activity, only: [:show]
+  before_action :authorize!, only: [:show]
+
   before_action :set_activities_limit, only: [:index, :paginate]
   before_action :set_page_param, only: [:index, :paginate]
 
@@ -41,9 +43,17 @@ class ActivitiesController < ApplicationController
     def set_page_param
       @page = params[:page].present? ? params[:page].to_i : 1
     end
+
     def set_activity
       @activity = Activity.find(params[:id])
     end
+
+    def authorize!
+      if @activity.unpublished? && !current_user
+        redirect_to activities_url
+      end
+    end
+
     def set_activities_limit
       @activities_limit = 15
     end

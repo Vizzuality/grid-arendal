@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 class PublicationsController < ApplicationController
   before_action :set_publication, only: [:show]
+  before_action :authorize!, only: [:show]
   before_action :set_publications_limit, only: [:index, :paginate]
   before_action :set_page_param, only: [:index, :paginate]
 
@@ -40,12 +41,21 @@ class PublicationsController < ApplicationController
     def options_filter
       params.permit(:type, :tags, :years)
     end
+
     def set_page_param
       @page = params[:page].present? ? params[:page].to_i : 1
     end
+
     def set_publication
       @publication = Publication.find(params[:id])
     end
+
+    def authorize!
+      if @publication.unpublished? && !current_user
+        redirect_to publications_url
+      end
+    end
+
     def set_publications_limit
       @publications_limit = 15
     end
