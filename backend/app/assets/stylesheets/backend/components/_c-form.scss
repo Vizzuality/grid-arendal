@@ -74,16 +74,6 @@ $photo-list-shadow-gap: rem(4px);
       overflow: hidden;
     }
 
-    .icon {
-      display: inline-block;
-      width: rem(15px);
-      height: rem(15px);
-      margin-left: rem(8px);
-      margin-bottom: rem(-2px);
-      opacity: 0.3;
-      transition: opacity 0.1s linear;
-    }
-
     .actions {
       position: absolute;
       top: 0;
@@ -96,6 +86,17 @@ $photo-list-shadow-gap: rem(4px);
         float: right;
         width: rem(100px);
         margin-left: rem(10px);
+      }
+
+      .-preview {
+        width: rem(30px);
+
+        .icon {
+          width: rem(18px);
+          height: rem(12px);
+          margin-left: rem(-5px);
+          fill: rgba($color-1, 0.5);
+        }
       }
     }
 
