@@ -3,7 +3,7 @@
   <span class="speaker">
     <span id="<%= key %>" class="text -filter" data-placeholder="<%= placeholder %>">
       <% if params[key].present? %>
-        <% matching_element = data.select{|t| params[key] == t.send(matching_method) }.first %>
+        <% matching_element = data.select{|t| params[key] == t.send(matching_method).to_s }.first %>
         <%= matching_element && matching_element.send(display_method) or placeholder %>
       <% else %>
         <%= placeholder %>
