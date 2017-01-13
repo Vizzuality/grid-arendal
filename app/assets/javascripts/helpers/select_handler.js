@@ -23,6 +23,8 @@
       var opts = settings && settings.options ? settings.options : {};
       this.options = _.extend({}, this.options, opts);
 
+      this.selectedValues = [];
+
       this._cache();
       this._onClickOpenDropdown();
       this._onClickOptions();
