@@ -24,7 +24,6 @@
     initialize: function(settings) {
       var opts = settings && settings.options ? settings.options : {};
       this.options = _.extend({}, this.options, opts);
-      this.callback = settings.callback;
 
       this._loadFilters();
       this._cache();
@@ -80,7 +79,6 @@
 
     _filterMedia: function() {
       this._setHash();
-      this.callback();
     },
 
     _setHash: function () {

@@ -17,9 +17,7 @@
           el: '.masonry-layout'
         });
       }
-      new App.View.MediaFilters({
-        callback: this._filter.bind(this)
-      });
+      new App.View.MediaFilters();
 
       this.scrollPaginationView = new App.View.ScrollPagination({
         callback: this._paginate.bind(this),
@@ -46,13 +44,6 @@
           }
         });
       }
-    },
-
-    _filter: function() {
-      jQuery.ajaxSetup({cache: true});
-      $.getScript($(location).attr('href'));
-      this.scrollPaginationView._initVariables();
-      return false;
     },
 
     _paginate: function() {
