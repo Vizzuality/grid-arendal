@@ -12,7 +12,7 @@
     <%= form.label "Picture", class: 'text -field-label -bold -dark' %>
     <%= form.label '', class: 'fake-input' do %>
         <div class="tip">
-          <a href="<%= photo.external_url %>" target="_blank">
+          <a href="<%= form.object.external_url %>" target="_blank">
             <div class="current_picture" style="background-image: url('<%= thumbnail %>');"></div>
           </a>
         </div>

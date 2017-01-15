@@ -13,6 +13,8 @@ module Backend
     end
 
     def edit
+      @thumbnail = @graphic.photo_sizes.
+        where(label: PhotoSize::MEDIUM).first.try(:url)
       @graphic.build_eps unless @graphic.eps
       @graphic.build_pdf unless @graphic.pdf
     end
@@ -25,24 +27,6 @@ module Backend
         set_graphics
         set_objects
         render :edit
-      end
-    end
-
-    def new
-      @graphic.build_eps
-      @graphic.build_pdf
-    end
-
-    def create
-      debugger
-      @graphic = Graphic.create(graphic_params)
-      if @graphic.save
-        redirect_to edit_graphic_url(@graphic),
-          notice: 'Graphic created'
-      else
-        set_objects
-        set_graphics
-        render :new
       end
     end
 
@@ -87,8 +71,6 @@ module Backend
         @publications = Publication.order(:title)
         @activities = Activity.order(:title)
         @news_articles = NewsArticle.order(:title)
-        @photos = Photo.order("publication_date DESC").includes(:photo_sizes).
-          limit(20)
       end
   end
 end

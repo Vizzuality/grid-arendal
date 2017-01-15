@@ -7,12 +7,11 @@
   <%= simple_form_for @graphic, html: { class: 'c-form' } do |f| %>
     <%= render 'form',
         form: f,
+        thumbnail: @thumbnail,
         tags: @tags,
         activities: @activities,
         publications: @publications,
-        news_articles: @news_articles,
-        photos: @photos,
-        photo_id: @graphic.photo_id
+        news_articles: @news_articles
     %>
   <% end %>
 </div>
