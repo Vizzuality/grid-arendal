@@ -14,7 +14,7 @@
 #  updated_at       :datetime         not null
 #
 
-class Album < MediaContent
+class Collection < MediaContent
   include FlickrSync
-  has_many :photos, dependent: :destroy
+  has_many :graphics, dependent: :destroy, foreign_key: :album_id
 end
