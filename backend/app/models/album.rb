@@ -64,11 +64,14 @@ class Album < MediaContent
     existing_photos = photos.count
     page = 1
     per_page = 500
+    # keep track of photos from flickr
+    flickr_photos_ids = []
     while(page == 1 || page*per_page <= total_photos) do
       flickr_photos = Flickr.get_photos_for(photoset_id, page)
       next if flickr_photos.nil?
       flickr_photos.photo.each do |photo|
         pic = Photo.find_or_initialize_by(external_id: photo.id)
+        flickr_photos_ids << photo.id
         last_update = Date.strptime(photo.lastupdate, '%s')
         if pic.external_updated_at != last_update
           photo_info = Flickr.get_photo_info(photo.id)
@@ -101,6 +104,10 @@ class Album < MediaContent
       page += 1
     end
     save
+    # remove photos no longer on flickr
+    to_delete = photos.where.not(external_id: flickr_photos_ids)
+    to_delete.delete_all unless to_delete.empty?
+
     photos.count - existing_photos
   end
 end
