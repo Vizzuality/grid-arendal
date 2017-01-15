@@ -17,7 +17,7 @@ module Backend
     end
 
     def create
-      @album = Album.create_or_update_album_for(album_params[:external_id])
+      @album = Album.create_or_update_set_for(album_params[:external_id])
       redirect_to edit_album_url(@album), notice: "Album imported"
     end
 

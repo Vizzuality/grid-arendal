@@ -16,5 +16,5 @@
 
 class Album < MediaContent
   include FlickrSync
-  has_many :photos, dependent: :destroy
+  has_many :photos, dependent: :destroy, foreign_key: :album_id
 end

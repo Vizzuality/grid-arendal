@@ -78,7 +78,8 @@ module FlickrSync
   end
 
   class_methods do
-    def self.all_sets_from_flickr
+
+    def all_sets_from_flickr
       current_total = self.count
       photosets = Flickr.fetch_sets
       photosets.each do |photoset|
@@ -87,7 +88,7 @@ module FlickrSync
       self.count - current_total
     end
 
-    def self.create_or_update_set_for photoset_id
+    def create_or_update_set_for photoset_id
       photoset = Flickr.get_photoset_by_id photoset_id
       return "No photoset by the given id" unless photoset
       set = find_or_initialize_by(external_id: photoset.id)
