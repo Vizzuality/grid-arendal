@@ -1,5 +1,5 @@
 = render 'backend/shared/form/header', form: form, inputs: [{value: :last_name, title_placeholder: 'Lastname'}, {value: :first_name, title_placeholder: 'Firstname'}], fields: 2,
-  preview_url: main_app.staff_path(form.object)
+  preview_url: form.object.id && main_app.staff_path(form.object)
 
 div.fields
 
