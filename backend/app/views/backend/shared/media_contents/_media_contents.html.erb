@@ -13,11 +13,6 @@
                {title: "Graphics", key: "graphics", path: graphics_path,
                 count: Graphic.count}
             ]
-          else
-            [
-              {title: "Videos", key: "videos", path: videos_path,
-               count: Video.count}
-            ]
           end
  %>
 <div class="tabs">
@@ -35,8 +30,6 @@
   <% if ['albums', 'collections'].include?(controller_name) %>
     <%= link_to "Import from flickr", [:new, controller_name.singularize],
       class: 'btn -light -no-border -create-new js-create-new' %>
-  <% elsif "videos" == controller_name && can?(:create, Video) %>
-    <%= link_to "Create New", new_video_path, class: 'btn -light -no-border -create-new js-create-new' %>
   <% end %>
   <div class="btn">
     <svg class="icon">
