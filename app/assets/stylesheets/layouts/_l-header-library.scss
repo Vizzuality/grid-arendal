@@ -2,7 +2,7 @@ $header-library-staff-padding-bottom: rem(26px);
 $header-avatar-border-width: rem(3px);
 $header-avatar-size: rem(100px);
 $header-avatar-size-screen-s: rem(170px);
-$header-avatar-size-screen-m: rem(250px);
+$header-avatar-size-screen-m: rem(210px);
 $header-avatar-size-screen-l: rem(340px);
 
 .l-header-library {
@@ -72,15 +72,30 @@ $header-avatar-size-screen-l: rem(340px);
       }
 
       @media screen and (min-width: $screen-m) {
-        bottom: -(($header-avatar-size-screen-m / 2) + $header-library-staff-padding-bottom);
+        right: auto;
+        bottom: -$header-avatar-size-screen-m;
         width: $header-avatar-size-screen-m;
         height: $header-avatar-size-screen-m;
       }
 
       @media screen and (min-width: $screen-l) {
-        bottom: -(($header-avatar-size-screen-l / 2) + $header-library-staff-padding-bottom);
+        right: 0;
+        bottom: -$header-avatar-size-screen-l;
         width: $header-avatar-size-screen-l;
         height: $header-avatar-size-screen-l;
+      }
+    }
+
+    .c-share {
+      display: none;
+
+      @media screen and (min-width: $screen-m) {
+        display: flex;
+        right: 0;
+      }
+
+      @media screen and (min-width: $screen-m) {
+        right: rem(-15px);
       }
     }
   }
