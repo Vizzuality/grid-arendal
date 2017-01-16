@@ -23,7 +23,7 @@ class Activity < Content
 
   acts_as_taggable
 
-  scope :by_partners, ->(partners) { joins(:content_partners).where(content_partners: {id: partners})}
+  scope :by_partners, ->(partners) { joins(:content_partners).where(content_partners: {partner_id: partners})}
 
   def is_programme?
     content_type && content_type.title == "Programme"
