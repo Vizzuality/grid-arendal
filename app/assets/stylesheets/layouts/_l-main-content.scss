@@ -162,6 +162,7 @@
   &.-activities .masonry-layout,
   &.-news .masonry-layout ,
   &.-about .masonry-layout,
+  &[data-section="activities"] .masonry-layout,
   &[data-section="posts"] .masonry-layout,
   &[data-section="media"] .masonry-layout {
 
