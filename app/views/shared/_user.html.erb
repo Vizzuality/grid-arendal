@@ -1,7 +1,7 @@
 <% avatar_url = if user.thumbnail.exists?
                   user.thumbnail(:medium)
                 else
-                  asset_path('original/missing2.png')
+                  asset_path('staff/staff-default-avatar.png')
                 end %>
 <div class="staff">
   <%= link_to staff_path(user) do %>

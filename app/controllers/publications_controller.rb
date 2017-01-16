@@ -8,7 +8,7 @@ class PublicationsController < ApplicationController
   def index
     @publications = Publication.fetch_all(options_filter).
       limit(@publications_limit * @page)
-    @content_types = ContentType.by_publication
+    @content_types = ContentType.by_publication.order('LOWER(title) ASC')
     max = (Publication.maximum(:content_date) || Date.today).year
     @years = ((max-5)..max).to_a.reverse
     @years << -1
