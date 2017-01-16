@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170112083930) do
+ActiveRecord::Schema.define(version: 20170115231127) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -127,7 +127,6 @@ ActiveRecord::Schema.define(version: 20170112083930) do
     t.integer  "album_id"
     t.datetime "external_updated_at"
     t.boolean  "is_featured"
-    t.integer  "photo_id"
     t.integer  "eps_id"
     t.integer  "pdf_id"
   end

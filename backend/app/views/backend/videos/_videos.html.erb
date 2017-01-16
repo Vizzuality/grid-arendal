@@ -1,0 +1,16 @@
+<h2 class="text -main-title -light">Videos</h2>
+
+<%= render 'backend/shared/index_items_buttons.html',
+  havePermissionToCreate: can?(:create, Video),
+  createPath: new_video_path
+%>
+
+<ul class="items-list">
+  <% videos.each do |video| %>
+    <%= render 'backend/shared/index_item',
+      item: video,
+      title: video.title,
+      selected: action_name != "index" && @video == video
+    %>
+  <% end %>
+</ul>

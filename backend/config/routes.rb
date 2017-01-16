@@ -75,7 +75,13 @@ Backend::Engine.routes.draw do
     patch 'remove_featured', on: :member
   end
 
-  resources :graphics, except: :show do
+  resources :collections, except: [:show] do
+    patch 'make_featured', on: :member
+    patch 'remove_featured', on: :member
+    get 'flickr_update', on: :member
+  end
+
+  resources :graphics, except: [:new, :create, :show] do
     patch 'make_featured',   on: :member
     patch 'remove_featured', on: :member
   end

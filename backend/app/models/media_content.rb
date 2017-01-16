@@ -20,6 +20,9 @@ class MediaContent < ApplicationRecord
 
   TYPE_ALBUM = "Album"
   TYPE_PHOTO = "Photo"
+  TYPE_VIDEO = "Video"
+  TYPE_GRAPHIC = "Graphic"
+  TYPE_COLLECTION = "Collection"
 
   has_many :media_supports, dependent: :destroy
   has_many :activities, through: :media_supports, source: :activity
@@ -31,9 +34,12 @@ class MediaContent < ApplicationRecord
   scope :wo_photos_in_album, -> { where("type <> 'Photo' OR (type = 'Photo' AND album_id IS NULL)")}
   scope :by_type, ->(media) { where(type: media) }
   scope :by_tags, ->(tags) { joins(:tags).where(tags: { id: tags }) }
+  scope :albums_and_photos, -> {where(type: ["Album", "Photo"])}
+  scope :collections_and_graphics, -> {where(type: ["Collection", "Graphic"])}
 
   # relations added here to allow lazy loading on media_library_controller
   has_many :photo_sizes, foreign_key: :photo_id
+
   has_many :photos, foreign_key: :album_id
 
   def get_url(size)
