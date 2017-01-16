@@ -24,6 +24,11 @@ class Content < ApplicationRecord
 
   acts_as_taggable
 
+  COMPLETED = "Completed"
+  IN_PROGRESS = "In progress"
+  IDEAS = "Ideas in development"
+  STATUS = [COMPLETED, IDEAS, IN_PROGRESS]
+
   has_many :participants
   has_many :users, through: :participants
   belongs_to :lead_user, class_name: 'User'

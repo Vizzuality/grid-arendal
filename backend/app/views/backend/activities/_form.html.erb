@@ -6,6 +6,10 @@
     value: :content_type, collection: content_types, label_method: :title,
     js_trigger_class: 'js-select-tags' %>
 
+  <%= render 'backend/shared/form/field_select', form: form,
+    value: :status, collection: Content::STATUS,
+    include_blank: true, label_txt: "Activity status", input_as: :select %>
+
   <%= render 'backend/shared/form/field_tags', form: form, collection: tags %>
 
   <%= render 'backend/shared/form/field_photos', form: form, value: :media_content_id, label_txt: 'Background picture',
