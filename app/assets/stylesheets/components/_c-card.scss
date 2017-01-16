@@ -11,9 +11,15 @@
 .c-card {
   position: relative;
   z-index: 20;
+  transition: box-shadow .35s ease-out, transform .3s ease-out, opacity .2s ease-out;
 
   @media screen and (min-width: $screen-m) {
     z-index: 10;
+
+    &:hover {
+      box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+      transform: translate(0, -4px);
+    }
   }
 
   .card-pic {
