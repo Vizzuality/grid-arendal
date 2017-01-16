@@ -1,7 +1,7 @@
 $header-library-staff-padding-bottom: rem(26px);
 $header-avatar-border-width: rem(3px);
-$header-avatar-size: rem(100px);
-$header-avatar-size-screen-s: rem(170px);
+$header-avatar-size: rem(60px);
+$header-avatar-size-screen-s: rem(60px);
 $header-avatar-size-screen-m: rem(250px);
 $header-avatar-size-screen-l: rem(340px);
 
@@ -24,6 +24,15 @@ $header-avatar-size-screen-l: rem(340px);
 
   &.-news {
     background-color: rgba($color-2, 0.04);
+
+    .c-share {
+      right: rem(10px);
+
+      @media screen and (min-width: $screen-m) {
+        top: rem(-2px);
+        right: 0;
+      }
+    }
   }
 
   &.-media-library {
@@ -83,6 +92,21 @@ $header-avatar-size-screen-l: rem(340px);
         height: $header-avatar-size-screen-l;
       }
     }
+
+    .c-share {
+      right: rem(80px);
+      bottom: rem(-30px);
+
+      @media screen and (min-width: $screen-m) {
+        top: rem(-2px);
+        display: flex;
+        right: 0;
+      }
+
+      @media screen and (min-width: $screen-l) {
+        right: rem(-15px);
+      }
+    }
   }
 
   &.-search {
@@ -108,24 +132,25 @@ $header-avatar-size-screen-l: rem(340px);
     .-summary {
       max-width: rem(500px);
     }
-
-    .c-share {
-      top: rem(-2px);
-      display: none;
-
-      @media screen and (min-width: $screen-m) {
-        display: flex;
-        right: 0;
-      }
-
-      @media screen and (min-width: $screen-l) {
-        right: rem(-15px);
-      }
-    }
   }
 
   @media screen and (min-width: $screen-m) {
     padding-bottom: rem(36px);
+  }
+
+  .c-share {
+    right: rem(80px);
+    bottom: rem(-80px);
+
+    @media screen and (min-width: $screen-m) {
+      top: rem(-2px);
+      display: flex;
+      right: 0;
+    }
+
+    @media screen and (min-width: $screen-l) {
+      right: rem(-15px);
+    }
   }
 }
 

@@ -55,6 +55,7 @@
   }
 
   &.-news {
+    z-index: 0;
 
     @media screen and (min-width: $screen-m) {
       padding: rem(28px) 0 rem(10px) 0;
