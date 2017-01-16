@@ -10,13 +10,13 @@ $items-border: rem(1px) solid rgba($white, 0.2);
 
   .tabs {
     font-size: 0;
-    height: rem(120px);
+    height: rem(60px);
     background-color: #15516a;
 
     .tab {
       display: inline-block;
       width: 50%;
-      height: 50%;
+      height: 100%;
       padding: rem(15px) 0 0 rem(12px);
       opacity: 0.3;
       cursor: pointer;

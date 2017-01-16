@@ -7,7 +7,7 @@ module Flickr
       flickr.access_secret   = ENV['FLICKR_ACCESS_SECRET']
     end
 
-    def fetch_albums
+    def fetch_sets
       set_flickr
       photosets = nil
       while photosets.nil? do

@@ -1,13 +1,20 @@
-<% tabs = [
-  {title: "Albums", key: "albums", path: albums_path,
-  count: Album.count},
-  {title: "Pictures", key: "photos", path: photos_path,
-  count: Photo.count},
-  {title: "Videos", key: "videos", path: videos_path,
-  count: Video.count},
-  {title: "Graphics", key: "graphics", path: graphics_path,
-  count: Graphic.count}
-] %>
+<% tabs = case controller_name
+          when 'albums', 'photos'
+            [
+              {title: "Albums", key: "albums", path: albums_path,
+               count: Album.count},
+               {title: "Pictures", key: "photos", path: photos_path,
+                count: Photo.count}
+            ]
+          when 'collections', 'graphics'
+            [
+              {title: "Collections", key: "collections", path: collections_path,
+               count: Collection.count},
+               {title: "Graphics", key: "graphics", path: graphics_path,
+                count: Graphic.count}
+            ]
+          end
+ %>
 <div class="tabs">
   <% tabs.each do |tab| %>
     <a href="<%= tab[:path] %>">
@@ -20,11 +27,9 @@
 </div>
 
 <div class="buttons-bar">
-  <% if controller_name == 'albums' %>
-    <%= link_to "Import from flickr", new_album_path,
+  <% if ['albums', 'collections'].include?(controller_name) %>
+    <%= link_to "Import from flickr", [:new, controller_name.singularize],
       class: 'btn -light -no-border -create-new js-create-new' %>
-  <% elsif ["videos", "graphics"].include?(controller_name) && can?(:create, controller_name.classify.constantize) %>
-    <%= link_to "Create New", [:new, controller_name.singularize], class: 'btn -light -no-border -create-new js-create-new' %>
   <% end %>
   <div class="btn">
     <svg class="icon">

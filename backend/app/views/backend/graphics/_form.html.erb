@@ -3,9 +3,20 @@
   preview_url: main_app.medium_path(form.object) %>
 
 <div class="fields">
-  <%= render 'backend/shared/form/field_photos', form: form, value: :photo_id,
-    label_txt: 'Image', photos: photos, selected_id: photo_id,
-    with_search: true, js_trigger_class: 'js-select-photo' %>
+  <%= render 'backend/shared/form/field_input', form: form, value: :external_id,
+    disabled: true, label_txt: "Flickr id",
+    note_txt: "Flickr id can't be changed" %>
+
+  <div class="field" data-type="picture">
+    <%= form.label "Picture", class: 'text -field-label -bold -dark' %>
+    <%= form.label '', class: 'fake-input' do %>
+        <div class="tip">
+          <a href="<%= form.object.external_url %>" target="_blank">
+            <div class="current_picture" style="background-image: url('<%= thumbnail %>');"></div>
+          </a>
+        </div>
+    <% end %>
+  </div>
 
   <div class="field" data-type="attach_documents">
     <%= form.simple_fields_for :eps do |builder| %>
