@@ -5,16 +5,13 @@
                   photo = @media_content.photos.first
                   is_vertical = photo.photo_sizes.where(label: PhotoSize::LARGE).first.is_vertical
                   photo && photo.photo_sizes.where(label: PhotoSize::LARGE).first.try(:url)
-                when MediaContent::TYPE_PHOTO
+                when MediaContent::TYPE_PHOTO, MediaContent::TYPE_GRAPHIC
                   is_vertical = @media_content.photo_sizes.where(label: PhotoSize::LARGE).first.is_vertical
                   @media_content.photo_sizes.where(label: PhotoSize::LARGE).first.try(:url)
                 when MediaContent::TYPE_COLLECTION
                   photo = @media_content.graphics.first
                   is_vertical = photo.photo_sizes.where(label: PhotoSize::LARGE).first.is_vertical
                   photo && photo.photo_sizes.where(label: PhotoSize::LARGE).first.try(:url)
-                when MediaContent::TYPE_GRAPHIC
-                  is_vertical = @media_content.photo_sizes.where(label: PhotoSize::LARGE).first.is_vertical
-                  @media_content.photo_sizes.where(label: PhotoSize::LARGE).first.try(:url)
                 else
                   nil
                 end
