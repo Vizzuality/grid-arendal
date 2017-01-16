@@ -1,7 +1,8 @@
 $header-library-staff-padding-bottom: rem(26px);
 $header-avatar-border-width: rem(3px);
+
 $header-avatar-size: rem(60px);
-$header-avatar-size-screen-s: rem(60px);
+$header-avatar-size-screen-s: rem(120px);
 $header-avatar-size-screen-m: rem(210px);
 $header-avatar-size-screen-l: rem(340px);
 
@@ -60,11 +61,7 @@ $header-avatar-size-screen-l: rem(340px);
     }
 
     .header-avatar {
-      position: absolute;
-      right: 0;
-      bottom: rem(-130px);
-      width: $header-avatar-size;
-      height: $header-avatar-size;
+      display: none;
       margin: 0 auto;
       border-radius: 50%;
       background-repeat: no-repeat;
@@ -82,16 +79,26 @@ $header-avatar-size-screen-l: rem(340px);
         border-radius: 50%;
       }
 
-      @media screen and (min-width: $screen-s) {
-        width: $header-avatar-size-screen-s;
-        height: $header-avatar-size-screen-s;
+      &.-mobile {
+        display: block;
+        position: absolute;
+        right: 10px;
+        bottom: -30px;
+        width: $header-avatar-size;
+        height: $header-avatar-size;
       }
 
       @media screen and (min-width: $screen-m) {
+        display: block;
+        position: absolute;
         right: auto;
         bottom: -$header-avatar-size-screen-m;
         width: $header-avatar-size-screen-m;
         height: $header-avatar-size-screen-m;
+
+        &.-mobile {
+          display: none;
+        }
       }
 
       @media screen and (min-width: $screen-l) {
