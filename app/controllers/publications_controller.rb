@@ -13,7 +13,7 @@ class PublicationsController < ApplicationController
     @years = ((max-5)..max).to_a.reverse
     @years << -1
     @tags = Tag.for_content('Publication')
-    @section = SiteSection.where(section: "activities").first
+    @section = SiteSection.where(section: "publications").first
     respond_to do |format|
       format.html
       format.js
