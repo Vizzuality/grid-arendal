@@ -17,6 +17,15 @@
 <div class="l-main-content -publications -only-grid -no-border -color-2">
   <% filters = [
     {
+      data: @status,
+      type: 'select',
+      title: 'FILTER BY',
+      placeholder: 'Filter by status',
+      key: 'status',
+      display_method: 'to_s',
+      matching_method: 'to_s'
+    },
+    {
       data: @content_types,
       type: 'select',
       title: 'FILTER BY',

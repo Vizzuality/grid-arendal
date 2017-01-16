@@ -14,6 +14,7 @@ class ActivitiesController < ApplicationController
     @partners = Partner.order(:name)
     @tags = Tag.for_content('Activity')
     @section = SiteSection.where(section: "activities").first
+    @status = Content::STATUS
     respond_to do |format|
       format.html
       format.js
@@ -44,7 +45,7 @@ class ActivitiesController < ApplicationController
 
   private
     def options_filter
-      params.permit(:type, :partners, :years, :tags, :programme)
+      params.permit(:type, :partners, :years, :tags, :programme, :status)
     end
     def set_page_param
       @page = params[:page].present? ? params[:page].to_i : 1

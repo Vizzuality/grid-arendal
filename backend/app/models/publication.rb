@@ -9,7 +9,6 @@
 #  description          :text
 #  is_published         :boolean
 #  position             :integer
-#  story_map_url        :string
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #  picture_file_name    :string
@@ -41,6 +40,7 @@ class Publication < Content
     def fetch_all(options)
       tags = options['tags'].split(',')               if options['tags'].present?
       type = options['type']                          if options['type'].present?
+      status = options['status'] if options['status'].present?
       older = nil
       years = nil
       if options['years'].present?
@@ -54,6 +54,7 @@ class Publication < Content
       publications = Publication.by_published.order("content_date DESC")
       publications = publications.by_tags(tags)   if tags.present?
       publications = publications.by_type(type)   if type.present?
+      publications = publications.by_status(status)   if status.present?
       if older && years.present?
         publications = publications.filter_or_older_pubs(years)
       elsif years.present?
