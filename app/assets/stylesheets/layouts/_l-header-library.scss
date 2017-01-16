@@ -2,7 +2,7 @@ $header-library-staff-padding-bottom: rem(26px);
 $header-avatar-border-width: rem(3px);
 $header-avatar-size: rem(60px);
 $header-avatar-size-screen-s: rem(60px);
-$header-avatar-size-screen-m: rem(250px);
+$header-avatar-size-screen-m: rem(210px);
 $header-avatar-size-screen-l: rem(340px);
 
 .l-header-library {
@@ -62,7 +62,7 @@ $header-avatar-size-screen-l: rem(340px);
     .header-avatar {
       position: absolute;
       right: 0;
-      bottom: rem(-160px);
+      bottom: rem(-130px);
       width: $header-avatar-size;
       height: $header-avatar-size;
       margin: 0 auto;
@@ -83,19 +83,20 @@ $header-avatar-size-screen-l: rem(340px);
       }
 
       @media screen and (min-width: $screen-s) {
-        bottom: rem(-160px);
         width: $header-avatar-size-screen-s;
         height: $header-avatar-size-screen-s;
       }
 
       @media screen and (min-width: $screen-m) {
-        bottom: -(($header-avatar-size-screen-m / 2) + $header-library-staff-padding-bottom);
+        right: auto;
+        bottom: -$header-avatar-size-screen-m;
         width: $header-avatar-size-screen-m;
         height: $header-avatar-size-screen-m;
       }
 
       @media screen and (min-width: $screen-l) {
-        bottom: -(($header-avatar-size-screen-l / 2) + $header-library-staff-padding-bottom);
+        right: 0;
+        bottom: -$header-avatar-size-screen-l;
         width: $header-avatar-size-screen-l;
         height: $header-avatar-size-screen-l;
       }
@@ -106,7 +107,7 @@ $header-avatar-size-screen-l: rem(340px);
 
       @media screen and (min-width: $screen-m) {
         display: flex;
-        position: static;
+        right: rem(-15px);
       }
     }
   }

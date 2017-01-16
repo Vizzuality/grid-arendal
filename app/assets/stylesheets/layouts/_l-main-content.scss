@@ -161,6 +161,16 @@
     }
   }
 
+  &.-staff-description {
+    @media screen and (min-width: $screen-m) {
+      min-height: rem(100px);
+    }
+
+    @media screen and (min-width: $screen-l) {
+      min-height: rem(175px);
+    }
+  }
+
   &.-no-results {
     min-height: rem(430px);
   }
