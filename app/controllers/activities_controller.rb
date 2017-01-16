@@ -9,7 +9,7 @@ class ActivitiesController < ApplicationController
   def index
     @activities = Activity.fetch_all(options_filter)
                           .limit(@activities_limit * @page)
-    @content_types = ContentType.by_activity
+    @content_types = ContentType.by_activity.order('LOWER(title) ASC')
     @programmes = Tag.where(category: Tag::PROGRAMME).order(:name)
     @partners = Partner.order(:name)
     @tags = Tag.for_content('Activity')
