@@ -35,7 +35,6 @@ class Publication < Content
   scope :older_pubs, -> { where('EXTRACT(year from content_date) < ?', Date.today.year - 5)}
   scope :filter_or_older_pubs, ->(years) {where('EXTRACT(year from content_date) IN (?) OR EXTRACT(year from content_date) < ?', years, Date.today.year-5)}
   scope :by_years, ->(years) { where('EXTRACT(year from content_date) IN (?)', years) }
-  scope :by_partners, ->(partners) { joins(:content_partners).where(content_partners: {partner_id: partners})}
 
   class << self
     def fetch_all(options)
