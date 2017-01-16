@@ -16,4 +16,7 @@
 
 class Video < MediaContent
   acts_as_taggable
+
+  PROVIDER_YOUTUBE = "youtube"
+  PROVIDER_VIMEO = "vimeo"
 end

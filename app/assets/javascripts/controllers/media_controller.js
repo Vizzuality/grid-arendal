@@ -37,6 +37,7 @@
           contentClass: ".l-main-content"
         }
       });
+      this.videoThumbnailsView = new App.View.VideoThumbnails();
     },
 
     show: function(params) {
@@ -71,6 +72,7 @@
             this.scrollPaginationView.toggleBlockPagination();
           } else {
             this.scrollPaginationView._setHash();
+            this.videoThumbnailsView.loadVideoThumbnails();
           }
 
         }.bind(this)
