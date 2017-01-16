@@ -8,6 +8,14 @@
                      nil
                  end
 
+  video_id = if media.type == MediaContent::TYPE_VIDEO
+               media.external_url.split('/').last
+             else
+               nil
+             end
+
+  photos_count = media.type == MediaContent::TYPE_ALBUM ? media.photos.size : 0
+  videos_count = 0
   needSteps = (photos_count + videos_count) > 2
   meta = []
   if photos_count == 1
@@ -24,7 +32,7 @@
 <div class="item js_slide slide">
   <%= link_to medium_path(media) do %>
     <article class="c-card <% if needSteps %>-card-steps<% end %>" data-card-type="media">
-      <div class="card-pic" style="background-image: url('<%= picture_url %>')"></div>
+      <div class="card-pic" <% if media.type == MediaContent::TYPE_VIDEO %>data-video-id="<%= video_id %>"<% else %>style="background-image: url('<%= picture_url %>')"<% end %>></div>
       <div class="card-description">
         <h3 class="text -title-card-small"><%= media.title %></h3>
         <p class="text -meta"><%= meta.join(" | ") %></p>
