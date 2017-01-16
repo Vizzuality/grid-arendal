@@ -4,6 +4,11 @@
                      photo ? photo.photo_sizes.where(label: PhotoSize::MEDIUM).first.try(:url) : nil
                    when MediaContent::TYPE_PHOTO
                      media.photo_sizes.where(label: PhotoSize::MEDIUM).first.try(:url)
+                   when MediaContent::TYPE_COLLECTION
+                     photo = media.graphics.order("id ASC").first
+                     photo ? photo.photo_sizes.where(label: PhotoSize::MEDIUM).first.try(:url) : nil
+                   when MediaContent::TYPE_GRAPHIC
+                     media.photo_sizes.where(label: PhotoSize::MEDIUM).first.try(:url)
                    else
                      nil
                  end
