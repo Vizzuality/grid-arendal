@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
   def show
     @activities = @user.activities.limit(3)
-    @publications = @user.publications
+    @publications = @user.publications.limit(3)
     @news = NewsArticle.limit(4).order(publication_date: :desc)
     @media_contents = MediaContent.wo_photos_in_album.featured
   end
