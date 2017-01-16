@@ -67,7 +67,9 @@
         <div class="text -body-single">
           <%= raw @media_content.description %>
           <br>
-          <p><strong>Year:</strong> <%= @media_content.publication_date.year %></p>
+          <% if @media_content.publication_date.present? %>
+            <p><strong>Year:</strong> <%= @media_content.publication_date.year %></p>
+          <% end %>
           <% if @media_content.author.present? %><p><strong>Taken by:</strong> <%= @media_content.author %></p><% end %>
           <% if @media_content.tags.any? %>
             <p class="tags">
