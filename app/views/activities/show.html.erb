@@ -32,6 +32,9 @@
             <% if @activity.users.any? %>
               <li class="text -section-menu js-anchor" data-section-belongs="users">Staff involved</li>
             <% end %>
+            <% if @activity.is_programme? %>
+              <li class="text -section-menu js-anchor" data-section-belongs="activities">Activities</li>
+            <% end %>
             <% if @activity.publications.any?%>
               <li class="text -section-menu js-anchor" data-section-belongs="posts">Publications</li>
             <% end %>
@@ -62,6 +65,13 @@
 
 <% if @activity.users.any? %>
   <%= render 'shared/users', users: @activity.users, sectionClass: 'content -color-3' %>
+<% end %>
+
+<% if @activity.is_programme? %>
+  <%= render 'shared/posts', collection: @related_activities,
+    title: "Programme's activities",
+    link_txt: 'View all activities',
+    link: activities_path, sectionClass: 'content -color-3' %>
 <% end %>
 
 <% if @activity.publications.any? %>

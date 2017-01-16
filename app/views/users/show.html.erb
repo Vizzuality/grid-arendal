@@ -12,11 +12,11 @@
       <div class="title-block">
         <% breadcrumbs_links = [
           {text: 'About', link: about_index_path},
-          {text: @user.display_name,
+          {text: @user.full_name,
             edit_path: backend.edit_user_path(@user)}
         ] %>
         <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
-        <div class="text -title-staff"><%= @user.display_name %></div>
+        <div class="text -title-staff"><%= @user.full_name %></div>
         <div class="text -contact-staff"><strong><%= @user.current_position %></strong></div>
         <% if @user.phone.present? %>
           <div class="text -contact-staff"><strong>Phone:</strong> <%= @user.phone %></div>
