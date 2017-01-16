@@ -7,8 +7,9 @@
 <div class="l-header-library -staff">
   <div class="overlay"></div>
   <%= render 'shared/menu' %>
+
   <div class="row">
-    <div class="small-12 columns">
+    <div class="medium-8 small-12 columns">
       <div class="title-block">
         <% breadcrumbs_links = [
           {text: 'About', link: about_index_path},
@@ -22,20 +23,19 @@
           <div class="text -contact-staff"><strong>Phone:</strong> <%= @user.phone %></div>
         <% end %>
         <%= render 'social', user: @user %>
-        <%= render 'shared/share', current_route: @current_route  %>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="small-12 columns">
+
+    <div class="medium-4 small-12 columns">
       <div class="-relativize">
         <div class="header-avatar" style="background-image: url('<%= avatar_url %>')"></div>
+        <%= render 'shared/share', current_route: @current_route  %>
       </div>
     </div>
   </div>
 </div>
 
-<section class="l-main-content content -color-7">
+<section class="l-main-content content -staff-description -color-7">
   <div class="row">
     <div class="small-8 column">
       <div class="text -summary-alt"><%= raw(@user.description) %></div>
