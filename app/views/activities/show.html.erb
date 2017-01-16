@@ -70,6 +70,7 @@
 <% if @activity.is_programme? %>
   <%= render 'shared/posts', collection: @related_activities,
     title: "Programme's activities",
+    section: "activities",
     link_txt: 'View all activities',
     link: activities_path, sectionClass: 'content -color-3' %>
 <% end %>

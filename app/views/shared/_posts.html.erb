@@ -1,5 +1,6 @@
 <% sectionClass ||= '' %>
-<section class="l-main-content <%= sectionClass %>" data-section="posts">
+<% section ||= 'posts' %>
+<section class="l-main-content <%= sectionClass %>" data-section="<%= section %>">
   <div class="row">
     <div class="small-12 columns">
       <div class="c-main-content-header">

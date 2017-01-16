@@ -9,7 +9,6 @@
 #  description          :text
 #  is_published         :boolean
 #  position             :integer
-#  story_map_url        :string
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #  picture_file_name    :string
@@ -24,6 +23,11 @@ class Content < ApplicationRecord
   include Featurable
 
   acts_as_taggable
+
+  COMPLETED = "Completed"
+  IN_PROGRESS = "In progress"
+  IDEAS = "Ideas in development"
+  STATUS = [COMPLETED, IDEAS, IN_PROGRESS]
 
   has_many :participants
   has_many :users, through: :participants
@@ -44,6 +48,7 @@ class Content < ApplicationRecord
   scope :by_published,   -> { where(is_published: true) }
   scope :by_type, ->(type) { where(content_type_id: type) }
   scope :by_tags, ->(tags) { joins(:tags).where(tags: { id: tags }) }
+  scope :by_status, ->(status) { where(status: status) }
 
   validates :title, presence: true
 end
