@@ -12,6 +12,7 @@ class PublicationsController < ApplicationController
     max = (Publication.maximum(:content_date) || Date.today).year
     @years = ((max-5)..max).to_a.reverse
     @years << -1
+    @partners = Partner.order(:name)
     @tags = Tag.for_content('Publication')
     @section = SiteSection.where(section: "publications").first
     @status = Content::STATUS
@@ -40,7 +41,7 @@ class PublicationsController < ApplicationController
 
   private
     def options_filter
-      params.permit(:type, :tags, :years, :status)
+      params.permit(:type, :partners, :tags, :years, :status)
     end
 
     def set_page_param
