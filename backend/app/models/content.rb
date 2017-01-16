@@ -48,6 +48,7 @@ class Content < ApplicationRecord
   scope :by_published,   -> { where(is_published: true) }
   scope :by_type, ->(type) { where(content_type_id: type) }
   scope :by_tags, ->(tags) { joins(:tags).where(tags: { id: tags }) }
+  scope :by_status, ->(status) { where(status: status) }
 
   validates :title, presence: true
 end

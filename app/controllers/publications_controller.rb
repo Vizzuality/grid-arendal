@@ -14,6 +14,7 @@ class PublicationsController < ApplicationController
     @years << -1
     @tags = Tag.for_content('Publication')
     @section = SiteSection.where(section: "activities").first
+    @status = Content::STATUS
     respond_to do |format|
       format.html
       format.js
@@ -39,7 +40,7 @@ class PublicationsController < ApplicationController
 
   private
     def options_filter
-      params.permit(:type, :tags, :years)
+      params.permit(:type, :tags, :years, :status)
     end
 
     def set_page_param
