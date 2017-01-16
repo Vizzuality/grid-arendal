@@ -163,11 +163,11 @@
 
   &.-staff-description {
     @media screen and (min-width: $screen-m) {
-      min-height: rem(100px);
+      min-height: rem(120px);
     }
 
     @media screen and (min-width: $screen-l) {
-      min-height: rem(175px);
+      min-height: rem(200px);
     }
   }
 
