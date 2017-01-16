@@ -274,6 +274,11 @@ $filters-screen-m-width: 18%;
               background-color: $white;
             }
           }
+
+          @media screen and (min-width: $screen-m) {
+            max-height: rem(500px);
+            overflow: auto;
+          }
         }
       }
 
