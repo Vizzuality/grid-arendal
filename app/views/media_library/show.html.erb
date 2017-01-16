@@ -33,11 +33,18 @@
     <div class="row">
       <div class="small-12 columns">
         <div class="title-block">
-          <% breadcrumbs_links = [
+          <% breadcrumbs_links = @media_content.album_id.present? ? [
+            {text: 'Media library', link: media_path},
+            {text: 'Album', link: medium_path(@media_content.album_id)},
+            {text: @media_content.title,
+             edit_path: backend.url_for([:edit, @media_content]) }
+          ]
+          : [
             {text: 'Media library', link: media_path},
             {text: @media_content.title,
              edit_path: backend.url_for([:edit, @media_content]) }
-          ] %>
+          ]
+          %>
           <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
           <%= render 'shared/share', current_route: @current_route  %>
         </div>
@@ -117,6 +124,11 @@
           <div class="text -sidebar-title">Use Constraints</div>
           <div class="text -meta">Using this item and referring to it is encouraged, and please use it in presentations, web pages, newspapers, blogs and reports.<br><br>For any form of publication, please include the link to this page and give the creator credit <% if @media_content.author.present? %>(in this case <%= @media_content.author %>)<% end %></div>
         </div>
+        <% if @media_content.album_id %>
+          <div class="link-to-album">
+            <p class="text -sidebar-title"><%= link_to "Visit this photo's album", medium_path(@media_content.album_id) %></p>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
