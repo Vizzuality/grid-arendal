@@ -9,7 +9,6 @@
 #  description          :text
 #  is_published         :boolean
 #  position             :integer
-#  story_map_url        :string
 #  created_at           :datetime         not null
 #  updated_at           :datetime         not null
 #  picture_file_name    :string
