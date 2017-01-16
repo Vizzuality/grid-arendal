@@ -8,7 +8,7 @@
   <div class="overlay"></div>
   <%= render 'shared/menu' %>
   <div class="row">
-    <div class="small-11 columns">
+    <div class="small-12 columns">
       <div class="title-block">
         <% breadcrumbs_links = [
           {text: 'About', link: about_index_path},
@@ -23,10 +23,9 @@
         <% end %>
         <%= render 'social', user: @user %>
       </div>
-      <div class="small-1 columns">
-        <%= render 'shared/share', current_route: @current_route  %>
-      </div>
+      <%= render 'shared/share', current_route: @current_route, mobile: true  %>
     </div>
+    <%= render 'shared/share', current_route: @current_route %>
   </div>
   <div class="row">
     <div class="small-12 columns">
@@ -37,7 +36,7 @@
   </div>
 </div>
 
-<section class="l-main-content content -color-7">
+<section class="l-main-content content -staff -color-7">
   <div class="row">
     <div class="small-12 medium-8 column">
       <div class="text -summary-alt"><%= raw(@user.description) %></div>

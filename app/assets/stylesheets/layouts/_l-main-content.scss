@@ -137,6 +137,12 @@
     }
   }
 
+  &.-staff {
+    .-summary-alt {
+      padding-top: rem(52px);
+    }
+  }
+
   &.home,
   &.content {
     padding-bottom: rem(47px);

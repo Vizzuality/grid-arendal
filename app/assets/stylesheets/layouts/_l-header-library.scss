@@ -6,13 +6,19 @@ $header-avatar-size-screen-m: rem(250px);
 $header-avatar-size-screen-l: rem(340px);
 
 .l-header-library {
+  display: block;
+  position: relative;
+  // This min-height is to allow the menu show all options on mobile.
+  min-height: rem(300px);
+  padding-bottom: rem(50px);
+  z-index: 1;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  display: block;
-  position: relative;
-  padding-bottom: rem(50px);
-  z-index: 1;
+
+  @media screen and (min-width: $screen-m) {
+    min-height: 0;
+  }
 
   &.-publications {
     background-color: rgba($color-3, 0.04);
@@ -26,7 +32,9 @@ $header-avatar-size-screen-l: rem(340px);
     background-color: rgba($color-2, 0.04);
 
     .c-share {
-      right: rem(10px);
+      &.-mobile {
+        right: rem(10px);
+      }
 
       @media screen and (min-width: $screen-m) {
         top: rem(-2px);
@@ -54,7 +62,7 @@ $header-avatar-size-screen-l: rem(340px);
     .header-avatar {
       position: absolute;
       right: 0;
-      bottom: -(($header-avatar-size / 2) + $header-library-staff-padding-bottom);
+      bottom: rem(-160px);
       width: $header-avatar-size;
       height: $header-avatar-size;
       margin: 0 auto;
@@ -75,7 +83,7 @@ $header-avatar-size-screen-l: rem(340px);
       }
 
       @media screen and (min-width: $screen-s) {
-        bottom: -(($header-avatar-size-screen-s / 2) + $header-library-staff-padding-bottom);
+        bottom: rem(-160px);
         width: $header-avatar-size-screen-s;
         height: $header-avatar-size-screen-s;
       }
@@ -94,17 +102,11 @@ $header-avatar-size-screen-l: rem(340px);
     }
 
     .c-share {
-      right: rem(80px);
-      bottom: rem(-30px);
+      display: none;
 
       @media screen and (min-width: $screen-m) {
-        top: rem(-2px);
         display: flex;
-        right: 0;
-      }
-
-      @media screen and (min-width: $screen-l) {
-        right: rem(-15px);
+        position: static;
       }
     }
   }
@@ -115,6 +117,7 @@ $header-avatar-size-screen-l: rem(340px);
 
   .title-block {
     position: relative;
+    height: 100%;
 
     .-title-library {
       width: 100%;
@@ -139,13 +142,22 @@ $header-avatar-size-screen-l: rem(340px);
   }
 
   .c-share {
-    right: rem(80px);
-    bottom: rem(-80px);
+    display: none;
+
+    &.-mobile {
+      display: flex;
+      right: rem(85px);
+      bottom: rem(-30px);
+    }
 
     @media screen and (min-width: $screen-m) {
-      top: rem(-2px);
       display: flex;
+      top: rem(-2px);
       right: 0;
+
+      &.-mobile {
+        display: none;
+      }
     }
 
     @media screen and (min-width: $screen-l) {
