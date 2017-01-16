@@ -1,19 +1,32 @@
-<%
+<% picture_url = case media.type
+                   when MediaContent::TYPE_ALBUM
+                     photo = media.photos.order("id ASC").first
+                     photo ? photo.photo_sizes.where(label: PhotoSize::MEDIUM).first.try(:url) : nil
+                   when MediaContent::TYPE_PHOTO
+                     media.photo_sizes.where(label: PhotoSize::MEDIUM).first.try(:url)
+                   else
+                     nil
+                 end
+
   needSteps = (photos_count + videos_count) > 2
   meta = []
-  if photos_count > 0
+  if photos_count == 1
+    meta.push("1 photo")
+  elsif photos_count > 0
     meta.push("#{photos_count} photos")
   end
-  if videos_count > 0
+  if videos_count == 1
+    meta.push("1 video")
+  elsif videos_count > 0
     meta.push("#{videos_count} videos")
   end
 %>
 <div class="item js_slide slide">
-  <%= link_to link do %>
+  <%= link_to medium_path(media) do %>
     <article class="c-card <% if needSteps %>-card-steps<% end %>" data-card-type="media">
-      <div class="card-pic" style="background-image: url('<%= picture %>')"></div>
+      <div class="card-pic" style="background-image: url('<%= picture_url %>')"></div>
       <div class="card-description">
-        <h3 class="text -title-card-small"><%= title %></h3>
+        <h3 class="text -title-card-small"><%= media.title %></h3>
         <p class="text -meta"><%= meta.join(" | ") %></p>
       </div>
     </article>
