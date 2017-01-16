@@ -5,12 +5,27 @@
                   photo = @media_content.photos.first
                   is_vertical = photo.photo_sizes.where(label: PhotoSize::LARGE).first.is_vertical
                   photo && photo.photo_sizes.where(label: PhotoSize::LARGE).first.try(:url)
-                when MediaContent::TYPE_PHOTO
+                when MediaContent::TYPE_PHOTO, MediaContent::TYPE_GRAPHIC
                   is_vertical = @media_content.photo_sizes.where(label: PhotoSize::LARGE).first.is_vertical
                   @media_content.photo_sizes.where(label: PhotoSize::LARGE).first.try(:url)
+                when MediaContent::TYPE_COLLECTION
+                  photo = @media_content.graphics.first
+                  is_vertical = photo.photo_sizes.where(label: PhotoSize::LARGE).first.is_vertical
+                  photo && photo.photo_sizes.where(label: PhotoSize::LARGE).first.try(:url)
                 else
                   nil
                 end
+  video_provider = nil
+  video_id = nil
+  if @media_content.type == MediaContent::TYPE_VIDEO
+    if @media_content.external_url.include?(Video::PROVIDER_YOUTUBE)
+      video_provider = Video::PROVIDER_YOUTUBE
+      video_id = @media_content.external_url.split('=').last
+    elsif @media_content.external_url.include?(Video::PROVIDER_VIMEO)
+      video_provider = Video::PROVIDER_VIMEO
+      video_id = @media_content.external_url.split('/').last
+    end
+  end
 %>
 <div class="l-header-single">
   <div class="navigation -media-library">
@@ -29,13 +44,33 @@
       </div>
     </div>
   </div>
-  <div class="banner -media-library <% if is_vertical %>-vertical<% end %>" style="background-image: url('<%= picture_url %>');"></div>
+  <% if @media_content.type == MediaContent::TYPE_VIDEO %>
+    <div class="banner -media-library">
+      <% if video_provider == Video::PROVIDER_YOUTUBE %>
+        <iframe src="https://www.youtube.com/embed/<%= video_id %>" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+      <% elsif video_provider == Video::PROVIDER_VIMEO %>
+        <iframe src="https://player.vimeo.com/video/<%= video_id %>" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      <% end %>
+    </div>
+  <% else %>
+    <div class="banner -media-library <% if is_vertical %>-vertical<% end %>" style="background-image: url('<%= picture_url %>');"></div>
+  <% end %>
 </div>
 <div class="l-media-article -media-library">
 
   <div class="row">
     <div class="small-12 column">
-      <div class="c-article-image <% if is_vertical %>-vertical<% end %>" style="background-image: url('<%= picture_url %>');"></div>
+      <% if @media_content.type == MediaContent::TYPE_VIDEO %>
+        <div class="c-article-image">
+          <% if video_provider == Video::PROVIDER_YOUTUBE %>
+            <iframe src="https://www.youtube.com/embed/<%= video_id %>" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+          <% elsif video_provider == Video::PROVIDER_VIMEO %>
+            <iframe src="https://player.vimeo.com/video/<%= video_id %>" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          <% end %>
+        </div>
+      <% else %>
+        <div class="c-article-image <% if is_vertical %>-vertical<% end %>" style="background-image: url('<%= picture_url %>');"></div>
+      <% end %>
     </div>
   </div>
 
@@ -46,7 +81,9 @@
         <div class="text -body-single">
           <%= raw @media_content.description %>
           <br>
-          <p><strong>Year:</strong> <%= @media_content.publication_date.year %></p>
+          <% if @media_content.publication_date.present? %>
+            <p><strong>Year:</strong> <%= @media_content.publication_date.year %></p>
+          <% end %>
           <% if @media_content.author.present? %><p><strong>Taken by:</strong> <%= @media_content.author %></p><% end %>
           <% if @media_content.tags.any? %>
             <p class="tags">

@@ -44,13 +44,15 @@
 </section>
 
 <% if @publications.any? %>
-  <%= render 'shared/posts', collection: @publications, title: "Latest Publications User's involved in",
+  <%= render 'shared/posts', collection: @publications,
+    title: "Latest publications #{@user.first_name}'s involved in",
     link_txt: 'View all publications',
     sectionClass: 'content -color-7' %>
 <% end%>
 
 <% if @activities.any? %>
-  <%= render 'shared/posts', collection: @activities, title: "Latest Activities User's involved in",
+  <%= render 'shared/posts', collection: @activities,
+    title: "Latest activities #{@user.first_name}'s involved in",
     link_txt: 'View all activities',
     sectionClass: 'content -color-7' %>
 <% end%>
