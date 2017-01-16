@@ -20,6 +20,9 @@ class MediaContent < ApplicationRecord
 
   TYPE_ALBUM = "Album"
   TYPE_PHOTO = "Photo"
+  TYPE_VIDEO = "Video"
+  TYPE_GRAPHIC = "Graphic"
+  TYPE_COLLECTION = "Collection"
 
   has_many :media_supports, dependent: :destroy
   has_many :activities, through: :media_supports, source: :activity
@@ -36,6 +39,8 @@ class MediaContent < ApplicationRecord
 
   # relations added here to allow lazy loading on media_library_controller
   has_many :photo_sizes, foreign_key: :photo_id
+
+  has_many :photos, foreign_key: :album_id
 
   def get_url(size)
     picture_url = case self.type
