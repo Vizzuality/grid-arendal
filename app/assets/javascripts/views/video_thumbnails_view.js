@@ -10,8 +10,10 @@
 
     options: {
       cardPictureClass: ".card-pic[data-video-id]",
-      cardPictureDataAttr: "video-id",
-      vimeoAPIUrl: "http://vimeo.com/api/v2/video/"
+      cardVideoDataAttr: "video-id",
+      cardVideoProviderDataAttr: "video-provider",
+      vimeoAPIUrl: "http://vimeo.com/api/v2/video/_VIDEO_ID_.json",
+      youtubeImageUrl: "https://img.youtube.com/vi/_VIDEO_ID_/hqdefault.jpg"
     },
 
     initialize: function() {
@@ -21,14 +23,25 @@
     loadVideoThumbnails: function() {
       var cards = $(this.options.cardPictureClass);
       _.each(cards, function (card) {
-        this._getVimeoThumbnail($(card).data(this.options.cardPictureDataAttr));
+        switch($(card).data(this.options.cardVideoProviderDataAttr)) {
+          case "youtube":
+            this._getYoutubeThumbnail($(card).data(this.options.cardVideoDataAttr));
+            break;
+          case "vimeo":
+            this._getVimeoThumbnail($(card).data(this.options.cardVideoDataAttr));
+            break;
+        }
       }.bind(this));
+    },
+
+    _getYoutubeThumbnail: function (video_id) {
+      this._setThumbnail(video_id, this.options.youtubeImageUrl.replace("_VIDEO_ID_", video_id));
     },
 
     _getVimeoThumbnail: function (video_id) {
       $.ajax({
         type:'GET',
-        url: this.options.vimeoAPIUrl + video_id + '.json',
+        url: this.options.vimeoAPIUrl.replace("_VIDEO_ID_", video_id),
         jsonp: 'callback',
         dataType: 'jsonp',
         success: function(data){
@@ -38,9 +51,9 @@
     },
 
     _setThumbnail: function (video_id, thumbnail_url) {
-      $('[data-' + this.options.cardPictureDataAttr + '="' + video_id + '"]')
+      $('[data-' + this.options.cardVideoDataAttr + '="' + video_id + '"]')
         .css("background-image", "url('" + thumbnail_url + "')")
-        .removeAttr("data-" + this.options.cardPictureDataAttr);
+        .removeAttr("data-" + this.options.cardVideoDataAttr);
     }
 
   });

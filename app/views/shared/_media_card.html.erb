@@ -11,11 +11,17 @@
                      nil
                  end
 
-  video_id = if media.type == MediaContent::TYPE_VIDEO
-               media.external_url.split('/').last
-             else
-               nil
-             end
+  video_provider = nil
+  video_id = nil
+  if media.type == MediaContent::TYPE_VIDEO
+    if media.external_url.include?(Video::PROVIDER_YOUTUBE)
+      video_provider = Video::PROVIDER_YOUTUBE
+      video_id = media.external_url.split('=').last
+    elsif media.external_url.include?(Video::PROVIDER_VIMEO)
+      video_provider = Video::PROVIDER_VIMEO
+      video_id = media.external_url.split('/').last
+    end
+  end
 
   photos_count = media.type == MediaContent::TYPE_ALBUM ? media.photos.size : 0
   videos_count = 0
@@ -35,7 +41,7 @@
 <div class="item js_slide slide">
   <%= link_to medium_path(media) do %>
     <article class="c-card <% if needSteps %>-card-steps<% end %>" data-card-type="media">
-      <div class="card-pic" <% if media.type == MediaContent::TYPE_VIDEO %>data-video-id="<%= video_id %>"<% else %>style="background-image: url('<%= picture_url %>')"<% end %>></div>
+      <div class="card-pic" <% if media.type == MediaContent::TYPE_VIDEO %>data-video-id="<%= video_id %>" data-video-provider="<%= video_provider %>"<% else %>style="background-image: url('<%= picture_url %>')"<% end %>></div>
       <div class="card-description">
         <h3 class="text -title-card-small"><%= media.title %></h3>
         <p class="text -meta"><%= meta.join(" | ") %></p>
