@@ -25,7 +25,8 @@
 
   photos_count = media.type == MediaContent::TYPE_ALBUM ? media.photos.size : 0
   videos_count = 0
-  needSteps = (photos_count + videos_count) > 2
+  graphics_count = media.type == MediaContent::TYPE_COLLECTION ? media.graphics.size : 0
+  needSteps = (photos_count + videos_count + graphics_count) > 2
   meta = []
   if photos_count == 1
     meta.push("1 photo")
