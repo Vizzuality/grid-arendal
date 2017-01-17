@@ -157,7 +157,7 @@
 <% if @media_content.publications.any? %>
   <%= render 'shared/posts', collection: @media_content.publications.
     order(content_date: :desc),
-    title: 'Related publications',
+    title: @media_content.type == MediaContent::TYPE_GRAPHIC ? 'Publication it appears in' : 'Related publications',
     link_txt: 'View all publications',
     link: publications_path, sectionClass: 'content -color-4' %>
 <% end %>
