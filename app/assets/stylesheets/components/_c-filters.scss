@@ -76,6 +76,7 @@ $filters-screen-m-width: 16%;
 
 
     .list {
+      max-width: none;
       margin-top: rem(14px);
 
       li {
@@ -267,6 +268,9 @@ $filters-screen-m-width: 16%;
             position: relative;
             padding: 0 rem(10px);
             line-height: 2.14;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
             cursor: pointer;
 
             &:hover:not(.no-results-speaker),
@@ -276,6 +280,7 @@ $filters-screen-m-width: 16%;
           }
 
           @media screen and (min-width: $screen-m) {
+            max-width: rem(400px);
             max-height: rem(500px);
             overflow: auto;
           }
