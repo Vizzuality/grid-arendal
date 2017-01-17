@@ -6,7 +6,7 @@
                  nil
                end %>
 
-<% status = if item.status == "Complete" && item.content_date.present?
+<% status = if item.status == Content::COMPLETED && item.content_date.present?
               time_ago_in_words(item.content_date)
             else
               item.status
