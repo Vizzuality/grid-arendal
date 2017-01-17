@@ -162,6 +162,8 @@
   }
 
   &.-staff-description {
+    padding-top: rem(40px);
+
     @media screen and (min-width: $screen-m) {
       min-height: rem(120px);
     }
