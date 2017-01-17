@@ -55,6 +55,7 @@
   }
 
   &.-news {
+    z-index: 0;
 
     @media screen and (min-width: $screen-m) {
       padding: rem(28px) 0 rem(10px) 0;
@@ -136,6 +137,12 @@
     }
   }
 
+  &.-staff {
+    .-summary-alt {
+      padding-top: rem(52px);
+    }
+  }
+
   &.home,
   &.content {
     padding-bottom: rem(47px);
@@ -155,12 +162,14 @@
   }
 
   &.-staff-description {
+    padding-top: rem(40px);
+
     @media screen and (min-width: $screen-m) {
-      min-height: rem(100px);
+      min-height: rem(120px);
     }
 
     @media screen and (min-width: $screen-l) {
-      min-height: rem(175px);
+      min-height: rem(200px);
     }
   }
 
