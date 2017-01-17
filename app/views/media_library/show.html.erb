@@ -15,6 +15,19 @@
                 else
                   nil
                 end
+  breadcrumbs_links = if @media_content.album_id.present?
+                      [
+                        {text: 'Media library', link: media_path},
+                        {text: truncate(@media_content.album.title, length: 20), link: medium_path(@media_content.album_id)},
+                        {text: @media_content.title,
+                         edit_path: backend.url_for([:edit, @media_content]) }
+                      ]
+                      else [
+                        {text: 'Media library', link: media_path},
+                        {text: @media_content.title,
+                         edit_path: backend.url_for([:edit, @media_content]) }
+                      ]
+                      end
   video_provider = nil
   video_id = nil
   if @media_content.type == MediaContent::TYPE_VIDEO
@@ -33,11 +46,6 @@
     <div class="row">
       <div class="small-12 columns">
         <div class="title-block">
-          <% breadcrumbs_links = [
-            {text: 'Media library', link: media_path},
-            {text: @media_content.title,
-             edit_path: backend.url_for([:edit, @media_content]) }
-          ] %>
           <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
           <%= render 'shared/share', current_route: @current_route  %>
         </div>
@@ -56,8 +64,8 @@
     <div class="banner -media-library <% if is_vertical %>-vertical<% end %>" style="background-image: url('<%= picture_url %>');"></div>
   <% end %>
 </div>
-<div class="l-media-article -media-library">
 
+<div class="l-media-article -media-library">
   <div class="row">
     <div class="small-12 column">
       <% if @media_content.type == MediaContent::TYPE_VIDEO %>
@@ -117,6 +125,11 @@
           <div class="text -sidebar-title">Use Constraints</div>
           <div class="text -meta">Using this item and referring to it is encouraged, and please use it in presentations, web pages, newspapers, blogs and reports.<br><br>For any form of publication, please include the link to this page and give the creator credit <% if @media_content.author.present? %>(in this case <%= @media_content.author %>)<% end %></div>
         </div>
+        <% if @media_content.album_id %>
+          <div class="link-to-album">
+            <p class="text -sidebar-title"><%= link_to "Visit this photo's album >", medium_path(@media_content.album_id) %></p>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
@@ -126,6 +139,11 @@
 <% if @media_content.is_a?(Album) %>
   <%= render 'shared/media', media_contents: @media_content.photos,
   title: "Photos included in album", sectionClass: 'content -color-4' %>
+<% end %>
+
+<% if @media_content.is_a?(Collection) %>
+  <%= render 'shared/media', media_contents: @media_content.graphics,
+  title: "Graphics included in album", sectionClass: 'content -color-4' %>
 <% end %>
 
 <% if @media_content.activities.any? %>

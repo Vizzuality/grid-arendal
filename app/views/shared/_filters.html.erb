@@ -12,21 +12,23 @@
         </div>
         <div class="container">
           <% filters.each do |filter| %>
-              <% filter[:title] ||= ''
-                 filter[:placeholder] ||= ''
-                 filter[:display_method] ||= 'title'
-                 filter[:matching_method] ||= 'id'
-              %>
-              <%= render "shared/filters/#{filter[:type]}",
-                         data: filter[:data],
-                         js_trigger: filter[:js_trigger],
-                         title: filter[:title],
-                         placeholder: filter[:placeholder],
-                         key: filter[:key],
-                         display_method: filter[:display_method],
-                         matching_method: filter[:matching_method] %>
+            <%
+              filter[:title] ||= ''
+              filter[:placeholder] ||= ''
+              filter[:display_method] ||= 'title'
+              filter[:matching_method] ||= 'id'
+              filter[:with_search] ||= false
+            %>
+            <%= render "shared/filters/#{filter[:type]}",
+                       data: filter[:data],
+                       js_trigger: filter[:js_trigger],
+                       title: filter[:title],
+                       placeholder: filter[:placeholder],
+                       key: filter[:key],
+                       display_method: filter[:display_method],
+                       matching_method: filter[:matching_method],
+                       with_search: filter[:with_search] %>
           <% end %>
-          <%#=render 'shared/filters/search', placeholder: "Search media" %>
         </div>
       </div>
     </div>

@@ -7,7 +7,7 @@
   App.Helper.TagSelectHandler = App.Helper.SelectHandler.extend({
 
     events: {
-      'click .js-tags-select-closer' : '_closeProcess'
+      'click .js-tags-select-closer' : 'closeProcess'
     },
 
     selectedValues: [],
@@ -76,7 +76,7 @@
       }
     },
 
-    _closeProcess: function() {
+    closeProcess: function() {
       this._closeDropdown();
       this._destroyCloser();
       this._runCallback();
@@ -92,7 +92,7 @@
           dropdown: this.$dropdown
         },
         events: {
-          'click .js-tags-select-closer' : this._closeProcess.bind(this)
+          'click .js-tags-select-closer' : this.closeProcess.bind(this)
         },
       });
     },

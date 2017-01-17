@@ -17,7 +17,7 @@
           el: '.masonry-layout'
         });
       }
-      new App.View.MediaFilters();
+      new App.View.Filters();
 
       this.scrollPaginationView = new App.View.ScrollPagination({
         callback: this._paginate.bind(this),

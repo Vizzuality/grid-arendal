@@ -15,11 +15,17 @@
   </span>
   <div class="dropdown">
     <div class="type text -filter-title"><%= title %></div>
+    <% if with_search %>
+      <div class="search-box">
+        <input type="text" value="" placeholder="Search" class="text -filter" />
+      </div>
+    <% end %>
     <ul class="list">
       <% data.each do |option| %>
         <% text = option.send(display_method) %>
-        <li class="text -filter <% if params[key] && (params[key] == option.send(matching_method).to_s) %>selected<% end %>" data-value="<%= option.send(matching_method) %>"><%= text %></li>
+        <li class="text -filter js-dropdown-item <% if params[key] && (params[key] == option.send(matching_method).to_s) %>selected<% end %>" data-value="<%= option.send(matching_method) %>"><%= text %></li>
       <% end %>
+      <li class="text -filter no-results-speaker">No results found</li>
     </ul>
   </div>
   <select class="text -filter">

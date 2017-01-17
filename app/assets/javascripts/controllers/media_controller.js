@@ -12,7 +12,7 @@
           el: '.masonry-layout'
         });
       }
-      new App.View.MediaFilters({
+      new App.View.Filters({
         options: {
           filters: [
             {
