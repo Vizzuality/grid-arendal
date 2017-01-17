@@ -14,26 +14,45 @@ namespace :import do
     flickr.access_secret   = ENV['FLICKR_ACCESS_SECRET']
 
     folder = "tmp"
-    files = "downloads"
+    #files = "downloads"
+    ## 0: Id , 1: siteId, 2: Title, 3: Name, 4: UserId, 5: Description,
+    ## 6: Link, 7: HasThumb, 8: IsPublished, 9: IsPrivate, 10: ItemCount,
+    ## 11: PublishedOn, 12: CreatedOn, 13: CreatedBy, 14: ModifiedOn,
+    ## 15: ModifiedBy
+    #albums = "albums.csv"
+    #albums_it = CSV.read(File.join(Rails.root, folder, albums), headers: true)
+
+    ## 0: Id, 1: siteId, 2: Name, 3: UserId, 4: CollectionId, 5: RefId, 6: Ext,
+    ## 7: Title, 8: Description, 9: Source, 10: Link, 11: ProducedOn,
+    ## 12: ProducedBy, 13: Type, 14: CopyrightId, 15: CommentCount,
+    ## 16: viewCount, 17: DownloadCount, 18: RatingCount, 19: RatingPoints,
+    ## 20: RatingStars, 21: IsPublished, 22: ListOrder, 23: CreatedOn,
+    ## 24: CreatedBy, 25: ModifiedOn, 26: ModifiedBy
+    #photos = "photos.csv"
+    #photos_it = CSV.read(File.join(Rails.root, folder, photos), headers: true)
+
+    ## Graphics
+    files = "graphics"
     # 0: Id , 1: siteId, 2: Title, 3: Name, 4: UserId, 5: Description,
     # 6: Link, 7: HasThumb, 8: IsPublished, 9: IsPrivate, 10: ItemCount,
     # 11: PublishedOn, 12: CreatedOn, 13: CreatedBy, 14: ModifiedOn,
     # 15: ModifiedBy
-    albums = "albums.csv"
+    albums = "collections.csv"
     albums_it = CSV.read(File.join(Rails.root, folder, albums), headers: true)
 
     # 0: Id, 1: siteId, 2: Name, 3: UserId, 4: CollectionId, 5: RefId, 6: Ext,
-    # 7: Title, 8: Description, 9: Source, 10: Link, 11: ProducedOn,
-    # 12: ProducedBy, 13: Type, 14: CopyrightId, 15: CommentCount,
-    # 16: viewCount, 17: DownloadCount, 18: RatingCount, 19: RatingPoints,
-    # 20: RatingStars, 21: IsPublished, 22: ListOrder, 23: CreatedOn,
-    # 24: CreatedBy, 25: ModifiedOn, 26: ModifiedBy
-    photos = "photos.csv"
+    # 7: Title, 8: Description, 9: Source, 10: Link, 11: Lat, 12: Lon, 13: RegionISO,
+    # 14: ProducedOn, 15: ProducedBy, 16: Type, 17: CopyrightId, 18: CommentCount,
+    # 19: ViewCount, 20: DownloadCount, 21: RatingCount, 22: RatingPoints,
+    # 23: RatingStars, 24: IsPublished, 25: ListOrder, 26: CreatedOn, 27: CreatedBy,
+    # 28: ModifiedOn, 29: ModifiedBy
+    photos = "graphics.csv"
     photos_it = CSV.read(File.join(Rails.root, folder, photos), headers: true)
 
     summary = []
 
     albums_it.each do |al|
+      next if al[0].nil?
       album_photos = photos_it.select{|t| t[4] == al[0]}
       if album_photos.size > 0
         summary << {album: al, photos: album_photos}
@@ -46,9 +65,9 @@ namespace :import do
     do_upload = false
     summary.each do |f|
       al = f[:album]
-      if "2c2ecdd3-30e4-402a-80fb-fdff2054c5ec" == al[0]
+      if "0cedbc05-2265-4f88-96e3-39393baaaa14" == al[0]
         do_upload = true
-        #next
+        next
       end
       next if !do_upload
 
@@ -70,15 +89,18 @@ namespace :import do
           puts "Name: #{photo[3]}"
           puts "Title: #{photo[7]}"
           puts "Description: #{photo[8]}"
-          puts "Author: #{photo[12]}"
-          puts photo[11]
-          my_date = photo[11].split("/")
+          puts "Author: #{photo[15]}"
+          puts photo[14]
+          my_date = photo[14].split("/")
           year = my_date[2].split(" ")
           year = year.size == 2 ? "20#{year[0]}" : year[0]
+          if year.to_i > 2040
+            year = (year.to_i - 100).to_s
+          end
           new_date = Date.new(year.to_i, my_date[0].to_i, my_date[1].to_i)
           puts "PublicationDate: #{new_date}"
-          description = if photo[12].present?
-                          "#{photo[8]}<br />Author: #{photo[12]}"
+          description = if photo[15].present?
+                          "#{photo[8]}<br />Author: #{photo[15]}"
                         else
                           photo[8]
                         end
