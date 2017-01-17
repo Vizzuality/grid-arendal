@@ -85,6 +85,7 @@ $filters-screen-m-width: 16%;
         line-height: 1.8;
         margin: 0 rem(27px) rem(6px) 0;
         padding: 0;
+        overflow: visible;
 
         @media screen and (min-width: $screen-m) {
           &:hover {
@@ -107,7 +108,7 @@ $filters-screen-m-width: 16%;
           color: $skull-white;
 
           @media screen and (min-width: $screen-m) {
-            background-color: $color-1;
+            background-color: $color-1 !important;
           }
 
           &:before {
@@ -268,6 +269,9 @@ $filters-screen-m-width: 16%;
             position: relative;
             padding: 0 rem(10px);
             line-height: 2.14;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
             cursor: pointer;
 
             &:hover:not(.no-results-speaker),
