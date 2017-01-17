@@ -21,10 +21,13 @@ $share-mail-color: #ea4335;
     align-items: center;
     justify-content: center;
     background-color: $white;
-    box-shadow: 0 2px 4px 0 rgba($black, 0.1);
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     z-index: 1;
+
+    &:first-child {
+      box-shadow: 0 0.125rem 0.25rem 0 rgba($black, 0.1);
+    }
 
     .icon {
       width: rem(20px);
@@ -38,7 +41,6 @@ $share-mail-color: #ea4335;
     }
 
     &:hover {
-
       &.-twitter {
         background-color: $share-twitter-color;
       }
@@ -69,6 +71,7 @@ $share-mail-color: #ea4335;
 
     .share-btn {
       right: 0;
+      box-shadow: 0 0.125rem 0.25rem 0 rgba($black, 0.1);
 
       &:not(.-share) {
         margin-right: rem(10px);

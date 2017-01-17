@@ -4,7 +4,7 @@
 
   App.View = App.View || {};
 
-  App.View.MediaFilters = Backbone.View.extend({
+  App.View.Filters = Backbone.View.extend({
 
     el: '.c-filters',
 
@@ -72,7 +72,8 @@
       return {
         el: filter,
         options: {
-          callback: this._filterMedia.bind(this)
+          callback: this._filterMedia.bind(this),
+          closeAllFilters: this._closeAllFilters.bind(this)
         }
       };
     },
@@ -170,6 +171,14 @@
           this.options.isFixed = false;
         }
       }.bind(this));
+    },
+
+    _closeAllFilters: function () {
+      _.each(this.filters, function (filter) {
+        if(filter.options.isOpen) {
+          filter.closeProcess();
+        }
+      });
     }
 
   });

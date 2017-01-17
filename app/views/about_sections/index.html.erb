@@ -8,7 +8,6 @@
             {text: 'About', link: about_index_path}
           ] %>
           <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
-          <%= render 'shared/share', current_route: @current_route  %>
         </div>
       </div>
     </div>
@@ -17,15 +16,23 @@
     <div class="section-menu">
       <div class="row">
         <div class="small-12 columns">
-          <ul class="anchors">
-            <% @sections.each do |section| %>
-              <li class="text -section-menu js-anchor" data-section-belongs="<%= "section-#{section.id}" %>">
-                <%= section.title %>
-              </li>
-            <% end %>
-          </ul>
+          <div class="-relativize">
+            <ul class="anchors">
+              <% @sections.each do |section| %>
+                <li class="text -section-menu js-anchor" data-section-belongs="<%= "section-#{section.id}" %>">
+                  <%= section.title %>
+                </li>
+              <% end %>
+            </ul>
+            <%= render 'shared/share', current_route: @current_route %>
+          </div>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column small-12">
+      <%= render 'shared/share', current_route: @current_route, mobile: true %>
     </div>
   </div>
 </div>
