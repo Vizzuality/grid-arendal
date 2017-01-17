@@ -269,7 +269,7 @@ $filters-screen-m-width: 16%;
             line-height: 2.14;
             cursor: pointer;
 
-            &:hover,
+            &:hover:not(.no-results-speaker),
             &.selected {
               background-color: $white;
             }
@@ -433,6 +433,28 @@ $filters-screen-m-width: 16%;
         display: none;
       }
     }
+  }
+
+  .search-box {
+    display: none;
+
+    @media screen and (min-width: $screen-m) {
+      display: block;
+      padding: 0 rem(10px);
+      margin-top: rem(3px);
+    }
+
+    input {
+      width: 100%;
+      outline: 0;
+      border: 1px solid rgba($color-1, 0.1);
+      background-color: transparent;
+      padding: rem(5px);
+    }
+  }
+
+  .no-results-speaker {
+    display: none;
   }
 
   &.-show-filters {

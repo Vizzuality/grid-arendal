@@ -4,7 +4,7 @@
 
   App.View = App.View || {};
 
-  App.View.MediaFilters = Backbone.View.extend({
+  App.View.Filters = Backbone.View.extend({
 
     el: '.c-filters',
 
