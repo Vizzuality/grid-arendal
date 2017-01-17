@@ -21,7 +21,7 @@
       <div class="card-description">
         <h3 class="text -title-card"><%= item.title %></h3>
         <p class="text -summary"><%= item.short_description %></p>
-        <% if item.is_a?(Publication) %>
+        <% if status || item.content_type %>
           <p class="card-meta">
             <% if status %>
               <span class="text -meta"><%= status %></span>
