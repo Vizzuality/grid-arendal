@@ -7,6 +7,7 @@
   App.Helper.SelectHandler = Backbone.View.extend({
 
     options: {
+      isOpen: false,
       closerClass: "c-filters-closer",
       showDropdownClass: "-show-dropdown",
       haveValueClass: "-have-value",
@@ -85,11 +86,13 @@
     },
 
     _openDropdown: function() {
+      this.options.isOpen = true;
       this.$el.addClass(this.options.showDropdownClass);
       this._showCloser();
     },
 
     _closeDropdown: function() {
+      this.options.isOpen = false;
       this.$el.removeClass(this.options.showDropdownClass);
     },
 
@@ -98,7 +101,7 @@
         "class": this.options.closerClass,
         on: {
           click: function() {
-            this._closeProcess();
+            this.closeProcess();
           }.bind(this)
         }
       }).appendTo("body");
@@ -108,13 +111,14 @@
       $("." + this.options.closerClass).remove();
     },
 
-    _closeProcess: function() {
+    closeProcess: function() {
       this._closeDropdown();
       this._destroyCloser();
     },
 
     _onClickOpenDropdown: function() {
       this.$speaker.on('click', function() {
+        this.options.closeAllFilters();
         this._openDropdown();
       }.bind(this));
     },
