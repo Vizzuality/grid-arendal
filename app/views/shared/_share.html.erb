@@ -1,6 +1,7 @@
 <% current_route ||= '' %>
+<% mobile ||= false %>
 
-<div class="c-share">
+<div class="c-share <% if mobile %>-mobile<%end%>">
   <div class="share-btn -share">
     <svg class="icon">
       <use xlink:href="#icon-share"></use>
