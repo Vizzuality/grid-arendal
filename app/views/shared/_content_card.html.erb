@@ -7,7 +7,7 @@
                end %>
 
 <% status = if item.status.present?
-              if item.status == "completed" && item.content_date.present?
+              if item.status == "Completed" && item.content_date.present?
                 time_ago_in_words(item.content_date)
               else
                 item.status
@@ -20,6 +20,7 @@
 
 <div class="item js_slide slide">
   <%= link_to item do %>
+    <%= item.status %>
     <article class="c-card" data-card-type="<%= item.type.downcase %>">
       <% if photo_url.present? %>
         <div class="card-pic" style="background-image: url('<%= photo_url %>')"></div>
