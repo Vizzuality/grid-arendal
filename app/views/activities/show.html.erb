@@ -64,7 +64,7 @@
 </section>
 
 <% if @activity.users.any? %>
-  <%= render 'shared/users', users: @activity.users, sectionClass: 'content -color-3' %>
+  <%= render 'shared/users', users: @activity.users.order_by_fullname, lead_user: @activity.lead_user, sectionClass: 'content -color-3' %>
 <% end %>
 
 <% if @activity.is_programme? %>

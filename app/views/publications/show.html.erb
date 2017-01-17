@@ -92,7 +92,7 @@
 <% end %>
 
 <% if @users.any? || @publication.lead_user %>
-  <%= render 'shared/users', users: @users, lead_user: @publication.lead_user, sectionClass: 'content -color-2' %>
+  <%= render 'shared/users', users: @users.order_by_fullname, lead_user: @publication.lead_user, sectionClass: 'content -color-2' %>
 <% end %>
 
 <% if @publication.activities.any? %>
