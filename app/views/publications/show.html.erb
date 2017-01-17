@@ -11,6 +11,13 @@
                 else
                   asset_path('original/missing2.png')
                 end %>
+
+<% status = if @publication.status == "Complete" && @publication.content_date.present?
+              time_ago_in_words(@publication.content_date)
+            else
+              @publication.status
+            end %>
+
 <div class="l-header-single">
   <div class="navigation -publications">
     <%= render 'shared/menu' %>
@@ -28,7 +35,7 @@
       </div>
     </div>
   </div>
-  <div class="banner -publications" style="background-image: url('<%= picture_url %>');"></div>
+  <div class="banner -publications <% if picture_url %>-picture<% end %>" style="background-image: url('<%= picture_url %>');"></div>
 </div>
 
 <div class="l-single-article -publications">
@@ -43,6 +50,9 @@
 
     <div class="content">
       <h2 class="text -title-single-alt"><%= @publication.title %></h2>
+      <% if status %>
+        <p class="text -meta"><%= status %></p>
+      <% end %>
       <div class="text -body-single-alt description">
         <%= raw @publication.description %>
         <div class="read-more">
