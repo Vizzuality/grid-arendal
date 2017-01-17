@@ -12,7 +12,7 @@
                   asset_path('original/missing2.png')
                 end %>
 
-<% status = if @publication.status == "Complete" && @publication.content_date.present?
+<% status = if @publication.status == Content::COMPLETED && @publication.content_date.present?
               time_ago_in_words(@publication.content_date)
             else
               @publication.status
