@@ -16,8 +16,15 @@
         <p class="text -summary"><%= item.short_description %></p>
         <% if item.is_a?(Publication) %>
           <p class="card-meta">
-            <span class="text -meta"><%= item.content_type ? item.content_type.title : '' %></span>
-            <span class="text -meta -right"><%= item.content_date ? time_ago_in_words(item.content_date) : '' %></span>
+            <% if item.content_type.present? %>
+              <span class="text -meta"><%= item.content_type.title %></span>
+            <% end %>
+            <% if item.status.present? %>
+              <span class="text -meta"><%= item.status %></span>
+            <% end %>
+            <% if item.content_date.present? %>
+              <span class="text -meta"><%= time_ago_in_words(item.content_date) %></span>
+            <% end %>
           </p>
         <% end %>
       </div>
