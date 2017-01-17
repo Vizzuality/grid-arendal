@@ -20,7 +20,7 @@
     {
       data: @status,
       type: 'select',
-      title: 'FILTER BY',
+      title: 'FILTER BY STATUS',
       placeholder: 'Filter by status',
       key: 'status',
       display_method: 'to_s',
@@ -29,22 +29,23 @@
     {
       data: @content_types,
       type: 'select',
-      title: 'FILTER BY',
+      title: 'FILTER BY TYPE',
       placeholder: 'Filter by type',
       key: 'type'
     },
     {
       data: @partners,
       type: 'select',
-      title: 'FILTER BY',
+      title: 'FILTER BY PARTNER',
       placeholder: 'Filter by partner',
       key: 'partners',
-      display_method: 'name'
+      display_method: 'name',
+      with_search: true
     },
     {
       data: @tags,
       type: 'tags',
-      title: 'FILTER BY',
+      title: 'FILTER BY TAGS',
       placeholder: 'Filter by tags',
       key: 'tags'
     },

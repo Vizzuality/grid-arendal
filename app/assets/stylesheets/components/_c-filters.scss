@@ -76,6 +76,7 @@ $filters-screen-m-width: 16%;
 
 
     .list {
+      max-width: none;
       margin-top: rem(14px);
 
       li {
@@ -267,15 +268,19 @@ $filters-screen-m-width: 16%;
             position: relative;
             padding: 0 rem(10px);
             line-height: 2.14;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
             cursor: pointer;
 
-            &:hover,
+            &:hover:not(.no-results-speaker),
             &.selected {
               background-color: $white;
             }
           }
 
           @media screen and (min-width: $screen-m) {
+            max-width: rem(400px);
             max-height: rem(500px);
             overflow: auto;
           }
@@ -433,6 +438,28 @@ $filters-screen-m-width: 16%;
         display: none;
       }
     }
+  }
+
+  .search-box {
+    display: none;
+
+    @media screen and (min-width: $screen-m) {
+      display: block;
+      padding: 0 rem(10px);
+      margin-top: rem(3px);
+    }
+
+    input {
+      width: 100%;
+      outline: 0;
+      border: 1px solid rgba($color-1, 0.1);
+      background-color: transparent;
+      padding: rem(5px);
+    }
+  }
+
+  .no-results-speaker {
+    display: none;
   }
 
   &.-show-filters {

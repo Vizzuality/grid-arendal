@@ -7,6 +7,7 @@
   App.Helper.SelectHandler = Backbone.View.extend({
 
     options: {
+      isOpen: false,
       closerClass: "c-filters-closer",
       showDropdownClass: "-show-dropdown",
       haveValueClass: "-have-value",
@@ -29,14 +30,18 @@
       this._onClickOpenDropdown();
       this._onClickOptions();
       this._onChangeSelectValue();
+      this._loadSearchEvents();
     },
 
     _cache: function() {
+      this.key = this.$el.data("filter-key");
       this.$select = this.$el.find("select");
       this.$speaker = this.$el.find(".speaker");
       this.$speakerText = this.$el.find(".speaker .text");
       this.$dropdown = this.$el.find(".dropdown");
-      this.key = this.$el.data("filter-key");
+      this.$dropdownItems = this.$el.find(".js-dropdown-item");
+      this.$searcher = this.$el.find(".search-box input");
+      this.$searcherNoResultsSpeaker = this.$el.find(".no-results-speaker");
     },
 
     _setSpeaker: function(value) {
@@ -81,11 +86,13 @@
     },
 
     _openDropdown: function() {
+      this.options.isOpen = true;
       this.$el.addClass(this.options.showDropdownClass);
       this._showCloser();
     },
 
     _closeDropdown: function() {
+      this.options.isOpen = false;
       this.$el.removeClass(this.options.showDropdownClass);
     },
 
@@ -94,7 +101,7 @@
         "class": this.options.closerClass,
         on: {
           click: function() {
-            this._closeProcess();
+            this.closeProcess();
           }.bind(this)
         }
       }).appendTo("body");
@@ -104,25 +111,26 @@
       $("." + this.options.closerClass).remove();
     },
 
-    _closeProcess: function() {
+    closeProcess: function() {
       this._closeDropdown();
       this._destroyCloser();
     },
 
     _onClickOpenDropdown: function() {
       this.$speaker.on('click', function() {
+        this.options.closeAllFilters();
         this._openDropdown();
       }.bind(this));
     },
 
     _onClickOptions: function() {
-      this.$el.find(".dropdown li").on('click', function(e) {
+      this.$dropdownItems.on('click', function(e) {
         this._setSelectValue(e);
       }.bind(this));
     },
 
     _onChangeSelectValue: function() {
-      this.$select.change(function(e) {
+      this.$select.change(function() {
         var value = this.$select.val();
         if(value === "") {
           this.$select.val(null).change();
@@ -136,11 +144,9 @@
           }
 
           this._setSpeaker(this.$el.find("option:selected").text());
-          this._closeProcess();
+          this.closeProcess();
           this._runCallback();
         }
-
-
       }.bind(this));
     },
 
@@ -149,6 +155,33 @@
         this.options.callback();
       }
     },
+
+    _loadSearchEvents: function () {
+      this.$searcher.on('keyup', function() {
+        this._showSearcherResults();
+      }.bind(this));
+    },
+
+    _showSearcherResults: function () {
+      var haveResults = false;
+      _.each(this.$dropdownItems, function(item) {
+        var element = $(item),
+          text = element.html().toLowerCase(),
+          search = this.$searcher.val().toLowerCase();
+        if(text.indexOf(search) !== -1) {
+          element.show();
+          haveResults = true;
+        } else {
+          element.hide();
+        }
+      }.bind(this));
+
+      if(haveResults) {
+        this.$searcherNoResultsSpeaker.hide();
+      } else {
+        this.$searcherNoResultsSpeaker.show();
+      }
+    }
 
   });
 
