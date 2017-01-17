@@ -1,5 +1,4 @@
 <div class="l-header-single">
-
   <div class="navigation -activities">
     <%= render 'shared/menu' %>
     <div class="row">
@@ -23,6 +22,9 @@
           <div class="title-block">
             <div class="small-12 medium-7">
               <h2 class="text -title-single-alt"><%= @activity.title %></h2>
+              <% if @activity.status %>
+                <span class="text -meta -light"><%= @activity.status %></span>
+              <% end %>
             </div>
             <%= render 'shared/share', current_route: @current_route  %>
           </div>
