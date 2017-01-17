@@ -134,7 +134,11 @@
     }
 
     &.-activities-article {
-      height: rem(195px);
+      height: rem(105px);
+
+      @media screen and (min-width: $screen-m) {
+        height: rem(195px);
+      }
 
       &.-picture {
         height: rem(400px);
