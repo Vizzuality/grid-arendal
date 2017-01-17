@@ -63,8 +63,8 @@
     <div class="banner -media-library <% if is_vertical %>-vertical<% end %>" style="background-image: url('<%= picture_url %>');"></div>
   <% end %>
 </div>
-<div class="l-media-article -media-library">
 
+<div class="l-media-article -media-library">
   <div class="row">
     <div class="small-12 column">
       <% if @media_content.type == MediaContent::TYPE_VIDEO %>
@@ -126,7 +126,7 @@
         </div>
         <% if @media_content.album_id %>
           <div class="link-to-album">
-            <p class="text -sidebar-title"><%= link_to "Visit this photo's album", medium_path(@media_content.album_id) %></p>
+            <p class="text -sidebar-title"><%= link_to "Visit this photo's album >", medium_path(@media_content.album_id) %></p>
           </div>
         <% end %>
       </div>
@@ -138,6 +138,11 @@
 <% if @media_content.is_a?(Album) %>
   <%= render 'shared/media', media_contents: @media_content.photos,
   title: "Photos included in album", sectionClass: 'content -color-4' %>
+<% end %>
+
+<% if @media_content.is_a?(Collection) %>
+  <%= render 'shared/media', media_contents: @media_content.graphics,
+  title: "Graphics included in album", sectionClass: 'content -color-4' %>
 <% end %>
 
 <% if @media_content.activities.any? %>
