@@ -5,6 +5,7 @@
                else
                  nil
                end %>
+
 <% status = if item.status.present?
               if item.status == "completed" && item.content_date.present?
                 time_ago_in_words(item.content_date)
@@ -28,11 +29,11 @@
         <p class="text -summary"><%= item.short_description %></p>
         <% if item.is_a?(Publication) %>
           <p class="card-meta">
-            <% if item.content_type.present? %>
-              <span class="text -meta"><%= item.content_type.title %></span>
-            <% end %>
             <% if status %>
               <span class="text -meta"><%= status %></span>
+            <% end %>
+            <% if item.content_type.present? %>
+              <span class="text -meta"><%= item.content_type.title %></span>
             <% end %>
           </p>
         <% end %>
