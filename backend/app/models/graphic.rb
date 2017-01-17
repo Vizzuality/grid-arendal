@@ -22,4 +22,5 @@ class Graphic < MediaContent
   accepts_nested_attributes_for :eps
   belongs_to :pdf, class_name: "MediaAttachment", foreign_key: :pdf_id
   accepts_nested_attributes_for :pdf
+  alias_attribute :album, :collection
 end
