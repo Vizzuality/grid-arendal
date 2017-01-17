@@ -48,7 +48,7 @@
 
     @media screen and (min-width: 1050px) {
       right: 0;
-      top: rem(-30px);
+      top: rem(-15px);
     }
   }
 
@@ -134,11 +134,20 @@
     }
 
     &.-activities-article {
-      height: rem(400px);
+      height: rem(105px);
 
       @media screen and (min-width: $screen-m) {
-        height: rem(550px);
+        height: rem(195px);
       }
+
+      &.-picture {
+        height: rem(400px);
+
+        @media screen and (min-width: $screen-m) {
+          height: rem(550px);
+        }
+      }
+
     }
 
     &.-publications, &.-media-library {
