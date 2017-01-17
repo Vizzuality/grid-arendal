@@ -21,7 +21,7 @@
     </div>
     <ul class="list">
       <% data.each do |option| %>
-        <li class="text -filter <%= "selected" if params[:tags] && params[:tags].split(",").include?(option.id.to_s) %>" data-value="<%= option.id %>" data-name="<%= option.name %>">
+        <li class="text -filter js-dropdown-item <%= "selected" if params[:tags] && params[:tags].split(",").include?(option.id.to_s) %>" data-value="<%= option.id %>" data-name="<%= option.name %>">
           <%= option.name %> (<%= option.taggings_count %>)
         </li>
       <% end %>
