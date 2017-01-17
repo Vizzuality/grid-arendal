@@ -15,6 +15,19 @@
                 else
                   nil
                 end
+  breadcrumbs_links = if @media_content.album_id.present?
+                      [
+                        {text: 'Media library', link: media_path},
+                        {text: 'Album', link: medium_path(@media_content.album_id)},
+                        {text: @media_content.title,
+                         edit_path: backend.url_for([:edit, @media_content]) }
+                      ]
+                      else [
+                        {text: 'Media library', link: media_path},
+                        {text: @media_content.title,
+                         edit_path: backend.url_for([:edit, @media_content]) }
+                      ]
+                      end
   video_provider = nil
   video_id = nil
   if @media_content.type == MediaContent::TYPE_VIDEO
@@ -33,18 +46,6 @@
     <div class="row">
       <div class="small-12 columns">
         <div class="title-block">
-          <% breadcrumbs_links = @media_content.album_id.present? ? [
-            {text: 'Media library', link: media_path},
-            {text: 'Album', link: medium_path(@media_content.album_id)},
-            {text: @media_content.title,
-             edit_path: backend.url_for([:edit, @media_content]) }
-          ]
-          : [
-            {text: 'Media library', link: media_path},
-            {text: @media_content.title,
-             edit_path: backend.url_for([:edit, @media_content]) }
-          ]
-          %>
           <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
           <%= render 'shared/share', current_route: @current_route  %>
         </div>
