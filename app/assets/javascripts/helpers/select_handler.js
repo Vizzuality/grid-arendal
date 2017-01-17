@@ -144,7 +144,7 @@
           }
 
           this._setSpeaker(this.$el.find("option:selected").text());
-          this._closeProcess();
+          this.closeProcess();
           this._runCallback();
         }
       }.bind(this));
