@@ -9,7 +9,7 @@ class SearchController < ApplicationController
       @publications = Publication.where("LOWER(title) like LOWER(?)", "%#{params[:query]}%").limit(@search_limit)
       @media_contents = MediaContent.wo_photos_in_album.where("LOWER(title) like LOWER(?)", "%#{params[:query]}%").limit(@search_limit)
       @staff = User.where("LOWER(first_name) like LOWER(?) OR LOWER(last_name) like LOWER(?) OR LOWER(middle_name) like LOWER(?)",
-                          "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%").limit(@search_limit)
+                          "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%").order_by_fullname.limit(@search_limit)
     end
     @query = params[:query]
   end
