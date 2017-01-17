@@ -1,5 +1,4 @@
 <div class="l-header-single">
-
   <div class="navigation -activities">
     <%= render 'shared/menu' %>
     <div class="row">
@@ -16,13 +15,16 @@
     </div>
   </div>
 
-  <div class="banner -activities-article" <% if @activity.media_content %>style="background-image: url('<%= @activity.media_content.photo_sizes.where(label: PhotoSize::LARGE).first.url %>');"<% end %>>
+  <div class="banner -activities-article <% if @activity.media_content %>-picture<% end %>" <% if @activity.media_content %>style="background-image: url('<%= @activity.media_content.photo_sizes.where(label: PhotoSize::LARGE).first.url %>');"<% end %>>
     <div class="section-menu">
       <div class="row">
         <div class="small-12 columns">
           <div class="title-block">
             <div class="small-12 medium-7">
               <h2 class="text -title-single-alt"><%= @activity.title %></h2>
+              <% if @activity.status %>
+                <span class="text -meta -light"><%= @activity.status %></span>
+              <% end %>
             </div>
             <%= render 'shared/share', current_route: @current_route  %>
           </div>

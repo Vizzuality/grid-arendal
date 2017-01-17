@@ -1,0 +1,33 @@
+$layout-height: rem(40px);
+
+.c-notification {
+  position: absolute;
+  top: -$layout-height;
+  left: 0;
+  width: 100%;
+  height: $layout-height;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $font-family-1;
+  font-size: rem(14px);
+  z-index: 50;
+  @include animation('toggle-notification 2s 1');
+
+  &.alert {
+    background-color: #ECC8C4;
+    color: #B5575A;
+  }
+
+  &.success {
+    background-color: #DEF3D5;
+    color: #7E9476;
+  }
+}
+
+@include keyframes(toggle-notification) {
+  0% { top: -$layout-height; }
+  25% { top: 0;}
+  75% { top: 0;}
+  100% { top: -$layout-height; }
+}

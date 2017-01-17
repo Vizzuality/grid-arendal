@@ -52,4 +52,5 @@ class Content < ApplicationRecord
   scope :by_partners, ->(partners) { joins(:content_partners).where(content_partners: {partner_id: partners})}
 
   validates :title, presence: true
+  validates :status, presence: true
 end
