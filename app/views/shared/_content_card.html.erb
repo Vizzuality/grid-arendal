@@ -6,21 +6,14 @@
                  nil
                end %>
 
-<% status = if item.status.present?
-              if item.status == "Completed" && item.content_date.present?
-                time_ago_in_words(item.content_date)
-              else
-                item.status
-              end
-            elsif item.content_date.present?
+<% status = if item.status == "Complete" && item.content_date.present?
               time_ago_in_words(item.content_date)
             else
-              nil
+              item.status
             end %>
 
 <div class="item js_slide slide">
   <%= link_to item do %>
-    <%= item.status %>
     <article class="c-card" data-card-type="<%= item.type.downcase %>">
       <% if photo_url.present? %>
         <div class="card-pic" style="background-image: url('<%= photo_url %>')"></div>
