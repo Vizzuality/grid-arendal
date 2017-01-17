@@ -40,8 +40,15 @@
     right: rem(20px);
     bottom: rem(-30px);
 
+    @media screen and (min-width: $screen-m) {
+      &.-mobile {
+        display: none;
+      }
+    }
+
     @media screen and (min-width: 1050px) {
-      right: rem(-25px);
+      right: 0;
+      top: rem(-30px);
     }
   }
 
@@ -71,7 +78,7 @@
 
     .anchors {
       position: relative;
-      margin-top: rem(33px);
+      margin-top: rem(15px);
       font-size: 0;
       display: none;
 
@@ -82,6 +89,7 @@
       li {
         display: inline-block;
         cursor: pointer;
+        margin: rem(5px) 0;
 
         &:not(:last-child) {
           margin-right: rem(29px);
@@ -153,10 +161,7 @@
         @media screen and (min-width: $screen-m) {
           display: block;
           padding-top: 0;
-        }
-
-        .anchors {
-          margin-top: 28px;
+          padding-bottom: rem(20px);
         }
       }
 
