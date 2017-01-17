@@ -20,4 +20,8 @@ class Photo < MediaContent
 
   has_many :photo_sizes
   belongs_to :album
+
+  delegate :activities, to: :album
+  delegate :publications, to: :album
+  delegate :news_article, to: :album
 end
