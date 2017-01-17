@@ -27,21 +27,7 @@
         <div class="frame js_frame">
           <div class="masonry-layout slides js_slides" data-columns="3">
             <% media_contents.each do |media| %>
-              <% picture_url = case media.type
-                                when MediaContent::TYPE_ALBUM
-                                  photo = media.photos.first
-                                  photo ? photo.photo_sizes.where(label: PhotoSize::LARGE).first.try(:url) : nil
-                                when MediaContent::TYPE_PHOTO
-                                  media.photo_sizes.where(label: PhotoSize::LARGE).first.try(:url)
-                                else
-                                  nil
-                              end %>
-              <%= render 'shared/media_card',
-                picture: picture_url,
-                title: media.title,
-                link: medium_path(media),
-                photos_count: media.type == 'Album' ? media.photos.size : 0,
-                videos_count: 0 %>
+              <%= render 'shared/media_card', media: media %>
             <% end %>
           </div>
         </div>

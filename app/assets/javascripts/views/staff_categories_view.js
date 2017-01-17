@@ -22,9 +22,12 @@
 
     _onClickShowCategory: function(e) {
       var selectedIndex = $(e.currentTarget).data('category-index');
+
+      this._removeSelected();
       if(selectedIndex !== this.options.selectedIndex) {
-        this._removeSelected();
-        this._addSelected(selectedIndex)
+        this._addSelected(selectedIndex);
+      } else {
+        this._addSelected(0);
       }
     },
 
