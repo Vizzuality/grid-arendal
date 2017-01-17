@@ -50,20 +50,14 @@
   }
 
   .card-meta {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
     margin-top: rem(10px);
     font-size: 0;
 
     @media screen and (min-width: $screen-m) {
       margin-top: rem(15px);
-    }
-
-    span {
-      display: inline-block;
-      width: 50%;
-    }
-
-    .-right {
-      text-align: right;
     }
   }
 

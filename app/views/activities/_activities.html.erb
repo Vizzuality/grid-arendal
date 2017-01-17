@@ -14,7 +14,19 @@
         <% end %>
         <div class="card-description">
           <h3 class="text -title-card"><%= activity.title %></h3>
-          <p class="text -summary"><%= activity.short_description %></p>
+          <% if  activity.short_description.present? %>
+            <p class="text -summary"><%= activity.short_description %></p>
+          <% end %>
+            <% if activity.status || activity.content_type %>
+              <p class="card-meta">
+                <% if activity.status %>
+                  <span class="text -meta"><%= activity.status %></span>
+                <% end %>
+                <% if activity.content_type %>
+                  <span class="text -meta"><%= activity.content_type.title %></span>
+                <% end %>
+              </p>
+            <% end %>
         </div>
       </article>
     </div>

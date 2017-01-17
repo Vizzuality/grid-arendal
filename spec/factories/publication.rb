@@ -5,5 +5,6 @@ FactoryGirl.define do
     description "It's about life itself"
     is_published true
     is_featured true
+    status "Completed"
   end
 end
