@@ -134,11 +134,16 @@
     }
 
     &.-activities-article {
-      height: rem(400px);
+      height: rem(195px);
 
-      @media screen and (min-width: $screen-m) {
-        height: rem(550px);
+      &.-picture {
+        height: rem(400px);
+
+        @media screen and (min-width: $screen-m) {
+          height: rem(550px);
+        }
       }
+
     }
 
     &.-publications, &.-media-library {
