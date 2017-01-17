@@ -23,4 +23,8 @@ class Graphic < MediaContent
   belongs_to :pdf, class_name: "MediaAttachment", foreign_key: :pdf_id
   accepts_nested_attributes_for :pdf
   alias_attribute :album, :collection
+
+  delegate :activities, to: :collection
+  delegate :publications, to: :collection
+  delegate :news_article, to: :collection
 end
