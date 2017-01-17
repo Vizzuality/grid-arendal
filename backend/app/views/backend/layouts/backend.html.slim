@@ -11,10 +11,10 @@ html lang='en'
   body
     = render 'backend/shared/icons'
     - if alert
-      .alert data-alert='true'
+      .c-notification.alert
         = alert
-    - else
-      .success data-alert='true'
+    - elsif notice
+      .c-notification.success
         = notice
     - if user_signed_in?
       .l-navigation
