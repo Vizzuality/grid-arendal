@@ -5,6 +5,18 @@
                else
                  nil
                end %>
+<% status = if item.status.present?
+              if item.status == "completed" && item.content_date.present?
+                time_ago_in_words(item.content_date)
+              else
+                item.status
+              end
+            elsif item.content_date.present?
+              time_ago_in_words(item.content_date)
+            else
+              nil
+            end %>
+
 <div class="item js_slide slide">
   <%= link_to item do %>
     <article class="c-card" data-card-type="<%= item.type.downcase %>">
@@ -19,11 +31,8 @@
             <% if item.content_type.present? %>
               <span class="text -meta"><%= item.content_type.title %></span>
             <% end %>
-            <% if item.status.present? %>
-              <span class="text -meta"><%= item.status %></span>
-            <% end %>
-            <% if item.content_date.present? %>
-              <span class="text -meta"><%= time_ago_in_words(item.content_date) %></span>
+            <% if status %>
+              <span class="text -meta"><%= status %></span>
             <% end %>
           </p>
         <% end %>
