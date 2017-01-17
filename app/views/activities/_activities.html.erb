@@ -17,13 +17,14 @@
           <% if  activity.short_description.present? %>
             <p class="text -summary"><%= activity.short_description %></p>
           <% end %>
-          <% if activity.status.present? || activity.content_type.present? %>
-            <%= debug activity.content_type %>
             <p class="card-meta">
-              if activity.status.present? <span class="text -meta"><%= activity.status %></span>
-              if activity.content_type.present? <span class="text -meta"><%= activity.content_type.title %></span>
+              <% if activity.status %>
+                <span class="text -meta"><%= activity.status %></span>
+              <% end %>
+              <% if activity.content_type %>
+                <span class="text -meta"><%= activity.content_type.title %></span>
+              <% end %>
             </p>
-          <% end %>
         </div>
       </article>
     </div>
