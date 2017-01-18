@@ -17,6 +17,8 @@
     value: :partners, collection: partners, label_method: :name,
     js_trigger_class: 'js-select-tags' %>
 
+  <%= render 'backend/shared/form/field_tags', form: form, collection: tags %>
+
   <%= render 'backend/shared/form/field_checkbox', form: form,
     value: :active %>
 </div>

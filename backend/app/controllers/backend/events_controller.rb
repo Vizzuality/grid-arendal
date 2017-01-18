@@ -6,8 +6,8 @@ module Backend
     load_and_authorize_resource
 
     before_action :set_event,              except: [:index, :new, :create]
-    before_action :set_partners_selection, only: [:update, :create, :new, :edit]
     before_action :set_events,             except: :index
+    before_action :set_objects, only: [:new, :edit]
 
     def index
     end
@@ -71,12 +71,16 @@ module Backend
         @events = Event.order(:title)
       end
 
-      def set_partners_selection
-        @partners = Partner.order_by_name
-      end
-
       def event_params
         params.require(:event).permit!
+      end
+
+      def set_objects
+        @users = User.order_by_fullname
+        @partners = Partner.order_by_name
+        @activities = Activity.order_by_title
+        @publications = Publication.order_by_title
+        @tags = Tag.order(:name)
       end
   end
 end

@@ -29,6 +29,8 @@ class Event < ApplicationRecord
   has_many :event_partners
   has_many :partners, through: :event_partners
 
+  acts_as_taggable
+
   validates :title, presence: true
 
   scope :order_by_title, -> { order('title ASC') }
