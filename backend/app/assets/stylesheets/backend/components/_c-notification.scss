@@ -1,7 +1,7 @@
 $layout-height: rem(40px);
 
 .c-notification {
-  position: absolute;
+  position: fixed;
   top: -$layout-height;
   left: 0;
   width: 100%;
