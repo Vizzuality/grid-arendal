@@ -16,6 +16,10 @@ module Display
       "#{first_name} #{last_name}"
     end
 
+    def just_first_name
+      first_name.split(" ")[0]
+    end
+
     private
 
       def half_email
