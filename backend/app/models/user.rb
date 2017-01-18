@@ -50,6 +50,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :recoverable,
          :rememberable, :trackable, :validatable, :lockable
 
+  validates :first_name, presence: true
+
   include Activable
   include Roleable
   include Sanitizable
