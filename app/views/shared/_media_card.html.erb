@@ -45,7 +45,16 @@
       <div class="card-pic" <% if media.type == MediaContent::TYPE_VIDEO %>data-video-id="<%= video_id %>" data-video-provider="<%= video_provider %>"<% else %>style="background-image: url('<%= picture_url %>')"<% end %>></div>
       <div class="card-description">
         <h3 class="text -title-card-small"><%= media.title %></h3>
-        <p class="text -meta"><%= meta.join(" | ") %></p>
+        <p class="card-meta">
+          <span class="text -meta"><%= meta.join(" | ") %></span>
+          <% if media.type == MediaContent::TYPE_ALBUM %>
+            <span class="icons">
+              <svg class="icon">
+                <use xlink:href="#icon-media_photo_library"></use>
+              </svg>
+            </span>
+          <% end %>
+        </p>
       </div>
     </article>
   <% end %>
