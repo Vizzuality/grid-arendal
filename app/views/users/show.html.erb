@@ -47,14 +47,14 @@
 
 <% if @publications.any? %>
   <%= render 'shared/posts', collection: @publications,
-    title: "Latest publications #{@user.first_name}'s involved in",
+    title: "Latest publications #{@user.just_first_name}'s involved in",
     link_txt: 'View all publications',
     sectionClass: 'content -color-7' %>
 <% end%>
 
 <% if @activities.any? %>
   <%= render 'shared/posts', collection: @activities,
-    title: "Latest activities #{@user.first_name}'s involved in",
+    title: "Latest activities #{@user.just_first_name}'s involved in",
     link_txt: 'View all activities',
     sectionClass: 'content -color-7' %>
 <% end%>
