@@ -39,8 +39,28 @@
   </div>
 </section>
 
+<% if @event.activities.any? %>
+  <%= render 'shared/posts', collection: @event.activities.
+    order(:title),
+    title: 'Related activities',
+    link_txt: 'View all activities',
+    link: activities_path, sectionClass: 'content -color-3' %>
+<% end %>
+
+<% if @event.publications.any? %>
+  <%= render 'shared/posts', collection: @event.publications.
+    order(content_date: :desc),
+    title: 'Related publications',
+    link_txt: 'View all publications',
+    link: publications_path, sectionClass: 'content -color-3' %>
+<% end %>
+
+<% if @event.users.any? %>
+  <%= render 'shared/users', users: @event.users.order_by_fullname, sectionClass: 'content -color-3' %>
+<% end %>
+
 <% if @event.partners.any? %>
-    <%= render 'shared/partners', partners: @event.partners, sectionClass: 'content -color-3' %>
+  <%= render 'shared/partners', partners: @event.partners, sectionClass: 'content -color-3' %>
 <% end %>
 
 <%= render 'shared/footer' %>
