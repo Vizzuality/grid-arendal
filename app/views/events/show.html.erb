@@ -1,0 +1,46 @@
+<div class="l-header-single">
+  <div class="navigation -activities">
+    <%= render 'shared/menu' %>
+    <div class="row">
+      <div class="small-12 columns">
+        <div class="title-block">
+          <% breadcrumbs_links = [
+            {text: @event.title,
+             edit_path: backend.edit_event_path(@event) }
+          ] %>
+          <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="banner -activities-article <% if @event.background_image %>-picture<% end %>" <% if @event.background_image %>style="background-image: url('<%= @event.background_image %>');"<% end %>>
+    <div class="section-menu">
+      <div class="row">
+        <div class="small-12 columns">
+          <div class="title-block">
+            <div class="small-12 medium-7">
+              <h2 class="text -title-single-alt"><%= @event.title %></h2>
+            </div>
+            <%= render 'shared/share', current_route: @current_route  %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="l-single-article -activities" data-section="overview">
+
+  <div class="row">
+    <div class="small-12 column">
+      <div class="text -summary-alt"><%= raw @event.description %></div>
+    </div>
+  </div>
+</section>
+
+<% if @event.partners.any? %>
+    <%= render 'shared/partners', partners: @event.partners, sectionClass: 'content -color-3' %>
+<% end %>
+
+<%= render 'shared/footer' %>
