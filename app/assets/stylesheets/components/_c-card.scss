@@ -59,6 +59,17 @@
     @media screen and (min-width: $screen-m) {
       margin-top: rem(15px);
     }
+
+    .icons {
+      margin-top: rem(2px);
+    }
+
+    .icon {
+      width: rem(10px);
+      height: rem(10px);
+      fill: rgba($color-1, 0.3);
+      margin-right: rem(7px);
+    }
   }
 
   &.-card-steps {
