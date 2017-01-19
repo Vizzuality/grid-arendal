@@ -24,13 +24,6 @@ ActiveRecord::Schema.define(version: 20170119104736) do
     t.string   "category"
   end
 
-  create_table "content_content_types", force: :cascade do |t|
-    t.integer  "content_id"
-    t.integer  "content_type_id"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
   create_table "content_news", force: :cascade do |t|
     t.integer  "content_id"
     t.integer  "news_article_id"
@@ -103,13 +96,6 @@ ActiveRecord::Schema.define(version: 20170119104736) do
   create_table "event_partners", force: :cascade do |t|
     t.integer  "event_id"
     t.integer  "partner_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "event_users", force: :cascade do |t|
-    t.integer  "event_id"
-    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
