@@ -1,11 +1,11 @@
 <%
-  if [MediaContent::TYPE_VIDEO, MediaContent::TYPE_VIDEO_COLLECTION].include?@media_content.type)
+  if ![MediaContent::TYPE_VIDEO, MediaContent::TYPE_VIDEO_COLLECTION].include?(@media_content.type)
     picture_url = ""
     is_vertical = false
     photo = if @media_content.single?
               @media_content
             else
-              @media_content.photos.first
+              @media_content.items.first
             end
     biggest = photo.biggest_size
     is_vertical = biggest.is_vertical?
@@ -37,7 +37,6 @@
                          edit_path: backend.url_for([:edit, @media_content]) }
                       ]
                       end
-  end
 %>
 
 <div class="l-header-single">
@@ -136,19 +135,18 @@
 
 </div>
 
-<% if @media_content.type == MediaContent::TYPE_ALBUM %>
-  <%= render 'shared/media', media_contents: @media_content.photos,
-  title: "Photos included in album", sectionClass: 'content -color-4' %>
-<% end %>
-
-<% if @media_content.type == MediaContent::TYPE_COLLECTION %>
-  <%= render 'shared/media', media_contents: @media_content.graphics,
-  title: "Graphics included in album", sectionClass: 'content -color-4' %>
-<% end %>
-
-<% if @media_content.is_a?(VideoCollection) %>
-  <%= render 'shared/media', media_contents: @media_content.videos,
-    title: "Videos included in album", sectionClass: 'content -color-4' %>
+<% if @media_content.set? %>
+  <% label_txt = case @media_content.type
+             when MediaContent::TYPE_ALBUM
+               "Photos"
+             when MediaContent::TYPE_COLLECTION
+               "Graphics"
+             else
+               "Videos"
+             end
+  %>
+  <%= render 'shared/media', media_contents: @media_content.items,
+    title: "#{label_txt} included in album", sectionClass: 'content -color-4' %>
 <% end %>
 
 <% if @media_content.activities.any? %>

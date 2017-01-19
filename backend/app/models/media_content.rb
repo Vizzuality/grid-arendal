@@ -39,7 +39,6 @@ class MediaContent < ApplicationRecord
   has_many :news_media_contents, dependent: :destroy
   has_many :news_articles, through: :news_media_contents
 
-  scope :wo_photos_in_album, -> { where("type <> 'Photo' OR (type = 'Photo' AND album_id IS NULL)")}
   scope :by_type, ->(media) { where(type: media) }
   scope :by_tags, ->(tags) { joins(:tags).where(tags: { id: tags }) }
   scope :albums_and_photos, -> {where(type: [TYPE_ALBUM, TYPE_PHOTO])}
@@ -56,7 +55,7 @@ class MediaContent < ApplicationRecord
   end
 
   def set?
-    [TYPE_ALBUM, TYPE_COLLECTION].include?(type)
+    [TYPE_ALBUM, TYPE_COLLECTION, TYPE_VIDEO_COLLECTION].include?(type)
   end
 
   def biggest_size_url
