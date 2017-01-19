@@ -17,4 +17,5 @@
 class Collection < MediaContent
   include FlickrSync
   has_many :graphics, dependent: :destroy, foreign_key: :album_id
+  alias_attribute :items, :graphics
 end
