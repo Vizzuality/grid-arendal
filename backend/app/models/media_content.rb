@@ -23,12 +23,13 @@ class MediaContent < ApplicationRecord
   TYPE_VIDEO = "Video"
   TYPE_GRAPHIC = "Graphic"
   TYPE_COLLECTION = "Collection"
+  TYPE_VIDEO_COLLECTION = "VideoCollection"
 
   # {display => filter_types}
   FILTERS = {
     TYPE_GRAPHIC => TYPE_COLLECTION,
     TYPE_PHOTO => TYPE_ALBUM,
-    TYPE_VIDEO => TYPE_VIDEO
+    TYPE_VIDEO => [TYPE_VIDEO, TYPE_VIDEO_COLLECTION]
   }
 
   has_many :media_supports, dependent: :destroy
@@ -43,25 +44,13 @@ class MediaContent < ApplicationRecord
   scope :by_tags, ->(tags) { joins(:tags).where(tags: { id: tags }) }
   scope :albums_and_photos, -> {where(type: [TYPE_ALBUM, TYPE_PHOTO])}
   scope :collections_and_graphics, -> {where(type: [TYPE_COLLECTION, TYPE_GRAPHIC])}
-  scope :albums_collections_and_videos, -> {where(type: [TYPE_ALBUM, TYPE_COLLECTION, TYPE_VIDEO])}
+  scope :albums_collections_and_videos, -> {where('type IN (?) OR (type = ? AND album_id IS NULL)', [TYPE_ALBUM, TYPE_COLLECTION, TYPE_VIDEO_COLLECTION], TYPE_VIDEO)}
+  scope :video_collections_and_videos, -> {where(type: [TYPE_VIDEO_COLLECTION, TYPE_VIDEO])}
 
   # relations added here to allow lazy loading on media_library_controller
   has_many :photo_sizes, foreign_key: :photo_id
 
   has_many :photos, foreign_key: :album_id
-
-  def get_url(size)
-    picture_url = case self.type
-      when TYPE_ALBUM
-        nil
-      when TYPE_PHOTO
-        media.photo_sizes.where(size: size).first.url
-      else
-        nil
-      end
-
-    picture_url
-  end
 
   class << self
     def fetch_all(options)

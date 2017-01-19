@@ -100,6 +100,7 @@
         width: rem(15px);
         height: rem(15px);
         margin-left: rem(2px);
+        fill: $color-1;
 
         @media screen and (min-width: $screen-m) {
           width: rem(10px);

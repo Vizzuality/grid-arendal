@@ -31,6 +31,27 @@
     background-size: cover;
   }
 
+  .card-player {
+    position: absolute;
+    top: rem(85px);
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: solid rem(2px) $white;
+    width: rem(30px);
+    height: rem(30px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+    .icon {
+      width: rem(8px);
+      height: rem(11px);
+      fill: $white;
+    }
+  }
+
   .card-description {
     background-color: $white;
     padding: rem(21px) rem(20px) rem(21px) rem(20px);

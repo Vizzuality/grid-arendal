@@ -59,7 +59,7 @@ module Backend
 
     def destroy
       if @video.destroy
-        redirect_to graphics_url
+        redirect_to videos_url
       end
     end
 
@@ -79,6 +79,7 @@ module Backend
 
       def set_objects
         @tags = Tag.order(:name)
+        @video_collections = VideoCollection.order(:title)
         @publications = Publication.order(:title)
         @activities = Activity.order(:title)
         @news_articles = NewsArticle.order(:title)

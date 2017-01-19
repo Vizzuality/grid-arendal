@@ -13,20 +13,21 @@
 
   video_provider = nil
   video_id = nil
-  if media.type == MediaContent::TYPE_VIDEO
-    if media.external_url.include?(Video::PROVIDER_YOUTUBE)
+  if [MediaContent::TYPE_VIDEO, MediaContent::TYPE_VIDEO_COLLECTION].include?(media.type)
+    video = media.type == MediaContent::TYPE_VIDEO_COLLECTION ? media.videos.order("id ASC").first : media
+    if video.present? && video.external_url.include?(Video::PROVIDER_YOUTUBE)
       video_provider = Video::PROVIDER_YOUTUBE
-      video_id = media.external_url.split('=').last
-    elsif media.external_url.include?(Video::PROVIDER_VIMEO)
+      video_id = video.external_url.split('=').last
+    elsif video.present? && video.external_url.include?(Video::PROVIDER_VIMEO)
       video_provider = Video::PROVIDER_VIMEO
-      video_id = media.external_url.split('/').last
+      video_id = video.external_url.split('/').last
     end
   end
 
   photos_count = media.type == MediaContent::TYPE_ALBUM ? media.photos.size : 0
-  videos_count = 0
+  videos_count = media.type == MediaContent::TYPE_VIDEO_COLLECTION ? media.videos.size : 0
   graphics_count = media.type == MediaContent::TYPE_COLLECTION ? media.graphics.size : 0
-  needSteps = (photos_count + videos_count + graphics_count) > 2
+  needSteps = (photos_count + videos_count + graphics_count) > 1
   meta = []
   if photos_count == 1
     meta.push("1 photo")
@@ -42,7 +43,14 @@
 <div class="item js_slide slide">
   <%= link_to medium_path(media) do %>
     <article class="c-card <% if needSteps %>-card-steps<% end %>" data-card-type="media">
-      <div class="card-pic" <% if media.type == MediaContent::TYPE_VIDEO %>data-video-id="<%= video_id %>" data-video-provider="<%= video_provider %>"<% else %>style="background-image: url('<%= picture_url %>')"<% end %>></div>
+      <div class="card-pic" <% if video_id.present? %>data-video-id="<%= video_id %>" data-video-provider="<%= video_provider %>"<% else %>style="background-image: url('<%= picture_url %>')"<% end %>></div>
+      <% if media.type == MediaContent::TYPE_VIDEO %>
+        <div class="card-player">
+          <svg class="icon">
+            <use xlink:href="#icon-play"></use>
+          </svg>
+        </div>
+      <% end %>
       <div class="card-description">
         <h3 class="text -title-card-small"><%= media.title %></h3>
         <p class="card-meta">
@@ -51,6 +59,13 @@
             <span class="icons">
               <svg class="icon">
                 <use xlink:href="#icon-media_photo_library"></use>
+              </svg>
+            </span>
+          <% end %>
+          <% if media.type == MediaContent::TYPE_VIDEO_COLLECTION %>
+            <span class="icons">
+              <svg class="icon">
+                <use xlink:href="#icon-media_video_library"></use>
               </svg>
             </span>
           <% end %>
