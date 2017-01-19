@@ -1,6 +1,6 @@
-<% if controller_name == 'albums' %>
+<% if ['albums', 'collections'].include?(controller_name) %>
   <%= link_to raw('<svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-rrss-flickr"></use></svg>'),
-    flickr_update_album_path(item), title: "Flickr update" %>
+    [:flickr_update, item], title: "Flickr update" %>
 <% end %>
 <% if ['activities', 'publications', 'albums', 'photos', 'videos', 'graphics'].include?(controller_name) %>
   <% if can?(:make_featured, item) && item.not_featured? %>

@@ -10,7 +10,7 @@ class UsersController < ApplicationController
     @activities = @user.activities.limit(3)
     @publications = @user.publications.limit(3)
     @news = NewsArticle.limit(4).order(publication_date: :desc)
-    @media_contents = MediaContent.wo_photos_in_album.featured
+    @media_contents = MediaContent.albums_collections_and_videos.featured
   end
 
   private
