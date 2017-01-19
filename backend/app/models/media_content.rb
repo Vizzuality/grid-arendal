@@ -49,8 +49,39 @@ class MediaContent < ApplicationRecord
 
   # relations added here to allow lazy loading on media_library_controller
   has_many :photo_sizes, foreign_key: :photo_id
-
   has_many :photos, foreign_key: :album_id
+
+  def single?
+    [TYPE_PHOTO, TYPE_VIDEO, TYPE_GRAPHIC].include?(type)
+  end
+
+  def set?
+    [TYPE_ALBUM, TYPE_COLLECTION].include?(type)
+  end
+
+  def biggest_size_url
+    photo = biggest_size
+    photo && photo.url
+  end
+
+  def biggest_size
+    return nil unless [TYPE_PHOTO, TYPE_GRAPHIC].include?(type)
+    ordr = <<-SQL
+      CASE
+        WHEN label = '#{PhotoSize::LARGE}'
+          THEN 0
+        WHEN label = '#{PhotoSize::MEDIUM}'
+          THEN 1
+        WHEN label = '#{PhotoSize::ORIGINAL}'
+          THEN 2
+        ELSE 3
+      END
+    SQL
+    photo_sizes.
+      where(label: [PhotoSize::LARGE, PhotoSize::MEDIUM, PhotoSize::ORIGINAL]).
+      where.not(url: nil).
+      order(ordr).limit(1).first
+  end
 
   class << self
     def fetch_all(options)

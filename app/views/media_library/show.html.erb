@@ -1,21 +1,30 @@
 <%
-  is_vertical = false
-  picture_url = case @media_content.type
-                when MediaContent::TYPE_ALBUM
-                  photo = @media_content.photos.first
-                  is_vertical = photo.photo_sizes.where(label: PhotoSize::LARGE).first.is_vertical
-                  photo && photo.photo_sizes.where(label: PhotoSize::LARGE).first.try(:url)
-                when MediaContent::TYPE_PHOTO, MediaContent::TYPE_GRAPHIC
-                  is_vertical = @media_content.photo_sizes.where(label: PhotoSize::LARGE).first.is_vertical
-                  @media_content.photo_sizes.where(label: PhotoSize::LARGE).first.try(:url)
-                when MediaContent::TYPE_COLLECTION
-                  photo = @media_content.graphics.first
-                  is_vertical = photo.photo_sizes.where(label: PhotoSize::LARGE).first.is_vertical
-                  photo && photo.photo_sizes.where(label: PhotoSize::LARGE).first.try(:url)
-                else
-                  nil
-                end
-  breadcrumbs_links = if @media_content.album_id.present?
+  if [MediaContent::TYPE_VIDEO, MediaContent::TYPE_VIDEO_COLLECTION].include?@media_content.type)
+    picture_url = ""
+    is_vertical = false
+    photo = if @media_content.single?
+              @media_content
+            else
+              @media_content.photos.first
+            end
+    biggest = photo.biggest_size
+    is_vertical = biggest.is_vertical?
+    picture_url = biggest.url
+  else
+    video_provider = nil
+    video_id = nil
+    video = @media_content.type == MediaContent::TYPE_VIDEO_COLLECTION ? @media_content.videos.
+      order(:id).first : @media_content
+    if video.present? && video.external_url.include?(Video::PROVIDER_YOUTUBE)
+      video_provider = Video::PROVIDER_YOUTUBE
+      video_id = video.external_url.split('=').last
+    elsif video.present? && video.external_url.include?(Video::PROVIDER_VIMEO)
+      video_provider = Video::PROVIDER_VIMEO
+      video_id = video.external_url.split('/').last
+    end
+  end
+
+  breadcrumbs_links = if @media_content.single? && @media_content.album_id.present?
                       [
                         {text: 'Media library', link: media_path},
                         {text: truncate(@media_content.album.title, length: 20), link: medium_path(@media_content.album_id)},
@@ -28,19 +37,9 @@
                          edit_path: backend.url_for([:edit, @media_content]) }
                       ]
                       end
-  video_provider = nil
-  video_id = nil
-  if [MediaContent::TYPE_VIDEO, MediaContent::TYPE_VIDEO_COLLECTION].include?(@media_content.type)
-    video = @media_content.type == MediaContent::TYPE_VIDEO_COLLECTION ? @media_content.videos.order("id ASC").first : @media_content
-    if video.present? && video.external_url.include?(Video::PROVIDER_YOUTUBE)
-      video_provider = Video::PROVIDER_YOUTUBE
-      video_id = video.external_url.split('=').last
-    elsif video.present? && video.external_url.include?(Video::PROVIDER_VIMEO)
-      video_provider = Video::PROVIDER_VIMEO
-      video_id = video.external_url.split('/').last
-    end
   end
 %>
+
 <div class="l-header-single">
   <div class="navigation -media-library">
     <%= render 'shared/menu' %>
@@ -109,7 +108,7 @@
     <div class="small-12 large-4 large-offset-2 column">
       <div class="sidebar">
         <div class="download-links">
-          <% if @media_content.is_a?(Photo) %>
+          <% if @media_content.type == MediaContent::TYPE_PHOTO %>
             <div class="text -sidebar-title">Download</div>
             <ul class="button-list">
               <% @media_content.photo_sizes.where(label: PhotoSize::LABELS).each do |size| %>
@@ -137,12 +136,12 @@
 
 </div>
 
-<% if @media_content.is_a?(Album) %>
+<% if @media_content.type == MediaContent::TYPE_ALBUM %>
   <%= render 'shared/media', media_contents: @media_content.photos,
   title: "Photos included in album", sectionClass: 'content -color-4' %>
 <% end %>
 
-<% if @media_content.is_a?(Collection) %>
+<% if @media_content.type == MediaContent::TYPE_COLLECTION %>
   <%= render 'shared/media', media_contents: @media_content.graphics,
   title: "Graphics included in album", sectionClass: 'content -color-4' %>
 <% end %>
