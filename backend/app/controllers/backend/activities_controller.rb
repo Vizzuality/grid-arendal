@@ -93,7 +93,8 @@ module Backend
         @users = User.order(:first_name, :last_name)
         @partners = Partner.order(:name)
         @news_articles = NewsArticle.order(:title)
-        @media_contents = MediaContent.wo_photos_in_album.order(:title)
+        @media_contents = MediaContent.albums_collections_and_videos.
+          order(:title)
         @publications = Publication.order(:title)
         @content_types = ContentType.
           where(for_content: ContentType::ACTIVITY).

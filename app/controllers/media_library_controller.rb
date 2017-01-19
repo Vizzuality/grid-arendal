@@ -8,7 +8,7 @@ class MediaLibraryController < ApplicationController
     @media_contents = MediaContent.fetch_all(options_filter).
                         limit(@media_contents_limit * @page)
     @tags = Tag.for_media_content
-    @types = MediaContent.select(:type).distinct.wo_photos_in_album.order(:type)
+    @types = MediaContent::FILTERS.keys
     @section = SiteSection.where(section: "media_library").first
     respond_to do |format|
       format.html

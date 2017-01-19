@@ -6,7 +6,7 @@ class HomeController < ApplicationController
     @activities = Activity.featured.published.limit(3)
     @publications = Publication.featured.published.order(content_date: :desc).limit(3)
     @event = Event.where(active: true).order(:created_at).limit(1)&.first
-    @media_contents = MediaContent.wo_photos_in_album.featured
+    @media_contents = MediaContent.albums_collections_and_videos.featured
     @section = SiteSection.where(section: "home").first
   end
 

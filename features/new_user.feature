@@ -7,6 +7,7 @@ I want to create user
     Given I am authenticated adminuser
     And I am on the new user page
     When I fill in "Email" with "user1@sample.com"
+    And I fill in "First name" with "Simao"
     And I select "publisher" from "Role"
     And I press "SAVE"
     Then I should have one publisheruser
