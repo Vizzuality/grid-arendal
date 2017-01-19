@@ -18,7 +18,7 @@
 #
 
 class Activity < Content
-  has_many :related_contents
+  has_many :related_contents, dependent: :destroy
   has_many :publications, through: :related_contents
 
   acts_as_taggable
