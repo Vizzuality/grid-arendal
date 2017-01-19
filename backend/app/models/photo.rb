@@ -18,7 +18,7 @@ class Photo < MediaContent
 
   scope :not_in_album, -> { where(album_id: nil)}
 
-  has_many :photo_sizes
+  has_many :photo_sizes, dependent: :destroy
   belongs_to :album
 
   delegate :activities, to: :album
