@@ -34,8 +34,9 @@ class MediaContent < ApplicationRecord
   scope :wo_photos_in_album, -> { where("type <> 'Photo' OR (type = 'Photo' AND album_id IS NULL)")}
   scope :by_type, ->(media) { where(type: media) }
   scope :by_tags, ->(tags) { joins(:tags).where(tags: { id: tags }) }
-  scope :albums_and_photos, -> {where(type: ["Album", "Photo"])}
-  scope :collections_and_graphics, -> {where(type: ["Collection", "Graphic"])}
+  scope :albums_and_photos, -> {where(type: [TYPE_ALBUM, TYPE_PHOTO])}
+  scope :collections_and_graphics, -> {where(type: [TYPE_COLLECTION, TYPE_GRAPHIC])}
+  scope :albums_collections_and_videos, -> {where(type: [TYPE_ALBUM, TYPE_COLLECTION, TYPE_VIDEO])}
 
   # relations added here to allow lazy loading on media_library_controller
   has_many :photo_sizes, foreign_key: :photo_id
@@ -44,9 +45,9 @@ class MediaContent < ApplicationRecord
 
   def get_url(size)
     picture_url = case self.type
-      when MediaContent::TYPE_ALBUM
+      when TYPE_ALBUM
         nil
-      when MediaContent::TYPE_PHOTO
+      when TYPE_PHOTO
         media.photo_sizes.where(size: size).first.url
       else
         nil

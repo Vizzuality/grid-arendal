@@ -93,7 +93,8 @@ module Backend
       def set_objects
         @users    = User.order_by_fullname
         @partners = Partner.order_by_name
-        @media_contents = MediaContent.wo_photos_in_album.order(:title)
+        @media_contents = MediaContent.albums_collections_and_videos.
+          order(:title)
         @content_types = ContentType.
           where(for_content: ContentType::PUBLICATION).
           order(:title)
