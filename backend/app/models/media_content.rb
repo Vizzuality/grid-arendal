@@ -24,6 +24,13 @@ class MediaContent < ApplicationRecord
   TYPE_GRAPHIC = "Graphic"
   TYPE_COLLECTION = "Collection"
 
+  # {display => filter_types}
+  FILTERS = {
+    TYPE_GRAPHIC => TYPE_COLLECTION,
+    TYPE_PHOTO => TYPE_ALBUM,
+    TYPE_VIDEO => TYPE_VIDEO
+  }
+
   has_many :media_supports, dependent: :destroy
   has_many :activities, through: :media_supports, source: :activity
   has_many :publications, through: :media_supports, source: :publication
@@ -61,11 +68,11 @@ class MediaContent < ApplicationRecord
       tags = options['tags'].split(',')               if options['tags'].present?
       media = options['media']                          if options['media'].present?
 
-      media_contents = MediaContent.wo_photos_in_album.
+      media_contents = MediaContent.albums_collections_and_videos.
         includes(:photo_sizes, :photos).
         order("publication_date DESC, id ASC")
       media_contents = media_contents.by_tags(tags)   if tags.present?
-      media_contents = media_contents.by_type(media)   if media.present?
+      media_contents = media_contents.by_type(FILTERS[media])   if media.present?
       media_contents
     end
   end
