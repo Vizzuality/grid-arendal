@@ -13,7 +13,8 @@ module Backend
     end
 
     def edit
-      @videos = Video.where("album_id = #{params[:id]} OR album_id IS NULL").order(:title)
+      @videos = Video.where("album_id = ? OR album_id IS NULL", @video_collection.id).
+        order(:title)
     end
 
     def update
@@ -28,7 +29,7 @@ module Backend
     end
 
     def new
-      @videos = Video.where("album_id IS NULL").order(:title)
+      @videos = Video.where(album_id: id).order(:title)
     end
 
     def create
@@ -49,6 +50,22 @@ module Backend
       end
     end
 
+    def make_featured
+      @item = @video_collection
+      @item.try(:make_featured)
+      respond_to do |format|
+        format.js { render 'backend/shared/index_options' }
+      end
+    end
+
+    def remove_featured
+      @item = @video_collection
+      @item.try(:remove_featured)
+      respond_to do |format|
+        format.js { render 'backend/shared/index_options' }
+      end
+    end
+
     private
 
       def video_collection_params
@@ -65,6 +82,9 @@ module Backend
 
       def set_objects
         @tags = Tag.order(:name)
+        @publications = Publication.order(:title)
+        @activities = Activity.order(:title)
+        @news_articles = NewsArticle.order(:title)
       end
   end
 end

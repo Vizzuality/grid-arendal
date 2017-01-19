@@ -2,7 +2,8 @@
   <%= link_to raw('<svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-rrss-flickr"></use></svg>'),
     [:flickr_update, item], title: "Flickr update" %>
 <% end %>
-<% if ['activities', 'publications', 'albums', 'photos', 'videos', 'graphics'].include?(controller_name) %>
+<% if ['activities', 'publications', 'albums', 'videos', 'collections',
+    'video_collections'].include?(controller_name) %>
   <% if can?(:make_featured, item) && item.not_featured? %>
     <%= link_to raw('<svg class="icon" data-type="Make featured"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-star_outline"></use></svg>'),
       [:make_featured, item], method: :patch, remote: true, class: "MakeFeatured",

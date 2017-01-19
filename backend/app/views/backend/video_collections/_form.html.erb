@@ -18,4 +18,18 @@
 
   <%= render 'backend/shared/form/field_tags', form: form, collection: tags %>
 
+  <%= render 'backend/shared/form/field_association', form: form,
+    value: :activities, collection: activities, label_method: :title,
+    js_trigger_class: 'js-select-tags',
+    note_txt: '(Choose related activities)' %>
+
+  <%= render 'backend/shared/form/field_association', form: form,
+    value: :publications, collection: publications, label_method: :title,
+    js_trigger_class: 'js-select-tags',
+    note_txt: '(Choose related publications)' %>
+
+  <%= render 'backend/shared/form/field_association', form: form,
+    value: :news_articles, collection: news_articles, label_method: :title,
+    js_trigger_class: 'js-select-tags', note_txt: '(Choose related news articles)' %>
+
 </div>
