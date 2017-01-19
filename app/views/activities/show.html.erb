@@ -15,7 +15,7 @@
     </div>
   </div>
 
-  <div class="banner -activities-article <% if @activity.media_content %>-picture<% end %>" <% if @activity.media_content %>style="background-image: url('<%= @activity.media_content.biggest_photo_url %>');"<% end %>>
+  <div class="banner -activities-article <% if @activity.media_content %>-picture<% end %>" <% if @activity.media_content %>style="background-image: url('<%= @activity.media_content.biggest_size_url %>');"<% end %>>
     <div class="section-menu">
       <div class="row">
         <div class="small-12 columns">
