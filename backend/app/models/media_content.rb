@@ -60,7 +60,7 @@ class MediaContent < ApplicationRecord
 
   def biggest_size_url
     photo = biggest_size
-    photo && photo.url
+    photo && photo.url or ""
   end
 
   def biggest_size
