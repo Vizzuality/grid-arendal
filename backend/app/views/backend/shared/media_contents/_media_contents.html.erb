@@ -26,8 +26,10 @@
   <% tabs.each do |tab| %>
     <a href="<%= tab[:path] %>">
       <div class="tab text -main-title -light <% if tab[:key] == key %>-selected<% end %>" data-type="<%= tab[:key] %>">
-        <%= tab[:title] %>
-        (<%= tab[:count] %>)
+        <svg class="icon">
+          <use xlink:href="#icon-<%= tab[:key] %>"></use>
+        </svg>
+        <div class="counter"><%= tab[:count] %></div>
       </div>
     </a>
   <% end %>
