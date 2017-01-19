@@ -59,7 +59,7 @@ module Backend
 
     def destroy
       if @video.destroy
-        redirect_to graphics_url
+        redirect_to videos_url
       end
     end
 

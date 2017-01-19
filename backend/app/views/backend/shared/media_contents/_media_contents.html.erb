@@ -6,6 +6,13 @@
                {title: "Pictures", key: "photos", path: photos_path,
                 count: Photo.count}
             ]
+          when 'video_collections', 'videos'
+            [
+              {title: "Video Collections", key: "video_collections", path: video_collections_path,
+               count: VideoCollection.count},
+              {title: "Videos", key: "videos", path: videos_path,
+               count: Video.count}
+            ]
           when 'collections', 'graphics'
             [
               {title: "Collections", key: "collections", path: collections_path,
@@ -30,6 +37,12 @@
   <% if ['albums', 'collections'].include?(controller_name) %>
     <%= link_to "Import from flickr", [:new, controller_name.singularize],
       class: 'btn -light -no-border -create-new js-create-new' %>
+  <% end %>
+  <% if ['video_collections'].include?(controller_name) && can?(:create, VideoCollection) %>
+    <%= link_to "Create New", new_video_collection_path, class: 'btn -light -no-border -create-new js-create-new' %>
+  <% end %>
+  <% if ['videos'].include?(controller_name) && can?(:create, Video) %>
+      <%= link_to "Create New", new_video_path, class: 'btn -light -no-border -create-new js-create-new' %>
   <% end %>
   <div class="btn">
     <svg class="icon">
