@@ -62,6 +62,13 @@
               </svg>
             </span>
           <% end %>
+          <% if media.type == MediaContent::TYPE_VIDEO_COLLECTION %>
+            <span class="icons">
+              <svg class="icon">
+                <use xlink:href="#icon-media_video_library"></use>
+              </svg>
+            </span>
+          <% end %>
         </p>
       </div>
     </article>
