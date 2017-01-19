@@ -29,7 +29,7 @@ class MediaContent < ApplicationRecord
   FILTERS = {
     TYPE_GRAPHIC => TYPE_COLLECTION,
     TYPE_PHOTO => TYPE_ALBUM,
-    TYPE_VIDEO => TYPE_VIDEO
+    TYPE_VIDEO => [TYPE_VIDEO, TYPE_VIDEO_COLLECTION]
   }
 
   has_many :media_supports, dependent: :destroy
