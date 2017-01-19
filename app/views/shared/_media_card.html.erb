@@ -44,6 +44,13 @@
   <%= link_to medium_path(media) do %>
     <article class="c-card <% if needSteps %>-card-steps<% end %>" data-card-type="media">
       <div class="card-pic" <% if video_id.present? %>data-video-id="<%= video_id %>" data-video-provider="<%= video_provider %>"<% else %>style="background-image: url('<%= picture_url %>')"<% end %>></div>
+      <% if media.type == MediaContent::TYPE_VIDEO %>
+        <div class="card-player">
+          <svg class="icon">
+            <use xlink:href="#icon-play"></use>
+          </svg>
+        </div>
+      <% end %>
       <div class="card-description">
         <h3 class="text -title-card-small"><%= media.title %></h3>
         <p class="card-meta">
