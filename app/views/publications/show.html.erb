@@ -1,13 +1,12 @@
 <% picture_url = if @publication.picture.exists?
                   @publication.picture.url(:original)
                 elsif @publication.media_content
-                  photo = if @publication.media_content.is_a?(Photo)
+                  photo = if @publication.media_content.type == MediaContent::TYPE_PHOTO
                             @publication.media_content
                           else
                             @publication.media_content.photos.first
                           end
-
-                  photo.photo_sizes.where(label: PhotoSize::LARGE).first.try(:url)
+                  photo.biggest_size_url
                 else
                   asset_path('original/missing2.png')
                 end %>

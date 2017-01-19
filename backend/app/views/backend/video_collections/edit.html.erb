@@ -1,12 +1,12 @@
 <div class="l-items-index">
-  <%= render 'backend/shared/media_contents/media_contents', key: "videos", items: @videos %>
+  <%= render 'backend/shared/media_contents/media_contents', key: "video_collections", items: @video_collections %>
 </div>
 
 <div class="l-items-detail">
-  <%= simple_form_for @video, html: { class: 'c-form' } do |f| %>
+  <%= simple_form_for @video_collection, html: { class: 'c-form' } do |f| %>
     <%= render 'form',
       form: f,
-      video_collections: @video_collections,
+      videos: @videos,
       tags: @tags,
       activities: @activities,
       publications: @publications,

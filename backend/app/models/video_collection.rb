@@ -14,8 +14,7 @@
 #  updated_at       :datetime         not null
 #
 
-class Album < MediaContent
-  include FlickrSync
-  has_many :photos, dependent: :destroy, foreign_key: :album_id
-  alias_attribute :items, :photos
+class VideoCollection < MediaContent
+  has_many :videos, dependent: :destroy, foreign_key: :album_id
+  alias_attribute :items, :videos
 end

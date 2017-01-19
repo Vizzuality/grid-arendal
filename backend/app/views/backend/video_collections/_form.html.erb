@@ -1,15 +1,12 @@
 <%= render 'backend/shared/form/header', form: form,
-  inputs: [{value: :title, title_placeholder: 'Video title'}],
-  preview_url: form.object.id && main_app.medium_path(form.object) %>
+  inputs: [{value: :title, title_placeholder: 'Video collection title'}],
+  preview_url: nil %>
 
 <div class="fields">
-  <%= render 'backend/shared/form/field_select', form: form,
-    value: :album_id, collection: video_collections,
-    include_blank: true, label_txt: "Video collection", input_as: :select,
-    note_txt: '(Choose the collection to which it belongs)' %>
 
-  <%= render 'backend/shared/form/field_input', form: form, value: :external_url,
-  label_txt: "Video embed URL" %>
+  <%= render 'backend/shared/form/field_association', form: form,
+    value: :videos, collection: videos, label_method: :title,
+    js_trigger_class: 'js-select-tags', note_txt: '(Choose videos)' %>
 
   <%= render 'backend/shared/form/field_textarea', form: form, value: :description %>
 
@@ -17,8 +14,7 @@
 
   <%= render 'backend/shared/form/field_input', form: form, value: :licence %>
 
-  <%= render 'backend/shared/form/field_datepicker', form: form,
-    value: :publication_date %>
+  <%= render 'backend/shared/form/field_datepicker', form: form, value: :publication_date %>
 
   <%= render 'backend/shared/form/field_tags', form: form, collection: tags %>
 
@@ -35,4 +31,5 @@
   <%= render 'backend/shared/form/field_association', form: form,
     value: :news_articles, collection: news_articles, label_method: :title,
     js_trigger_class: 'js-select-tags', note_txt: '(Choose related news articles)' %>
+
 </div>

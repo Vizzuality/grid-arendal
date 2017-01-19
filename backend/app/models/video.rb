@@ -19,4 +19,9 @@ class Video < MediaContent
 
   PROVIDER_YOUTUBE = "youtube"
   PROVIDER_VIMEO = "vimeo"
+
+  scope :not_in_album, -> { where(album_id: nil)}
+
+  belongs_to :video_collection, foreign_key: :album_id
+  alias_attribute :album, :video_collection
 end
