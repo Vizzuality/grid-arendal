@@ -29,21 +29,23 @@
         <div class="frame js_frame">
           <div class="slides js_slides">
             <% media_contents.each_with_index do |media, index| %>
-              <%
-                photo = if media.single?
-                            media
-                          else
-                            media.photos.first
-                          end
+              <% if  [MediaContent::TYPE_PHOTO, MediaContent::TYPE_GRAPHIC].include?(media.type) %>
+                <%
+                    photo = if media.single?
+                              media
+                            else
+                              media.photos.first
+                            end
                 picture_url = photos.biggest_url
               %>
-              <%= render 'shared/related_media_item',
-                picture: picture_url,
-                title: media.title,
-                link: medium_path(media),
-                author: media.author,
-                date: media.publication_date,
-                index: index %>
+            <%= render 'shared/related_media_item',
+              picture: picture_url,
+              title: media.title,
+              link: medium_path(media),
+              author: media.author,
+              date: media.publication_date,
+              index: index %>
+          <% end %>
             <% end %>
           </div>
         </div>
