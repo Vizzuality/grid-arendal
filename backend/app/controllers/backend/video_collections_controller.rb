@@ -13,7 +13,7 @@ module Backend
     end
 
     def edit
-      @videos = Video.where("type = 'Video' AND (album_id = #{params[:id]} OR album_id IS NULL)").order(:title)
+      @videos = Video.where("album_id = #{params[:id]} OR album_id IS NULL").order(:title)
     end
 
     def update
@@ -28,7 +28,7 @@ module Backend
     end
 
     def new
-      @videos = Video.where("type = 'Video' AND album_id IS NULL").order(:title)
+      @videos = Video.where("album_id IS NULL").order(:title)
     end
 
     def create
