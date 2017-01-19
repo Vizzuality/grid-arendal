@@ -44,8 +44,8 @@ class MediaContent < ApplicationRecord
   scope :by_tags, ->(tags) { joins(:tags).where(tags: { id: tags }) }
   scope :albums_and_photos, -> {where(type: [TYPE_ALBUM, TYPE_PHOTO])}
   scope :collections_and_graphics, -> {where(type: [TYPE_COLLECTION, TYPE_GRAPHIC])}
-  scope :albums_collections_and_videos, -> {where(type: [TYPE_ALBUM, TYPE_COLLECTION, TYPE_VIDEO])}
-  scope :video_collections_and_videos, -> {where(type: ["VideoCollection", "Video"])}
+  scope :albums_collections_and_videos, -> {where('type IN (?) OR (type = ? AND album_id IS NULL)', [TYPE_ALBUM, TYPE_COLLECTION, TYPE_VIDEO_COLLECTION], TYPE_VIDEO)}
+  scope :video_collections_and_videos, -> {where(type: [TYPE_VIDEO_COLLECTION, TYPE_VIDEO])}
 
   # relations added here to allow lazy loading on media_library_controller
   has_many :photo_sizes, foreign_key: :photo_id

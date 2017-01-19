@@ -30,13 +30,14 @@
                       end
   video_provider = nil
   video_id = nil
-  if @media_content.type == MediaContent::TYPE_VIDEO
-    if @media_content.external_url.include?(Video::PROVIDER_YOUTUBE)
+  if [MediaContent::TYPE_VIDEO, MediaContent::TYPE_VIDEO_COLLECTION].include?(@media_content.type)
+    video = @media_content.type == MediaContent::TYPE_VIDEO_COLLECTION ? @media_content.videos.order("id ASC").first : @media_content
+    if video.present? && video.external_url.include?(Video::PROVIDER_YOUTUBE)
       video_provider = Video::PROVIDER_YOUTUBE
-      video_id = @media_content.external_url.split('=').last
-    elsif @media_content.external_url.include?(Video::PROVIDER_VIMEO)
+      video_id = video.external_url.split('=').last
+    elsif video.present? && video.external_url.include?(Video::PROVIDER_VIMEO)
       video_provider = Video::PROVIDER_VIMEO
-      video_id = @media_content.external_url.split('/').last
+      video_id = video.external_url.split('/').last
     end
   end
 %>
