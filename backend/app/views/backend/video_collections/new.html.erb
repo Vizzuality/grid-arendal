@@ -6,7 +6,7 @@
   <%= simple_form_for @video_collection, html: { class: 'c-form' } do |f| %>
     <%= render 'form',
       form: f,
-      collection_videos: @collection_videos,
+      videos: @videos,
       tags: @tags
     %>
   <% end %>

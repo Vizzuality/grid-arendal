@@ -4,6 +4,10 @@
 
 <div class="fields">
 
+  <%= render 'backend/shared/form/field_association', form: form,
+    value: :videos, collection: videos, label_method: :title,
+    js_trigger_class: 'js-select-tags', note_txt: '(Choose videos)' %>
+
   <%= render 'backend/shared/form/field_textarea', form: form, value: :description %>
 
   <%= render 'backend/shared/form/field_input', form: form, value: :author %>
