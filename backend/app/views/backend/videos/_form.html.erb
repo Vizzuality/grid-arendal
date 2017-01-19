@@ -3,6 +3,11 @@
   preview_url: form.object.id && main_app.medium_path(form.object) %>
 
 <div class="fields">
+  <%= render 'backend/shared/form/field_select', form: form,
+    value: :album_id, collection: video_collections,
+    include_blank: true, label_txt: "Video collection", input_as: :select,
+    note_txt: '(Choose the collection to which it belongs)' %>
+
   <%= render 'backend/shared/form/field_input', form: form, value: :external_url,
   label_txt: "Video embed URL" %>
 

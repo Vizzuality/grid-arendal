@@ -21,8 +21,7 @@
     disabled: true, note_txt: "License is maintained on Flickr" %>
 
   <%= render 'backend/shared/form/field_datepicker', form: form,
-    value: :publication_date, disabled: true,
-    note_txt: "Publication date can't be changed" %>
+    value: :publication_date %>
 
   <%= render 'backend/shared/form/field_tags', form: form, collection: tags %>
 

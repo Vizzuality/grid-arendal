@@ -75,6 +75,11 @@ Backend::Engine.routes.draw do
     patch 'remove_featured', on: :member
   end
 
+  resources :video_collections, except: :show do
+    patch 'make_featured', on: :member
+    patch 'remove_featured', on: :member
+  end
+
   resources :collections, except: [:show] do
     patch 'make_featured', on: :member
     patch 'remove_featured', on: :member

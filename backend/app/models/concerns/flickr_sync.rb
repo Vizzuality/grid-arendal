@@ -7,9 +7,6 @@ module FlickrSync
     def update_from_flickr
       photoset = Flickr.get_photoset_by_id external_id
       return "No Flickr photoset was found" unless photoset
-      if !publication_date
-        publication_date = Date.strptime(photoset.date_create, '%s')
-      end
       updated_at = DateTime.strptime(photoset.date_update, '%s')
       if external_updated_at.nil? || updated_at > external_updated_at
         external_updated_at = updated_at
@@ -92,9 +89,6 @@ module FlickrSync
       photoset = Flickr.get_photoset_by_id photoset_id
       return "No photoset by the given id" unless photoset
       set = find_or_initialize_by(external_id: photoset.id)
-      if !set.publication_date
-        set.publication_date = Date.strptime(photoset.date_create, '%s')
-      end
       updated_at = DateTime.strptime(photoset.date_update, '%s')
       if set.external_updated_at.nil? || updated_at > set.external_updated_at
         set.external_updated_at = updated_at
