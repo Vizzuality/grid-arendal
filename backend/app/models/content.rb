@@ -29,19 +29,19 @@ class Content < ApplicationRecord
   IDEAS = "Ideas in development"
   STATUS = [COMPLETED, IDEAS, IN_PROGRESS]
 
-  has_many :participants
+  has_many :participants, dependent: :destroy
   has_many :users, through: :participants
   belongs_to :lead_user, class_name: 'User'
 
-  has_many :content_partners
+  has_many :content_partners, dependent: :destroy
   has_many :partners, through: :content_partners
   belongs_to :content_type
   belongs_to :media_content
 
-  has_many :content_news
+  has_many :content_news, dependent: :destroy
   has_many :news_articles, through: :content_news
 
-  has_many :media_supports
+  has_many :media_supports, dependent: :destroy
   has_many :media_contents, through: :media_supports
 
   scope :order_by_title, -> { order('title ASC')        }

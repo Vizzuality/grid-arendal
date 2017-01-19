@@ -22,13 +22,13 @@ class Publication < Content
   include Attachable::Picture
   acts_as_taggable
 
-  has_many :related_contents
+  has_many :related_contents, dependent: :destroy
   has_many :activities, through: :related_contents
   has_many :documents
   accepts_nested_attributes_for :documents, reject_if: :all_blank,
     allow_destroy: true
 
-  has_many :weblinks
+  has_many :weblinks, dependent: :destroy
   accepts_nested_attributes_for :weblinks, reject_if: :all_blank,
     allow_destroy: true
 
