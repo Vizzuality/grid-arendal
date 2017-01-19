@@ -40,7 +40,9 @@
       this.videoThumbnailsView = new App.View.VideoThumbnails();
     },
 
-    show: function(params) {
+    show: function() {
+      this.videoThumbnailsView = new App.View.VideoThumbnails();
+
       if(this.isScreen_s) {
         this.initSliders();
       } else {
