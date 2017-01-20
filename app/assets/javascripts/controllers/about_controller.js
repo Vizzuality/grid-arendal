@@ -23,10 +23,12 @@
     },
 
     initSliders: function() {
-      Array.prototype.slice.call(document.querySelectorAll('.js_slider')).forEach(function (element, index) {
-        lory(element, {
-          enableMouseEvents: true
-        });
+      _.each($('.js_slider'), function(element) {
+        if($(element).find(".js_slide").length > 0) {
+          lory(element, {
+            enableMouseEvents: true
+          });
+        }
       });
     }
 
