@@ -24,9 +24,11 @@
 
     initSliders: function() {
       _.each($('.js_slider'), function(element) {
-        lory(element, {
-          enableMouseEvents: true
-        }).slideTo(1);
+        if($(element).find(".js_slide").length > 0) {
+          lory(element, {
+            enableMouseEvents: true
+          }).slideTo(1);
+        }
       }.bind(this));
     }
 
