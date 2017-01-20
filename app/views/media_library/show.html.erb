@@ -11,16 +11,15 @@
     is_vertical = biggest.is_vertical?
     picture_url = biggest.url
   else
-    video_provider = nil
-    video_id = nil
+    video_url = nil
     video = @media_content.type == MediaContent::TYPE_VIDEO_COLLECTION ? @media_content.videos.
       order(:id).first : @media_content
     if video.present? && video.external_url.include?(Video::PROVIDER_YOUTUBE)
-      video_provider = Video::PROVIDER_YOUTUBE
       video_id = video.external_url.split('=').last
+      video_url = "https://www.youtube.com/embed/#{video_id}?autoplay=1"
     elsif video.present? && video.external_url.include?(Video::PROVIDER_VIMEO)
-      video_provider = Video::PROVIDER_VIMEO
       video_id = video.external_url.split('/').last
+      video_url = "https://player.vimeo.com/video/#{video_id}?autoplay=1"
     end
   end
 
@@ -53,11 +52,7 @@
   </div>
   <% if @media_content.type == MediaContent::TYPE_VIDEO %>
     <div class="banner -media-library">
-      <% if video_provider == Video::PROVIDER_YOUTUBE %>
-        <iframe src="https://www.youtube.com/embed/<%= video_id %>" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
-      <% elsif video_provider == Video::PROVIDER_VIMEO %>
-        <iframe src="https://player.vimeo.com/video/<%= video_id %>" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-      <% end %>
+      <iframe src="<%= video_url %>" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
     </div>
   <% elsif not(@media_content.type.include?(MediaContent::TYPE_VIDEO_COLLECTION)) %>
     <div class="banner -media-library <% if is_vertical %>-vertical<% end %>" style="background-image: url('<%= picture_url %>');"></div>
@@ -69,11 +64,7 @@
     <div class="small-12 column">
       <% if @media_content.type == MediaContent::TYPE_VIDEO %>
         <div class="c-article-image">
-          <% if video_provider == Video::PROVIDER_YOUTUBE %>
-            <iframe src="https://www.youtube.com/embed/<%= video_id %>" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
-          <% elsif video_provider == Video::PROVIDER_VIMEO %>
-            <iframe src="https://player.vimeo.com/video/<%= video_id %>" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-          <% end %>
+          <iframe src="<%= video_url %>" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </div>
       <% elsif not(@media_content.type.include?(MediaContent::TYPE_VIDEO_COLLECTION)) %>
         <div class="c-article-image <% if is_vertical %>-vertical<% end %>" style="background-image: url('<%= picture_url %>');"></div>

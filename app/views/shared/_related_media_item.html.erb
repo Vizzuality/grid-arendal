@@ -2,7 +2,6 @@
   picture_url = nil
   video_provider = nil
   video_id = nil
-  link = medium_path(media)
 
   if ![MediaContent::TYPE_VIDEO].include?(media.type)
     picture_url = if media.single?
@@ -18,11 +17,10 @@
       video_provider = Video::PROVIDER_VIMEO
       video_id = media.external_url.split('/').last
     end
-    link = link + "?autoplay=1"
   end
 %>
 <div class="js_slide slide <% if index == 0 %>active<% end %>">
-  <div id="<%= index %>" class="c-related-media-item js-video-thumbnail" data-link="<%= link %>" <% if video_id.present? %>data-video-id="<%= video_id %>" data-video-provider="<%= video_provider %>"<% else %>style="background-image: url('<%= picture_url %>')"<% end %>>
+  <div id="<%= index %>" class="c-related-media-item js-video-thumbnail" data-link="<%= medium_path(media) %>" <% if video_id.present? %>data-video-id="<%= video_id %>" data-video-provider="<%= video_provider %>"<% else %>style="background-image: url('<%= picture_url %>')"<% end %>>
     <% if media.type == MediaContent::TYPE_VIDEO %>
       <div class="player">
         <svg class="icon">
