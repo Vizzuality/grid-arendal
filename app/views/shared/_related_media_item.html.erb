@@ -1,16 +1,20 @@
 <%
   picture_url = nil
+  is_vertical = false
   video_provider = nil
   video_id = nil
 
   if ![MediaContent::TYPE_VIDEO].include?(media.type)
-    picture_url = if media.type == MediaContent::TYPE_COLLECTION
-                    media.graphics.first.biggest_size_url
+    photo = if media.type == MediaContent::TYPE_COLLECTION
+                    media.graphics.first
                   elsif media.single?
-                    media.biggest_size_url
+                    media
                   else
-                    media.photos.first.biggest_size_url
+                    media.photos.first
                   end
+    biggest = photo.biggest_size
+    is_vertical = biggest.is_vertical?
+    picture_url = biggest.url
   else
     if media.external_url.include?(Video::PROVIDER_YOUTUBE)
       video_provider = Video::PROVIDER_YOUTUBE
@@ -22,7 +26,7 @@
   end
 %>
 <div class="js_slide slide <% if index == 0 %>active<% end %>">
-  <div id="<%= index %>" class="c-related-media-item js-video-thumbnail" data-link="<%= medium_path(media) %>" <% if video_id.present? %>data-video-id="<%= video_id %>" data-video-provider="<%= video_provider %>"<% else %>style="background-image: url('<%= picture_url %>')"<% end %>>
+  <div id="<%= index %>" class="c-related-media-item js-video-thumbnail <% if is_vertical %>-vertical<% end %>" data-link="<%= medium_path(media) %>" <% if video_id.present? %>data-video-id="<%= video_id %>" data-video-provider="<%= video_provider %>"<% else %>style="background-image: url('<%= picture_url %>')"<% end %>>
     <% if media.type == MediaContent::TYPE_VIDEO %>
       <div class="player">
         <svg class="icon">
