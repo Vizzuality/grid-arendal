@@ -4,7 +4,9 @@
   video_id = nil
 
   if ![MediaContent::TYPE_VIDEO].include?(media.type)
-    picture_url = if media.single?
+    picture_url = if media.type == MediaContent::TYPE_COLLECTION
+                    media.graphics.first.biggest_size_url
+                  elsif media.single?
                     media.biggest_size_url
                   else
                     media.photos.first.biggest_size_url
