@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :staff, controller: 'users', only: [:index, :show]
   resources :about, controller: 'about_sections', only: [:index]
   resources :search, only: [:index]
+  resources :events, only: [:show]
 
   [:publications, :activities].each do |res|
     resources res, only: [:show, :index] do

@@ -28,6 +28,13 @@ class Event < ApplicationRecord
 
   has_many :event_partners
   has_many :partners, through: :event_partners
+  has_many :event_contents, dependent: :destroy
+  has_many :activities, through: :event_contents, source: :activity
+  has_many :publications, through: :event_contents, source: :publication
+  has_many :event_users
+  has_many :users, through: :event_users
+
+  acts_as_taggable
 
   validates :title, presence: true
 

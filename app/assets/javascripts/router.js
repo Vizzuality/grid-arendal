@@ -21,6 +21,7 @@
       'about(/)': 'About#index',
       'staff/:id': 'Users#show',
       'search(/)': 'Search#index',
+      'events/:id': 'Events#show',
     },
 
     initialize: function() {
