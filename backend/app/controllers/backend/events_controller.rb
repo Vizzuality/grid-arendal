@@ -5,8 +5,8 @@ module Backend
   class EventsController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_event,              except: [:index, :new, :create]
-    before_action :set_events,             except: :index
+    before_action :set_event, except: [:index, :new, :create]
+    before_action :set_events, except: :index
     before_action :set_objects, only: [:new, :edit]
 
     def index
@@ -24,6 +24,7 @@ module Backend
         redirect_to edit_event_url(@event),
           notice: 'Event updated'
       else
+        set_objects
         render :edit
       end
     end
@@ -34,6 +35,7 @@ module Backend
         redirect_to edit_event_url(@event),
           notice: 'Event created'
       else
+        set_objects
         render :new
       end
     end
