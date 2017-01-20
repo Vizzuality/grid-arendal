@@ -3,7 +3,7 @@
   height: 100%;
 
   .event-container {
-    position: fixed;
+    /*position: fixed;
     top: rem(15px);
     background-color: #f2f5f6;
     box-shadow: 0 rem(20px) rem(20px) 0 rgba(0, 0, 0, 0.2);
@@ -16,25 +16,35 @@
     height: calc(100% - 20px);
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);*/
+
+    position: absolute;
+    top: rem(10px);
+    left: 0;
+    width: 100%;
+    height: rem(300px);
+    padding: rem(35px) rem(40px);
+    background-color: #f2f5f6;
+    box-shadow: 0 rem(20px) rem(20px) 0 rgba($black, 0.2);
+    z-index: 100;
 
     @media screen and (min-width: $screen-m) {
-      position: absolute;
-      padding: rem(70px) rem(90px);
       top: rem(70px);
-      left: 0;
-      height: 530px;
-      width: 100%;
-      transform: none;
+      height: rem(530px);
+      padding: rem(77px) rem(90px);
     }
   }
 
-  .icon {
-    width: rem(20px);
-    height: rem(20px);
+  .description {
+    margin-top: rem(20px);
+  }
+
+  .close-btn {
     position: absolute;
-    top: rem(20px);
-    right: rem(20px);
+    top: rem(17px);
+    right: rem(17px);
+    width: rem(15px);
+    height: rem(15px);
     fill: $color-1;
     opacity: 0.15;
     cursor: pointer;
@@ -42,17 +52,34 @@
 
   .event-info {
     max-width: rem(450px);
-
-    p {
-      padding: rem(20px) 0;
-
-      @media screen and (min-width: $screen-m) {
-        padding: rem(25px) 0;
-      }
-    }
   }
 
   .btn {
-    max-width: 160px;
+    max-width: rem(160px);
+    margin-top: rem(25px);
+  }
+
+  .logos {
+    position: absolute;
+    bottom: rem(20px);
+    font-size: 0;
+
+    .logo {
+      display: inline-block;
+      max-height: rem(85px);
+      margin-right: rem(15px);
+    }
+
+    @media screen and (min-width: $screen-m) {
+      bottom: rem(60px);
+
+      .logo {
+        max-height: rem(120px);
+      }
+    }
+
+    @media screen and (max-width: $screen-s) {
+      display: none;
+    }
   }
 }
