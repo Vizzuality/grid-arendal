@@ -36,6 +36,40 @@
     }
   }
 
+  .player {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: solid rem(2px) $white;
+    width: rem(30px);
+    height: rem(30px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+
+    .icon {
+      width: rem(8px);
+      height: rem(11px);
+      margin-left: rem(2px);
+      fill: $white;
+    }
+
+    @media screen and (min-width: $screen-m) {
+      width: rem(60px);
+      height: rem(60px);
+
+      .icon {
+        width: rem(16px);
+        height: rem(21px);
+        margin-left: rem(4px);
+      }
+    }
+  }
+
   @media screen and (max-width: $screen-m) {
     height: rem(350px);
   }
@@ -47,14 +81,15 @@
 
 .active {
 
-  @media screen and (min-width: $screen-m) {
-    .c-related-media-item {
+  .c-related-media-item {
+
+    .name,
+    .meta {
+      opacity: 1;
+    }
+
+    @media screen and (min-width: $screen-m) {
       height: rem(600px);
     }
-  }
-
-  .name,
-  .meta {
-    opacity: 1;
   }
 }

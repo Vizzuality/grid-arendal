@@ -1,8 +1,38 @@
+<%
+  picture_url = nil
+  video_provider = nil
+  video_id = nil
+  link = medium_path(media)
+
+  if ![MediaContent::TYPE_VIDEO].include?(media.type)
+    picture_url = if media.single?
+                    media.biggest_size_url
+                  else
+                    media.photos.first.biggest_size_url
+                  end
+  else
+    if media.external_url.include?(Video::PROVIDER_YOUTUBE)
+      video_provider = Video::PROVIDER_YOUTUBE
+      video_id = media.external_url.split('=').last
+    elsif media.external_url.include?(Video::PROVIDER_VIMEO)
+      video_provider = Video::PROVIDER_VIMEO
+      video_id = media.external_url.split('/').last
+    end
+    link = link + "?autoplay=1"
+  end
+%>
 <div class="js_slide slide <% if index == 0 %>active<% end %>">
-  <div id="<%= index %>" class="c-related-media-item" style="background-image: url('<%= picture %>')" data-link="<%= link %>">
-    <div class="text -image-cap name"><%= title %></div>
+  <div id="<%= index %>" class="c-related-media-item js-video-thumbnail" data-link="<%= link %>" <% if video_id.present? %>data-video-id="<%= video_id %>" data-video-provider="<%= video_provider %>"<% else %>style="background-image: url('<%= picture_url %>')"<% end %>>
+    <% if media.type == MediaContent::TYPE_VIDEO %>
+      <div class="player">
+        <svg class="icon">
+          <use xlink:href="#icon-play"></use>
+        </svg>
+      </div>
+    <% end %>
+    <div class="text -image-cap name"><%= media.title %></div>
     <div class="text -related-image-meta meta">
-      <%= author.present? ? author + ' | ' : ''%>
-      <%= date.strftime("%d %b %Y") %></div>
+      <%= media.author.present? ? media.author + ' | ' : ''%>
+      <%= media.publication_date.strftime("%d %b %Y") %></div>
   </div>
 </div>

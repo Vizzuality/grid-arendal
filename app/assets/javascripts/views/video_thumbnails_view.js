@@ -9,7 +9,7 @@
     el: 'body',
 
     options: {
-      cardPictureClass: ".card-pic[data-video-id]",
+      cardPictureClass: ".js-video-thumbnail[data-video-id]",
       cardVideoDataAttr: "video-id",
       cardVideoProviderDataAttr: "video-provider",
       vimeoAPIUrl: "http://vimeo.com/api/v2/video/_VIDEO_ID_.json",

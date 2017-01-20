@@ -40,7 +40,7 @@
 <div class="item js_slide slide">
   <%= link_to medium_path(media) do %>
     <article class="c-card <% if needSteps %>-card-steps<% end %>" data-card-type="media">
-      <div class="card-pic" <% if video_id.present? %>data-video-id="<%= video_id %>" data-video-provider="<%= video_provider %>"<% else %>style="background-image: url('<%= picture_url %>')"<% end %>></div>
+      <div class="card-pic js-video-thumbnail" <% if video_id.present? %>data-video-id="<%= video_id %>" data-video-provider="<%= video_provider %>"<% else %>style="background-image: url('<%= picture_url %>')"<% end %>></div>
       <% if media.type == MediaContent::TYPE_VIDEO %>
         <div class="card-player">
           <svg class="icon">
