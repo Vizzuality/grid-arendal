@@ -1,12 +1,9 @@
 <% picture_url = case media.type
-                   when MediaContent::TYPE_ALBUM
-                     photo = media.photos.order("id ASC").first
+                   when MediaContent::TYPE_ALBUM, MediaContent::TYPE_COLLECTION
+                     photo = media.items.order("id ASC").first
                      photo ? photo.photo_sizes.where(label: PhotoSize::MEDIUM).first.try(:url) : nil
                    when MediaContent::TYPE_PHOTO, MediaContent::TYPE_GRAPHIC
                      media.photo_sizes.where(label: PhotoSize::MEDIUM).first.try(:url)
-                   when MediaContent::TYPE_COLLECTION
-                     photo = media.graphics.order("id ASC").first
-                     photo ? photo.photo_sizes.where(label: PhotoSize::MEDIUM).first.try(:url) : nil
                    else
                      nil
                  end
