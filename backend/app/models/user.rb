@@ -68,6 +68,7 @@ class User < ApplicationRecord
   scope :board_members, -> { where(is_board_member: true)}
   scope :regular_staff, -> { where(is_board_member: false)}
   scope :with_category, -> { where.not(position_category: ['', nil])}
+  scope :randomize, -> { order('random()') }
 
   POSITION_CATEGORIES = ["Managing Director", "Administration Team", "Finance", "Staff", "Consultants & Interns"]
 
