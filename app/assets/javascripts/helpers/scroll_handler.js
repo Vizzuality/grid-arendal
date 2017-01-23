@@ -10,19 +10,31 @@
       animateDelay: 500
     },
 
-    scrollTo: function(element) {
+    scrollTo: function(element, isAnimated) {
+      if(typeof isAnimated === "undefined") {
+        isAnimated = true;
+      }
       var offsetTop = this._getElementTopOffset(element);
-      this._animateScroll(offsetTop);
+
+      if(isAnimated){
+        this._animatedScroll(offsetTop);
+      } else {
+        this._unanimatedScroll(offsetTop)
+      }
     },
 
     _getElementTopOffset: function(element) {
       return element.offset().top;
     },
 
-    _animateScroll: function(offsetTop) {
+    _animatedScroll: function(offsetTop) {
       $('html, body').animate({
         scrollTop: offsetTop
       }, this.options.animateDelay);
+    },
+
+    _unanimatedScroll: function(offsetTop) {
+      $('html, body').scrollTop(offsetTop);
     },
 
   });
