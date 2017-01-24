@@ -9,12 +9,12 @@ module Backend
     before_action :set_activities_limit, only: [:index, :edit, :new, :paginate]
     before_action :set_page_param, only: [:index, :edit, :new, :paginate]
     before_action :set_activities, only: [:index, :edit, :new]
+    before_action :set_activity, only: [:edit, :destroy]
 
     def index
     end
 
     def edit
-      @activity = Activity.find(params[:id])
     end
 
     def new
@@ -49,7 +49,6 @@ module Backend
     end
 
     def destroy
-      @activity = Activity.find(params[:id])
       if @activity.destroy
         redirect_to activities_url
       end
@@ -119,6 +118,10 @@ module Backend
         @tags = Tag.order(:name)
         @photos = Photo.order("publication_date DESC").includes(:photo_sizes).
           limit(20)
+      end
+
+      def set_activity
+        @activity = Activity.find(params[:id])
       end
 
       def set_activities

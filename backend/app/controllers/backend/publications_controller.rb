@@ -9,12 +9,12 @@ module Backend
     before_action :set_publications_limit, only: [:index, :edit, :new, :paginate]
     before_action :set_page_param, only: [:index, :edit, :new, :paginate]
     before_action :set_publications, only: [:index, :edit, :new]
+    before_action :set_publication, only: [:edit, :destroy]
 
     def index
     end
 
     def edit
-      @publication = Publication.find(params[:id])
     end
 
     def new
@@ -49,7 +49,6 @@ module Backend
     end
 
     def destroy
-      @publication = Publication.find(params[:id])
       if @publication.destroy
         redirect_to publications_url
       end
@@ -119,6 +118,10 @@ module Backend
           limit(20)
         @news_articles = NewsArticle.order(:title)
         @activities = Activity.order(:title)
+      end
+
+      def set_publication
+        @publication = Publication.find(params[:id])
       end
 
       def set_publications
