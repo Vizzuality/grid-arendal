@@ -25,7 +25,7 @@
     <div class="small-12 small-centered columns">
       <div class="c-slider slider js_slider" data-slider-type="card">
         <div class="frame js_frame">
-          <div class="masonry-layout slides js_slides" data-columns="4">
+          <div class="masonry-layout masonry-1-1-2-4 slides js_slides" data-columns="4">
             <% news.each do |article| %>
               <%= render 'shared/news_card', article: article %>
             <% end %>
