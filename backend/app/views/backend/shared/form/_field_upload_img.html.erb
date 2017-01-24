@@ -1,8 +1,15 @@
-<% field_class ||= '' %>
+<%
+  field_class ||= ''
+  fix_input_class = 'fake-input'
+  if have_picture
+    fix_input_class = fix_input_class + ' -have-picture'
+  end
+%>
+
 <div class="field <%= field_class %>" data-type="picture">
   <%= form.label value, label_txt, class: 'text -field-label -bold -dark' %>
   <%= form.file_field value, label: false, class: 'file_input' %>
-  <%= form.label value, class: 'fake-input' do %>
+  <%= form.label value, class: fix_input_class do %>
     <div class="tip">
       <svg class="icon">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-img"></use>
