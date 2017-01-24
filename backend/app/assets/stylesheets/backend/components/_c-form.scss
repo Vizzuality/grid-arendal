@@ -380,7 +380,7 @@ $photo-list-shadow-gap: rem(4px);
 
           &:hover {
 
-            + .fake-input {
+            + .fake-input:not(.-have-picture) {
 
               .current_picture {
                 opacity: 0;
@@ -429,8 +429,35 @@ $photo-list-shadow-gap: rem(4px);
             height: 100%;
             background-size: cover;
             background-repeat: no-repeat;
+            background-position: center;
             opacity: 0.3;
             transition: opacity 0.2s ease-out;
+
+            &.-vertical {
+              background-size: contain;
+            }
+          }
+
+          &.-have-picture {
+
+            .icon {
+              display: none;
+            }
+
+            p {
+              position: absolute;
+              left: 0;
+              bottom: rem(-20px);
+              width: 100%;
+              padding: 0;
+              margin: 0;
+              text-align: left;
+              opacity: 1;
+            }
+
+            .current_picture {
+              opacity: 1;
+            }
           }
         }
       }

@@ -6,11 +6,23 @@
 
   App.View.Masonry = Backbone.View.extend({
 
-    initialize: function() {
+    initialize: function(settings) {
       if (!this.el) {
         return;
       }
-      salvattore.init(this.el, this.showGrid.bind(this));
+      this.callback = settings.callback ? settings.callback : null;
+      this._loadGrid();
+    },
+
+    _loadGrid:function () {
+      salvattore.init(this.el, this._salvattoreCallback.bind(this));
+    },
+
+    _salvattoreCallback: function () {
+      this.showGrid();
+      if(this.callback !== null) {
+        this.callback();
+      }
     },
 
     showGrid: function() {
