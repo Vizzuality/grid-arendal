@@ -7,19 +7,34 @@
   App.Controller.About = App.Controller.Page.extend({
 
     index: function() {
-      new App.View.Anchors({});
+      this.anchorsView = new App.View.Anchors({});
       new App.View.StaffCategories();
       if(this.isScreen_s) {
         this.initSliders();
       } else {
-        _.each($('.masonry-layout'), function(element) {
+        var masonryLayout = $('.masonry-layout');
+        var masonryCallback = this.getMasonryCallback();
+
+        _.each(masonryLayout, function(element, index) {
           if($(element).find('.masonry-column').length === 0) {
             new App.View.Masonry({
-              el: element
+              el: element,
+              callback: masonryLayout.length === index + 1 ? masonryCallback : null
             });
           }
         });
       }
+    },
+
+    getMasonryCallback: function() {
+      if($(window.location.hash).length > 0) {
+        return this.goToBlock.bind(this, window.location.hash);
+      }
+      return null;
+    },
+
+    goToBlock: function (hash) {
+      this.anchorsView.scrollHandler.scrollTo($(hash), false);
     },
 
     initSliders: function() {
