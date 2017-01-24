@@ -16,7 +16,6 @@
     },
 
     show: function(params) {
-      console.log(params);
       new App.View.Form({});
       new App.View.IndexItems({});
       this.indexPaginationView = new App.View.IndexPagination({

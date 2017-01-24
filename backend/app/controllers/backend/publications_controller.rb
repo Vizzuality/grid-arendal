@@ -6,8 +6,9 @@ module Backend
     load_and_authorize_resource
 
     before_action :set_objects, only: [:new, :edit]
-    before_action :publications
-
+    before_action :set_publications_limit, only: [:index, :edit, :new, :paginate]
+    before_action :set_page_param, only: [:index, :edit, :new, :paginate]
+    before_action :set_publications, only: [:index, :edit, :new]
 
     def index
     end
@@ -26,6 +27,9 @@ module Backend
           notice: 'Publication updated'
       else
         set_objects
+        set_publications_limit
+        set_page_param
+        set_publications
         render :edit
       end
     end
@@ -37,6 +41,9 @@ module Backend
           notice: 'Publication created'
       else
         set_objects
+        set_publications_limit
+        set_page_param
+        set_publications
         render :new
       end
     end
@@ -80,14 +87,23 @@ module Backend
       end
     end
 
+    def paginate
+      @publications = Publication.order("content_date DESC")
+                      .limit(@publications_limit)
+                      .offset(@publications_limit * (@page - 1))
+      @publication_id = params[:id].present? ? params[:id].to_i : nil
+      respond_to do |format|
+        if(@publications.empty?)
+          head :no_content
+        end
+        format.js
+      end
+    end
+
     private
 
       def publication_params
         params.require(:publication).permit!
-      end
-
-      def publications
-        @publications = Publication.order("content_date DESC")
       end
 
       def set_objects
@@ -104,5 +120,18 @@ module Backend
         @news_articles = NewsArticle.order(:title)
         @activities = Activity.order(:title)
       end
+
+      def set_publications
+        @publications = Publication.order("content_date DESC").limit(@publications_limit)
+      end
+
+      def set_page_param
+        @page = params[:page].present? ? params[:page].to_i : 1
+      end
+
+      def set_publications_limit
+        @publications_limit = 30
+      end
+
   end
 end
