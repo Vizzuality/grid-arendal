@@ -1,5 +1,8 @@
 <% if @activities.any? %>
   $(function(){
-    $('.l-items-index .items-list').html("<%= escape_javascript(render("activities", activities: @activities )) %>");
+    $('.l-items-index .items-list')
+      .append(
+        "<% @activities.each do |activity| %> <%= escape_javascript( render 'backend/shared/index_item', item: activity, title: activity.title, selected: (@activity_id == activity.id) ) %> <% end %>"
+      );
   });
 <% end %>

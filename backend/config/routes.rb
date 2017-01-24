@@ -22,17 +22,18 @@ Backend::Engine.routes.draw do
     patch 'make_admin',       on: :member
     patch 'make_publisher',   on: :member
     patch 'make_contributor', on: :member
+    get :paginate, on: :collection, defaults: { format: 'js' }
   end
-
-  resources :partners,       except: :show
 
   resources :about_sections, except: :show do
     post :sort, on: :collection
+    get :paginate, on: :collection, defaults: { format: 'js' }
   end
 
   resources :site_sections, except: [:show, :new, :create]
   resources :news_articles,  except: [:show, :new, :create] do
     get :fetch, on: :collection
+    get :paginate, on: :collection, defaults: { format: 'js' }
   end
 
   [:publications, :activities].each do |res|
@@ -41,54 +42,49 @@ Backend::Engine.routes.draw do
       patch 'unpublish', on: :member
       patch 'make_featured', on: :member
       patch 'remove_featured', on: :member
+      get :paginate, on: :collection, defaults: { format: 'js' }
     end
   end
 
   resources :vacancies, except: [:show] do
     patch 'publish', on: :member
     patch 'unpublish', on: :member
+    get :paginate, on: :collection, defaults: { format: 'js' }
   end
 
   resources :events, except: :show do
     patch 'deactivate', on: :member
     patch 'activate',   on: :member
+    get :paginate, on: :collection, defaults: { format: 'js' }
   end
 
+  resources :partners, except: :show
   resources :content_types, except: :show
+  resources :tags, except: :show do
+    get :paginate, on: :collection, defaults: { format: 'js' }
+  end
 
-  resources :tags, except: :show
+  resources :collections, except: [:show]
+  resources :albums, except: [:show] do
+    patch 'make_featured', on: :member
+    patch 'remove_featured', on: :member
+    get 'flickr_update', on: :member
+    get :paginate, on: :collection, defaults: { format: 'js' }
+  end
 
   resources :photos, except: [:new, :create, :show] do
     patch 'make_featured',   on: :member
     patch 'remove_featured', on: :member
     get 'search', on: :collection
+    get :paginate, on: :collection, defaults: { format: 'js' }
   end
 
-  resources :albums, except: [:show] do
-    patch 'make_featured', on: :member
-    patch 'remove_featured', on: :member
-    get 'flickr_update', on: :member
-  end
-
-  resources :videos, except: :show do
-    patch 'make_featured',   on: :member
-    patch 'remove_featured', on: :member
-  end
-
+  resources :graphics, except: [:new, :create, :show]
+  resources :videos, except: :show
   resources :video_collections, except: :show do
-    patch 'make_featured', on: :member
-    patch 'remove_featured', on: :member
-  end
-
-  resources :collections, except: [:show] do
-    patch 'make_featured', on: :member
-    patch 'remove_featured', on: :member
-    get 'flickr_update', on: :member
-  end
-
-  resources :graphics, except: [:new, :create, :show] do
     patch 'make_featured',   on: :member
     patch 'remove_featured', on: :member
+    get :paginate, on: :collection, defaults: { format: 'js' }
   end
 
   root to: 'admin_home#index'

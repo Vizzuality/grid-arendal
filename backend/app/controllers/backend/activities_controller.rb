@@ -7,7 +7,7 @@ module Backend
 
     before_action :set_objects, only: [:new, :edit]
     before_action :set_activities_limit, only: [:index, :edit, :new, :paginate]
-    before_action :set_page_param, only: [:index, :edit, :new]
+    before_action :set_page_param, only: [:index, :edit, :new, :paginate]
     before_action :set_activities, only: [:index, :edit, :new]
 
     def index
@@ -91,6 +91,7 @@ module Backend
       @activities = Activity.order(:title)
                       .limit(@activities_limit)
                       .offset(@activities_limit * (@page - 1))
+      @activity_id = params[:id].present? ? params[:id].to_i : nil
       respond_to do |format|
         if(@activities.empty?)
           head :no_content

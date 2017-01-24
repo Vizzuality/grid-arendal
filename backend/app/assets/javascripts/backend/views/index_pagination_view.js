@@ -6,7 +6,7 @@
 
   App.View.IndexPagination = Backbone.View.extend({
 
-    el: 'body',
+    el: '.l-items-index .items-list',
 
     options: {
       loaderClass: "js-scroll-pagination-loader"
@@ -18,7 +18,6 @@
       this.callback = settings.callback;
 
       this._initVariables();
-      this._checkCurrentPage();
       this._loadOnScrollEvent();
     },
 
@@ -28,41 +27,22 @@
       this.blockPagination = false;
     },
 
-    _checkCurrentPage: function() {
-      var params = App.Helper.Utils.getGetParams();
-      if(typeof params['page'] !== "undefined") {
-        this.page = parseInt(params['page']);
-      }
-    },
-
     _updatePage: function(value) {
       this.page = value;
     },
 
-    _setHash: function () {
-      var params = App.Helper.Utils.getGetParams();
-      params['page'] = this.page;
-
-      var query = '';
-      _.each(params, function (value, index) {
-        query += '&' + index + '=' + value;
-      });
-    },
-
     _loadOnScrollEvent: function() {
-      $(window).on('scroll', function() {
-        if ($(window).scrollTop() > $(document).height() - $(window).height() - 50 ) {
+      this.$el.on('scroll', function() {
+        if (this.$el.scrollTop() >= (this.$el[0].scrollHeight - this.$el.height())) {
           this._onScrollLoadPage();
         }
       }.bind(this));
     },
 
     _onScrollLoadPage: function() {
-      var pageScrollLimit = $(document).height() - ($(window).height() * 2);
       if(
         !this.blockPagination &&
-        !this.doingCallback &&
-        $(window).scrollTop() > pageScrollLimit
+        !this.doingCallback
       ) {
         this.toggleDoingCallback();
         this._updatePage(this.page + 1);
@@ -79,15 +59,15 @@
     },
 
     showLoader: function() {
-      $(this.options.contentClass).append(this.getLoaderHTML());
+      this.$el.append(this._getLoaderHTML());
     },
 
     hideLoader: function() {
       $("." + this.options.loaderClass).remove();
     },
 
-    getLoaderHTML: function() {
-      return '<div class="row ' + this.options.loaderClass + '"><div class="small-12 column"><div class="c-loader"><div class="sk-circle0 sk-child"></div><div class="sk-circle1 sk-child"></div><div class="sk-circle2 sk-child"></div><div class="sk-circle3 sk-child"></div><div class="sk-circle4 sk-child"></div><div class="sk-circle5 sk-child"></div><div class="sk-circle6 sk-child"></div><div class="sk-circle7 sk-child"></div><div class="sk-circle8 sk-child"></div><div class="sk-circle9 sk-child"></div><div class="sk-circle10 sk-child"></div><div class="sk-circle11 sk-child"></div></div></div></div>';
+    _getLoaderHTML: function() {
+      return '<div class="c-loader ' + this.options.loaderClass + '"><div class="sk-circle0 sk-child"></div><div class="sk-circle1 sk-child"></div><div class="sk-circle2 sk-child"></div><div class="sk-circle3 sk-child"></div><div class="sk-circle4 sk-child"></div><div class="sk-circle5 sk-child"></div><div class="sk-circle6 sk-child"></div><div class="sk-circle7 sk-child"></div><div class="sk-circle8 sk-child"></div><div class="sk-circle9 sk-child"></div><div class="sk-circle10 sk-child"></div><div class="sk-circle11 sk-child"></div></div>';
     }
 
   });
