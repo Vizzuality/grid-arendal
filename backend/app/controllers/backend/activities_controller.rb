@@ -6,18 +6,18 @@ module Backend
     load_and_authorize_resource
 
     before_action :set_objects, only: [:new, :edit]
+    before_action :set_activities_limit, only: [:index, :edit, :new, :paginate]
+    before_action :set_page_param, only: [:index, :edit, :new]
+    before_action :set_activities, only: [:index, :edit, :new]
 
     def index
-      @activities = Activity.order(:title)
     end
 
     def edit
-      @activities = Activity.order(:title)
       @activity = Activity.find(params[:id])
     end
 
     def new
-      @activities = Activity.order(:title)
       @activity = Activity.new
     end
 
@@ -27,7 +27,9 @@ module Backend
           notice: 'Activity updated'
       else
         set_objects
-        @activities = Activity.order(:title)
+        set_activities_limit
+        set_page_param
+        set_activities
         render :edit
       end
     end
@@ -39,7 +41,9 @@ module Backend
           notice: 'Activity created'
       else
         set_objects
-        @activities = Activity.order(:title)
+        set_activities_limit
+        set_page_param
+        set_activities
         render :new
       end
     end
@@ -83,6 +87,18 @@ module Backend
       end
     end
 
+    def paginate
+      @activities = Activity.order(:title)
+                      .limit(@activities_limit)
+                      .offset(@activities_limit * (@page - 1))
+      respond_to do |format|
+        if(@activities.empty?)
+          head :no_content
+        end
+        format.js
+      end
+    end
+
     private
 
       def activity_params
@@ -102,6 +118,18 @@ module Backend
         @tags = Tag.order(:name)
         @photos = Photo.order("publication_date DESC").includes(:photo_sizes).
           limit(20)
+      end
+
+      def set_activities
+        @activities = Activity.order(:title).limit(@activities_limit)
+      end
+
+      def set_page_param
+        @page = params[:page].present? ? params[:page].to_i : 1
+      end
+
+      def set_activities_limit
+        @activities_limit = 30
       end
   end
 end
