@@ -1,0 +1,25 @@
+<%
+  label_txt ||= nil
+  disabled ||= true
+  note_txt ||= nil
+  object ||= nil
+%>
+
+<div class="field">
+  <label class="text -field-label -bold -dark"><%= label_txt %></label>
+  <input class="basic-input text -plain-text -dark" <% if disabled %>disabled="disabled"<% end %> type="text" value="<%= value %>">
+  <% if note_txt %>
+    <div class="options">
+      <div class="text -field-note dark">
+        <%= note_txt %>
+      </div>
+    </div>
+  <% end %>
+  <% if object %>
+    <%= link_to [:edit, object], class: 'input-link btn -dark' do %>
+      <svg class="icon">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-preview"></use>
+      </svg>
+    <% end %>
+  <% end %>
+</div>

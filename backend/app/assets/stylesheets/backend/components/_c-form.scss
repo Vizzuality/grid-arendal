@@ -203,6 +203,19 @@ $photo-list-shadow-gap: rem(4px);
         @extend %input-defaults;
       }
 
+      .input-link {
+        position: absolute;
+        right: rem(7px);
+        bottom: rem(7px);
+
+        .icon {
+          width: rem(18px);
+          height: rem(12px);
+          margin-left: rem(-5px);
+          fill: $white;
+        }
+      }
+
       select {
         height: $input-min-height;
         @extend %input-defaults;
