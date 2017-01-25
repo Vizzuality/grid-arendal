@@ -1,8 +1,0 @@
-<% if @news_articles.any? %>
-  $(function(){
-    $('.l-items-index .items-list')
-      .append(
-        "<% @news_articles.each do |news_article| %> <%= escape_javascript( render 'backend/shared/index_item', item: news_article, title: news_article.title, selected: (@news_article_id == news_article.id) ) %> <% end %>"
-      );
-  });
-<% end %>

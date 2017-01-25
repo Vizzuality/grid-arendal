@@ -87,15 +87,15 @@ module Backend
     end
 
     def paginate
-      @activities = Activity.order(:title)
+      @items = Activity.order(:title)
                       .limit(@activities_limit)
                       .offset(@activities_limit * (@page - 1))
-      @activity_id = params[:id].present? ? params[:id].to_i : nil
+      @item_id = params[:id].present? ? params[:id].to_i : nil
       respond_to do |format|
-        if(@activities.empty?)
+        if(@items.empty?)
           head :no_content
         end
-        format.js
+        format.js { render 'backend/shared/index_items_paginate' }
       end
     end
 

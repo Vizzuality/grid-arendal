@@ -40,15 +40,15 @@ module Backend
     end
 
     def paginate
-      @news_articles = NewsArticle.order(:title)
+      @items = NewsArticle.order(:title)
                       .limit(@news_limit)
                       .offset(@news_limit * (@page - 1))
-      @news_article_id = params[:id].present? ? params[:id].to_i : nil
+      @item_id = params[:id].present? ? params[:id].to_i : nil
       respond_to do |format|
-        if(@news_articles.empty?)
+        if(@items.empty?)
           head :no_content
         end
-        format.js
+        format.js { render 'backend/shared/index_items_paginate' }
       end
     end
 

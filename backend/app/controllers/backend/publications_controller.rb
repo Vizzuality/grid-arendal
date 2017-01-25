@@ -87,15 +87,15 @@ module Backend
     end
 
     def paginate
-      @publications = Publication.order("content_date DESC")
+      @items = Publication.order("content_date DESC")
                       .limit(@publications_limit)
                       .offset(@publications_limit * (@page - 1))
-      @publication_id = params[:id].present? ? params[:id].to_i : nil
+      @item_id = params[:id].present? ? params[:id].to_i : nil
       respond_to do |format|
-        if(@publications.empty?)
+        if(@items.empty?)
           head :no_content
         end
-        format.js
+        format.js { render 'backend/shared/index_items_paginate' }
       end
     end
 

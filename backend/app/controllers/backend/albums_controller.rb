@@ -5,9 +5,11 @@ module Backend
   class AlbumsController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_album, except: [:index, :new, :create]
-    before_action :set_albums, only: [:index, :edit, :new]
     before_action :set_objects, only: [:edit]
+    before_action :set_albums_limit, only: [:index, :edit, :new, :paginate]
+    before_action :set_page_param, only: [:index, :edit, :new, :paginate]
+    before_action :set_albums, only: [:index, :edit, :new]
+    before_action :set_album, only: [:edit, :destroy]
 
     def index
     end
@@ -29,8 +31,10 @@ module Backend
         redirect_to edit_album_url(@album),
           notice: 'Album updated'
       else
-        set_albums
         set_objects
+        set_albums_limit
+        set_page_param
+        set_albums
         render :edit
       end
     end
@@ -62,6 +66,19 @@ module Backend
       end
     end
 
+    def paginate
+      @items = Album.order("publication_date DESC")
+                      .limit(@albums_limit)
+                      .offset(@albums_limit * (@page - 1))
+      @item_id = params[:id].present? ? params[:id].to_i : nil
+      respond_to do |format|
+        if(@items.empty?)
+          head :no_content
+        end
+        format.js { render 'backend/shared/index_items_paginate' }
+      end
+    end
+
     private
 
       def album_params
@@ -74,7 +91,7 @@ module Backend
       end
 
       def set_albums
-        @albums = Album.order("publication_date DESC")
+        @albums = Album.order("publication_date DESC").limit(@albums_limit)
       end
 
       def set_objects
@@ -82,6 +99,14 @@ module Backend
         @publications = Publication.order(:title)
         @activities = Activity.order(:title)
         @news_articles = NewsArticle.order(:title)
+      end
+
+      def set_page_param
+        @page = params[:page].present? ? params[:page].to_i : 1
+      end
+
+      def set_albums_limit
+        @albums_limit = 30
       end
   end
 end

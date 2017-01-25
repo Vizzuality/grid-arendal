@@ -1,8 +1,0 @@
-<% if @publications.any? %>
-  $(function(){
-    $('.l-items-index .items-list')
-      .append(
-        "<% @publications.each do |publication| %> <%= escape_javascript( render 'backend/shared/index_item', item: publication, title: publication.title, selected: (@publication_id == publication.id) ) %> <% end %>"
-      );
-  });
-<% end %>
