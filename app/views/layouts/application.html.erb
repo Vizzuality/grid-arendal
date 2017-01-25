@@ -9,7 +9,10 @@
 
     <% if @section %>
       <%= render 'shared/social_cards', title: @section.title,
-        description: @section.social_description.presence %>
+        description: @section.social_description.presence,
+        img_src: @section.photo && @section.photo.photo_sizes.
+          where(label: PhotoSize::MEDIUM).try(:url)
+      %>
     <% else %>
       <%= yield :social_cards %>
     <% end %>

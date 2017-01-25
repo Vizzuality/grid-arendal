@@ -1,5 +1,6 @@
 <% title ||= "GRID-Arendal Website" %>
 <% description ||= "GRID-Arendal is a Norwegian foundation working closely with the United Nations Environment. We are working on projects all around the world on biodiversity, environmental crime, climate change and Indigenous Peoples." %>
+<% img_src ||= "" %>
 
 <meta itemprop="name" content="<%= title %>">
 <meta itemprop="description" content="<%= description %>">
@@ -10,12 +11,12 @@
 <meta name="twitter:title" content="<%= title %>"/>
 <meta name="twitter:creator" content="@vizzuality"/>
 <meta name="twitter:description" value="<%= description %>"/>
-<meta name="twitter:card" value=""/>
-<meta name="twitter:image:src" content=""/>
+<meta name="twitter:card" value="<%= description %>"/>
+<meta name="twitter:image:src" content="<%= img_src %>"/>
 
 <!-- Open Graph data -->
 <meta property="og:title" content="<%= title %>"/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="<%= request.original_url %>"/>
-<meta property="og:image" content=""/>
+<meta property="og:image" content="<%= img_src %>"/>
 <meta property="og:description" content="<%= description %>"/>
