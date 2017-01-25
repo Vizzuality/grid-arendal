@@ -11,7 +11,10 @@
     },
 
     options: {
-      currentPictureClass: ".current_picture"
+      fakeInputClass: ".fake-input",
+      currentPictureClass: ".current_picture",
+      verticalPictureClass: "-vertical",
+      havePictureClass: "-have-picture"
     },
 
     initialize: function() {
@@ -51,7 +54,20 @@
     },
 
     _setPictureBackground: function (self, e) {
-      self.$el.siblings().find(self.options.currentPictureClass).css("background-image", "url('" + e.target.result + "')");
+      var image = new Image();
+      image.src = e.target.result;
+
+      image.onload = function() {
+        var isVertical = this.height > this.width;
+        var fakeInput = self.$el.siblings(self.options.fakeInputClass);
+        var currentPicture = self.$el.siblings().find(self.options.currentPictureClass);
+
+        fakeInput.addClass(self.options.havePictureClass);
+        currentPicture.css("background-image", "url('" + e.target.result + "')");
+        if(isVertical) {
+          currentPicture.addClass(self.options.verticalPictureClass);
+        }
+      };
     },
 
     _setDocumentFilename: function (self, e) {

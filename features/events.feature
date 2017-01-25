@@ -21,7 +21,6 @@ I want to edit, create, view events
     Given I am authenticated adminuser
     When I go to the new event page
     And I fill in "Title" with "Event new"
-    And I fill in "Web url" with "event-new-sample.org"
     And I press "SAVE"
     Then I should have one event
     And I should see "Event new"
@@ -30,7 +29,6 @@ I want to edit, create, view events
     Given I am authenticated adminuser
     When I go to the new event page
     And I fill in "Title" with ""
-    And I fill in "Web url" with "event-new-sample.org"
     And I press "SAVE"
     Then I should have zero events
     And I should see "can't be blank"
