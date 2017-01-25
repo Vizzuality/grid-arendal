@@ -52,6 +52,9 @@
       'manage/tags': 'BackOfficeHome#index',
       'manage/tags/:id(/:action)': 'BackOfficeHome#show',
       'manage/tags/new': 'BackOfficeHome#show',
+      'manage/site_sections': 'BackOfficeHome#index',
+      'manage/site_sections/:id(/:action)': 'BackOfficeHome#show',
+      'manage/site_sections/new': 'BackOfficeHome#show',
     },
 
     initialize: function() {

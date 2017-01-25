@@ -1,8 +1,15 @@
 <%= render 'backend/shared/form/header', form: form,
-  inputs: [{value: :section, title_placeholder: 'Activity title'}],
+  inputs: [{value: :title, title_placeholder: 'Site Section title'}],
   preview_url: false %>
 
 <div class="fields">
+  <%= render 'backend/shared/form/field_select', form: form,
+    value: :section, collection: SiteSection::SECTIONS,
+    include_blank: false, label_txt: "Site Section", input_as: :select %>
+
   <%= render 'backend/shared/form/field_textarea', form: form,
     value: :description %>
+
+  <%= render 'backend/shared/form/field_textarea', form: form,
+    value: :social_description %>
 </div>
