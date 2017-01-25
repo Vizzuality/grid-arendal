@@ -10,6 +10,11 @@
   <%= render 'backend/shared/form/field_textarea', form: form,
     value: :description %>
 
+  <%= render 'backend/shared/form/field_photos', form: form, value: :photo_id,
+    label_txt: 'Social Media Picture',
+    photos: photos, selected_id: photo_id, with_search: true,
+    js_trigger_class: 'js-select-photo' %>
+
   <%= render 'backend/shared/form/field_textarea', form: form,
     value: :social_description %>
 </div>
