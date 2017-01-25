@@ -1,3 +1,8 @@
+<% content_for :social_cards do %>
+  <%= render 'shared/social_cards', title: @section.title,
+    description: @section.social_description %>
+<% end %>
+
 <div class="l-header-home">
   <div class="overlay"></div>
   <div class="header-slider"></div>

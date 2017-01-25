@@ -5,19 +5,14 @@
     <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
     <meta name="turbolinks-cache-control" content="no-cache">
 
-    <!-- Twitter Card data -->
-     <meta name="twitter:site" content="@GRIDArendal"/>
-     <meta name="twitter:title" content="GRid Arendal"/>
-     <meta name="twitter:description" value=""/>
-     <meta name="twitter:card" value=""/>
-     <meta name="twitter:image:src" content=""/>
+    <meta name="description" content="GRID-Arendal is a Norwegian foundation working closely with the United Nations Environment. We are working on projects all around the world on biodiversity, environmental crime, climate change and Indigenous Peoples."/>
 
-     <!-- Open Graph data -->
-     <meta property="og:title" content="GRid Arendal"/>
-     <meta property="og:type" content="website"/>
-     <meta property="og:url" content=""/>
-     <meta property="og:image" content=""/>
-     <meta property="og:description" content=""/>
+    <% if @section %>
+      <%= render 'shared/social_cards', title: @section.title,
+        description: @section.social_description.presence %>
+    <% else %>
+      <%= yield :social_cards %>
+    <% end %>
 
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
