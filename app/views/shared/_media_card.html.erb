@@ -11,14 +11,8 @@
   video_provider = nil
   video_id = nil
   if [MediaContent::TYPE_VIDEO, MediaContent::TYPE_VIDEO_COLLECTION].include?(media.type)
-    video = media.type == MediaContent::TYPE_VIDEO_COLLECTION ? media.videos.order("id ASC").first : media
-    if video.present? && video.external_url.include?(Video::PROVIDER_YOUTUBE)
-      video_provider = Video::PROVIDER_YOUTUBE
-      video_id = video.external_url.split('=').last
-    elsif video.present? && video.external_url.include?(Video::PROVIDER_VIMEO)
-      video_provider = Video::PROVIDER_VIMEO
-      video_id = video.external_url.split('/').last
-    end
+    video_provider = media.video_provider
+    video_id = media.video_id
   end
 
   photos_count = media.type == MediaContent::TYPE_ALBUM ? media.photos.size : 0

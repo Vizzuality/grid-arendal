@@ -16,13 +16,8 @@
     is_vertical = biggest.is_vertical?
     picture_url = biggest.url
   else
-    if media.external_url.include?(Video::PROVIDER_YOUTUBE)
-      video_provider = Video::PROVIDER_YOUTUBE
-      video_id = media.external_url.split('=').last
-    elsif media.external_url.include?(Video::PROVIDER_VIMEO)
-      video_provider = Video::PROVIDER_VIMEO
-      video_id = media.external_url.split('/').last
-    end
+    video_provider = media.video_provider
+    video_id = media.video_id
   end
 %>
 <div class="js_slide slide <% if index == 0 %>active<% end %>">
