@@ -52,7 +52,7 @@ class Publication < Content
         end
       end
 
-      publications = Publication.by_published.order("content_date DESC")
+      publications = Publication.by_published.order(content_date: :desc)
       publications = publications.by_tags(tags)   if tags.present?
       publications = publications.by_type(type)   if type.present?
       publications = publications.by_partners(partners)   if partners.present?
