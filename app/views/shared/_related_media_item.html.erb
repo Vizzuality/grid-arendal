@@ -5,13 +5,7 @@
   video_id = nil
 
   if ![MediaContent::TYPE_VIDEO].include?(media.type)
-    photo = if media.type == MediaContent::TYPE_COLLECTION
-                    media.graphics.first
-                  elsif media.single?
-                    media
-                  else
-                    media.photos.first
-                  end
+    photo = media.first_item
     biggest = photo.biggest_size
     is_vertical = biggest.is_vertical?
     picture_url = biggest.url
