@@ -1,7 +1,5 @@
 <%
   if ![MediaContent::TYPE_VIDEO, MediaContent::TYPE_VIDEO_COLLECTION].include?(@media_content.type)
-    picture_url = ""
-    is_vertical = false
     photo = @media_content.first_item
     biggest = photo.biggest_size
     is_vertical = biggest.is_vertical?
