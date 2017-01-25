@@ -17,4 +17,16 @@
 class VideoCollection < MediaContent
   has_many :videos, dependent: :destroy, foreign_key: :album_id
   alias_attribute :items, :videos
+
+  def video_url
+    first_item.try(:video_url)
+  end
+
+  def video_provider
+    first_item.video_provider
+  end
+
+  def video_id
+    first_item.video_id
+  end
 end
