@@ -5,9 +5,9 @@ module Backend
   class PhotosController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_objects, only: [:edit]
+    before_action :set_photo, except: [:index, :search, :paginate]
     before_action :set_photos, only: [:index, :edit]
-    before_action :set_photo, except: [:index, :paginate]
+    before_action :set_objects, only: [:edit]
 
     def search
       @photos = Photo.where("UPPER(title) like UPPER(?)", "#{params[:query]}%").
@@ -30,9 +30,8 @@ module Backend
         redirect_to edit_photo_url(@photo),
           notice: 'Picture updated'
       else
-        set_objects
         set_photos
-
+        set_objects
         render :edit
       end
     end

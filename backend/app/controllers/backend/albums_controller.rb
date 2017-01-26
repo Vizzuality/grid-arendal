@@ -5,9 +5,9 @@ module Backend
   class AlbumsController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_objects, only: [:edit]
+    before_action :set_album, except: [:index, :new, :create, :paginate]
     before_action :set_albums, only: [:index, :edit, :new]
-    before_action :set_album, except: [:index, :new, :paginate]
+    before_action :set_objects, only: [:edit]
 
     def index
     end
@@ -29,8 +29,8 @@ module Backend
         redirect_to edit_album_url(@album),
           notice: 'Album updated'
       else
-        set_objects
         set_albums
+        set_objects
         render :edit
       end
     end

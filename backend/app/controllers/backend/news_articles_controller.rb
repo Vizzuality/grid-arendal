@@ -5,9 +5,9 @@ module Backend
   class NewsArticlesController < ::Backend::ApplicationController
     load_and_authorize_resource
 
+    before_action :set_news_article,  except: [:index, :fetch, :paginate]
+    before_action :set_news_articles, except: [:destroy, :paginate]
     before_action :set_objects, only: [:new, :edit]
-    before_action :set_news_articles, only: [:index, :edit]
-    before_action :set_news_article, except: [:index, :paginate]
 
     def index
     end
@@ -26,6 +26,7 @@ module Backend
     end
 
     def destroy
+      @news_article = NewsArticle.find(params[:id])
       if @news_article.destroy
         redirect_to edit_news_article_url(@news_article),
           notice: 'News article created'
@@ -52,6 +53,14 @@ module Backend
 
     private
 
+      def set_news_article
+        @news_article = NewsArticle.find(params[:id])
+      end
+
+      def set_news_articles
+        @news_articles = NewsArticle.order('publication_date DESC').limit(@index_items_limit)
+      end
+
       def news_article_params
         params.require(:news_article).permit!
       end
@@ -62,14 +71,6 @@ module Backend
         @publications = Publication.order(:title)
         @media_contents = MediaContent.albums_collections_and_videos.
           order(:title)
-      end
-
-      def set_news_article
-        @news_article = NewsArticle.find(params[:id])
-      end
-
-      def set_news_articles
-        @news_articles = NewsArticle.order('publication_date DESC').limit(@index_items_limit)
       end
   end
 end

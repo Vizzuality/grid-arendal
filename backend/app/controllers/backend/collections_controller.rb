@@ -5,9 +5,9 @@ module Backend
   class CollectionsController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_objects, only: [:edit]
     before_action :set_collection, except: [:index, :new, :create, :paginate]
     before_action :set_collections, only: [:index, :edit, :new]
+    before_action :set_objects, only: [:edit]
 
     def index
     end
@@ -29,8 +29,8 @@ module Backend
         redirect_to edit_collection_url(@collection),
           notice: 'Collection updated'
       else
-        set_objects
         set_collections
+        set_objects
         render :edit
       end
     end
