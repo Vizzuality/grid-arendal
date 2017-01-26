@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170119104736) do
+ActiveRecord::Schema.define(version: 20170125142623) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -220,8 +220,11 @@ ActiveRecord::Schema.define(version: 20170119104736) do
   create_table "site_sections", force: :cascade do |t|
     t.string   "section"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "title"
+    t.text     "social_description"
+    t.integer  "photo_id"
   end
 
   create_table "taggings", force: :cascade do |t|
@@ -336,5 +339,6 @@ ActiveRecord::Schema.define(version: 20170119104736) do
   add_foreign_key "photo_sizes", "media_contents", column: "photo_id"
   add_foreign_key "related_contents", "contents", column: "activity_id"
   add_foreign_key "related_contents", "contents", column: "publication_id"
+  add_foreign_key "site_sections", "media_contents", column: "photo_id"
   add_foreign_key "weblinks", "contents", column: "publication_id"
 end

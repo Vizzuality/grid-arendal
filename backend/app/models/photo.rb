@@ -25,4 +25,20 @@ class Photo < MediaContent
   delegate :activities, to: :album
   delegate :publications, to: :album
   delegate :news_article, to: :album
+
+  def medium_or_small_url
+    ordr = <<-SQL
+      CASE
+        WHEN label = '#{PhotoSize::MEDIUM}'
+          THEN 0
+        WHEN label = '#{PhotoSize::SMALL}'
+          THEN 1
+        ELSE 3
+      END
+    SQL
+    photo_sizes.
+      where(label: [PhotoSize::MEDIUM, PhotoSize::SMALL]).
+      where.not(url: nil).
+      order(ordr).limit(1).first.try(:url)
+  end
 end

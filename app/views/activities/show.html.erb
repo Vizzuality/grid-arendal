@@ -1,3 +1,9 @@
+<% content_for :social_cards %>
+  <%= render 'shared/social_cards', title: "GRID-Arendal: #{@activity.title}",
+    description: @activity.description.truncate(120),
+    img_src: @activity.media_content && @activity.media_content.medium_or_small_url
+<% end %>
+
 <div class="l-header-single">
   <div class="navigation -activities">
     <%= render 'shared/menu' %>

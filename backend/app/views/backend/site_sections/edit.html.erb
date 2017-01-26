@@ -4,6 +4,7 @@
 
 <div class="l-items-detail">
   <%= simple_form_for @site_section, html: { class: 'c-form' } do |f| %>
-    <%= render 'form', form: f %>
+    <%= render 'form', form: f, photos: @photos,
+      photo_id: @site_section.photo_id %>
   <% end %>
 </div>
