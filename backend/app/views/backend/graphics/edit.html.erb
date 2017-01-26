@@ -6,12 +6,13 @@
 <div class="l-items-detail">
   <%= simple_form_for @graphic, html: { class: 'c-form' } do |f| %>
     <%= render 'form',
-        form: f,
-        thumbnail: @thumbnail,
-        tags: @tags,
-        activities: @activities,
-        publications: @publications,
-        news_articles: @news_articles
+      form: f,
+      thumbnail: @thumbnail,
+      collection: @graphic.collection,
+      tags: @tags,
+      activities: @activities,
+      publications: @publications,
+      news_articles: @news_articles
     %>
   <% end %>
 </div>

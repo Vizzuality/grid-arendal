@@ -3,6 +3,9 @@
   preview_url: main_app.medium_path(form.object) %>
 
 <div class="fields">
+  <%= render 'backend/shared/form/field_fake_input', value: collection.title,
+    label_txt: "Collection", note_txt: "Collection can't be changed", object: collection %>
+
   <%= render 'backend/shared/form/field_input', form: form, value: :external_id,
     disabled: true, label_txt: "Flickr id",
     note_txt: "Flickr id can't be changed" %>

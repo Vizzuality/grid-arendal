@@ -1,32 +1,5 @@
-<%
-  picture_url = nil
-  is_vertical = false
-  video_provider = nil
-  video_id = nil
-
-  if ![MediaContent::TYPE_VIDEO].include?(media.type)
-    photo = if media.type == MediaContent::TYPE_COLLECTION
-                    media.graphics.first
-                  elsif media.single?
-                    media
-                  else
-                    media.photos.first
-                  end
-    biggest = photo.biggest_size
-    is_vertical = biggest.is_vertical?
-    picture_url = biggest.url
-  else
-    if media.external_url.include?(Video::PROVIDER_YOUTUBE)
-      video_provider = Video::PROVIDER_YOUTUBE
-      video_id = media.external_url.split('=').last
-    elsif media.external_url.include?(Video::PROVIDER_VIMEO)
-      video_provider = Video::PROVIDER_VIMEO
-      video_id = media.external_url.split('/').last
-    end
-  end
-%>
 <div class="js_slide slide <% if index == 0 %>active<% end %>">
-  <div id="<%= index %>" class="c-related-media-item js-video-thumbnail <% if is_vertical %>-vertical<% end %>" data-link="<%= medium_path(media) %>" <% if video_id.present? %>data-video-id="<%= video_id %>" data-video-provider="<%= video_provider %>"<% else %>style="background-image: url('<%= picture_url %>')"<% end %>>
+  <%= related_media_card(index, media) do %>
     <% if media.type == MediaContent::TYPE_VIDEO %>
       <div class="player">
         <svg class="icon">
@@ -37,6 +10,7 @@
     <div class="text -image-cap name"><%= media.title %></div>
     <div class="text -related-image-meta meta">
       <%= media.author.present? ? media.author + ' | ' : ''%>
-      <%= media.publication_date.strftime("%d %b %Y") %></div>
-  </div>
+      <%= media.publication_date.strftime("%d %b %Y") %>
+    </div>
+  <% end %>
 </div>

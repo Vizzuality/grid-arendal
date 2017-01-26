@@ -50,6 +50,11 @@ class MediaContent < ApplicationRecord
   has_many :photo_sizes, foreign_key: :photo_id
   has_many :photos, foreign_key: :album_id
 
+  def first_item
+    return self if single?
+    items.order(:id).first
+  end
+
   def single?
     [TYPE_PHOTO, TYPE_VIDEO, TYPE_GRAPHIC].include?(type)
   end
@@ -82,21 +87,19 @@ class MediaContent < ApplicationRecord
       order(ordr).limit(1).first
   end
 
-  class << self
-    def fetch_all(options)
-      tags = options['tags'].split(',')               if options['tags'].present?
-      media = options['media']                          if options['media'].present?
-
-      media_contents = MediaContent.albums_collections_and_videos.
-        includes(:photo_sizes, :photos).
-        order("publication_date DESC, id ASC")
-      media_contents = media_contents.by_tags(tags)   if tags.present?
-      media_contents = media_contents.by_type(FILTERS[media])   if media.present?
-      media_contents
-    end
-  end
-
   def info_title
     "#{title} (#{type})"
+  end
+
+  def self.fetch_all(options)
+    tags = options['tags'].split(',')               if options['tags'].present?
+    media = options['media']                          if options['media'].present?
+
+    media_contents = MediaContent.albums_collections_and_videos.
+      includes(:photo_sizes, :photos).
+      order("publication_date DESC, id ASC")
+    media_contents = media_contents.by_tags(tags)   if tags.present?
+    media_contents = media_contents.by_type(FILTERS[media])   if media.present?
+    media_contents
   end
 end

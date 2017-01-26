@@ -116,8 +116,10 @@ module Backend
           where(for_content: ContentType::ACTIVITY).
           order(:title)
         @tags = Tag.order(:name)
-        @photos = Photo.order("publication_date DESC").includes(:photo_sizes).
-          limit(20)
+        @photos = Photo
+                    .order_by_date_behind_value(@activity.media_content_id.present? ? @activity.media_content_id : 0)
+                    .includes(:photo_sizes)
+                    .limit(20)
       end
 
       def set_activity
