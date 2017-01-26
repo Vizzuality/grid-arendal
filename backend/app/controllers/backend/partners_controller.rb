@@ -6,7 +6,7 @@ module Backend
     load_and_authorize_resource
 
     before_action :set_partner, except: [:index, :new, :create, :paginate]
-    before_action :set_partners, only: [:index, :edit, :new]
+    before_action :set_partners
 
     def index
     end
