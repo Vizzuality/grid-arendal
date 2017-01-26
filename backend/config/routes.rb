@@ -31,6 +31,7 @@ Backend::Engine.routes.draw do
   end
 
   resources :site_sections, except: [:show, :new, :create]
+
   resources :news_articles,  except: [:show, :new, :create] do
     get :fetch, on: :collection
     get :paginate, on: :collection, defaults: { format: 'js' }
@@ -58,18 +59,19 @@ Backend::Engine.routes.draw do
     get :paginate, on: :collection, defaults: { format: 'js' }
   end
 
-  resources :partners, except: :show
-  resources :content_types, except: :show
-  resources :tags, except: :show do
-    get :paginate, on: :collection, defaults: { format: 'js' }
+  [:partners, :content_types, :tags].each do |res|
+    resources res, except: [:show] do
+      get :paginate, on: :collection, defaults: { format: 'js' }
+    end
   end
 
-  resources :collections, except: [:show]
-  resources :albums, except: [:show] do
-    patch 'make_featured', on: :member
-    patch 'remove_featured', on: :member
-    get 'flickr_update', on: :member
-    get :paginate, on: :collection, defaults: { format: 'js' }
+  [:collections, :albums].each do |res|
+    resources res, except: [:show] do
+      patch 'make_featured', on: :member
+      patch 'remove_featured', on: :member
+      get 'flickr_update', on: :member
+      get :paginate, on: :collection, defaults: { format: 'js' }
+    end
   end
 
   resources :photos, except: [:new, :create, :show] do
@@ -79,12 +81,18 @@ Backend::Engine.routes.draw do
     get :paginate, on: :collection, defaults: { format: 'js' }
   end
 
-  resources :graphics, except: [:new, :create, :show]
-  resources :videos, except: :show
-  resources :video_collections, except: :show do
+  resources :graphics, except: [:new, :create, :show] do
     patch 'make_featured',   on: :member
     patch 'remove_featured', on: :member
     get :paginate, on: :collection, defaults: { format: 'js' }
+  end
+
+  [:videos, :video_collections].each do |res|
+    resources res, except: [:show] do
+      patch 'make_featured',   on: :member
+      patch 'remove_featured', on: :member
+      get :paginate, on: :collection, defaults: { format: 'js' }
+    end
   end
 
   root to: 'admin_home#index'

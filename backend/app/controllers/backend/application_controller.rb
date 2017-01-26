@@ -4,6 +4,8 @@ module Backend
     protect_from_forgery with: :exception
 
     before_action :set_nav_links
+    before_action :set_page_param
+    before_action :set_index_items_limit
 
     layout 'backend/layouts/backend'
 
@@ -44,6 +46,14 @@ module Backend
         {name: "Sections", path: site_sections_path,
           key: "sections", count: SiteSection.count}
       ]
+    end
+
+    def set_page_param
+      @page = params[:page].present? ? params[:page].to_i : 1
+    end
+
+    def set_index_items_limit
+      @index_items_limit = 30
     end
   end
 end

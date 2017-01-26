@@ -6,10 +6,8 @@ module Backend
     load_and_authorize_resource
 
     before_action :set_objects, only: [:edit]
-    before_action :set_albums_limit, only: [:index, :edit, :new, :paginate]
-    before_action :set_page_param, only: [:index, :edit, :new, :paginate]
     before_action :set_albums, only: [:index, :edit, :new]
-    before_action :set_album, only: [:edit, :destroy]
+    before_action :set_album, except: [:index, :new, :paginate]
 
     def index
     end
@@ -32,8 +30,6 @@ module Backend
           notice: 'Album updated'
       else
         set_objects
-        set_albums_limit
-        set_page_param
         set_albums
         render :edit
       end
@@ -68,8 +64,8 @@ module Backend
 
     def paginate
       @items = Album.order("publication_date DESC")
-                      .limit(@albums_limit)
-                      .offset(@albums_limit * (@page - 1))
+                      .limit(@index_items_limit)
+                      .offset(@index_items_limit * (@page - 1))
       @item_id = params[:id].present? ? params[:id].to_i : nil
       respond_to do |format|
         if(@items.empty?)
@@ -91,7 +87,7 @@ module Backend
       end
 
       def set_albums
-        @albums = Album.order("publication_date DESC").limit(@albums_limit)
+        @albums = Album.order("publication_date DESC").limit(@index_items_limit)
       end
 
       def set_objects
@@ -99,14 +95,6 @@ module Backend
         @publications = Publication.order(:title)
         @activities = Activity.order(:title)
         @news_articles = NewsArticle.order(:title)
-      end
-
-      def set_page_param
-        @page = params[:page].present? ? params[:page].to_i : 1
-      end
-
-      def set_albums_limit
-        @albums_limit = 30
       end
   end
 end

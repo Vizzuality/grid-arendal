@@ -6,10 +6,8 @@ module Backend
     load_and_authorize_resource
 
     before_action :set_objects, only: [:new, :edit]
-    before_action :set_activities_limit, only: [:index, :edit, :new, :paginate]
-    before_action :set_page_param, only: [:index, :edit, :new, :paginate]
     before_action :set_activities, only: [:index, :edit, :new]
-    before_action :set_activity, only: [:edit, :destroy]
+    before_action :set_activity, except: [:index, :new, :create, :paginate]
 
     def index
     end
@@ -27,8 +25,6 @@ module Backend
           notice: 'Activity updated'
       else
         set_objects
-        set_activities_limit
-        set_page_param
         set_activities
         render :edit
       end
@@ -41,8 +37,6 @@ module Backend
           notice: 'Activity created'
       else
         set_objects
-        set_activities_limit
-        set_page_param
         set_activities
         render :new
       end
@@ -88,8 +82,8 @@ module Backend
 
     def paginate
       @items = Activity.order(:title)
-                      .limit(@activities_limit)
-                      .offset(@activities_limit * (@page - 1))
+                      .limit(@index_items_limit)
+                      .offset(@index_items_limit * (@page - 1))
       @item_id = params[:id].present? ? params[:id].to_i : nil
       respond_to do |format|
         if(@items.empty?)
@@ -127,15 +121,7 @@ module Backend
       end
 
       def set_activities
-        @activities = Activity.order(:title).limit(@activities_limit)
-      end
-
-      def set_page_param
-        @page = params[:page].present? ? params[:page].to_i : 1
-      end
-
-      def set_activities_limit
-        @activities_limit = 30
+        @activities = Activity.order(:title).limit(@index_items_limit)
       end
   end
 end

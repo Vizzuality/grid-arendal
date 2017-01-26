@@ -5,7 +5,7 @@ module Backend
   class VideoCollectionsController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_video_collection, except: [:index, :new, :create]
+    before_action :set_video_collection, except: [:index, :new, :create, :paginate]
     before_action :set_video_collections, only: [:index, :edit, :new]
     before_action :set_objects, only: [:edit, :new]
 
@@ -66,6 +66,19 @@ module Backend
       end
     end
 
+    def paginate
+      @items = VideoCollection.order(publication_date: :desc)
+                 .limit(@index_items_limit)
+                 .offset(@index_items_limit * (@page - 1))
+      @item_id = params[:id].present? ? params[:id].to_i : nil
+      respond_to do |format|
+        if(@items.empty?)
+          head :no_content
+        end
+        format.js { render 'backend/shared/index_items_paginate' }
+      end
+    end
+
     private
 
       def video_collection_params
@@ -77,7 +90,7 @@ module Backend
       end
 
       def set_video_collections
-        @video_collections = VideoCollection.order(publication_date: :desc)
+        @video_collections = VideoCollection.order(publication_date: :desc).limit(@index_items_limit)
       end
 
       def set_objects

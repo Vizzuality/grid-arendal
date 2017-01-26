@@ -52,6 +52,19 @@ module Backend
       end
     end
 
+    def paginate
+      @items = Vacancy.order(:title)
+                 .limit(@index_items_limit)
+                 .offset(@index_items_limit * (@page - 1))
+      @item_id = params[:id].present? ? params[:id].to_i : nil
+      respond_to do |format|
+        if(@items.empty?)
+          head :no_content
+        end
+        format.js { render 'backend/shared/index_items_paginate' }
+      end
+    end
+
     private
 
       def vacancy_params
@@ -59,7 +72,7 @@ module Backend
       end
 
       def set_vacancies
-        @vacancies = Vacancy.order(:title)
+        @vacancies = Vacancy.order(:title).limit(@index_items_limit)
       end
   end
 end

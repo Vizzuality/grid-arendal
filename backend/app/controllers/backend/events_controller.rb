@@ -5,7 +5,7 @@ module Backend
   class EventsController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_event, except: [:index, :new, :create]
+    before_action :set_event, except: [:index, :new, :create, :paginate]
     before_action :set_events, except: :index
     before_action :set_objects, only: [:new, :edit]
 
@@ -63,6 +63,19 @@ module Backend
       end
     end
 
+    def paginate
+      @items = Event.order(:title)
+                 .limit(@index_items_limit)
+                 .offset(@index_items_limit * (@page - 1))
+      @item_id = params[:id].present? ? params[:id].to_i : nil
+      respond_to do |format|
+        if(@items.empty?)
+          head :no_content
+        end
+        format.js { render 'backend/shared/index_items_paginate' }
+      end
+    end
+
     private
 
       def set_event
@@ -70,7 +83,7 @@ module Backend
       end
 
       def set_events
-        @events = Event.order(:title)
+        @events = Event.order(:title).limit(@index_items_limit)
       end
 
       def event_params

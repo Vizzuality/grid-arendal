@@ -39,7 +39,7 @@
           this.indexPaginationView.toggleDoingCallback();
           this.indexPaginationView.hideLoader();
 
-          if(response.status === 204) {
+          if(response.status === 204 || response.status === 500) {
             this.indexPaginationView.toggleBlockPagination();
           }
         }.bind(this)

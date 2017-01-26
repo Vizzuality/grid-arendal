@@ -6,10 +6,8 @@ module Backend
     load_and_authorize_resource
 
     before_action :set_objects, only: [:edit]
-    before_action :set_photos_limit, only: [:index, :edit, :paginate]
-    before_action :set_page_param, only: [:index, :edit, :paginate]
     before_action :set_photos, only: [:index, :edit]
-    before_action :set_photo, only: [:edit, :destroy]
+    before_action :set_photo, except: [:index, :paginate]
 
     def search
       @photos = Photo.where("UPPER(title) like UPPER(?)", "#{params[:query]}%").
@@ -33,8 +31,6 @@ module Backend
           notice: 'Picture updated'
       else
         set_objects
-        set_photos_limit
-        set_page_param
         set_photos
 
         render :edit
@@ -65,8 +61,8 @@ module Backend
 
     def paginate
       @items = Photo.order("publication_date DESC")
-                 .limit(@photos_limit)
-                 .offset(@photos_limit * (@page - 1))
+                 .limit(@index_items_limit)
+                 .offset(@index_items_limit * (@page - 1))
       @item_id = params[:id].present? ? params[:id].to_i : nil
       respond_to do |format|
         if(@items.empty?)
@@ -87,7 +83,7 @@ module Backend
       end
 
       def set_photos
-        @photos = Photo.order("publication_date DESC").limit(@photos_limit)
+        @photos = Photo.order("publication_date DESC").limit(@index_items_limit)
       end
 
       def set_objects
@@ -96,14 +92,6 @@ module Backend
         @publications = Publication.order(:title)
         @activities = Activity.order(:title)
         @news_articles = NewsArticle.order(:title)
-      end
-
-      def set_page_param
-        @page = params[:page].present? ? params[:page].to_i : 1
-      end
-
-      def set_photos_limit
-        @photos_limit = 30
       end
   end
 end

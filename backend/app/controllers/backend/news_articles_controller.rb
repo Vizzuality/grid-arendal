@@ -6,10 +6,8 @@ module Backend
     load_and_authorize_resource
 
     before_action :set_objects, only: [:new, :edit]
-    before_action :set_news_limit, only: [:index, :edit, :paginate]
-    before_action :set_page_param, only: [:index, :edit, :paginate]
     before_action :set_news_articles, only: [:index, :edit]
-    before_action :set_news_article, only: [:edit, :destroy]
+    before_action :set_news_article, except: [:index, :paginate]
 
     def index
     end
@@ -41,8 +39,8 @@ module Backend
 
     def paginate
       @items = NewsArticle.order(:title)
-                      .limit(@news_limit)
-                      .offset(@news_limit * (@page - 1))
+                      .limit(@index_items_limit)
+                      .offset(@index_items_limit * (@page - 1))
       @item_id = params[:id].present? ? params[:id].to_i : nil
       respond_to do |format|
         if(@items.empty?)
@@ -71,15 +69,7 @@ module Backend
       end
 
       def set_news_articles
-        @news_articles = NewsArticle.order('publication_date DESC').limit(@news_limit)
-      end
-
-      def set_page_param
-        @page = params[:page].present? ? params[:page].to_i : 1
-      end
-
-      def set_news_limit
-        @news_limit = 30
+        @news_articles = NewsArticle.order('publication_date DESC').limit(@index_items_limit)
       end
   end
 end

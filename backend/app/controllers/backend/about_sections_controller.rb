@@ -5,7 +5,7 @@ module Backend
   class AboutSectionsController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_about_section,  except: [:index, :new, :create, :sort]
+    before_action :set_about_section,  except: [:index, :new, :create, :sort, :paginate]
     before_action :set_about_sections, except: [:destroy, :create, :update, :sort]
 
     def index
@@ -51,6 +51,19 @@ module Backend
       render nothing: true
     end
 
+    def paginate
+      @items = AboutSection.order(:position)
+                 .limit(@index_items_limit)
+                 .offset(@index_items_limit * (@page - 1))
+      @item_id = params[:id].present? ? params[:id].to_i : nil
+      respond_to do |format|
+        if(@items.empty?)
+          head :no_content
+        end
+        format.js { render 'backend/shared/index_items_paginate' }
+      end
+    end
+
     private
 
       def set_about_section
@@ -58,7 +71,7 @@ module Backend
       end
 
       def set_about_sections
-        @about_sections = AboutSection.order(:position)
+        @about_sections = AboutSection.order(:position).limit(@index_items_limit)
       end
 
       def about_section_params

@@ -6,10 +6,8 @@ module Backend
     load_and_authorize_resource
 
     before_action :set_objects, only: [:new, :edit]
-    before_action :set_publications_limit, only: [:index, :edit, :new, :paginate]
-    before_action :set_page_param, only: [:index, :edit, :new, :paginate]
     before_action :set_publications, only: [:index, :edit, :new]
-    before_action :set_publication, only: [:edit, :destroy]
+    before_action :set_publication, except: [:index, :new, :create, :paginate]
 
     def index
     end
@@ -27,8 +25,6 @@ module Backend
           notice: 'Publication updated'
       else
         set_objects
-        set_publications_limit
-        set_page_param
         set_publications
         render :edit
       end
@@ -41,8 +37,6 @@ module Backend
           notice: 'Publication created'
       else
         set_objects
-        set_publications_limit
-        set_page_param
         set_publications
         render :new
       end
@@ -88,8 +82,8 @@ module Backend
 
     def paginate
       @items = Publication.order("content_date DESC")
-                      .limit(@publications_limit)
-                      .offset(@publications_limit * (@page - 1))
+                      .limit(@index_items_limit)
+                      .offset(@index_items_limit * (@page - 1))
       @item_id = params[:id].present? ? params[:id].to_i : nil
       respond_to do |format|
         if(@items.empty?)
@@ -127,16 +121,7 @@ module Backend
       end
 
       def set_publications
-        @publications = Publication.order("content_date DESC").limit(@publications_limit)
+        @publications = Publication.order("content_date DESC").limit(@index_items_limit)
       end
-
-      def set_page_param
-        @page = params[:page].present? ? params[:page].to_i : 1
-      end
-
-      def set_publications_limit
-        @publications_limit = 30
-      end
-
   end
 end
