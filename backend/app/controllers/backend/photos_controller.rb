@@ -82,7 +82,7 @@ module Backend
       end
 
       def set_photos
-        @photos = Photo.order("publication_date DESC").limit(@index_items_limit)
+        @photos = Photo.order("publication_date DESC").limit(@index_items_limit * @page)
       end
 
       def set_objects

@@ -87,7 +87,7 @@ module Backend
       end
 
       def set_albums
-        @albums = Album.order("publication_date DESC").limit(@index_items_limit)
+        @albums = Album.order("publication_date DESC").limit(@index_items_limit * @page)
       end
 
       def set_objects

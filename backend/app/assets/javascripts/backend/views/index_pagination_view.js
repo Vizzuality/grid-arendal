@@ -22,7 +22,7 @@
     },
 
     _initVariables: function() {
-      this.page = 1;
+      this.page = this._getCurrentPage();
       this.doingCallback = false;
       this.blockPagination = false;
     },
@@ -48,6 +48,14 @@
         this._updatePage(this.page + 1);
         this.callback();
       }
+    },
+
+    _getCurrentPage: function() {
+      var params = App.Helper.Utils.getGetParams();
+      if(typeof params['page'] !== "undefined") {
+        return parseInt(params['page']);
+      }
+      return 1;
     },
 
     toggleDoingCallback: function() {

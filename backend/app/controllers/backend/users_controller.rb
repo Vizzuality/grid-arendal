@@ -105,7 +105,7 @@ module Backend
 
       def set_users
         @users = current_user&.admin? ? User.filter_users(user_filters) : User.filter_actives
-        @users = @users.order(:first_name, :last_name).limit(@index_items_limit)
+        @users = @users.order(:first_name, :last_name).limit(@index_items_limit * @page)
       end
 
       def set_roles_selection

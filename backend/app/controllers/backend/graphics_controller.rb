@@ -76,7 +76,7 @@ module Backend
       end
 
       def set_graphics
-        @graphics = Graphic.order(publication_date: :desc).limit(@index_items_limit)
+        @graphics = Graphic.order(publication_date: :desc).limit(@index_items_limit * @page)
       end
 
       def set_objects

@@ -72,7 +72,7 @@ module Backend
       end
 
       def set_vacancies
-        @vacancies = Vacancy.order(:title).limit(@index_items_limit)
+        @vacancies = Vacancy.order(:title).limit(@index_items_limit * @page)
       end
   end
 end

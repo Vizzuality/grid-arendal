@@ -87,7 +87,7 @@ module Backend
       end
 
       def set_collections
-        @collections = Collection.order("publication_date DESC").limit(@index_items_limit)
+        @collections = Collection.order("publication_date DESC").limit(@index_items_limit * @page)
       end
 
       def set_objects

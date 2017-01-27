@@ -90,7 +90,7 @@ module Backend
       end
 
       def set_video_collections
-        @video_collections = VideoCollection.order(publication_date: :desc).limit(@index_items_limit)
+        @video_collections = VideoCollection.order(publication_date: :desc).limit(@index_items_limit * @page)
       end
 
       def set_objects

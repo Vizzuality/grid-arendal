@@ -71,7 +71,7 @@ module Backend
       end
 
       def set_about_sections
-        @about_sections = AboutSection.order(:position).limit(@index_items_limit)
+        @about_sections = AboutSection.order(:position).limit(@index_items_limit * @page)
       end
 
       def about_section_params

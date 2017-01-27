@@ -64,7 +64,7 @@ module Backend
       end
 
       def set_partners
-        @partners = Partner.order(:name).limit(@index_items_limit)
+        @partners = Partner.order(:name).limit(@index_items_limit * @page)
       end
 
       def partner_params

@@ -63,7 +63,7 @@ module Backend
       end
 
       def set_content_types
-        @content_types = ContentType.order(:title).limit(@index_items_limit)
+        @content_types = ContentType.order(:title).limit(@index_items_limit * @page)
       end
 
       def content_type_params

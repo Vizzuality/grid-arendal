@@ -83,7 +83,7 @@ module Backend
       end
 
       def set_events
-        @events = Event.order(:title).limit(@index_items_limit)
+        @events = Event.order(:title).limit(@index_items_limit * @page)
       end
 
       def event_params

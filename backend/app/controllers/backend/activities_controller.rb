@@ -121,7 +121,7 @@ module Backend
       end
 
       def set_activities
-        @activities = Activity.order(:title).limit(@index_items_limit)
+        @activities = Activity.order(:title).limit(@index_items_limit * @page)
       end
   end
 end

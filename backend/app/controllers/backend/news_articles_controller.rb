@@ -58,7 +58,7 @@ module Backend
       end
 
       def set_news_articles
-        @news_articles = NewsArticle.order('publication_date DESC').limit(@index_items_limit)
+        @news_articles = NewsArticle.order('publication_date DESC').limit(@index_items_limit * @page)
       end
 
       def news_article_params

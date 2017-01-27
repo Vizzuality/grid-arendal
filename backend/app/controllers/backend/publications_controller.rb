@@ -121,7 +121,7 @@ module Backend
       end
 
       def set_publications
-        @publications = Publication.order("content_date DESC").limit(@index_items_limit)
+        @publications = Publication.order("content_date DESC").limit(@index_items_limit * @page)
       end
   end
 end

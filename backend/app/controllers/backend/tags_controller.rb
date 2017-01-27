@@ -61,7 +61,7 @@ module Backend
       end
 
       def set_tags
-        @tags = Tag.order(:name).limit(@index_items_limit)
+        @tags = Tag.order(:name).limit(@index_items_limit * @page)
       end
 
       def tag_params
