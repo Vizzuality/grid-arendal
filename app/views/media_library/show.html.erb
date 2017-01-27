@@ -1,26 +1,11 @@
 <%
   if ![MediaContent::TYPE_VIDEO, MediaContent::TYPE_VIDEO_COLLECTION].include?(@media_content.type)
-    picture_url = ""
-    is_vertical = false
-    photo = if @media_content.single?
-              @media_content
-            else
-              @media_content.items.first
-            end
+    photo = @media_content.first_item
     biggest = photo.biggest_size
     is_vertical = biggest.is_vertical?
     picture_url = biggest.url
   else
-    video_url = nil
-    video = @media_content.type == MediaContent::TYPE_VIDEO_COLLECTION ? @media_content.videos.
-      order(:id).first : @media_content
-    if video.present? && video.external_url.include?(Video::PROVIDER_YOUTUBE)
-      video_id = video.external_url.split('=').last
-      video_url = "https://www.youtube.com/embed/#{video_id}?autoplay=1"
-    elsif video.present? && video.external_url.include?(Video::PROVIDER_VIMEO)
-      video_id = video.external_url.split('/').last
-      video_url = "https://player.vimeo.com/video/#{video_id}?autoplay=1"
-    end
+    video_url = @media_content.video_url
   end
 
   breadcrumbs_links = if @media_content.single? && @media_content.album_id.present?

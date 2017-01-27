@@ -7,6 +7,7 @@ module Backend
 
     before_action :set_site_section,  except: [:index]
     before_action :set_site_sections
+    before_action :set_photos, only: [:edit]
 
     def index
     end
@@ -18,6 +19,7 @@ module Backend
       if @site_section.update(site_section_params)
         redirect_to [:edit, @site_section], notice: 'Section updated'
       else
+        set_photos
         render :edit
       end
     end
@@ -41,6 +43,13 @@ module Backend
 
       def site_section_params
         params.require(:site_section).permit!
+      end
+
+      def set_photos
+        @photos = Photo
+          .order_by_date_behind_value(@site_section.photo_id.present? ? @site_section.photo_id : 0)
+          .includes(:photo_sizes)
+          .limit(20)
       end
   end
 end
