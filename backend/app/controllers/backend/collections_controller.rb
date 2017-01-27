@@ -5,7 +5,7 @@ module Backend
   class CollectionsController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_collection, except: [:index, :new, :create]
+    before_action :set_collection, except: [:index, :new, :create, :paginate]
     before_action :set_collections, only: [:index, :edit, :new]
     before_action :set_objects, only: [:edit]
 
@@ -62,6 +62,19 @@ module Backend
       end
     end
 
+    def paginate
+      @items = Collection.order("publication_date DESC")
+                 .limit(@index_items_limit)
+                 .offset(@index_items_limit * (@page - 1))
+      @item_id = params[:id].present? ? params[:id].to_i : nil
+      respond_to do |format|
+        if(@items.empty?)
+          head :no_content
+        end
+        format.js { render 'backend/shared/index_items_paginate' }
+      end
+    end
+
     private
 
       def collection_params
@@ -74,7 +87,7 @@ module Backend
       end
 
       def set_collections
-        @collections = Collection.order("publication_date DESC")
+        @collections = Collection.order("publication_date DESC").limit(@index_items_limit * @page)
       end
 
       def set_objects

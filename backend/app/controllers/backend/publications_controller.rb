@@ -6,14 +6,13 @@ module Backend
     load_and_authorize_resource
 
     before_action :set_objects, only: [:new, :edit]
-    before_action :publications
-
+    before_action :set_publications, only: [:index, :edit, :new]
+    before_action :set_publication, except: [:index, :new, :create, :paginate]
 
     def index
     end
 
     def edit
-      @publication = Publication.find(params[:id])
     end
 
     def new
@@ -26,6 +25,7 @@ module Backend
           notice: 'Publication updated'
       else
         set_objects
+        set_publications
         render :edit
       end
     end
@@ -37,12 +37,12 @@ module Backend
           notice: 'Publication created'
       else
         set_objects
+        set_publications
         render :new
       end
     end
 
     def destroy
-      @publication = Publication.find(params[:id])
       if @publication.destroy
         redirect_to publications_url
       end
@@ -80,14 +80,23 @@ module Backend
       end
     end
 
+    def paginate
+      @items = Publication.order("content_date DESC")
+                      .limit(@index_items_limit)
+                      .offset(@index_items_limit * (@page - 1))
+      @item_id = params[:id].present? ? params[:id].to_i : nil
+      respond_to do |format|
+        if(@items.empty?)
+          head :no_content
+        end
+        format.js { render 'backend/shared/index_items_paginate' }
+      end
+    end
+
     private
 
       def publication_params
         params.require(:publication).permit!
-      end
-
-      def publications
-        @publications = Publication.order("content_date DESC")
       end
 
       def set_objects
@@ -105,6 +114,14 @@ module Backend
                     .limit(20)
         @news_articles = NewsArticle.order(:title)
         @activities = Activity.order(:title)
+      end
+
+      def set_publication
+        @publication = Publication.find(params[:id])
+      end
+
+      def set_publications
+        @publications = Publication.order("content_date DESC").limit(@index_items_limit * @page)
       end
   end
 end

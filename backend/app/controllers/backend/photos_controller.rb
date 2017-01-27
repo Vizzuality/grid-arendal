@@ -5,7 +5,7 @@ module Backend
   class PhotosController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_photo, except: [:index, :search]
+    before_action :set_photo, except: [:index, :search, :paginate]
     before_action :set_photos, only: [:index, :edit]
     before_action :set_objects, only: [:edit]
 
@@ -58,6 +58,19 @@ module Backend
       end
     end
 
+    def paginate
+      @items = Photo.order("publication_date DESC")
+                 .limit(@index_items_limit)
+                 .offset(@index_items_limit * (@page - 1))
+      @item_id = params[:id].present? ? params[:id].to_i : nil
+      respond_to do |format|
+        if(@items.empty?)
+          head :no_content
+        end
+        format.js { render 'backend/shared/index_items_paginate' }
+      end
+    end
+
     private
 
       def photo_params
@@ -69,7 +82,7 @@ module Backend
       end
 
       def set_photos
-        @photos = Photo.order("publication_date DESC").limit(200)
+        @photos = Photo.order("publication_date DESC").limit(@index_items_limit * @page)
       end
 
       def set_objects

@@ -6,7 +6,7 @@ module Backend
     load_and_authorize_resource
 
     before_action :set_tag, only: [:edit, :update, :destroy]
-    before_action :set_tags
+    before_action :set_tags, only: [:index, :edit, :new]
 
     def index
     end
@@ -41,6 +41,19 @@ module Backend
       end
     end
 
+    def paginate
+      @items = Tag.order(:name)
+                 .limit(@index_items_limit)
+                 .offset(@index_items_limit * (@page - 1))
+      @item_id = params[:id].present? ? params[:id].to_i : nil
+      respond_to do |format|
+        if(@items.empty?)
+          head :no_content
+        end
+        format.js { render 'backend/shared/index_items_paginate' }
+      end
+    end
+
     private
 
       def set_tag
@@ -48,7 +61,7 @@ module Backend
       end
 
       def set_tags
-        @tags = Tag.order(:name)
+        @tags = Tag.order(:name).limit(@index_items_limit * @page)
       end
 
       def tag_params

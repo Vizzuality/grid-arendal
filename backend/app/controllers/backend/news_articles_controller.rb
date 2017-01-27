@@ -5,8 +5,8 @@ module Backend
   class NewsArticlesController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_news_article,  except: [:index, :fetch]
-    before_action :set_news_articles, except: :destroy
+    before_action :set_news_article,  except: [:index, :fetch, :paginate]
+    before_action :set_news_articles, except: [:destroy, :paginate]
     before_action :set_objects, only: [:new, :edit]
 
     def index
@@ -38,6 +38,19 @@ module Backend
       redirect_to news_articles_url, notice: "#{total_imported} articles imported"
     end
 
+    def paginate
+      @items = NewsArticle.order(:title)
+                      .limit(@index_items_limit)
+                      .offset(@index_items_limit * (@page - 1))
+      @item_id = params[:id].present? ? params[:id].to_i : nil
+      respond_to do |format|
+        if(@items.empty?)
+          head :no_content
+        end
+        format.js { render 'backend/shared/index_items_paginate' }
+      end
+    end
+
     private
 
       def set_news_article
@@ -45,7 +58,7 @@ module Backend
       end
 
       def set_news_articles
-        @news_articles = NewsArticle.order('publication_date DESC')
+        @news_articles = NewsArticle.order('publication_date DESC').limit(@index_items_limit * @page)
       end
 
       def news_article_params

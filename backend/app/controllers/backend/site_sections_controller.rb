@@ -5,7 +5,7 @@ module Backend
   class SiteSectionsController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_site_section,  except: [:index]
+    before_action :set_site_section,  except: [:index, :paginate]
     before_action :set_site_sections
     before_action :set_photos, only: [:edit]
 
@@ -31,6 +31,19 @@ module Backend
       end
     end
 
+    def paginate
+      @items = SiteSection.order(:section)
+                 .limit(@index_items_limit)
+                 .offset(@index_items_limit * (@page - 1))
+      @item_id = params[:id].present? ? params[:id].to_i : nil
+      respond_to do |format|
+        if(@items.empty?)
+          head :no_content
+        end
+        format.js { render 'backend/shared/index_items_paginate' }
+      end
+    end
+
     private
 
       def set_site_section
@@ -38,7 +51,7 @@ module Backend
       end
 
       def set_site_sections
-        @site_sections = SiteSection.order(:section)
+        @site_sections = SiteSection.order(:section).limit(@index_items_limit * @page)
       end
 
       def site_section_params

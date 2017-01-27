@@ -5,9 +5,9 @@ module Backend
   class UsersController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_user,            except: [:index, :new, :create]
-    before_action :set_users, only:   [:index, :edit, :new]
-    before_action :set_roles_selection, only:   [:update, :create, :new, :edit]
+    before_action :set_user, except: [:index, :new, :create, :paginate]
+    before_action :set_users, only: [:index, :edit, :new]
+    before_action :set_roles_selection, only: [:update, :create, :new, :edit]
 
     def index
     end
@@ -79,6 +79,20 @@ module Backend
       end
     end
 
+    def paginate
+      @users = current_user&.admin? ? User.filter_users(user_filters) : User.filter_actives
+      @items = @users.order(:first_name, :last_name)
+                 .limit(@index_items_limit)
+                 .offset(@index_items_limit * (@page - 1))
+      @item_id = params[:id].present? ? params[:id].to_i : nil
+      respond_to do |format|
+        if(@items.empty?)
+          head :no_content
+        end
+        format.js { render 'backend/shared/index_items_paginate' }
+      end
+    end
+
     private
 
       def user_filters
@@ -91,7 +105,7 @@ module Backend
 
       def set_users
         @users = current_user&.admin? ? User.filter_users(user_filters) : User.filter_actives
-        @users = @users.order(:first_name, :last_name)
+        @users = @users.order(:first_name, :last_name).limit(@index_items_limit * @page)
       end
 
       def set_roles_selection

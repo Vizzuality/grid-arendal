@@ -28,6 +28,19 @@
   };
 
   App.Helper.Utils = {
+    getGetParams: function () {
+      var params = {};
+      location.search
+        .substr(1)
+        .split("&")
+        .forEach(function (item) {
+          var param = item.split("=");
+          if(param[0] !== "" && param[1] !== ""){
+            params[param[0]] = param[1];
+          }
+        });
+      return params;
+    }
   }
 
 })(this.App);
