@@ -6,18 +6,16 @@ module Backend
     load_and_authorize_resource
 
     before_action :set_objects, only: [:new, :edit]
+    before_action :set_activities, only: [:index, :edit, :new]
+    before_action :set_activity, except: [:index, :new, :create, :paginate]
 
     def index
-      @activities = Activity.order(:title)
     end
 
     def edit
-      @activities = Activity.order(:title)
-      @activity = Activity.find(params[:id])
     end
 
     def new
-      @activities = Activity.order(:title)
       @activity = Activity.new
     end
 
@@ -27,7 +25,7 @@ module Backend
           notice: 'Activity updated'
       else
         set_objects
-        @activities = Activity.order(:title)
+        set_activities
         render :edit
       end
     end
@@ -39,13 +37,12 @@ module Backend
           notice: 'Activity created'
       else
         set_objects
-        @activities = Activity.order(:title)
+        set_activities
         render :new
       end
     end
 
     def destroy
-      @activity = Activity.find(params[:id])
       if @activity.destroy
         redirect_to activities_url
       end
@@ -83,6 +80,19 @@ module Backend
       end
     end
 
+    def paginate
+      @items = Activity.order(:title)
+                      .limit(@index_items_limit)
+                      .offset(@index_items_limit * (@page - 1))
+      @item_id = params[:id].present? ? params[:id].to_i : nil
+      respond_to do |format|
+        if(@items.empty?)
+          head :no_content
+        end
+        format.js { render 'backend/shared/index_items_paginate' }
+      end
+    end
+
     private
 
       def activity_params
@@ -104,6 +114,14 @@ module Backend
                     .order_by_date_behind_value(@activity.media_content_id.present? ? @activity.media_content_id : 0)
                     .includes(:photo_sizes)
                     .limit(20)
+      end
+
+      def set_activity
+        @activity = Activity.find(params[:id])
+      end
+
+      def set_activities
+        @activities = Activity.order(:title).limit(@index_items_limit * @page)
       end
   end
 end

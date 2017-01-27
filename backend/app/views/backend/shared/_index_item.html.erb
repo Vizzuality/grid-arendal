@@ -1,4 +1,8 @@
-<% sortable ||= false %>
+<%
+  sortable ||= false
+  @page ||= nil
+  edit_path = @page.present? ? polymorphic_url([:edit, item], page: @page) : [:edit, item]
+%>
 <li id="item_<%= item.id %>" class="c-index-item <%= "-selected" if selected %>" data-item-id="<%= item.id %>">
   <% if sortable %>
     <svg class="dragger icon">
@@ -17,8 +21,7 @@
       (<%= pluralize(item.photos.count, 'photo') %>)
     <% end %>
   </div>
-  <% edit_path ||= [:edit, item] %>
-  <%= link_to '', [:edit, item], class: 'linker js-linker' %>
+  <%= link_to '', edit_path, class: 'linker js-linker' %>
   <div id="options-for-<%= item.id %>" class="options">
     <%= render 'backend/shared/index_options', item: item %>
   </div>
