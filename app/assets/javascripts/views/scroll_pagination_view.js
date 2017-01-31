@@ -51,8 +51,10 @@
     },
 
     _loadOnScrollEvent: function() {
+      var footerHeight = $(this.options.footerClass).height();
+
       $(window).on('scroll', function() {
-        if ($(window).scrollTop() > $(document).height() - $(window).height() - 50 ) {
+        if ($(window).scrollTop() > $(document).height() - $(window).height() - footerHeight ) {
           this._onScrollLoadPage();
         }
       }.bind(this));
@@ -60,6 +62,7 @@
 
     _onScrollLoadPage: function() {
       var pageScrollLimit = $(document).height() - ($(window).height() * 2);
+
       if(
         !this.blockPagination &&
         !this.doingCallback &&
