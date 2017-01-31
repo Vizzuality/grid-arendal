@@ -31,9 +31,13 @@
       this.descriptionHeight = this.$description.height();
       this.descriptionRealHeight = this.$description[0].scrollHeight;
       this.$sidebar = this.$el.find(this.options.sidebarClass);
+      this.$sidebarContent = this.$el.find(this.options.sidebarContentClass);
+      this._cacheSidebarSizes();
+    },
+
+    _cacheSidebarSizes: function () {
       this.sidebarHeight = this.$sidebar[0].scrollHeight;
       this.sidebarOffsetTop = this.$sidebar.offset().top;
-      this.$sidebarContent = this.$el.find(this.options.sidebarContentClass);
       this.sidebarContentHeight = this.$sidebarContent[0].scrollHeight;
     },
 
@@ -47,6 +51,7 @@
       this.$description
         .removeClass(this.options.descriptionNeedMoreClass)
         .addClass(this.options.descriptionShowMoreClass);
+      this._cacheSidebarSizes();
     },
 
     _loadStickySidebarEvent: function () {
