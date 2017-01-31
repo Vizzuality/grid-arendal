@@ -4,16 +4,7 @@
   <% if can?(:create, Tag) %>
     <%= link_to "Create New", new_tag_path, class: 'btn -light -no-border -create-new js-create-new' %>
   <% end %>
-  <div class="btn">
-    <svg class="icon">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"></use>
-    </svg>
-  </div>
-  <div class="btn">
-    <svg class="icon">
-      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-sort"></use>
-    </svg>
-  </div>
+  <%= render 'backend/shared/index_items_search_and_filter' %>
 </div>
 
 <ul class="items-list">

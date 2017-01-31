@@ -6,7 +6,7 @@ module Backend
     load_and_authorize_resource
 
     before_action :set_content_type, only: [:edit, :update, :destroy]
-    before_action :set_content_types
+    before_action :set_content_types, only: [:index, :edit, :new]
 
     def index
     end
@@ -56,6 +56,20 @@ module Backend
       end
     end
 
+    def search
+      @items = if params[:search] != ''
+                 ContentType
+                   .where("UPPER(title) like UPPER(?)", "#{params[:search]}%")
+                   .order(:title)
+               else
+                 ContentType.order(:title).limit(@index_items_limit * @page)
+               end
+      @item_id = params[:id].present? ? params[:id].to_i : nil
+      respond_to do |format|
+        format.js { render 'backend/shared/index_items_searched' }
+      end
+    end
+
     private
 
       def set_content_type
@@ -63,7 +77,13 @@ module Backend
       end
 
       def set_content_types
-        @content_types = ContentType.order(:title).limit(@index_items_limit * @page)
+        @content_types = if @search.present?
+                          ContentType
+                            .where("UPPER(title) like UPPER(?)", "#{@search}%")
+                            .order(:title)
+                          else
+                            ContentType.order(:title).limit(@index_items_limit * @page)
+                          end
       end
 
       def content_type_params

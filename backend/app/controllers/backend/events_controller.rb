@@ -5,8 +5,8 @@ module Backend
   class EventsController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_event, except: [:index, :new, :create, :paginate]
-    before_action :set_events, except: :index
+    before_action :set_event, except: [:index, :new, :create, :paginate, :search]
+    before_action :set_events, except: [:index, :paginate, :search]
     before_action :set_objects, only: [:new, :edit]
 
     def index
@@ -76,6 +76,20 @@ module Backend
       end
     end
 
+    def search
+      @items = if params[:search] != ''
+                 Event
+                   .where("UPPER(title) like UPPER(?)", "#{params[:search]}%")
+                   .order(:title)
+               else
+                 Event.order(:title).limit(@index_items_limit * @page)
+               end
+      @item_id = params[:id].present? ? params[:id].to_i : nil
+      respond_to do |format|
+        format.js { render 'backend/shared/index_items_searched' }
+      end
+    end
+
     private
 
       def set_event
@@ -83,7 +97,13 @@ module Backend
       end
 
       def set_events
-        @events = Event.order(:title).limit(@index_items_limit * @page)
+        @events = if @search.present?
+                    Event
+                      .where("UPPER(title) like UPPER(?)", "#{@search}%")
+                      .order(:title)
+                  else
+                    Event.order(:title).limit(@index_items_limit * @page)
+                  end
       end
 
       def event_params

@@ -5,8 +5,8 @@ module Backend
   class AboutSectionsController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_about_section,  except: [:index, :new, :create, :sort, :paginate]
-    before_action :set_about_sections, except: [:destroy, :create, :update, :sort]
+    before_action :set_about_section,  except: [:index, :new, :create, :sort, :paginate, :search]
+    before_action :set_about_sections, except: [:destroy, :create, :update, :sort, :paginate, :search]
 
     def index
     end
@@ -64,6 +64,20 @@ module Backend
       end
     end
 
+    def search
+      @items = if params[:search] != ''
+                 AboutSection
+                   .where("UPPER(title) like UPPER(?)", "#{params[:search]}%")
+                   .order(:position)
+               else
+                 AboutSection.order(:position).limit(@index_items_limit * @page)
+               end
+      @item_id = params[:id].present? ? params[:id].to_i : nil
+      respond_to do |format|
+        format.js { render 'backend/shared/index_items_searched' }
+      end
+    end
+
     private
 
       def set_about_section
@@ -71,7 +85,13 @@ module Backend
       end
 
       def set_about_sections
-        @about_sections = AboutSection.order(:position).limit(@index_items_limit * @page)
+        @about_sections = if @search.present?
+                        AboutSection
+                          .where("UPPER(title) like UPPER(?)", "#{@search}%")
+                          .order(:position)
+                      else
+                        AboutSection.order(:position).limit(@index_items_limit * @page)
+                      end
       end
 
       def about_section_params

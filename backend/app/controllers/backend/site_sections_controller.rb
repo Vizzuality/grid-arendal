@@ -5,7 +5,7 @@ module Backend
   class SiteSectionsController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_site_section,  except: [:index, :paginate]
+    before_action :set_site_section,  except: [:index, :paginate, :search]
     before_action :set_site_sections
     before_action :set_photos, only: [:edit]
 
@@ -44,6 +44,20 @@ module Backend
       end
     end
 
+    def search
+      @items = if params[:search] != ''
+                 SiteSection
+                   .where("UPPER(title) like UPPER(?)", "#{params[:search]}%")
+                   .order(:section)
+               else
+                 SiteSection.order(:section).limit(@index_items_limit * @page)
+               end
+      @item_id = params[:id].present? ? params[:id].to_i : nil
+      respond_to do |format|
+        format.js { render 'backend/shared/index_items_searched' }
+      end
+    end
+
     private
 
       def set_site_section
@@ -51,7 +65,13 @@ module Backend
       end
 
       def set_site_sections
-        @site_sections = SiteSection.order(:section).limit(@index_items_limit * @page)
+        @activities = if @search.present?
+                        SiteSection
+                            .where("UPPER(title) like UPPER(?)", "#{@search}%")
+                            .order(:section)
+                        else
+                          SiteSection.order(:section).limit(@index_items_limit * @page)
+                        end
       end
 
       def site_section_params

@@ -24,7 +24,7 @@
     _initVariables: function() {
       this.page = this._getCurrentPage();
       this.doingCallback = false;
-      this.blockPagination = false;
+      this.isBlocked = false;
     },
 
     _updatePage: function(value) {
@@ -41,7 +41,7 @@
 
     _onScrollLoadPage: function() {
       if(
-        !this.blockPagination &&
+        !this.isBlocked &&
         !this.doingCallback
       ) {
         this.toggleDoingCallback();
@@ -62,8 +62,12 @@
       this.doingCallback = !this.doingCallback;
     },
 
-    toggleBlockPagination: function() {
-      this.blockPagination = !this.blockPagination;
+    blockPagination: function() {
+      this.isBlocked = true;
+    },
+
+    unblockPagination: function() {
+      this.isBlocked = false;
     },
 
     showLoader: function() {

@@ -5,7 +5,7 @@ module Backend
   class GraphicsController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_graphic, except: [:index, :new, :create, :paginate]
+    before_action :set_graphic, except: [:index, :new, :create, :paginate, :search]
     before_action :set_graphics, only: [:index, :edit, :new]
     before_action :set_objects, only: [:edit, :new]
 
@@ -65,6 +65,20 @@ module Backend
       end
     end
 
+    def search
+      @items = if params[:search] != ''
+                 Graphic
+                   .where("UPPER(title) like UPPER(?)", "#{params[:search]}%")
+                   .order(publication_date: :desc)
+               else
+                 Graphic.order(publication_date: :desc).limit(@index_items_limit * @page)
+               end
+      @item_id = params[:id].present? ? params[:id].to_i : nil
+      respond_to do |format|
+        format.js { render 'backend/shared/index_items_searched' }
+      end
+    end
+
     private
 
       def graphic_params
@@ -76,7 +90,13 @@ module Backend
       end
 
       def set_graphics
-        @graphics = Graphic.order(publication_date: :desc).limit(@index_items_limit * @page)
+        @graphics = if @search.present?
+                         Graphic
+                           .where("UPPER(title) like UPPER(?)", "#{@search}%")
+                           .order(publication_date: :desc)
+                       else
+                         Graphic.order(publication_date: :desc).limit(@index_items_limit * @page)
+                       end
       end
 
       def set_objects

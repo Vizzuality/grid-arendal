@@ -7,7 +7,7 @@ module Backend
 
     before_action :set_objects, only: [:new, :edit]
     before_action :set_activities, only: [:index, :edit, :new]
-    before_action :set_activity, except: [:index, :new, :create, :paginate]
+    before_action :set_activity, except: [:index, :new, :create, :paginate, :search]
 
     def index
     end
@@ -93,6 +93,20 @@ module Backend
       end
     end
 
+    def search
+      @items = if params[:search] != ''
+                 Activity
+                   .where("UPPER(title) like UPPER(?)", "#{params[:search]}%")
+                  .order(:title)
+               else
+                 Activity.order(:title).limit(@index_items_limit * @page)
+               end
+      @item_id = params[:id].present? ? params[:id].to_i : nil
+      respond_to do |format|
+        format.js { render 'backend/shared/index_items_searched' }
+      end
+    end
+
     private
 
       def activity_params
@@ -121,7 +135,13 @@ module Backend
       end
 
       def set_activities
-        @activities = Activity.order(:title).limit(@index_items_limit * @page)
+        @activities = if @search.present?
+                        Activity
+                          .where("UPPER(title) like UPPER(?)", "#{@search}%")
+                          .order(:title)
+                      else
+                        Activity.order(:title).limit(@index_items_limit * @page)
+                      end
       end
   end
 end

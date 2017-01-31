@@ -1,0 +1,16 @@
+<div class="btn js-index-searcher-button">
+  <svg class="icon">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"></use>
+  </svg>
+</div>
+<div class="btn">
+  <svg class="icon">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-sort"></use>
+  </svg>
+</div>
+<div class="searcher js-index-searcher" <% if @search.present? %>style="display: block;"<% end %>>
+  <input type="text" placeholder="Search" value="<%= @search %>" class="text -plain-text -dark js-index-searcher-input">
+  <svg class="icon">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"></use>
+  </svg>
+</div>

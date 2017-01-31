@@ -1,0 +1,15 @@
+$(function(){
+  $('.l-items-index .items-list')
+    .html(
+      "<% @items.each do |item| %> <%= escape_javascript( render 'backend/shared/index_item',
+        item: item,
+        title: if item.is_a?(User)
+                "#{item.full_name} - #{item.email} (#{item.status})"
+              elsif item.is_a?(Partner) || item.is_a?(Tag)
+                item.name
+              else
+                item.title
+              end,
+        selected: (@item_id == item.id)) %> <% end %>"
+    );
+});

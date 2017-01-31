@@ -5,8 +5,8 @@ module Backend
   class PartnersController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_partner, except: [:index, :new, :create, :paginate]
-    before_action :set_partners
+    before_action :set_partner, except: [:index, :new, :create, :paginate, :search]
+    before_action :set_partners, only: [:index, :edit, :new]
 
     def index
     end
@@ -57,6 +57,20 @@ module Backend
       end
     end
 
+    def search
+      @items = if params[:search] != ''
+                 Partner
+                   .where("UPPER(name) like UPPER(?)", "#{params[:search]}%")
+                   .order(:name)
+               else
+                 Partner.order(:name).limit(@index_items_limit * @page)
+               end
+      @item_id = params[:id].present? ? params[:id].to_i : nil
+      respond_to do |format|
+        format.js { render 'backend/shared/index_items_searched' }
+      end
+    end
+
     private
 
       def set_partner
@@ -64,7 +78,13 @@ module Backend
       end
 
       def set_partners
-        @partners = Partner.order(:name).limit(@index_items_limit * @page)
+        @partners = if @search.present?
+                      Partner
+                        .where("UPPER(name) like UPPER(?)", "#{@search}%")
+                        .order(:name)
+                    else
+                      Partner.order(:name).limit(@index_items_limit * @page)
+                    end
       end
 
       def partner_params

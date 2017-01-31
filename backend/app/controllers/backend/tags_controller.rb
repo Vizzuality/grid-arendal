@@ -54,6 +54,20 @@ module Backend
       end
     end
 
+    def search
+      @items = if params[:search] != ''
+                 Tag
+                   .where("UPPER(name) like UPPER(?)", "#{params[:search]}%")
+                   .order(:name)
+               else
+                 Tag.order(:name).limit(@index_items_limit * @page)
+               end
+      @item_id = params[:id].present? ? params[:id].to_i : nil
+      respond_to do |format|
+        format.js { render 'backend/shared/index_items_searched' }
+      end
+    end
+
     private
 
       def set_tag
@@ -61,7 +75,13 @@ module Backend
       end
 
       def set_tags
-        @tags = Tag.order(:name).limit(@index_items_limit * @page)
+        @activities = if @search.present?
+                      Tag
+                          .where("UPPER(name) like UPPER(?)", "#{@search}%")
+                          .order(:name)
+                      else
+                        Tag.order(:name).limit(@index_items_limit * @page)
+                      end
       end
 
       def tag_params

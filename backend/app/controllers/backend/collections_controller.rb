@@ -5,7 +5,7 @@ module Backend
   class CollectionsController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_collection, except: [:index, :new, :create, :paginate]
+    before_action :set_collection, except: [:index, :new, :create, :paginate, :search]
     before_action :set_collections, only: [:index, :edit, :new]
     before_action :set_objects, only: [:edit]
 
@@ -75,6 +75,20 @@ module Backend
       end
     end
 
+    def search
+      @items = if params[:search] != ''
+                 Collection
+                   .where("UPPER(title) like UPPER(?)", "#{params[:search]}%")
+                   .order("publication_date DESC")
+               else
+                 Collection.order("publication_date DESC").limit(@index_items_limit * @page)
+               end
+      @item_id = params[:id].present? ? params[:id].to_i : nil
+      respond_to do |format|
+        format.js { render 'backend/shared/index_items_searched' }
+      end
+    end
+
     private
 
       def collection_params
@@ -87,7 +101,13 @@ module Backend
       end
 
       def set_collections
-        @collections = Collection.order("publication_date DESC").limit(@index_items_limit * @page)
+        @collections = if @search.present?
+                        Collection
+                          .where("UPPER(title) like UPPER(?)", "#{@search}%")
+                          .order("publication_date DESC")
+                      else
+                        Collection.order("publication_date DESC").limit(@index_items_limit * @page)
+                      end
       end
 
       def set_objects

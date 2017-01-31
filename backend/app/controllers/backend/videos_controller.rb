@@ -5,8 +5,8 @@ module Backend
   class VideosController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_video, except: [:index, :new, :create, :paginate]
-    before_action :set_videos, only: [:index, :edit, :new]
+    before_action :set_video, except: [:index, :new, :create, :paginate, :search]
+    before_action :set_videos, only: [:index, :edit, :new, :paginate, :search]
     before_action :set_objects, only: [:edit, :new]
 
     def index
@@ -76,6 +76,20 @@ module Backend
       end
     end
 
+    def search
+      @items = if params[:search] != ''
+                 Video
+                   .where("UPPER(title) like UPPER(?)", "#{params[:search]}%")
+                   .order(publication_date: :desc)
+               else
+                 Video.order(publication_date: :desc).limit(@index_items_limit * @page)
+               end
+      @item_id = params[:id].present? ? params[:id].to_i : nil
+      respond_to do |format|
+        format.js { render 'backend/shared/index_items_searched' }
+      end
+    end
+
     private
 
       def video_params
@@ -87,7 +101,13 @@ module Backend
       end
 
       def set_videos
-        @videos = Video.order(publication_date: :desc).limit(@index_items_limit * @page)
+        @videos = if @search.present?
+                    Video
+                      .where("UPPER(title) like UPPER(?)", "#{@search}%")
+                      .order(publication_date: :desc)
+                  else
+                    Video.order(publication_date: :desc).limit(@index_items_limit * @page)
+                  end
       end
 
       def set_objects

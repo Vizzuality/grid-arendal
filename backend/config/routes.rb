@@ -23,11 +23,13 @@ Backend::Engine.routes.draw do
     patch 'make_publisher',   on: :member
     patch 'make_contributor', on: :member
     get :paginate, on: :collection, defaults: { format: 'js' }
+    get :search, on: :collection, defaults: { format: 'js' }
   end
 
   resources :about_sections, except: :show do
     post :sort, on: :collection
     get :paginate, on: :collection, defaults: { format: 'js' }
+    get :search, on: :collection, defaults: { format: 'js' }
   end
 
   resources :site_sections, except: [:show, :new, :create]
@@ -35,6 +37,7 @@ Backend::Engine.routes.draw do
   resources :news_articles,  except: [:show, :new, :create] do
     get :fetch, on: :collection
     get :paginate, on: :collection, defaults: { format: 'js' }
+    get :search, on: :collection, defaults: { format: 'js' }
   end
 
   [:publications, :activities].each do |res|
@@ -44,6 +47,7 @@ Backend::Engine.routes.draw do
       patch 'make_featured', on: :member
       patch 'remove_featured', on: :member
       get :paginate, on: :collection, defaults: { format: 'js' }
+      get :search, on: :collection, defaults: { format: 'js' }
     end
   end
 
@@ -51,17 +55,20 @@ Backend::Engine.routes.draw do
     patch 'publish', on: :member
     patch 'unpublish', on: :member
     get :paginate, on: :collection, defaults: { format: 'js' }
+    get :search, on: :collection, defaults: { format: 'js' }
   end
 
   resources :events, except: :show do
     patch 'deactivate', on: :member
     patch 'activate',   on: :member
     get :paginate, on: :collection, defaults: { format: 'js' }
+    get :search, on: :collection, defaults: { format: 'js' }
   end
 
   [:partners, :content_types, :tags].each do |res|
     resources res, except: [:show] do
       get :paginate, on: :collection, defaults: { format: 'js' }
+      get :search, on: :collection, defaults: { format: 'js' }
     end
   end
 
@@ -71,20 +78,23 @@ Backend::Engine.routes.draw do
       patch 'remove_featured', on: :member
       get 'flickr_update', on: :member
       get :paginate, on: :collection, defaults: { format: 'js' }
+      get :search, on: :collection, defaults: { format: 'js' }
     end
   end
 
   resources :photos, except: [:new, :create, :show] do
     patch 'make_featured',   on: :member
     patch 'remove_featured', on: :member
-    get 'search', on: :collection
+    get 'search_thumbnails', on: :collection
     get :paginate, on: :collection, defaults: { format: 'js' }
+    get :search, on: :collection, defaults: { format: 'js' }
   end
 
   resources :graphics, except: [:new, :create, :show] do
     patch 'make_featured',   on: :member
     patch 'remove_featured', on: :member
     get :paginate, on: :collection, defaults: { format: 'js' }
+    get :search, on: :collection, defaults: { format: 'js' }
   end
 
   [:videos, :video_collections].each do |res|
@@ -92,6 +102,7 @@ Backend::Engine.routes.draw do
       patch 'make_featured',   on: :member
       patch 'remove_featured', on: :member
       get :paginate, on: :collection, defaults: { format: 'js' }
+      get :search, on: :collection, defaults: { format: 'js' }
     end
   end
 
