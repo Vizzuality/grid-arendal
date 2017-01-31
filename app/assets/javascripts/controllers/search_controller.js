@@ -8,6 +8,7 @@
 
     index: function() {
       new App.View.SearchInput();
+      new App.View.VideoThumbnails();
 
       if(this.isScreen_s) {
         this.initSliders();
