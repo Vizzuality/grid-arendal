@@ -55,6 +55,9 @@
       'manage/site_sections': 'BackOfficeHome#index',
       'manage/site_sections/new': 'BackOfficeHome#show',
       'manage/site_sections/:id(/:action)': 'BackOfficeHome#show',
+      'manage/vacancies': 'BackOfficeHome#index',
+      'manage/vacancies/new': 'BackOfficeHome#show',
+      'manage/vacancies/:id(/:action)': 'BackOfficeHome#show',
     },
 
     initialize: function() {

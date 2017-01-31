@@ -39,4 +39,16 @@ class Event < ApplicationRecord
   validates :title, presence: true
 
   scope :order_by_title, -> { order('title ASC') }
+
+  class << self
+    def events(search, limit)
+      if search.present? and search != ''
+        Event
+          .where("UPPER(title) like UPPER(?)", "%#{search}%")
+          .order(:title)
+      else
+        Event.order(:title).limit(limit)
+      end
+    end
+  end
 end

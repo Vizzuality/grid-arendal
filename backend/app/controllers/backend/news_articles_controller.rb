@@ -52,13 +52,7 @@ module Backend
     end
 
     def search
-      @items = if params[:search] != ''
-                 NewsArticle
-                   .where("UPPER(title) like UPPER(?)", "#{params[:search]}%")
-                   .order('publication_date DESC')
-               else
-                 NewsArticle.order('publication_date DESC').limit(@index_items_limit * @page)
-               end
+      @items = NewsArticle.news_articles(params[:search], @index_items_limit * @page)
       @item_id = params[:id].present? ? params[:id].to_i : nil
       respond_to do |format|
         format.js { render 'backend/shared/index_items_searched' }
@@ -72,13 +66,7 @@ module Backend
       end
 
       def set_news_articles
-        @news_articles = if @search.present?
-                           NewsArticle
-                            .where("UPPER(title) like UPPER(?)", "#{@search}%")
-                            .order('publication_date DESC')
-                          else
-                            NewsArticle.order('publication_date DESC').limit(@index_items_limit * @page)
-                          end
+        @news_articles = NewsArticle.news_articles(@search, @index_items_limit * @page)
       end
 
       def news_article_params

@@ -94,13 +94,7 @@ module Backend
     end
 
     def search
-      @items = if params[:search] != ''
-                 Activity
-                   .where("UPPER(title) like UPPER(?)", "#{params[:search]}%")
-                  .order(:title)
-               else
-                 Activity.order(:title).limit(@index_items_limit * @page)
-               end
+      @items = Activity.activities(params[:search], @index_items_limit * @page)
       @item_id = params[:id].present? ? params[:id].to_i : nil
       respond_to do |format|
         format.js { render 'backend/shared/index_items_searched' }
@@ -135,13 +129,7 @@ module Backend
       end
 
       def set_activities
-        @activities = if @search.present?
-                        Activity
-                          .where("UPPER(title) like UPPER(?)", "#{@search}%")
-                          .order(:title)
-                      else
-                        Activity.order(:title).limit(@index_items_limit * @page)
-                      end
+        @activities = Activity.activities(@search, @index_items_limit * @page)
       end
   end
 end

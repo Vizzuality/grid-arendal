@@ -41,4 +41,16 @@ class Photo < MediaContent
       where.not(url: nil).
       order(ordr).limit(1).first.try(:url)
   end
+
+  class << self
+    def photos(search, limit)
+      if search.present? and search != ''
+        Photo
+          .where("UPPER(title) like UPPER(?)", "%#{search}%")
+          .order(publication_date: :desc)
+      else
+        Photo.order(publication_date: :desc).limit(limit)
+      end
+    end
+  end
 end

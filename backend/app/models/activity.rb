@@ -43,5 +43,15 @@ class Activity < Content
       activities = activities.by_status(status)   if status.present?
       activities
     end
+
+    def activities(search, limit)
+      if search.present? and search != ''
+        Activity
+          .where("UPPER(title) like UPPER(?)", "%#{search}%")
+          .order(:title)
+      else
+        Activity.order(:title).limit(limit)
+      end
+    end
   end
 end

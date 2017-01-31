@@ -44,20 +44,6 @@ module Backend
       end
     end
 
-    def search
-      @items = if params[:search] != ''
-                 SiteSection
-                   .where("UPPER(title) like UPPER(?)", "#{params[:search]}%")
-                   .order(:section)
-               else
-                 SiteSection.order(:section).limit(@index_items_limit * @page)
-               end
-      @item_id = params[:id].present? ? params[:id].to_i : nil
-      respond_to do |format|
-        format.js { render 'backend/shared/index_items_searched' }
-      end
-    end
-
     private
 
       def set_site_section
@@ -65,13 +51,7 @@ module Backend
       end
 
       def set_site_sections
-        @activities = if @search.present?
-                        SiteSection
-                            .where("UPPER(title) like UPPER(?)", "#{@search}%")
-                            .order(:section)
-                        else
-                          SiteSection.order(:section).limit(@index_items_limit * @page)
-                        end
+        @site_sections = SiteSection.site_sections(@search, @index_items_limit * @page)
       end
 
       def site_section_params

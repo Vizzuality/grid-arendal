@@ -66,13 +66,7 @@ module Backend
     end
 
     def search
-      @items = if params[:search] != ''
-                 Vacancy
-                   .where("UPPER(title) like UPPER(?)", "#{params[:search]}%")
-                   .order(:title)
-               else
-                 Vacancy.order(:title).limit(@index_items_limit * @page)
-               end
+      @items = Vacancy.vacancies(params[:search], @index_items_limit * @page)
       @item_id = params[:id].present? ? params[:id].to_i : nil
       respond_to do |format|
         format.js { render 'backend/shared/index_items_searched' }
@@ -86,13 +80,7 @@ module Backend
       end
 
       def set_vacancies
-        @vacancies = if @search.present?
-                      Vacancy
-                        .where("UPPER(title) like UPPER(?)", "#{@search}%")
-                        .order(:title)
-                      else
-                        Vacancy.order(:title).limit(@index_items_limit * @page)
-                      end
+        @vacancies = Vacancy.vacancies(@search, @index_items_limit * @page)
       end
   end
 end

@@ -76,13 +76,7 @@ module Backend
     end
 
     def search
-      @items = if params[:search] != ''
-                 Collection
-                   .where("UPPER(title) like UPPER(?)", "#{params[:search]}%")
-                   .order("publication_date DESC")
-               else
-                 Collection.order("publication_date DESC").limit(@index_items_limit * @page)
-               end
+      @items = Collection.collections(params[:search], @index_items_limit * @page)
       @item_id = params[:id].present? ? params[:id].to_i : nil
       respond_to do |format|
         format.js { render 'backend/shared/index_items_searched' }
@@ -101,13 +95,7 @@ module Backend
       end
 
       def set_collections
-        @collections = if @search.present?
-                        Collection
-                          .where("UPPER(title) like UPPER(?)", "#{@search}%")
-                          .order("publication_date DESC")
-                      else
-                        Collection.order("publication_date DESC").limit(@index_items_limit * @page)
-                      end
+        @collections = Collection.collections(@search, @index_items_limit * @page)
       end
 
       def set_objects

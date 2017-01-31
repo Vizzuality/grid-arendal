@@ -57,13 +57,7 @@ module Backend
     end
 
     def search
-      @items = if params[:search] != ''
-                 ContentType
-                   .where("UPPER(title) like UPPER(?)", "#{params[:search]}%")
-                   .order(:title)
-               else
-                 ContentType.order(:title).limit(@index_items_limit * @page)
-               end
+      @items = ContentType.content_types(params[:search], @index_items_limit * @page)
       @item_id = params[:id].present? ? params[:id].to_i : nil
       respond_to do |format|
         format.js { render 'backend/shared/index_items_searched' }
@@ -77,13 +71,7 @@ module Backend
       end
 
       def set_content_types
-        @content_types = if @search.present?
-                          ContentType
-                            .where("UPPER(title) like UPPER(?)", "#{@search}%")
-                            .order(:title)
-                          else
-                            ContentType.order(:title).limit(@index_items_limit * @page)
-                          end
+        @content_types = ContentType.content_types(@search, @index_items_limit * @page)
       end
 
       def content_type_params

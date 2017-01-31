@@ -77,13 +77,7 @@ module Backend
     end
 
     def search
-      @items = if params[:search] != ''
-                 Video
-                   .where("UPPER(title) like UPPER(?)", "#{params[:search]}%")
-                   .order(publication_date: :desc)
-               else
-                 Video.order(publication_date: :desc).limit(@index_items_limit * @page)
-               end
+      @items = Video.videos(params[:search], @index_items_limit * @page)
       @item_id = params[:id].present? ? params[:id].to_i : nil
       respond_to do |format|
         format.js { render 'backend/shared/index_items_searched' }
@@ -101,13 +95,7 @@ module Backend
       end
 
       def set_videos
-        @videos = if @search.present?
-                    Video
-                      .where("UPPER(title) like UPPER(?)", "#{@search}%")
-                      .order(publication_date: :desc)
-                  else
-                    Video.order(publication_date: :desc).limit(@index_items_limit * @page)
-                  end
+        @videos = Video.videos(@search, @index_items_limit * @page)
       end
 
       def set_objects

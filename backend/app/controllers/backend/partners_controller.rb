@@ -58,13 +58,7 @@ module Backend
     end
 
     def search
-      @items = if params[:search] != ''
-                 Partner
-                   .where("UPPER(name) like UPPER(?)", "#{params[:search]}%")
-                   .order(:name)
-               else
-                 Partner.order(:name).limit(@index_items_limit * @page)
-               end
+      @items = Partner.partners(params[:search], @index_items_limit * @page)
       @item_id = params[:id].present? ? params[:id].to_i : nil
       respond_to do |format|
         format.js { render 'backend/shared/index_items_searched' }
@@ -78,13 +72,7 @@ module Backend
       end
 
       def set_partners
-        @partners = if @search.present?
-                      Partner
-                        .where("UPPER(name) like UPPER(?)", "#{@search}%")
-                        .order(:name)
-                    else
-                      Partner.order(:name).limit(@index_items_limit * @page)
-                    end
+        @partners = Partner.partners(@search, @index_items_limit * @page)
       end
 
       def partner_params

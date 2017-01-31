@@ -72,13 +72,7 @@ module Backend
     end
 
     def search
-      @items = if params[:search] != ''
-                 Photo
-                   .where("UPPER(title) like UPPER(?)", "#{params[:search]}%")
-                   .order("publication_date DESC")
-               else
-                 Photo.order("publication_date DESC").limit(@index_items_limit * @page)
-               end
+      @items = Photo.photos(params[:search], @index_items_limit * @page)
       @item_id = params[:id].present? ? params[:id].to_i : nil
       respond_to do |format|
         format.js { render 'backend/shared/index_items_searched' }
@@ -96,13 +90,7 @@ module Backend
       end
 
       def set_photos
-        @photos = if @search.present?
-                    Photo
-                      .where("UPPER(title) like UPPER(?)", "#{@search}%")
-                      .order("publication_date DESC")
-                  else
-                    Photo.order("publication_date DESC").limit(@index_items_limit * @page)
-                  end
+        @photos = Photo.photos(@search, @index_items_limit * @page)
       end
 
       def set_objects

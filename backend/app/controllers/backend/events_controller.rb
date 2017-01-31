@@ -77,13 +77,7 @@ module Backend
     end
 
     def search
-      @items = if params[:search] != ''
-                 Event
-                   .where("UPPER(title) like UPPER(?)", "#{params[:search]}%")
-                   .order(:title)
-               else
-                 Event.order(:title).limit(@index_items_limit * @page)
-               end
+      @items = Event.events(params[:search], @index_items_limit * @page)
       @item_id = params[:id].present? ? params[:id].to_i : nil
       respond_to do |format|
         format.js { render 'backend/shared/index_items_searched' }
@@ -97,13 +91,7 @@ module Backend
       end
 
       def set_events
-        @events = if @search.present?
-                    Event
-                      .where("UPPER(title) like UPPER(?)", "#{@search}%")
-                      .order(:title)
-                  else
-                    Event.order(:title).limit(@index_items_limit * @page)
-                  end
+        @events = Event.events(@search, @index_items_limit * @page)
       end
 
       def event_params
