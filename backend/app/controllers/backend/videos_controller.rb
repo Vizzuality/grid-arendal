@@ -5,8 +5,8 @@ module Backend
   class VideosController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_video, except: [:index, :new, :create, :paginate, :search]
-    before_action :set_videos, only: [:index, :edit, :new, :paginate, :search]
+    before_action :set_video, except: [:index, :new, :create, :paginate]
+    before_action :set_videos, only: [:index, :edit, :new, :paginate]
     before_action :set_objects, only: [:edit, :new]
 
     def index
@@ -73,14 +73,6 @@ module Backend
           head :no_content
         end
         format.js { render 'backend/shared/index_items_paginate' }
-      end
-    end
-
-    def search
-      @items = Video.videos(params[:search], @index_items_limit * @page)
-      @item_id = params[:id].present? ? params[:id].to_i : nil
-      respond_to do |format|
-        format.js { render 'backend/shared/index_items_searched' }
       end
     end
 

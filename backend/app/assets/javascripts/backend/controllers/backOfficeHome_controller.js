@@ -13,10 +13,7 @@
       this.indexPaginationView = new App.View.IndexPagination({
         callback: this._indexPaginate.bind(this)
       });
-      this.indexSearcherView = new App.View.IndexSearcher({
-        callback: this._indexSearcher.bind(this),
-        indexPaginationView: this.indexPaginationView
-      });
+      new App.View.IndexSearcher();
     },
 
     show: function(params) {
@@ -25,10 +22,7 @@
       this.indexPaginationView = new App.View.IndexPagination({
         callback: this._indexPaginate.bind(this, params)
       });
-      this.indexSearcherView = new App.View.IndexSearcher({
-        callback: this._indexSearcher.bind(this, params),
-        indexPaginationView: this.indexPaginationView
-      });
+      new App.View.IndexSearcher();
     },
 
     _indexPaginate: function(params) {
@@ -50,25 +44,6 @@
           if(response.status === 204 || response.status === 500) {
             this.indexPaginationView.blockPagination();
           }
-        }.bind(this)
-      });
-    },
-
-    _indexSearcher: function(params) {
-      params = _.extend({}, params, { search: this.indexSearcherView.search });
-      var path = window.location.pathname.split("/");
-
-      $.ajax({
-        method: "GET",
-        cache: true,
-        url: '/' + path[1] + '/' + path[2] + '/search',
-        data: params,
-        beforeSend: function() {
-          this.indexSearcherView.showLoader();
-        }.bind(this),
-        complete: function() {
-          this.indexSearcherView.toggleDoingCallback();
-          this.indexSearcherView.hideLoader();
         }.bind(this)
       });
     },

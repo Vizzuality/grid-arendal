@@ -5,8 +5,8 @@ module Backend
   class EventsController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_event, except: [:index, :new, :create, :paginate, :search]
-    before_action :set_events, except: [:index, :paginate, :search]
+    before_action :set_event, except: [:index, :new, :create, :paginate]
+    before_action :set_events, except: [:index, :paginate]
     before_action :set_objects, only: [:new, :edit]
 
     def index
@@ -73,14 +73,6 @@ module Backend
           head :no_content
         end
         format.js { render 'backend/shared/index_items_paginate' }
-      end
-    end
-
-    def search
-      @items = Event.events(params[:search], @index_items_limit * @page)
-      @item_id = params[:id].present? ? params[:id].to_i : nil
-      respond_to do |format|
-        format.js { render 'backend/shared/index_items_searched' }
       end
     end
 

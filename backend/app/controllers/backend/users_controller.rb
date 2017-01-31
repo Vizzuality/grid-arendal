@@ -5,7 +5,7 @@ module Backend
   class UsersController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_user, except: [:index, :new, :create, :paginate, :search]
+    before_action :set_user, except: [:index, :new, :create, :paginate]
     before_action :set_users, only: [:index, :edit, :new]
     before_action :set_roles_selection, only: [:update, :create, :new, :edit]
 
@@ -90,14 +90,6 @@ module Backend
           head :no_content
         end
         format.js { render 'backend/shared/index_items_paginate' }
-      end
-    end
-
-    def search
-      @items = User.users(current_user&.admin?, user_filters, params[:search], @index_items_limit * @page)
-      @item_id = params[:id].present? ? params[:id].to_i : nil
-      respond_to do |format|
-        format.js { render 'backend/shared/index_items_searched' }
       end
     end
 

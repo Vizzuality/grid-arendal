@@ -9,7 +9,8 @@
     el: '.l-items-index',
 
     events: {
-      'click .js-index-searcher-button': '_onClickShowInput'
+      'click .js-index-searcher-button': '_onClickShowInput',
+      'click .js-index-searcher-close': '_hideInput'
     },
 
     options: {
@@ -22,11 +23,9 @@
     initialize: function(settings) {
       var opts = settings && settings.options ? settings.options : {};
       this.options = _.extend({}, this.options, opts);
-      this.callback = settings.callback;
-      this.indexPaginationView = settings.indexPaginationView;
+      this.search = null;
 
       this._cache();
-      this._initVariables();
       this._loadInputEvent();
     },
 
@@ -36,9 +35,9 @@
       this.$itemsList = $(this.$el.find(this.options.itemsListClass));
     },
 
-    _initVariables: function() {
-      this.doingCallback = false;
-      this.search = null;
+    _setHash: function () {
+      var url = this.search !== '' && this.search !== null ? '?search=' + this.search: '?';
+      Turbolinks.visit(url);
     },
 
     _updateSearch: function (search) {
@@ -50,20 +49,15 @@
         var inputValue = this.$input.val();
         if(e.keyCode === 13 && inputValue != '') {
           this._onClickLoadSearch(inputValue);
-          this.indexPaginationView.blockPagination();
         } else if(e.keyCode === 27) {
           this._hideInput();
-          this.indexPaginationView.unblockPagination();
         }
       }.bind(this));
     },
 
     _onClickLoadSearch: function(search) {
-      if(!this.doingCallback) {
-        this.toggleDoingCallback();
-        this._updateSearch(search);
-        this.callback();
-      }
+      this._updateSearch(search);
+      this._setHash();
     },
 
     _onClickShowInput: function () {
@@ -74,10 +68,6 @@
     _hideInput: function () {
       this.$inputBox.hide();
       this._onClickLoadSearch('');
-    },
-
-    toggleDoingCallback: function() {
-      this.doingCallback = !this.doingCallback;
     },
 
     showLoader: function() {

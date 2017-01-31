@@ -56,14 +56,6 @@ module Backend
       end
     end
 
-    def search
-      @items = ContentType.content_types(params[:search], @index_items_limit * @page)
-      @item_id = params[:id].present? ? params[:id].to_i : nil
-      respond_to do |format|
-        format.js { render 'backend/shared/index_items_searched' }
-      end
-    end
-
     private
 
       def set_content_type

@@ -5,7 +5,7 @@ module Backend
   class PhotosController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_photo, except: [:index, :search, :paginate, :search]
+    before_action :set_photo, except: [:index, :paginate]
     before_action :set_photos, only: [:index, :edit]
     before_action :set_objects, only: [:edit]
 
@@ -68,14 +68,6 @@ module Backend
           head :no_content
         end
         format.js { render 'backend/shared/index_items_paginate' }
-      end
-    end
-
-    def search
-      @items = Photo.photos(params[:search], @index_items_limit * @page)
-      @item_id = params[:id].present? ? params[:id].to_i : nil
-      respond_to do |format|
-        format.js { render 'backend/shared/index_items_searched' }
       end
     end
 

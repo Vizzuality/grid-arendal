@@ -5,7 +5,7 @@ module Backend
   class SiteSectionsController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_site_section,  except: [:index, :paginate, :search]
+    before_action :set_site_section,  except: [:index, :paginate]
     before_action :set_site_sections
     before_action :set_photos, only: [:edit]
 
