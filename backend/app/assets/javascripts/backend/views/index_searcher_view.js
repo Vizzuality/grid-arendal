@@ -67,6 +67,7 @@
 
     _hideInput: function () {
       this.$inputBox.hide();
+      this.$input.val('');
       this._onClickLoadSearch('');
     },
 
