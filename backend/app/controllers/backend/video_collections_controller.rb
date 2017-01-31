@@ -29,7 +29,7 @@ module Backend
     end
 
     def new
-      @videos = Video.where(album_id: id).order(:title)
+      @videos = Video.order(:title)
     end
 
     def create
