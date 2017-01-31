@@ -75,7 +75,7 @@ module Backend
       end
 
       def set_tags
-        @activities = if @search.present?
+        @tags = if @search.present?
                       Tag
                           .where("UPPER(name) like UPPER(?)", "#{@search}%")
                           .order(:name)

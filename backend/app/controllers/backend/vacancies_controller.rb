@@ -86,7 +86,7 @@ module Backend
       end
 
       def set_vacancies
-        @activities = if @search.present?
+        @vacancies = if @search.present?
                       Vacancy
                         .where("UPPER(title) like UPPER(?)", "#{@search}%")
                         .order(:title)

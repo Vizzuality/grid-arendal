@@ -6,7 +6,7 @@ module Backend
     load_and_authorize_resource
 
     before_action :set_content_type, only: [:edit, :update, :destroy]
-    before_action :set_content_types, only: [:index, :edit, :new]
+    before_action :set_content_types
 
     def index
     end
