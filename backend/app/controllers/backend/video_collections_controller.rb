@@ -29,7 +29,7 @@ module Backend
     end
 
     def new
-      @videos = Video.order(:title)
+      @videos = Video.not_in_album.order(:title)
     end
 
     def create
