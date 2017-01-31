@@ -16,7 +16,8 @@ $staff-border-width: rem(3px);
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center;
-      mix-blend-mode: luminosity;
+      mix-blend-mode: multiply;
+      filter: saturate(10%);
 
       &:before {
         content: "";

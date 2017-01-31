@@ -102,7 +102,7 @@
         </div>
         <% if @media_content.album_id %>
           <div class="link-to-album">
-            <p class="text -sidebar-title"><%= link_to "Visit this photo's album >", medium_path(@media_content.album_id) %></p>
+            <p class="text -sidebar-title"><%= link_to @media_content.type == MediaContent::TYPE_GRAPHIC ? "Visit this Graphic's Collection >" : "Visit this Photo's Album >", medium_path(@media_content.album_id) %></p>
           </div>
         <% end %>
       </div>
