@@ -13,6 +13,17 @@ class UsersController < ApplicationController
     @media_contents = MediaContent.albums_collections_and_videos.featured
   end
 
+  def get_all_related_activities
+    @activities = @user.activities
+                    .offset(3)
+    respond_to do |format|
+      if(@activities.empty?)
+        head :no_content
+      end
+      format.js
+    end
+  end
+
   private
     def set_user
       @user = User.find(params[:id])

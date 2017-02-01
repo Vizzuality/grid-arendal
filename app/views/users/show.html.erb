@@ -56,7 +56,8 @@
   <%= render 'shared/posts', collection: @activities,
     title: "Latest activities #{@user.just_first_name}'s involved in",
     link_txt: 'View all activities',
-    sectionClass: 'content -color-7' %>
+    sectionClass: 'content -color-7',
+    see_more: true %>
 <% end%>
 
 <%= render 'shared/news', news: @news, sectionClass: 'content -color-7' %>
