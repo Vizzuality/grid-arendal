@@ -30,7 +30,9 @@
     },
 
     show: function() {
-      new App.View.Anchors({});
+      new App.View.Anchors({
+        options: {trackLabel: 'Activity Page'}
+      });
       this.initSliders();
       new App.View.RelatedMedia({
         slider: this.slider

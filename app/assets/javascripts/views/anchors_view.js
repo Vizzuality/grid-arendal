@@ -12,7 +12,10 @@
       'click .js-anchor' : '_onClickMoveScrollTo'
     },
 
-    initialize: function() {
+    initialize: function(settings) {
+      var opts = settings && settings.options ? settings.options : {};
+      this.options = _.extend({}, this.options, opts);
+
       this.scrollHandler = new App.Helper.ScrollHandler();
     },
 
@@ -23,7 +26,7 @@
     },
 
     _trackAnchor: function (section) {
-      ga('send', 'event', 'Activity Page', 'Click Tab', section);
+      ga('send', 'event', this.options.trackLabel, 'Click Tab', section);
     }
 
   });
