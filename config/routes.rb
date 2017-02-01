@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   # Backend
   mount Backend::Engine, at: 'manage', as: 'backend'
 
-  resources :staff, controller: 'users', only: [:index, :show]
   resources :about, controller: 'about_sections', only: [:index]
   resources :search, only: [:index]
   resources :events, only: [:show]
@@ -21,6 +20,10 @@ Rails.application.routes.draw do
 
   resources :news, controller: 'news_articles', only: [:index] do
     get :paginate, on: :collection, defaults: { format: 'js' }
+  end
+
+  resources :staff, controller: 'users' do
+    get :related_activities, on: :collection, defaults: { format: 'js' }
   end
 
   root 'home#index'

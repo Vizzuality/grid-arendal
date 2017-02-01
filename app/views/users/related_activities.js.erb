@@ -1,0 +1,10 @@
+<% if @activities.any? %>
+  $(function(){
+    salvattore.appendElements(document.querySelector('.related-activities .masonry-layout'), $('<div/>')
+      .html("<%= escape_javascript(render("shared/related_posts", collection: @activities )) %>")
+      .contents()
+    );
+
+    $('.js-see-more').addClass('is-hidden');
+  });
+<% end %>
