@@ -6,7 +6,7 @@ module Backend
     load_and_authorize_resource
 
     before_action :set_video, except: [:index, :new, :create, :paginate]
-    before_action :set_videos, only: [:index, :edit, :new]
+    before_action :set_videos, only: [:index, :edit, :new, :paginate]
     before_action :set_objects, only: [:edit, :new]
 
     def index
@@ -87,7 +87,7 @@ module Backend
       end
 
       def set_videos
-        @videos = Video.order(publication_date: :desc).limit(@index_items_limit * @page)
+        @videos = Video.videos(@search, @index_items_limit * @page)
       end
 
       def set_objects

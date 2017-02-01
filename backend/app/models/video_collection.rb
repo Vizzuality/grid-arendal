@@ -29,4 +29,16 @@ class VideoCollection < MediaContent
   def video_id
     first_item.video_id
   end
+
+  class << self
+    def videos(search, limit)
+      if search.present? and search != ''
+        VideoCollection
+          .where("UPPER(title) like UPPER(?)", "%#{search}%")
+          .order(publication_date: :desc)
+      else
+        VideoCollection.order(publication_date: :desc).limit(limit)
+      end
+    end
+  end
 end

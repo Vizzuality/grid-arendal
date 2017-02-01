@@ -23,4 +23,16 @@ class ContentType < ApplicationRecord
   validates :for_content, presence: true
   validates :for_content,
     inclusion: { in: FOR_CONTENT, message: "%{value} is not a valid value" }
+
+  class << self
+    def content_types(search, limit)
+      if search.present? and search != ''
+        ContentType
+          .where("UPPER(title) like UPPER(?)", "%#{search}%")
+          .order(:title)
+      else
+        ContentType.order(:title).limit(limit)
+      end
+    end
+  end
 end

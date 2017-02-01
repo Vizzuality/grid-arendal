@@ -54,4 +54,16 @@ class NewsArticle < ApplicationRecord
     end while feed.items.any?
     NewsArticle.count - existing # articles fetch
   end
+
+  class << self
+    def news_articles(search, limit)
+      if search.present? and search != ''
+        NewsArticle
+          .where("UPPER(title) like UPPER(?)", "%#{search}%")
+          .order(publication_date: :desc)
+      else
+        NewsArticle.order(publication_date: :desc).limit(limit)
+      end
+    end
+  end
 end

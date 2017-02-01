@@ -13,6 +13,7 @@
       this.indexPaginationView = new App.View.IndexPagination({
         callback: this._indexPaginate.bind(this)
       });
+      new App.View.IndexSearcher();
     },
 
     show: function(params) {
@@ -21,6 +22,7 @@
       this.indexPaginationView = new App.View.IndexPagination({
         callback: this._indexPaginate.bind(this, params)
       });
+      new App.View.IndexSearcher();
     },
 
     _indexPaginate: function(params) {
@@ -40,7 +42,7 @@
           this.indexPaginationView.hideLoader();
 
           if(response.status === 204 || response.status === 500) {
-            this.indexPaginationView.toggleBlockPagination();
+            this.indexPaginationView.blockPagination();
           }
         }.bind(this)
       });

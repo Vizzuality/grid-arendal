@@ -1,7 +1,6 @@
 <%
   sortable ||= false
-  @page ||= nil
-  edit_path = @page.present? ? polymorphic_url([:edit, item], page: @page) : [:edit, item]
+  edit_path = @page.present? ? polymorphic_url([:edit, item], page: @page, search: @search) : [:edit, item]
 %>
 <li id="item_<%= item.id %>" class="c-index-item <%= "-selected" if selected %>" data-item-id="<%= item.id %>">
   <% if sortable %>
