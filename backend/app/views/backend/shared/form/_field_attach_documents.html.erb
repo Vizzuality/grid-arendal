@@ -1,4 +1,5 @@
-<div class="field -half" data-type="attach_documents">
+<% field_class ||= '' %>
+<div class="field <%= field_class %>" data-type="attach_documents">
   <%= form.label 'Files', class: 'text -field-label -bold -dark' %>
   <div>
     <%= link_to_add_association 'Add document', form, documents, class: 'btn -dark add_document_btn' %>

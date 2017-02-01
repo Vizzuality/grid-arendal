@@ -44,6 +44,12 @@ class Content < ApplicationRecord
   has_many :media_supports, dependent: :destroy
   has_many :media_contents, through: :media_supports
 
+  has_many :documents
+  accepts_nested_attributes_for :documents, reject_if: :all_blank, allow_destroy: true
+
+  has_many :weblinks, dependent: :destroy
+  accepts_nested_attributes_for :weblinks, reject_if: :all_blank, allow_destroy: true
+
   scope :order_by_title, -> { order('title ASC')        }
   scope :by_published,   -> { where(is_published: true) }
   scope :by_type, ->(type) { where(content_type_id: type) }
