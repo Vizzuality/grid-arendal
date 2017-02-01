@@ -14,7 +14,11 @@
     index: function() {
       this.initSliders();
 
-      new App.View.VideoPlayer();
+      new App.View.VideoPlayer({
+        trackOnOpen: function() {
+          ga('send', 'event', 'Home', 'Video','Play');
+        }
+      });
       new App.View.EventsModal();
       new App.View.RelatedMedia({
         slider: this.slider
