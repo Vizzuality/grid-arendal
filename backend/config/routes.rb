@@ -77,7 +77,7 @@ Backend::Engine.routes.draw do
   resources :photos, except: [:new, :create, :show] do
     patch 'make_featured',   on: :member
     patch 'remove_featured', on: :member
-    get 'search', on: :collection
+    get 'search_thumbnails', on: :collection
     get :paginate, on: :collection, defaults: { format: 'js' }
   end
 
@@ -85,6 +85,7 @@ Backend::Engine.routes.draw do
     patch 'make_featured',   on: :member
     patch 'remove_featured', on: :member
     get :paginate, on: :collection, defaults: { format: 'js' }
+    
   end
 
   [:videos, :video_collections].each do |res|

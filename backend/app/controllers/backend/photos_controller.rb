@@ -5,18 +5,9 @@ module Backend
   class PhotosController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_photo, except: [:index, :search, :paginate]
+    before_action :set_photo, except: [:index, :paginate]
     before_action :set_photos, only: [:index, :edit]
     before_action :set_objects, only: [:edit]
-
-    def search
-      @photos = Photo.where("UPPER(title) like UPPER(?)", "#{params[:query]}%").
-        limit(20)
-      @selected_id = params[:selected_id]
-      respond_to do |format|
-        format.js
-      end
-    end
 
     def index
     end
@@ -58,6 +49,15 @@ module Backend
       end
     end
 
+    def search_thumbnails
+      @photos = Photo.where("UPPER(title) like UPPER(?)", "#{params[:query]}%").
+        limit(20)
+      @selected_id = params[:selected_id]
+      respond_to do |format|
+        format.js
+      end
+    end
+
     def paginate
       @items = Photo.order("publication_date DESC")
                  .limit(@index_items_limit)
@@ -82,7 +82,7 @@ module Backend
       end
 
       def set_photos
-        @photos = Photo.order("publication_date DESC").limit(@index_items_limit * @page)
+        @photos = Photo.photos(@search, @index_items_limit * @page)
       end
 
       def set_objects

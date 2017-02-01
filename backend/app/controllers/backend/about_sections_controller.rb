@@ -6,7 +6,7 @@ module Backend
     load_and_authorize_resource
 
     before_action :set_about_section,  except: [:index, :new, :create, :sort, :paginate]
-    before_action :set_about_sections, except: [:destroy, :create, :update, :sort]
+    before_action :set_about_sections, except: [:destroy, :create, :update, :sort, :paginate]
 
     def index
     end
@@ -71,7 +71,7 @@ module Backend
       end
 
       def set_about_sections
-        @about_sections = AboutSection.order(:position).limit(@index_items_limit * @page)
+        @about_sections = AboutSection.about_sections(@search, @index_items_limit * @page)
       end
 
       def about_section_params

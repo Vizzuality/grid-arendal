@@ -66,5 +66,15 @@ class Publication < Content
       end
       publications
     end
+
+    def publications(search, limit)
+      if search.present? and search != ''
+        Publication
+          .where("UPPER(title) like UPPER(?)", "%#{search}%")
+          .order(content_date: :desc)
+      else
+        Publication.order(content_date: :desc).limit(limit)
+      end
+    end
   end
 end
