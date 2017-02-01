@@ -105,6 +105,7 @@
       line-height: 1.43;
     }
   }
+
   &.-summary-alt {
     font-family: $font-family-1;
     font-size: 17px;
@@ -333,6 +334,12 @@
 
   &.-light-alt {
     color: $font-color-3;
+  }
+}
+
+p {
+  a {
+    text-decoration: underline;
   }
 }
 
