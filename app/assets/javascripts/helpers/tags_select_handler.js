@@ -26,11 +26,14 @@
     _updateSelectedTags: function(drop, element) {
       var value = element.data("value");
       var name = element.data("name");
-      if (drop) {
-        this.selectedValues = _.without(this.selectedValues, value);
-        this.selectedTagsNames = _.without(this.selectedTagsNames, name);
+      if(drop) {
+        var index = this.selectedValues.indexOf(value);
+        this.selectedValues.splice(index, 1);
+
+        index = this.selectedValues.indexOf(name);
+        this.selectedTagsNames.splice(index, 1);
       } else {
-        if ( $.inArray( value, this.selectedValues ) === -1 ) {
+        if($.inArray(value, this.selectedValues) === -1){
           this.selectedValues.push(value);
         }
         this.selectedTagsNames.push(name);
@@ -79,7 +82,7 @@
     closeProcess: function() {
       this._closeDropdown();
       this._destroyCloser();
-      this._runCallback();
+      this._runCallback(this.selectedTagsNames);
     },
 
     _needToOpenAsModal: function() {

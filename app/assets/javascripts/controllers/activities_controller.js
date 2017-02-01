@@ -11,13 +11,15 @@
       sliderMediaItemType: "related-media"
     },
 
-    index: function(params) {
+    index: function() {
       if($('.masonry-layout').find('.masonry-column').length === 0) {
         new App.View.Masonry({
           el: '.masonry-layout'
         });
       }
-      new App.View.Filters();
+      new App.View.Filters({
+        options: {trackLabel: 'Activity filters'}
+      });
 
       this.scrollPaginationView = new App.View.ScrollPagination({
         callback: this._paginate.bind(this),
@@ -27,7 +29,7 @@
       });
     },
 
-    show: function(params) {
+    show: function() {
       new App.View.Anchors({});
       this.initSliders();
       new App.View.RelatedMedia({

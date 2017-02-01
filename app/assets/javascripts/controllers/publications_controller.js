@@ -17,7 +17,9 @@
           el: '.masonry-layout'
         });
       }
-      new App.View.Filters();
+      new App.View.Filters({
+        options: {trackLabel: 'Publications filters'}
+      });
 
       this.scrollPaginationView = new App.View.ScrollPagination({
         callback: this._paginate.bind(this),

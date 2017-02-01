@@ -6,29 +6,14 @@
 
   App.Controller.Media = App.Controller.Page.extend({
 
-    index: function(params) {
+    index: function() {
       if($('.masonry-layout').find('.masonry-column').length === 0) {
         new App.View.Masonry({
           el: '.masonry-layout'
         });
       }
       new App.View.Filters({
-        options: {
-          filters: [
-            {
-              type: "select",
-              triggerClass: ".js-dropdown-order-by"
-            },
-            {
-              type: "select",
-              triggerClass: ".js-dropdown-filter-by-type"
-            },
-            {
-              type: "tag",
-              triggerClass: ".js-dropdown-filter-by-tags"
-            }
-          ]
-        }
+        options: {trackLabel: 'Media filters'}
       });
 
       this.scrollPaginationView = new App.View.ScrollPagination({
