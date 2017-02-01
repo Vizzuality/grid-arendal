@@ -10,7 +10,7 @@
     <div class="text -image-cap name"><%= media.title %></div>
     <div class="text -related-image-meta meta">
       <%= media.author.present? ? media.author + ' | ' : ''%>
-      <%= media.publication_date.strftime("%d %b %Y") %>
+      <%= media.publication_date && media.publication_date.strftime("%d %b %Y") %>
     </div>
   <% end %>
 </div>
