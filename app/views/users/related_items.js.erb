@@ -1,0 +1,12 @@
+<% if @items.any? %>
+  $(function(){
+    var item = "<%= escape_javascript @item_type %>";
+
+    salvattore.appendElements(document.querySelector('.-related-'+ item + ' .masonry-layout'), $('<div/>')
+      .html("<%= escape_javascript(render("shared/related_posts", collection: @items )) %>")
+      .contents()
+    );
+
+    $('.js-see-more.' + item ).addClass('is-hidden');
+  });
+<% end %>

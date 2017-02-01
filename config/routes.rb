@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   end
 
   resources :staff, controller: 'users' do
-    get :related_activities, on: :collection, defaults: { format: 'js' }
+    get :related_items, on: :collection, defaults: { format: 'js' }
   end
 
   root 'home#index'

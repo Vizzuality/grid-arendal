@@ -57,14 +57,15 @@
       $('.js-see-more').on('click', this._get_all_related_activities.bind(this));
     },
 
-    _get_all_related_activities: function() {
-      var url = '/staff/related_activities'
+    _get_all_related_activities: function(e) {
+      var item = $(e.currentTarget).data('item-type');
+      var data = _.extend({}, this.params, {'item': item});
 
       $.ajax({
         method: "GET",
         cache: true,
-        url: url,
-        data: this.params,
+        url: '/staff/related_items',
+        data: data,
         beforeSend: function() {
         }.bind(this),
         complete: function(response) {

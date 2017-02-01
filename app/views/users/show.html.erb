@@ -49,15 +49,18 @@
   <%= render 'shared/posts', collection: @publications,
     title: "Latest publications #{@user.just_first_name}'s involved in",
     link_txt: 'View all publications',
-    sectionClass: 'content -color-7 -related-publications' %>
+    sectionClass: 'content -color-7 -related-publications',
+    see_more: true,
+    item_type: 'publications' %>
 <% end%>
 
 <% if @activities.any? %>
   <%= render 'shared/posts', collection: @activities,
     title: "Latest activities #{@user.just_first_name}'s involved in",
     link_txt: 'View all activities',
-    sectionClass: 'content -color-7 related-activities',
-    see_more: true %>
+    sectionClass: 'content -color-7 -related-activities',
+    see_more: true,
+    item_type: 'activities' %>
 <% end%>
 
 <%= render 'shared/news', news: @news, sectionClass: 'content -color-7' %>
