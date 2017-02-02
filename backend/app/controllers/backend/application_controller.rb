@@ -5,6 +5,7 @@ module Backend
 
     before_action :set_nav_links
     before_action :set_page_param
+    before_action :set_search_param
     before_action :set_index_items_limit
 
     layout 'backend/layouts/backend'
@@ -50,6 +51,10 @@ module Backend
 
     def set_page_param
       @page = params[:page].present? ? params[:page].to_i : 1
+    end
+
+    def set_search_param
+      @search = params[:search].present? ? params[:search] : nil
     end
 
     def set_index_items_limit

@@ -1,4 +1,7 @@
-<% sectionClass ||= '' %>
+<%
+  sectionClass ||= ''
+  links ||= nil
+%>
 <section class="l-main-content -partners <%= sectionClass %>" data-section="partners">
   <div class="row">
     <div class="small-12 columns">
@@ -22,5 +25,36 @@
         <% end %>
       </div>
     </div>
+    <% if links.present? %>
+      <div class="small-12 columns">
+        <ul class="external-links">
+          <% links.each do |link| %>
+            <%
+              case link.label.downcase
+                when 'pdf'
+                  icon_id = 'icon-pdf'
+                  url = link.document.url
+                when 'facebook'
+                  icon_id = 'icon-rrss-facebook'
+                  url = link.url
+                when 'twitter'
+                  icon_id = 'icon-rrss-twitter'
+                  url = "https://twitter.com/#{link.url}"
+                else
+                  icon_id = 'icon-rrss_web'
+                  url = link.url
+                end
+            %>
+            <li>
+              <%= link_to url, target: '_blank' do %>
+                <svg class="icon">
+                  <use xlink:href="#<%= icon_id %>"></use>
+                </svg>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
   </div>
 </section>

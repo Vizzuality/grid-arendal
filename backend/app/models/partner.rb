@@ -25,4 +25,16 @@ class Partner < ApplicationRecord
   validates :name, presence: true
 
   scope :order_by_name, -> { order('name ASC') }
+
+  class << self
+    def partners(search, limit)
+      if search.present? and search != ''
+        Partner
+          .where("UPPER(name) like UPPER(?)", "%#{search}%")
+          .order(:name)
+      else
+        Partner.order(:name).limit(limit)
+      end
+    end
+  end
 end

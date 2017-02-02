@@ -51,4 +51,16 @@ class Video < MediaContent
         nil
     end
   end
+
+  class << self
+    def videos(search, limit)
+      if search.present? and search != ''
+        Video
+          .where("UPPER(title) like UPPER(?)", "%#{search}%")
+          .order(:title)
+      else
+        Video.order(:title).limit(limit)
+      end
+    end
+  end
 end

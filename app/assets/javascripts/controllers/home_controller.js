@@ -19,6 +19,7 @@
       new App.View.RelatedMedia({
         slider: this.slider
       });
+      new App.View.VideoThumbnails();
 
       if(!this.isScreen_s) {
         _.each($('.masonry-layout'), function(element) {

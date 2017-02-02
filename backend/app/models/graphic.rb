@@ -27,4 +27,16 @@ class Graphic < MediaContent
   delegate :activities, to: :collection
   delegate :publications, to: :collection
   delegate :news_article, to: :collection
+
+  class << self
+    def graphics(search, limit)
+      if search.present? and search != ''
+        Graphic
+          .where("UPPER(title) like UPPER(?)", "%#{search}%")
+          .order(publication_date: :desc)
+      else
+        Graphic.order(publication_date: :desc).limit(limit)
+      end
+    end
+  end
 end

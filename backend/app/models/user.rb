@@ -91,6 +91,17 @@ class User < ApplicationRecord
       generated_password = ::Devise.friendly_token.first(8)
       create(attributes.merge(password: generated_password, password_confirmation: generated_password))
     end
+
+    def users(is_admin, user_filters, search, limit)
+      user = is_admin ? User.filter_users(user_filters) : User.filter_actives
+      if search.present? and search != ''
+        user.where("LOWER(first_name) like LOWER(?) OR LOWER(last_name) like LOWER(?) OR LOWER(middle_name) like LOWER(?)",
+          "%#{search}%", "%#{search}%", "%#{search}%")
+          .order_by_fullname
+      else
+        user.order_by_fullname.limit(limit)
+      end
+    end
   end
 
   private

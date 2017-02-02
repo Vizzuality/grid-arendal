@@ -28,4 +28,16 @@ class Tag < ApplicationRecord
     SQL
     Tag.find_by_sql(query)
   end
+
+  class << self
+    def tags(search, limit)
+      if search.present? and search != ''
+        Tag
+          .where("UPPER(name) like UPPER(?)", "%#{search}%")
+          .order(:name)
+      else
+        Tag.order(:name).limit(limit)
+      end
+    end
+  end
 end
