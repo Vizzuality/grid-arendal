@@ -1,4 +1,7 @@
-<% sectionClass ||= '' %>
+<%
+  sectionClass ||= ''
+  links ||= nil
+%>
 <section class="l-main-content -partners <%= sectionClass %>" data-section="partners">
   <div class="row">
     <div class="small-12 columns">
@@ -22,7 +25,7 @@
         <% end %>
       </div>
     </div>
-    <% if links.any? %>
+    <% if links.present? %>
       <div class="small-12 columns">
         <ul class="external-links">
           <% links.each do |link| %>
