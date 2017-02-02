@@ -29,7 +29,7 @@
         <div class="frame js_frame">
           <div class="slides js_slides">
             <% media_contents.each_with_index do |media, index| %>
-              <% if [MediaContent::TYPE_ALBUM, MediaContent::TYPE_COLLECTION, MediaContent::TYPE_GRAPHIC, MediaContent::TYPE_VIDEO].include?(media.type) %>
+              <% if ![MediaContent::TYPE_PHOTO].include?(media.type) %>
                 <%= render 'shared/related_media_item',
                   media: media,
                   index: index %>
