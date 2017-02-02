@@ -100,7 +100,7 @@
 <% end %>
 
 <% if @activity.partners.any? %>
-  <%= render 'shared/partners', partners: @activity.partners, sectionClass: 'content -color-3' %>
+  <%= render 'shared/partners', partners: @activity.partners, links: @activity.documents + @activity.weblinks, sectionClass: 'content -color-3' %>
 <% end %>
 
 <%= render 'shared/footer' %>
