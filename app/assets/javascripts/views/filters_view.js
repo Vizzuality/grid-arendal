@@ -189,7 +189,7 @@
         data.value = JSON.stringify(data.value);
       }
 
-      ga('send', 'event', this.options.trackLabel, data.value, value);
+      ga('send', 'event', this.options.trackLabel, data.value, data.key);
     }
 
   });

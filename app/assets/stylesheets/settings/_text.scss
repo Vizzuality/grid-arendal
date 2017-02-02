@@ -51,6 +51,11 @@
   &.-view-all {
     font-size: 13px;
     opacity: 0.8;
+
+    &.-centered {
+      width: 100%;
+      text-align: center;
+    }
   }
 
   &.-title-card {

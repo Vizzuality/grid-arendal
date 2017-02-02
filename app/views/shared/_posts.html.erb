@@ -1,5 +1,7 @@
 <% sectionClass ||= '' %>
 <% section ||= 'posts' %>
+<% see_more ||= false %>
+<% item_type ||= '' %>
 
 <section class="l-main-content <%= sectionClass %>" data-section="<%= section %>">
   <div class="row">
@@ -34,5 +36,10 @@
         </div>
       </div>
     </div>
+    <% if see_more %>
+    <div class="small-12 small-centered columns">
+      <button class="js-see-more text -view-all <%= item_type %> -centered" data-item-type=<%= item_type %> >Click to see more</button>
+    </div>
+    <% end %>
   </div>
 </section>
