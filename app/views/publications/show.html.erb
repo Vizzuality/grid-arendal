@@ -76,17 +76,16 @@
               <div class="download-links">
                 <% @publication.documents.each do |doc| %>
                   <% if doc.document.exists? %>
-                    <div class="btn -dark">
+                    <div class="btn -dark" data-key="<%= doc.label %>">
                       <%= link_to doc.label, doc.document.url, target: '_blank' %>
                     </div>
                   <% end %>
                 <% end %>
                 <% @publication.weblinks.each do |wl| %>
-                  <div class="btn -dark">
+                  <div class="btn -dark" data-key="<%= wl.label %>">
                     <%= link_to wl.label, wl.url, target: '_blank' %>
                   </div>
                 <% end %>
-                <!--div class="btn">graphics</div-->
               </div>
             </div>
           </div>
