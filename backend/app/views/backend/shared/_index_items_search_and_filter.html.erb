@@ -3,14 +3,19 @@
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search"></use>
   </svg>
 </div>
-<div class="btn">
-  <svg class="icon">
-    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-sort"></use>
-  </svg>
-</div>
 <div class="searcher js-index-searcher" <% if @search.present? %>style="display: block;"<% end %>>
   <input type="text" placeholder="Search" value="<%= @search %>" class="text -plain-text -dark js-index-searcher-input">
   <svg class="icon js-index-searcher-close">
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close"></use>
+  </svg>
+</div>
+<div class="btn js-index-filter" data-key="visibility-off">
+  <svg class="icon">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-visibility_off"></use>
+  </svg>
+</div>
+<div class="btn js-index-filter" data-key="featured">
+  <svg class="icon">
+    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-star"></use>
   </svg>
 </div>

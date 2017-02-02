@@ -44,10 +44,10 @@ class Activity < Content
       activities
     end
 
-    def activities(search, limit)
-      if search.present? and search != ''
+    def activities(params, limit)
+      if params[:search].present? and params[:search] != ''
         Activity
-          .where("UPPER(title) like UPPER(?)", "%#{search}%")
+          .where("UPPER(title) like UPPER(?)", "%#{params['search']}%")
           .order(:title)
       else
         Activity.order(:title).limit(limit)
