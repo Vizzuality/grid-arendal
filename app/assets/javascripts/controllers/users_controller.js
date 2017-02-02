@@ -10,7 +10,9 @@
       sliderContentCardType: "card"
     },
 
-    show: function() {
+    show: function(params) {
+      this.params = params;
+
       this.initSliders();
 
       new App.View.VideoPlayer({});
@@ -26,6 +28,8 @@
           }
         });
       }
+
+      this._addListeners();
     },
 
     initSliders: function() {
@@ -47,7 +51,30 @@
           }
         }
       }.bind(this));
-    }
+    },
+
+    _addListeners: function() {
+      $('.js-see-more').on('click', this._get_all_related_activities.bind(this));
+    },
+
+    _get_all_related_activities: function(e) {
+      var item = $(e.currentTarget).data('item-type');
+      var data = _.extend({}, this.params, {'item': item});
+
+      $(e.currentTarget).replaceWith('<div class="c-loader js-c-loader-' + item +'"></div>');
+
+      setTimeout(function() {
+        $.ajax({
+          method: "GET",
+          cache: true,
+          url: '/staff/related_items',
+          data: data,
+          complete: function() {
+            $('.js-c-loader-' + item).remove();
+          }
+        });
+      }, 500);
+    },
 
   });
 
