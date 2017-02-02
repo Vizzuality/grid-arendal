@@ -61,16 +61,19 @@
       var item = $(e.currentTarget).data('item-type');
       var data = _.extend({}, this.params, {'item': item});
 
-      $.ajax({
-        method: "GET",
-        cache: true,
-        url: '/staff/related_items',
-        data: data,
-        beforeSend: function() {
-        }.bind(this),
-        complete: function(response) {
-        }.bind(this)
-      });
+      $(e.currentTarget).replaceWith('<div class="c-loader js-c-loader-' + item +'"></div>');
+
+      setTimeout(function() {
+        $.ajax({
+          method: "GET",
+          cache: true,
+          url: '/staff/related_items',
+          data: data,
+          complete: function() {
+            $('.js-c-loader-' + item).remove();
+          }
+        });
+      }, 500);
     },
 
   });

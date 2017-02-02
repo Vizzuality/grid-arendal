@@ -6,7 +6,5 @@
       .html("<%= escape_javascript(render("shared/related_posts", collection: @items )) %>")
       .contents()
     );
-
-    $('.js-see-more.' + item ).addClass('is-hidden');
   });
 <% end %>
