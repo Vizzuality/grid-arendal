@@ -29,6 +29,16 @@ class Publication < Content
   scope :filter_or_older_pubs, ->(years) {where('EXTRACT(year from content_date) IN (?) OR EXTRACT(year from content_date) < ?', years, Date.today.year-5)}
   scope :by_years, ->(years) { where('EXTRACT(year from content_date) IN (?)', years) }
 
+  def media_contents_with_graphics_expanded
+    media_contents.map do |media|
+      if media.type == MediaContent::TYPE_COLLECTION
+        media.items
+      else
+        media
+      end
+    end.flatten
+  end
+
   class << self
     def fetch_all(options)
       tags = options['tags'].split(',')               if options['tags'].present?
