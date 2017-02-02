@@ -30,11 +30,13 @@ class Publication < Content
   scope :by_years, ->(years) { where('EXTRACT(year from content_date) IN (?)', years) }
 
   def media_contents_with_graphics_expanded
-    media_contents.joins(
-      "LEFT JOIN media_contents graphics
-      ON graphics.album_id = media_contents.id
-      AND graphics.type = '#{MediaContent::TYPE_GRAPHIC}'"
-    ).select('graphics.*')
+    media_contents.map do |media|
+      if media.type == MediaContent::TYPE_COLLECTION
+        media.items
+      else
+        media
+      end
+    end.flatten
   end
 
   class << self
