@@ -5,7 +5,7 @@ module ApplicationHelper
     data["link"] = medium_path(media)
     classes = ["c-related-media-item"]
 
-    if ![MediaContent::TYPE_VIDEO].include?(media.type)
+    if ![MediaContent::TYPE_VIDEO, MediaContent::TYPE_VIDEO_COLLECTION].include?(media.type)
       biggest = media.first_item.biggest_size
       picture_url = biggest.url
       classes << "-vertical" if biggest.is_vertical?
