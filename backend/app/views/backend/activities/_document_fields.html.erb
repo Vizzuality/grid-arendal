@@ -1,0 +1,18 @@
+<div class="nested-fields attach_documents_field">
+  <div class="label_field">
+    <%= f.label :label, class: 'text -field-label -dark' %>
+    <%= f.input :label, label: false,
+      input_html: {value: f.object.label || 'PDF',
+                   class: 'basic-input text -plain-text -dark'} %>
+  </div>
+
+  <div class="file_field">
+    <%= f.label 'File', class: 'text -field-label -dark' %>
+    <%= f.file_field :document, label: false, class: 'file_input' %>
+    <%= f.label :document, class: 'fake-input' do %>
+      <p class="text -plain-text -dark"><%= f.object.document_file_name.present? ? f.object.document_file_name : 'Drag and drop a file or click here' %></p>
+    <% end %>
+  </div>
+
+  <%= link_to_remove_association raw('<svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-delete"></use></svg>'), f, class: 'remove_field_btn' %>
+</div>

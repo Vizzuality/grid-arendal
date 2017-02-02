@@ -22,7 +22,10 @@
     value: :description %>
 
   <%= render 'backend/shared/form/field_input', form: form,
-    value: :project_number %>
+    value: :project_number%>
+
+  <%= render 'backend/shared/form/field_attach_documents', form: form, documents: :documents, weblinks: :weblinks,
+    label_txt: 'Files and Weblinks' %>
 </div>
 
 <div class="fields">

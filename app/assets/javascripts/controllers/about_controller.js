@@ -7,7 +7,9 @@
   App.Controller.About = App.Controller.Page.extend({
 
     index: function() {
-      this.anchorsView = new App.View.Anchors({});
+      this.anchorsView = new App.View.Anchors({
+        options: {trackLabel: 'About Page'}
+      });
       new App.View.StaffCategories();
       if(this.isScreen_s) {
         this.initSliders();

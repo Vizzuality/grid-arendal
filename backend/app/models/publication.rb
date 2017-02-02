@@ -24,13 +24,6 @@ class Publication < Content
 
   has_many :related_contents, dependent: :destroy
   has_many :activities, through: :related_contents
-  has_many :documents
-  accepts_nested_attributes_for :documents, reject_if: :all_blank,
-    allow_destroy: true
-
-  has_many :weblinks, dependent: :destroy
-  accepts_nested_attributes_for :weblinks, reject_if: :all_blank,
-    allow_destroy: true
 
   scope :older_pubs, -> { where('EXTRACT(year from content_date) < ?', Date.today.year - 5)}
   scope :filter_or_older_pubs, ->(years) {where('EXTRACT(year from content_date) IN (?) OR EXTRACT(year from content_date) < ?', years, Date.today.year-5)}

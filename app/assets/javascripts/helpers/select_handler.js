@@ -135,6 +135,7 @@
         if(value === "") {
           this.$select.val(null).change();
         } else {
+          var selectedLabel = this.$el.find("option:selected").text();
           this._updateSelectedValue(value);
 
           if(value === null) {
@@ -143,16 +144,19 @@
             this._setHaveValue();
           }
 
-          this._setSpeaker(this.$el.find("option:selected").text());
+          this._setSpeaker(selectedLabel);
           this.closeProcess();
-          this._runCallback();
+          this._runCallback(value === null ? value : selectedLabel);
         }
       }.bind(this));
     },
 
-    _runCallback: function() {
+    _runCallback: function(value) {
       if (typeof this.options.callback == "function") {
-        this.options.callback();
+        this.options.callback({
+          key: this.key,
+          value: value
+        });
       }
     },
 
