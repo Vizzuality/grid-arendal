@@ -13,7 +13,7 @@
     },
 
     _onClickShareButton: function(e) {
-      this._trackShare($(e.currentTarget).data('key'))
+      this._trackShare($(e.currentTarget).data('key'));
     },
 
     _trackShare: function (key) {
