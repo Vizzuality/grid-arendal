@@ -20,7 +20,8 @@
       videoPayerContainerClass: ".js-video-player-container"
     },
 
-    initialize: function() {
+    initialize: function(settings) {
+      this.trackOnOpen = _.isUndefined(settings.trackOnOpen) ? null : settings.trackOnOpen;
       this._cache();
     },
 
@@ -31,15 +32,18 @@
       this.$body = $('body');
     },
 
-    onClickOpenVideo: function(e) {
+    onClickOpenVideo: function() {
       this.$videoPlayer.show().animate({
         opacity: 1
       }, 300, function() {
+        if(this.trackOnOpen !== null){
+          this.trackOnOpen();
+        }
         this._checkIframe();
       }.bind(this));
     },
 
-    onClickCloseVideo: function(e) {
+    onClickCloseVideo: function() {
       this.$videoPlayer.animate({
         opacity: 0
       }, 300, function() {

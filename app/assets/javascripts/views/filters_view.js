@@ -78,7 +78,8 @@
       };
     },
 
-    _filterMedia: function() {
+    _filterMedia: function(data) {
+      this._trackFilter(data);
       this._setHash();
     },
 
@@ -179,6 +180,16 @@
           filter.closeProcess();
         }
       });
+    },
+
+    _trackFilter: function (data) {
+      if(Array.isArray(data.value) && data.value.length === 0) {
+        data.value = null;
+      } else if(data.value !== null && typeof data.value === "object") {
+        data.value = JSON.stringify(data.value);
+      }
+
+      ga('send', 'event', this.options.trackLabel, data.value, value);
     }
 
   });

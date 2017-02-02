@@ -51,19 +51,25 @@
       var element = $(e.currentTarget);
       var isSelected = element.hasClass(this.options.selectedClass);
       element.toggleClass(this.options.selectedClass);
+      var value = element.data("value");
 
-      this._updateSelectedYears(isSelected, element.data("value"));
+      this._updateSelectedYears(isSelected, value);
       this._setHaveValue();
-      this._runCallback();
+      this._runCallback(
+        !isSelected ? value : null
+      );
     },
 
     _setHaveValue: function () {
       this.$el.addClass(this.options.haveValueClass);
     },
 
-    _runCallback: function() {
+    _runCallback: function(value) {
       if (typeof this.options.callback == "function") {
-        this.options.callback();
+        this.options.callback({
+          key: this.key,
+          value: value
+        });
       }
     },
 

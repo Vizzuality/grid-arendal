@@ -26,6 +26,7 @@
     initialize: function() {
       new App.View.MobileMenu();
       new App.View.ScrollToTop();
+      new App.View.Share();
       this.isScreen_s = ($(window).width() < 768);
     },
 
