@@ -71,7 +71,7 @@ module Backend
       end
 
       def set_about_sections
-        @about_sections = AboutSection.about_sections(@search, @index_items_limit * @page)
+        @about_sections = AboutSection.about_sections(params, @index_items_limit * @page)
       end
 
       def about_section_params

@@ -9,13 +9,17 @@
     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-close"></use>
   </svg>
 </div>
-<div class="btn js-index-filter" data-key="visibility-off">
-  <svg class="icon">
-    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-visibility_off"></use>
-  </svg>
-</div>
-<div class="btn js-index-filter" data-key="featured">
-  <svg class="icon">
-    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-star"></use>
-  </svg>
-</div>
+<% if ['activities', 'publications', 'vacancies'].include?(controller_name) %>
+  <div class="btn js-index-filter <% if params[:visibility_off].present? %>-selected<% end %>" data-key="visibility_off">
+    <svg class="icon">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-visibility_off"></use>
+    </svg>
+  </div>
+<% end %>
+<% if ['activities', 'publications', 'albums', 'collections', 'video_collections', 'videos'].include?(controller_name) %>
+  <div class="btn js-index-filter <% if params[:featured].present? %>-selected<% end %>" data-key="featured">
+    <svg class="icon">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-star"></use>
+    </svg>
+  </div>
+<% end %>

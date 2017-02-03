@@ -76,7 +76,7 @@ module Backend
       end
 
       def set_graphics
-        @graphics = Graphic.graphics(@search, @index_items_limit * @page)
+        @graphics = Graphic.graphics(params, @index_items_limit * @page)
       end
 
       def set_objects

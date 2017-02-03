@@ -12,10 +12,17 @@
       'click .js-index-filter': '_onClickDoFilter'
     },
 
+    options: {
+      selectedClass: "-selected",
+    },
+
     selectedFilters: [],
 
     _onClickDoFilter: function(e) {
-      var key = $(e.currentTarget).data('key');
+      var element = $(e.currentTarget);
+      var key = element.data('key');
+      element.toggleClass(this.options.selectedClass);
+
       this._updateSelectedFilters(key);
       this._setHash();
     },

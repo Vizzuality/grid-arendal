@@ -60,10 +60,12 @@ class Publication < Content
       publications
     end
 
-    def publications(search, limit)
-      if search.present? and search != ''
+    def publications(params, limit)
+      query_where = get_filter_condition(params, 'title')
+
+      if query_where.present?
         Publication
-          .where("UPPER(title) like UPPER(?)", "%#{search}%")
+          .where(query_where, "%#{params[:search]}%")
           .order(content_date: :desc)
       else
         Publication.order(content_date: :desc).limit(limit)

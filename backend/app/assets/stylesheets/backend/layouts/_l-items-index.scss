@@ -75,6 +75,14 @@ $items-border: rem(1px) solid rgba($white, 0.2);
         fill: $white;
         opacity: 0.5;
       }
+
+      &.-selected {
+        border-color: rgba($white, 1);
+
+        .icon {
+          opacity: 1;
+        }
+      }
     }
 
     .searcher {

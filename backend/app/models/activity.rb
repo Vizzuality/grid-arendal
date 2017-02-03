@@ -45,9 +45,11 @@ class Activity < Content
     end
 
     def activities(params, limit)
-      if params[:search].present? and params[:search] != ''
+      query_where = get_filter_condition(params, 'title')
+
+      if query_where.present?
         Activity
-          .where("UPPER(title) like UPPER(?)", "%#{params['search']}%")
+          .where(query_where, "%#{params[:search]}%")
           .order(:title)
       else
         Activity.order(:title).limit(limit)
