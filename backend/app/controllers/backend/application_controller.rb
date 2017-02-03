@@ -62,7 +62,7 @@ module Backend
     end
 
     def filter_params
-      params.permit(:featured, :visibility_off)
+      params.permit(:search, :featured, :visibility_off)
     end
   end
 end
