@@ -56,10 +56,12 @@ class NewsArticle < ApplicationRecord
   end
 
   class << self
-    def news_articles(search, limit)
-      if search.present? and search != ''
+    def news_articles(params, limit)
+      query_where = get_filter_condition(params, 'title')
+
+      if query_where.present?
         NewsArticle
-          .where("UPPER(title) like UPPER(?)", "%#{search}%")
+          .where(query_where, "%#{params[:search]}%")
           .order(publication_date: :desc)
       else
         NewsArticle.order(publication_date: :desc).limit(limit)

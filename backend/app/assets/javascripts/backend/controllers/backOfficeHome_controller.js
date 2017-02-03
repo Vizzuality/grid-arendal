@@ -14,6 +14,7 @@
         callback: this._indexPaginate.bind(this)
       });
       new App.View.IndexSearcher();
+      new App.View.IndexFilter();
     },
 
     show: function(params) {
@@ -23,6 +24,7 @@
         callback: this._indexPaginate.bind(this, params)
       });
       new App.View.IndexSearcher();
+      new App.View.IndexFilter();
     },
 
     _indexPaginate: function(params) {

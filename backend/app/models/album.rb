@@ -20,10 +20,12 @@ class Album < MediaContent
   alias_attribute :items, :photos
 
   class << self
-    def albums(search, limit)
-      if search.present? and search != ''
+    def albums(params, limit)
+      query_where = get_filter_condition(params, 'title')
+
+      if query_where.present?
         Album
-          .where("UPPER(title) like UPPER(?)", "%#{search}%")
+          .where(query_where, "%#{params[:search]}%")
           .order(publication_date: :desc)
       else
         Album.order(publication_date: :desc).limit(limit)
