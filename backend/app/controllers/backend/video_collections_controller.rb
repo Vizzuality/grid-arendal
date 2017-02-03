@@ -90,7 +90,7 @@ module Backend
       end
 
       def set_video_collections
-        @video_collections = VideoCollection.videos(params, @index_items_limit * @page)
+        @video_collections = VideoCollection.videos(VideoCollection.filter_params(params), @index_items_limit * @page)
       end
 
       def set_objects

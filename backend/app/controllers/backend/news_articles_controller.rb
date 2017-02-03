@@ -58,7 +58,7 @@ module Backend
       end
 
       def set_news_articles
-        @news_articles = NewsArticle.news_articles(params, @index_items_limit * @page)
+        @news_articles = NewsArticle.news_articles(NewsArticle.filter_params(params), @index_items_limit * @page)
       end
 
       def news_article_params

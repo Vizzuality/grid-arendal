@@ -121,7 +121,7 @@ module Backend
       end
 
       def set_publications
-        @publications = Publication.publications(params, @index_items_limit * @page)
+        @publications = Publication.publications(Publication.filter_params(params), @index_items_limit * @page)
       end
   end
 end

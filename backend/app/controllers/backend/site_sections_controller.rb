@@ -51,7 +51,7 @@ module Backend
       end
 
       def set_site_sections
-        @site_sections = SiteSection.site_sections(params, @index_items_limit * @page)
+        @site_sections = SiteSection.site_sections(SiteSection.filter_params(params), @index_items_limit * @page)
       end
 
       def site_section_params

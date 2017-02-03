@@ -3,6 +3,10 @@ class ApplicationRecord < ActiveRecord::Base
   self.abstract_class = true
 
   class << self
+    def filter_params(params)
+      params.permit(:featured, :visibility_off)
+    end
+
     def get_filter_condition(params, search_field)
       where_condition = ''
       if params[:search].present? and params[:search] != ''
