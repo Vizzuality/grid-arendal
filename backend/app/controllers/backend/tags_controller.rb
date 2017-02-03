@@ -61,7 +61,7 @@ module Backend
       end
 
       def set_tags
-        @tags = Tag.tags(Tag.filter_params(params), @index_items_limit * @page)
+        @tags = Tag.tags(filter_params, @index_items_limit * @page)
       end
 
       def tag_params

@@ -83,7 +83,7 @@ module Backend
       end
 
       def set_events
-        @events = Event.events(Event.filter_params(params), @index_items_limit * @page)
+        @events = Event.events(filter_params, @index_items_limit * @page)
       end
 
       def event_params

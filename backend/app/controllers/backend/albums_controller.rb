@@ -87,7 +87,7 @@ module Backend
       end
 
       def set_albums
-        @albums = Album.albums(Album.filter_params(params), @index_items_limit * @page)
+        @albums = Album.albums(filter_params, @index_items_limit * @page)
       end
 
       def set_objects

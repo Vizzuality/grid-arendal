@@ -64,7 +64,7 @@ module Backend
       end
 
       def set_partners
-        @partners = Partner.partners(Partner.filter_params(params), @index_items_limit * @page)
+        @partners = Partner.partners(filter_params, @index_items_limit * @page)
       end
 
       def partner_params

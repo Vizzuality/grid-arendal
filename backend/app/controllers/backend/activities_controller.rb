@@ -121,7 +121,7 @@ module Backend
       end
 
       def set_activities
-        @activities = Activity.activities(Activity.filter_params(params), @index_items_limit * @page)
+        @activities = Activity.activities(filter_params, @index_items_limit * @page)
       end
   end
 end

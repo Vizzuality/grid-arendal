@@ -72,7 +72,7 @@ module Backend
       end
 
       def set_vacancies
-        @vacancies = Vacancy.vacancies(Vacancy.filter_params(params), @index_items_limit * @page)
+        @vacancies = Vacancy.vacancies(filter_params, @index_items_limit * @page)
       end
   end
 end

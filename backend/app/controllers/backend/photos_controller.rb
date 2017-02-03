@@ -82,7 +82,7 @@ module Backend
       end
 
       def set_photos
-        @photos = Photo.photos(Photo.filter_params(params), @index_items_limit * @page)
+        @photos = Photo.photos(filter_params, @index_items_limit * @page)
       end
 
       def set_objects
