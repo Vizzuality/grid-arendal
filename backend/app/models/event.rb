@@ -41,10 +41,12 @@ class Event < ApplicationRecord
   scope :order_by_title, -> { order('title ASC') }
 
   class << self
-    def events(search, limit)
-      if search.present? and search != ''
+    def events(params, limit)
+      query_where = get_filter_condition(params, 'title')
+
+      if query_where.present?
         Event
-          .where("UPPER(title) like UPPER(?)", "%#{search}%")
+          .where(query_where, "%#{params[:search]}%")
           .order(:title)
       else
         Event.order(:title).limit(limit)

@@ -27,10 +27,12 @@ class Partner < ApplicationRecord
   scope :order_by_name, -> { order('name ASC') }
 
   class << self
-    def partners(search, limit)
-      if search.present? and search != ''
+    def partners(params, limit)
+      query_where = get_filter_condition(params, 'name')
+
+      if query_where.present?
         Partner
-          .where("UPPER(name) like UPPER(?)", "%#{search}%")
+          .where(query_where, "%#{params[:search]}%")
           .order(:name)
       else
         Partner.order(:name).limit(limit)

@@ -43,10 +43,12 @@ class Photo < MediaContent
   end
 
   class << self
-    def photos(search, limit)
-      if search.present? and search != ''
+    def photos(params, limit)
+      query_where = get_filter_condition(params, 'title')
+
+      if query_where.present?
         Photo
-          .where("UPPER(title) like UPPER(?)", "%#{search}%")
+          .where(query_where, "%#{params[:search]}%")
           .order(publication_date: :desc)
       else
         Photo.order(publication_date: :desc).limit(limit)

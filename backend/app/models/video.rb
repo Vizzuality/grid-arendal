@@ -53,10 +53,12 @@ class Video < MediaContent
   end
 
   class << self
-    def videos(search, limit)
-      if search.present? and search != ''
+    def videos(params, limit)
+      query_where = get_filter_condition(params, 'title')
+
+      if query_where.present?
         Video
-          .where("UPPER(title) like UPPER(?)", "%#{search}%")
+          .where(query_where, "%#{params[:search]}%")
           .order(:title)
       else
         Video.order(:title).limit(limit)

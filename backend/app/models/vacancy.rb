@@ -5,10 +5,12 @@ class Vacancy < ApplicationRecord
   validates :title, presence: true
 
   class << self
-    def vacancies(search, limit)
-      if search.present? and search != ''
+    def vacancies(params, limit)
+      query_where = get_filter_condition(params, 'title')
+
+      if query_where.present?
         Vacancy
-          .where("UPPER(title) like UPPER(?)", "%#{search}%")
+          .where(query_where, "%#{params[:search]}%")
           .order(:title)
       else
         Vacancy.order(:title).limit(limit)

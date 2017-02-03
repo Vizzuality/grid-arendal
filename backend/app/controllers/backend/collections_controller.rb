@@ -87,7 +87,7 @@ module Backend
       end
 
       def set_collections
-        @collections = Collection.collections(@search, @index_items_limit * @page)
+        @collections = Collection.collections(filter_params, @index_items_limit * @page)
       end
 
       def set_objects

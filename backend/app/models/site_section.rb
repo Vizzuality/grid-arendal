@@ -6,10 +6,12 @@ class SiteSection < ApplicationRecord
   validates :section, uniqueness: true
 
   class << self
-    def site_sections(search, limit)
-      if search.present? and search != ''
+    def site_sections(params, limit)
+      query_where = get_filter_condition(params, 'section')
+
+      if query_where.present?
         SiteSection
-          .where("UPPER(section) like UPPER(?)", "%#{search}%")
+          .where(query_where, "%#{params[:search]}%")
           .order(:section)
       else
         SiteSection.order(:section).limit(limit)

@@ -63,7 +63,7 @@ module Backend
       end
 
       def set_content_types
-        @content_types = ContentType.content_types(@search, @index_items_limit * @page)
+        @content_types = ContentType.content_types(filter_params, @index_items_limit * @page)
       end
 
       def content_type_params

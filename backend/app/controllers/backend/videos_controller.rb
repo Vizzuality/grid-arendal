@@ -87,7 +87,7 @@ module Backend
       end
 
       def set_videos
-        @videos = Video.videos(@search, @index_items_limit * @page)
+        @videos = Video.videos(filter_params, @index_items_limit * @page)
       end
 
       def set_objects
