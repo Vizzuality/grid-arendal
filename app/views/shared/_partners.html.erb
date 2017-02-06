@@ -9,22 +9,24 @@
         <h2 class="text -title-block">Partners & Links</h2>
       </div>
     </div>
-    <div class="small-12 large-6 columns">
-      <div class="text -summary-alt">
-        GRID-Arendal´s activities are nearly always a cooperative undertaking
-        made possible through collaboration with our various partners, and
-        donors.
+    <% if partners.any? %>
+      <div class="small-12 large-6 columns">
+        <div class="text -summary-alt">
+          GRID-Arendal´s activities are nearly always a cooperative undertaking
+          made possible through collaboration with our various partners, and
+          donors.
+        </div>
       </div>
-    </div>
-    <div class="small-12 large-6 columns">
-      <div class="logos">
-        <% partners.each do |partner| %>
-          <%= link_to partner.web_url || "#" do %>
-            <span><img src="<%= partner.logo.exists? ? partner.logo.url : asset_path('original/missing2.png') %>"></span>
+      <div class="small-12 large-6 columns">
+        <div class="logos">
+          <% partners.each do |partner| %>
+            <%= link_to partner.web_url || "#" do %>
+              <span><img src="<%= partner.logo.exists? ? partner.logo.url : asset_path('original/missing2.png') %>"></span>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
-    </div>
+    <% end %>
     <% if links.present? %>
       <div class="small-12 columns">
         <ul class="external-links">

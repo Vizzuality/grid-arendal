@@ -99,8 +99,8 @@
   <%= render 'shared/related_media', media_contents: @activity.media_contents,link: media_path, sectionClass: 'content -color-3' %>
 <% end %>
 
-<% if @activity.partners.any? %>
-  <%= render 'shared/partners', partners: @activity.partners, links: @activity.documents + @activity.weblinks, sectionClass: 'content -color-3' %>
+<% if @activity.partners.any? || @activity.links.any? %>
+  <%= render 'shared/partners', partners: @activity.partners, links: @activity.links, sectionClass: 'content -color-3' %>
 <% end %>
 
 <%= render 'shared/footer' %>
