@@ -1,5 +1,7 @@
-<%= render 'shared/posts', collection: media_content.publications.
-  order(content_date: :desc),
-  title: media_content.type == MediaContent::TYPE_GRAPHIC ? 'Publications it appears in' : 'Related publications',
-  link_txt: 'View all publications',
-  link: publications_path, sectionClass: 'content -color-4' %>
+<% if media_content.publications.any? %>
+  <%= render 'shared/posts', collection: media_content.publications.
+    order(content_date: :desc),
+    title: media_content.type == MediaContent::TYPE_GRAPHIC ? 'Publications it appears in' : 'Related publications',
+    link_txt: 'View all publications',
+    link: publications_path, sectionClass: 'content -color-4' %>
+<% end %>

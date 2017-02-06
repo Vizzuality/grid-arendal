@@ -130,7 +130,7 @@
     title: "#{label_txt} included in album", sectionClass: 'content -color-4' %>
 <% end %>
 
-<% if @media_content.type == MediaContent::TYPE_GRAPHIC %>
+<% if [MediaContent::TYPE_GRAPHIC, MediaContent::TYPE_COLLECTION].include?(@media_content.type) %>
   <%= render 'publications', media_content: @media_content %>
   <%= render 'activities', media_content: @media_content %>
 <% else %>
