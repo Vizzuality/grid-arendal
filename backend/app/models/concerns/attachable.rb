@@ -6,7 +6,7 @@ module Attachable
     included do
       if ENV['AWS_ACCESS_KEY_ID'].present?
         has_attached_file :picture,
-                          styles: { medium: '300x300>', thumb: '100x100>' },
+                          styles: { medium: '500x500>', thumb: '100x100>' },
                           default_url: '/assets/:style/missing2.png',
                           storage: :s3,
                           s3_credentials: {
@@ -18,7 +18,7 @@ module Attachable
                           url: ':s3_domain_url',
                           path: "#{Rails.env}/:class/:s_picture/:id/:style/:basename.:extension"
       else
-        has_attached_file :picture, styles: { medium: '300x300>', thumb: '100x100>' },
+        has_attached_file :picture, styles: { medium: '500x500>', thumb: '100x100>' },
                                     default_url: '/assets/:style/missing2.png'
       end
 
@@ -33,7 +33,7 @@ module Attachable
     included do
       if ENV['AWS_ACCESS_KEY_ID'].present?
         has_attached_file :cover_picture,
-                          styles: { medium: '300x300>', thumb: '100x100>' },
+                          styles: { medium: '500x500>', thumb: '100x100>' },
                           default_url: '/assets/:style/missing2.png',
                           storage: :s3,
                           s3_credentials: {
@@ -45,7 +45,7 @@ module Attachable
                           url: ':s3_domain_url',
                           path: "#{Rails.env}/:class/:s_cover_picture/:id/:style/:basename.:extension"
       else
-        has_attached_file :cover_picture, styles: { medium: '300x300>', thumb: '100x100>' },
+        has_attached_file :cover_picture, styles: { medium: '500x500>', thumb: '100x100>' },
                           default_url: '/assets/:style/missing2.png'
       end
 
@@ -87,7 +87,7 @@ module Attachable
     included do
       if ENV['AWS_ACCESS_KEY_ID'].present?
         has_attached_file :background_image,
-                          styles: { medium: '300x300>', thumb: '100x100>' },
+                          styles: { medium: '500x500>', thumb: '100x100>' },
                           default_url: '/assets/:style/missing2.png',
                           storage: :s3,
                           s3_credentials: {
@@ -99,7 +99,7 @@ module Attachable
                           url: ':s3_domain_url',
                           path: "#{Rails.env}/:class/:s_background_image/:id/:style/:basename.:extension"
       else
-        has_attached_file :background_image, styles: { medium: '300x300>', thumb: '100x100>' },
+        has_attached_file :background_image, styles: { medium: '500x500>', thumb: '100x100>' },
                                              default_url: '/assets/:style/missing2.png'
       end
 
@@ -141,7 +141,7 @@ module Attachable
     included do
       if ENV['AWS_ACCESS_KEY_ID'].present?
         has_attached_file :thumbnail,
-                          styles: { medium: '300x300>', thumb: '100x100>' },
+                          styles: { medium: '500x500>', thumb: '100x100>' },
                           default_url: '/assets/:style/missing2.png',
                           storage: :s3,
                           s3_credentials: {
@@ -153,7 +153,7 @@ module Attachable
                           url: ':s3_domain_url',
                           path: "#{Rails.env}/:class/:s_thumbnail/:id/:style/:basename.:extension"
       else
-        has_attached_file :thumbnail, styles: { medium: '300x300>', thumb: '100x100>' },
+        has_attached_file :thumbnail, styles: { medium: '500x500>', thumb: '100x100>' },
                                    default_url: '/assets/:style/missing2.png'
       end
 
