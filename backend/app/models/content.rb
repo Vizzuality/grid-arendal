@@ -59,4 +59,8 @@ class Content < ApplicationRecord
 
   validates :title, presence: true
   validates :status, presence: true
+
+  def links
+    documents + weblinks
+  end
 end
