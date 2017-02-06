@@ -113,18 +113,17 @@
 
   &.-summary-alt {
     font-family: $font-family-1;
-    font-size: 17px;
+    font-size: 17px !important;
     line-height: 1.47;
     color: $font-color-1;
     opacity: 0.8;
 
-    @media screen and (min-width: $screen-m) {
-      font-size: 18px;
-      line-height: 1.67;
-    }
-
     &.-bold {
       font-weight: 600;
+    }
+
+    * {
+      font-size: 17px !important;
     }
 
     ul {
@@ -133,6 +132,15 @@
 
     li {
       list-style-type: disc;
+    }
+
+    @media screen and (min-width: $screen-m) {
+      font-size: 18px !important;
+      line-height: 1.67;
+
+      * {
+        font-size: 18px !important;
+      }
     }
   }
 
