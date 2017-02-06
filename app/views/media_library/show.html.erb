@@ -130,20 +130,12 @@
     title: "#{label_txt} included in album", sectionClass: 'content -color-4' %>
 <% end %>
 
-<% if @media_content.activities.any? %>
-  <%= render 'shared/posts', collection: @media_content.activities.
-    order(:title),
-    title: 'Related activities',
-    link_txt: 'View all activities',
-    link: activities_path, sectionClass: 'content -color-4' %>
-<% end %>
-
-<% if @media_content.publications.any? %>
-  <%= render 'shared/posts', collection: @media_content.publications.
-    order(content_date: :desc),
-    title: @media_content.type == MediaContent::TYPE_GRAPHIC ? 'Publication it appears in' : 'Related publications',
-    link_txt: 'View all publications',
-    link: publications_path, sectionClass: 'content -color-4' %>
+<% if @media_content.type == MediaContent::TYPE_GRAPHIC %>
+  <%= render 'publications', media_content: @media_content %>
+  <%= render 'activities', media_content: @media_content %>
+<% else %>
+  <%= render 'activities', media_content: @media_content %>
+  <%= render 'publications', media_content: @media_content %>
 <% end %>
 
 <% if @media_content.news_articles.any? %>
