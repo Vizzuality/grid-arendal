@@ -31,7 +31,7 @@ module Activable
     end
 
     def status
-      active? ? 'active' : 'inactive'
+      active? ? 'admin' : 'staff'
     end
 
     def deactivate_dependencies
