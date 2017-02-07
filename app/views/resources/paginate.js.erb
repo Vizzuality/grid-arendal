@@ -1,7 +1,7 @@
 <% if @media_contents.any? %>
   $(function(){
     salvattore.appendElements(document.querySelector('.masonry-layout'), $('<div/>')
-      .html("<%= escape_javascript(render("media_library", media_contents: @media_contents)) %>")
+      .html("<%= escape_javascript(render("resources", media_contents: @media_contents)) %>")
       .contents()
     );
   });

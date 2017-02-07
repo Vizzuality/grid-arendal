@@ -10,13 +10,13 @@
 
   breadcrumbs_links = if @media_content.single? && @media_content.album_id.present?
                       [
-                        {text: 'Media library', link: media_path},
-                        {text: truncate(@media_content.album.title, length: 20), link: medium_path(@media_content.album_id)},
+                        {text: 'Resources', link: resources_path},
+                        {text: truncate(@media_content.album.title, length: 20), link: resource_path(@media_content.album_id)},
                         {text: @media_content.title,
                          edit_path: backend.url_for([:edit, @media_content]) }
                       ]
                       else [
-                        {text: 'Media library', link: media_path},
+                        {text: 'Resources', link: resources_path},
                         {text: @media_content.title,
                          edit_path: backend.url_for([:edit, @media_content]) }
                       ]
@@ -69,7 +69,7 @@
           <% end %>
           <% if @media_content.album_id %>
             <% title = @media_content.type == MediaContent::TYPE_GRAPHIC ? "From collection" : "From album" %>
-            <p><strong><%= title %>:</strong> <%= link_to @media_content.album.title, medium_path(@media_content.album_id) %></p>
+            <p><strong><%= title %>:</strong> <%= link_to @media_content.album.title, resource_path(@media_content.album_id) %></p>
           <% end %>
           <% if @media_content.author.present? %>
             <p>

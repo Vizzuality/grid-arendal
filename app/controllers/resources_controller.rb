@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-class MediaLibraryController < ApplicationController
+class ResourcesController < ApplicationController
   before_action :media_content, only: :show
   before_action :set_media_contents_limit, only: [:index, :paginate]
   before_action :set_page_param, only: [:index, :paginate]

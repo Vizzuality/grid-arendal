@@ -3,7 +3,8 @@
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: rem(580px);
+  height: calc(100vh - #{rem(200px)});
+  max-height: rem(580px);
   z-index: 10;
   display: none;
 
