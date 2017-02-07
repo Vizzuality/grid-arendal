@@ -1,6 +1,6 @@
 <%= render 'backend/shared/form/header', form: form,
   inputs: [{value: :title, title_placeholder: 'Video title'}],
-  preview_url: form.object.id && main_app.medium_path(form.object) %>
+  preview_url: form.object.id && main_app.resource_path(form.object) %>
 
 <div class="fields">
   <%= render 'backend/shared/form/field_select', form: form,
