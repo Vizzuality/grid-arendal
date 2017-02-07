@@ -115,7 +115,7 @@
 <% end %>
 
 <% if @publication.media_contents.any? %>
-  <%= render 'shared/related_media', media_contents: @publication.media_contents_with_graphics_expanded, link: media_path, sectionClass: 'content -color-2' %>
+  <%= render 'shared/related_media', media_contents: @publication.media_contents_with_graphics_expanded, link: resources_path, sectionClass: 'content -color-2' %>
 <% end %>
 
 <%= render 'shared/footer' %>
