@@ -456,6 +456,11 @@ $filters-screen-m-width: 16%;
       border: 1px solid rgba($color-1, 0.1);
       background-color: transparent;
       padding: rem(5px);
+
+      @include placeholder {
+        color: $color-1;
+        opacity: 0.5;
+      }
     }
   }
 
