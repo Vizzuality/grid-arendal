@@ -29,6 +29,16 @@ class Publication < Content
   scope :filter_or_older_pubs, ->(years) {where('EXTRACT(year from content_date) IN (?) OR EXTRACT(year from content_date) < ?', years, Date.today.year-5)}
   scope :by_years, ->(years) { where('EXTRACT(year from content_date) IN (?)', years) }
 
+  def media_contents_with_graphics_expanded
+    media_contents.map do |media|
+      if media.type == MediaContent::TYPE_COLLECTION
+        media.items
+      else
+        media
+      end
+    end.flatten
+  end
+
   class << self
     def fetch_all(options)
       tags = options['tags'].split(',')               if options['tags'].present?
@@ -60,10 +70,12 @@ class Publication < Content
       publications
     end
 
-    def publications(search, limit)
-      if search.present? and search != ''
+    def publications(params, limit)
+      query_where = get_filter_condition(params, 'title')
+
+      if query_where.present?
         Publication
-          .where("UPPER(title) like UPPER(?)", "%#{search}%")
+          .where(query_where, "%#{params[:search]}%")
           .order(content_date: :desc)
       else
         Publication.order(content_date: :desc).limit(limit)

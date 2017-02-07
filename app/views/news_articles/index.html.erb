@@ -6,7 +6,7 @@
       <div class="title-block">
         <h1 class="text -title-library">News</h1>
         <div class="text -summary">
-          <%= @section.description %>
+          <%= raw @section.description %>
         </div>
         <%= render 'shared/share', current_route: @current_route  %>
       </div>

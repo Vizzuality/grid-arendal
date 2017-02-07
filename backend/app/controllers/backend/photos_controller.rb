@@ -5,7 +5,7 @@ module Backend
   class PhotosController < ::Backend::ApplicationController
     load_and_authorize_resource
 
-    before_action :set_photo, except: [:index, :paginate]
+    before_action :set_photo, except: [:index, :paginate, :search_thumbnails]
     before_action :set_photos, only: [:index, :edit]
     before_action :set_objects, only: [:edit]
 
@@ -82,7 +82,7 @@ module Backend
       end
 
       def set_photos
-        @photos = Photo.photos(@search, @index_items_limit * @page)
+        @photos = Photo.photos(filter_params, @index_items_limit * @page)
       end
 
       def set_objects

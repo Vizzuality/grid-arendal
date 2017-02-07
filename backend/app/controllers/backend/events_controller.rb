@@ -6,7 +6,7 @@ module Backend
     load_and_authorize_resource
 
     before_action :set_event, except: [:index, :new, :create, :paginate]
-    before_action :set_events, except: [:index, :paginate]
+    before_action :set_events, except: [:paginate]
     before_action :set_objects, only: [:new, :edit]
 
     def index
@@ -83,7 +83,7 @@ module Backend
       end
 
       def set_events
-        @events = Event.events(@search, @index_items_limit * @page)
+        @events = Event.events(filter_params, @index_items_limit * @page)
       end
 
       def event_params

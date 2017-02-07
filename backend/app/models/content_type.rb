@@ -25,10 +25,12 @@ class ContentType < ApplicationRecord
     inclusion: { in: FOR_CONTENT, message: "%{value} is not a valid value" }
 
   class << self
-    def content_types(search, limit)
-      if search.present? and search != ''
+    def content_types(params, limit)
+      query_where = get_filter_condition(params, 'title')
+
+      if query_where.present?
         ContentType
-          .where("UPPER(title) like UPPER(?)", "%#{search}%")
+          .where(query_where, "%#{params[:search]}%")
           .order(:title)
       else
         ContentType.order(:title).limit(limit)

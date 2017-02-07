@@ -27,7 +27,7 @@
 </div>
 
 <div class="cta-mobile text -cta">
-  <%= @section.description %>
+  <%= raw @section.description %>
 </div>
 
 <%= render 'shared/news', news: @news, sectionClass: 'home' %>

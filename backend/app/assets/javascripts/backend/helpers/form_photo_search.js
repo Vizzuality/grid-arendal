@@ -29,7 +29,7 @@
     },
 
     _search: function (e) {
-      $.get('/manage/photos/search', {
+      $.get('/manage/photos/search_thumbnails', {
         query: $(e.target).val(),
         selected_id: this.$dataField.val()
       });

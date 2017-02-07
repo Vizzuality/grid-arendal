@@ -1,3 +1,4 @@
+- label_txt ||= value
 .field
-  = form.label value, class: 'text -field-label -bold -dark'
+  = form.label value, label_txt, class: 'text -field-label -bold -dark'
   = form.input value, label: false

@@ -52,8 +52,8 @@
             <% if @activity.media_contents.any? %>
               <li class="text -section-menu js-anchor" data-section-belongs="related-media">Related media</li>
             <% end %>
-            <% if @activity.partners.any? %>
-              <li class="text -section-menu js-anchor" data-section-belongs="partners">Partners</li>
+            <% if @activity.partners.any? || @activity.links.any? %>
+              <li class="text -section-menu js-anchor" data-section-belongs="partners">Partners & Links</li>
             <% end %>
           </ul>
         </div>
@@ -99,8 +99,8 @@
   <%= render 'shared/related_media', media_contents: @activity.media_contents,link: media_path, sectionClass: 'content -color-3' %>
 <% end %>
 
-<% if @activity.partners.any? %>
-  <%= render 'shared/partners', partners: @activity.partners, links: @activity.documents + @activity.weblinks, sectionClass: 'content -color-3' %>
+<% if @activity.partners.any? || @activity.links.any? %>
+  <%= render 'shared/partners', partners: @activity.partners, links: @activity.links, sectionClass: 'content -color-3' %>
 <% end %>
 
 <%= render 'shared/footer' %>

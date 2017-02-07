@@ -20,10 +20,12 @@ class Collection < MediaContent
   alias_attribute :items, :graphics
 
   class << self
-    def collections(search, limit)
-      if search.present? and search != ''
+    def collections(params, limit)
+      query_where = get_filter_condition(params, 'title')
+
+      if query_where.present?
         self
-          .where("UPPER(title) like UPPER(?)", "%#{search}%")
+          .where(query_where, "%#{params[:search]}%")
           .order(publication_date: :desc)
       else
         self.order(publication_date: :desc).limit(limit)

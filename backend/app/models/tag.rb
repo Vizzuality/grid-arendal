@@ -30,10 +30,12 @@ class Tag < ApplicationRecord
   end
 
   class << self
-    def tags(search, limit)
-      if search.present? and search != ''
+    def tags(params, limit)
+      query_where = get_filter_condition(params, 'name')
+
+      if query_where.present?
         Tag
-          .where("UPPER(name) like UPPER(?)", "%#{search}%")
+          .where(query_where, "%#{params[:search]}%")
           .order(:name)
       else
         Tag.order(:name).limit(limit)

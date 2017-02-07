@@ -17,10 +17,12 @@ class AboutSection < ApplicationRecord
   CATEGORIES = ["annual-reports", "board", "programmes", "staff", "vacancies"]
 
   class << self
-    def about_sections(search, limit)
-      if search.present? and search != ''
+    def about_sections(params, limit)
+      query_where = get_filter_condition(params, 'title')
+
+      if query_where.present?
         AboutSection
-          .where("UPPER(title) like UPPER(?)", "%#{search}%")
+          .where(query_where, "%#{params[:search]}%")
           .order(:position)
       else
         AboutSection.order(:position).limit(limit)

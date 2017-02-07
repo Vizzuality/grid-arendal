@@ -60,5 +60,9 @@ module Backend
     def set_index_items_limit
       @index_items_limit = 30
     end
+
+    def filter_params
+      params.permit(:search, :featured, :visibility_off)
+    end
   end
 end
