@@ -9,7 +9,7 @@
       <img class="avatar" src="<%= avatar_url %>" />
       <div class="texts-container">
         <div class="user-name text -nav-text -light">
-          <%= current_user.display_name %>
+          <%= link_to current_user.display_name, edit_user_account_path(current_user), class: 'text -nav-text -light' %>
           <%= link_to 'Sign out', destroy_user_session_path, method: 'delete',
             class: 'text -nav-text -light' %>
         </div>
