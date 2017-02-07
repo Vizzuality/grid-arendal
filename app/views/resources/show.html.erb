@@ -67,6 +67,10 @@
           <% if @media_content.publication_date.present? %>
             <p><strong>Year:</strong> <%= @media_content.publication_date.year %></p>
           <% end %>
+          <% if @media_content.album_id %>
+            <% title = @media_content.type == MediaContent::TYPE_GRAPHIC ? "From collection" : "From album" %>
+            <p><strong><%= title %>:</strong> <%= link_to @media_content.album.title, resource_path(@media_content.album_id) %></p>
+          <% end %>
           <% if @media_content.author.present? %>
             <p>
               <strong><% if @media_content.type == MediaContent::TYPE_GRAPHIC %>Cartographer<% else %>Taken by<% end %>:</strong>
@@ -105,11 +109,6 @@
           <div class="text -sidebar-title">Use Constraints</div>
           <div class="text -meta">Using this item and referring to it is encouraged, and please use it in presentations, web pages, newspapers, blogs and reports.<br><br>For any form of publication, please include the link to this page and give the creator credit <% if @media_content.author.present? %>(in this case <%= @media_content.author %>)<% end %></div>
         </div>
-        <% if @media_content.album_id %>
-          <div class="link-to-album">
-            <p class="text -sidebar-title"><%= link_to @media_content.type == MediaContent::TYPE_GRAPHIC ? "Visit this Graphic's Collection >" : "Visit this Photo's Album >", resource_path(@media_content.album_id) %></p>
-          </div>
-        <% end %>
       </div>
     </div>
   </div>
