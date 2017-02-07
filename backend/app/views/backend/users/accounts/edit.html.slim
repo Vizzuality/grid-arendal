@@ -1,16 +1,15 @@
-h2
-  = "Edit #{resource_name.to_s.humanize}"
-= simple_form_for(resource, as: resource_name, url: update_user_account_path(resource_name), html: { method: :put }) do |f|
-  = f.error_notification
-  .form-inputs
-    = f.input :email, required: true, autofocus: true
-    - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-      p
-        | Currently waiting confirmation for:
-        = resource.unconfirmed_email
-    = f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false
-    = f.input :password_confirmation, required: false
-    = f.input :current_password, hint: "we need your current password to confirm your changes", required: true
-  .form-actions
-    = f.button :submit, "Update"
-= link_to "Back", :back
+.l-items-detail
+  h2
+    = "Edit #{resource_name.to_s.humanize}"
+  = simple_form_for(resource, as: resource_name, url: update_user_account_path(resource_name), html: { method: :put, class: 'c-form' }) do |form|
+    = render 'backend/shared/form/header', form: form, inputs: [{value: :last_name, title_placeholder: 'Lastname'}, {value: :first_name, title_placeholder: 'Firstname'}], fields: 2, preview_url: form.object.id && main_app.staff_path(form.object)
+      = form.error_notification
+    div.fields
+      = render 'backend/shared/form/field_input', form: form, value: :email, required: true, autofocus: true
+      - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+        p
+          | Currently waiting confirmation for:
+          = resource.unconfirmed_email
+      = render 'backend/shared/form/field_input', form: form, value: :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false
+      = render 'backend/shared/form/field_input', form: form, value: :password_confirmation, autocomplete: "off", required: false
+      = render 'backend/shared/form/field_input', form: form, value: :current_password, autocomplete: "off", required: true
