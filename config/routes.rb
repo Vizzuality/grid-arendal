@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :media, path: 'media-library', controller: 'media_library', only: [:index, :show] do
+  resources :media, path: 'resources', controller: 'media_library', only: [:index, :show] do
     get :paginate, on: :collection, defaults: { format: 'js' }
   end
 
