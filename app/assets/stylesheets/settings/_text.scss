@@ -134,6 +134,10 @@
       list-style-type: disc;
     }
 
+    a {
+      text-decoration: underline;
+    }
+
     @media screen and (min-width: $screen-m) {
       font-size: 18px !important;
       line-height: 1.67;
@@ -219,6 +223,10 @@
     .-bold {
       font-weight: 700;
     }
+
+    a {
+      text-decoration: underline;
+    }
   }
 
   &.-body-single-alt {
@@ -235,6 +243,10 @@
 
     li {
       list-style-type: disc;
+    }
+
+    a {
+      text-decoration: underline;
     }
   }
 
@@ -347,12 +359,6 @@
 
   &.-light-alt {
     color: $font-color-3;
-  }
-}
-
-p {
-  a {
-    text-decoration: underline;
   }
 }
 

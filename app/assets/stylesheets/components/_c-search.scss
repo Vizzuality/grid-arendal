@@ -8,3 +8,11 @@
     cursor: pointer;
   }
 }
+
+.c-search-input {
+
+  @include placeholder {
+    color: $color-1;
+    opacity: 0.5;
+  }
+}
