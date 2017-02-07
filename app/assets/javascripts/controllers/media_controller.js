@@ -42,6 +42,11 @@
           }
         });
       }
+
+      $('.js_download-graphic').click(function() {
+        $.get('/graphic_requests/new.js',
+          { media_attachment_id: $(this).data('attachment_id') });
+      });
     },
 
     _paginate: function() {

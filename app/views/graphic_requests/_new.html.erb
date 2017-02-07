@@ -1,0 +1,17 @@
+<%= form_for @graphic_request do |f| %>
+  <p>
+    To proceed with the download of this file, please fill in the following details
+    and we will email you the link to download it.
+  </p>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

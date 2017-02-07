@@ -26,6 +26,8 @@ Rails.application.routes.draw do
     get :related_items, on: :collection, defaults: { format: 'js' }
   end
 
+  resources :graphic_requests, only: [:new, :create]
+
   root 'home#index'
 
   get "*any", via: :all, to: "errors#not_found"
