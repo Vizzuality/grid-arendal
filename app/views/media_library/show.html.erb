@@ -10,13 +10,13 @@
 
   breadcrumbs_links = if @media_content.single? && @media_content.album_id.present?
                       [
-                        {text: 'Media library', link: media_path},
+                        {text: 'Resources', link: media_path},
                         {text: truncate(@media_content.album.title, length: 20), link: medium_path(@media_content.album_id)},
                         {text: @media_content.title,
                          edit_path: backend.url_for([:edit, @media_content]) }
                       ]
                       else [
-                        {text: 'Media library', link: media_path},
+                        {text: 'Resources', link: media_path},
                         {text: @media_content.title,
                          edit_path: backend.url_for([:edit, @media_content]) }
                       ]
