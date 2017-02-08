@@ -1,0 +1,29 @@
+<p>You have requested the download of the following graphic:</p>
+
+<p>
+  <strong>Title:</strong> <%= @graphic_request.graphic.title %><br />
+  <strong>URL on Grida.no:</strong> <%= resource_url(@graphic_request.graphic) %><br />
+  <strong>File requested:</strong><%= @graphic_request.media_attachment.document_file_name %>
+</p>
+
+<p>
+  You can download the file by clicking on the following link or copying the URL
+  and pasting in your browser:
+  <a href="<%= graphic_request_url(@graphic_request.download_hash) %>">
+    <%= graphic_request_url(@graphic_request.download_hash) %>
+  </a>
+</p>
+
+<p>This graphic may be reproduced in any form for educational or non-profit
+purposes without special permission from GRID-Arendal, provided acknowledgement
+of the source is made. GRID-Arendal would appreciate receiving a copy of any
+publication that features this graphic.</p>
+
+<p>No use of this graphic may be made for resale or any other commercial purpose
+whatsoever without prior permission in writing from GRID-Arendal. Applications
+for such permission, with a statement of the purpose and extent of the
+reproduction, should be addressed to
+<a href="mailto:grid@grida.no">grid@grida.no</a>.</p>
+
+<p>For any form of publication, please include the website link to this Graphic
+and give GRID-Arendal and the cartographer/designer credit.</p>

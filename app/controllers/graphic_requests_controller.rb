@@ -19,19 +19,24 @@ class GraphicRequestsController < ApplicationController
 
   def new
     @graphic_request = GraphicRequest.
-      new(media_attachment_id: params[:media_attachment_id])
+      new(media_attachment_id: params[:media_attachment_id],
+          graphic_id: params[:graphic_id])
   end
 
   def create
-    @graphic_request = GraphicRequest.create(graphic_request_params)
-    if @graphic_request.save
-      # send email
+    graphic_request = GraphicRequest.create(graphic_request_params)
+    @graphic = graphic_request.graphic
+    if graphic_request.save
+      GraphicRequestMailer.graphic_requested(graphic_request).deliver_now
+      redirect_to resource_url(@graphic),
+        notice: "Graphic has been requested, you should receive an email with the necessary information soon."
     end
   end
 
   private
 
   def graphic_request_params
-    params.require(:graphic_request).permit(:email, :name, :media_attachment_id)
+    params.require(:graphic_request).permit(:email, :name, :graphic_id,
+                                            :media_attachment_id)
   end
 end

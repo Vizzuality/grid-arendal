@@ -4,12 +4,12 @@ module MediaLibraryHelper
     links = []
     if graphic.eps
       links << content_tag(:li, "eps",
-                           data: { attachment_id: graphic.eps_id },
+                           data: { attachment_id: graphic.eps_id, graphic_id: graphic.id },
                            class: "btn -dark js_download-graphic")
     end
     if graphic.pdf
       links << content_tag(:li, "pdf",
-                           data: { attachment_id: graphic.pdf_id },
+                           data: { attachment_id: graphic.pdf_id, graphic_id: graphic.id },
                            class: "btn -dark js_download-graphic")
     end
     return nil if links.empty?

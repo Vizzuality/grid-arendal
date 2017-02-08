@@ -2,8 +2,10 @@
 class GraphicRequest < ApplicationRecord
   before_create :generate_hash
   belongs_to :media_attachment
+  belongs_to :graphic
 
   validates :media_attachment_id, presence: true
+  validates :graphic_id, presence: true
 
   private
 
