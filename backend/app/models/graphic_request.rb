@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 class GraphicRequest < ApplicationRecord
   before_create :generate_hash
+  belongs_to :media_attachment
 
   private
 
