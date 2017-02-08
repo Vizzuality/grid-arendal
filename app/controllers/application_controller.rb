@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
     redirect_to root_url, alert: exception.message
   end
 
+  rescue_from ActiveRecord::RecordNotFound do
+    render 'errors/not_found', status: 404
+  end
+
   def store_location
     return unless request.get?
     if request.path != '/manage/account/login' &&

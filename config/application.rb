@@ -10,6 +10,7 @@ GC::Profiler.enable
 
 module GridArendal
   class Application < Rails::Application
+    config.exceptions_app = self.routes
     config.autoload_paths += Dir[Rails.root.join('app', 'models', 'media')]
 
     config.generators do |g|

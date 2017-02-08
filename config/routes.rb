@@ -27,4 +27,6 @@ Rails.application.routes.draw do
   end
 
   root 'home#index'
+
+  get "*any", via: :all, to: "errors#not_found"
 end
