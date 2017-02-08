@@ -2,7 +2,7 @@
 module ApplicationHelper
   def related_media_card index, media, &block
     data = {}
-    data["link"] = medium_path(media)
+    data["link"] = resource_path(media)
     classes = ["c-related-media-item"]
 
     if ![MediaContent::TYPE_VIDEO, MediaContent::TYPE_VIDEO_COLLECTION].include?(media.type)

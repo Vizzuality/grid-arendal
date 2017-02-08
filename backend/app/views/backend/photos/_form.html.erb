@@ -1,6 +1,6 @@
 <%= render 'backend/shared/form/header', form: form,
   inputs: [{value: :title, title_placeholder: 'Photo title'}],
-  preview_url: main_app.medium_path(form.object) %>
+  preview_url: main_app.resource_path(form.object) %>
 
 <div class="fields">
   <%= render 'backend/shared/form/field_fake_input', value: album.title,

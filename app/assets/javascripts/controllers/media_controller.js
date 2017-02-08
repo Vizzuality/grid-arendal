@@ -49,7 +49,7 @@
       $.ajax({
         method: "GET",
         cache: true,
-        url: '/media-library/paginate',
+        url: '/resources/paginate',
         data: params,
         beforeSend: function() {
           this.scrollPaginationView.showLoader();
