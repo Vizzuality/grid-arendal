@@ -97,7 +97,7 @@
             <ul class="button-list">
               <% @media_content.photo_sizes.where(label: PhotoSize::LABELS).each do |size| %>
                 <%= link_to size.url, title: size.label, target: '_blank' do %>
-                  <li class="btn -dark" data-file-size="<%= "#{size.width}x#{size.height}"%>">
+                  <li class="btn -dark" data-file-size="<%= "#{size.width}x#{size.height}"%>" data-key="<%= size.label %>">
                     <%= PhotoSize::DISPLAY[size.label] %>
                   </li>
                 <% end %>

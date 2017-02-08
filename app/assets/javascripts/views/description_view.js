@@ -7,8 +7,7 @@
   App.View.DescriptionView = Backbone.View.extend({
 
     events: {
-      'click .read-more' : '_onClickShowAllDescription',
-      'click .download-links .btn' : '_onClickDownloadButton'
+      'click .read-more' : '_onClickShowAllDescription'
     },
 
     options: {
@@ -72,14 +71,6 @@
           this.$sidebarContent.addClass(this.options.sidebarContentFixolutedClass);
         }
       }.bind(this));
-    },
-
-    _onClickDownloadButton: function (e) {
-      this._trackDownload(this.$el.find('h2').html(), $(e.currentTarget).data('key'));
-    },
-
-    _trackDownload: function (pageTitle, key) {
-      ga('send', 'event', 'Publication', pageTitle, key);
     }
 
   });

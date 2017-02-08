@@ -33,6 +33,9 @@
       new App.View.DescriptionView({
         el: '.content-wrapper'
       });
+      new App.View.DownloadFilesView({
+        pageTitle: $('h2').html()
+      });
       this.initSliders();
       new App.View.RelatedMedia({
         slider: this.slider

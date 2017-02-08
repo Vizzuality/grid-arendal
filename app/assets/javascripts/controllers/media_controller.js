@@ -27,6 +27,9 @@
 
     show: function() {
       this.videoThumbnailsView = new App.View.VideoThumbnails();
+      new App.View.DownloadFilesView({
+        pageTitle: $('h2').html()
+      });
 
       if(this.isScreen_s) {
         this.initSliders();
