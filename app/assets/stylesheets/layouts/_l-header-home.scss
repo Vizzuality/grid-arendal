@@ -20,10 +20,6 @@
     height: 100%;
   }
 
-  .logo-menu {
-    display: none;
-  }
-
   &::before {
     content: "";
     width: 100%;
@@ -34,7 +30,7 @@
     z-index: 1;
   }
 
-  .logo-menu {
+  &:not(.-error) .logo-menu {
     display: none !important;
   }
 
@@ -115,6 +111,17 @@
       justify-content: center;
       flex-direction: column;
     }
+  }
+
+  &.-error {
+    height: 100% !important;
+  }
+  .no-results {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
   }
 }
 
