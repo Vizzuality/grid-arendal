@@ -67,7 +67,7 @@
       <div class="sidebar-content">
         <div class="meta">
           <div class="row">
-            <div class="small-6 medium-3 large-4 columns">
+            <div class="small-6 medium-3 large-4">
               <% if @publication.cover_picture.exists? %>
                 <div class="cover" style="<%= "background-image: url('#{@publication.cover_picture.url(:medium)}')" %>"></div>
               <% end %>
