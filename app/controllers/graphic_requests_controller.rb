@@ -24,12 +24,14 @@ class GraphicRequestsController < ApplicationController
   end
 
   def create
-    graphic_request = GraphicRequest.create(graphic_request_params)
-    @graphic = graphic_request.graphic
-    if graphic_request.save
-      GraphicRequestMailer.graphic_requested(graphic_request).deliver_now
-      redirect_to resource_url(@graphic),
-        notice: "Graphic has been requested, you should receive an email with the necessary information soon."
+    if !params[:super_name].present?
+      graphic_request = GraphicRequest.create(graphic_request_params)
+      @graphic = graphic_request.graphic
+      if graphic_request.save
+        GraphicRequestMailer.graphic_requested(graphic_request).deliver_now
+        redirect_to resource_url(@graphic),
+          notice: "Graphic has been requested, you should receive an email with the necessary information soon."
+      end
     end
   end
 
