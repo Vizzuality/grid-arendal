@@ -1,9 +1,11 @@
-.l-items-detail
-  h2
-    = "Edit #{resource_name.to_s.humanize}"
+.l-items-detail.-no-index
   = simple_form_for(resource, as: resource_name, url: update_user_account_path(resource_name), html: { method: :put, class: 'c-form' }) do |form|
-    = render 'backend/shared/form/header', form: form, inputs: [{value: :last_name, title_placeholder: 'Lastname'}, {value: :first_name, title_placeholder: 'Firstname'}], fields: 2, preview_url: form.object.id && main_app.staff_path(form.object)
-      = form.error_notification
+    div.form_header.-no-index
+      div.item.text.-main-title.-dark
+        = "Change password"
+      div.actions
+        = form.button :submit, 'SAVE', class: '-dark'
+        = link_to "CANCEL", :back, class: 'btn -light'
     div.fields
       = render 'backend/shared/form/field_input', form: form, value: :email, required: true, autofocus: true
       - if devise_mapping.confirmable? && resource.pending_reconfirmation?
