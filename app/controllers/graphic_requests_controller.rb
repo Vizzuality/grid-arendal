@@ -2,7 +2,7 @@
 class GraphicRequestsController < ApplicationController
 
   def show
-    graphic_request = GraphicRequest.where(download_hash: params[:id]).first
+    graphic_request = GraphicRequest.find_by!(download_hash: params[:id])
     attach = graphic_request.media_attachment
     if attach && attach.document.exists?
       data = if ENV['AWS_ACCESS_KEY_ID'].present?
