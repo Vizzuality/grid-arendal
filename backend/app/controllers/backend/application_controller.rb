@@ -45,7 +45,9 @@ module Backend
         {name: "Vacancies", path: vacancies_path,
           key: "vacancies", count: Vacancy.count},
         {name: "Sections", path: site_sections_path,
-          key: "sections", count: SiteSection.count}
+          key: "sections", count: SiteSection.count},
+        { name: "Graphics Downloads", path: graphic_requests_path,
+          key: "graphic_requests", count: GraphicRequest.count}
       ]
     end
 
