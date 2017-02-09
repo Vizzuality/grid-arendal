@@ -131,6 +131,8 @@
       padding-bottom: rem(15px);
 
       @media screen and (min-width: $screen-l) {
+        padding-bottom: rem(20px);
+
         &.-fixed {
           position: fixed;
           top: 0;
@@ -155,10 +157,14 @@
         background-repeat: no-repeat;
         background-size: cover;
         height: rem(200px);
-        margin-top: rem(10px);
+        margin: rem(10px) 0 0 rem(10px);
+
+        @media screen and (min-width: $screen-m) {
+          margin: rem(15px) 0 0 rem(15px);
+        }
 
         @media screen and (min-width: $screen-l) {
-          margin-top: rem(15px);
+          margin: rem(20px) rem(5px) 0 rem(20px);
         }
       }
 
@@ -192,10 +198,14 @@
         flex-wrap: wrap;
         align-items: flex-start;
         justify-content: space-between;
-        margin-top: rem(5px);
 
         @media screen and (min-width: $screen-m) {
           flex-direction: row;
+          margin-top: rem(5px);
+        }
+
+        @media screen and (min-width: $screen-l) {
+          margin-top: rem(10px);
         }
 
         .btn {
@@ -203,7 +213,11 @@
           margin-top: rem(10px);
 
           @media screen and (min-width: $screen-m) {
-            width: 48%;
+            width: calc(50% - #{rem(7.5px)});
+          }
+
+          @media screen and (min-width: $screen-l) {
+            width: calc(50% - #{rem(10px)});
           }
         }
       }

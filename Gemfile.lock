@@ -212,6 +212,10 @@ GEM
     parser (2.3.1.4)
       ast (~> 2.2)
     pg (0.19.0)
+    pg_search (2.0.1)
+      activerecord (>= 4.2)
+      activesupport (>= 4.2)
+      arel (>= 6)
     powerpack (0.1.1)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -393,6 +397,7 @@ DEPENDENCIES
   newrelic_rpm
   paperclip!
   pg (~> 0.18)
+  pg_search
   pry-rails
   puma (~> 3.0)
   rails (~> 5.0.0, < 5.1)
@@ -421,4 +426,4 @@ RUBY VERSION
    ruby 2.3.1p112
 
 BUNDLED WITH
-   1.13.7
+   1.14.3

@@ -10,6 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20170208121805) do
 
   # These are extensions that must be enabled in order to support this database
@@ -156,6 +157,7 @@ ActiveRecord::Schema.define(version: 20170208121805) do
     t.boolean  "is_featured"
     t.integer  "eps_id"
     t.integer  "pdf_id"
+    t.index "(((setweight(to_tsvector('simple'::regconfig, COALESCE((title)::text, ''::text)), 'A'::\"char\") || setweight(to_tsvector('simple'::regconfig, COALESCE(description, ''::text)), 'B'::\"char\")) || setweight(to_tsvector('simple'::regconfig, COALESCE((author)::text, ''::text)), 'B'::\"char\")))", name: "index_media_contents_on_to_tsvector_title_description_author", using: :gin
     t.index ["album_id"], name: "index_media_contents_on_album_id", using: :btree
   end
 
@@ -177,6 +179,7 @@ ActiveRecord::Schema.define(version: 20170208121805) do
     t.date     "publication_date"
     t.text     "short_description"
     t.string   "cover_src"
+    t.index "setweight(to_tsvector('simple'::regconfig, COALESCE((title)::text, ''::text)), 'A'::\"char\")", name: "index_news_articles_on_to_tsvector_title", using: :gin
   end
 
   create_table "news_media_contents", force: :cascade do |t|

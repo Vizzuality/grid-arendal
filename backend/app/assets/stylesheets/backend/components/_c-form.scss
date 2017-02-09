@@ -28,6 +28,12 @@ $photo-list-shadow-gap: rem(4px);
   }
 
   .form_header {
+
+    &.-no-index {
+      left: $header-width;
+      width: $item-detail-width + $index-width;
+    }
+
     position: fixed;
     top: 0;
     left: 40%;
