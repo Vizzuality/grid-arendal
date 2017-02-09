@@ -17,7 +17,7 @@ $filters-screen-m-width: 16%;
 
 %filter-background-speaker {
   @extend %filter-background;
-  top: rem(7px);
+  top: rem(1px);
   width: calc(100% + #{rem(32px)});
 
   @media screen and (min-width: $screen-m) {
@@ -233,7 +233,7 @@ $filters-screen-m-width: 16%;
 
         .icon {
           position: absolute;
-          top: rem(5px);
+          top: rem(-1px);
           width: rem(11px);
           height: rem(11px);
           margin-left: rem(10px);
@@ -359,7 +359,7 @@ $filters-screen-m-width: 16%;
           position: static;
 
           > .type {
-            top: rem(38px);
+            top: rem(16px);
           }
         }
 
