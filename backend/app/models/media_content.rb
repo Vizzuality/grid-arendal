@@ -16,6 +16,7 @@
 
 class MediaContent < ApplicationRecord
   include Featurable
+  include PgSearch
   acts_as_taggable
 
   TYPE_ALBUM = "Album"
@@ -45,6 +46,11 @@ class MediaContent < ApplicationRecord
   scope :collections_and_graphics, -> {where(type: [TYPE_COLLECTION, TYPE_GRAPHIC])}
   scope :albums_collections_and_videos, -> {where('type IN (?) OR (type = ? AND album_id IS NULL)', [TYPE_ALBUM, TYPE_COLLECTION, TYPE_VIDEO_COLLECTION], TYPE_VIDEO)}
   scope :video_collections_and_videos, -> {where(type: [TYPE_VIDEO_COLLECTION, TYPE_VIDEO])}
+
+  pg_search_scope :search_for,
+    against: { title: :A, description: :B, author: :B },
+    using: { tsearch: { any_word: true, prefix: true } },
+    order_within_rank: 'updated_at DESC'
 
   # relations added here to allow lazy loading on media_library_controller
   has_many :photo_sizes, foreign_key: :photo_id
