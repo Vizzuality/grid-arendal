@@ -21,6 +21,7 @@ class Content < ApplicationRecord
   include Publishable
   include Sanitizable
   include Featurable
+  include PgSearch
 
   acts_as_taggable
 
@@ -56,6 +57,12 @@ class Content < ApplicationRecord
   scope :by_tags, ->(tags) { joins(:tags).where(tags: { id: tags }) }
   scope :by_status, ->(status) { where(status: status) }
   scope :by_partners, ->(partners) { joins(:content_partners).where(content_partners: {partner_id: partners})}
+
+  pg_search_scope :search_for,
+    associated_against: { users: { first_name: :B, last_name: :B } },
+    against: { title: :A, description: :B },
+    using: { tsearch: { any_word: true, prefix: true } },
+    order_within_rank: 'updated_at DESC'
 
   validates :title, presence: true
   validates :status, presence: true

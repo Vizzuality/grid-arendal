@@ -15,6 +15,7 @@ require 'rss'
 require 'open-uri'
 
 class NewsArticle < ApplicationRecord
+  include PgSearch
   has_many :content_news, dependent: :destroy
   has_many :activities, through: :content_news, source: :activity
   has_many :publications, through: :content_news, source: :publication
@@ -26,6 +27,11 @@ class NewsArticle < ApplicationRecord
 
   validates :title, presence: true
   acts_as_taggable
+
+  pg_search_scope :search_for,
+    against: :title,
+    using: { tsearch: { any_word: true, prefix: true } },
+    order_within_rank: 'publication_date DESC, updated_at DESC'
 
   def self.fetch_from_rss
     existing = NewsArticle.count

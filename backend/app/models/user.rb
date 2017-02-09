@@ -39,6 +39,7 @@
 #
 
 class User < ApplicationRecord
+  include PgSearch
   enum role: { contributor: 0, publisher: 1, admin: 2 }
 
   has_many :participants, dependent: :destroy
@@ -69,6 +70,20 @@ class User < ApplicationRecord
   scope :regular_staff, -> { where(is_board_member: false)}
   scope :with_category, -> { where.not(position_category: ['', nil])}
   scope :randomize, -> { order('random()') }
+
+  pg_search_scope :search_for,
+    against: {
+      first_name: :A,
+      middle_name: :A,
+      last_name: :A,
+      email: :B,
+      skype_user: :B,
+      twitter_url: :B,
+      current_position: :B,
+      description: :B
+    },
+    using: { tsearch: { any_word: true, prefix: true } },
+    order_within_rank: 'last_name ASC, first_name ASC'
 
   POSITION_CATEGORIES = ["Managing Director", "Administration Team", "Finance", "Staff", "Consultants & Interns"]
 
