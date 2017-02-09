@@ -3,17 +3,25 @@ class SearchController < ApplicationController
   before_action :set_limit, only: [:index]
 
   def index
-    if params[:query].present?
-      @news = NewsArticle.where("LOWER(title) like LOWER(?)", "%#{params[:query]}%").order(publication_date: :desc).limit(@search_limit)
-      @activities = Activity.where("LOWER(title) like LOWER(?)", "%#{params[:query]}%").limit(@search_limit)
-      @publications = Publication.where("LOWER(title) like LOWER(?)", "%#{params[:query]}%").limit(@search_limit)
-      @media_contents = MediaContent.albums_collections_and_videos.
-        where("LOWER(title) like LOWER(?)", "%#{params[:query]}%").
+    @query = params[:query] && params[:query].strip
+    if @query.present?
+      @news = NewsArticle.
+        search_for(@query).
         limit(@search_limit)
-      @staff = User.where("LOWER(first_name) like LOWER(?) OR LOWER(last_name) like LOWER(?) OR LOWER(middle_name) like LOWER(?)",
-                          "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%").order_by_fullname.limit(@search_limit)
+      @activities = Activity.
+        search_for(@query).
+        limit(@search_limit)
+      @publications = Publication.
+        search_for(@query).
+        limit(@search_limit)
+      @media_contents = MediaContent.
+        albums_collections_and_videos.
+        search_for(@query).
+        limit(@search_limit)
+      @staff = User.
+        search_for(@query).
+        limit(@search_limit)
     end
-    @query = params[:query]
   end
 
   def set_limit

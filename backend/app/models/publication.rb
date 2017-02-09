@@ -20,6 +20,7 @@
 class Publication < Content
   include Attachable::CoverPicture
   include Attachable::Picture
+  include PgSearch
   acts_as_taggable
 
   has_many :related_contents, dependent: :destroy
@@ -28,6 +29,11 @@ class Publication < Content
   scope :older_pubs, -> { where('EXTRACT(year from content_date) < ?', Date.today.year - 5)}
   scope :filter_or_older_pubs, ->(years) {where('EXTRACT(year from content_date) IN (?) OR EXTRACT(year from content_date) < ?', years, Date.today.year-5)}
   scope :by_years, ->(years) { where('EXTRACT(year from content_date) IN (?)', years) }
+
+  pg_search_scope :search_for,
+    against: { title: :A, description: :B },
+    using: { tsearch: { any_word: true, prefix: true } },
+    order_within_rank: 'updated_at DESC'
 
   def media_contents_with_graphics_expanded
     media_contents.map do |media|
