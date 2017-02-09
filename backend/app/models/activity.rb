@@ -18,16 +18,10 @@
 #
 
 class Activity < Content
-  include PgSearch
   has_many :related_contents, dependent: :destroy
   has_many :publications, through: :related_contents
 
   acts_as_taggable
-
-  pg_search_scope :search_for,
-    against: { title: :A, description: :B },
-    using: { tsearch: { any_word: true, prefix: true } },
-    order_within_rank: 'updated_at DESC'
 
   def is_programme?
     content_type && content_type.title == "Programme"
