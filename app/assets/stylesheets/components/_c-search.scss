@@ -1,5 +1,5 @@
 @mixin modal-background($color) {
-  background: linear-gradient(to bottom, $color 45%, rgba($color, 0.75) 60%, transparent)
+  background: linear-gradient(to bottom, $color 40%, rgba($color, 0) 100%, transparent)
 }
 
 .c-search {
@@ -17,7 +17,7 @@
   position: absolute;
   top: 0;
   width: 100%;
-  height: rem(510px);
+  height: rem(550px);
   padding-top: rem(93px);
   z-index: 110;
   transition: opacity 0.2s ease-out;

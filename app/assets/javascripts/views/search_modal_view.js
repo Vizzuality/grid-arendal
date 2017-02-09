@@ -19,6 +19,7 @@
 
     initialize: function() {
       this._cache();
+      this._loadInputEvent();
     },
 
     _cache: function () {
@@ -33,7 +34,7 @@
       if(this.$landingSearcher.length > 0) {
         this.$landingSearcher
           .focus()
-          .val(this.$landingSearcher.val());
+          .val('');
       } else {
         this._toggleSearcher();
       }
@@ -64,7 +65,15 @@
       this.$input
         .focus()
         .val(this.$input.val());
-    }
+    },
+
+    _loadInputEvent: function() {
+      this.$input.on('keydown', function(e) {
+        if(e.keyCode === 27) {
+          this._closeSearcher();
+        }
+      }.bind(this));
+    },
   });
 
 })(this.App);
