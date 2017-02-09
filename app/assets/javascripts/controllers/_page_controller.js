@@ -27,6 +27,7 @@
       new App.View.MobileMenu();
       new App.View.ScrollToTop();
       new App.View.Share();
+      new App.View.SearchModal();
       this.isScreen_s = ($(window).width() < 768);
     },
 

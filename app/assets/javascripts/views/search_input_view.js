@@ -6,7 +6,7 @@
 
   App.View.SearchInput = Backbone.View.extend({
 
-    el: '.c-search-input',
+    el: '.js-search-input',
 
     initialize: function() {
       this._focusInput();
