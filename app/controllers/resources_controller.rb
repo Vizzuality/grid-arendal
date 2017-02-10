@@ -18,6 +18,7 @@ class ResourcesController < ApplicationController
   end
 
   def show
+    @users = @media_content.users
   end
 
   def paginate

@@ -142,4 +142,8 @@
     title: "Related news", sectionClass: 'content -color-4' %>
 <% end %>
 
+<% if @users.any? %>
+  <%= render 'shared/users', users: @users, sectionClass: 'content -color-4' %>
+<% end %>
+
 <%= render 'shared/footer' %>
