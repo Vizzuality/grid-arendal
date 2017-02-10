@@ -21,28 +21,4 @@ module ApplicationHelper
       yield
     end
   end
-
-  def resource_users resource
-    user_ids = [0]
-
-    if resource.publications.any?
-      resource.publications.each do |item|
-        item.users.each do |user|
-          user_ids.push(user.id)
-        end
-      end
-    end
-
-    if resource.activities.any?
-      resource.activities.each do |item|
-        item.users.each do |user|
-          user_ids.push(user.id)
-        end
-      end
-    end
-
-    user_ids = user_ids.uniq
-
-    User.where(id: user_ids).order_by_fullname
-  end
 end
