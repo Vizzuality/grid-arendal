@@ -21,7 +21,6 @@
                          edit_path: backend.url_for([:edit, @media_content]) }
                       ]
                       end
-  users = resource_users(@media_content)
 %>
 
 <div class="l-header-single">
@@ -143,8 +142,8 @@
     title: "Related news", sectionClass: 'content -color-4' %>
 <% end %>
 
-<% if users.any? %>
-  <%= render 'shared/users', users: users, sectionClass: 'content -color-4' %>
+<% if @users.any? %>
+  <%= render 'shared/users', users: @users, sectionClass: 'content -color-4' %>
 <% end %>
 
 <%= render 'shared/footer' %>

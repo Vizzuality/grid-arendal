@@ -108,4 +108,12 @@ class MediaContent < ApplicationRecord
     media_contents = media_contents.by_type(FILTERS[media])   if media.present?
     media_contents
   end
+
+  def users
+    user_ids = (publications + activities).map do |item|
+      item.users.pluck(:id)
+    end.flatten.uniq
+
+    User.where(id: user_ids).order_by_fullname
+  end
 end
