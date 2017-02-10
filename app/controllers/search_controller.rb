@@ -9,9 +9,11 @@ class SearchController < ApplicationController
         search_for(@query).
         limit(@search_limit)
       @activities = Activity.
+        published.
         search_for(@query).
         limit(@search_limit)
       @publications = Publication.
+        published.
         search_for(@query).
         limit(@search_limit)
       @media_contents = MediaContent.

@@ -1,0 +1,11 @@
+<h2 class="text -main-title -light">Graphics Download Requests</h2>
+
+<ul class="items-list">
+  <% @graphic_requests.each do |graphic_request| %>
+    <%= render 'backend/shared/index_item',
+      item: graphic_request,
+      title: graphic_request.display_title,
+      selected: action_name != "index" && @graphic_request == graphic_request
+    %>
+  <% end %>
+</ul>

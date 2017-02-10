@@ -71,6 +71,10 @@
   </div>
 </section>
 
+<% if @activity.partners.any? || @activity.links.any? %>
+    <%= render 'shared/partners', partners: @activity.partners, links: @activity.links, sectionClass: 'content -color-3' %>
+<% end %>
+
 <% if @activity.users.any? %>
   <%= render 'shared/users', users: @activity.users.order_by_fullname, lead_user: @activity.lead_user, sectionClass: 'content -color-3' %>
 <% end %>
@@ -97,10 +101,6 @@
 
 <% if @activity.media_contents.any? %>
   <%= render 'shared/related_media', media_contents: @activity.media_contents,link: resources_path, sectionClass: 'content -color-3' %>
-<% end %>
-
-<% if @activity.partners.any? || @activity.links.any? %>
-  <%= render 'shared/partners', partners: @activity.partners, links: @activity.links, sectionClass: 'content -color-3' %>
 <% end %>
 
 <%= render 'shared/footer' %>

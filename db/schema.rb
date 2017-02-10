@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170209111808) do
+
+ActiveRecord::Schema.define(version: 20170208121805) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -119,6 +120,16 @@ ActiveRecord::Schema.define(version: 20170209111808) do
     t.string   "background_image_content_type"
     t.integer  "background_image_file_size"
     t.datetime "background_image_updated_at"
+  end
+
+  create_table "graphic_requests", force: :cascade do |t|
+    t.integer  "media_attachment_id"
+    t.string   "email"
+    t.string   "name"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "download_hash"
+    t.integer  "graphic_id"
   end
 
   create_table "media_attachments", force: :cascade do |t|
@@ -329,6 +340,7 @@ ActiveRecord::Schema.define(version: 20170209111808) do
   add_foreign_key "documents", "contents"
   add_foreign_key "event_partners", "events"
   add_foreign_key "event_partners", "partners"
+  add_foreign_key "graphic_requests", "media_attachments"
   add_foreign_key "media_contents", "media_attachments", column: "eps_id"
   add_foreign_key "media_contents", "media_attachments", column: "pdf_id"
   add_foreign_key "media_contents", "media_contents", column: "album_id"

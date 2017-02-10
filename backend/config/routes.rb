@@ -85,8 +85,9 @@ Backend::Engine.routes.draw do
     patch 'make_featured',   on: :member
     patch 'remove_featured', on: :member
     get :paginate, on: :collection, defaults: { format: 'js' }
-    
   end
+
+  resources :graphic_requests, only: [:index, :edit, :destroy]
 
   [:videos, :video_collections].each do |res|
     resources res, except: [:show] do
@@ -95,6 +96,7 @@ Backend::Engine.routes.draw do
       get :paginate, on: :collection, defaults: { format: 'js' }
     end
   end
+
 
   root to: 'admin_home#index'
 end

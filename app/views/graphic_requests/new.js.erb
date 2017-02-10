@@ -1,0 +1,4 @@
+$(function(){
+  $('#graphic-request-modal').empty().
+    append('<%= escape_javascript(render 'new', locals: {graphic_request: @graphic_request}) %>');
+});
