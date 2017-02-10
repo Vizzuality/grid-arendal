@@ -35,18 +35,11 @@
       </div>
     </div>
   </div>
-  <% if @media_content.type == MediaContent::TYPE_VIDEO %>
-    <div class="banner -media-library">
-      <iframe src="<%= video_url %>" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-    </div>
-  <% elsif not(@media_content.type.include?(MediaContent::TYPE_VIDEO_COLLECTION)) %>
-    <div class="banner -media-library <% if is_vertical %>-vertical<% end %>" style="background-image: url('<%= picture_url %>');"></div>
-  <% end %>
 </div>
 
 <div class="l-media-article -media-library">
   <div class="row">
-    <div class="small-12 column">
+    <div class="small-12 column c-article-image-container">
       <% if @media_content.type == MediaContent::TYPE_VIDEO %>
         <div class="c-article-image">
           <iframe src="<%= video_url %>" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>

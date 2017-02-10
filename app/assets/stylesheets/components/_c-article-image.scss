@@ -4,7 +4,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   height: calc(100vh - #{rem(200px)});
-  max-height: rem(580px);
+  max-height: rem(250px);
   z-index: 10;
   display: none;
 
@@ -12,7 +12,20 @@
     background-size: contain;
   }
 
-  @media screen and (min-width: $screen-m) {
+  .-media-library & {
     display: block;
+  }
+
+  @media screen and (min-width: $screen-m) {
+    max-height: rem(580px);
+    display: block;
+  }
+}
+
+.c-article-image-container {
+
+  @media screen and (max-width: $screen-m - 1) {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
