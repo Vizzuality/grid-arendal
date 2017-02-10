@@ -50,7 +50,7 @@ module Backend
     end
 
     def search_thumbnails
-      @photos = Photo.search_for(params[:query]).limit(20)
+      @photos = Photo.search_for(params[:query]).limit(100)
       @selected_id = params[:selected_id]
       respond_to do |format|
         format.js
