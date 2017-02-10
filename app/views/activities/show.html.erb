@@ -37,6 +37,9 @@
 
           <ul class="anchors">
             <li class="text -section-menu js-anchor" data-section-belongs="overview">Overview</li>
+            <% if @activity.partners.any? || @activity.links.any? %>
+              <li class="text -section-menu js-anchor" data-section-belongs="partners">Partners & Links</li>
+            <% end %>
             <% if @activity.users.any? %>
               <li class="text -section-menu js-anchor" data-section-belongs="users">Staff involved</li>
             <% end %>
@@ -51,9 +54,6 @@
             <% end %>
             <% if @activity.media_contents.any? %>
               <li class="text -section-menu js-anchor" data-section-belongs="related-media">Related media</li>
-            <% end %>
-            <% if @activity.partners.any? || @activity.links.any? %>
-              <li class="text -section-menu js-anchor" data-section-belongs="partners">Partners & Links</li>
             <% end %>
           </ul>
         </div>
