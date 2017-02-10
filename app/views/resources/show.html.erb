@@ -92,7 +92,7 @@
     <div class="small-12 large-4 large-offset-2 column">
       <div class="sidebar">
         <div class="download-links">
-          <% if @media_content.type == MediaContent::TYPE_PHOTO %>
+          <% if [MediaContent::TYPE_PHOTO, MediaContent::TYPE_GRAPHIC].include?(@media_content.type) %>
             <div class="text -sidebar-title">Download</div>
             <ul class="button-list">
               <% @media_content.photo_sizes.where(label: PhotoSize::LABELS).each do |size| %>
@@ -103,6 +103,9 @@
                 <% end %>
               <% end %>
             </ul>
+            <%= graphic_formats_download(@media_content) %>
+            <div id="graphic-request-modal">
+            </div>
           <% end %>
         </div>
         <div class="constraints">

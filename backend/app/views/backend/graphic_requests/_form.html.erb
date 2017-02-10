@@ -1,0 +1,14 @@
+<%= render 'backend/shared/form/header', form: form,
+  inputs: [{value: :name, title_placeholder: 'User name'}],
+  disabled: true, preview_url: nil %>
+
+<div class="fields">
+  <%= render 'backend/shared/form/field_input', form: form,
+    value: :email, disabled: true %>
+  <%= render 'backend/shared/form/field_datepicker', form: form,
+    value: :created_at, disabled: true %>
+  <%= render 'backend/shared/form/field_input', form: form,
+    value: :graphic_title, disabled: true %>
+  <%= render 'backend/shared/form/field_input', form: form,
+    value: :file_name, disabled: true %>
+</div>

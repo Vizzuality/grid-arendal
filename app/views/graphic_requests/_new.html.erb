@@ -1,0 +1,22 @@
+<%= form_for @graphic_request do |f| %>
+  <p>
+    To proceed with the download of this file, please fill in the following details
+    and we will email you the link to download it.
+  </p>
+  <%= f.hidden_field :graphic_id %>
+  <%= f.hidden_field :media_attachment_id %>
+  <p class="inverse-robot">
+    <input class="mandatory inverse" type="text" name="super_name"/>
+  </p>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

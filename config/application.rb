@@ -22,5 +22,6 @@ module GridArendal
       g.javascripts     false
       g.helper          false
     end
+    config.action_mailer.default_url_options = { host: ENV['APP_HOST'] }
   end
 end
