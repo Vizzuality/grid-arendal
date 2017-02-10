@@ -15,9 +15,16 @@
 #
 
 class Photo < MediaContent
+  include PgSearch
 
   scope :not_in_album, -> { where(album_id: nil)}
   scope :order_by_date_behind_value, ->(id) { order("(id = #{id}) DESC, publication_date DESC") }
+
+  pg_search_scope :search_for,
+    against: { title: :A },
+    associated_against: { album: { title: :B, description: :B } },
+    using: { tsearch: { any_word: true, prefix: true } },
+    order_within_rank: 'updated_at DESC'
 
   has_many :photo_sizes, dependent: :destroy
   belongs_to :album
