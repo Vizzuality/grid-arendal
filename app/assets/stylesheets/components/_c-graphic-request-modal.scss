@@ -1,0 +1,13 @@
+.c-graphic-request-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: rem(1000px);
+  margin: auto;
+  padding-left: rem(14px);
+  padding-right: rem(14px);
+  background-color: #ffffff;
+  z-index: 200;
+}
