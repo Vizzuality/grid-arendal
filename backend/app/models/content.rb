@@ -51,12 +51,14 @@ class Content < ApplicationRecord
   has_many :weblinks, dependent: :destroy
   accepts_nested_attributes_for :weblinks, reject_if: :all_blank, allow_destroy: true
 
-  scope :order_by_title, -> { order('title ASC')        }
+  scope :order_by_title, -> { order('title ASC') }
+  scope :order_by_content_date, -> { order(content_date: :desc) }
   scope :by_published,   -> { where(is_published: true) }
   scope :by_type, ->(type) { where(content_type_id: type) }
   scope :by_tags, ->(tags) { joins(:tags).where(tags: { id: tags }) }
   scope :by_status, ->(status) { where(status: status) }
   scope :by_partners, ->(partners) { joins(:content_partners).where(content_partners: {partner_id: partners})}
+  scope :by_lead_user, ->(user_id) { where(lead_user: user_id)}
 
   pg_search_scope :search_for,
     associated_against: { users: { first_name: :B, last_name: :B } },
