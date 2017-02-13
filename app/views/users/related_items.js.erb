@@ -1,8 +1,10 @@
 <% if @items.any? %>
   $(function(){
     var item = "<%= escape_javascript @item_type %>";
+    var masonrySearchText = '.-related-'+ item + ' .masonry-layout';
+    $(masonrySearchText).find(".item").remove();
 
-    salvattore.appendElements(document.querySelector('.-related-'+ item + ' .masonry-layout'), $('<div/>')
+    salvattore.appendElements(document.querySelector(masonrySearchText), $('<div/>')
       .html("<%= escape_javascript(render("shared/related_posts", collection: @items )) %>")
       .contents()
     );
