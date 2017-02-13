@@ -96,9 +96,10 @@
                 <% end %>
               <% end %>
             </ul>
-            <%= graphic_formats_download(@media_content) %>
-            <div id="graphic-request-modal">
-            </div>
+            <% if @media_content.type == MediaContent::TYPE_GRAPHIC %>
+              <%= graphic_formats_download(@media_content) %>
+              <div id="graphic-request-modal"></div>
+            <% end %>
           <% end %>
         </div>
         <div class="constraints">
