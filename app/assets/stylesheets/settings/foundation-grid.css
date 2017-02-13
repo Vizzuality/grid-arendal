@@ -1923,7 +1923,7 @@ button {
 
 @media screen and (max-width: 767px) {
   .column, .columns {
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
