@@ -71,7 +71,7 @@
             </p>
           <% end %>
           <% if @media_content.tags.any? %>
-            <p class="tags">
+            <p class="c-tags">
               <strong>Tags:</strong>
               <% @media_content.tags.each do |tag| %>
                 <%= link_to resources_path(:tags => tag.id) do %>

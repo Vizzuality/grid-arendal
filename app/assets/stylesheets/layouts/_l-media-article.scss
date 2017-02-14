@@ -28,22 +28,12 @@
       margin-left: rem(15px)
     }
 
-    .tags {
+    .c-tags {
       margin-top: rem(25px);
 
       a {
         text-decoration: none;
       }
-    }
-
-    .tag {
-      display: inline-block;
-      margin: 0 0 rem(10px) rem(6px);
-      padding: rem(2px) rem(10px);
-      border-radius: 15px;
-      background-color: $color-1;
-      color: $font-color-3;
-      opacity: 1;
     }
   }
 
