@@ -33,7 +33,7 @@
 
       this._trackDownload($(e.currentTarget).data('key'));
       if(target.hasClass(this.options.downloadGraphicsButtonClass)) {
-        this._showGraphicModal();
+        this._showGraphicModal(target);
       }
     },
 
@@ -41,10 +41,10 @@
       ga('send', 'event', 'Downloads', this.pageTitle, key);
     },
 
-    _showGraphicModal: function () {
+    _showGraphicModal: function (element) {
       $.get('/graphic_requests/new.js', {
-        media_attachment_id: $(this).data('attachment-id'),
-        graphic_id: $(this).data('graphic-id')
+        media_attachment_id: element.data('attachment-id'),
+        graphic_id: element.data('graphic-id')
       },
       function() {
         this._loadGraphicModalEvents();
@@ -69,7 +69,6 @@
 
     _checkGraphicModalSubmitAvailability: function () {
       var disabled = $($(this.options.downloadGraphicsInputClass)[0]).val() === "" || $($(this.options.downloadGraphicsInputClass)[1]).val() === "";
-      console.log(disabled);
       $(this.options.downloadGraphicsSubmitClass).prop("disabled", disabled);
     }
   });
