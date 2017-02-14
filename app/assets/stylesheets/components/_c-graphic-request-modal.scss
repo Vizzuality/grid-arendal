@@ -2,12 +2,102 @@
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
   width: 100%;
-  max-width: rem(1000px);
-  margin: auto;
-  padding-left: rem(14px);
-  padding-right: rem(14px);
-  background-color: #ffffff;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba($color-1, 0.6);
+  color: $color-1;
   z-index: 200;
+
+  .description {
+    font-size: 18px;
+    line-height: 1.67;
+    color: rgba($color-1, 0.8);
+  }
+
+  form {
+    position: relative;
+    width: 100%;
+    max-width: rem(380px);
+    padding: rem(39px) rem(20px) rem(20px) rem(20px);
+    background-color: $white;
+    box-shadow: 0 7px 17px 0 rgba(0, 61, 83, 0.3);
+    z-index: 2;
+  }
+
+  label {
+    opacity: 0.8;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.23;
+    letter-spacing: 0.3px;
+  }
+
+  input[type="text"] {
+    width: 100%;
+    height: rem(40px);
+    padding: 0 rem(10px);
+    margin-top: rem(4px);
+    border: solid rem(2px) rgba($color-1, 0.4);
+    font-size: 18px;
+    line-height: 1.67;
+    letter-spacing: normal;
+    outline: 0;
+
+    &:focus,
+    &.-filled {
+      border-color: $color-1;
+    }
+
+    @include placeholder {
+      color: $color-1;
+      opacity: 0.4;
+    }
+  }
+
+  input[type="submit"] {
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: rem(160px);
+    height: rem(40px);
+    margin-top: rem(40px);
+    background-color: #003d53;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.23;
+    letter-spacing: 0.5px;
+    color: #eef1f4;
+    border: 0;
+
+    &:disabled {
+      opacity: 0.4;
+    }
+  }
+
+  .field {
+    margin-top: rem(13px);
+  }
+
+  .icon {
+    position: absolute;
+    top: rem(13px);
+    right: rem(13px);
+    width: rem(14px);
+    height: rem(14px);
+    cursor: pointer;
+    fill: rgba($color-1, 0.3);
+  }
+
+  .closer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
 }
