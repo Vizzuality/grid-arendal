@@ -17,7 +17,7 @@ $filters-screen-m-width: 16%;
 
 %filter-background-speaker {
   @extend %filter-background;
-  top: rem(1px);
+  top: rem(8px);
   width: calc(100% + #{rem(32px)});
 
   @media screen and (min-width: $screen-m) {
@@ -187,228 +187,227 @@ $filters-screen-m-width: 16%;
       height: auto;
       overflow: visible;
     }
+  }
 
-    .filter {
+  .filter {
+    position: relative;
+    width: 100%;
+    padding-top: rem(18px);
+    margin-top: rem(10px);
+    opacity: 0;
+    transition: opacity 0.5s;
+
+    > .type {
+      position: absolute;
+      top: 0;
+    }
+
+    .speaker {
       position: relative;
-      width: 100%;
-      padding-top: rem(18px);
-      margin-top: rem(10px);
-      opacity: 0;
-      transition: opacity 0.5s;
+      z-index: 1;
+      cursor: pointer;
 
-      @media screen and (min-width: $screen-m) {
-        width: $filters-screen-m-width;
-        padding-top: rem(16px);
-        padding-right: rem(15px);
-        margin-top: 0;
-        opacity: 1;
+      &:hover:before {
+        @extend %filter-background-speaker;
+        content: normal;
       }
 
-      > .type {
+      .text {
+        display: inline-block;
+        @include ellipsis(calc(100% - #{rem(18px)}));
+      }
+
+      .icon {
         position: absolute;
-        top: 0;
-      }
-
-      .speaker {
-        position: relative;
-        z-index: 1;
-        cursor: pointer;
-
-        &:hover {
-
-          &:before {
-            @extend %filter-background-speaker;
-            top: rem(5px);
-
-            @media screen and (min-width: $screen-m) {
-              top: rem(2px);
-            }
-          }
-        }
-
-        .text {
-          display: inline-block;
-          @include ellipsis(calc(100% - #{rem(18px)}));
-        }
-
-        .icon {
-          position: absolute;
-          top: rem(-1px);
-          width: rem(11px);
-          height: rem(11px);
-          margin-left: rem(10px);
-          z-index: 2;
-
-          @media screen and (min-width: $screen-m) {
-            top: rem(1px);
-            width: rem(8px);
-            height: rem(8px);
-            margin-left: rem(8px);
-          }
-        }
-      }
-
-      .dropdown {
-        position: absolute;
-        top: rem(-9px);
-        left: rem(-10px);
-        padding-top: rem(9px);
-        background-color: $skull-white;
-        box-shadow: 0 2px 4px 0 rgba($black, 0.2);
-        white-space: nowrap;
-        display: none;
-
-        .type {
-          padding: 0 rem(10px);
-        }
-
-        .list {
-          margin-top: rem(3px);
-
-          li {
-            position: relative;
-            padding: 0 rem(10px);
-            line-height: 2.14;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            cursor: pointer;
-
-            &:hover:not(.no-results-speaker),
-            &.selected {
-              background-color: $white;
-            }
-          }
-
-          @media screen and (min-width: $screen-m) {
-            max-width: rem(400px);
-            max-height: rem(500px);
-            overflow: auto;
-          }
-        }
-      }
-
-      select {
-        position: absolute;
-        top: rem(18px);
-        left: rem(-4px);
-        background-color: transparent;
-        border: none;
-        outline: none;
+        top: rem(4px);
+        width: rem(11px);
+        height: rem(11px);
+        margin-left: rem(10px);
         z-index: 2;
 
         @media screen and (min-width: $screen-m) {
-          display: none;
+          top: rem(1px);
+          width: rem(8px);
+          height: rem(8px);
+          margin-left: rem(8px);
         }
       }
+    }
 
-      &.-show-dropdown {
+    .dropdown {
+      position: absolute;
+      top: rem(-9px);
+      left: rem(-10px);
+      padding-top: rem(9px);
+      background-color: $skull-white;
+      box-shadow: 0 2px 4px 0 rgba($black, 0.2);
+      white-space: nowrap;
+      display: none;
 
-        .dropdown {
-          display: block;
-          z-index: 16;
-        }
+      .type {
+        padding: 0 rem(10px);
       }
 
-      &.-have-value {
+      .list {
+        margin-top: rem(3px);
 
-        .speaker {
+        li {
+          position: relative;
+          padding: 0 rem(10px);
+          line-height: 2.14;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          cursor: pointer;
 
-          &:before {
-            @extend %filter-background-speaker;
-          }
-
-          .text {
-            font-weight: 500;
+          &:hover:not(.no-results-speaker),
+          &.selected {
+            background-color: $white;
           }
         }
 
-        select {
+        @media screen and (min-width: $screen-m) {
+          max-width: rem(400px);
+          max-height: rem(500px);
+          overflow: auto;
+        }
+      }
+    }
+
+    select {
+      position: absolute;
+      top: rem(18px);
+      left: rem(-4px);
+      background-color: transparent;
+      border: none;
+      outline: none;
+      padding: 0 0 0 rem(3px);
+      z-index: 2;
+
+      @media screen and (min-width: $screen-m) {
+        display: none;
+      }
+    }
+
+    &.-show-dropdown {
+
+      .dropdown {
+        display: block;
+        z-index: 16;
+      }
+    }
+
+    &.-have-value {
+
+      .speaker {
+
+        &:before {
+          @extend %filter-background-speaker;
+        }
+
+        .text {
           font-weight: 500;
         }
       }
 
-      &:not(.-have-value) > .type {
-        display: none;
+      select {
+        font-weight: 500;
+      }
+    }
+
+    &:not(.-have-value) > .type {
+      display: none;
+    }
+
+    &.-type-search {
+      flex-grow: 2;
+      text-align: right;
+      display: none;
+
+      @media screen and (min-width: $screen-m) {
+        display: block;
       }
 
-      &.-type-search {
-        flex-grow: 2;
-        text-align: right;
-        display: none;
+      .speaker {
 
-        @media screen and (min-width: $screen-m) {
-          display: block;
+        &:hover {
+
+          &:before {
+            width: calc(100% + #{rem(16px)});
+          }
         }
+      }
+    }
 
-        .speaker {
+    &.-type-tags {
 
-          &:hover {
+      @media screen and (min-width: $screen-m) {
+        width: $filters-screen-m-width * 2;
+        position: static;
+
+        > .type {
+          top: rem(16px);
+        }
+      }
+
+      @extend %dropdown-tags;
+    }
+
+    &.-type-select {
+
+      .speaker {
+
+        .text {
+
+          @media screen and (max-width: $screen-m) {
+            color: transparent;
+          }
+        }
+      }
+    }
+
+    &.-type-years {
+      flex: 1 100%;
+      padding: rem(10px) 0 rem(8px) 0;
+      display: none;
+
+      @media screen and (min-width: $screen-m) {
+        display: block;
+      }
+
+      .list {
+        display: flex;
+
+        li {
+          position: relative;
+          z-index: 1;
+          cursor: pointer;
+
+          &:not(:first-child) {
+            margin-left: rem(29px);
+          }
+
+          &:hover,
+          &.selected {
 
             &:before {
-              width: calc(100% + #{rem(16px)});
+              @extend %filter-background-default;
             }
           }
         }
       }
+    }
 
-      &.-type-tags {
+    @media screen and (min-width: $screen-m) {
+      width: $filters-screen-m-width;
+      padding-top: rem(16px);
+      padding-right: rem(15px);
+      margin-top: 0;
+      opacity: 1;
 
-        @media screen and (min-width: $screen-m) {
-          width: $filters-screen-m-width * 2;
-          position: static;
-
-          > .type {
-            top: rem(16px);
-          }
-        }
-
-        @extend %dropdown-tags;
-      }
-
-      &.-type-select {
-
-        .speaker {
-
-          .text {
-
-            @media screen and (max-width: $screen-m) {
-              color: transparent;
-            }
-          }
-        }
-      }
-
-      &.-type-years {
-        flex: 1 100%;
-        padding: rem(10px) 0 rem(8px) 0;
-        display: none;
-
-        @media screen and (min-width: $screen-m) {
-          display: block;
-        }
-
-        .list {
-          display: flex;
-
-          li {
-            position: relative;
-            z-index: 1;
-            cursor: pointer;
-
-            &:not(:first-child) {
-              margin-left: rem(29px);
-            }
-
-            &:hover,
-            &.selected {
-
-              &:before {
-                @extend %filter-background-default;
-              }
-            }
-          }
-        }
+      .speaker:hover:before {
+        content: "";
+        top: rem(2px);
       }
     }
   }

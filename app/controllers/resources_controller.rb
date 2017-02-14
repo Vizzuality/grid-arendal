@@ -4,6 +4,8 @@ class ResourcesController < ApplicationController
   before_action :set_media_contents_limit, only: [:index, :paginate]
   before_action :set_page_param, only: [:index, :paginate]
 
+  helper_method :options_filter
+
   def index
     @media_contents = MediaContent.fetch_all(options_filter).
                         limit(@media_contents_limit * @page)
@@ -26,7 +28,7 @@ class ResourcesController < ApplicationController
                         limit(@media_contents_limit).
                         offset(@media_contents_limit * (@page - 1))
     respond_to do |format|
-      if(@media_contents.empty?)
+      if @media_contents.empty?
         head :no_content
       end
       format.js
