@@ -99,6 +99,7 @@
               <% end %>
             </ul>
             <% if @media_content.type == MediaContent::TYPE_GRAPHIC %>
+              <div class="text -sidebar-title">High-res download for publications</div>
               <%= graphic_formats_download(@media_content) %>
               <div id="graphic-request-modal"></div>
             <% end %>
