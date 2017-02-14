@@ -54,6 +54,22 @@
       <% end %>
       <div class="text -body-single-alt description">
         <%= raw @publication.description %>
+        <% if @publication.content_type.present? %>
+          <p><strong>Status:</strong> <%= link_to @publication.status, publications_path(:status => @publication.status) %></p>
+        <% end %>
+        <% if @publication.content_type.present? %>
+          <p><strong>Type:</strong> <%= link_to @publication.content_type.title, publications_path(:type => @publication.content_type.id) %></p>
+        <% end %>
+        <% if @publication.tags.any? %>
+          <p class="c-tags">
+            <strong>Tags:</strong>
+            <% @publication.tags.each do |tag| %>
+              <%= link_to publications_path(:tags => tag.id) do %>
+                <span class="tag text -meta"><%= tag %></span>
+              <% end %>
+            <% end %>
+          </p>
+        <% end %>
         <div class="read-more">
           <svg class="icon">
             <use xlink:href="#icon-read-more-plus"></use>
