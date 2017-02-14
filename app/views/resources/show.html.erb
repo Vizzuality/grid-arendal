@@ -74,7 +74,9 @@
             <p class="tags">
               <strong>Tags:</strong>
               <% @media_content.tags.each do |tag| %>
-                <span class="tag text -meta"><%= tag %></span>
+                <%= link_to resources_path(:tags => tag.id) do %>
+                  <span class="tag text -meta"><%= tag %></span>
+                <% end %>
               <% end %>
             </p>
           <% end %>
