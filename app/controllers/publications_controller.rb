@@ -5,6 +5,8 @@ class PublicationsController < ApplicationController
   before_action :set_publications_limit, only: [:index, :paginate]
   before_action :set_page_param, only: [:index, :paginate]
 
+  helper_method :options_filter
+
   def index
     @publications = Publication.fetch_all(options_filter).
       limit(@publications_limit * @page)
@@ -32,7 +34,7 @@ class PublicationsController < ApplicationController
                     .limit(@publications_limit)
                     .offset(@publications_limit * (@page - 1))
     respond_to do |format|
-      if(@publications.empty?)
+      if @publications.empty?
         head :no_content
       end
       format.js

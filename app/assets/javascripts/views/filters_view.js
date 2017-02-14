@@ -13,7 +13,6 @@
     },
 
     options: {
-      opened: false,
       isFixed: false,
       showFiltersClass: "-show-filters",
       openFiltersAnimateSpeed: 0.5,
@@ -25,13 +24,14 @@
       var opts = settings && settings.options ? settings.options : {};
       this.options = _.extend({}, this.options, opts);
 
-      this._loadFilters();
       this._cache();
+      this._loadFilters();
       this._setSelectFilters();
       this._loadStickyEvent();
     },
 
     _cache: function() {
+      this.opened = this.$el.hasClass(this.options.showFiltersClass);
       this.$container = this.$el.find('.container');
       if ( this.$container.length > 0 ) {
         this.offsetTop = this.$el.offset().top + 6;
