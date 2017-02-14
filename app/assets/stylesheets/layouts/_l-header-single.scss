@@ -149,9 +149,18 @@
         }
       }
 
+      &:not(.-picture) {
+        max-height: none !important;
+        height: auto !important;
+
+        .section-menu {
+          position: relative !important;
+        }
+      }
     }
 
-    &.-publications, &.-media-library {
+    &.-publications,
+    &.-media-library {
       @media screen and (min-width: $screen-m) {
         display: none;
       }
