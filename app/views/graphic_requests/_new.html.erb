@@ -1,22 +1,23 @@
-<%= form_for @graphic_request do |f| %>
-  <p>
-    To proceed with the download of this file, please fill in the following details
-    and we will email you the link to download it.
-  </p>
-  <%= f.hidden_field :graphic_id %>
-  <%= f.hidden_field :media_attachment_id %>
-  <p class="inverse-robot" style="display: none;">
-    <input class="mandatory inverse" type="text" name="super_name"/>
-  </p>
-  <p>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<div class="c-graphic-request-modal">
+  <%= form_for @graphic_request do |f| %>
+    <div class="description">Fill in the following details and we will email you the link to download this file.</div>
+    <%= f.hidden_field :graphic_id %>
+    <%= f.hidden_field :media_attachment_id %>
+    <p class="inverse-robot" style="display: none;">
+      <input class="mandatory inverse" type="text" name="super_name"/>
+    </p>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'js_graphic-request-modal-input' %>
+    </div>
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.text_field :email, class: 'js_graphic-request-modal-input', placeholder: 'you@email.com' %>
+    </div>
+    <%= f.submit "SUBMIT", class: 'js_graphic-request-modal-submit' %>
+    <svg class="icon js_graphic-request-modal-closer">
+        <use xlink:href="#icon-close"></use>
+    </svg>
+  <% end %>
+  <div class="closer js_graphic-request-modal-closer"></div>
+</div>
