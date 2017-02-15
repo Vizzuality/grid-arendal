@@ -64,7 +64,7 @@
             <% title = @media_content.type == MediaContent::TYPE_GRAPHIC ? "From collection" : "From album" %>
             <p><strong><%= title %>:</strong> <%= link_to @media_content.album.title, resource_path(@media_content.album_id) %></p>
           <% end %>
-          <% if @media_content.author.present? %>
+          <% if @media_content.single? && @media_content.author.present? %>
             <p>
               <strong><% if @media_content.type == MediaContent::TYPE_GRAPHIC %>Cartographer<% else %>Taken by<% end %>:</strong>
               <%= @media_content.author %>
