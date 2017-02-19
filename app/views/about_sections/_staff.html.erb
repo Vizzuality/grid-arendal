@@ -2,7 +2,7 @@
   <div class="small-12 column">
     <ul class="c-staff-selector">
       <% i = 1 %>
-      <% User::POSITION_CATEGORIES.each do |category| %>
+      <% User::STAFF_CATEGORIES.each do |category| %>
         <% next unless categories.include?(category) %>
         <li class="c-staff-selector-item text -filter js-staff-selector-item" data-category-index="<%= i %>">
           <span><%= category %></span>
@@ -27,7 +27,7 @@
   </div>
 </div>
 <% i = 1 %>
-<% User::POSITION_CATEGORIES.each do |category| %>
+<% User::STAFF_CATEGORIES.each do |category| %>
   <% next unless categories.include?(category) %>
   <div class="c-staff-container" data-category-index="<%= i %>">
     <div class="row">

@@ -60,16 +60,23 @@ class User < ApplicationRecord
   include Attachable::Avatar
   include Attachable::Thumbnail
 
-  before_update :deactivate_account, if: 'deactivated? && active_changed?'
-  before_update :activate_account,   if: 'activated? && active_changed?'
-  before_save   :send_invitation,    if: 'activated? && sign_in_count.zero?'
+  SPECIAL_CATEGORIES = ["Board", "Affiliate"]
+  STAFF_CATEGORIES = ["Managing Director", "Administration Team",
+                         "Finance", "Staff", "Consultants & Interns"]
+
+  POSITION_CATEGORIES = (SPECIAL_CATEGORIES + STAFF_CATEGORIES).sort
 
   scope :locked_accounts,   -> { where.not(locked_at: nil) }
   scope :order_by_fullname, -> { order(:first_name, :last_name) }
-  scope :board_members, -> { where(is_board_member: true)}
-  scope :regular_staff, -> { where(is_board_member: false)}
+  scope :board_members, -> { where(position_category: "Board")}
+  scope :affiliates, -> { where(position_category: "Affiliate")}
+  scope :regular_staff, -> { where(position_category: STAFF_CATEGORIES)}
   scope :with_category, -> { where.not(position_category: ['', nil])}
   scope :randomize, -> { order('random()') }
+
+  before_update :deactivate_account, if: 'deactivated? && active_changed?'
+  before_update :activate_account,   if: 'activated? && active_changed?'
+  before_save   :send_invitation,    if: 'activated? && sign_in_count.zero?'
 
   pg_search_scope :search_for,
     against: {
@@ -84,8 +91,6 @@ class User < ApplicationRecord
     },
     using: { tsearch: { any_word: true, prefix: true } },
     order_within_rank: 'last_name ASC, first_name ASC'
-
-  POSITION_CATEGORIES = ["Managing Director", "Administration Team", "Finance", "Staff", "Consultants & Interns"]
 
   class << self
     def filter_users(filters)
