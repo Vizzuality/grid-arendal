@@ -60,7 +60,9 @@ class User < ApplicationRecord
   include Attachable::Avatar
   include Attachable::Thumbnail
 
-  SPECIAL_CATEGORIES = ["Board", "Affiliate"]
+  BOARD = "Board Member"
+  AFFILIATE = "Honorary Affiliate"
+  SPECIAL_CATEGORIES = [BOARD, AFFILIATE]
   STAFF_CATEGORIES = ["Managing Director", "Administration Team",
                          "Finance", "Staff", "Consultants & Interns"]
 
@@ -68,8 +70,8 @@ class User < ApplicationRecord
 
   scope :locked_accounts,   -> { where.not(locked_at: nil) }
   scope :order_by_fullname, -> { order(:first_name, :last_name) }
-  scope :board_members, -> { where(position_category: "Board")}
-  scope :affiliates, -> { where(position_category: "Affiliate")}
+  scope :board_members, -> { where(position_category: BOARD)}
+  scope :affiliates, -> { where(position_category: AFFILIATE)}
   scope :regular_staff, -> { where(position_category: STAFF_CATEGORIES)}
   scope :with_category, -> { where.not(position_category: ['', nil])}
   scope :randomize, -> { order('random()') }

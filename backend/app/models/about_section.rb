@@ -14,7 +14,7 @@
 class AboutSection < ApplicationRecord
   validates :title, presence: true
 
-  CATEGORIES = ["affiliates", "annual-reports", "board", "programmes",
+  CATEGORIES = ["annual-reports", "board", "honorary-affiliate", "programmes",
                 "staff", "vacancies"]
 
   class << self
