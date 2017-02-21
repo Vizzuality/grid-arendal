@@ -27,14 +27,14 @@ class ActivitiesController < ApplicationController
   def show
     @related_activities = if @activity.is_programme?
                             Activity.joins(:tags).
-                              where(tags: {name: @activity.title}).
+                              where(tags: {name: @activity.title.strip}).
                               where.not(id: @activity.id).
                               order_by_title.limit(6)
                           else
                             programme_tags = @activity.tags.
                               where(category: Tag::PROGRAMME)
                             Activity.joins(:tags).
-                              where(tags: {name: programme_tags.map(&:name)}).
+                              where(tags: {name: programme_tags.map{|t| t.name.strip}}).
                               where.not(id: @activity.id).
                               order_by_title.limit(6)
                           end
