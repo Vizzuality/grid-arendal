@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     if @item_type == 'activities'
       @items = Activity.by_lead_user(@user.id) + @user.activities.published.order_by_content_date
     elsif @item_type == 'publications'
-      @items = Publication.by_lead_user(@user.id) + @user.publications.published.order_by_content_date
+      @items = @user.related_publications
     end
 
     respond_to do |format|
@@ -49,9 +49,6 @@ class UsersController < ApplicationController
     end
 
     def set_publications
-      @publications = Publication.by_lead_user(@user.id).limit(@publications_limit)
-      if @publications.size < @publications_limit
-        @publications = @publications + @user.publications.published.order_by_content_date.limit(@publications_limit - @publications.size)
-      end
+      @publications = @user.related_publications(@publications_limit)
     end
 end
