@@ -17,7 +17,6 @@ class SearchController < ApplicationController
         search_for(@query).
         limit(@search_limit)
       @media_contents = MediaContent.
-        albums_collections_and_videos.
         search_for(@query).
         limit(@search_limit)
       @staff = User.
