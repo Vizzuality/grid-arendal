@@ -1,5 +1,4 @@
 module MediaLibraryHelper
-
   def graphic_formats_download graphic
     links = []
     if graphic.eps
@@ -17,6 +16,23 @@ module MediaLibraryHelper
       links.map do |link|
         concat(link)
       end
+    end
+  end
+
+  def svg_icon_for media
+    case media.type
+      when MediaContent::TYPE_ALBUM
+        "photo_library"
+      when MediaContent::TYPE_PICTURE
+        "photos"
+      when MediaContent::TYPE_VIDEO_COLLECTION
+        "video_library"
+      when MediaContent::TYPE_VIDEO
+        "videos"
+      when MediaContent::TYPE_GRAPHIC
+        "graphics"
+      when MediaContent::TYPE_COLLECTION
+        "collections"
     end
   end
 end

@@ -46,20 +46,11 @@
         <h3 class="text -title-card-small"><%= media.title %></h3>
         <p class="card-meta">
           <span class="text -meta"><%= meta.join(" | ") %></span>
-          <% if media.type == MediaContent::TYPE_ALBUM %>
-            <span class="icons">
-              <svg class="icon">
-                <use xlink:href="#icon-media_photo_library"></use>
-              </svg>
-            </span>
-          <% end %>
-          <% if media.type == MediaContent::TYPE_VIDEO_COLLECTION %>
-            <span class="icons">
-              <svg class="icon">
-                <use xlink:href="#icon-media_video_library"></use>
-              </svg>
-            </span>
-          <% end %>
+          <span class="icons">
+            <svg class="icon">
+              <use xlink:href="#icon-media_<%= svg_icon_for(media) %>"></use>
+            </svg>
+          </span>
         </p>
       </div>
     </article>
