@@ -4,19 +4,18 @@
 
 <div class="fields">
   <%= render 'backend/shared/form/field_fake_input', value: album.title,
-    label_txt: "Album", note_txt: "Album can't be changed", object: album %>
+    label_txt: "Album", note_txt: "Album can't be changed",
+    link_me_to: edit_album_path(album) %>
 
-  <%= render 'backend/shared/form/field_input', form: form, value: :external_id,
-    disabled: true, label_txt: "Flickr id",
-    note_txt: "Flickr id can't be changed" %>
+  <%= render 'backend/shared/form/field_fake_input', value: form.object.external_id,
+    label_txt: "Flickr id", note_txt: "Flickr id can't be changed",
+    link_me_to: form.object.external_url %>
 
   <div class="field" data-type="picture">
     <%= form.label "Picture", class: 'text -field-label -bold -dark' %>
     <%= form.label '', class: 'fake-input' do %>
         <div class="tip">
-          <a href="<%= form.object.external_url %>" target="_blank">
-            <div class="current_picture" style="background-image: url('<%= thumbnail %>');"></div>
-          </a>
+          <div class="current_picture" style="background-image: url('<%= thumbnail %>');"></div>
         </div>
     <% end %>
   </div>

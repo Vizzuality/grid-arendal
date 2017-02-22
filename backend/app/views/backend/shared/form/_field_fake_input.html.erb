@@ -2,7 +2,7 @@
   label_txt ||= nil
   disabled ||= true
   note_txt ||= nil
-  object ||= nil
+  link_me_to ||= nil
 %>
 
 <div class="field">
@@ -15,8 +15,8 @@
       </div>
     </div>
   <% end %>
-  <% if object %>
-    <%= link_to [:edit, object], class: 'input-link btn -dark' do %>
+  <% if link_me_to %>
+    <%= link_to link_me_to, class: 'input-link btn -dark', target: "_blank" do %>
       <svg class="icon">
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-preview"></use>
       </svg>

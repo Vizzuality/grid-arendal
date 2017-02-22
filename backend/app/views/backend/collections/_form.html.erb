@@ -4,9 +4,9 @@
 
 <div class="fields">
 
-  <%= render 'backend/shared/form/field_input', form: form, value: :external_id,
-    disabled: true, label_txt: "Flickr album id",
-    note_txt: "Flickr id can't be changed" %>
+  <%= render 'backend/shared/form/field_fake_input', value: form.object.external_id,
+    label_txt: "Flickr album id", note_txt: "Flickr id can't be changed",
+    link_me_to: "https://www.flickr.com/photos/gridarendal/albums/#{form.object.external_id}" %>
 
   <%= render 'backend/shared/form/field_photos', form: form,
     label_txt: 'Graphics', photos: @collection_graphics, external_link: true %>
