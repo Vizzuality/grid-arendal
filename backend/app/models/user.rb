@@ -94,6 +94,23 @@ class User < ApplicationRecord
     using: { tsearch: { any_word: true, prefix: true } },
     order_within_rank: 'last_name ASC, first_name ASC'
 
+  def related_publications limit=nil
+    sql = <<-SQL
+      SELECT * FROM contents
+      WHERE type = 'Publication' AND
+        is_published = true AND
+        (lead_user_id = #{self.id} OR
+         id IN (
+            SELECT content_id FROM participants WHERE user_id = #{self.id}
+          )
+        )
+      ORDER BY content_date DESC
+    SQL
+    sql += "limit #{limit}" if limit
+
+    Publication.find_by_sql(sql)
+  end
+
   class << self
     def filter_users(filters)
       actives   = filters[:active]['true']  if filters[:active].present?
