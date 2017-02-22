@@ -40,7 +40,7 @@
             <% if @activity.partners.any? || @activity.links.any? %>
               <li class="text -section-menu js-anchor" data-section-belongs="partners">Partners & Links</li>
             <% end %>
-            <% if @activity.users.any? %>
+            <% if @activity.lead_user || @activity.users.any? %>
               <li class="text -section-menu js-anchor" data-section-belongs="users">Staff involved</li>
             <% end %>
             <% if @related_activities.any? %>
@@ -100,8 +100,9 @@
     <%= render 'shared/partners', partners: @activity.partners, links: @activity.links, sectionClass: 'content -color-3' %>
 <% end %>
 
-<% if @activity.users.any? %>
-  <%= render 'shared/users', users: @activity.users.order_by_fullname, lead_user: @activity.lead_user, sectionClass: 'content -color-3' %>
+<% if @activity.lead_user || @activity.users.any? %>
+  <%= render 'shared/users', users: @activity.users.order_by_fullname,
+    lead_user: @activity.lead_user, sectionClass: 'content -color-3' %>
 <% end %>
 
 <% if @related_activities.any? %>
