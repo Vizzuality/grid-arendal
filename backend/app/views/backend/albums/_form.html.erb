@@ -23,7 +23,8 @@
   <%= render 'backend/shared/form/field_datepicker', form: form,
     value: :publication_date %>
 
-  <%= render 'backend/shared/form/field_tags', form: form, collection: tags %>
+  <%= render 'backend/shared/form/field_tags_with_update', form: form,
+    collection: tags, action_link: update_tags_album_path(form.object) %>
 
   <%= render 'backend/shared/form/field_association', form: form,
     value: :activities, collection: activities, label_method: :title,

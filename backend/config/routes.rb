@@ -69,6 +69,7 @@ Backend::Engine.routes.draw do
     resources res, except: [:show] do
       patch 'make_featured', on: :member
       patch 'remove_featured', on: :member
+      patch 'update_tags', on: :member
       get 'flickr_update', on: :member
       get :paginate, on: :collection, defaults: { format: 'js' }
     end
