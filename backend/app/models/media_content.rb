@@ -28,8 +28,8 @@ class MediaContent < ApplicationRecord
 
   # {display => filter_types}
   FILTERS = {
-    TYPE_GRAPHIC => TYPE_COLLECTION,
-    TYPE_PHOTO => TYPE_ALBUM,
+    TYPE_GRAPHIC => [TYPE_GRAPHIC, TYPE_COLLECTION],
+    TYPE_PHOTO => [TYPE_PHOTO, TYPE_ALBUM],
     TYPE_VIDEO => [TYPE_VIDEO, TYPE_VIDEO_COLLECTION]
   }
 
