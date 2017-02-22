@@ -35,7 +35,7 @@ class Activity < Content
       programme = options['programme'] if options['programme'].present?
       status = options['status'] if options['status'].present?
 
-      activities = Activity.by_published.order_by_title
+      activities = Activity.by_published.order_by_status_and_title
       activities = activities.by_tags(tags)   if tags.present?
       activities = activities.by_type(type)   if type.present?
       activities = activities.by_partners(partners)   if partners.present?
@@ -54,6 +54,22 @@ class Activity < Content
       else
         Activity.order(:title).limit(limit)
       end
+    end
+
+    def order_by_status_and_title
+      sql = <<-SQL
+        CASE
+          WHEN status = '#{Content::IN_PROGRESS}'
+            THEN 0
+          WHEN status = '#{Content::COMPLETED}'
+            THEN 1
+          WHEN status = '#{Content::IDEAS}'
+            THEN 3
+          ELSE 4
+        END,
+        title ASC
+      SQL
+      order(sql)
     end
   end
 end
