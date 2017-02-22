@@ -50,7 +50,7 @@
     title: "Latest publications #{@user.just_first_name}'s involved in",
     link_txt: 'View all publications',
     sectionClass: 'content -color-7 -related-publications',
-    see_more: true,
+    see_more: @publications.size == @publications_limit,
     item_type: 'publications' %>
 <% end%>
 
@@ -59,7 +59,7 @@
     title: "Latest activities #{@user.just_first_name}'s involved in",
     link_txt: 'View all activities',
     sectionClass: 'content -color-7 -related-activities',
-    see_more: true,
+    see_more: @activities.size == @activities_limit,
     item_type: 'activities' %>
 <% end%>
 
