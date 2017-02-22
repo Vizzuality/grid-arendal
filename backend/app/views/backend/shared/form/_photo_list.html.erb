@@ -5,7 +5,7 @@
       <% if external_link %>
         <%= link_to '', [:edit, photo], class: 'linker', title: 'Edit picture' %>
       <% end %>
-      <div class="photo" style="background-image: url('<%= photo.photo_sizes.where(label: PhotoSize::SMALL).first.try(:url) %>')"></div>
+      <div class="photo" style="background-image: url('<%= photo.photo_sizes.select{|ps| ps.label== PhotoSize::SMALL}.first.try(:url) %>')"></div>
     </li>
   <% end %>
 </ul>

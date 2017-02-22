@@ -115,4 +115,9 @@ class MediaContent < ApplicationRecord
 
     User.where(id: user_ids).order_by_fullname
   end
+
+  def tags_from_items
+    self.tag_list = (self.tag_list + items.map(&:tag_list).flatten).uniq
+    self.save
+  end
 end

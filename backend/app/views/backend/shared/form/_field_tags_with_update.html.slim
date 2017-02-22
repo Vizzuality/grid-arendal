@@ -1,0 +1,10 @@
+.field
+  = form.label :tag_list, 'Tags', class: 'text -field-label -bold -dark'
+  = form.input :tag_list, collection: collection, label: false,
+    as: :collection_select, value_method: :name,
+    input_html: {multiple: true,
+    class: 'basic-input text -plain-text -dark js-select-tags js-inline-tags'}
+
+  div.options
+    div.text.-field-note.dark
+      = link_to "Update tags", action_link, method: :patch

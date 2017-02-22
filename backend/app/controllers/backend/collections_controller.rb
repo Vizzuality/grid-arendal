@@ -56,6 +56,12 @@ module Backend
       redirect_to [:edit, @collection], notice: msg
     end
 
+    def update_tags
+      @collection.tags_from_items
+      redirect_to edit_collection_url(@collection),
+        notice: "Tags updated from collection's graphics"
+    end
+
     def destroy
       if @collection.destroy
         redirect_to collections_url

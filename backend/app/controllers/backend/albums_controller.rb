@@ -56,6 +56,12 @@ module Backend
       redirect_to [:edit, @album], notice: msg
     end
 
+    def update_tags
+      @album.tags_from_items
+      redirect_to edit_album_url(@album),
+        notice: "Tags updated from album's pictures"
+    end
+
     def destroy
       if @album.destroy
         redirect_to albums_url
@@ -83,7 +89,8 @@ module Backend
 
       def set_album
         @album = Album.find(params[:id])
-        @album_photos = @album.photos
+        @album_photos = @album.photos.includes(:photo_sizes).
+          where(photo_sizes: {label: PhotoSize::SMALL})
       end
 
       def set_albums
