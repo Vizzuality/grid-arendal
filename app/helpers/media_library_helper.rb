@@ -23,7 +23,7 @@ module MediaLibraryHelper
     case media.type
       when MediaContent::TYPE_ALBUM
         "photo_library"
-      when MediaContent::TYPE_PICTURE
+      when MediaContent::TYPE_PHOTO
         "photos"
       when MediaContent::TYPE_VIDEO_COLLECTION
         "video_library"
