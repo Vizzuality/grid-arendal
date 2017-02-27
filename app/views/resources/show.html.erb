@@ -73,7 +73,7 @@
           <% if @media_content.tags.any? %>
             <p class="c-tags">
               <strong>Tags:</strong>
-              <% @media_content.tags.each do |tag| %>
+              <% @media_content.tags.order(:name).each do |tag| %>
                 <%= link_to resources_path(:tags => tag.id) do %>
                   <span class="tag text -meta"><%= tag %></span>
                 <% end %>
