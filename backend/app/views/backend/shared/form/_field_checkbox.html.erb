@@ -1,0 +1,5 @@
+<% label_txt ||= value %>
+<div class="field">
+  <%= form.label value, label_txt, class: 'text -field-label -bold -dark' %>
+  <%= form.input value, label: false, as: :boolean %>
+</div>

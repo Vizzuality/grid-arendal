@@ -50,7 +50,7 @@ class Activity < Content
       if query_where.present?
         Activity
           .where(query_where, "%#{params[:search]}%")
-          .order(:title)
+          .order(:title).limit(limit)
       else
         Activity.order(:title).limit(limit)
       end

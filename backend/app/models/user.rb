@@ -111,6 +111,32 @@ class User < ApplicationRecord
     Publication.find_by_sql(sql)
   end
 
+  def related_activities limit=nil
+    sql = <<-SQL
+      SELECT * FROM contents
+      WHERE type = 'Activity' AND
+        is_published = true AND
+        (lead_user_id = #{self.id} OR
+         id IN (
+            SELECT content_id FROM participants WHERE user_id = #{self.id}
+          )
+        )
+       ORDER BY CASE
+          WHEN status = '#{Content::IN_PROGRESS}'
+            THEN 0
+          WHEN status = '#{Content::COMPLETED}'
+            THEN 1
+          WHEN status = '#{Content::IDEAS}'
+            THEN 3
+          ELSE 4
+        END,
+        title ASC
+    SQL
+    sql += "limit #{limit}" if limit
+
+    Activity.find_by_sql(sql)
+  end
+
   class << self
     def filter_users(filters)
       actives   = filters[:active]['true']  if filters[:active].present?

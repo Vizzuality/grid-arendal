@@ -24,6 +24,7 @@ module Attachable
 
       validates_attachment_content_type :picture, content_type: /\Aimage/
       validates_attachment_file_name :picture, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
+
     end
   end
 
@@ -132,6 +133,21 @@ module Attachable
 
       validates_attachment_content_type :avatar, content_type: /\Aimage/
       validates_attachment_file_name :avatar, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
+
+      before_save :destroy_avatar?
+
+      def avatar_delete
+        @avatar_delete ||= "0"
+      end
+
+      def avatar_delete=(value)
+        @avatar_delete = value
+      end
+
+      private
+      def destroy_avatar?
+        self.avatar.clear if @avatar_delete == "1"
+      end
     end
   end
 
@@ -159,6 +175,21 @@ module Attachable
 
       validates_attachment_content_type :thumbnail, content_type: /\Aimage/
       validates_attachment_file_name :thumbnail, matches: [/png\Z/, /jpe?g\Z/,/gif\Z/,/PNG\Z/, /JPE?G\Z/,/GIF\Z/]
+
+      before_save :destroy_thumbnail?
+
+      def thumbnail_delete
+        @thumbnail_delete ||= "0"
+      end
+
+      def thumbnail_delete=(value)
+        @thumbnail_delete = value
+      end
+
+      private
+      def destroy_thumbnail?
+        self.thumbnail.clear if @thumbnail_delete == "1"
+      end
     end
   end
 

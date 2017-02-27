@@ -2,6 +2,12 @@
   inputs: [{value: :title, title_placeholder: 'Activity title'}] %>
 
 <div class="fields">
+  <%= render 'backend/shared/form/field_checkbox', form: form,
+    value: :is_featured, label_txt: "Featured" %>
+
+  <%= render 'backend/shared/form/field_checkbox', form: form,
+    value: :is_published, label_txt: "Published" %>
+
   <%= render 'backend/shared/form/field_association', form: form,
     value: :content_type, collection: content_types, label_method: :title,
     js_trigger_class: 'js-select-tags' %>

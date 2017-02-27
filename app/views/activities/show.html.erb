@@ -122,7 +122,8 @@
 <% end %>
 
 <% if @activity.news_articles.any? %>
-  <%= render 'shared/news', news: @activity.news_articles, sectionClass: 'content -color-3',
+  <%= render 'shared/news', news: @activity.news_articles.
+    order(publication_date: :desc), sectionClass: 'content -color-3',
     title: 'Related news' %>
 <% end %>
 

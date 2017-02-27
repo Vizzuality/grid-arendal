@@ -76,7 +76,7 @@ class Publication < Content
       if query_where.present?
         Publication
           .where(query_where, "%#{params[:search]}%")
-          .order(content_date: :desc)
+          .order(content_date: :desc).limit(limit)
       else
         Publication.order(content_date: :desc).limit(limit)
       end

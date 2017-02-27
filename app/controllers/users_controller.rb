@@ -42,10 +42,7 @@ class UsersController < ApplicationController
     end
 
     def set_activities
-      @activities = Activity.by_lead_user(@user.id).limit(@activities_limit)
-      if @activities.size < @activities_limit
-        @activities = @activities + @user.activities.published.order_by_content_date.limit(@activities_limit - @activities.size)
-      end
+      @activities = @user.related_activities(@activities_limit)
     end
 
     def set_publications
