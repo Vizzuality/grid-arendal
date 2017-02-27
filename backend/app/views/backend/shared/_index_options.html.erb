@@ -1,4 +1,4 @@
-<% if ['albums', 'collections'].include?(controller_name) %>
+<% if ['albums', 'collections' 'photos', 'graphics'].include?(controller_name) %>
   <%= link_to raw('<svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-rrss-flickr"></use></svg>'),
     [:flickr_update, item], title: "Flickr update" %>
 <% end %>

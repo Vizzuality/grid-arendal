@@ -79,12 +79,14 @@ Backend::Engine.routes.draw do
     patch 'make_featured',   on: :member
     patch 'remove_featured', on: :member
     get 'search_thumbnails', on: :collection
+    get 'flickr_update', on: :member
     get :paginate, on: :collection, defaults: { format: 'js' }
   end
 
   resources :graphics, except: [:new, :create, :show] do
     patch 'make_featured',   on: :member
     patch 'remove_featured', on: :member
+    get 'flickr_update', on: :member
     get :paginate, on: :collection, defaults: { format: 'js' }
   end
 
