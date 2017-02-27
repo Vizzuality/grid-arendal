@@ -9,9 +9,15 @@ div.fields
     label_txt: 'Profile photo', have_picture: have_picture,
     picture_url: picture_url
 
+  = render 'backend/shared/form/field_checkbox', form: form,
+    value: :avatar_delete, label_txt: "Remove photo"
+
   = render 'backend/shared/form/field_upload_img', form: form, value: :thumbnail,
     label_txt: 'Thumbnail', have_picture: have_thumbnail,
     picture_url: thumbnail_url
+
+  = render 'backend/shared/form/field_checkbox', form: form,
+    value: :thumbnail_delete, label_txt: "Remove thumbnail"
 
   = render 'backend/shared/form/field_input', form: form, value: :organization
 
