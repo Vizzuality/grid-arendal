@@ -138,8 +138,9 @@
 <% end %>
 
 <% if @media_content.news_articles.any? %>
-  <%= render 'shared/news', news: @media_content.news_articles,
-    title: "Related news", sectionClass: 'content -color-4' %>
+  <%= render 'shared/news', news: @media_content.news_articles.
+    order(publication_date: :desc), title: "Related news",
+    sectionClass: 'content -color-4' %>
 <% end %>
 
 <% if @users.any? %>
