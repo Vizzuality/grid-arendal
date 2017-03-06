@@ -66,7 +66,7 @@
           <% end %>
           <% if @media_content.single? && @media_content.author.present? %>
             <p>
-              <strong><% if @media_content.type == MediaContent::TYPE_GRAPHIC %>Cartographer<% else %>Taken by<% end %>:</strong>
+              <strong><%= author_title(@media_content) %>:</strong>
               <%= @media_content.author %>
             </p>
           <% end %>
