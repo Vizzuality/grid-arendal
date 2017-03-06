@@ -43,6 +43,11 @@ module Backend
       end
     end
 
+    def flickr_update
+      @photo.update_from_flickr
+      redirect_to [:edit, @photo], notice: "Photo updated from Flickr"
+    end
+
     def destroy
       if @photo.destroy
         redirect_to photos_url
