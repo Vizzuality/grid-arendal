@@ -46,6 +46,11 @@ module Backend
       end
     end
 
+    def flickr_update
+      @graphic.update_from_flickr
+      redirect_to [:edit, @graphic], notice: "Graphic updated from Flickr"
+    end
+
     def destroy
       if @graphic.destroy
         redirect_to graphics_url
