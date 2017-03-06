@@ -35,4 +35,15 @@ module MediaLibraryHelper
         "collections"
     end
   end
+
+  def author_title media_content
+    case @media_content.type
+      when MediaContent::TYPE_GRAPHIC
+        "Cartographer"
+      when MediaContent::TYPE_VIDEO
+        "Produced by"
+      else
+        "Taken by"
+    end
+  end
 end
