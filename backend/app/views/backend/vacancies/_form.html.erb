@@ -15,6 +15,9 @@
   <%= render 'backend/shared/form/field_input', form: form,
     value: :vacancy_type %>
 
+  <%= render 'backend/shared/form/field_input', form: form,
+    value: :duration %>
+
   <%= render 'backend/shared/form/field_association', form: form, value: :user,
     collection: users, label_method: :display_name, label: "Contact point",
     js_trigger_class: 'js-select-tags' %>

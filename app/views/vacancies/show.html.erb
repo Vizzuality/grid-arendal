@@ -41,6 +41,9 @@
         <% if @vacancy.vacancy_type.present? %>
           <p><strong>Type:</strong> <%= @vacancy.vacancy_type %></p>
         <% end %>
+        <% if @vacancy.duration.present? %>
+          <p><strong>Duration:</strong> <%= @vacancy.duration %></p>
+        <% end %>
         <% if @vacancy.starting_date.present? %>
           <p><strong>Starting date:</strong> <%= @vacancy.starting_date %></p>
         <% end %>
