@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170306234627) do
+ActiveRecord::Schema.define(version: 20170307000513) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -323,7 +323,14 @@ ActiveRecord::Schema.define(version: 20170306234627) do
     t.date     "starting_date"
     t.date     "ending_date"
     t.string   "vacancy_type"
-    t.string   "user_id"
+    t.integer  "user_id"
+  end
+
+  create_table "vacancy_activities", force: :cascade do |t|
+    t.integer  "vacancy_id"
+    t.integer  "activity_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "weblinks", force: :cascade do |t|
@@ -357,5 +364,8 @@ ActiveRecord::Schema.define(version: 20170306234627) do
   add_foreign_key "related_contents", "contents", column: "activity_id"
   add_foreign_key "related_contents", "contents", column: "publication_id"
   add_foreign_key "site_sections", "media_contents", column: "photo_id"
+  add_foreign_key "vacancies", "users"
+  add_foreign_key "vacancy_activities", "contents", column: "activity_id"
+  add_foreign_key "vacancy_activities", "vacancies"
   add_foreign_key "weblinks", "contents"
 end

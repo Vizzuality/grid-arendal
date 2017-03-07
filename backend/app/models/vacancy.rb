@@ -3,6 +3,8 @@ class Vacancy < ApplicationRecord
   include Publishable
 
   belongs_to :user
+  has_many :vacancy_activities, dependent: :destroy
+  has_many :activities, through: :vacancy_activities, source: :activity
 
   validates :title, presence: true
 

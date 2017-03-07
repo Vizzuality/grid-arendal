@@ -3,6 +3,8 @@ class AddStartingDateAndEndingDateAndVacancyTypeToVacancies < ActiveRecord::Migr
     add_column :vacancies, :starting_date, :date
     add_column :vacancies, :ending_date, :date
     add_column :vacancies, :vacancy_type, :string
-    add_column :vacancies, :user_id, :string
+    add_column :vacancies, :user_id, :integer
+
+    add_foreign_key "vacancies", "users"
   end
 end

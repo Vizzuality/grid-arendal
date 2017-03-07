@@ -19,3 +19,8 @@
   <%= render 'backend/shared/form/field_datepicker', form: form,
     value: :ending_date %>
 </div>
+<div class="fields -grey">
+  <%= render 'backend/shared/form/field_association', form: form,
+    value: :activities, collection: activities, label_method: :title,
+    js_trigger_class: 'js-select-tags', note_txt: '(Choose related activities)' %>
+</div>
