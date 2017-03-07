@@ -19,10 +19,12 @@
 
   .name {
     left: 0;
-    bottom: rem(-35px);
+    top: rem(607px);
+    width: 70%;
+    white-space: normal;
 
     @media screen and (min-width: $screen-m) {
-      bottom: rem(-36px);
+      top: rem(608px);
     }
   }
 
