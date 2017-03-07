@@ -1,0 +1,100 @@
+<% content_for :social_cards do %>
+  <%= render 'shared/social_cards', title: "GRID-Arendal: #{@vacancy.title}",
+    description: @vacancy.title.truncate(120),
+    img_src: image_url('bg7.jpg') %>
+<% end %>
+
+<div class="l-header-single">
+  <div class="navigation -about">
+    <%= render 'shared/menu' %>
+    <div class="row">
+      <div class="small-12 columns">
+        <div class="title-block">
+          <% breadcrumbs_links = [
+            {text: 'About', link: about_index_path},
+            {text: @vacancy.title,
+             edit_path: backend.edit_vacancy_path(@vacancy) }
+          ] %>
+          <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
+          <%= render 'shared/share', current_route: @current_route  %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="banner -publications" style="background-image: url('<%= image_url('bg7.jpg') %>');"></div>
+</div>
+
+<div class="l-single-article -publications">
+
+  <div class="row">
+    <div class="small-12 column">
+      <div class="c-article-image" style="background-image: url('<%= image_url('bg7.jpg') %>');"></div>
+    </div>
+  </div>
+
+  <div class="content-wrapper">
+
+    <div class="content">
+      <h2 class="text -title-single-alt"><%= @vacancy.title %></h2>
+      <div class="text -body-single-alt description">
+        <%= raw @vacancy.description %>
+        <% if @vacancy.vacancy_type.present? %>
+          <p><strong>Type:</strong> <%= @vacancy.vacancy_type %></p>
+        <% end %>
+        <% if @vacancy.duration.present? %>
+          <p><strong>Duration:</strong> <%= @vacancy.duration %></p>
+        <% end %>
+        <% if @vacancy.starting_date.present? %>
+          <p><strong>Starting date:</strong> <%= @vacancy.starting_date %></p>
+        <% end %>
+        <p>
+          <% if @vacancy.ending_date.present? %>
+            <strong>Ending date:</strong> <%= @vacancy.ending_date %>
+          <% else %>
+            <strong>Position type:</strong> Permanent
+          <% end %>
+        </p>
+        <div class="read-more">
+          <svg class="icon">
+            <use xlink:href="#icon-read-more-plus"></use>
+          </svg>
+          Read More
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar -publications">
+      <div class="sidebar-content">
+        <div class="meta">
+          <div class="row">
+            <div class="small-6 medium-9 large-8 columns">
+              <div class="download-links">
+                <% @vacancy.documents.each do |doc| %>
+                  <% if doc.document.exists? %>
+                    <div class="btn -dark" data-key="<%= doc.label %>">
+                      <%= link_to doc.label, doc.document.url, target: '_blank' %>
+                    </div>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% if @vacancy.user %>
+  <%= render 'shared/users', users: [@vacancy.user], title: "Contact Point",
+    sectionClass: 'content -color-2' %>
+<% end %>
+
+<% if @vacancy.activities.any? %>
+  <%= render 'shared/posts', collection: @vacancy.activities,
+    title: 'Related activities',
+    link_txt: 'View all activities',
+    link: activities_path, sectionClass: 'content -color-2' %>
+<% end %>
+
+<%= render 'shared/footer' %>

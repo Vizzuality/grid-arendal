@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170222155133) do
+ActiveRecord::Schema.define(version: 20170307010239) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -317,9 +317,32 @@ ActiveRecord::Schema.define(version: 20170222155133) do
   create_table "vacancies", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.boolean  "is_published", default: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.boolean  "is_published",  default: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.date     "starting_date"
+    t.date     "ending_date"
+    t.string   "vacancy_type"
+    t.integer  "user_id"
+    t.string   "duration"
+  end
+
+  create_table "vacancy_activities", force: :cascade do |t|
+    t.integer  "vacancy_id"
+    t.integer  "activity_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "vacancy_documents", force: :cascade do |t|
+    t.string   "label"
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
+    t.integer  "vacancy_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
   create_table "weblinks", force: :cascade do |t|
@@ -353,5 +376,9 @@ ActiveRecord::Schema.define(version: 20170222155133) do
   add_foreign_key "related_contents", "contents", column: "activity_id"
   add_foreign_key "related_contents", "contents", column: "publication_id"
   add_foreign_key "site_sections", "media_contents", column: "photo_id"
+  add_foreign_key "vacancies", "users"
+  add_foreign_key "vacancy_activities", "contents", column: "activity_id"
+  add_foreign_key "vacancy_activities", "vacancies"
+  add_foreign_key "vacancy_documents", "vacancies"
   add_foreign_key "weblinks", "contents"
 end

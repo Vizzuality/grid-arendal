@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 class AboutSectionsController < ApplicationController
   def index
+    @section = SiteSection.where(section: "about").first
     @sections  = AboutSection.order(:position)
     @vacancies = Vacancy.published
     @users = User.regular_staff.with_category.order(:first_name)
