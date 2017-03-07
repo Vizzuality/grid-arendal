@@ -6,6 +6,7 @@ module Backend
     load_and_authorize_resource
 
     before_action :set_vacancies, only: [:index, :edit, :new]
+    before_action :set_objects, only: [:edit, :new]
 
     def index
     end
@@ -22,6 +23,7 @@ module Backend
         redirect_to edit_vacancy_url(@vacancy), notice: 'Vacancy updated'
       else
         set_vacancies
+        set_objects
         render :edit
       end
     end
@@ -31,6 +33,7 @@ module Backend
       if @vacancy.save
         redirect_to edit_vacancy_url(@vacancy), notice: 'Vacancy created'
       else
+        set_objects
         set_vacancies
         render :new
       end
@@ -73,6 +76,11 @@ module Backend
 
       def set_vacancies
         @vacancies = Vacancy.vacancies(filter_params, @index_items_limit * @page)
+      end
+
+      def set_objects
+        @users = User.order_by_fullname
+        @activities = Activity.order(:title)
       end
   end
 end

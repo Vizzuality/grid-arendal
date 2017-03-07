@@ -2,6 +2,8 @@
 class Vacancy < ApplicationRecord
   include Publishable
 
+  belongs_to :user
+
   validates :title, presence: true
 
   class << self
