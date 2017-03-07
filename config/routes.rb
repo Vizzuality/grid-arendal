@@ -28,6 +28,8 @@ Rails.application.routes.draw do
 
   resources :graphic_requests, only: [:new, :create, :show]
 
+  resources :vacancies, only: [:show]
+
   root 'home#index'
 
   get "*any", via: :all, to: "errors#not_found"

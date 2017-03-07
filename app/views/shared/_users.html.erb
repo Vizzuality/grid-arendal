@@ -1,12 +1,13 @@
 <%
   sectionClass ||= ''
   lead_user ||= nil
+  title ||= "Staff"
 %>
 <section class="l-main-content <%= sectionClass %>" data-section="users">
   <div class="row">
     <div class="small-12 columns">
       <div class="c-main-content-header">
-        <h2 class="text -title-block">Staff</h2>
+        <h2 class="text -title-block"><%= title %></h2>
         <p class="text -view-all">
           <%= link_to about_index_path(anchor: "staff") do %>
             <span>

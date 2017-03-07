@@ -1,7 +1,7 @@
 <div class="small-12 column">
   <ul class="list text -summary-alt -bold">
     <% @vacancies.each do |vacancy| %>
-      <li><%= vacancy.title %></li>
+      <li><%= link_to vacancy.title, vacancy %></li>
     <% end %>
   </ul>
 </div>
