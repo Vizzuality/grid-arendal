@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170307000513) do
+ActiveRecord::Schema.define(version: 20170307001345) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -333,6 +333,17 @@ ActiveRecord::Schema.define(version: 20170307000513) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "vacancy_documents", force: :cascade do |t|
+    t.string   "label"
+    t.string   "document_file_name"
+    t.string   "document_content_type"
+    t.integer  "document_file_size"
+    t.datetime "document_updated_at"
+    t.integer  "vacancy_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
   create_table "weblinks", force: :cascade do |t|
     t.string   "url"
     t.string   "label"
@@ -367,5 +378,6 @@ ActiveRecord::Schema.define(version: 20170307000513) do
   add_foreign_key "vacancies", "users"
   add_foreign_key "vacancy_activities", "contents", column: "activity_id"
   add_foreign_key "vacancy_activities", "vacancies"
+  add_foreign_key "vacancy_documents", "vacancies"
   add_foreign_key "weblinks", "contents"
 end

@@ -1,15 +1,23 @@
-<% field_class ||= '' %>
+<%
+  field_class ||= ''
+  weblinks ||= nil
+  label_txt ||= "Files"
+%>
 <div class="field <%= field_class %>" data-type="attach_documents">
-  <%= form.label 'Files', class: 'text -field-label -bold -dark' %>
+  <%= form.label label_txt, class: 'text -field-label -bold -dark' %>
   <div>
     <%= link_to_add_association 'Add document', form, documents, class: 'btn -dark add_document_btn' %>
-    <%= link_to_add_association 'Add weblink', form, weblinks, class: 'btn -dark add_weblink_btn' %>
+    <% if weblinks %>
+      <%= link_to_add_association 'Add weblink', form, weblinks, class: 'btn -dark add_weblink_btn' %>
+    <% end %>
   </div>
 
   <%= form.simple_fields_for documents do |builder| %>
     <%= render 'document_fields', f: builder %>
   <% end %>
-  <%= form.simple_fields_for weblinks do |builder| %>
-    <%= render 'weblink_fields', f: builder %>
+  <% if weblinks %>
+    <%= form.simple_fields_for weblinks do |builder| %>
+      <%= render 'weblink_fields', f: builder %>
+    <% end %>
   <% end %>
 </div>

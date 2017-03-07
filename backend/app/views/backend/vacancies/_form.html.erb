@@ -6,6 +6,12 @@
   <%= render 'backend/shared/form/field_textarea', form: form,
     value: :description %>
 
+  <%= render 'backend/shared/form/field_datepicker', form: form,
+    value: :starting_date %>
+
+  <%= render 'backend/shared/form/field_datepicker', form: form,
+    value: :ending_date, note_txt: "Leave blank for permanent position" %>
+
   <%= render 'backend/shared/form/field_input', form: form,
     value: :vacancy_type %>
 
@@ -13,12 +19,10 @@
     collection: users, label_method: :display_name, label: "Contact point",
     js_trigger_class: 'js-select-tags' %>
 
-  <%= render 'backend/shared/form/field_datepicker', form: form,
-    value: :starting_date %>
-
-  <%= render 'backend/shared/form/field_datepicker', form: form,
-    value: :ending_date %>
+  <%= render 'backend/shared/form/field_attach_documents', form: form,
+    documents: :documents, label_txt: 'Supporting files' %>
 </div>
+
 <div class="fields -grey">
   <%= render 'backend/shared/form/field_association', form: form,
     value: :activities, collection: activities, label_method: :title,

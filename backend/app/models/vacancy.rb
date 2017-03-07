@@ -5,6 +5,8 @@ class Vacancy < ApplicationRecord
   belongs_to :user
   has_many :vacancy_activities, dependent: :destroy
   has_many :activities, through: :vacancy_activities, source: :activity
+  has_many :documents, class_name: "VacancyDocument", dependent: :destroy
+  accepts_nested_attributes_for :documents, reject_if: :all_blank, allow_destroy: true
 
   validates :title, presence: true
 
