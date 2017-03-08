@@ -101,8 +101,12 @@ class MediaContent < ApplicationRecord
     tags = options['tags'].split(',') if options['tags'].present?
     media = options['media'] if options['media'].present?
 
-    media_contents = MediaContent.includes(:photo_sizes, :photos).
-      order("publication_date DESC, id ASC")
+    media_contents = MediaContent.includes(:photo_sizes, :photos)
+
+    # if we have tags selected, explod results to include pictures and graphics
+    media_contents = media_contents.albums_collections_and_videos unless tags.present?
+
+    media_contents = media_contents.order("publication_date DESC, id ASC")
     media_contents = media_contents.by_tags(tags)   if tags.present?
     media_contents = media_contents.by_type(FILTERS[media])   if media.present?
     media_contents
