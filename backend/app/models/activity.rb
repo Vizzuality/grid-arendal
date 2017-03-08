@@ -24,7 +24,7 @@ class Activity < Content
   acts_as_taggable
 
   def is_programme?
-    content_type && content_type.title == "Programme"
+    content_type && content_type.title == ContentType::PROGRAMME
   end
 
   class << self
@@ -57,16 +57,19 @@ class Activity < Content
     end
 
     def order_by_status_and_title
+      c = ContentType.where(title: ContentType::PROGRAMME).first
       sql = <<-SQL
         CASE
-          WHEN status = '#{Content::IN_PROGRESS}'
+          WHEN content_type_id = #{c.id}
             THEN 0
-          WHEN status = '#{Content::COMPLETED}'
+          WHEN status = '#{Content::IN_PROGRESS}'
             THEN 1
+          WHEN status = '#{Content::COMPLETED}'
+            THEN 2
           WHEN status = '#{Content::IDEAS}'
             THEN 3
           ELSE 4
-        END,
+        END ASC,
         title ASC
       SQL
       order(sql)

@@ -16,6 +16,9 @@ class ContentType < ApplicationRecord
   PUBLICATION = "Publication"
   FOR_CONTENT = [ACTIVITY, PUBLICATION]
 
+  PROGRAMME = "Programme"
+  ANNUAL_REPORT = "Annual Report"
+
   scope :by_publication, -> { where(for_content: ContentType::PUBLICATION)}
   scope :by_activity, -> { where(for_content: ContentType::ACTIVITY)}
 
