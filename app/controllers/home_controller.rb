@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 class HomeController < ApplicationController
   def index
-    @users = User.with_category.randomize.limit(6)
+    @users = User.with_category.regular_staff.randomize.limit(6)
     @news = NewsArticle.limit(4).order(publication_date: :desc)
     @activities = Activity.featured.published.limit(3)
     @publications = Publication.featured.published.order(content_date: :desc).limit(3)
