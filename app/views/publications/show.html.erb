@@ -54,13 +54,14 @@
       <% end %>
       <div class="text -body-single-alt description">
         <%= raw @publication.description %>
-        <p><br /></p>
-        <% if @publication.content_type.present? %>
-          <p><strong>Status:</strong> <%= link_to @publication.status, publications_path(:status => @publication.status) %></p>
-        <% end %>
-        <% if @publication.content_type.present? %>
-          <p><strong>Type:</strong> <%= link_to @publication.content_type.title, publications_path(:type => @publication.content_type.id) %></p>
-        <% end %>
+        <div class="-status">
+          <% if @publication.content_type.present? %>
+            <p><strong>Status:</strong> <%= link_to @publication.status, publications_path(:status => @publication.status) %></p>
+          <% end %>
+          <% if @publication.content_type.present? %>
+            <p><strong>Type:</strong> <%= link_to @publication.content_type.title, publications_path(:type => @publication.content_type.id) %></p>
+          <% end %>
+        </div>
         <% if @publication.tags.any? %>
           <p class="c-tags">
             <strong>Tags:</strong>
