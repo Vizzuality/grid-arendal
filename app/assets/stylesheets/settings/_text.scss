@@ -138,6 +138,10 @@
       text-decoration: underline;
     }
 
+    div.-status {
+      margin-top: rem(20px);
+    }
+
     @media screen and (min-width: $screen-m) {
       font-size: 18px !important;
       line-height: 1.67;

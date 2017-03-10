@@ -68,20 +68,21 @@
     <div class="small-12 column">
       <div class="text -summary-alt">
         <%= raw @activity.description %>
-        <p><br /></p>
-        <% if @activity.content_type.present? %>
-          <p><strong>Status:</strong> <%= link_to @activity.status, activities_path(:status => @activity.status) %></p>
-        <% end %>
-        <% if @activity.content_type.present? %>
-          <p><strong>Type:</strong> <%= link_to @activity.content_type.title, activities_path(:type => @activity.content_type.id) %></p>
-        <% end %>
-        <% if @activity.tags.where(category: Tag::PROGRAMME).any? %>
-          <p>
-            <strong>Programme:</strong>
-            <% @activity.tags.where(category: Tag::PROGRAMME).each_with_index do |tag, i| %><%= i != 0 ? ', ' : '' %>
-              <%= link_to tag, activities_path(:programme => tag.id) %><% end %>
-          </p>
-        <% end %>
+        <div class="-status">
+          <% if @activity.content_type.present? %>
+            <p><strong>Status:</strong> <%= link_to @activity.status, activities_path(:status => @activity.status) %></p>
+          <% end %>
+          <% if @activity.content_type.present? %>
+            <p><strong>Type:</strong> <%= link_to @activity.content_type.title, activities_path(:type => @activity.content_type.id) %></p>
+          <% end %>
+          <% if @activity.tags.where(category: Tag::PROGRAMME).any? %>
+            <p>
+              <strong>Programme:</strong>
+              <% @activity.tags.where(category: Tag::PROGRAMME).each_with_index do |tag, i| %><%= i != 0 ? ', ' : '' %>
+                <%= link_to tag, activities_path(:programme => tag.id) %><% end %>
+            </p>
+          <% end %>
+        </div>
         <% if @activity.tags.any? %>
           <p class="c-tags">
             <strong>Tags:</strong>
