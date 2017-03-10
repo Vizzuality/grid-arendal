@@ -66,6 +66,8 @@
               <%= render 'affiliates', affiliates: @affiliates %>
             <% when 'annual-reports' %>
               <%= render 'posts', posts: @annual_reports %>
+            <% when 'contact-us' %>
+              <%= render 'contact_us', section: section %>
           <% end %>
         <% end %>
       </div>
