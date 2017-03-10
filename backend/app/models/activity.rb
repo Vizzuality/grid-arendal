@@ -69,7 +69,8 @@ class Activity < Content
           WHEN status = '#{Content::IDEAS}'
             THEN 3
           ELSE 4
-        END ASC
+        END ASC,
+        RANDOM()
       SQL
       order(sql)
     end
