@@ -69,8 +69,7 @@ class Activity < Content
           WHEN status = '#{Content::IDEAS}'
             THEN 3
           ELSE 4
-        END ASC,
-        title ASC
+        END ASC
       SQL
       order(sql)
     end
