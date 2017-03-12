@@ -20,13 +20,6 @@
       new App.View.Filters({
         options: {trackLabel: 'Activity filters'}
       });
-
-      this.scrollPaginationView = new App.View.ScrollPagination({
-        callback: this._paginate.bind(this),
-        options: {
-          contentClass: ".l-main-content"
-        }
-      });
     },
 
     show: function() {
