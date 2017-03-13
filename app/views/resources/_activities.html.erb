@@ -1,5 +1,5 @@
 <% if media_content.activities.any? %>
-  <%= render 'shared/posts', collection: media_content.activities.
+  <%= render 'shared/posts', collection: media_content.activities.published.
     order(:title),
     title: 'Related activities',
     link_txt: 'View all activities',
