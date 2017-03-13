@@ -115,8 +115,8 @@
     link: activities_path, sectionClass: 'content -color-3' %>
 <% end %>
 
-<% if @activity.publications.any? %>
-  <%= render 'shared/posts', collection: @activity.publications.
+<% if @activity.publications.published.any? %>
+  <%= render 'shared/posts', collection: @activity.publications.published.
     order(content_date: :desc),
     title: 'Related publications',
     link_txt: 'View all publications',

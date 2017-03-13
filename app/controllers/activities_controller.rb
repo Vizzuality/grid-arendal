@@ -26,6 +26,7 @@ class ActivitiesController < ApplicationController
   def show
     @related_activities = if @activity.is_programme?
                             Activity.joins(:tags).
+                              published.
                               where(tags: {name: @activity.title.strip}).
                               where.not(id: @activity.id).
                               order_by_title.limit(6)
@@ -33,6 +34,7 @@ class ActivitiesController < ApplicationController
                             programme_tags = @activity.tags.
                               where(category: Tag::PROGRAMME)
                             Activity.joins(:tags).
+                              published.
                               where(tags: {name: programme_tags.map{|t| t.name.strip}}).
                               where.not(id: @activity.id).
                               order_by_title.limit(6)

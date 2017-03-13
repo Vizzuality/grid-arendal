@@ -121,8 +121,8 @@
   <%= render 'shared/users', users: @users.order_by_fullname, lead_user: @publication.lead_user, sectionClass: 'content -color-2' %>
 <% end %>
 
-<% if @publication.activities.any? %>
-  <%= render 'shared/posts', collection: @publication.activities,
+<% if @publication.activities.published.any? %>
+  <%= render 'shared/posts', collection: @publication.activities.published,
     title: 'Related activities',
     link_txt: 'View all activities',
     link: activities_path, sectionClass: 'content -color-2' %>
