@@ -1,3 +1,5 @@
+<% title(@user.full_name) %>
+
 <% avatar_url = if @user.avatar.exists?
                   @user.avatar
                 else

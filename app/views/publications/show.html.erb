@@ -1,3 +1,5 @@
+<% title(@publication.title) %>
+
 <% picture_url = if @publication.picture.exists?
                   @publication.picture.url(:original)
                 elsif @publication.media_content
