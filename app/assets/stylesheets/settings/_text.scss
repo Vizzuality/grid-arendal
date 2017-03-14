@@ -237,6 +237,10 @@
     a {
       text-decoration: underline;
     }
+
+    div.-status {
+      margin-top: rem(20px);
+    }
   }
 
   &.-title-library {
@@ -337,7 +341,7 @@
     letter-spacing: 0.3px;
     color: $font-color-4;
   }
-  
+
   /*
    * COLORS
    */
