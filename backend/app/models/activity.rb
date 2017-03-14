@@ -24,6 +24,7 @@ class Activity < Content
   has_many :programme_activities, class_name: 'Activity', foreign_key: 'programme_id'
 
   scope :programmes, -> {joins(:content_type).where(content_types: {title: ContentType::PROGRAMME}).published.order(:title)}
+  scope :by_programme, ->(programme) {where("programme_id = ? OR id = ?", programme, programme)}
 
   acts_as_taggable
 
@@ -43,7 +44,7 @@ class Activity < Content
       activities = activities.by_tags(tags)   if tags.present?
       activities = activities.by_type(type)   if type.present?
       activities = activities.by_partners(partners)   if partners.present?
-      activities = activities.by_tags(programme) if programme.present?
+      activities = activities.by_programme(programme) if programme.present?
       activities = activities.by_status(status)   if status.present?
       activities
     end

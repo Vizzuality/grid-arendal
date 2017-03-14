@@ -11,7 +11,7 @@ class ActivitiesController < ApplicationController
   def index
     @activities = Activity.fetch_all(options_filter)
     @content_types = ContentType.by_activity.order('LOWER(title) ASC')
-    @programmes = Tag.where(category: Tag::PROGRAMME).order(:name)
+    @programmes = Activity.programmes
     @partners = Partner.order(:name)
     @tags = Tag.for_content('Activity')
     @section = SiteSection.where(section: "activities").first
