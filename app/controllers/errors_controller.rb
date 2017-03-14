@@ -2,36 +2,37 @@
 class ErrorsController < ApplicationController
   def not_found
     redirect_path = nil
+    split = params[:any].split("/")
     case
-      when ["programmes/", "programmes"].include?(params[:any])
-        redirect_path = about_index_path
-      when "programmes/blue-carbon" == params[:any]
-        redirect_path = Activity.programmes.where(title: "Blue Carbon").first
-      when "programmes/environmental-crime" == params[:any]
-        redirect_path = Activity.programmes.
-          where(title: "Environmental Crime").first
-      when "programmes/green-economy" == params[:any]
-        redirect_path = Activity.programmes.
-          where(title: "Ecosystems Economies and Sustainable Development").first
-      when "programmes/marine-coastal" == params[:any]
-        redirect_path = Activity.programmes.
-          where(title: "Ocean Governance and Geological Resources").first
-      when "programmes/polar-mountain" == params[:any]
-        redirect_path = Activity.programmes.
-          where(title: "Polar and Mountain Environments").first
-      when "programmes/soe-reporting" == params[:any]
-        redirect_path = Activity.programmes.
-          where(title: "State of the Environment and Spatial Planning").first
-      when "programmes/transboundary-waters" == params[:any]
-        redirect_path = Activity.programmes.
-          where(title: "State of the Environment and Spatial Planning").first
-      when "graphicslib" == params[:any]
+      when "programmes" == split[0]
+        redirect_path = if split.size == 1
+                          about_index_path
+                        elsif "blue-carbon" == split[1]
+                          Activity.programmes.where(title: "Blue Carbon").first
+                        elsif "environmental-crime" == split[1]
+                          Activity.programmes.
+                            where(title: "Environmental Crime").first
+                        elsif "green-economy" == split[1]
+                          Activity.programmes.
+                            where(title: "Ecosystems Economies and Sustainable Development").first
+                        elsif "marine-coastal" == split[1]
+                          Activity.programmes.
+                            where(title: "Ocean Governance and Geological Resources").first
+                        elsif "polar-mountain" == split[1]
+                          Activity.programmes.
+                            where(title: "Polar and Mountain Environments").first
+                        elsif "soe-reporting" == split[1]
+                          Activity.programmes.
+                            where(title: "State of the Environment and Spatial Planning").first
+                        end
+      when "graphicslib" == split[0]
         redirect_path = resources_path(media: "Graphic")
-      when "photolib" == params[:any]
+      when "photolib" == split[0]
         redirect_path = resources_path(media: "Photo")
-      when "video" == params[:any]
+      when "video" == split[0]
         redirect_path = resources_path(media: "Video")
     end
+
     if redirect_path
       redirect_to redirect_path, :status => :moved_permanently
     else
