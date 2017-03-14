@@ -68,7 +68,7 @@ module FlickrSync
       save
       # remove photos/graphics no longer on flickr
       to_delete = send(assoc).where.not(external_id: flickr_photos_ids)
-      to_delete.delete_all unless to_delete.empty?
+      to_delete.destroy_all unless to_delete.empty?
 
       send(assoc).count - existing_photos
     end
