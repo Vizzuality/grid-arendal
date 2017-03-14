@@ -1,3 +1,5 @@
+<% title(@vacancy.title) %>
+
 <% content_for :social_cards do %>
   <%= render 'shared/social_cards', title: "GRID-Arendal: #{@vacancy.title}",
     description: @vacancy.title.truncate(120),

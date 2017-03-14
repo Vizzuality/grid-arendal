@@ -1,3 +1,4 @@
+<% title(@media_content.title) %>
 <%
   if ![MediaContent::TYPE_VIDEO, MediaContent::TYPE_VIDEO_COLLECTION].include?(@media_content.type)
     photo = @media_content.first_item
