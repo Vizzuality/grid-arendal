@@ -60,6 +60,8 @@ class Content < ApplicationRecord
   scope :by_partners, ->(partners) { joins(:content_partners).where(content_partners: {partner_id: partners})}
   scope :by_lead_user, ->(user_id) { where(lead_user: user_id)}
 
+  scope :randomize, -> { order('random()') }
+
   pg_search_scope :search_for,
     associated_against: { users: { first_name: :B, last_name: :B } },
     against: { title: :A, description: :B },
