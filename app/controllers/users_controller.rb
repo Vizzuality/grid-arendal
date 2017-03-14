@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @item_type = params[:item]
 
     if @item_type == 'activities'
-      @items = Activity.by_lead_user(@user.id) + @user.activities.published.order_by_content_date
+      @items = Activity.by_lead_user(@user.id) + @user.activities.published
     elsif @item_type == 'publications'
       @items = @user.related_publications
     end
