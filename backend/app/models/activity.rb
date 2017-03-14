@@ -60,8 +60,7 @@ class Activity < Content
       c = ContentType.where(title: ContentType::PROGRAMME).first
       sql = <<-SQL
         CASE
-          WHEN content_type_id = #{c.id}
-            THEN 0
+          #{ if c then "WHEN content_type_id = #{c.id} THEN 0" end}
           WHEN status = '#{Content::IN_PROGRESS}'
             THEN 1
           WHEN status = '#{Content::COMPLETED}'
