@@ -20,6 +20,10 @@
 class Activity < Content
   has_many :related_contents, dependent: :destroy
   has_many :publications, through: :related_contents
+  belongs_to :programme, class_name: 'Activity'
+  has_many :programme_activities, class_name: 'Activity', foreign_key: 'programme_id'
+
+  scope :programmes, -> {joins(:content_type).where(content_types: {title: ContentType::PROGRAMME}).published.order(:title)}
 
   acts_as_taggable
 

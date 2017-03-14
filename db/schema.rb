@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170307010239) do
+ActiveRecord::Schema.define(version: 20170314094310) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,6 +71,7 @@ ActiveRecord::Schema.define(version: 20170307010239) do
     t.integer  "cover_picture_file_size"
     t.datetime "cover_picture_updated_at"
     t.string   "status"
+    t.integer  "programme_id"
     t.index ["content_type_id"], name: "index_contents_on_content_type_id", using: :btree
     t.index ["media_content_id"], name: "index_contents_on_media_content_id", using: :btree
   end
@@ -358,6 +359,7 @@ ActiveRecord::Schema.define(version: 20170307010239) do
   add_foreign_key "content_partners", "contents"
   add_foreign_key "content_partners", "partners"
   add_foreign_key "contents", "content_types"
+  add_foreign_key "contents", "contents", column: "programme_id"
   add_foreign_key "contents", "media_contents"
   add_foreign_key "documents", "contents"
   add_foreign_key "event_partners", "events"

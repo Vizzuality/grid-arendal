@@ -109,6 +109,7 @@ module Backend
         @content_types = ContentType.
           where(for_content: ContentType::ACTIVITY).
           order(:title)
+        @programmes = Activity.programmes
         @tags = Tag.order(:name)
         @photos = Photo
                     .order_by_date_behind_value(@activity.media_content_id.present? ? @activity.media_content_id : 0)

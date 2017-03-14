@@ -12,6 +12,12 @@
     value: :content_type, collection: content_types, label_method: :title,
     js_trigger_class: 'js-select-tags' %>
 
+  <% if form.object.new_record? || !programmes.include?(form.object) %>
+    <%= render 'backend/shared/form/field_association', form: form,
+      value: :programme, collection: programmes, label_method: :title,
+      js_trigger_class: 'js-select-tags' %>
+  <% end %>
+
   <%= render 'backend/shared/form/field_select', form: form,
     value: :status, collection: Content::STATUS,
     include_blank: false, label_txt: "Activity status", input_as: :select %>
