@@ -9,26 +9,13 @@
         <h2 class="text -title-block">Partners & Links</h2>
       </div>
     </div>
-    <% if partners.any? %>
-      <div class="small-12 large-6 columns">
-        <div class="text -summary-alt">
-          GRID-Arendal´s activities are nearly always a cooperative undertaking
-          made possible through collaboration with our various partners, and
-          donors.
-        </div>
+    <div class="small-12 large-6 columns">
+      <div class="text -summary-alt">
+        GRID-Arendal´s activities are nearly always a cooperative undertaking
+        made possible through collaboration with our various partners, and
+        donors.
       </div>
-      <div class="small-12 large-6 columns">
-        <div class="logos">
-          <% partners.each do |partner| %>
-            <%= link_to partner.web_url || "#" do %>
-              <span><img src="<%= partner.logo.exists? ? partner.logo.url : asset_path('original/missing2.png') %>"></span>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-    <% end %>
-    <% if links.present? %>
-      <div class="small-12 columns">
+      <% if links.present? %>
         <ul class="external-links">
           <% links.each do |link| %>
             <%
@@ -52,10 +39,21 @@
                 <svg class="icon">
                   <use xlink:href="#<%= icon_id %>"></use>
                 </svg>
-              <% end %>
+              <span class="text"><%= link.label %></span><% end %>
             </li>
           <% end %>
         </ul>
+      <% end %>
+    </div>
+    <% if partners.any? %>
+      <div class="small-12 large-6 columns">
+        <div class="logos">
+          <% partners.each do |partner| %>
+            <%= link_to partner.web_url || "#" do %>
+              <span><img src="<%= partner.logo.exists? ? partner.logo.url : asset_path('original/missing2.png') %>"></span>
+            <% end %>
+          <% end %>
+        </div>
       </div>
     <% end %>
   </div>
