@@ -1,6 +1,6 @@
 <div class="small-12 column">
   <div class="row">
-    <div class="small-4 column">
+    <div class="small-12 medium-6 large-5 columns">
       <div class="text -summary-alt">
         <strong>GRID-Arendal</strong><br />
         <strong>A Centre Collaborating with UN Environment</strong><br />
@@ -10,7 +10,7 @@
         E-mail: grid@grida.no
       </div>
     </div>
-    <div class="small-3 column">
+    <div class="small-12 medium-3 large-3 columns">
       <div class="text -summary-alt">
         <strong>Visiting address:</strong><br />
         Teaterplassen 3<br />
@@ -18,7 +18,7 @@
         Norway
       </div>
     </div>
-    <div class="small-3 column">
+    <div class="small-12 medium-3 large-4 columns">
       <div class="text -summary-alt">
         <strong>Mailing address:</strong><br />
         GRID-Arendal<br />
@@ -29,6 +29,10 @@
     </div>
   </div>
   <% if section.body.present? %>
-    <div class="text -summary-alt"><%= raw section.body %></div>
+    <div class="row">
+      <div class="small-12 column">
+        <div class="text -summary-alt"><%= raw section.body %></div>
+      </div>
+    </div>
   <% end %>
 </div>
