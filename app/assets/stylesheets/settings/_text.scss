@@ -61,28 +61,21 @@
   &.-title-card {
     white-space: normal;
     font-size: 18px;
-    line-height: 1.39;
+    line-height: 1.3;
     font-family: $font-family-2;
     font-weight: 600;
 
     @media screen and (min-width: $screen-m) {
-      font-size: 26px;
-      font-weight: 600;
-      line-height: 1.15;
+      font-size: 24px;
     }
   }
 
   &.-title-card-small {
     white-space: normal;
-    font-size: 18px;
+    font-size: 17px;
     font-family: $font-family-2;
     font-weight: 600;
-    line-height: 1.39;
-
-    @media screen and (min-width: $screen-m) {
-      font-size: 16px;
-      line-height: 1.25;
-    }
+    line-height: 1.4;
   }
 
   &.-meta {
@@ -90,19 +83,18 @@
     opacity: 0.5;
 
     @media screen and (min-width: $screen-m) {
-      font-size: 12px;
+      font-size: 13px;
     }
   }
 
   &.-breadcrumb {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   &.-summary {
     font-size: 16px;
     opacity: 0.8;
-    width: 90%;
-    line-height: 1.56;
+    line-height: 1.6;
     white-space: normal;
 
     @media screen and (min-width: $screen-m) {
@@ -113,17 +105,14 @@
 
   &.-summary-alt {
     font-family: $font-family-1;
-    font-size: 17px !important;
     line-height: 1.47;
     color: $font-color-1;
     opacity: 0.8;
+    width:70%;
+    min-width: 480px;
 
     &.-bold {
       font-weight: 600;
-    }
-
-    p {
-      font-size: 17px !important;
     }
 
     ul {
@@ -143,11 +132,11 @@
     }
 
     @media screen and (min-width: $screen-m) {
-      font-size: 18px !important;
+      font-size: 17px !important;
       line-height: 1.67;
 
       p {
-        font-size: 18px !important;
+        font-size: 17px !important;
       }
     }
   }
@@ -208,10 +197,6 @@
     font-weight: 600;
     font-family: $font-family-2;
     line-height: 1.1;
-
-    @media screen and (min-width: $screen-m) {
-      font-size: 36px;
-    }
   }
 
   &.-event-description {
@@ -238,7 +223,7 @@
     line-height: 1.7;
 
     @media screen and (min-width: $screen-m) {
-      font-size: 18px;
+      font-size: 17px;
     }
 
     ul {
@@ -274,7 +259,7 @@
   }
 
   &.-contact-staff {
-    font-size: 18px;
+    font-size: 17px;
     font-family: $font-family-1;
     line-height: 1.67;
     opacity: 0.8;
@@ -352,7 +337,7 @@
     letter-spacing: 0.3px;
     color: $font-color-4;
   }
-
+  
   /*
    * COLORS
    */

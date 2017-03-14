@@ -11,7 +11,7 @@ class ActivitiesController < ApplicationController
   def index
     @activities = Activity.fetch_all(options_filter)
     @content_types = ContentType.by_activity.order('LOWER(title) ASC')
-    @programmes = Tag.where(category: Tag::PROGRAMME).order(:name)
+    @programmes = Activity.programmes
     @partners = Partner.order(:name)
     @tags = Tag.for_content('Activity')
     @section = SiteSection.where(section: "activities").first
@@ -25,10 +25,7 @@ class ActivitiesController < ApplicationController
 
   def show
     @related_activities = if @activity.is_programme?
-                            Activity.joins(:tags).
-                              published.
-                              where(tags: {name: @activity.title.strip}).
-                              where.not(id: @activity.id).
+                            @activity.programme_activities.
                               order_by_title.limit(6)
                           else
                             programme_tags = @activity.tags.

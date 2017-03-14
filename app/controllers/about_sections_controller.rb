@@ -10,8 +10,7 @@ class AboutSectionsController < ApplicationController
     @affiliates = User.affiliates.order(:last_name)
     @sections = @sections.
       where.not(category: "honorary-affiliate") unless @affiliates.any?
-    @programmes = Activity.joins(:content_type).
-      where(content_types: {title: ContentType::PROGRAMME}).order(:title)
+    @programmes = Activity.programmes
     @annual_reports = Publication.published.joins(:content_type).
       where(content_types: {title: ContentType::ANNUAL_REPORT}).
       order(content_date: :desc, title: :asc)
