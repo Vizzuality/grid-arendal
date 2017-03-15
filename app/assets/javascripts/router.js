@@ -19,6 +19,7 @@
       'resources/:id': 'Media#show',
       'news(/)': 'News#index',
       'about(/)': 'About#index',
+      'about/disclaimer': 'About#disclaimer',
       'staff/:id': 'Users#show',
       'search(/)': 'Search#index',
       'events/:id': 'Events#show',
