@@ -22,4 +22,7 @@ class AboutSectionsController < ApplicationController
     @sections = @sections.
       where.not(category: not_in) unless not_in.empty?
   end
+
+  def disclaimer
+  end
 end
