@@ -101,7 +101,7 @@
 </section>
 
 <% if @activity.partners.any? || @activity.links.any? %>
-    <%= render 'shared/partners', partners: @activity.partners, links: @activity.links, sectionClass: 'content -color-3' %>
+  <%= render 'shared/partners', partners: @activity.partners, links: @activity.links, sectionClass: 'content -color-3' %>
 <% end %>
 
 <% if @activity.lead_user || @activity.users.any? %>

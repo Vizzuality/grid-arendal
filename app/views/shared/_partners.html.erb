@@ -19,7 +19,7 @@
         <ul class="external-links">
           <% links.each do |link| %>
             <%
-              case link.label.downcase
+              case link.label.downcase.strip
                 when 'pdf'
                   icon_id = 'icon-pdf'
                   url = link.document.url

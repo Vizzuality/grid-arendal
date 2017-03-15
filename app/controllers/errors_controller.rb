@@ -3,8 +3,8 @@ class ErrorsController < ApplicationController
   def not_found
     redirect_path = nil
     split = params[:any].split("/")
-    case
-      when "programmes" == split[0]
+    case split[0]
+      when "programmes"
         redirect_path = if split.size == 1
                           about_index_path
                         elsif "blue-carbon" == split[1]
@@ -25,11 +25,11 @@ class ErrorsController < ApplicationController
                           Activity.programmes.
                             where(title: "State of the Environment and Spatial Planning").first
                         end
-      when "graphicslib" == split[0]
+      when "graphicslib"
         redirect_path = resources_path(media: "Graphic")
-      when "photolib" == split[0]
+      when "photolib"
         redirect_path = resources_path(media: "Photo")
-      when "video" == split[0]
+      when "video"
         redirect_path = resources_path(media: "Video")
     end
 
