@@ -28,6 +28,12 @@
       }
     },
 
+    disclaimer: function() {
+      this.anchorsView = new App.View.Anchors({
+        options: {trackLabel: 'Disclaimer Page'}
+      });
+    },
+
     getMasonryCallback: function() {
       if($(window.location.hash).length > 0) {
         return this.goToBlock.bind(this, window.location.hash);
