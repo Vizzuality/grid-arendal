@@ -71,7 +71,15 @@ class Content < ApplicationRecord
   validates :title, presence: true
   validates :status, presence: true
 
+  before_validation :strip_whitespace
+
   def links
     documents + weblinks
+  end
+
+  private
+
+  def strip_whitespace
+    self.title = self.title.strip if self.title
   end
 end
