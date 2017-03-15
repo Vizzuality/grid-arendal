@@ -51,9 +51,11 @@
     <% else %>
       <div class="row">
         <% if section.category.blank? %>
-          <div class="small-12 column">
+          <div class="small-12 columns">
             <% if section.body.present? %>
-              <div class="text -summary-alt"><%= raw section.body %></div>
+              <div class="text -summary-alt">
+                <%= raw section.body %>
+              </div>
             <% end %>
           </div>
         <% else %>
