@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   # Backend
   mount Backend::Engine, at: 'manage', as: 'backend'
 
-  resources :about, controller: 'about_sections', only: [:index]
+  resources :about, controller: 'about_sections', only: [:index] do
+    get :disclaimer, on: :collection
+  end
+
   resources :search, only: [:index]
   resources :events, only: [:show]
 

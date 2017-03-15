@@ -1,0 +1,177 @@
+<% title("Disclaimer") %>
+
+<div class="l-header-single">
+  <div class="navigation -about">
+    <%= render 'shared/menu' %>
+    <div class="row">
+      <div class="small-12 columns">
+        <div class="title-block">
+          <% breadcrumbs_links = [
+            {text: 'About', link: about_index_path},
+            {text: 'Disclaimer', link: disclaimer_about_index_path}
+          ] %>
+          <%= render 'shared/breadcrumbs', links: breadcrumbs_links %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="banner -about">
+    <div class="section-menu">
+      <div class="row">
+        <div class="small-12 columns">
+          <div class="-relativize">
+            <ul class="anchors">
+              <li class="text -section-menu js-anchor" data-section-belongs="terms-conditions">
+                Terms and Conditions
+              </li>
+              <li class="text -section-menu js-anchor" data-section-belongs="privacy">
+                Privacy
+              </li>
+              <li class="text -section-menu js-anchor" data-section-belongs="disclaimers">
+                Disclaimers
+              </li>
+              <li class="text -section-menu js-anchor" data-section-belongs="immunities">
+                Preservation of immunities
+              </li>
+              <li class="text -section-menu js-anchor" data-section-belongs="general">
+                General
+              </li>
+            </ul>
+            <%= render 'shared/share', current_route: @current_route %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column small-12">
+      <%= render 'shared/share', current_route: @current_route, mobile: true %>
+    </div>
+  </div>
+</div>
+
+<section id="terms-conditions" class="l-main-content -about -color-7 -no-border" data-section="terms-conditions">
+  <div class="row">
+    <div class="small-12 column">
+      <div class="text -title-event">Terms and Conditions</div>
+    </div>
+  </div>
+    <div class="row">
+			<div class="small-12 columns">
+				<div class="text -summary-alt">
+					<p><b>The use of this web site constitutes agreement with the following terms and conditions:</b></p>
+					<ul>
+						<li>
+							(a) GRID-Arendal maintains this web site (the “Site”) as a courtesy to those who may choose to access the Site (“Users”).
+							The information presented herein is for informative purposes only.<br />
+							GRID-Arendal grants permission to Users to visit the Site and to download and copy the information, documents and materials (collectively, “Materials”) from the Site, under the following condition:<br />
+							<ul>
+								<li>
+									GRID-Arendal is clearly credited in such use of the Materials as the source of the Materials.
+								</li>
+							</ul>
+						</li>
+						<li>
+							(b) GRID-Arendal administers this Site. All Materials on this Site from GRID-Arendal appears subject to the present Terms and Conditions.
+						</li>
+						<li>
+							(c) Unless expressly stated otherwise, the findings, interpretations and conclusions expressed in the Materials on this Site are those of the various GRID-Arendal staff members, consultants and advisers to GRID-Arendal Secretariat who prepared the work and do not necessarily represent the views of GRID-Arendal or its Member States.
+						</li>
+					</ul>
+				</div>
+			</div>
+    </div>
+</section>
+<section id="privacy" class="l-main-content -about -color-7" data-section="privacy">
+  <div class="row">
+    <div class="small-12 column">
+      <div class="text -title-event">Privacy</div>
+    </div>
+  </div>
+    <div class="row">
+			<div class="small-12 columns">
+				<div class="text -summary-alt">
+					<p>
+						By accessing this site, certain information about the User, such as Internet protocol (IP) addresses, navigation through the Site, the software used and the time spent, along with other similar information, will be stored on GRID-Arendal servers. These will not specifically identify the User. The information will be used internally only for web site traffic analysis. If the User provides unique identifying information, such as name, address and other information on forms stored on this Site, such information will be used only for statistical purposes and will not be published for general access. GRID-Arendal, however, assumes no responsibility for the security of this information.
+					</p>
+				</div>
+			</div>
+    </div>
+</section>
+<section id="disclaimers" class="l-main-content -about -color-7" data-section="disclaimers">
+  <div class="row">
+    <div class="small-12 column">
+      <div class="text -title-event">Disclaimers</div>
+    </div>
+  </div>
+    <div class="row">
+			<div class="small-12 columns">
+				<div class="text -summary-alt">
+					<p>Materials provided on this Site are provided “as is”, without warranty of any kind, either express or implied, including, without limitation, warranties of merchantability, fitness for a particular purpose and non-infringement.</p>
+
+					<p>GRID-Arendal specifically does not make any warranties or representations as to the accuracy or completeness of any such Materials. GRID-Arendal periodically adds changes, improves or updates the Materials on this Site without notice.</p>
+
+					<p>Under no circumstances shall GRID-Arendal be liable for any loss, damage, liability or expense incurred or suffered that is claimed to have resulted from the use of this Site, including, without limitation, any fault, error, omission, interruption or delay with respect thereto.</p>
+
+					<p>The use of this Site is at the User’s sole risk. Under no circumstances, including, but not limited to negligence, shall GRID-Arendal or its affiliates be liable for any direct, indirect, incidental, special or consequential damages, even if GRID-Arendal has been advised of the possibility of such damages.</p>
+
+					<p>The User specifically acknowledges and agrees that GRID-Arendal is not liable for any conduct of any User.</p>
+
+					<p>This site may contain advice, opinions and statements of various information providers. GRID-Arendal does not represent or endorse the accuracy or reliability of any advice, opinion, statement or other information provided by any information provider, any User of this Site or any other person or entity. Reliance upon any such advice, opinion, statement, or other information shall also be at the User’s own risk. Neither GRID-Arendal nor its affiliates, nor any of their respective agents, employees, information providers or content providers, shall be liable to any User or anyone else for any inaccuracy, error, omission, interruption, deletion, defect, alteration of or use of any content herein, or for its timeliness or completeness, nor shall they be liable for any failure of performance, computer virus or communication line failure, regardless of cause, or for any damages resulting therefrom.</p>
+
+					<p>As a condition of use of this Site, the User agrees to indemnify GRID-Arendal and its affiliates from and against any and all actions, claims, losses, damages, liabilities and expenses (including reasonable attorneys’ fees) arising out of the User’s use of this Site, including, without limitation, any claims alleging facts that if true would constitute a breach by the User of these Terms and Conditions. If the User is dissatisfied with any Material on this Site or with any of its Terms and Conditions of Use, the User’s sole and exclusive remedy is to discontinue using the Site.</p>
+
+					<p>This Site may contain links and references to third-party web sites. The linked sites are not under the control of GRID-Arendal, and GRID-Arendal is not responsible for the content of any linked site or any link contained in a linked site. GRID-Arendal provides these links only as a convenience, and the inclusion of a link or reference does not imply the endorsement of the linked site by GRID-Arendal.</p>
+
+					<p>If this Site contains bulletin boards, chat rooms, access to mailing lists or other message or communication facilities (collectively, “Forums”), the User agrees to use the Forums only to send and receive messages and materials that are proper and related to the particular Forum. By way of example and not as a limitation, the User agrees that when using a Forum, he or she shall not do any of the following:</p>
+					<ul>
+						<li>(a) Defame, abuse, harass, stalk, threaten or otherwise violate the legal rights (such as rights of privacy and publicity) of others;</li>
+						<li>(b) Publish, post, distribute or disseminate any defamatory, infringing, obscene, indecent or unlawful material or information;</li>
+						<li>(c) Upload or attach files that contain software or other material protected by intellectual property laws (or by rights of privacy and publicity) unless the User owns or controls the rights thereto or has received all consents therefore as may be required by law;</li>
+						<li>(d) Upload or attach files that contain viruses, corrupted files or any other similar software or programs that may damage the operation of another’s computer;</li>
+						<li>(e) Delete any author attributions, legal notices or proprietary designations or labels in any file that is uploaded;</li>
+						<li>(f) Falsify the origin or source of software or other material contained in a file that is uploaded;</li>
+						<li>(g) Advertise or offer to sell any goods or services, or conduct or forward surveys, contests or chain letters, or download any file posted by another user of a Forum that the User knows, or reasonably should know, cannot be legally distributed in such manner.</li>
+					</ul>
+					<p>The User acknowledges that all Forums and discussion groups are public and not private communications. Further, the User acknowledges that chats, postings, conferences, e-mails and other communications by other Users are not endorsed by GRID-Arendal, and that such communications shall not be considered to have been reviewed, screened or approved by GRID-Arendal.</p>
+
+					<p>GRID-Arendal reserves the right to remove, for any reason and without notice, any content of the Forums received from Users, including, without limitation, e-mail and bulletin board postings.</p>
+				</div>
+			</div>
+    </div>
+</section>
+<section id="immunities" class="l-main-content -about -color-7" data-section="immunities">
+  <div class="row">
+    <div class="small-12 column">
+      <div class="text -title-event">Preservation of immunities</div>
+    </div>
+  </div>
+    <div class="row">
+			<div class="small-12 columns">
+				<div class="text -summary-alt">
+					<p>Nothing herein shall constitute or be considered to be a limitation upon or a waiver of the privileges and immunities of GRID-Arendal, which are specifically reserved.</p>
+				</div>
+			</div>
+    </div>
+</section>
+<section id="general" class="l-main-content -about -color-7" data-section="general">
+  <div class="row">
+    <div class="small-12 column">
+      <div class="text -title-event">General</div>
+    </div>
+  </div>
+    <div class="row">
+			<div class="small-12 columns">
+				<div class="text -summary-alt">
+					<p>GRID-Arendal reserves its exclusive right in its sole discretion to alter, limit or discontinue the Site or any Materials in any respect.</p>
+					<p>GRID-Arendal shall have no obligation to take the needs of any User into consideration in connection therewith.</p>
+					<p>GRID-Arendal reserves the right to deny in its sole discretion any user access to this Site or any portion thereof without notice.</p>
+					<p>No waiver by GRID-Arendal of any provision of these Terms and Conditions shall be binding except as set forth in writing and signed by its duly authorized representative.</p>
+				</div>
+			</div>
+    </div>
+</section>
+
+<%= render 'shared/scroll_to_top' %>
+
+<%= render 'shared/footer' %>
