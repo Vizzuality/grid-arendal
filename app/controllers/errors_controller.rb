@@ -25,6 +25,8 @@ class ErrorsController < ApplicationController
           Activity.programmes.
             where(title: "State of the Environment and Spatial Planning").first
         end
+      when "publications"
+        publications_path
       when "environmental_crime"
         Activity.programmes.where(title: "Environmental Crime").first
       when "bluecarbon"
