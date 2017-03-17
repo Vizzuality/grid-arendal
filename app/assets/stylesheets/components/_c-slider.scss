@@ -60,11 +60,67 @@
       vertical-align: top;
     }
 
+    .prev,
+    .next {
+      display: none;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      width: rem(18px);
+      height: rem(36px);
+      cursor: pointer;
+
+      .icon {
+        width: rem(18px);
+        height: rem(36px);
+      }
+    }
+
+    .prev {
+      left: 20px;
+
+      .icon {
+        transform: rotateY(180deg);
+      }
+    }
+
+    .next {
+      right: 20px;
+    }
+
     @media screen and (max-width: $screen-m) {
       .slide {
         width: rem(290px);
         height: rem(350px);
         padding-right: rem(20px);
+      }
+    }
+
+    @media screen and (min-width: $screen-m + 1) {
+      .prev,
+      .next {
+        display: inline;
+      }
+    }
+
+    @media screen and (min-width: 1130px) {
+      .prev {
+        left: rem(-58px);
+      }
+
+      .next {
+        right: rem(-58px);
+      }
+    }
+
+    @media screen and (min-width: 1180px) {
+      .prev {
+        left: rem(-78px);
+      }
+
+      .next {
+        right: rem(-78px);
       }
     }
   }
