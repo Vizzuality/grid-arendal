@@ -3,7 +3,24 @@ class ErrorsController < ApplicationController
   def not_found
     redirect_path = nil
     split = params[:any].split("/")
-    redirect_path = case split[0].downcase
+    redirect_path =  redirect_from_old_site
+
+    if redirect_path
+      redirect_to redirect_path, :status => :moved_permanently,
+        notice: "You have been redirected to GRID Arendal's new website. If this is not the content you are looking for, please use our new search by clicking the magnifying glass on the right hand side."
+    else
+      respond_to do |format|
+        format.html { render status: 404 }
+      end
+    end
+  rescue ActionController::UnknownFormat
+    render status: 404
+  end
+
+  private
+
+  def redirect_from_old_site
+    case split[0].downcase
       when "programmes"
         if split.size == 1
           about_index_path
@@ -43,6 +60,16 @@ class ErrorsController < ApplicationController
           Publication.where(title: "The Natural Fix? The Role of Ecosystems in Climate Mitigation").first
         elsif split[2] == "orangutan"
           Publication.where(title: "The Last Stand of the Orangutang").first
+        elsif split[2] == "our-precious-coasts"
+          Publication.where(title: "Our Precious Coasts").first
+        elsif split[2] == "africa"
+          Publication.where(title: "Vital Climate Graphics Africa").first
+        elsif split[2] == "climate"
+          Publication.where(title: "Vital Climate Graphics").first
+        elsif split[2] == "climate"
+          Publication.where(title: "Vital Climate Graphics").first
+        else
+          publications_path
         end
       when "environmental_crime"
         Activity.programmes.where(title: "Environmental Crime").first
@@ -94,15 +121,5 @@ class ErrorsController < ApplicationController
       when "video"
         resources_path(media: "Video")
     end
-    if redirect_path
-      redirect_to redirect_path, :status => :moved_permanently,
-        notice: "You have been redirected to GRID Arendal's new website. If this is not the content you are looking for, please use our new search by clicking the magnifying glass on the right hand side."
-    else
-      respond_to do |format|
-        format.html { render status: 404 }
-      end
-    end
-  rescue ActionController::UnknownFormat
-    render status: 404
   end
 end
