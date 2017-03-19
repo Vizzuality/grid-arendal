@@ -25,6 +25,16 @@
   </head>
   <body class="slide-<%= rand(1..6) %>">
     <%= render 'shared/icons' %>
+    <% if flash[:notice] %>
+      <div style="background-color: rgba(0, 61, 83, 0.8); color: white;">
+        <div class="row">
+          <div class="small-12 columns">
+            <%= flash[:notice] if flash[:notice] %>
+          </div>
+        </div>
+      </div>
+      </div>
+    <% end %>
     <%= yield %>
 
     <%= render 'shared/footer' %>

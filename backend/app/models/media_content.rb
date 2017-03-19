@@ -49,7 +49,7 @@ class MediaContent < ApplicationRecord
 
   pg_search_scope :search_for,
     against: { title: :A, description: :B, author: :B },
-    using: { tsearch: { any_word: true, prefix: true } },
+    using: { tsearch: { any_word: false, prefix: true } },
     order_within_rank: 'updated_at DESC'
 
   # relations added here to allow lazy loading on media_library_controller
