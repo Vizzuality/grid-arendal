@@ -28,17 +28,21 @@ class ErrorsController < ApplicationController
       when "publications"
         if split.size < 3
           publications_path
-        else
-          case params[:any]
-            when "publications/et/ep2/page/2501.aspx"
+        elsif split[1] == "et"
+          case split[2]
+            when "ep2"
               Publication.where(title: "The Environment and Poverty Times #2").first
-            when "publications/et/ep4/page/2632.aspx"
+            when "ep4"
               Publication.where(title: "Environment and Poverty Times #4").first
-            when "publications/et/ep4/page/2638.aspx"
-              Publication.where(title: "Environment and Poverty Times #4").first
-            when "publications/other/ipcc_tar/default.aspx", "/publications/other/ipcc_tar/default.aspx?src=/climate/ipcc_tar/", "/publications/other/ipcc_tar/default.aspx?src=/climate/ipcc_tar/wg1/index.htm"
-              Publication.where(title: "IPCC - Climate Change 2001: Synthesis Report").first
           end
+        elsif split[2] == "ipcc_tar"
+          Publication.where(title: "IPCC - Climate Change 2001: Synthesis Report").first
+        elsif split[2] == "food-crisis"
+          Publication.where(title: "The Environmental Food Crisis").first
+        elsif split[2] == "natural-fix"
+          Publication.where(title: "The Natural Fix? The Role of Ecosystems in Climate Mitigation").first
+        elsif split[2] == "orangutan"
+          Publication.where(title: "The Last Stand of the Orangutang").first
         end
       when "environmental_crime"
         Activity.programmes.where(title: "Environmental Crime").first
@@ -92,7 +96,7 @@ class ErrorsController < ApplicationController
     end
     if redirect_path
       redirect_to redirect_path, :status => :moved_permanently,
-        notice: "You have been redirected to GRID Arendal's new website. If this is not the content you are looking for, please use our new search by clicking the magnifying glass on the top right hand side."
+        notice: "You have been redirected to GRID Arendal's new website. If this is not the content you are looking for, please use our new search by clicking the magnifying glass on the right hand side."
     else
       respond_to do |format|
         format.html { render status: 404 }
