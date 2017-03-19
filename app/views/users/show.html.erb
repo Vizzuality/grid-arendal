@@ -6,6 +6,12 @@
                   asset_path('original/missing2.png')
                 end %>
 
+<% content_for :social_cards do %>
+  <%= render 'shared/social_cards', title: "#{@user.full_name} | GRID-Arendal",
+    description: @user.description.truncate(120),
+    img_src: @user.avatar.try(:url) %>
+<% end %>
+
 <div class="l-header-library -staff">
   <div class="overlay"></div>
   <%= render 'shared/menu' %>

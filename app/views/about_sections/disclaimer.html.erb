@@ -1,5 +1,10 @@
 <% title("Disclaimer") %>
 
+<% content_for :social_cards do %>
+  <%= render 'shared/social_cards', title: "Disclaimer | GRID-Arendal",
+    description: "GRID-Arendal's Terms and Conditions of use" %>
+<% end %>
+
 <div class="l-header-single">
   <div class="navigation -about">
     <%= render 'shared/menu' %>
