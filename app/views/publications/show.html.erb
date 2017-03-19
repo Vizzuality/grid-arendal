@@ -13,6 +13,12 @@
                   asset_path('original/missing2.png')
                 end %>
 
+<% content_for :social_cards do %>
+  <%= render 'shared/social_cards', title: "#{@publication.title} | GRID-Arendal",
+    description: @publication.description.truncate(120),
+    img_src: picture_url %>
+<% end %>
+
 <% status = if @publication.status == Content::COMPLETED && @publication.content_date.present?
               time_ago_in_words(@publication.content_date)
             else
@@ -142,4 +148,3 @@
 
 <%= render 'shared/scroll_to_top' %>
 
-<%= render 'shared/footer' %>
