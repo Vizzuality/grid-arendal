@@ -3,7 +3,7 @@ class ErrorsController < ApplicationController
   def not_found
     redirect_path = nil
     split = params[:any].split("/")
-    redirect_path =  redirect_from_old_site
+    redirect_path =  redirect_from_old_site(split)
 
     if redirect_path
       redirect_to redirect_path, :status => :moved_permanently,
@@ -19,7 +19,7 @@ class ErrorsController < ApplicationController
 
   private
 
-  def redirect_from_old_site
+  def redirect_from_old_site split
     case split[0].downcase
       when "programmes"
         if split.size == 1
