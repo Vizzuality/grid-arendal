@@ -1,7 +1,7 @@
 <% title(@vacancy.title) %>
 
 <% content_for :social_cards do %>
-  <%= render 'shared/social_cards', title: "GRID-Arendal: #{@vacancy.title}",
+  <%= render 'shared/social_cards', title: "#{@vacancy.title} | GRID-Arendal",
     description: @vacancy.title.truncate(120),
     img_src: image_url('bg7.jpg') %>
 <% end %>
