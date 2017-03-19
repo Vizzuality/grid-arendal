@@ -25,7 +25,6 @@
   </head>
   <body class="slide-<%= rand(1..6) %>">
     <%= render 'shared/icons' %>
-    <% flash[:notice] = "GRID Arendal has a new website! We have tried to redirect you to the content that you are looking for. If this is not that content, please use our new search by clicking the magnifying glass on the top right hand side. Please bookmark our new links." %>
     <% if flash[:notice] %>
       <div style="background-color: rgba(0, 61, 83, 0.8); color: white;">
         <div class="row">

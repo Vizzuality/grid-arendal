@@ -92,7 +92,7 @@ class ErrorsController < ApplicationController
     end
     if redirect_path
       redirect_to redirect_path, :status => :moved_permanently,
-        notice: "GRID Arendal has a new website! We have tried to redirect you to the content that you are looking for. If this is not that content, please use our new search by clicking the magnifying glass on the top right hand side. Please bookmark our new links."
+        notice: "You have been redirected to GRID Arendal's new website. If this is not the content you are looking for, please use our new search by clicking the magnifying glass on the top right hand side."
     else
       respond_to do |format|
         format.html { render status: 404 }
