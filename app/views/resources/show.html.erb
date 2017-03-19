@@ -1,5 +1,6 @@
 <% title(@media_content.title) %>
 <%
+  picture_url = nil
   if ![MediaContent::TYPE_VIDEO, MediaContent::TYPE_VIDEO_COLLECTION].include?(@media_content.type)
     photo = @media_content.first_item
     biggest = photo.biggest_size
@@ -23,6 +24,11 @@
                       ]
                       end
 %>
+<% content_for :social_cards do %>
+  <%= render 'shared/social_cards', title: "#{@media_content.title} | GRID-Arendal",
+    description: @media_content.description.truncate(120),
+    img_src: picture_url %>
+<% end %>
 
 <div class="l-header-single">
   <div class="navigation -media-library">
