@@ -26,7 +26,20 @@ class ErrorsController < ApplicationController
             where(title: "State of the Environment and Spatial Planning").first
         end
       when "publications"
-        publications_path
+        if split.size < 3
+          publications_path
+        else
+          case params[:any]
+            when "publications/et/ep2/page/2501.aspx"
+              Publication.where(title: "The Environment and Poverty Times #2").first
+            when "publications/et/ep4/page/2632.aspx"
+              Publication.where(title: "Environment and Poverty Times #4").first
+            when "publications/et/ep4/page/2638.aspx"
+              Publication.where(title: "Environment and Poverty Times #4").first
+            when "publications/other/ipcc_tar/default.aspx", "/publications/other/ipcc_tar/default.aspx?src=/climate/ipcc_tar/", "/publications/other/ipcc_tar/default.aspx?src=/climate/ipcc_tar/wg1/index.htm"
+              Publication.where(title: "IPCC - Climate Change 2001: Synthesis Report").first
+          end
+        end
       when "environmental_crime"
         Activity.programmes.where(title: "Environmental Crime").first
       when "bluecarbon"
