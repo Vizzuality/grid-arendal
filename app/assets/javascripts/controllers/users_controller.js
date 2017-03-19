@@ -15,10 +15,16 @@
 
       this.initSliders();
 
-      new App.View.VideoPlayer({});
+      new App.View.VideoPlayer({
+        trackOnOpen: function() {
+          ga('send', 'event', 'User', 'Video', 'Play');
+        }
+      });
       new App.View.RelatedMedia({
         slider: this.slider
       });
+      this.videoThumbnailsView = new App.View.VideoThumbnails();
+
       if(!this.isScreen_s) {
         _.each($('.masonry-layout'), function(element) {
           if($(element).find('.masonry-column').length === 0) {

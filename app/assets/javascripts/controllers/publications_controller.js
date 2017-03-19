@@ -40,6 +40,7 @@
       new App.View.RelatedMedia({
         slider: this.slider
       });
+      this.videoThumbnailsView = new App.View.VideoThumbnails();
       if(!this.isScreen_s) {
         _.each($('.masonry-layout'), function(element) {
           if($(element).find('.masonry-column').length === 0) {
