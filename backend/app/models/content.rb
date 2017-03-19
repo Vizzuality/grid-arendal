@@ -65,7 +65,7 @@ class Content < ApplicationRecord
   pg_search_scope :search_for,
     associated_against: { users: { first_name: :B, last_name: :B } },
     against: { title: :A, description: :B },
-    using: { tsearch: { any_word: true, prefix: true } },
+    using: { tsearch: { any_word: false, prefix: true } },
     order_within_rank: 'updated_at DESC'
 
   validates :title, presence: true

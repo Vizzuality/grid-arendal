@@ -30,7 +30,7 @@ class NewsArticle < ApplicationRecord
 
   pg_search_scope :search_for,
     against: :title,
-    using: { tsearch: { any_word: true, prefix: true } },
+    using: { tsearch: { any_word: false, prefix: true } },
     order_within_rank: 'publication_date DESC, updated_at DESC'
 
   def self.fetch_from_rss

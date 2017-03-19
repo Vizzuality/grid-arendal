@@ -91,7 +91,7 @@ class User < ApplicationRecord
       current_position: :B,
       description: :B
     },
-    using: { tsearch: { any_word: true, prefix: true } },
+    using: { tsearch: { any_word: false, prefix: true } },
     order_within_rank: 'last_name ASC, first_name ASC'
 
   def related_publications limit=nil
