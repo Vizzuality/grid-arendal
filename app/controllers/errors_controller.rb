@@ -21,6 +21,8 @@ class ErrorsController < ApplicationController
 
   def redirect_from_old_site split
     case split[0].downcase
+      when "default"
+        root_path
       when "programmes"
         if split.size == 1
           about_index_path
