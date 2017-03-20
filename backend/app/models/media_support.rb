@@ -4,4 +4,6 @@ class MediaSupport < ApplicationRecord
   belongs_to :media_content
   belongs_to :activity, foreign_key: :content_id, class_name: 'Activity'
   belongs_to :publication, foreign_key: :content_id, class_name: 'Publication'
+
+  validates :content_id, uniqueness: { scope: :media_content_id }
 end
