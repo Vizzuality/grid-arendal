@@ -23,11 +23,14 @@ en:
   datetime:
     distance_in_words:
       about_x_minutes:
-        one:   "1 minute ago"
-        other: "%{count} minutes ago"
+        one:   "today"
+        other: "today"
       x_minutes:
-        one:   "1 minute ago"
-        other: "%{count} minutes ago"
+        one:   "today"
+        other: "today"
+      about_x_hours:
+        one:   "today"
+        other: "today"
       about_x_days:
         one:   "1 day ago"
         other: "%{count} days ago"
