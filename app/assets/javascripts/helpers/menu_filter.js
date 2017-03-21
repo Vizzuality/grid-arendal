@@ -5,7 +5,7 @@
 
   App.Helper = App.Helper || {};
 
-  App.Helper.YearsFilter = Backbone.View.extend({
+  App.Helper.MenuFilter = Backbone.View.extend({
 
     options: {
       selectedClass: "selected"
@@ -23,37 +23,39 @@
       this.selectedValues = [];
 
       this._cache();
-      this._onClickYears();
+      this._setEventValues();
     },
 
     _cache: function() {
-      this.$years = this.$el.find("li");
+      this.$values = this.$el.find("li");
       this.key = this.$el.data("filter-key");
     },
 
-    _updateSelectedYears: function(drop, value) {
+    _updateSelectedValues: function(drop, value) {
       if (drop) {
-        this.selectedValues = _.without(this.selectedValues, value);
+        this.selectedValues = [];
       } else {
-        if ( $.inArray( value, this.selectedValues ) === -1 ) {
-          this.selectedValues.push(value);
-        }
+        this.selectedValues = [value];
       }
     },
 
-    _onClickYears: function() {
-      this.$years.on('click', function(e) {
+    _setEventValues: function() {
+      this.$values.on('click', function(e) {
         this._setSelectValue(e);
       }.bind(this));
     },
 
     _setSelectValue: function(e) {
       var element = $(e.currentTarget);
-      var isSelected = element.hasClass(this.options.selectedClass);
-      element.toggleClass(this.options.selectedClass);
       var value = element.data("value");
+      var isSelected = element.hasClass(this.options.selectedClass);
 
-      this._updateSelectedYears(isSelected, value);
+      this.$values.removeClass(this.options.selectedClass);
+      if(!isSelected) {
+        element.addClass(this.options.selectedClass);
+      }
+
+      this._updateSelectedValues(isSelected, value);
       this._setHaveValue();
       this._runCallback(
         !isSelected ? value : null
