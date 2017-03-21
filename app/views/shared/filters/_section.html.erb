@@ -1,0 +1,9 @@
+<div class="filter -type-menu js-filter" data-filter-type="menu" data-filter-key="<%= key %>">
+  <ul class="list">
+    <% data.each_with_index do |section, i| %>
+      <li class="text -filter-menu <%= "selected" if !params[:section].present? && i == 0 || params[:section] == section %>" data-value="<%= section %>">
+        <%= section %>
+      </li>
+    <% end %>
+  </ul>
+</div>

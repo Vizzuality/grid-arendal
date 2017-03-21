@@ -23,6 +23,7 @@
     initialize: function(settings) {
       var opts = settings && settings.options ? settings.options : {};
       this.options = _.extend({}, this.options, opts);
+      this.staticParams = settings.staticParams;
 
       this._cache();
       this._loadFilters();
@@ -126,6 +127,10 @@
           });
         }
       });
+      if (this.staticParams !== null) {
+        queryStr += this.staticParams;
+      }
+
       return queryStr;
     },
 
