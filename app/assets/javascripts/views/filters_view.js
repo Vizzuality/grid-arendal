@@ -23,6 +23,7 @@
     initialize: function(settings) {
       var opts = settings && settings.options ? settings.options : {};
       this.options = _.extend({}, this.options, opts);
+      this.staticParams = typeof settings.staticParams !== "undefined" ? settings.staticParams : null;
 
       this._cache();
       this._loadFilters();
@@ -49,8 +50,8 @@
           case "tags":
             this._loadTag(this._getHelperFilterObject(filter));
             break;
-          case "years":
-            this._loadYears(this._getHelperFilterObject(filter));
+          case "menu":
+            this._loadMenu(this._getHelperFilterObject(filter));
             break;
         }
       }.bind(this));
@@ -64,8 +65,8 @@
       this.filters.push(new App.Helper.TagSelectHandler(helperFilter));
     },
 
-    _loadYears: function(helperFilter) {
-      this.filters.push(new App.Helper.YearsFilter(helperFilter));
+    _loadMenu: function(helperFilter) {
+      this.filters.push(new App.Helper.MenuFilter(helperFilter));
     },
 
     _getHelperFilterObject: function(filter) {
@@ -126,6 +127,10 @@
           });
         }
       });
+      if (this.staticParams !== null) {
+        queryStr += this.staticParams;
+      }
+
       return queryStr;
     },
 

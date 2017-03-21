@@ -16,36 +16,51 @@
 
 <div class="l-header-library-separator"></div>
 <% if @query.present? %>
-  <% unless @news.any? || @activities.any? || @publications.any? || @media_contents.any? || @staff.any? %>
-    <%= render 'no_results', query: @query %>
-  <% end%>
+  <div class="l-main-content -search -color-7">
+    <% filters = [
+      {
+        data: ['All', 'Activities', 'Publications', 'Graphics', 'Photos', 'Videos', 'News', 'Staff'],
+        type: 'section',
+        key: 'section'
+      }
+    ] %>
+    <%= render 'shared/filters', filters: filters %>
+  </div>
 
-  <% if @news.any? %>
+  <% unless (@news.present? && @news.any?) ||
+    (@activities.present? && @activities.any?) ||
+    (@publications.present? && @publications.any?) ||
+    (@media_contents.present? && @media_contents.any?) ||
+    (@staff.present? && @staff.any?) %>
+    <%= render 'no_results', query: @query %>
+  <% end %>
+
+  <% if @news.present? && @news.any? %>
     <%= render 'shared/news', news: @news, title: 'News', sectionClass: 'content -color-7' %>
   <% end%>
 
-  <% if @activities.any? %>
+  <% if @activities.present? && @activities.any? %>
     <%= render 'shared/posts', collection: @activities, title: 'Activities',
       link_txt: 'View all activities',
       link: activities_path, sectionClass: 'content -color-7' %>
   <% end%>
 
-  <% if @publications.any? %>
+  <% if @publications.present? && @publications.any? %>
     <%= render 'shared/posts', collection: @publications, title: 'Publications',
       link_txt: 'View all publications',
       link: publications_path, sectionClass: 'content -color-7' %>
   <% end%>
 
-  <% if @staff.any? %>
+  <% if @staff.present? && @staff.any? %>
     <%= render 'shared/users', users: @staff, sectionClass: 'content -color-7' %>
   <% end %>
 
-  <% if @media_contents.any? %>
+  <% if @media_contents.present? && @media_contents.any? %>
     <section class="l-main-content content -news -color-7">
       <div class="row">
         <div class="small-12 columns">
           <div class="c-main-content-header">
-            <h2 class="text -title-block">Media</h2>
+            <h2 class="text -title-block"><%= ['Graphics', 'Photos', 'Videos'].include?(@selected_section) ? @selected_section : 'Media' %></h2>
               <p class="text -view-all">
                 <%= link_to resources_path do %>
                   <span>View all media</span>
