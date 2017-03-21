@@ -24,6 +24,7 @@
       'search(/)': 'Search#index',
       'events/:id': 'Events#show',
       'vacancies/:id': 'Vacancies#show',
+      '*notFound': 'Error#index'
     },
 
     initialize: function() {
