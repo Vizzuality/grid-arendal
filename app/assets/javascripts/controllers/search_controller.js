@@ -10,6 +10,12 @@
       new App.View.SearchInput();
       new App.View.VideoThumbnails();
 
+      var params = App.Helper.Utils.getGetParams();
+      new App.View.Filters({
+        options: {trackLabel: 'Search filters'},
+        staticParams: typeof params['query'] !== "undefined" ? '&query=' + params['query'] : null
+      });
+
       if(this.isScreen_s) {
         this.initSliders();
       } else {

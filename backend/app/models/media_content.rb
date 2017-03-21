@@ -42,6 +42,9 @@ class MediaContent < ApplicationRecord
 
   scope :by_type, ->(media) { where(type: media) }
   scope :by_tags, ->(tags) { joins(:tags).where(tags: { id: tags }) }
+  scope :graphics, -> {where(type: [TYPE_GRAPHIC])}
+  scope :photos, -> {where(type: [TYPE_PHOTO])}
+  scope :videos, -> {where(type: [TYPE_VIDEO])}
   scope :albums_and_photos, -> {where(type: [TYPE_ALBUM, TYPE_PHOTO])}
   scope :collections_and_graphics, -> {where(type: [TYPE_COLLECTION, TYPE_GRAPHIC])}
   scope :albums_collections_and_videos, -> {where('type IN (?) OR (type = ? AND album_id IS NULL)', [TYPE_ALBUM, TYPE_COLLECTION, TYPE_VIDEO_COLLECTION], TYPE_VIDEO)}
