@@ -23,7 +23,7 @@
     initialize: function(settings) {
       var opts = settings && settings.options ? settings.options : {};
       this.options = _.extend({}, this.options, opts);
-      this.staticParams = settings.staticParams;
+      this.staticParams = typeof settings.staticParams !== "undefined" ? settings.staticParams : null;
 
       this._cache();
       this._loadFilters();
