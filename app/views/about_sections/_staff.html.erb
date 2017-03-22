@@ -1,13 +1,14 @@
 <div class="row">
   <div class="small-12 column">
     <ul class="c-staff-selector">
-      <% i = 1 %>
-      <% User::STAFF_CATEGORIES.each do |category| %>
+      <li class="c-staff-selector-item text -filter -selected js-staff-selector-item" data-category-index="0">
+        <span>All</span>
+      </li>
+      <% User::STAFF_CATEGORIES.each_with_index do |category, i| %>
         <% next unless categories.include?(category) %>
-        <li class="c-staff-selector-item text -filter js-staff-selector-item" data-category-index="<%= i %>">
+        <li class="c-staff-selector-item text -filter js-staff-selector-item" data-category-index="<%= i + 1 %>">
           <span><%= category %></span>
         </li>
-        <% i += 1 %>
       <% end %>
     </ul>
   </div>
