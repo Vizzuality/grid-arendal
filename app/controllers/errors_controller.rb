@@ -5,7 +5,9 @@ class ErrorsController < ApplicationController
     split = params[:any].split("/")
     redirect_path =  redirect_from_old_site(split)
 
-    if redirect_path
+    redirect_path = find_from_api unless redirect_path
+
+    if redirect_path && redirect_path != "404"
       redirect_to redirect_path, :status => :moved_permanently,
         notice: "You have been redirected to GRID Arendal's new website. If this is not the content you are looking for, please use our new search by clicking the magnifying glass on the right hand side."
     else
@@ -19,13 +21,22 @@ class ErrorsController < ApplicationController
 
   private
 
+  def find_from_api
+    require 'net/http'
+    url = "http://service.grida.no/api/redirect?path=/#{params[:any]}"
+    url = url + ".#{params[:format]}" if params[:format]
+
+    uri = URI(url)
+    JSON.parse(Net::HTTP.get(uri))
+  end
+
   def redirect_from_old_site split
     case split[0].downcase
       when "default"
-        root_path
+        root_url
       when "programmes"
         if split.size == 1
-          about_index_path
+          about_index_url
         elsif "blue-carbon" == split[1]
           Activity.programmes.where(title: "Blue Carbon").first
         elsif "environmental-crime" == split[1]
@@ -46,7 +57,7 @@ class ErrorsController < ApplicationController
         end
       when "publications"
         if split.size < 3
-          publications_path
+          publications_url
         elsif split[1] == "et"
           case split[2]
             when "ep2"
@@ -70,8 +81,6 @@ class ErrorsController < ApplicationController
           Publication.where(title: "Vital Climate Graphics").first
         elsif split[2] == "climate"
           Publication.where(title: "Vital Climate Graphics").first
-        else
-          publications_path
         end
       when "environmental_crime"
         Activity.programmes.where(title: "Environmental Crime").first
@@ -92,8 +101,6 @@ class ErrorsController < ApplicationController
           where(title: "State of the Environment and Spatial Planning").first
       when "blueforests"
         Activity.where(title: "Blue Forests Project").first
-      when "mastrec"
-        "http://news.grida.no/mastrec"
       when "bluesolutions"
         Activity.where(title: "Blue Solutions").first
       when "uarctic"
@@ -102,7 +109,7 @@ class ErrorsController < ApplicationController
         Activity.find(275) # exists in production
       when "graphicslib"
         if split.size < 3
-          resources_path(media: "Graphic")
+          resources_url(media: "Graphic")
         else
           g = case split[2]
               when "difference-between-eia-and-sea_5148"
@@ -116,12 +123,12 @@ class ErrorsController < ApplicationController
               when "trends-in-population-developed-and-developing-countries-1750-2050-estimates-and-projections_1616"
                 Graphic.where(title: "Trends in population, developed and developing countries, 1750-2050 (estimates and projections)").first
               end
-          resource_path(g)
+          resource_url(g)
         end
       when "photolib"
-        resources_path(media: "Photo")
+        resources_url(media: "Photo")
       when "video"
-        resources_path(media: "Video")
+        resources_url(media: "Video")
     end
   end
 end
