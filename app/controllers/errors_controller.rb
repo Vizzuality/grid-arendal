@@ -29,7 +29,7 @@ class ErrorsController < ApplicationController
     uri = URI(url)
     res = Net::HTTP.get_response(uri).try(:body)
     return nil unless res
-    JSON.parse(res)
+    res.gsub('"','')
   end
 
   def redirect_from_old_site split
