@@ -5,9 +5,9 @@ class ErrorsController < ApplicationController
     split = params[:any].split("/")
     redirect_path =  redirect_from_old_site(split)
 
-    redirect_path = find_from_api unless redirect_path
+    #redirect_path = find_from_api unless redirect_path
 
-    if redirect_path && redirect_path != "404"
+    if redirect_path #&& redirect_path != "404"
       redirect_to redirect_path, :status => :moved_permanently,
         notice: "You have been redirected to GRID Arendal's new website. If this is not the content you are looking for, please use our new search by clicking the magnifying glass on the right hand side."
     else
@@ -123,7 +123,11 @@ class ErrorsController < ApplicationController
               when "trends-in-population-developed-and-developing-countries-1750-2050-estimates-and-projections_1616"
                 Graphic.where(title: "Trends in population, developed and developing countries, 1750-2050 (estimates and projections)").first
               end
-          resource_url(g)
+          if g
+            resource_url(g)
+          else
+            resources_url(media:"Graphic")
+          end
         end
       when "photolib"
         resources_url(media: "Photo")
