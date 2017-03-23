@@ -5,7 +5,9 @@ class ErrorsController < ApplicationController
     split = params[:any].split("/")
     redirect_path =  redirect_from_old_site(split)
 
-    if redirect_path
+    redirect_path = find_from_api unless redirect_path
+
+    if redirect_path && redirect_path != "404"
       redirect_to redirect_path, :status => :moved_permanently,
         notice: "You have been redirected to GRID Arendal's new website. If this is not the content you are looking for, please use our new search by clicking the magnifying glass on the right hand side."
     else
@@ -18,6 +20,15 @@ class ErrorsController < ApplicationController
   end
 
   private
+
+  def find_from_api
+    require 'net/http'
+    url = "http://service.grida.no/api/redirect?path=/#{params[:any]}"
+    url = url + ".#{params[:format]}" if params[:format]
+
+    uri = URI(url)
+    JSON.parse(Net::HTTP.get(uri))
+  end
 
   def redirect_from_old_site split
     case split[0].downcase
@@ -70,8 +81,6 @@ class ErrorsController < ApplicationController
           Publication.where(title: "Vital Climate Graphics").first
         elsif split[2] == "climate"
           Publication.where(title: "Vital Climate Graphics").first
-        else
-          publications_path
         end
       when "environmental_crime"
         Activity.programmes.where(title: "Environmental Crime").first
@@ -92,8 +101,6 @@ class ErrorsController < ApplicationController
           where(title: "State of the Environment and Spatial Planning").first
       when "blueforests"
         Activity.where(title: "Blue Forests Project").first
-      when "mastrec"
-        "http://news.grida.no/mastrec"
       when "bluesolutions"
         Activity.where(title: "Blue Solutions").first
       when "uarctic"
