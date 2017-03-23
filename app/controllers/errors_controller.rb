@@ -123,7 +123,11 @@ class ErrorsController < ApplicationController
               when "trends-in-population-developed-and-developing-countries-1750-2050-estimates-and-projections_1616"
                 Graphic.where(title: "Trends in population, developed and developing countries, 1750-2050 (estimates and projections)").first
               end
-          resource_url(g) if g
+          if g
+            resource_url(g)
+          else
+            resources_url(media:"Graphic")
+          end
         end
       when "photolib"
         resources_url(media: "Photo")
