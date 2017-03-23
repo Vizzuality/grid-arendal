@@ -33,10 +33,10 @@ class ErrorsController < ApplicationController
   def redirect_from_old_site split
     case split[0].downcase
       when "default"
-        root_path
+        root_url
       when "programmes"
         if split.size == 1
-          about_index_path
+          about_index_url
         elsif "blue-carbon" == split[1]
           Activity.programmes.where(title: "Blue Carbon").first
         elsif "environmental-crime" == split[1]
@@ -57,7 +57,7 @@ class ErrorsController < ApplicationController
         end
       when "publications"
         if split.size < 3
-          publications_path
+          publications_url
         elsif split[1] == "et"
           case split[2]
             when "ep2"
@@ -109,7 +109,7 @@ class ErrorsController < ApplicationController
         Activity.find(275) # exists in production
       when "graphicslib"
         if split.size < 3
-          resources_path(media: "Graphic")
+          resources_url(media: "Graphic")
         else
           g = case split[2]
               when "difference-between-eia-and-sea_5148"
@@ -123,12 +123,12 @@ class ErrorsController < ApplicationController
               when "trends-in-population-developed-and-developing-countries-1750-2050-estimates-and-projections_1616"
                 Graphic.where(title: "Trends in population, developed and developing countries, 1750-2050 (estimates and projections)").first
               end
-          resource_path(g)
+          resource_url(g)
         end
       when "photolib"
-        resources_path(media: "Photo")
+        resources_url(media: "Photo")
       when "video"
-        resources_path(media: "Video")
+        resources_url(media: "Video")
     end
   end
 end
