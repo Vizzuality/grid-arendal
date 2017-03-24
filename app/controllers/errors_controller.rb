@@ -4,12 +4,14 @@ class ErrorsController < ApplicationController
     redirect_path = nil
     split = params[:any].split("/")
     redirect_path =  redirect_from_old_site(split)
-
-    redirect_path = find_from_api unless redirect_path
+    user = User.where("LOWER(first_name) = LOWER(?)", params[:any]).first unless redirect_path
+    redirect_path = find_from_api if !redirect_path && !user
 
     if redirect_path.present? && !["404", "500"].include?(redirect_path)
       redirect_to redirect_path, :status => :moved_permanently,
         notice: "You have been redirected to GRID Arendal's new website. If this is not the content you are looking for, please use our new search by clicking the magnifying glass on the right hand side."
+    elsif user.present?
+      redirect_to staff_path(user)
     else
       respond_to do |format|
         format.html { render status: 404 }
