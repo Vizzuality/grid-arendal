@@ -4,7 +4,7 @@ class ErrorsController < ApplicationController
     redirect_path = nil
     split = params[:any].split("/")
     redirect_path =  redirect_from_old_site(split)
-    user = User.where("LOWER(first_name) = LOWER(?)", params[:any]).first unless redirect_path
+    user = User.where("LOWER(first_name) like LOWER(?)", "#{params[:any]}%").first unless redirect_path
     redirect_path = find_from_api if !redirect_path && !user
 
     if redirect_path.present? && !["404", "500"].include?(redirect_path)
