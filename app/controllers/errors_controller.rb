@@ -23,8 +23,7 @@ class ErrorsController < ApplicationController
 
   def find_from_api
     require 'net/http'
-    url = "http://service.grida.no/api/redirect?path=/#{params[:any]}"
-    url = url + ".#{params[:format]}" if params[:format]
+    url = "http://service.grida.no/api/redirect?path=#{request.fullpath}"
 
     uri = URI(url)
     res = Net::HTTP.get_response(uri).try(:body)
