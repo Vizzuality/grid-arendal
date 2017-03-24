@@ -7,7 +7,7 @@ class ErrorsController < ApplicationController
 
     redirect_path = find_from_api unless redirect_path
 
-    if redirect_path.present? && redirect_path != "404"
+    if redirect_path.present? && !["404", "500"].include?(redirect_path)
       redirect_to redirect_path, :status => :moved_permanently,
         notice: "You have been redirected to GRID Arendal's new website. If this is not the content you are looking for, please use our new search by clicking the magnifying glass on the right hand side."
     else
