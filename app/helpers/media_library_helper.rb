@@ -42,6 +42,8 @@ module MediaLibraryHelper
         "Cartographer"
       when MediaContent::TYPE_VIDEO
         "Produced by"
+      when MediaContent::TYPE_PHOTO
+        "Photographer"
       else
         "Taken by"
     end
