@@ -19,19 +19,21 @@
         <ul class="external-links">
           <% links.each do |link| %>
             <%
-              case link.label.downcase.strip
-                when 'pdf'
+                if link.is_a?(Document)
                   icon_id = 'icon-pdf'
                   url = link.document.url
-                when 'facebook'
-                  icon_id = 'icon-rrss-facebook'
-                  url = link.url
-                when 'twitter'
-                  icon_id = 'icon-rrss-twitter'
-                  url = "https://twitter.com/#{link.url}"
                 else
-                  icon_id = 'icon-rrss_web'
-                  url = link.url
+                  case link.label.downcase.strip
+                  when 'facebook'
+                    icon_id = 'icon-rrss-facebook'
+                    url = link.url
+                  when 'twitter'
+                    icon_id = 'icon-rrss-twitter'
+                    url = "https://twitter.com/#{link.url}"
+                  else
+                    icon_id = 'icon-rrss_web'
+                    url = link.url
+                  end
                 end
             %>
             <li>
