@@ -1,4 +1,4 @@
-<% avatar_url = if user.thumbnail.present?
+<% avatar_url = if user.thumbnail.exists?
                   user.thumbnail(:medium)
                 else
                   asset_path('staff/staff-default-avatar.png')
