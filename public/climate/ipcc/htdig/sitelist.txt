@@ -1,5 +1,0 @@
-http://www.grida.no/climate/ipcc/aviation
-http://www.grida.no/climate/ipcc/land_use
-http://www.grida.no/climate/ipcc/regional
-http://www.grida.no/climate/ipcc/tectran
-http://www.grida.no/climate/ipcc/emission

@@ -1,7 +1,0 @@
-/usr/local/bin/webcopy http://www-cger.nies.go.jp/atest/Japanese1.pdf
-date Tue, 27 Feb 2001 11:40:51 GMT
-server www-cger.nies.go.jp port 80 (/atest/)
-reference /atest/Japanese1.pdf accept
-getting http://www-cger.nies.go.jp:80/atest/Japanese1.pdf 200 OK
-storing /Japanese1.pdf
-end
