@@ -15,6 +15,7 @@
 #
 
 class Photo < MediaContent
+  include FlickrSync
   include PgSearch
 
   scope :not_in_album, -> { where(album_id: nil)}
@@ -47,35 +48,6 @@ class Photo < MediaContent
       where(label: [PhotoSize::MEDIUM, PhotoSize::SMALL]).
       where.not(url: nil).
       order(ordr).limit(1).first.try(:url)
-  end
-
-  def update_from_flickr
-    Flickr.set_flickr
-    photo_info = Flickr.get_photo_info self.external_id
-    unless photo_info.nil?
-      self.title = photo_info.title
-      self.publication_date = Date.parse(photo_info.dates.taken)
-      self.external_updated_at = Date.strptime(photo_info.dates.lastupdate, '%s')
-      split_it = photo_info.description.split("Author:")
-      self.description = split_it[0]
-      if self.author.blank?
-        # tries to get the author name from description
-        self.author = split_it.size > 1 ? split_it[1] : photo_info.owner.realname
-      end
-      self.external_url = photo_info.urls.first["_content"]
-      self.licence = photo_info.license
-      if photo_info.tags.any?
-        self.tag_list = photo_info.tags.map{|t| t["raw"]}
-      end
-      Flickr.get_sizes_for(photo_info.id).each do |size|
-        psize = self.photo_sizes.find_or_initialize_by(label: size.label)
-        psize.width = size.width
-        psize.height = size.height
-        psize.url = size.source
-        psize.save
-      end
-    end
-    self.save
   end
 
   class << self

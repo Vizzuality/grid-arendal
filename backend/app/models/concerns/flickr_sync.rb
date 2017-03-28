@@ -4,7 +4,50 @@ module FlickrSync
 
   included do
 
+
     def update_from_flickr
+      if self.single?
+        picture_update_from_flickr
+      elsif self.set?
+        set_update_from_flickr
+      end
+    end
+
+    def picture_update_from_flickr
+      return nil unless self.single?
+      Flickr.set_flickr
+      photo_info = Flickr.get_photo_info self.external_id
+      unless photo_info.nil?
+        self.title = photo_info.title
+        self.publication_date = Date.parse(photo_info.dates.taken)
+        self.external_updated_at = Date.strptime(photo_info.dates.lastupdate, '%s')
+        split_it = photo_info.description.split("Author:")
+        if split_it.size == 1
+          split_it = photo_info.description.split("This photo has been graciously provided to be used in the GRID-Arendal resources library by:")
+        end
+        self.description = split_it[0]
+        # tries to get the author name from description
+        self.author = split_it.size > 1 ? split_it[1].strip : photo_info.owner.realname
+
+        self.external_url = photo_info.urls.first["_content"]
+        self.licence = photo_info.license
+        if photo_info.tags.any?
+          self.tag_list = photo_info.tags.map{|t| t["raw"]}
+        end
+        Flickr.get_sizes_for(photo_info.id).each do |size|
+          psize = self.photo_sizes.find_or_initialize_by(label: size.label)
+          psize.width = size.width
+          psize.height = size.height
+          psize.url = size.source
+          psize.save
+        end
+      end
+      self.save
+    end
+
+    def set_update_from_flickr
+      return nil unless self.set?
+
       photoset = Flickr.get_photoset_by_id external_id
       return "No Flickr photoset was found" unless photoset
       updated_at = DateTime.strptime(photoset.date_update, '%s')
@@ -42,11 +85,13 @@ module FlickrSync
             pic.publication_date = Date.parse(photo_info.dates.taken)
             pic.external_updated_at = Date.strptime(photo_info.dates.lastupdate, '%s')
             split_it = photo_info.description.split("Author:")
-            pic.description = split_it[0]
-            if pic.author.blank?
-              # tries to get the author name from description
-              pic.author = split_it.size > 1 ? split_it[1] : photo_info.owner.realname
+            if split_it.size == 1
+              split_it = photo_info.description.split("This photo has been graciously provided to be used in the GRID-Arendal resources library by:")
             end
+            pic.description = split_it[0]
+            # tries to get the author name from description
+            pic.author = split_it.size > 1 ? split_it[1].strip : photo_info.owner.realname
+
             pic.external_url = photo_info.urls.first["_content"]
             pic.licence = photo_info.license
             if photo_info.tags.any?
