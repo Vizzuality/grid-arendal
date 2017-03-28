@@ -47,7 +47,8 @@
       </div>
     </div>
     <% if section.category === 'staff' %>
-      <%= render 'staff', users: @users, categories: @categories %>
+      <%= render 'staff', users: @users, categories: @categories,
+        section: section %>
     <% else %>
       <div class="row">
         <% if section.category.blank? %>
@@ -63,11 +64,14 @@
             <% when 'programmes' %>
               <%= render 'posts', posts: @programmes %>
             <% when 'vacancies' %>
-              <%= render 'vacancies', vacancies: @vacancies %>
+              <%= render 'vacancies', vacancies: @vacancies,
+                section: section %>
             <% when 'board' %>
-              <%= render 'board', board_members: @board_members %>
+              <%= render 'board', board_members: @board_members,
+                section: section %>
             <% when 'honorary-affiliate' %>
-              <%= render 'affiliates', affiliates: @affiliates %>
+              <%= render 'affiliates', affiliates: @affiliates,
+                section: section %>
             <% when 'annual-reports' %>
               <%= render 'posts', posts: @annual_reports %>
             <% when 'contact-us' %>

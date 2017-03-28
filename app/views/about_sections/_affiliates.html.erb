@@ -1,7 +1,17 @@
-<ul class="c-staff row">
-  <% affiliates.each do |user| %>
-    <li class="small-6 medium-3 large-2 columns">
-      <%= render 'shared/user', user: user %>
-    </li>
-  <% end %>
-</ul>
+<% if section.body.present? %>
+  <div class="small-12 column">
+    <div class="text -summary-alt">
+      <%= raw section.body %>
+    </div>
+  </div>
+<% end %>
+
+<div class="small-12 column">
+  <ul class="c-staff row">
+    <% affiliates.each do |user| %>
+      <li class="small-6 medium-3 large-2 columns">
+        <%= render 'shared/user', user: user %>
+      </li>
+    <% end %>
+  </ul>
+</div>

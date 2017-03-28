@@ -1,4 +1,9 @@
 <div class="small-12 column">
+  <% if section.body.present? %>
+    <div class="text -summary-alt">
+      <%= raw section.body %>
+    </div>
+  <% end %>
   <ul class="list text -summary-alt -bold">
     <% @vacancies.each do |vacancy| %>
       <li><%= link_to vacancy.title, vacancy %></li>

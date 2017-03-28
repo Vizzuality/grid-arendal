@@ -1,3 +1,13 @@
+<% if section.body.present? %>
+  <div class="row">
+    <div class="small-12 column">
+      <div class="text -summary-alt">
+        <%= raw section.body %>
+      </div>
+    </div>
+  </div>
+<% end %>
+
 <div class="row">
   <div class="small-12 column">
     <ul class="c-staff-selector">
