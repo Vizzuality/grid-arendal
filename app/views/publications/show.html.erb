@@ -15,7 +15,7 @@
 
 <% content_for :social_cards do %>
   <%= render 'shared/social_cards', title: "#{@publication.title} | GRID-Arendal",
-    description: @publication.description.truncate(120),
+    description: @publication.description.truncate(700),
     img_src: picture_url %>
 <% end %>
 
