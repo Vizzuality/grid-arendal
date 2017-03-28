@@ -1,0 +1,87 @@
+BODY {
+	COLOR: #000000; FONT-FAMILY: verdana, arial, helvetica, sans-serif; FONT-SIZE: 12px
+}
+P {
+	COLOR: #000000; FONT-FAMILY: verdana, arial, helvetica, sans-serif; FONT-SIZE: 12px
+}
+#searchbox {
+	WIDTH: 100px
+}
+#box150 {
+	WIDTH: 150px
+}
+#box160 {
+	WIDTH: 160px
+}
+#box240 {
+	WIDTH: 240px
+}
+#box300 {
+	WIDTH: 300px
+}
+#box400 {
+	WIDTH: 400px
+}
+#area360 {
+	WIDTH: 360px
+}
+#area390 {
+	WIDTH: 390px
+}
+#area370 {
+	WIDTH: 370px
+}
+#area300 {
+	WIDTH: 300px
+}
+.header {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 14px; FONT-STYLE: normal; FONT-WEIGHT: 700
+}
+UL {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px
+}
+.smalltext {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; FONT-STYLE: normal
+}
+.verysmalltext {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 9px; FONT-STYLE: normal
+}
+.subtitle {
+	COLOR: #669900; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-STYLE: normal; FONT-WEIGHT: 700
+}
+.subtitlest {
+	COLOR: #bb4e0d; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 14px; FONT-STYLE: normal; FONT-WEIGHT: 800
+}
+.subtitlestgr {
+	COLOR: #4c6f39; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-STYLE: normal; FONT-WEIGHT: 800
+}
+.subtitlefdn {
+	COLOR: #000099; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-STYLE: normal; FONT-WEIGHT: 700
+}
+.tableheader {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-STYLE: normal; FONT-WEIGHT: 700
+}
+.homepagelink {
+	COLOR: #333366; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-STYLE: normal; FONT-WEIGHT: 700
+}
+.efileshomepage {
+	COLOR: #666666; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-STYLE: normal; FONT-WEIGHT: 700
+}
+A {
+	COLOR: #333366
+}
+A:visited {
+	COLOR: #666666
+}
+A:hover {
+	COLOR: #3333ff
+}
+tyle DIV {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px
+}
+TD {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px
+}
+BODY {
+	BACKGROUND-COLOR: #ffffff
+}

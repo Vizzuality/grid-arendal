@@ -1,0 +1,43 @@
+<html>
+<head>
+<TITLE>Pachamama - Congratulations!</title>
+</head>
+
+<script language="JavaScript" src="/geo2000/pacha/script.js"></script>
+<body onload="top.scrollTo(0,0)" bgcolor="#ffffff" background="img/board.jpg">
+
+<p><br><br>
+<center><table width="65%" bgcolor="#ffffff" border=3 cellpadding=10 cellspacing=0><tr><td bgcolor="#ffffff" align=center>
+	<center>
+	<h2>Congratulations! You made it through the EcoMind Maze!</h2>
+
+	<p>
+	<script language="JavaScript">
+		var nWrongGuesses = (unescape(location.search.substring(1,location.search.length)));
+		if (nWrongGuesses == 0) {
+			document.write("You answered every question correctly the first time!  You're obviously an eco-champion!  Keep up the good work -- and spread the word!");
+		} else if (nWrongGuesses < 8) {
+			document.write("Excellent!  You clearly know a lot about difficult environmental issues.  ");
+			document.write("You only made ",nWrongGuesses," incorrect guesses.  Keep on keeping green!");
+		} else if (nWrongGuesses < 16) {
+			document.write("Great!	You know a lot about the environment, but you might have had trouble with some of the more difficult questions.	 ");
+			document.write("You made ",nWrongGuesses," incorrect guesses.  Maybe you should read <i>Pachamama</i> again!");
+		} else {
+			document.write("<p>Not bad, but some room for improvement.  You made ",nWrongGuesses," incorrect guesses.  Maybe you should read <i>Pachamama</i> again!");
+		}
+	</script>
+
+	<p><b>Thanks for playing the <i>EcoMind Maze</i>!</b>
+
+	<p><form  action="../contents.htm">
+	<input type="submit" value="End the game">
+	</form>
+	<p><form  action="index.htm">
+	<input type="submit" value="Play again">
+	</form>
+	</center>
+</td></tr></table>
+</center>
+
+
+</body>

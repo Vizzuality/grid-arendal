@@ -1,0 +1,39 @@
+BODY {
+	COLOR: #111111; FONT: 10pt Verdana,Geneva,Arial,Helvetica
+}
+A {
+	COLOR: #880000; FONT: 700 10pt Verdana,Geneva,Arial,Helvetica
+}
+A.small {
+	COLOR: #880000; FONT: 700 9pt Verdana,Geneva,Arial,Helvetica
+}
+B {
+	COLOR: #000000; FONT: 700 10pt Verdana,Geneva,Arial,Helvetica
+}
+B.small {
+	COLOR: #000000; FONT: 700 9pt Verdana,Geneva,Arial,Helvetica
+}
+H3 {
+	COLOR: #880000; FONT: 700 12pt Verdana,Geneva,Arial,Helvetica; MARGIN-BOTTOM: 5px; MARGIN-TOP: 2px
+}
+PRE {
+	COLOR: #111111; FONT: 10pt Verdana,Geneva,Arial,Helvetica
+}
+P {
+	COLOR: #111111; FONT: 10pt Verdana,Geneva,Arial,Helvetica
+}
+P.small {
+	COLOR: #111111; FONT: 9pt Verdana,Geneva,Arial,Helvetica
+}
+P.grey {
+	COLOR: #888888; FONT: 9pt Verdana,Geneva,Arial,Helvetica; MARGIN-BOTTOM: 2px
+}
+P.gray {
+	COLOR: #888888; FONT: 9pt Verdana,Geneva,Arial,Helvetica; MARGIN-BOTTOM: 2px
+}
+TD {
+	COLOR: #111111; FONT: 10pt Verdana,Geneva,Arial,Helvetica
+}
+UL {
+	COLOR: #111111; FONT: 10pt Verdana,Geneva,Arial,Helvetica
+}

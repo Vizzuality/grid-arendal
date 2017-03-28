@@ -1,0 +1,72 @@
+H1 {
+	COLOR: #84aace; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: large; FONT-WEIGHT: bold
+}
+H2 {
+	COLOR: #84aace; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: large; FONT-WEIGHT: bold
+}
+H3 {
+	COLOR: #84aace; FONT-SIZE: large; FONT-STYLE: italic; FONT-WEIGHT: bold
+}
+H4 {
+	COLOR: #84aace; FONT-STYLE: italic; FONT-WEIGHT: bold
+}
+TD.banner {
+	BACKGROUND-COLOR: #84aace
+}
+.wg1 {
+	COLOR: #b30000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.wg2 {
+	COLOR: #da3b02; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.wg3 {
+	COLOR: #f46f01; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.report_name {
+	COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12pt; FONT-WEIGHT: bold
+}
+.table {
+	BACKGROUND-COLOR: #eeeeee; BORDER-BOTTOM-COLOR: black; BORDER-BOTTOM-STYLE: none; BORDER-LEFT-COLOR: black; BORDER-LEFT-STYLE: none; BORDER-RIGHT-COLOR: black; BORDER-RIGHT-STYLE: none; BORDER-TOP-COLOR: #000000; BORDER-TOP-STYLE: none; MARGIN: 5px; PADDING-BOTTOM: 5px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; PADDING-TOP: 5px
+}
+.box {
+	BORDER-BOTTOM: #000000 1px solid; BORDER-LEFT: #000000 1px solid; BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 0.7em; MARGIN: 10px 5px 2px 2px; PADDING-BOTTOM: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; PADDING-TOP: 2px
+}
+.table_comment {
+	BACKGROUND-COLOR: #eeeeee; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-STYLE: normal
+}
+.figure {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 0.8em; FONT-STYLE: italic; PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; PADDING-TOP: 10px
+}
+.footnote_text {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 11px
+}
+.table_comment {
+	BACKGROUND-COLOR: #eeeeee; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 0.7em; FONT-STYLE: normal
+}
+.small {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 0.7em; FONT-STYLE: normal; TEXT-DECORATION: none
+}
+.question {
+	COLOR: #84aace; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+.question2 {
+	COLOR: #84aace; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 1em; FONT-WEIGHT: normal
+}
+.questionBlack {
+	COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 1em; FONT-WEIGHT: bold
+}
+.question2Black {
+	COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 1em; FONT-WEIGHT: normal
+}
+.blue1 {
+	COLOR: #085da5; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 0.9em; FONT-WEIGHT: bold
+}
+.blue2 {
+	COLOR: #085da5; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 0.8em; FONT-WEIGHT: bold
+}
+.textfield {
+	BACKGROUND-COLOR: #eeeeee; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px
+}
+.button {
+	BACKGROUND-COLOR: #eeeeee; COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px
+}

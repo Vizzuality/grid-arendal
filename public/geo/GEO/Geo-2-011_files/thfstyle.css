@@ -1,0 +1,15 @@
+A {
+	TEXT-DECORATION: none
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+A:link {
+	COLOR: #000080
+}
+A:visited {
+	COLOR: #800000
+}
+A:active {
+	COLOR: #000080
+}

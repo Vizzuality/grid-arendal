@@ -1,0 +1,90 @@
+BODY {
+	FONT-FAMILY: Garamond, Optima, Garamond, sans-serif; FONT-SIZE: 11pt; MARGIN-LEFT: 5%; MARGIN-RIGHT: 5%
+}
+P {
+	FONT-FAMILY: Garamond, Optima, Garamond, sans-serif; FONT-SIZE: 11pt
+}
+OL {
+	FONT-FAMILY: Garamond, Optima, Garamond, sans-serif; FONT-SIZE: 11pt
+}
+UL {
+	FONT-FAMILY: Garamond, Optima, Garamond, sans-serif; FONT-SIZE: 11pt
+}
+UL {
+	MARGIN-LEFT: 5%; MARGIN-TOP: 1%
+}
+H1 {
+	FONT-FAMILY: Garamond, Optima, Garamond, sans-serif; FONT-SIZE: 18pt; MARGIN-TOP: 1%; TEXT-ALIGN: center
+}
+H2 {
+	BACKGROUND-COLOR: #cfcfa0; FONT-FAMILY: Garamond, Optima, Garamond, sans-serif; FONT-SIZE: 14pt; TEXT-ALIGN: center
+}
+H3 {
+	FONT-FAMILY: Garamond, Optima, Garamond, sans-serif; FONT-SIZE: 13pt; FONT-STYLE: italic; FONT-WEIGHT: bold; TEXT-ALIGN: center
+}
+.H0 {
+	FONT-FAMILY: Garamond, Optima, Garamond, sans-serif; FONT-SIZE: 18pt; FONT-WEIGHT: bold; TEXT-ALIGN: center
+}
+.TOC0 {
+	FONT-FAMILY: Garamond, Optima, Garamond, sans-serif; FONT-SIZE: 18pt; FONT-WEIGHT: bold; TEXT-ALIGN: center
+}
+.TOC1 {
+	FONT-FAMILY: Garamond, Optima, Garamond, sans-serif; FONT-SIZE: 13pt; FONT-WEIGHT: bold; MARGIN-BOTTOM: 0%
+}
+.TOC2 {
+	FONT-FAMILY: Garamond, Optima, Garamond, sans-serif; FONT-SIZE: 12pt; MARGIN-BOTTOM: 1%; MARGIN-TOP: 1%
+}
+.TOC3 {
+	FONT-FAMILY: Garamond, Optima, Garamond, sans-serif; FONT-SIZE: 10pt; MARGIN-BOTTOM: 0%; MARGIN-TOP: 0%; TEXT-INDENT: 6pt
+}
+.TOC4 {
+	FONT-SIZE: 10pt; MARGIN-BOTTOM: 0%; MARGIN-TOP: 0%; TEXT-INDENT: 6pt
+}
+.TOC5 {
+	FONT-SIZE: 9pt; MARGIN-LEFT: 10%; MARGIN-RIGHT: 10%
+}
+UL.BOX {
+	FONT-SIZE: 10pt; MARGIN-BOTTOM: 1%; MARGIN-LEFT: 5%
+}
+LI.listbox {
+	FONT-SIZE: 10pt
+}
+.Box {
+	FONT-SIZE: 10pt
+}
+LI.box {
+	FONT-FAMILY: Optima, Garamond, sans-serif; FONT-SIZE: 8pt
+}
+.BoxTitle {
+	FONT-FAMILY: Garamond, Optima, Garamond, sans-serif; FONT-SIZE: 12pt; FONT-WEIGHT: bold; MARGIN-BOTTOM: 0%; MARGIN-TOP: 0%; PADDING-BOTTOM: 5pt; PADDING-LEFT: 5pt; PADDING-RIGHT: 5pt; PADDING-TOP: 5pt; TEXT-ALIGN: center
+}
+.BoxNewPara {
+	FONT-FAMILY: Garamond, Optima, Garamond, sans-serif; FONT-SIZE: 10pt; MARGIN-BOTTOM: 0%; MARGIN-TOP: 0%; PADDING-BOTTOM: 5pt; PADDING-LEFT: 5pt; PADDING-RIGHT: 5pt; PADDING-TOP: 5pt
+}
+.TableEntry {
+	FONT-FAMILY: Optima, Garamond, sans-serif; FONT-SIZE: 10pt
+}
+.TableHead {
+	FONT-FAMILY: Optima, Garamond, sans-serif; FONT-SIZE: 12pt; FONT-WEIGHT: bold
+}
+.TableTitle {
+	FONT-FAMILY: Optima, Garamond, sans-serif; FONT-SIZE: 12pt; FONT-WEIGHT: bold
+}
+.Header {
+	FONT-FAMILY: Optima, Garamond, sans-serif; FONT-SIZE: 12pt; FONT-WEIGHT: bold; TEXT-ALIGN: center
+}
+.list {
+	FONT-FAMILY: Garamond, Optima, Garamond, sans-serif; FONT-SIZE: 11pt
+}
+.Footnote {
+	FONT-SIZE: 9pt; MARGIN-BOTTOM: 0px; MARGIN-TOP: 0px
+}
+SUP {
+	FONT-FAMILY: Arial, helvetica, sans-serif; FONT-SIZE: 7pt
+}
+.doclink {
+	COLOR: black; FONT-FAMILY: Times New Roman, Times New Roman, Arial, Helvetica, sans-serif
+}
+.doclink:hover {
+	BACKGROUND: #cfcfa0; COLOR: black; FONT-FAMILY: Times New Roman, Times New Roman, Arial, Helvetica, sans-serif
+}

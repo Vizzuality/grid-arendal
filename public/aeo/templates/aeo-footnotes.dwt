@@ -1,0 +1,30 @@
+<html>
+<head>
+<!-- #BeginEditable "doctitle" -->
+<title>Africa Environment Outlook</title>
+<!-- #EndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<link rel="stylesheet" href="../aeo.css">
+<script language="JavaScript" src="aeo.js"></script>
+</head>
+
+<body bgcolor="#FFFFFF">
+<table width="100%" border="0" cellpadding="2" cellspacing="0" bgcolor="#6699CC">
+  <tr> 
+    <td class="footnoteBar">AFRICA ENVIRONMENT OUTLOOK</td>
+  </tr>
+</table>
+
+
+<hr>
+<h3>Footnotes for <!-- #BeginEditable "Chapter%20name%20or%20number" -->{Chapter 
+  name or number}<!-- #EndEditable --></h3>
+ <span class="footnoteText">
+<!-- #BeginEditable "Page_Content_Here" -->
+{Page_Content_Here}
+<!-- #EndEditable -->
+</span>
+<hr>
+</body>
+</html>

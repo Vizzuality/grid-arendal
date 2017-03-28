@@ -1,0 +1,1373 @@
+
+
+
+        Summary for Policymakers
+
+                   Land Use,
+        Land-Use Change,
+               and Forestry
+
+
+
+
+A Special Report of the Intergovernmental Panel on Climate Change
+
+
+
+
+
+  Published for the Intergovernmental Panel on Climate Change
+
+
+
+© 2000, Intergovernmental Panel on Climate Change
+
+
+ISBN: 92-9169-114-3
+
+
+
+Contents
+
+Foreword  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .       v
+
+Preface . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .    vii
+
+1.      Introduction  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .         3
+
+
+Part I
+
+2.      Global Carbon Cycle Overview  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                       3
+
+
+Part II
+
+3.      Issues Associated with Definitions  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                     5
+        3.1 Forests, Afforestation, Reforestration, and Deforestation  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                                  5
+        3.2 Additional Activities . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .               8
+
+4.      Carbon Accounting  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                8
+
+
+Part III
+
+5.      Methods for Measuring and Monitoring . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                             11
+
+6.      Estimates of Average Annual Carbon Stock Changes/Accounted for ARD Activities
+        and Some Additional Activities  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                    12
+        6.1 Afforestation, Reforestration, and Deforestation  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                            12
+        6.2 Additional Activities . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .              13
+
+7.      Project-based Activities  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .              13
+
+8.      Reporting Guidelines for the Relevant Articles of the Kyoto Protocol . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                                           16
+
+9.      Potential for Sustainable Development  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .                         17
+
+
+Appendices
+
+I.      Conversion Units  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .            18
+
+II. Relevant Portions of Kyoto Protocol Articles Discussed in this Special Report . . . . . . . . . . . . . . . . . . . . . . . .                                                    19
+
+III. Glossary  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .         21
+
+List of IPCC Outputs  . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .              23
+
+
+
+Foreword
+
+The Intergovernmental Panel on Climate Change (IPCC) was looks forward and examines future carbon uptake and emis-
+jointly established by the World Meteorological Organization sions that may result from employing varying definitional sce-
+(WMO) and the United Nations Environment Programme narios and carbon accounting strategies, linked to the Kyoto
+(UNEP) in 1988 to: (i) assess available information on the sci- Protocol, within the forestry and land-use sectors. 
+ence, the impacts, and the economics of, and the options for
+mitigating and/or adapting to, climate change; and (ii) provide, As is usual in the IPCC, success in producing this document
+on request, scientific/technical/socioeconomic advice to the has depended on the enthusiasm and cooperation of volunteers
+Conference of the Parties (COP) to the United Nations dispersed worldwide who give freely of their professional and
+Framework Convention on Climate Change (UNFCCC). Since personal time. We would like to express our gratitude to all the
+then, the IPCC has produced a series of Assessment Reports, Coordinating Lead Authors, Lead Authors, Contributing
+Special Reports, Technical Papers, methodologies, and other Authors, Review Editors, and Expert Reviewers. These indi-
+products that have become standard works of reference, wide- viduals have expended considerable effort to produce this
+ly used by policymakers, scientists, and other experts.               report and we are extremely grateful for their commitment to
+                                                                      the IPCC process.
+The Special Report on Land Use, Land-Use Change, and
+Forestry was prepared in response to a request from the United We would also like to express our sincere thanks to:
+Nations Framework Convention on Climate Change
+(UNFCCC) Subsidiary Body for Scientific and Technological               *    Robert T. Watson - the Chairman of the IPCC and
+Advice (SBSTA). At its Eighth Session in Bonn on 2­12 June                   Chair of this Special Report
+1998, SBSTA requested a report examining the scientific and             *    Ian Noble, Bert Bolin, and N. H. Ravindranath-the
+technical state of understanding for carbon sequestration strate-            Coordinators of this Special Report
+gies related to land use, land-use change, and forestry activities      *    Neal Leary, Osvaldo Canziani, and Martin Manning
+and relevant Articles of the Kyoto Protocol. The scope, struc-               (Working Group II); David Griggs, Fortunat Joos, and
+ture, and outline of the Special Report was approved by the                  John Stone (Working Group I); and Bert Metz, Eduardo
+IPCC in plenary meetings during its Fourteenth Session in                    Calvo, and Peter Kuikman (Working Group III)-the
+Vienna, Austria, from 1­3 October 1998.                                      Science Steering Committee for this Special Report
+                                                                        *    David J. Verardo and the staff of the Working Group II
+This Special Report discusses the global carbon cycle and how                Technical Support Unit
+different land use and forestry activities currently affect stand-      *    N. Sundararaman - the Secretary of the IPCC, and the
+ing carbon stocks and emissions of greenhouse gases. It also                 Secretariat staff.
+
+
+
+G.O.P. Obasi                                                          K. Töpfer
+
+Secretary-General                                                     Executive Director
+World Meteorological Organization                                     United Nations Environment Programme
+                                                                      and
+                                                                      Director-General
+                                                                      United Nations Office in Nairobi
+
+
+
+Preface
+
+The Intergovernmental Panel on Climate Change (IPCC) stocks for different ecosystems, current land area converted per
+Special Report on Land Use, Land-Use Change, and Forestry year (Mha yr­1), and total land available for two different time
+(SR-LULUCF) has been prepared in response to a request from periods: near term (between now and the end of the first com-
+the United Nations Framework Convention on Climate Change mitment period) and longer term (1990­2040). Project experi-
+(UNFCCC) Subsidiary Body for Scientific and Technological ence is also provided for several projects, primarily in tropical
+Advice (SBSTA). At its eighth session in Bonn, Germany, 2­12 countries.
+June 1998, the SBSTA requested a report examining the scien-
+tific and technical implications of carbon sequestration Implementation of the Kyoto Protocol requires mutually
+strategies related to land use, land-use change, and forestry acceptable definitions for a wide range of terms to ensure that
+activities. The scope, structure, and outline of this Special effective sequestration strategies are planned and implemented.
+Report was approved by the IPCC in plenary meetings during For instance, if key terms such as forests, afforestation, refor-
+its Fourteenth Session.                                             estation, and deforestation are not clearly defined or if carbon
+                                                                    accounting principles are not clearly established, it becomes
+This Special Report examines several key questions relating to difficult to comprehend the implications of different land-use
+the exchange of carbon between the atmosphere and the terres- activities. Hence, the challenge is to derive a set of definitions
+trial pool of aboveground biomass, below-ground biomass, and that are simple and consistent with the aims of the UNFCCC
+soils. Vegetation exchanges carbon dioxide between the atmos- and the Kyoto Protocol. To achieve this goal, definitions should
+phere and the terrestrial biosphere through photosynthesis and be applicable to all Parties and be addressed using data that can
+plant and soil respiration. This natural exchange has been occur- be readily accessed. This process will enable Parties to esti-
+ring for hundreds of millions of years. Humans are changing the mate carbon stock changes that would need to be included in
+natural rate of exchange of carbon between the atmosphere and the calculation of assigned amounts.
+the terrestrial biosphere through land use, land-use change, and
+forestry activities. Consequently, it is important to examine how In examining issues relating to land use, land-use change, and
+carbon flows between different pools and how carbon stocks forestry, several critical scientific and technical questions pre-
+change in response to afforestation, reforestation, and defor- sent themselves. What are the implications of using different
+estation (ARD) and other land-use activities.                       definitions or sets of definitions? Do the definitions need to be
+                                                                    flexible enough to accommodate our present understanding of
+The aim of the SR-LULUCF is to assist the Parties to the carbon dynamics while allowing for future innovations and
+Kyoto Protocol by providing relevant scientific and technical advances? How do we distinguish among direct human-
+information to describe how the global carbon cycle operates induced activities, indirect human-induced activities, and nat-
+and what the broad-scale opportunities and implications of ural environmental variability that affects carbon uptake and
+ARD and additional human-induced activities are, now and in release? How do we differentiate between pre- and post-1990
+the future. This Special Report also identifies questions that direct human activities? How do we measure changes in carbon
+Parties to the Protocol may wish to consider regarding defini- stocks and flows in a transparent and verifiable manner over
+tions and accounting rules.                                         time? How permanent are carbon stocks? To what extent do we
+                                                                    trade simplicity for accuracy in accounting?
+This Special Report should be helpful in the implementation of
+relevant Articles in the Kyoto Protocol by providing information In summary, the SR-LULUCF is written with a variety of ques-
+about measurement and monitoring techniques for tions in mind that examine the scientific and technical aspects
+assessing changes in carbon stocks in Annex I and non-Annex I of carbon sequestration in agricultural and forestry sectors as
+countries, the applicability of the Revised 1996 IPCC Guidelines well as the implications of land use, land-use change, and
+for National Greenhouse Gas Inventories for national and pro- forestry activities on environmental and socioeconomic issues,
+ject-level accounting, the implications of Articles 3.3 and 3.4, conservation, and sustainable resource management and devel-
+and project activities relating to sustainable development.         opment issues.
+
+This Special Report also estimates potential carbon yields from
+ARD and additional activities by evaluating changes in carbon Robert T. Watson and David J. Verardo
+
+
+
+SUMMARY FOR POLICYMAKERS
+
+LAND USE, LAND-USE CHANGE, AND FORESTRY
+
+
+
+
+A Special Report
+of the Intergovernmental Panel on Climate Change
+
+
+This summary, approved in detail at IPCC Plenary XVI (Montreal, Canada, 1­8 May 2000), represents
+the formally agreed statement of the IPCC concerning current understanding of land use, land-use
+change, and forestry activities and their relationship to the Kyoto Protocol.
+
+Based on a draft prepared by:
+
+Robert Watson (USA), Ian Noble (Australia), Bert Bolin (Sweden), N.H. Ravindranath (India), David Verardo (USA),
+Ken Andrasko (USA), Michael Apps (Canada), Sandra Brown (USA), Graham Farquhar (Australia), Donald Goldberg (USA),
+Steven Hamburg (USA), Richard Houghton (USA), Paul Jarvis (UK), Timo Karjalainen (Finland), Haroon Kheshgi (USA),
+Thelma Krug (Brazil), Werner Kurz (Canada), Daniel Lashof (USA), Bo Lim (UNDP), Willy Makundi (Tanzania),
+Martin Manning (New Zealand), Gregg Marland (USA), Omar Masera (Mexico), Daniel Murdiyarso (Indonesia),
+Brian Murray (USA), Reidar Persson (Indonesia), Neil Sampson (USA), Jayant Sathaye (USA), Robert Scholes (South Africa),
+Bernhard Schlamadinger (Austria), Wim Sombroek (The Netherlands), Stephen Prisley (USA), John Stone (Canada),
+Raman Sukumar (India), and Riccardo Valentini (Italy)
+
+
+
+1. Introduction                                                        4. Therefore, to assist the Parties to the Protocol, this Summary
+                                                                           for Policymakers (SPM) provides relevant scientific and
+1. Under Article 3.1 of the Kyoto Protocol, the Annex I Parties            technical information in three parts:
+    have agreed to limit and reduce their emissions of green-
+    house gases between 2008 and 2012.                                     *     Part I describes how the global carbon cycle operates
+                                                                                 and provides a context for the sections on ARD and
+2. The Kyoto Protocol makes provision for Annex I Parties to                     additional human-induced activities;
+    take into account afforestation, reforestation, and defor-             *     Part II addresses important issues regarding definitions
+    estation (ARD) and other agreed land use, land-use change,                   and accounting rules. It identifies a range of options and
+    and forestry (LULUCF) activities in meeting their commit-                    discusses implications and interrelationships among
+    ments under Article 3.                                                       options;
+                                                                           *     Part III provides information that governments might
+3. To implement the Kyoto Protocol, issues related to LULUCF                     find useful in considering these issues:
+    will have to be considered. Relevant issues may include for                  ­ An assessment of the usefulness of models and of
+    example:                                                                          the usefulness and costs of ground-based and
+                                                                                      remotely-sensed measurements and of monitoring
+    *    Definitions, including land-use change, forests, forestry                    techniques for assessing changes in carbon stocks;
+         activities, including afforestation, reforestation, and                 ­ The near-term (first commitment period) poten-
+         deforestation, carbon stocks, human-induced, and direct                      tial for carbon stock changes/accounting of activ-
+         human-induced;                                                               ities in Annex I countries and globally;
+    *    Methodological issues, such as:                                         ­ Issues of special significance to project-based
+         ­ Rules for accounting for carbon stock changes and                          activities;
+             for emissions and removals of greenhouse gases                      ­ An evaluation of the applicability of the Revised
+             from LULUCF activities, including:                                       1996 IPCC Guidelines for National Greenhouse
+             ­       Which carbon pools to include;                                   Gas Inventories for national and project-level
+             ­       How to implement "since 1990," "direct                           accounting in light of the Kyoto Protocol;
+                     human-induced," and "human-induced";                        ­ Implications of Articles 3.3 and 3.4 and project
+             ­       How to address the risks and effects of events                   activities on sustainable development (i.e., socioe-
+                     such as fires, pest outbreaks, and extreme                       conomic and environmental considerations).
+                     meteorological events; baselines; permanence;
+                     interannual and decadal climate variability;
+                     and leakage;
+             ­       Accuracy, precision, and uncertainties in Part I
+                     tracking carbon stocks and greenhouse
+                     gases;                                            2. Global Carbon Cycle Overview
+         ­ Approaches, such as geo-referencing and statisti-
+             cal sampling, associated with identifying lands 5. The dynamics of terrestrial ecosystems depend on interac-
+             with activities defined under Article 3.3, accepted           tions between a number of biogeochemical cycles, particu-
+             under Article 3.4, or associated with project-based           larly the carbon cycle, nutrient cycles, and the hydrological
+             activities under the Kyoto Protocol, and measuring            cycle, all of which may be modified by human actions.
+             and estimating changes in carbon stocks and green-            Terrestrial ecological systems, in which carbon is retained in
+             house gases;                                                  live biomass, decomposing organic matter, and soil, play an
+         ­ Verification procedures;                                        important role in the global carbon cycle. Carbon is
+    *    Determination of how and which additional activities              exchanged naturally between these systems and the atmos-
+         pursuant to Article 3.4 are included;                             phere through photosynthesis, respiration, decomposition,
+    *    How to link the first and subsequent commitment                   and combustion. Human activities change carbon stocks in
+         periods;                                                          these pools and exchanges between them and the atmosphere
+    *    Determination of how and which project-based activi-              through land use, land-use change, and forestry, among
+         ties are included;                                                other activities. Substantial amounts of carbon have been
+    *    What improvements, if any, are needed to the Revised              released from forest clearing at high and middle latitudes
+         1996 IPCC Guidelines for National Greenhouse Gas                  over the last several centuries, and in the tropics during the
+         Inventories and the Good Practice Guidance and                    latter part of the 20th century. [1.1.1.2]1
+         Uncertainty Management in National Greenhouse Gas
+         Inventories;                                                  6. There is carbon uptake into both vegetation and soils in ter-
+    *    What are the implications of and what, if any, national           restrial ecosystems. Current carbon stocks are much larger
+         and/or international sustainable development criteria
+         could be associated with Articles 3.3 and 3.4 and pro-        1. Numbers in brackets at the end of this and subsequent paragraphs
+         ject-based activities.                                        indicate relevant sections of the Special Report containing details.
+
+
+
+4                                                                                                          Land Use, Land-Use Change, and Forestry
+
+Table 1: Global carbon stocks in vegetation and soil carbon pools down to a depth of 1 m.
+                                               Area                                                  Global Carbon Stocks (Gt C)
+Biome                                        (109 ha)                         Vegetation                            Soil                              Total
+
+Tropical forests                                1.76                              212                                216                               428
+Temperate forests                               1.04                                59                               100                               159
+Boreal forests                                  1.37                                88                               471                               559
+Tropical savannas                               2.25                                66                               264                               330
+Temperate grasslands                            1.25                                  9                              295                               304
+Deserts and semideserts                         4.55                                  8                              191                               199
+Tundra                                          0.95                                  6                              121                               127
+Wetlands                                        0.35                                15                               225                               240
+Croplands                                       1.60                                  3                              128                               131
+
+Total                                          15.12                              466                              2 011                             2 477
+
+Note: There is considerable uncertainty in the numbers given, because of ambiguity of definitions of biomes, but the table still provides an overview of the
+magnitude of carbon stocks in terrestrial systems.
+
+
+     in soils than in vegetation, particularly in non-forested 9. Ecosystem models indicate that the additional terrestrial
+     ecosystems in middle and high latitudes (see                                          uptake of atmospheric carbon dioxide arising from the indi-
+     Table 1). [1.3.1]                                                                     rect effects of human activities (e.g., CO2 fertilization and
+                                                                                           nutrient deposition) on a global scale is likely to be main-
+7. From 1850 to 1998, approximately 270 (+ 30) Gt C has                                    tained for a number of decades in forest ecosystems, but may
+     been emitted as carbon dioxide (CO2) into the atmosphere                              gradually diminish and forest ecosystems could even become
+     from fossil fuel burning and cement production. About 136                             a source. One reason for this is that the capacity of ecosys-
+     (+ 55) Gt C has been emitted as a result of land-use change,                          tems for additional carbon uptake may be limited by nutri-
+     predominantly from forest ecosystems. This has led to an                              ents and other biophysical factors. A second reason is that the
+     increase in the atmospheric content of carbon dioxide of                              rate of photosynthesis in some types of plants may no longer
+     176 (+ 10) Gt C. Atmospheric concentrations increased                                 increase as carbon dioxide concentration continues to rise,
+     from about 285 to 366 ppm (i.e., by ~28%), and about 43%                              whereas heterotrophic respiration is expected to rise with
+     of the total emissions over this time have been retained in                           increasing temperatures. A third reason is that ecosystem
+     the atmosphere. The remainder, about 230 (+ 60) Gt C, is                              degradation may result from climate change. These conclu-
+     estimated to have been taken up in approximately equal                                sions consider the effect of future CO2 and climate change
+     amounts in the oceans and the terrestrial ecosystems. Thus,                           on the present sink only and do not take into account future
+     on balance, the terrestrial ecosystems appear to have been                            deforestation or actions to enhance the terrestrial sinks for
+     a comparatively small net source of carbon dioxide during                             which no comparable analyses have been made. Because of
+     this period. [1.2.1]                                                                  current uncertainties in our understanding with respect to
+                                                                                           acclimation of the physiological processes and climatic con-
+8. The average annual global carbon budgets for 1980­1989 and                              straints and feedbacks amongst the processes, projections
+     1989­1998 are shown in Table 2. This table shows that the                             beyond a few decades are highly uncertain. [1.3.3]
+     rates and trends of carbon uptake in terrestrial ecosystems are
+     quite uncertain. However, during these two decades, terres- 10. Newly planted or regenerating forests, in the absence of
+     trial ecosystems may have served as a small net sink for                              major disturbances, will continue to uptake carbon for 20 to
+     carbon dioxide. This terrestrial sink seems to have occurred                          50 years or more after establishment, depending on species
+     in spite of net emissions into the atmosphere from land-use                           and site conditions, though quantitative projections beyond
+     change, primarily in the tropics, having been 1.7 ±                                   a few decades are uncertain. [1.3.2.2]
+     0.8 Gt C yr­1 and 1.6 ± 0.8 Gt C yr­1 during these two
+     decades, respectively. The net terrestrial carbon uptake, that 11. Emissions of methane (CH4) and nitrous oxide (N2O)
+     approximately balances the emissions from land-use change                             are influenced by land use, land-use change, and forestry
+     in the tropics, results from land-use practices and natural                           activities (e.g., restoration of wetlands, biomass burning, and
+     regrowth in middle and high latitudes, the indirect effects of                        fertilization of forests). Hence, to assess the greenhouse gas
+     human activities (e.g., atmospheric CO2 fertilization and                             implications of LULUCF activities, changes in CH4 and N2O
+     nutrient deposition), and changing climate (both natural and                          emissions and removals - the magnitude of which is highly
+     anthropogenic). It is presently not possible to determine the                         uncertain - would have to be considered explicitly. There are
+     relative importance of these different processes, which also                          currently no reliable global estimates of these emissions and
+     vary from region to region. [1.2.1 and Figure 1-1]                                    removals for LULUCF activities. [1.2.2, 1.2.3, 3.3.2]
+
+
+
+Land Use, Land-Use Change, and Forestry                                                                                                                    5
+
+Table 2: Average annual budget of CO2 for 1980 to 1989 and for 1989 to 1998, expressed in Gt C yr-1 (error limits correspond to
+an estimated 90% confidence interval).
+
+                                                                                                            1980 to 1989                 1989 to 1998
+
+1) Emissions from fossil fuel combustion and cement production                                                5.5 ± 0.5                    6.3 ± 0.6a
+2) Storage in the atmosphere                                                                                  3.3 ± 0.2                     3.3 ± 0.2
+3) Ocean uptake                                                                                               2.0 ± 0.8                     2.3 ± 0.8
+4) Net terrestrial uptake = (1) ­ [(2)+(3)]                                                                   0.2 ± 1.0                     0.7 ± 1.0
+5) Emissions from land-use change                                                                             1.7 ± 0.8                    1.6 ± 0.8b
+6) Residual terrestrial uptake = (4)+(5)                                                                      1.9 ± 1.3                     2.3 ± 1.3
+
+ a    Note that there is a one-year overlap (1989) between the two decadal time periods.
+ b    This number is the average annual emissions for 1989­1995, for which data are available.
+
+
+
+Part II                                                                            15. Countries have defined forests and other wooded lands, for
+                                                                                            a number of national and international purposes, in terms of
+3. Issues Associated with Definitions                                                       (i) legal, administrative, or cultural requirements; (ii) land
+                                                                                            use; (iii) canopy cover; or (iv) carbon density (essentially bio-
+12. For purposes of this Special Report, in a given land area and                           mass density). Such definitions were not designed with the
+      time period, a full carbon accounting system would consist                            Kyoto Protocol in mind and, thus, they may not necessari-
+      of a complete accounting for changes in carbon stocks across                          ly suffice for the particular needs of Articles 3.3 and 3.4.
+      all carbon pools. Applying full carbon accounting to all                              [2.2.2, 3.2]
+      land in each country would, in principle, yield the net carbon
+      exchange between terrestrial ecosystems and the atmos- 16. Forest definitions based on legal, administrative, or cultur-
+      phere. However, the Kyoto Protocol specifies, among other                             al considerations have limitations for carbon accounting as
+      things, that attention focus onto those land areas subject to                         they may bear little relationship to the amount of carbon at
+      "direct human-induced" activities since 1990 (Article 3.3) or                         a site. [2.2.2, 3.2]
+      human-induced activities (Article 3.4). [2.3.2.5]
+                                                                                   17. Most definitions of forest are based in part on a single
+                                                                                            threshold of minimum canopy cover. However, such defin-
+3.1 Forests, Afforestation, Reforestation, and Deforestation                                itions may allow changes in carbon stocks to remain unac-
+                                                                                            counted under Article 3.3. For example, if a high threshold
+13. There are many possible definitions of a "forest" and                                   for canopy cover (e.g., 70% canopy cover) is used in the def-
+      approaches to the meaning of the terms "afforestation,"                               inition of a forest, then many areas of sparse forest and
+      "reforestation," and "deforestation" (ARD). The choice of                             woodland could be cleared or could increase in cover with-
+      definitions will determine how much and which land in                                 out the losses or gains in carbon being counted under Article
+      Annex I countries are included under the provisions of                                3.3. If a low threshold is set (e.g., 10% canopy cover), then
+      Article 3.3, lands associated with activities included under                          dense forest could be heavily degraded and significant
+      Article 3.3 (hereafter "lands under Article 3.3"). The amount                         amounts of carbon released, without the actions being des-
+      of land included will have implications for the changes in                            ignated as deforestation. Similarly, a forest, for example
+      carbon stocks accounted for under Article 3.3. [2.2.2, 2.2.3,                         with 15% canopy cover, could be considerably enhanced
+      3.2, 3.5.2, 3.5.3]                                                                    without the actions qualifying as reforestation or afforesta-
+                                                                                            tion under Article 3.3. Approaches to address partly these
+14. Seven definitional scenarios were developed that combine                                problems may include, inter alia, using national, regional, or
+      definitions of forest and ARD and reflect a range of                                  biome-specific thresholds (e.g., a low canopy cover for
+      approaches that can be taken. The scenarios are not intend-                           savannas and a high canopy cover for moist forests). [2.2.2,
+      ed to be exhaustive. They can be split into two representative                        3.2, 3.3.2]
+      groups, which are discussed in the SPM: (1) scenarios in
+      which only a forest/non-forest conversion (i.e., a land-use 18. Definitions of forests based on carbon-density thresholds
+      change triggers accounting under Article 3.3) (e.g., IPCC                             have similar issues with respect to thresholds as canopy
+      Definitional Scenario), and (2) scenarios in which land-                              cover-based definitions. [2.2.2]
+      cover change or activities trigger accounting under Article
+      3.3 (e.g., FAO Definitional Scenario). [2.2.2, 2.2.3, 3.2, 19. There are a number of approaches to definitions of afforesta-
+      3.5.2, 3.5.3, Table 3-4]                                                              tion, reforestation, and deforestation. One approach involves
+
+
+
+6                                                                                                 Land Use, Land-Use Change, and Forestry
+
+     the concept of land-use change. Deforestation can be defined               *     If emissions from harvesting during a commitment
+     as the conversion of forest land to non-forest land.                             period prior to regeneration are not counted (land-
+     Reforestation and afforestation can be defined as the con-                       based approach II; see Table 3), then during the first
+     version of non-forested lands to forests with the only dif-                      and subsequent commitment periods a net credit
+     ference being the length of time during which the land was                       would generally arise from a managed forest estate
+     without forest. [2.2.3, 3.2]                                                     that is approximately in carbon balance. This may be
+                                                                                      offset to some extent by delayed emissions from soils
+20. An alternative definition of deforestation might be based                         and harvest residues;
+     on a decrease in the canopy cover or carbon density by a                   *     If emissions from harvesting during a commitment peri-
+     given amount or crossing one of a sequence of thresholds.                        od are not counted (activity-based approach; see
+     Similarly, afforestation and reforestation could be defined in                   Table 3), then during the first and subsequent commit-
+     terms of an increase in canopy cover or carbon density.                          ment periods a net credit would arise from regeneration
+     None of these definitions involves the concept of a land-use                     in a managed forest estate that is approximately in
+     change. [2.2.2, 3.2]                                                             carbon balance. It would be practically very difficult to
+                                                                                      separate changes in soil carbon pools associated with
+21. Definitions of a forest based strictly on actual canopy cover                     harvesting and regeneration activities.
+     without consideration of potential canopy cover could lead                 In each of these approaches the accounted stock changes
+     to harvesting and shifting agriculture being referred to as                would generally be different from the actual net exchange of
+     deforestation and to regeneration being referred to as refor-              carbon between this example forest estate and the atmosphere
+     estation, thus creating additional areas of lands under Article            during a commitment period. [3.2, 3.5.2]
+     3.3. If the definition of a forest was based on the potential
+     canopy cover at maturity under planned land-use practices, 24. Afforestation is usually defined as the establishment of for-
+     harvesting/regeneration activities may not fall under Article              est on land that has been without forest for a period of time
+     3.3. [2.2.2, 2.2.3, 3.2]                                                   (e.g., 20­50 years or more) and was previously under a
+                                                                                different land use. The precise period that distinguishes
+22. Some commonly used definitions of reforestation include the                 afforested from reforested land is not important in account-
+     activity of regenerating trees immediately after disturbance               ing for lands covered under Article 3.3 provided afforestation
+     or harvesting where no land-use change occurs. If, for exam-               and reforestation are treated identically under the Protocol,
+     ple, the definition of deforestation or the accounting system              as they are in the Revised 1996 IPCC Guidelines for National
+     do not include disturbance and harvesting, then emissions                  Greenhouse Gas Inventories.2 [2.2.3, 3.3.2]
+     from a harvested stand will not be accounted for. In this
+     particular example, uptake due to regeneration would be 25. Article 3.3 encompasses ARD activities that have occurred
+     accounted for, resulting in potentially significant credits for            since 1990 but recognizes only verifiable carbon stock
+     which a corresponding net removal of carbon from the                       changes in each commitment period. This has several impli-
+     atmosphere would not occur. This issue could be considered                 cations. For example:
+     when developing the accounting system. [2.2.3.2]
+                                                                                *     For lands deforested between 1990 and the beginning
+23. There are several consequences of using definitions that lead                     of the first commitment period only a fraction of
+     to the creation of lands under Article 3.3 by the harvest-                       carbon stock changes (such as those from delayed
+     regeneration cycle (i.e., where harvesting is included in the                    carbon emissions from soil and wood products if they
+     definition of deforestation, or regeneration is included in the                  are accounted) will occur during the commitment
+     definition of reforestation). For example, a forest estate man-                  period and would be debited under Article 3.3. If these
+     aged on a sustainable-yield basis where an area of forest is cut
+     in a regular cycle (e.g., 1/50th of the forest is harvested and        2. The Glossary of the Revised 1996 IPCC Guidelines describes
+     regenerated each year on a 50-year rotation cycle) may be in           afforestation as "Planting of new forests on lands which, historically,
+     approximate carbon balance. However, in this case, only those          have not contained forests. These newly created forests are included in
+     stands harvested or regenerated since 1990 would be consid-            the category Changes in Forest and Other Woody Biomass Stocks in
+     ered lands under Article 3.3. The regrowth (carbon sink) on            the Land Use Change and Forestry module of the emissions inventory
+                                                                            calculations" and reforestation as "Planting of forests on lands which
+     these lands will be less than the carbon emissions due to har-         have, historically, previously contained forests but which have been
+     vesting until all stands of the estate are lands under Article 3.3.    converted to some other use. Replanted forests are included in the cate-
+     Different definitional and accounting approaches would have            gory Changes in Forest and Other Woody Biomass Stocks in the Land
+     different accounting consequences. For example:                        Use Change and Forestry module of the emissions inventory calcula-
+                                                                            tions." Deforestation does not appear in the Glossary of the Revised
+     *    If emissions from harvesting during a commitment peri-            1996 IPCC Guidelines. The Revised 1996 IPCC Guidelines state,
+          od are counted (land-based approach I; see Table 3), then         referring to land-use change, that "Conversion of forests is also
+                                                                            referred to as `deforestation' and it is frequently accompanied by
+          during the first and subsequent commitment periods a              burning." The Revised 1996 IPCC Guidelines were developed before
+          net debit could arise from a managed forest estate that           the Kyoto Protocol was adopted and therefore provisions may not be
+          is approximately in carbon balance;                               sufficient to meet the needs of the Kyoto Protocol.
+
+
+
+                                                                                                                                                                                                                                  Land Use
+Table 3: Estimate of accounted average annual carbon stock change for ARD activities. The IPCC and FAO Definitional Scenarios and three accounting approaches under
+the FAO Definitional Scenario have been applied to illustrate with the available data the effect of different accounting approaches. Other Definitional Scenarios described in
+Chapter 3, Table 3-4, have not been included in this analysis. The figures and ranges of values in the table are illustrative, provide first-order estimates, and may not encom-                                                              ,
+pass the full range of uncertainties. Negative numbers indicate carbon emissions and positive numbers carbon removals. For details, see Table 3-17 in Chapter 3.                                                                                   Land-Use Chang
+
+                                                                                                                                 Estimated Range of Accounted Average Annual Stock
+                                                                                                                                                Change 2008­2012 (Mt C yr­1)
+                                                                                                                                Includes carbon in aboveground and below-ground biomass,
+                                                 AR Average                  Area Change (Mha yr­1)                                      excludes carbon in soils and in dead organic matter                                                                         e
+                                               Rate of Uptake                                   Conversion               FAO Definitional              FAO Definitional FAO Definitional                                                                                  ,and F
+                                               (t C ha­1 yr­1);                                   between                     Scenario,                     Scenario,                 Scenario,                  IPCC
+                                              D Average Stock             Post-Harvest          Non-Forest                 Land-Based I                  Land-Based II            Activity-Based             Definitional                                                           o
+Region                        Activity            (t C ha­1)             Regeneration            and Forest                  Accounting                   Accounting                 Accounting                Scenario                                                                  restry
+Boreal Region                    AR                0.4 to 1.2                   3.1                   0.1                   ­209 to ­162                    ­56 to ­8                   5 to 48                  0 to 2
+Total (= Annex I)                 D                    35                                             0.5                         ­18                          ­18                        ­18                     ­18
+                            Total ARD                                                                                       ­227 to ­180                   ­74 to ­26                 ­13 to 30               ­18 to ­16
+
+Temperate Region                 AR                1.5 to 4.5                   5.4                   0.5                    -550 to -81                  -134 to 303                 81 to 519                 7 to 44
+Annex I                           D                    60                                             1.2                         -72                           -72                       -72                      -72
+                            Total ARD                                                                                       -622 to -153                  -206 to 231                  9 to 447                -65 to -28
+
+Annex I Total                    AR                                             8.5                   0.6                   -759 to -243                  -190 to 295                 87 to 573                 7 to 46
+                                  D                                                                   1.7                         ­90                          ­90                        ­90                     ­90
+                            Total ARD                                                                                       ­849 to ­333                  ­280 to 205                 ­3 to 483               ­83 to ­44
+
+Temperate Region                 AR                1.5 to 4.5                   n/a                   1.9                         n/a                           n/a                       n/a                  27 to 167
+Total                             D                    60                                             2.1                        ­126                          ­126                      ­126                     ­126
+                            Total ARD                                                                                             n/a                           n/a                       n/a                  ­99 to 41
+
+Tropical Region                  AR                  4 to 8                     n/a                   2.6                         n/a                           n/a                       n/a                 170 to 415
+Total                             D                    120                                           13.7                       ­1644                         ­1644                     ­1644                    ­1644
+                            Total ARD                                                                                             n/a                           n/a                       n/a              ­1474 to ­1229
+
+Global Total                     AR                                             n/a                   4.6                         n/a                           n/a                       n/a                 197 to 584
+(summing regional                 D                                                                  16.3                       ­1788                          ­788                     ­1788                    ­1788
+totals)                     Total ARD                                                                                             n/a                           n/a                       n/a              ­1591 to ­1204
+
+Notes: n/a = no number is provided because the area of regeneration after harvest in the tropical region and part of the temperate region was not available. In addition, regeneration after selective cutting, as it is often
+used in the tropics, is difficult to capture with the FAO Definitional Scenario. It is assumed that recent area conversion rates ["recent" = for Annex I Parties AR late 1980s/early 1990s and for D 1980s (except for Canada
+and Russian Federation early 1990s); ARD in other regions 1980s] have applied since 1990, and will continue to do so until 2012. The IPCC Definitional Scenario includes transitions between forest and non-forest land
+uses under Article 3.3. For the purposes of this table, it is assumed that not only planting, but also other forms of stand establishment such as natural establishment, are considered AR activities. The FAO Definitional
+Scenario includes the harvest/regeneration cycle, because regeneration is defined as reforestation. Within the FAO Definitional Scenario, three accounting approaches are distinguished (see paragraph 25 and Section
+3.3.2). Uptake rates are intended to span the range within which the average value for each region is expected to be. The lower bound of the estimated average annual stock change corresponds to the lower uptake rate in
+AR and the higher bound to the higher uptake rate. Trees have been assumed to grow according to a sigmoidal growth curve. Estimated area for conversion between non-forest and forest should be regarded as an upper
+limit for the temperate region total and the tropical region, because some countries may have reported plantations for 1990 but not for 1980, and because some of the plantations may not qualify as resulting from AR
+activities under the IPCC Definitional Scenario. Also, for tropical countries, the deforestation estimates are very uncertain and could be in error by as much as ±50%.                                                                                                                            7
+
+
+
+8                                                                                                  Land Use, Land-Use Change, and Forestry
+
+          lands are subsequently reforested then there may be an              (e.g., cropland management) or narrowly (e.g., change in
+          increase in carbon stocks during the commitment                     tillage method, fertilization, or cover crops). Under either
+          period and a credit under Article 3.3. This would mean              interpretation, it is, in principle, possible to choose either a
+          that the credit received would not match the actual                 land-based or an activity-based method of carbon account-
+          carbon stock changes or the net exchanges of carbon                 ing or a combination of both (see Section 4). These combined
+          with the atmosphere since 1990;                                     choices will affect the accuracy, feasibility, cost, trans-
+     *    Another accounting issue could arise when land is                   parency, and verifiability of monitoring and reporting of
+          reforested or afforested between 1990 and 2008 but                  emissions and removals, including non-CO2 greenhouse
+          stocks are reduced either by harvesting or natural                  gases, and attributing them to specific activities. [2.3.2.2,
+          disturbance during a commitment period. Even though                 4.3.1, 4.3.2]
+          the forest area and possibly carbon stocks may have
+          increased since 1990, a debit could be recorded in a 29. The term "broad activity" means an activity definition that
+          commitment period. This creates the possibility of a                is land- or area-based, where the net effect of all practices
+          negative incentive for establishing forests well in                 applied within the same area are included. A broad activity
+          advance of the first commitment period, because any                 definition is likely to require land-based accounting (see
+          stock increase prior to 2008 would not be credited but              paragraph 34). This definitional approach would capture
+          the later loss of this stock would be debited.                      the net emission or removal effects of practices that deplete
+     Such outcomes could possibly be addressed through                        carbon stocks as well as those that increase removals by
+     different combinations of definitional and accounting                    sinks. Broad activity definitions, particularly in cases where
+     approaches. [3.3.2]                                                      land-use change is involved, may make it difficult to separate
+                                                                              human-induced changes from naturally-induced changes.
+26. There are definitional and carbon accounting issues                       [2.3.2, 4.3.2]
+     concerning drawing a clear boundary between natural phe-
+     nomena and human-induced activities, when, for example, 30. The narrow definition of "activity" is based on individual
+     significant forest losses occur as a result of fires or distur-          practices, such as reduced tillage or irrigation water man-
+     bances such as pest outbreaks. In cases involving lands                  agement. The narrow definition may lend itself to activity-
+     under Article 3.3 or 3.4 where fires or pest outbreaks occur             based accounting, but land-based accounting is also possible.
+     in a forest, a question is whether accounting should, inter              Under activity-based accounting, discrete definitions and
+     alia: (i) count neither the loss nor subsequent uptake of car-           associated rates of emissions or removals are needed for
+     bon (which reflects the actual net change in carbon stocks on            each individual practice. Narrow definitions raise the poten-
+     those lands and exchange of carbon with the atmosphere in                tial for multiple activities to occur on a single land area,
+     the long term, but creates problems in continuing to account             raising accounting issues (see paragraph 33). Narrow activ-
+     for the area burnt/defoliated as lands under Article 3.3 or 3.4);        ity definitions may facilitate the separation of human-induced
+     (ii) count both the loss and subsequent uptake of carbon                 changes from natural influences (see paragraph 45). [4.2.1,
+     (which reflects the actual net change in carbon stocks on                4.3.2, 4.3.4]
+     those lands and exchange of carbon with the atmosphere, but
+     creates an initial carbon debit for the Party concerned); 4. Carbon Accounting
+     (iii) count only the loss of carbon (which would overestimate
+     the actual losses of carbon stocks, not represent the 31. A well-designed carbon accounting system would provide
+     exchanges of carbon with the atmosphere, and create future               transparent, consistent, comparable, complete, accurate, ver-
+     accounting problems); or (iv) count only the subsequent                  ifiable, and efficient recording and reporting of changes in
+     uptake (which would fail to reflect the actual changes in                carbon stocks and/or changes in greenhouse gas emissions by
+     carbon stock and would not represent the exchanges of car-               sources and removals by sinks from applicable land use,
+     bon with the atmosphere, and would provide carbon credits                land-use change, and forestry activities and projects under rel-
+     for the Party concerned). [2.2.3.3]                                      evant Articles of the Kyoto Protocol. Such data would be
+                                                                              needed to assess compliance with the commitments under the
+27. In cases involving lands that do not fall under Articles 3.3 or           Kyoto Protocol. Two possible accounting approaches towards
+     3.4, where fires or pest outbreaks trigger land-use change, the          meeting these requirements are outlined below, of which
+     consequences are similar to deforestation. If similar vege-              either one - or combination of the two - could be adopt-
+     tation cover is allowed to regenerate, such disturbances may             ed (see Figure 1). [2.3.1]
+     not lead to a long-term change in carbon stocks. [2.4.4,
+     2.2.3, 2.3.3]                                                        32. A "land-based" approach to accounting would take as its
+                                                                              starting point the change in carbon stock in applicable car-
+                                                                              bon pools on lands containing activities included under
+3.2 Additional Activities3
+                                                                          3. The technical issues addressed in paragraph 26 also apply to
+28. When the inclusion of additional activities under Article 3.4         additional activities adopted under Article 3.4, but are not repeated
+     is considered, it is possible to interpret "activity" broadly        here for conciseness.
+
+
+
+Land Use, Land-Use Change, and Forestry                                                                                              9
+
+                             Land-Based Accounting                                 Activity-Based Accounting 
+
+
+                      Definition of Applicable LULUCF Activities
+   STEP  1                                                                  Definition of Applicable LULUCF Activities
+                              under the Kyoto Protocol                                under the Kyoto Protocol
+                           referring to Specific Land Areas
+
+
+
+                                                                                   Changes in Carbon Stocks and
+   STEP  2                     Land Units per Activity                             Net Greenhouse Gas Emissions
+                                                                            per Activity, Unit of Area, and Time Period
+
+
+
+                            Changes in Carbon Stocks and
+   STEP  3                Net Greenhouse Gas Emissions per                                Land Area per Activity
+                              Land Unit and Time Period
+
+
+
+
+   STEP  4                    Sum over Land Units and                                   Sum over Activities and
+                                 Commitment Period                                        Commitment Period
+
+
+Figure 1: Accounting approaches.
+
+
+    Article 3.3 or accepted under Article 3.4. This involves first     once if it is subject to multiple activities. If the effects of
+    defining the applicable activities, and in the next step iden-     activities are not additive, this would result in inaccurate
+    tifying the land units on which these activities occur. Next,      accounting. In this case, the carbon stock would be especially
+    the change in carbon stocks on these land units during the rel-    difficult to verify. Alternatively, the Parties could decide
+    evant period is determined. In the land-based approach, it         that each land unit could contain no more than a single
+    could be difficult to factor out the impact on stocks of indi-     activity. In this case, the combined impact of multiple prac-
+    rect effects (see paragraph 44). Non-CO2 greenhouse gas            tices applied in the same area would be considered a single
+    emission estimates would also need to be accounted for.            activity. [2.3.2, 3.3.2, 4.3.3]
+    Modifications could be made regarding, for example, base-
+    lines, leakage, timing issues, permanence, and uncertainties. 34. The land-based approach to accounting could start either
+    Aggregate accounted CO2 emissions and removals are the             with the start of the activity or run for the entire commitment
+    sum of carbon stock changes (net of any modifications)             period, while the activity-based approach would start when
+    over all applicable land units over the specified time period.     the activity starts or at the beginning of the commitment peri-
+    [2.3.2, 3.3.2]                                                     od, whichever is later. Either accounting approach could
+                                                                       end according to decisions that the Parties might adopt. In the
+33. An "activity-based" approach to accounting would start             activity-based approach, stock changes prior to the start of
+    with the carbon stock change in applicable carbon pools            the activity would not be accounted, even if they occur in a
+    and/or emissions/removal of greenhouse gases attributable          commitment period. [2.3.2]
+    to designated LULUCF activities. After defining the applic-
+    able activities, each applicable activity's impact on carbon 35. Some activities must be persistently maintained to retain the
+    stocks is determined per unit area and time unit. This impact      stored carbon stocks, and this may influence the accounting
+    is multiplied by the area on which each activity occurs and        methods required. Conservation tillage, for example, may
+    by the years it is applied or the years of the commitment peri-    increase carbon stocks on cropland if carried on continu-
+    od. Modifications could be made regarding, for example,            ously, but where it is practiced for a time, then interrupted by
+    baselines, leakage, timing issues, permanence, and uncer-          a year of intensive tillage brought on by, for example, a
+    tainties. Aggregate accounted emissions and removals are           weather situation or crop change, much of the previous
+    calculated by summing across applicable activities.                multi-year gain in soil carbon can be lost. Land-based esti-
+    Potentially a given area of land could be counted more than        mates of the cropland estate should reflect the net effect of
+
+
+
+10                                                                                          Land Use, Land-Use Change, and Forestry
+
+      those gains and losses over the full area during the account-        could be to adjust estimated stock changes in a conservative
+      ing period and give verifiable results, provided statistically       way - understating increases and overstating decreases in
+      representative sampling procedures are in place. If activity-        stocks. The latter option could allow tradeoffs between mon-
+      based accounting occurs without sampling, it may report              itoring costs and the potential to receive increased carbon
+      results inconsistent with actual stock changes during the            credits or reduced debits, but would not be consistent with
+      accounting period. [2.3.2]                                           established principles for estimation of emissions and
+                                                                           removals in greenhouse gas inventories. [2.3.7]
+36. For technical reasons, only emissions and removals of CO2
+      can be determined directly as changes in carbon stocks. 39. Changes in carbon stocks in wood products could potentially
+      Methane emissions and removals cannot in practice be direct-         be accounted as part of the activity that is the source of the
+      ly measured as carbon stock changes, although CH4 and                wood products or as an independent wood products man-
+      N2O can be determined by other means. Methane and nitrous            agement activity. If management of wood products is treat-
+      oxide emissions from many land-use activities are included           ed as an additional activity under Article 3.4, then it may be
+      in Annex A of the Kyoto Protocol (e.g., rice cultivation,            necessary to exclude wood products from accounting under
+      enteric fermentation, and agricultural soils) and in the Revised     other Article 3.3 or 3.4 activities to avoid double-counting.
+      1996 IPCC Reporting Guidelines for National Greenhouse               Once wood products are in trade, they would be difficult in
+      Gas Inventories, and therefore they will be captured in              most instances to trace. The current IPCC default approach
+      national inventories. This is not the case, however, for emis-       assumes that the wood product pool remains constant over
+      sions of these gases related to forestry activities and projects,    time, and therefore does not account for it. However, if this
+      which are not included in Annex A, although some of these            pool is changing significantly over time, a potentially impor-
+      forestry activities are discussed in the 1996 Revised IPCC           tant pool may not be accounted for. [2.4.2, 3.3.2, 4.5.6,
+      Guidelines for National Greenhouse Gas Inventories. If the           6.3.3]
+      net emissions of CH4 and N2O are not considered, the full
+      climate impact of forestry activities may not be reflected in 40. Enhancement of carbon stocks resulting from land use,
+      the accounting system under the Kyoto Protocol. The treat-           land-use change, and forestry activities is potentially
+      ment of CH4 and N2O emissions under Article 3.3 may                  reversible through human activities, disturbances, or envi-
+      deserve further consideration and clarification. For agreed          ronmental change, including climate change. This potential
+      activities, Article 3.4 leaves open how net greenhouse gas           reversibility is a characteristic feature of LULUCF activi-
+      emissions will be accounted for in meeting the commit-               ties in contrast to activities in other sectors. This potential
+      ments under Article 3.1 of the Protocol. [2.3.2, 3.3.2]              reversibility and nonpermanence of stocks may require
+                                                                           attention with respect to accounting, for example, by ensur-
+37. Relevant carbon pools could include aboveground biomass,               ing that any credit for enhanced carbon stocks is balanced
+      litter and woody debris, below-ground biomass, soil car-             by accounting for any subsequent reductions in those
+      bon, and harvested materials. The impact on these different          carbon stocks, regardless of the cause. [2.3.6, 3.3.2]
+      carbon pools may vary significantly between activities and
+      types of projects. While methods exist to measure all carbon 41. Contiguous commitment periods under the Kyoto Protocol
+      pools, to date monitoring is not routinely performed on all          would avoid incentives in subsequent periods to concen-
+      pools and the costs vary significantly. A conservative               trate activities that reduce carbon stocks in time periods that
+      approach that would allow for selective accounting of carbon         were not covered. [2.3.2]
+      pools to reduce monitoring costs could be to include all
+      those pools anticipated to have reduced carbon stocks while 42. Policies by governments or other institutions (e.g., land
+      omitting selected pools anticipated, with a sufficient level of      tenure reform and tax incentives) may provide a framework
+      certainty, to have unchanged or increased carbon stocks.             and incentives for implementing LULUCF activities.
+      Similar approaches could be used for fluxes of non-CO2               Changes in markets may also affect the economic conditions
+      greenhouse gases. Under this approach, verifiability would           for land use, land-use change, and forestry activities. The
+      mean that only increases in carbon stocks and removal by             ability to measure the impact of these conditions and incen-
+      sinks that can be monitored and estimated could potentially          tives will depend, in part, upon the carbon inventory and
+      be credited. [2.3.7, 3.3.2, 4.2.1]                                   monitoring system in each country. However, it may be very
+                                                                           difficult for countries to assess the relative impact of policies
+38. Accounting for LULUCF activities under Articles 3.3 and 3.4            by governments or other institutions compared to other
+      includes different types of uncertainties, including mea-            human and natural factors that drive changes in carbon
+      surement uncertainty, uncertainty in identifying lands under         stocks. [2.3.5, 5.2.2]
+      Article 3.3 or 3.4, and uncertainty in defining and quantify-
+      ing baselines, if any. This uncertainty can be accounted for 43. Natural variability, such as El Niño cycles, and the indirect
+      in several ways. One approach is to extend the application of        effects of human activity, such as CO2 fertilization, nutrient
+      good practice guidance in the choice of methods and han-             deposition, and the effects of climate change, could signif-
+      dling of uncertainty in estimates which has been developed           icantly affect carbon stocks during a commitment period
+      by the IPCC for other inventory categories. Another approach         on lands under Article 3.3 or 3.4. The spatial distribution of
+
+
+
+Land Use, Land-Use Change, and Forestry                                                                                             11
+
+    the emissions and removals of greenhouse gases due to              Article 3.3 or 3.4 during the commitment periods, then the
+    these factors is uncertain, as is the portion of them              inventories of countries subject to this clause in Article 3.7
+    that may enter the accounting system. These emissions and          would not be calculated on the same basis as their 1990
+    removals could be potentially large compared to the com-           emissions base year or period. [3.3.2]
+    mitments in the first commitment period. This could be a sig-
+    nificant issue in the design of an accounting framework. 48. If different accounting rules are adopted for relevant Articles
+    [2.3.3]                                                            of the Kyoto Protocol, additional decision rules may be
+                                                                       needed to determine which accounting rule applies to land
+44. The Kyoto Protocol specifies that accounting under Article         that, over time, is subject to multiple types of activities. For
+    3.3 be restricted to "direct human-induced land-use change         example, one set of accounting rules could be given prima-
+    and forestry activities, limited to afforestation, reforesta-      cy in cases where more than one set could potentially apply
+    tion, and deforestation" occurring since 1990. For activities      and double-counting might result. [2.3.2, 3.3.2]
+    that involve land-use changes (e.g., from grassland/ pas-
+    ture to forest) it may be very difficult, if not impossible, to 49. Leakage is changes in emissions and removals of greenhouse
+    distinguish with present scientific tools that portion of the      gases outside the accounting system that result from activ-
+    observed stock change that is directly human-induced from          ities that cause changes within the boundary of the account-
+    that portion that is caused by indirect and natural factors.       ing system. There are four types of leakage: activity dis-
+    [2.3.4, 3.3.2]                                                     placement, demand displacement, supply displacement, and
+                                                                       investment crowding. If leakage occurs, then the accounting
+45. For those activities where only narrowly defined manage-           system will fail to give a complete assessment of the true
+    ment changes under Article 3.4 are involved (e.g.,                 aggregate changes induced by the activity. Although leakage
+    conservation tillage) and the land use remains the same, it        is in many cases a negative effect, situations, such as the
+    may be feasible to factor out partially natural variability        demonstration effect of new management approaches or
+    and indirect effects. One approach may be to subtract the          technology adoption, may occur where the emissions reduc-
+    stock changes on comparison plots where there have been            tions or removals of greenhouse gases extend beyond the
+    no changes in management practice from changes                     accounting system boundaries (positive spillover effect).
+    measured on plots with modified management activities. In          For some activities and project types, leakage may be
+    most cases, experimental manipulation or paired plots can          addressed by increasing the spatial and temporal scale of the
+    be used for this purpose, but they are likely to be expensive      accounting system boundaries (i.e., by including areas where
+    to apply over large areas. Ecosystem models can also be            changes in removal and emissions of greenhouse gases may
+    used but need further improvement to decrease uncertain-           be induced). However, leakage may extend beyond any
+    ties. Verifiability could be assisted by the application of a      activity accounting boundaries (e.g., beyond national bound-
+    combination of models and measurements. [2.3.4, 4.3.4]             aries). Leakage is of particular concern in project-level
+                                                                       accounting, but may also occur with activities under Articles
+46. Baselines could be used in some cases to distinguish between       3.3 and 3.4. [2.3.5.2, 5.3.3]
+    the effects of LULUCF activities and other factors, such as
+    natural variability and the indirect effects of human activi-
+    ties, as well as to factor out the effects of business-as-usual
+    and activities undertaken prior to 1990 on carbon stock Part III
+    accounts and net greenhouse gas emissions. If the concept
+    of a baseline was to be applied in national accounting for 5. Methods for Measuring and Monitoring
+    activities under Article 3.4, there are many options, which
+    include: (i) the stock/flux change that would have resulted 50. Lands under Articles 3.3 and 3.4 could be identified, moni-
+    from "business-as-usual" activities; (ii) the stock/flux change    tored, and reported using geographical and statistical
+    that would have resulted from the continuation of 1990             information. Changes in carbon stocks and net greenhouse
+    activity levels; (iii) the stock/flux change that would result     gas emissions over time can be estimated using some
+    in the absence of active management; (iv) performance              combination of direct measurements, activity data, and
+    benchmarks or standard management practice; and (v) the            models based on accepted principles of statistical analysis,
+    rate of change of stocks/fluxes in 1990. The first three of        forest inventory, remote-sensing techniques, flux measure-
+    these baseline options may involve the use of a counterfac-        ments, soil sampling, and ecological surveys. These
+    tual scenario. One difficulty with the use of counterfactual       methods vary in accuracy, precision, verifiability, cost, and
+    baselines is verification. [2.3.4, 4.6, 4.6.3.3]                   scale of application. The cost of measuring changes in
+                                                                       carbon stocks and net greenhouse gas emissions for a given
+47. Accounting under the terms land-use change and forestry in         area increases as both desired precision and landscape
+    Article 3.7 will determine which emissions and removals of         heterogeneity increase. [2.4, 3.4]
+    carbon will enter the 1990 base year or period for some
+    countries. If the land-use change activities giving rise to 51. The spatial resolution of monitoring has important impli-
+    these emissions and removals are not included under                cations for accuracy and costs. If a small minimum
+
+
+
+12                                                                                           Land Use, Land-Use Change, and Forestry
+
+      resolvable land area is used, the task and cost of monitoring         future research and model development and are likely to be
+      can become very demanding. If the spatial resolution is set           highly transferable between Parties. [2.4.2, 2.4.3, 4.2.2,
+      at a coarse scale, the data demands can be modest, but                5.4.1]
+      significant areas subject to an activity may be lost in the
+      averaging process. For example, if forests and deforestation
+      are defined in terms of canopy cover and canopy cover is 6. Estimates of Average Annual Carbon Stock
+      assessed over land areas of 100 ha, then deforestation of             Changes/Accounted for ARD Activities and Some
+      smaller areas within a unit may not take the canopy cover             Additional Activities
+      of the unit below the forest definition threshold. Thus,
+      changes in carbon stocks may not be accounted and, like- 6.1 Afforestation, Reforestation, and Deforestation
+      wise, afforestation or reforestation of small areas may not
+      be accounted. Hence, there are clear tradeoffs between an 55. Different definitions and accounting approaches under
+      accurate and precise assessment of changes in carbon                  Article 3.3 of the Kyoto Protocol produce different esti-
+      stocks and cost. However, an appropriate design should                mates of changes in carbon stocks. There are seven
+      result in a statistically reliable estimate. [2.2.2]                  Definitional Scenarios described in Chapter 3 of the under-
+                                                                            lying report. Table 3 illustrates, with data and methods avail-
+52. The technical capacity required by Annex I Parties to mea-              able at the time of the Special Report, the estimated carbon
+      sure, monitor, and verify carbon stock changes and net                stock changes accounted from ARD activities under the
+      greenhouse gas emissions under the Kyoto Protocol will be             IPCC and FAO Definitional Scenarios, assuming recent area
+      significantly affected by decisions of the Parties regarding          conversion rates remain constant and excluding carbon in
+      definitions of key terms related to land use, land-use change,        soils and wood products. Three different carbon accounting
+      and forestry activities. It will also depend on decisions on,         approaches have been applied to the FAO Definitional
+      inter alia, additional activities that may be included under          Scenario to illustrate the effect of different accounting
+      Article 3.4, and whether additional activities are defined            approaches. [3.5.3, 3.5.4, Table 3-4, Table 3-17]
+      broadly or narrowly. Depending upon decisions that may be
+      made, establishing a monitoring, reporting, and verification 56. The IPCC Definitional Scenario yields estimates of average
+      system under Articles 3.3 and 3.4 is likely to involve a sig-         annual accounted carbon stock changes from afforestation
+      nificant effort by Annex I Parties, given the technology,             and reforestation in Annex I Parties from 2008 to 2012 of 7
+      data, and resources required, and the short time available.           to 46 Mt C yr­1. This would be offset by annual changes in
+      [2.4.1, 3.4, 4.3.2, 4.3.5]                                            carbon stocks from deforestation of about ­90 Mt C yr­1, pro-
+                                                                            ducing a net stock change of -83 to ­44 Mt C yrr­1. If hypo-
+53. Annex I Parties generally have the basic technical capacity             thetically, for example, afforestation and reforestation rates
+      (soil and forest inventories, land-use surveys, and informa-          were to be increased in Annex I Parties by 20%4 for the
+      tion based on remote-sensing and other methods) to measure            years 2000 to 2012, estimated annual changes in carbon
+      carbon stocks and net greenhouse gas emissions in terrestrial         stocks would increase (from 7 to 46 Mt Cyrr­1) to 7 to 49 Mt
+      ecosystems. However, few, if any, countries perform all of            C yrr­1. If hypothetically, for example, deforestation rates
+      these measurements routinely, particularly soil inventories.          were to be decreased by 20%, estimated annual losses of car-
+      Some Annex I Parties may use existing capacity with mini-             bon stocks due to deforestation would reduce (from ­90 Mt
+      mal modification to implement the various Articles in the             C yrr­1) to ­72 Mt C yrr­1. [3.5.4]
+      Kyoto Protocol; however, some other Annex I Parties may
+      need to improve significantly their existing measurement sys- 57. The three accounting approaches under the FAO Definitional
+      tems in order to develop operational systems. Non-Annex I             Scenario yield different results. Estimated average annual
+      Parties may require technical, institutional, and financial           carbon stock changes in Annex I Parties from afforestation
+      assistance and capacity building for measuring, monitor-              and reforestation are ­759 to ­243 Mt C yrr­1 under the
+      ing, and verifying carbon stock changes as well as for                FAO land-based I approach; ­190 to 295 Mt C yrr­1 under the
+      estimating net greenhouse gas emissions. [2.4.6, 3.4.3, 4.2]          FAO land-based II approach; and 87 to 573 Mt C yr­1 under
+                                                                            the FAO activity-based approach. Estimated average annu-
+54. Technical methods for measuring and estimating changes in               al carbon stock changes from deforestation are about ­90 Mt
+      forest carbon stocks in aboveground biomass over a five-year          C yrr­1 in all three approaches, as in the IPCC Definitional
+      commitment period may be deemed to be sensitive enough                Scenario. [3.5.4]
+      to serve the requirements of the Protocol. Sensitive methods
+      for estimating below-ground carbon stocks also exist. 58. For comparison, the IPCC Definitional Scenario yields
+      However, changes in soil carbon stocks are in some instances          estimates of average annual accounted carbon stock
+      small and difficult to assess accurately over a five-year time        changes from afforestation and reforestation globally from
+      period. This problem may be addressed by adopting appro-              2008 to 2012 of 197 to 584 Mt C yr­1. This would be offset
+      priate sampling techniques supported by modeling that take
+      into account spatial variability. Methods that further improve 4. The 20% is an arbitrary value chosen to show the sensitivity of the
+      estimates of soil and vegetation carbon stock will depend on estimates to changes in practices.
+
+
+
+Land Use, Land-Use Change, and Forestry                                                                                                13
+
+    by annual changes in carbon stocks from deforestation of 64. Table 4, rather than providing precise projections, reports
+    about ­1 788 Mt C yrr­1, producing a net stock change of              calculated stock changes assuming an ambitious policy agen-
+    ­1 591 to ­1 204 Mt C yr­1. If, hypothetically, for                   da that promotes the application of activities to a significant-
+    example, afforestation and reforestation rates were to be             ly greater share of the relevant land base than would have oth-
+    increased globally by 20% for the years 2000 to 2012, esti-           erwise occurred. The assumed percentage of lands on which
+    mated annual changes in carbon stocks would increase                  the activity is applied is derived from considered profession-
+    (from 197 to 584 Mt C yr­1) to 208 to 629 Mt C yr­1.                  al judgment based on existing literature of what a range of sus-
+    [3.5.4]                                                               tained and effective initiatives, which vary across countries,
+                                                                          could achieve. The share of land on which the activity is
+59. In the IPCC Definitional Scenario and FAO Definitional                actually applied in 2010 depends to a great extent on the
+    Scenario with land-based I accounting approach, the                   accounting system under Article 3.4, the evolving economic
+    accounted carbon stock changes are broadly consistent with            and social aspects of the activity, and landowner response to
+    the 2008­2012 actual changes in carbon stocks from land               incentives, among other factors. Thus, the total annual stock
+    under Article 3.3. The IPCC and FAO Definitional Scenarios            changes in Table 4 (column 5) are likely to be on the high side.
+    bring different amounts of land under Article 3.3, hence the
+    estimated carbon stock changes in Table 3 differ.                 65. Table 4 estimates do not necessarily represent credits under
+                                                                          Article 3.4 of the Kyoto Protocol, even if such levels of
+60. In the FAO Definitional Scenario with land-based II and               stock change are achieved, because the Protocol may include
+    activity-based accounting approaches, the accounted carbon            approaches that limit the applicability of these calculations.
+    stock change is not consistent with the 2008­2012 actual
+    changes in carbon stocks on land under Article 3.3, except 66. Table 4 illustrates the estimated carbon stock changes from
+    in the case of short rotation cycles.                                 example additional activities within Annex I and globally,
+                                                                          assuming roughly similar levels of policy support. For exam-
+61. In neither of the two Definitional Scenarios is the account-          ple, Table 4 suggests that although conversion of cropland to
+    ed carbon stock change consistent with the 2008­2012 actu-            grassland can provide a relatively large carbon stock increase
+    al carbon stock changes, nor with the net exchanges with the          per hectare converted, forest management improvements,
+    atmosphere, at the national and global levels in part because         which can be applied over a larger land base, may provide
+    the land under Article 3.3 is small in comparison with the            relatively larger total annual increases. Very different esti-
+    national and global forest area. [3.3.2, 3.5.4]                       mates in changes of emissions and removals associated with
+                                                                          options for additional land use, land-use change, and forestry
+                                                                          activities would result from different definitions of additional
+6.2 Additional Activities                                                 activities that might be agreed under Article 3.4, different
+                                                                          accounting approaches, and different decisions that might be
+62. The magnitude of the stock changes from additional activ-             taken on implementation rules for Article 3.4.
+    ities that might be included under Article 3.4 rests, inter
+    alia, on any decisions that remain to be made in the process 67. There is potential for carbon uptake into biomass, which may
+    of implementing the Kyoto Protocol. A consideration of                be stored over a time period of decades in wood products.
+    carbon stocks changes and net emissions of greenhouse gas             Furthermore, biomass used for energy purposes, based on
+    emissions associated with additional activities on managed            waste by-products of wood/crops or from trees/crops grown
+    lands entails synthesizing available technical and scientific         expressly for this purpose, has the potential to lead to a
+    data, outlining the outcomes of one policy scenario, and              reduction in net greenhouse gas emissions by substituting for
+    assessing the aggregate impact of policies and other factors.         fossil fuels. [1.4.3, 1.4.4]
+    The scientific literature to support such an analysis is cur-
+    rently quite limited. [4.3]                                       68. Table 4 does not account for the possibly significant non-
+                                                                          CO2 greenhouse gas emissions and removals that could be
+63. One such scenario is presented in Table 4, to illustrate in a         influenced by the candidate activities. For example, the
+    general sense the potential scope for carbon stock increas-           rates do not reflect net emissions of CH4 or N2O from agri-
+    es through some broadly defined activities. It provides data          cultural practices or wetlands/permafrost management. The
+    and information on carbon stock changes for some candidate            table also does not include the carbon stock impact of the use
+    activities under Article 3.4 for the year 2010. This scenario         of biofuels and the changing wood product pools, and con-
+    relies on three components relating to the candidate activi-          sideration of forest management does not include avoided
+    ties: (1) an estimate of current relevant land areas (column          deforestation, which is dealt with in Table 3.
+    2); (2) an assumed percentage of those lands on which an
+    activity would be applied in 2010 (column 3); and (3) a
+    research-derived estimate of the annual rate of carbon stock 7. Project-Based Activities
+    increase per hectare (column 4). The uptake rate is multiplied
+    by the applicable land area to approximately calculate the 69. A LULUCF project can be defined as a planned set of
+    change in carbon stock in the year 2010 (column 5).                   activities aimed at reducing greenhouse gas emissions or
+
+
+
+14                                                                                                                  Land Use, Land-Use Change, and Forestry
+
+Table 4: Relative potential in 2010 for net change in carbon stocks through some improved management and changed land-use
+activities.a
+
+                                                                                           (3) Assumed                 (4) Net Annual                (5) Estimated
+                                                                                      Percentage of Total              Rate of Change                 Net Change
+                                                                      (2) Total        Area of Column 2              in Carbon Stocks             in Carbon Stocks
+                                                                        Areab            under Activity                 per Hectareb                      in 2010
+ (1) Activity                                                           (Mha)              in 2010 (%)                  (t C ha­1 yr­1)                (Mt C yr­1)
+ A. Annex I Countries
+
+ (a) Improved Management within a Land Usec
+       Forest Management                                                1 900                    10                             0.5                         100
+       Cropland Management                                                 600                   40                             0.3                           75
+       Grazing Land Management                                          1 300                    10                             0.5                           70
+       Agroforestry                                                         83                   30                             0.5                           12
+       Rice Paddies                                                           4                  80                             0.1                           <1
+       Urban Land Management                                                50                     5                            0.3                            1
+ (b) Land-Use Change
+       Conversion of Cropland to Grassland                                 600                     5                            0.8                           24
+       Agroforestry                                                         <1                     0                               0                           0
+       Wetland Restoration                                                 230                     5                            0.4                            4
+       Restoring Severely Degraded Land                                     12                     5                            0.25                           1
+
+ B. Global Estimates
+
+ (a) Improved Management within a Land Use
+       Forest Management                                                4 050                    10                             0.4                         170
+       Cropland Management                                              1 300                    30                             0.3                         125
+       Grazing Land Management                                          3 400                    10                             0.7                         240
+       Agroforestry                                                        400                   20                             0.3                           26
+       Rice Paddies                                                        150                   50                             0.1                            7
+       Urban Land Management                                               100                     5                            0.3                            2
+ (b) Land-Use Change
+       Agroforestry                                                        630                   20                             3.1                         390
+       Conversion of Cropland to Grassland                              1 500                      3                            0.8                           38
+       Wetland Restoration                                                 230                     5                            0.4                            4
+       Restoring Severely Degraded Land                                    280                     5                            0.3                            3
+
+ a Totals were not included in the table for several reasons: (i) The list of candidate activities is not exclusive or complete; (ii) it is unlikely that all countries
+      would apply all candidate activities; and (iii) the analysis does not presume to reflect the final interpretations of Article 3.4. Some of these estimates reflect
+      considerable uncertainty.
+ b A summary of reference sources is contained in Tables 4-1 and 4-4 of this Special Report. Calculated values were rounded to avoid the appearance of precision
+      beyond the intent of the authors. The rates given are average rates that are assumed to remain constant to 2010.
+ c Assumed to be the best available suite of management practices for each land use and climatic zone.
+
+
+
+        enhancing carbon stocks that is confined to one or more                                and quantify emissions and uptake. Generally, these projects
+        geographic locations in the same country and specified                                 do not report all greenhouse gas emissions or estimate leak-
+        time period and institutional frameworks such as to allow                              age, and few have independent review.
+        net greenhouse gas emissions or enhancing carbon stocks
+        to be monitored and verified. Experience is being gained in 71. However, through the experience of LULUCF projects aimed
+        Activities Implemented Jointly (AIJ) and other LULUCF                                  to mitigate climate change, it is possible in some cases to
+        projects that are under initial stages of implementation in at                         develop approaches to address some of the critical issues (see
+        least 19 countries.                                                                    Table 5).
+
+70. Assessment of the experience of these projects is constrained 72. There are 10 projects aimed at decreasing emissions through
+        by the small number, the limited range of project types, the                           avoiding deforestation and improving forest management,
+        uneven geographic distribution, the short period of field                              and 11 projects aimed at increasing the uptake of carbon -
+        operations to date, and the absence of an internationally                              mostly forest projects in tropical countries (see Table 5).
+        agreed set of guidelines and methods to establish baselines                            [5.2.2]
+
+
+
+Land Use, Land-Use Change, and Forestry                                                                                                                                15
+
+Table 5: Carbon uptake/estimated emissions avoided from carbon stocks, assuming no leakage outside the project boundaries, by
+selected AIJ Pilot Phase and other LULUCF projects, in some level of implementation.a,b,c,d,e
+
+                                                                                                                                                   Estimated
+                                                                                                                                                   Emissions
+                                                                                               Estimated                Accumulated              Avoided from
+                                                                    Accumulated             Carbon Uptake                 Estimated             Carbon Stocks
+                                                                        Carbon              per Spatial Unit              Emissions             per Spatial Unit
+                                                                     Uptake over               during the             Avoided over the             during the
+                                                                   Project Lifetime         Project Lifetime          Project Lifetime          Project Lifetime
+                                               Land                      (Mt C)                 (t C ha­1)                  (Mt C)                  (t C ha­1)
+                                               Area
+ Project Type (number of projects)            (Mha)                                 assuming no leakage outside the project boundaries
+
+ Forest Protection (7)f                                2.8                                                                    41­48                     4­252
+ Improved Forest Management (3)                      0.06                                                                       5.3                    41­102
+ Reforestation and Afforestation (7)                   0.1             10­10.4                    26­328
+ Agroforestry (2)                                      0.2            10.5­10.8                    26­56
+ Multi-Component and                                 0.35                  9.7                    0.2­129
+ Community Forest (2)
+
+ a Projects included are those for which we have sufficient data. Soil carbon management, bioenergy, and other projects are not included for this reason.
+ b "Some level of implementation" - Included projects have been partially funded and have begun activities on the ground that will generate increases in car-
+   bon stocks and reductions in greenhouse gas emissions.
+ c "Other LULUCF projects" - Refers to selected non-AIJ projects and projects within Annex I countries.
+ d Estimated changes in carbon stocks generally have been reported by project developers, do not use standardized methods, and may not be comparable; only
+   some have been independently reviewed.
+ e Non-CO2 greenhouse gas emissions have not been reported.
+ f Protecting an existing forest does not necessarily ensure a long-term contribution to the mitigation of the greenhouse effect because of the potential for leak-
+   age and reversibility through human activities, disturbances, or environmental change. Table 5 does not provide an assessment in relation to these issues.
+   Sound project design and management, accounting, and monitoring would be required to address these issues.
+
+
+
+73. Methods of financial analysis among these projects have not                            emissions and to have other benefits include consistency
+     been comparable. Moreover the cost calculations do not                                with national and/or international sustainable development
+     cover, in most instances, inter alia, costs for infrastructure,                       goals, and institutional and technical capacity to develop and
+     monitoring, data collection and interpretation costs, oppor-                          implement project guidelines and safeguards. [2.5.2, 5.6]
+     tunity costs of land and maintenance, or other recurring
+     costs, which are often excluded or overlooked. Recognizing 76. The accounting of changes in carbon stocks and net green-
+     the different methods used, the undiscounted cost and invest-                         house gas emissions involve a determination that project
+     ment estimates range from US$ 0.1­28 per ton of carbon,                               activities lead to changes in carbon stocks and net greenhouse
+     simply dividing project cost by their total reported accumu-                          gas emissions that are additional to a without-project base-
+     lated carbon uptake or estimated emissions avoided, assum-                            line. Currently there is no standard method for determining
+     ing no leakage outside the project boundaries. [5.2.3]                                baselines and additionality. Approaches include determining
+                                                                                           project-specific baselines or generic benchmarks. Most AIJ
+74. Project-level financial analysis methods are widely used                               projects have used a project-specific approach that has an
+     and fairly standardized in development assistance and private                         advantage of using better knowledge of local conditions
+     investment projects. But they have yet to be consistently                             yielding more accurate prediction. A disadvantage is that pro-
+     applied to, and reported for, LULUCF projects aiming at mit-                          ject developers may choose scenarios that maximize their
+     igating climate change. Guidelines for developing methods                             projected benefits. Baselines may be fixed throughout the
+     of financial analysis may be needed in the future. [5.2.3]                            duration of a project or periodically adjusted. Baseline
+                                                                                           adjustments would ensure more realistic estimates of changes
+75. LULUCF projects aiming to mitigate climate change may                                  in carbon uptake or greenhouse gas emissions but would cre-
+     provide socioeconomic and environmental benefits primar-                              ate uncertainties for project developers. [5.3.2, Table 5-4]
+     ily within project boundaries, although they may also pose
+     risks of negative impacts. Experience from most of the pilot 77. Projects that reduce access to land, food, fiber, fuel, and
+     projects to date indicates that involvement of local stake-                           timber resources without offering alternatives may result in
+     holders in the design and management of project activities                            carbon leakage as people find needed supplies elsewhere.
+     is often critical. Other factors affecting the capacity of pro-                       A few pilot projects have been designed with the aim of
+     jects to increase carbon uptake and avoid greenhouse gas                              reducing leakage by explicitly incorporating components
+
+
+
+16                                                                                             Land Use, Land-Use Change, and Forestry
+
+      that supply the resource needs of local communities (e.g.,              project, such as introduction of good practice management
+      establishing fuelwood plantations to reduce pressures on                systems, diversification of project activities and funding
+      other forests), and that provide socioeconomic benefits that            sources, self-insurance reserves, involvement of local
+      create incentives to maintain the project. Due to leakage,              stakeholders, external auditing, and verification. External
+      the overall consideration of the climate change mitigation              approaches for risk reduction include standard insurance
+      effects of a project may require assessments beyond                     services, regional carbon pools, and portfolio diversifica-
+      the project boundary, as addressed in paragraph 49. [2.3,               tion. [5.3.5]
+      5.3.3]
+                                                                          82. Techniques and tools exist to measure carbon stocks in pro-
+78. Project accounting and monitoring methods could be                        ject areas relatively precisely depending on the carbon pool.
+      matched with project conditions to address leakage issues. If           However, the same level of precision for the climate change
+      leakage is likely to be small, then the monitoring area can be          mitigation effects of the project may not be achievable
+      set roughly equal to the project area. Conversely, where                because of difficulties in establishing baselines and due to
+      leakage is likely to be significant the monitoring area could           leakage. Currently, there are no guidelines as to the level of
+      be expanded beyond the project area, although this would be             precision to which pools should be measured and moni-
+      more difficult when the leakage occurs across national                  tored. Precision and cost of measuring and monitoring are
+      boundaries. Two possible approaches could then be used to               related. Preliminary limited data on measured and moni-
+      estimate leakage. One would be to monitor key indicators of             tored relevant aboveground and below-ground carbon pools
+      leakage, and the second would be to use standard risk coef-             to precision levels of about 10% of the mean at a cost of about
+      ficients developed for project type and region. In either case,         US$ 1­5 per hectare and US$ 0.10­0.50 per ton of carbon
+      leakage could be quantified and subsequently changes in car-            have been reported. Qualified independent third-party veri-
+      bon stock and greenhouse gas emissions attributed to the pro-           fication could play an essential role in ensuring unbiased
+      ject could be reestimated. The effectiveness of these two               monitoring. [5.4.1, 5.4.4]
+      approaches is untested. [5.3.3]
+
+79. LULUCF projects raise a particular issue with respect to 8. Reporting Guidelines for the
+      permanence (see paragraph 40). Different approaches have                Relevant Articles of the Kyoto Protocol
+      been proposed to address the duration of projects in rela-
+      tion to their ability to increase carbon stocks and decrease 83. Under Article 5.2 of the Kyoto Protocol, the Revised 1996
+      greenhouse gas emissions, inter alia: (i) They should be                Guidelines for National Greenhouse Gas Inventories provide
+      maintained in perpetuity because their "reversal" at any                the basis for the accounting and reporting of anthropogenic
+      point in time could invalidate a project; and (ii) they should          emissions by sources and removals by sinks of all greenhouse
+      be maintained until they counteract the effect of an equiva-            gases not controlled by the Montreal Protocol. These
+      lent amount of greenhouse gases emitted to the                          Guidelines were developed to estimate and report national
+      atmosphere. [5.3.4]                                                     greenhouse gas inventories under the United Nations
+                                                                              Framework Convention on Climate Change (UNFCCC),
+80. Several approaches could be used to estimate the changes in               not for the particular needs of the Kyoto Protocol. However,
+      carbon stocks and greenhouse gas emissions of LULUCF                    the Guidelines do provide a framework for addressing  the
+      projects: (i) estimating carbon stocks and greenhouse gas               accounting and reporting needs of the Kyoto Protocol.
+      emissions at a given point in time; (ii) estimating the average         Elaboration of the Land-Use Change and Forestry Sector of
+      changes of carbon stocks or greenhouse gas emissions over               the Guidelines may be needed, reflecting possible decisions
+      time in a project area; or (iii) allowing for only a part of the        by the Parties for accounting and reporting LULUCF under
+      total changes in carbon stocks or greenhouse gas emissions              the Kyoto Protocol, taking into account, inter alia:
+      for each year that the project is maintained (e.g., tonne-year
+      method). The year-to-year distribution of changes in carbon             *    Any decisions made by Parties on ARD under Article 3.3
+      stocks and greenhouse gas emissions over the project dura-                   and on additional activities under Article 3.4; [6.3.1,
+      tion varies according to the accounting method used. [5.4.2,                 6.3.2]
+      Table 5-9]                                                              *    The need to ensure transparency, completeness, con-
+                                                                                   sistency, comparability, accuracy, and verifiability;
+81. LULUCF projects are subject to a variety of risks because                      [6.2.2, 6.2.3, 6.4.1]
+      of their exposure to natural and anthropogenic factors.                 *    Consistent treatment of Land-Use Change and Forestry
+      Some of these risks particularly pertain to land-use activi-                 as other Sectors, with respect to uncertainty management
+      ties (e.g., fires, extreme meteorological events, and pests                  and other aspects of good practice; [6.4.1]
+      for forests), while others are applicable to greenhouse gas             *    Any decisions adopted by Parties to address other
+      mitigation projects in both LULUCF and energy sectors                        accounting issues (e.g., permanence, the meaning of
+      such as political and economic risks. Risk reduction could                   "human induced" and "direct human induced," wood
+      be addressed through a variety of approaches internal to the                 products, and project based activities). [6.4.1]
+
+
+
+Land Use, Land-Use Change, and Forestry                                                                                              17
+
+9. Potential for Sustainable Development                                across countries or regions, there may be incentives to
+                                                                        locate activities and projects in areas with less stringent
+84. Consideration would need to be given to synergies and               environmental or socioeconomic criteria. [2.5.2]
+    tradeoffs related to LULUCF activities under the UNFCCC
+    and its Kyoto Protocol in the context of sustainable devel- 88. Several sustainable development principles are incorporat-
+    opment including a broad range of environmental, social, and        ed in other multilateral environmental agreements, includ-
+    economic impacts, such as: (i) biodiversity; (ii) the quanti-       ing the United Nations Convention on Biological Diversity,
+    ty and quality of forests, grazing lands, soils, fisheries, and     the United Nations Convention to Combat Desertification,
+    water resources; (iii) the ability to provide food, fiber, fuel,    and the Ramsar Convention on Wetlands. Consideration
+    and shelter; and (iv) employment, human health, poverty, and        may be given to the development of synergies between
+    equity. [2.5.1, 3.6]                                                LULUCF activities and projects that contribute to the miti-
+                                                                        gation or adaptation to climate change with the goals and the
+85. For example, converting non-forest land to forest will typi-        objectives of these and other relevant multilateral environ-
+    cally increase the diversity of flora and fauna, except in sit-     mental agreements. [2.5.2]
+    uations where biologically diverse non-forest ecosystems,
+    such as native grasslands, are replaced by forests consisting 89. Some of the more formal approaches to sustainable devel-
+    of single or a few species. Afforestation can also have high-       opment assessment that could be applied at the project level
+    ly varied impacts on groundwater supplies, river flows, and         are, for example, environmental and socioeconomic impact
+    water quality. [3.6.1]                                              assessments. These methods have been applied across a
+                                                                        wide range of countries and site-specific activities to date and
+86. A system of criteria and indicators could be used to assess         could be modified to be applicable to LULUCF projects.
+    and compare sustainable development impacts across                  [2.5.2.2]
+    LULUCF alternatives. While there are no agreed
+    upon set of criteria and indicators, several sets are being 90. Some critical factors affecting the sustainable development
+    developed for closely related purposes, for example assess-         contributions of LULUCF activities and projects to mitigate
+    ment of contributions to sustainable development by the             and adapt to climate change include: institutional and tech-
+    United Nations Commission on Sustainable Development.               nical capacity to develop and implement guidelines and
+    [2.5.2]                                                             procedures; extent and effectiveness of local community
+                                                                        participation in development, implementation, and distrib-
+87. For activities within countries or projects between coun-           ution of benefits; and transfer and adoption of technology.
+    tries, if sustainable development criteria vary significantly       [5.5, 5.6]
+
+
+
+Appendix I - Conversion Units
+
+1 tonne (t)                     1 000 kilogram (kg)                  106 gram (g)    1 Megagram (Mg)
+1 Megatonne (Mt)                1 000 000 t                          1012 g          1Teragram (Tg)
+1 Gigatonne (Gt)                1 000 000 000 t                      1015 g          1 Petagram (Pg)
+1 hectare (ha)                  10 000 square metre (m2)
+1 square kilometre (km2)        100 hectare (ha)
+1 tonne per hectare (t ha­1)    100 gram per square metre (g m­2)
+1 tonne carbon                  3.67 tonne carbon dioxide (t CO2)
+1 tonne carbon dioxide          0.273 tonne carbon (t C)
+1 tonne                         0.984 imperial ton                   1.10 US ton     2 204 pound
+1 hectare (ha)                  2.471 acre
+1 square kilometre (km2)        0.386 square mile
+1 tonne per hectare (t ha­1)    892 pound per acre
+
+
+
+Appendix II - Relevant Portions of Kyoto Protocol
+Articles Discussed in this Special Report
+[Concepts in bold are discussed in the SPM]
+
+
+
+Article 2.1: Each Party included in Annex I in achieving its shall be reported in a transparent and verifiable manner and
+quantified emission limitation and reduction commitments under reviewed in accordance with Articles 7 and 8.
+Article 3, in order to promote sustainable development, shall:
+                                                                    Article 3.4: Prior to the first session of the COP serving as the
+    (a) Implement and/or further elaborate policies and mea- meeting of the Parties to this Protocol, each Party included in
+         sures in accordance with its national circumstances, Annex I shall provide, for consideration by the SBSTA, data to
+         such as:                                                   establish its level of carbon stocks in 1990 and to enable an esti-
+                                                                    mate to be made of its changes in carbon stocks in subsequent
+         (ii) Protection and enhancement of sinks and reservoirs years. The COP serving as the meeting of the Parties to this
+              of greenhouse gases not controlled by the Montreal Protocol shall, at its first session or as soon as practicable there-
+              Protocol, taking into account its commitments after, decide upon modalities, rules and guidelines as to how, and
+              under relevant international environmental agree- which, additional human-induced activities related to changes
+              ments; promotion of sustainable forest manage- in greenhouse gas emissions by sources and removals by sinks
+              ment practices, afforestation and reforestation;      in the agricultural soils and the land-use change and forestry
+         (iii) Promotion of sustainable forms of agriculture in categories shall be added to, or subtracted from, the assigned
+              light of climate change considerations.               amounts for Parties included in Annex I, taking into account
+                                                                    uncertainties, transparency in reporting, verifiability, the
+    (b) Cooperate with other such Parties to enhance the indi- methodological work of the IPCC, the advice provided by the
+         vidual and combined effectiveness of their policies and SBSTA in accordance with Article 5 and the decisions of the
+         measures adopted under this Article, pursuant to Article COP. Such a decision shall apply in the second and subsequent
+         4, paragraph 2(e)(i), of the Convention. To this end, commitment periods. A Party may choose to apply such a deci-
+         these Parties shall take steps to share their experience sion on these additional human-induced activities for its first com-
+         and exchange information on such policies and mea- mitment period, provided that these activities have taken place
+         sures, including developing ways of improving their since 1990.
+         comparability, transparency, and effectiveness. The
+         Conference of the Parties serving as the meeting of the Article 3.7: In the first quantified emission limitation and reduc-
+         parties to this Protocol shall, at its first session or as tion commitment period, from 2008 to 2012, the assigned amount
+         soon as practicable thereafter, consider ways to facili- for each Party included in Annex I shall be equal to the percent-
+         tate such cooperation, taking into account all relevant age inscribed for it in Annex B of its aggregate anthropogenic car-
+         information.                                               bon dioxide equivalent emissions of the greenhouse gases listed
+                                                                    in Annex A in 1990, or the base year or period determined in
+Article 3.1: "The Parties included in Annex I shall, individually accordance with paragraph 5 above, multiplied by five. Those
+or jointly, ensure that their aggregate anthropogenic carbon Parties included in Annex I for whom land use change and
+dioxide equivalent emissions of greenhouse gases listed in Annex forestry constituted a net source of greenhouse gas emissions in
+A do not exceed their assigned amounts, calculated pursuant to 1990, shall include in their 1990 emissions base year or period,
+their quantified emission limitation and reduction commitments the aggregate anthropogenic carbon dioxide equivalent emissions
+inscribed in Annex B and in accordance with the provisions of this minus removals in 1990 from land use change for the purposes
+Article, with a view to reducing their overall emissions of such of calculating their assigned amount.
+gases by at least 5% below 1990 levels in the commitment peri-
+od 2008­2012."                                                      Article 5.2: Methodologies for estimating anthropogenic emis-
+                                                                    sions by sources and removals by sinks of all greenhouse gases
+Article 3.3: The net changes in greenhouse gas emissions by not controlled by the Montreal Protocol shall be those accepted
+sources and removals by sinks resulting from direct human- by the Intergovernmental Panel on Climate Change and agreed
+induced land use change and forestry activities, limited to upon by the Conference of the Parties at its third session. Where
+afforestation, reforestation and deforestation since 1990, mea- such methodologies are not used, appropriate adjustments shall
+sured as verifiable changes in carbon stocks in each commitment be applied according to methodologies agreed upon by the
+period, shall be used to meet the commitments under this Article Conference of the Parties serving as the meeting of the Parties to
+of each Party included in Annex I. The greenhouse gas emissions this protocol at its first session. Based on the work of, inter alia,
+by sources and removals by sinks associated with those activities the Intergovernmental Panel on Climate Change and advice
+
+
+
+20                                                                                       Land Use, Land-Use Change, and Forestry
+
+provided by the Subsidiary Body for Science and Technological objective of the Convention, and to assist Parties included in
+Advice, the Conference of the Parties serving as the meeting of the Annex I in achieving compliance with their quantified emission
+parties to this Protocol shall regularly review and, as appropri- limitation and reduction commitments under Article 3.
+ate, revise such methodologies and adjustments, taking into
+account any relevant decisions by the Conference of the Parties. Article 12.3(a): Parties not included in Annex I will
+Any revision to methodologies or adjustments shall be used only benefit from project activities resulting in certified emissions
+for the purposes of ascertaining compliance with commitments reductions.
+under Article 3 in respect of any commitment period adopted sub-
+sequent to that revision.                                           Article 12.3(b): Parties included in Annex I may use the certified
+                                                                    emissions reductions accruing from such project activities to con-
+Article 6.1: For the purpose of meeting its commitments under tribute to compliance with part of their quantified emission lim-
+Article 3, any Party included in Annex I may transfer to, or itation and reduction commitments under Article 3, as deter-
+acquire from, any other such Party emission reduction units mined by the Conference of the Parties serving as the meeting of
+resulting from projects aimed at reducing anthropogenic emis- the Parties to the Protocol.
+sions by sources or enhancing anthropogenic removals by sinks
+of greenhouse gases in any sector of the economy, provided Article 12.5: Emissions reductions resulting from each project
+that:                                                               activity shall be certified by operational entities to be designat-
+                                                                    ed by the COP serving as the meeting of the Parties to this
+Article 6.1(b): Any such project provides a reduction in emis- Protocol, on the basis of:
+sions by sources, or an enhancement of removals by sinks, that
+is additional to any that would otherwise occur.                    Article 12.5(b): Real, measurable, and long-term benefits relat-
+                                                                    ed to the mitigation of climate change.
+Article 12.2: The purpose of the clean development mechanism
+shall be to assist Parties not included in Annex I in achieving Article 12.5(c): Reductions in emissions that are additional to any
+sustainable development and in contributing to the ultimate that would occur in the absence of the certified project.
+
+
+
+Appendix III - Glossary
+[These definitions are provided solely for the purpose of this Special Report]
+
+
+Accuracy                                                             Land Cover
+The degree to which the mean of a sample approaches the true The observed physical and biological cover of the Earth's land as
+mean of the population; lack of bias.                                vegetation or man-made features.
+
+Activity                                                             Land Use
+A practice or ensemble of practices that take place on a delineated The total of arrangements, activities, and inputs undertaken in a
+area over a given period of time.                                    certain land cover type (a set of human actions). The social and
+                                                                     economic purposes for which land is managed (e.g., grazing, tim-
+Baseline                                                             ber extraction, conservation).
+A reference scenario against which a change in greenhouse gas
+emissions or removals is measured.                                   Permanence
+                                                                     The longevity of a carbon pool and the stability of its stocks, given
+Bias                                                                 the management and disturbance environment in which it occurs.
+Systematic over- or under-estimation of a quantity.
+                                                                     Pool
+Biosphere                                                            See "Carbon Pool."
+That component of the Earth system that contains life in its var-
+ious forms, which includes its living organisms and derived Practice
+organic matter (e.g., litter, detritus, soil).                       An action or set of actions that affect the land, the stocks of
+                                                                     pools associated with it or otherwise affect the exchange of
+Carbon Flux                                                          greenhouse gases with the atmosphere.
+Transfer of carbon from one carbon pool to another in
+units of measurement of mass per unit area and time (e.g., Precision
+t C ha­1 y­1).                                                       The repeatability of a measurement (e.g., the standard error of the
+                                                                     sample mean).
+Carbon Pool
+A reservoir. A system which has the capacity to accumulate or Regeneration
+release carbon. Examples of carbon pools are forest biomass, The renewal of a stand of trees through either natural means
+wood products, soils, and atmosphere. The units are mass (seeded on-site or adjacent stands or deposited by wind, birds,
+(e.g., t C).                                                         or animals) or artificial means (by planting seedlings or direct
+                                                                     seeding).
+Carbon Stock
+The absolute quantity of carbon held within a pool at a specified Reservoir
+time.                                                                A pool.
+
+Flux                                                                 Sequestration
+See "Carbon Flux."                                                   The process of increasing the carbon content of a carbon pool
+                                                                     other than the atmosphere.
+Forest Estate
+A forested landscape consisting of multiple stands of trees.         Shifting Agriculture
+                                                                     A form of forest use common in tropic forests where an area
+Forest Stand                                                         of forest is cleared, or partially cleared, and used for cropping for
+A community of trees, including aboveground and below- a few years until the forest regenerates. Also known as "slash
+ground biomass and soils, sufficiently uniform in species and burn agriculture," "moving agriculture," or "swidden
+composition, age, arrangement, and condition to be managed as agriculture."
+a unit.
+                                                                     Sink
+Heterotrophic Respiration                                            Any process or mechanism which removes a greenhouse gas,
+The release of carbon dioxide from decomposition of organic an aerosol, or a precursor of a greenhouse gas from the atmos-
+matter.                                                              phere. A given pool (reservoir) can be a sink for atmospheric
+
+
+
+22                                                                                          Land Use, Land-Use Change, and Forestry
+
+carbon if, during a given time interval, more carbon is flowing Soil Carbon Pool
+into it than is flowing out.                                          Used here to refer to the relevant carbon in the soil. It includes var-
+                                                                      ious forms of soil organic carbon (humus) and inorganic soil
+Source                                                                carbon and charcoal. It excludes soil biomass (e.g., roots, bulbs,
+Opposite of sink. A carbon pool (reservoir) can be a source of etc.) as well as the soil fauna (animals).
+carbon to the atmosphere if less carbon is flowing into it than is
+flowing out of it.                                                    Uptake
+                                                                      The addition of carbon to a pool. A similar term is "sequestration."
+Stand
+See "Forest Stand."                                                   Wood Products
+                                                                      Products derived from the harvested wood from a forest, includ-
+Stock                                                                 ing fuelwood and logs and the products derived from them such
+See "Carbon Stock."                                                   as sawn timber, plywood, wood pulp, paper, etc.
+
+
+
+LIST OF IPCC OUTPUTS
+(unless otherwise stated, all IPCC outputs are in English)
+
+
+I.        IPCC FIRST ASSESSMENT REPORT, 1990                                    (including Summary for Policymakers). Report of IPCC Working
+                                                                                Group II, 1995.
+a) CLIMATE CHANGE - The IPCC Scientific Assessment. The                      c) CLIMATE CHANGE 1995 - The Economic and Social
+       1990 report of the IPCC Scientific Assessment Working Group (also        Dimensions of Climate Change (including Summary for
+       in Chinese, French, Russian and Spanish).                                Policymakers). Report of IPCC Working Group III, 1995.
+b) CLIMATE CHANGE - The  IPCC Impacts Assessment. The                        d) The IPCC Second Assessment Synthesis of Scientific-Technical
+       1990 report of the IPCC Impacts Assessment Working Group (also           Information Relevant to Interpreting Article 2 of the UN
+       in Chinese, French, Russian and Spanish).                                Framework Convention on Climate Change, 1995.
+c) CLIMATE CHANGE - The IPCC Response Strategies. The
+       1990 report of the IPCC Response Strategies Working Group (also       (The IPCC Synthesis and the three Summaries for Policymakers have
+       in Chinese, French, Russian and Spanish).                             been published in a single volume and are also available in Arabic,
+d) Overview and Policymaker Summaries, 1990.                                 Chinese, French, Russian and Spanish.)
+
+Emissions Scenarios (prepared by the IPCC Response Strategies
+Working Group), 1990.                                                        V. IPCC METHODOLOGIES
+Assessment of the Vulnerability of Coastal Areas to Sea Level Rise
+- A Common Methodology, 1991.                                                a) IPCC Guidelines for National Greenhouse Gas Inventories
+                                                                                (3 volumes), 1994 (also in French, Russian and Spanish).
+                                                                             b) IPCC Technical Guidelines for Assessing Climate Change
+II.       IPCC SUPPLEMENT, 1992                                                 Impacts and Adaptations, 1995 (also in Arabic, Chinese, French,
+                                                                                Russian and Spanish).
+a) CLIMATE CHANGE 1992 - The Supplementary Report to the                     c) Revised 1996 IPCC Guidelines for National Greenhouse Gas
+       IPCC Scientific Assessment. The 1992 report of the IPCC Scientific       Inventories (3 volumes), 1996.
+       Assessment Working Group.                                             d) Good Practice Guidance and Uncertainty Management in
+b) CLIMATE CHANGE 1992 - The Supplementary Report to the                        National Greenhouse Gas Inventories, IPCC Task Force on
+       IPCC Impacts Assessment. The 1992 report of the IPCC Impacts             National Greenhouse Gas Inventories, 2000.
+       Assessment Working Group.
+
+CLIMATE CHANGE: The IPCC 1990 and 1992 Assessments -                         VI. IPCC TECHNICAL PAPERS
+IPCC First Assessment Report Overview and Policymaker Summaries,
+and 1992 IPCC Supplement (also in Chinese, French, Russian and               TECHNOLOGIES, POLICIES AND MEASURES FOR
+Spanish).                                                                    MITIGATING CLIMATE CHANGE - IPCC Technical Paper 1,
+                                                                             1996 (also in French and Spanish).
+Global Climate Change and the Rising Challenge of the Sea. Coastal
+Zone Management Subgroup of the IPCC Response Strategies Working             AN INTRODUCTION TO SIMPLE CLIMATE MODELS USED
+Group, 1992.                                                                 IN THE IPCC SECOND ASSESSMENT REPORT - IPCC
+Report of the IPCC Country Study Workshop, 1992.                             Technical Paper 2, 1997 (also in French and Spanish).
+
+Preliminary Guidelines for Assessing Impacts of Climate Change, 1992.        STABILIZATION OF ATMOSPHERIC GREENHOUSE GASES:
+                                                                             PHYSICAL, BIOLOGICAL AND SOCIO-ECONOMIC
+                                                                             IMPLICATIONS - IPCC Technical Paper 3, 1997 (also in French
+III. IPCC SPECIAL REPORT, 1994                                               and Spanish).
+                                                                             IMPLICATIONS OF PROPOSED CO2 EMISSIONS
+CLIMATE CHANGE 1994 - Radiative Forcing of Climate Change                    LIMITATIONS - IPCC Technical Paper 4, 1997 (also in French and
+and An Evaluation of the IPCC IS92 Emission Scenarios.                       Spanish).
+
+
+IV.       IPCC SECOND ASSESSMENT REPORT, 1995                                VII. IPCC SPECIAL REPORTS
+
+a) CLIMATE CHANGE 1995 - The Science of Climate Change                       THE REGIONAL IMPACTS OF CLIMATE CHANGE: AN
+       (including Summary for Policymakers). Report of IPCC Working          ASSESSMENT OF VULNERABILITY (including Summary for
+       Group I, 1995.                                                        Policymakers, which is available in Arabic, Chinese, English, French,
+b) CLIMATE CHANGE 1995 - Scientific-Technical Analyses of                    Russian and Spanish).
+       Impacts, Adaptations and Mitigation of Climate Change                 A Special Report of IPCC Working Group II, 1997.
+
+
+
+24                                                                                            Land Use, Land-Use Change, and Forestry
+
+AVIATION AND THE GLOBAL ATMOSPHERE (including                          EMISSIONS SCENARIOS (including Summary for Policymakers, which
+Summary for Policymakers, which is available in Arabic, Chinese,       is available in Arabic, Chinese, English, French, Russian and Spanish).
+English, French, Russian and Spanish).                                 A Special Report of IPCC Working Group III, 2000.
+A Special Report of IPCC Working Groups I and III, 1999.
+
+METHODOLOGICAL AND TECHNOLOGICAL ISSUES IN                             LAND USE, LAND-USE CHANGE, AND FORESTRY (including
+TECHNOLOGY TRANSFER (including Summary for Policymakers,               Summary for Policymakers, which is available in Arabic, Chinese,
+which is available in Arabic, Chinese, English, French, Russian and    English, French, Russian and Spanish).
+Spanish).                                                              A Special Report of the IPCC, 2000.
+A Special Report of IPCC Working Group III, 2000.
+
+
+
+
+
+

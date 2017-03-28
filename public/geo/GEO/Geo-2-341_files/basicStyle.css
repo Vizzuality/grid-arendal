@@ -1,0 +1,33 @@
+.booktitle {
+	COLOR: maroon; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.listtext {
+	FONT-FAMILY: "Times New Roman", Georgia, Times; FONT-SIZE: 12px; LIST-STYLE: disc inside
+}
+.noticetext {
+	FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular; FONT-SIZE: 11px; MARGIN-LEFT: 1em; MARGIN-RIGHT: 1em; PADDING-LEFT: 1em; PADDING-RIGHT: 1em
+}
+.paragraphtext {
+	FONT-FAMILY: "Times New Roman", Georgia, Times; FONT-SIZE: 12px
+}
+.photocaption {
+	COLOR: maroon; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular; FONT-SIZE: 10px; TEXT-ALIGN: center
+}
+.seetext {
+	FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular; FONT-SIZE: 11px
+}
+BODY {
+	BACKGROUND-COLOR: white; COLOR: black; FONT-FAMILY: "Times New Roman", Georgia, Times; FONT-SIZE: 12px
+}
+H1 {
+	COLOR: maroon; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular; FONT-SIZE: 24px
+}
+H2 {
+	COLOR: maroon; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular; FONT-SIZE: 18px
+}
+H3 {
+	COLOR: maroon; FONT-FAMILY: Arial, Helvetica, Geneva, Swiss, SunSans-Regular; FONT-SIZE: 12px
+}
+P {
+	FONT-FAMILY: "Times New Roman", Georgia, Times; FONT-SIZE: 12px
+}

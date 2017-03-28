@@ -1,0 +1,195 @@
+<HTML>
+<HEAD>
+<!--JObjectsQuest:OFF; Don't index the content of this file -->
+
+<SCRIPT LANGUAGE="JavaScript">
+<!-- hide this script from non-javascript-enabled browsers
+
+var multi=false;
+
+// last query result
+var resCnt;
+
+function PerformSearch( qform )
+{
+    // load active collection
+    if( multi )	 {
+      LoadCollection( qform );
+    }
+
+    /*
+    if( navigator.appName.indexOf( "Netscape" ) != -1 &&
+	navigator.appVersion >= "4" )
+    {
+      document.QuestAgent.setUseCallbacks( false );
+    }*/
+
+    // start search...
+    var res = document.QuestAgent.startSearch( qform.query.value );
+    if( res >= -1 )  {
+      OnSearchResults( res );
+    }
+}
+
+function OnSearchResults( res )
+{ // Don't change function name
+
+    resCnt = res;
+    window.open( "qares01.htm", "qaview" );
+}
+
+function paintSearchResults( doc )
+{ // Don't change function name
+
+    var res = 0;
+    if( resCnt != null )
+      res = eval( "" + resCnt.toString() ) - 0;
+
+    doc.open();
+
+    // check result
+    if( resCnt == null )  {
+	// page was reloaded; return to the main page...
+	window.open( "main.htm", "qaview" );
+	return;
+    }
+    else if( res < 0 )	{
+	doc.writeln( "<body bgcolor=white>" );
+	doc.writeln( "<h3>Error occurred.</h3> <body bgcolor=white> <p align='right'><font face='Arial, Helvetica, sans-serif' size='1'><a href='index.htm' target='_top'>Home</a></p>" );
+	doc.writeln( "<pre>" );
+	doc.writeln( document.QuestAgent.getLastMessage() );
+	doc.writeln( "</pre>" );
+    }
+    else if( res == 0 )	 {
+	doc.writeln( "<body bgcolor=white> <p align='right'><font face='Arial, Helvetica, sans-serif' size='1'><a href='index.htm' target='_top'>Home</a></font></p>" );
+	doc.writeln( "<h3>Nothing found.</h3>" );
+	doc.writeln( "<h3>Refine your query and try again.</h3>" );
+    }
+    else  {
+
+	doc.writeln( "<body bgcolor=white><body bgcolor=white> <p align='right'><font face='Arial, Helvetica, sans-serif' size='1'><a href='index.htm' target='_top'>Home</a></font></p>" );
+
+	doc.writeln( "<b>", res, " pages found.</b>" );
+
+	doc.writeln( "<ol>" );
+
+	// print results
+	var i = 0;
+	while( res > 0 )
+	{
+	    var loc = document.QuestAgent.getHitLocation( i );
+	    var title = document.QuestAgent.getHitTitle( i );
+	    if( title == null )
+	      title = loc;
+	    title = "" + title;
+	    if( title.length == 0 )
+	      title = loc;
+
+	    // create link to file
+	    parent.qaview.document.writeln(
+		"<li> <b><a href=\"", loc, "\" target='_top'>", title, "</a></b><br>" );
+
+	    // print description if available
+	    var desc = document.QuestAgent.getHitField( i, "description" );
+	    if( desc != null )	{
+		var jsdesc = "" + desc;
+		if( jsdesc.length > 0 )
+		    doc.writeln( jsdesc, "<br>" );
+	    }
+
+	    doc.writeln(
+		"<font color=\"#808080\"> <b>URL:</b> ", loc, "</font>" );
+
+	    var len = Math.round( eval( "" + document.QuestAgent.getHitField( i, "length" ) ) / 1024 );
+	    if( len == 0 )
+	      len = 1;
+	    doc.writeln( "<font color=\"#808080\"> - <b>Size:</b> ", len, "K bytes </font>" );
+
+	    doc.writeln( " <font color=\"#808080\"> - <b>Score:</b> ",
+		document.QuestAgent.getHitField( i, "relevance" ), "%</font>" );
+
+	    doc.writeln( "</li><p>" );
+
+	    i++;
+	    res--;
+	}
+
+	doc.writeln( "</ol>" );
+    }
+
+    // print footer (don't remove the following notice)
+    doc.write( "<p>&nbsp;</p><p><font size=-1>" );
+    doc.write( "<i>Search technology by JObjects. (http://www.jobjects.com)</i>" );
+    //doc.write( "<i>Search technology by <a href='http://www.jobjects.com' target='_blank'>JObjects</a>. (http://www.jobjects.com)</i>" );
+    doc.writeln( "</font>" );
+
+    doc.writeln( "</body>" );
+
+    doc.close();
+}
+
+function LoadCollection( qform )
+{
+    var i = qform.coll.selectedIndex + 1;
+    document.QuestAgent.loadCollection( i );
+}
+
+// stop hiding -->
+</SCRIPT>
+
+<title>AFRICA ENVIRONMENT OUTLOOK</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="aeo.css">
+</HEAD>
+<BODY onLoad="parent.qaframeLoaded = true" bgcolor="white">
+
+ <table width="100%" border="0" cellpadding="2" cellspacing="0">
+    <tr valign="bottom"> 
+      <td><b><span class="header">AFRICA ENVIRONMENT OUTLOOK</span><br>
+        <span class="headerSub">Past, present and future perspectives</span></b></td>
+      <td align="right"> <a target="_top" href="http://www.unep.org"><img src="images/unep.gif" width="75" height="45" border="0" align="middle"></a> 
+      </td>
+    </tr>
+  </table>
+  <table width="100%" border="0" cellpadding="2" cellspacing="0">
+    <tr> 
+      <td colspan=2 height="30" background="images/banner.jpg"> 
+        
+	<FORM name="simpleform" onSubmit="PerformSearch( this ); return false;">
+	<font size="2">
+	Search:</font><INPUT TYPE="TEXT" NAME="query" SIZE="15" class="textfield">
+	  <INPUT TYPE="BUTTON" onClick="PerformSearch( this.form )" VALUE="Find" CLASS="button">
+	  <font size="-1">
+	  <a href="qatips.htm" target="qaview">Search Tips</a>
+	  </font>
+	</FORM>
+ </td>
+    </tr>
+   
+  </table>
+</form>
+
+
+
+<APPLET
+  CODE	   = "com.jobjects.quest.agent.HiddenSearchApplet"
+  ARCHIVE  = "qagent_h.jar"
+  NAME	   = "QuestAgent"
+  ID	   = "QuestAgent"
+  WIDTH	   = 0
+  HEIGHT   = 0
+  MAYSCRIPT
+>
+
+<PARAM NAME="ParamFile" VALUE="qagent.prm">
+
+<PARAM NAME="js.OnSearchResults" VALUE="OnSearchResults">
+
+<PARAM NAME="js.OnNoLCPage" VALUE="qa_no_js.htm">
+<PARAM NAME="js.OnNoLCFrame" VALUE="_top">
+
+</APPLET>
+
+</BODY>
+</HTML>

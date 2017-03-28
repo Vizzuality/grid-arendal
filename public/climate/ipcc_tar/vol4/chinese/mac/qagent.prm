@@ -1,0 +1,138 @@
+#
+# Configuration parameters for JObjects QuestAgent applet
+#---------------------------------------------------------
+#
+# Note: All parameters defined here in format:
+#
+#   param_name=parameter value
+#
+# can be added directly to the appropriate HTML page (between the 
+# opening <applet> tag and the closing </applet> tag) in form:
+#
+#   <param name="param_name" value="parameter value">
+#
+# In some cases this is even recommended, especially if you need
+# to enter accented characters or characters that don't belong to
+# the Latin character set.
+#
+# Parameters defined in HTML page overwrite parameters defined
+# in configuration file.
+#
+
+
+# Collection No.1 reference...
+IndexFile1=data_1/index.que
+IndexDescription1=Climate Change 2001
+Prefix1=../
+
+
+
+# The following parameter defines whether default index collection
+# should be loaded automatically.
+loadCollectionOnInit=yes
+
+# Name of a taget frame used to show a document
+target=_self
+
+
+#---------------------------------------------------
+# Geometry Parameters (used in some search applets)
+#---------------------------------------------------
+
+# Search panel layout
+layout=2
+
+# 1
+geom.main_panel.bgcolor=white
+geom.main_panel.color=black
+
+# 2
+geom.search_in.label=Search in: 
+
+# 3
+#geom.collectionchoice...
+
+# 4
+#geom.qbox.fontstyle=bold
+
+# 5
+#geom.list...
+
+# 6 (classic)
+geom.query_label.label=Query: 
+
+# 6 (fielded)
+geom.label1.label=where
+
+# 7
+geom.search_button.label=Find
+
+# 8
+geom.stop_button.label=Stop
+
+# 9
+geom.newwin_box.label=show in new window
+geom.newwin_box.bgcolor=white
+geom.newwin_box.selected=true
+#geom.newwin_box.enabled=false
+
+# 10
+geom.show_button.label=Show
+
+# 11
+geom.maxhits_choice.label=25|50|100
+
+# 12
+geom.maxhits_label.label=Show best:
+
+# 13
+geom.message_label.label=
+
+# 14
+geom.description.visible=true
+geom.description.font=Dialog
+geom.description.fontsize=10
+geom.description.rows=3
+
+# 15 (fielded)
+#collection<N>.listheader.visible=true
+
+# 16 (fielded)
+#geom.field_choice...
+
+# 17 (fielded)
+geom.clear_button.label=Clear
+
+# 18 (fielded)
+geom.more_button.label=More
+
+# 19 (fielded)
+geom.fewer_button.label=Fewer
+
+# 20 (fielded)
+geom.contains_choice.label=contains|doesn't contain
+
+# 21 (fielded)
+geom.and_or_choice.label=and|or
+
+
+# QuestAgent applet messages
+#
+msg.wait=Searching...
+msg.stopped=Search has been stopped.
+msg.no_matches=No matches. Refine your query and try again.
+msg.hit_count=Pages found: 
+msg.not_specific=Not specific. Refine your query and try again.
+msg.error=Error occurred.
+msg.bad_query=Bad query.
+msg.not_expected=Not expected 
+
+
+#---------------------------------------------------
+# Result Format (used by Search Applet Classic)
+#---------------------------------------------------
+# Legend: %N - Hit Number, %D - Document Title, %L - File Length,
+#         %R - Hit Relevance in %, %W - Hit Relevance (Weight)
+#
+result_format=%N. %D  (%R)
+

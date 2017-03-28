@@ -1,0 +1,183 @@
+FONT {
+	FONT-FAMILY: Verdana, Arial, Helvetica, Sans-serif
+}
+.fontSize1 {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 10px
+}
+.fontSize2 {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 13px
+}
+.fontSize3 {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 16px
+}
+.titleSize2 {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 13px; FONT-WEIGHT: bold
+}
+.titleSize3 {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 16px; FONT-WEIGHT: bold
+}
+A.linkSize1:link {
+	COLOR: #000099; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 10px; TEXT-DECORATION: none
+}
+A.linkSize1:active {
+	COLOR: #000099; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 10px; TEXT-DECORATION: none
+}
+A.linkSize1:visited {
+	COLOR: #000099; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 10px; TEXT-DECORATION: none
+}
+A.linkSize1:hover {
+	COLOR: #ff0000; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 10px; TEXT-DECORATION: underline
+}
+A.blackLinks:link {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 10px; TEXT-DECORATION: none
+}
+A.blackLinks:active {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 10px; TEXT-DECORATION: none
+}
+A.blackLinks:visited {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 10px; TEXT-DECORATION: none
+}
+A.blackLinks:hover {
+	COLOR: #ff0000; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 10px; TEXT-DECORATION: underline
+}
+A.linkSize2:link {
+	COLOR: #000099; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 13px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.linkSize2:active {
+	COLOR: #000099; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 13px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.linkSize2:visited {
+	COLOR: #000099; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 13px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.linkSize2:hover {
+	COLOR: #ff0000; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 13px; FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+A.linkSize3:link {
+	COLOR: #000099; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 16px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.linkSize3:active {
+	COLOR: #000099; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 16px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.linkSize3:visited {
+	COLOR: #000099; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 16px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A.linkSize3:hover {
+	COLOR: #ff0000; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 16px; FONT-WEIGHT: bold; TEXT-DECORATION: underline
+}
+A.MenuLink:link {
+	COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 9px; TEXT-DECORATION: none
+}
+A.MenuLink:active {
+	COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 9px; TEXT-DECORATION: none
+}
+A.MenuLink:visited {
+	COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 9px; TEXT-DECORATION: none
+}
+A.MenuLink:hover {
+	COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 9px; TEXT-DECORATION: underline
+}
+A.dHTML:link {
+	COLOR: #ffffff; FONT-FAMILY: Arial, sans-serif, "MS sans serif"; FONT-SIZE: 11px; TEXT-DECORATION: none
+}
+A.dHTML:active {
+	COLOR: #ffffff; FONT-FAMILY: Arial, sans-serif, "MS sans serif"; FONT-SIZE: 11px; TEXT-DECORATION: none
+}
+A.dHTML:visited {
+	COLOR: #ffffff; FONT-FAMILY: Arial, sans-serif, "MS sans serif"; FONT-SIZE: 11px; TEXT-DECORATION: none
+}
+A.dHTML:hover {
+	COLOR: #ffffff; FONT-FAMILY: Arial, sans-serif, "MS sans serif"; FONT-SIZE: 11px; TEXT-DECORATION: underline
+}
+.caption {
+	BACKGROUND: #003366; COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 10px
+}
+.smlWhiteText {
+	COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 10px
+}
+.blueArrow {
+	BACKGROUND: url(http://www.unhcr.ch/graphics/blue-arrow.gif) #ffffee no-repeat; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; MARGIN-TOP: 2px; PADDING-LEFT: 10px
+}
+.searchArrow {
+	BACKGROUND: url(http://www.unhcr.ch/graphics/blue-arrow.gif) #ffffcc no-repeat; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; MARGIN-TOP: 2px; PADDING-LEFT: 10px
+}
+.boxTitle {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 11px; FONT-WEIGHT: bold
+}
+SELECT.language {
+	BACKGROUND-COLOR: #cf3000; BORDER-BOTTOM-COLOR: #ff9c00; BORDER-LEFT-COLOR: #ff9c00; BORDER-RIGHT-COLOR: #ff9c00; BORDER-TOP-COLOR: #ff9c00; COLOR: #ffffff
+}
+INPUT.redButton {
+	BACKGROUND-COLOR: #cf3000; BORDER-BOTTOM-COLOR: #ff9c00; BORDER-LEFT-COLOR: #ff9c00; BORDER-RIGHT-COLOR: #ff9c00; BORDER-TOP-COLOR: #ff9c00; COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 10px; FONT-WEIGHT: 800
+}
+INPUT.blueButton {
+	BACKGROUND-COLOR: #003366; BORDER-BOTTOM-COLOR: #ff9c00; BORDER-LEFT-COLOR: #ff9c00; BORDER-RIGHT-COLOR: #ff9c00; BORDER-TOP-COLOR: #ff9c00; COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, sans-serif, "MS sans serif"; FONT-SIZE: 11px; FONT-WEIGHT: 800
+}
+.basics {
+	LEFT: 0px; POSITION: absolute; TOP: 0px; VISIBILITY: hidden
+}
+.news {
+	LEFT: 0px; POSITION: absolute; TOP: 0px; VISIBILITY: hidden
+}
+.protect {
+	LEFT: 0px; POSITION: absolute; TOP: 0px; VISIBILITY: hidden
+}
+.partners {
+	LEFT: 0px; POSITION: absolute; TOP: 0px; VISIBILITY: hidden
+}
+.publ {
+	LEFT: 0px; POSITION: absolute; TOP: 0px; VISIBILITY: hidden
+}
+.research {
+	LEFT: 0px; POSITION: absolute; TOP: 0px; VISIBILITY: hidden
+}
+.exec {
+	LEFT: 0px; POSITION: absolute; TOP: 0px; VISIBILITY: hidden
+}
+.admin {
+	LEFT: 0px; POSITION: absolute; TOP: 0px; VISIBILITY: hidden
+}
+.events {
+	LEFT: 0px; POSITION: absolute; TOP: 0px; VISIBILITY: hidden
+}
+.uhelp {
+	LEFT: 0px; POSITION: absolute; TOP: 0px; VISIBILITY: hidden
+}
+  The Styles beyond this point are old and will be removed   A:link {
+	COLOR: #ff0000; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #ff0000; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #ff0000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #7f007f; TEXT-DECORATION: underline
+}
+A.blacklink:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A.blacklink:active {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A.blacklink:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A.blacklink:hover {
+	COLOR: #ff0000; TEXT-DECORATION: underline
+}
+A.bluelink:link {
+	COLOR: #000099; TEXT-DECORATION: none
+}
+A.bluelink:active {
+	COLOR: #000099; TEXT-DECORATION: none
+}
+A.bluelink:visited {
+	COLOR: #000099; TEXT-DECORATION: none
+}
+A.bluelink:hover {
+	COLOR: #ff0000; TEXT-DECORATION: underline
+}
+.search {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 11px; FONT-WEIGHT: bold
+}

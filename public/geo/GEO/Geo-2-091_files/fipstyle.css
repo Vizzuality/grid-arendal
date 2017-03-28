@@ -1,0 +1,226 @@
+A {
+	FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+A.toolbar {
+	COLOR: #ffffff; FONT-SIZE: 8pt; FONT-WEIGHT: bold; PADDING-BOTTOM: 1px; PADDING-LEFT: 1px; PADDING-RIGHT: 1px; PADDING-TOP: 1px; TEXT-DECORATION: none
+}
+A.toolbar:visited {
+	COLOR: #ffffff; FONT-SIZE: 8pt; FONT-WEIGHT: bold; PADDING-BOTTOM: 1px; PADDING-LEFT: 1px; PADDING-RIGHT: 1px; PADDING-TOP: 1px
+}
+A.fiptoolbar {
+	BACKGROUND: #000000; COLOR: #ffffff; FONT-SIZE: 8pt; FONT-WEIGHT: bold; PADDING-BOTTOM: 1px; PADDING-LEFT: 1px; PADDING-RIGHT: 1px; PADDING-TOP: 1px; TEXT-DECORATION: none
+}
+A.fiptoolbar:visited {
+	BACKGROUND: #000000; COLOR: #ffffff; FONT-SIZE: 8pt; FONT-WEIGHT: bold; PADDING-BOTTOM: 1px; PADDING-LEFT: 1px; PADDING-RIGHT: 1px; PADDING-TOP: 1px
+}
+BODY {
+	BACKGROUND: #ffffff; COLOR: #000000; FONT-FAMILY: Helvetica, univers, arial, sans-serif; FONT-SIZE: 10pt; FONT-WEIGHT: normal; MARGIN-BOTTOM: 3%; MARGIN-LEFT: 0px; MARGIN-TOP: 5px
+}
+DIV.cen {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 100%; FONT-WEIGHT: normal
+}
+P {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 10pt; FONT-WEIGHT: normal
+}
+.text {
+	FONT-FAMILY: arial, helvetica,sans-serif; FONT-SIZE: 14pt; FONT-WEIGHT: normal
+}
+.red {
+	BACKGROUND: #ffffff; COLOR: #ff0000; FONT-SIZE: 10pt; FONT-WEIGHT: normal
+}
+.tty {
+	BACKGROUND: #ffffff; COLOR: #000000; FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 8pt; FONT-WEIGHT: normal
+}
+.toolref {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 8pt; FONT-WEIGHT: bold; TEXT-DECORATION: none; font-color: #ffffff; hover: #ffffff
+}
+TD {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 10pt; FONT-WEIGHT: normal
+}
+BLOCKQUOTE {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 10pt; FONT-WEIGHT: normal
+}
+B {
+	FONT-WEIGHT: bold
+}
+DIV.menu {
+	BACKGROUND: #ffffff; COLOR: #000000; FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 8pt; FONT-WEIGHT: normal
+}
+DIV.link {
+	BACKGROUND: #ffffff; COLOR: #0000ff; FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 10pt; FONT-STYLE: normal; FONT-WEIGHT: normal
+}
+DIV.toollink {
+	BACKGROUND: #000000; COLOR: #ffffff; FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 8pt; FONT-STYLE: normal; FONT-WEIGHT: bold
+}
+IMG {
+	BORDER-BOTTOM-STYLE: none; BORDER-LEFT-STYLE: none; BORDER-RIGHT-STYLE: none; BORDER-TOP-STYLE: none
+}
+UL {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 10pt; LIST-STYLE: square
+}
+OL {
+	COLOR: #000000; FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 10pt
+}
+LI {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 10pt
+}
+A:link {
+	COLOR: #0000ff
+}
+A:visited {
+	COLOR: #000099
+}
+A:active {
+	COLOR: #0000ff
+}
+A:hover {
+	COLOR: #ff0000
+}
+H1 {
+	BACKGROUND: #ffffff; COLOR: #ff0000; FONT-FAMILY: helvetica, univers, arial, sans-serif; FONT-SIZE: 145%; FONT-STYLE: normal; FONT-WEIGHT: normal
+}
+H2 {
+	COLOR: #000000
+}
+H4 {
+	COLOR: #000000
+}
+H2 {
+	FONT-FAMILY: helvetica, univers, arial, sans-serif; FONT-SIZE: 125%; FONT-STYLE: normal; FONT-WEIGHT: bold
+}
+H3 {
+	COLOR: #000000; FONT-FAMILY: helvetica, univers, arial, sans-serif; FONT-SIZE: 125%; FONT-STYLE: normal; FONT-WEIGHT: normal
+}
+H4 {
+	COLOR: #000000; FONT-FAMILY: helvetica, univers, arial, sans-serif; FONT-SIZE: 80%; FONT-STYLE: normal; FONT-WEIGHT: bold; LINE-HEIGHT: 1
+}
+H5 {
+	COLOR: #000000; FONT-FAMILY: helvetica, univers, arial, sans-serif; FONT-SIZE: 70%; FONT-STYLE: normal; FONT-WEIGHT: normal
+}
+H6 {
+	COLOR: #888888; FONT-FAMILY: helvetica, univers, arial, sans-serif; FONT-SIZE: 100%; FONT-STYLE: normal; FONT-WEIGHT: normal; LINE-HEIGHT: 16px
+}
+EM {
+	FONT-FAMILY: helvetica, univers, arial, sans-serif; FONT-SIZE: 12px; FONT-STYLE: normal; FONT-WEIGHT: bold
+}
+STRONG {
+	COLOR: #000000; FONT-FAMILY: helvetica, univers, arial, sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+DL {
+	FONT-FAMILY: helvetica, univers, arial, sans-serif; FONT-SIZE: 10pt; FONT-WEIGHT: bold
+}
+DT {
+	COLOR: #663366; FONT-FAMILY: helvetica, univers, arial, sans-serif; FONT-WEIGHT: bold
+}
+
+@media Print    
+{
+H1 {
+	page-break-inside: avoid
+}
+H2 {
+	page-break-inside: avoid
+}
+H3 {
+	page-break-inside: avoid
+}
+H4 {
+	page-break-inside: avoid
+}
+H5 {
+	page-break-inside: avoid
+}
+H6 {
+	page-break-inside: avoid
+}
+BLOCKQUOTE {
+	
+}
+UL {
+	
+}
+OL {
+	
+}
+DL {
+	
+}
+
+}
+
+@media Unknown    
+{
+H1 {
+	voice-family: paul, male; stress: 20; richness: 90
+}
+H2 {
+	voice-family: paul, male; stress: 20; richness: 90
+}
+H3 {
+	voice-family: paul, male; stress: 20; richness: 90
+}
+H4 {
+	voice-family: paul, male; stress: 20; richness: 90
+}
+H5 {
+	voice-family: paul, male; stress: 20; richness: 90
+}
+H6 {
+	voice-family: paul, male; stress: 20; richness: 90
+}
+H2 {
+	pitch: x-low; pitch-range: 80
+}
+H3 {
+	pitch: low; pitch-range: 70
+}
+H4 {
+	pitch: medium; pitch-range: 60
+}
+H5 {
+	pitch: medium; pitch-range: 50
+}
+H6 {
+	pitch: medium; pitch-range: 40
+}
+LI {
+	richness: 60; pitch: medium
+}
+DT {
+	richness: 60; pitch: medium
+}
+DD {
+	richness: 60; pitch: medium
+}
+DT {
+	stress: 80
+}
+STRONG {
+	stress: 90; richness: 90; pitch: medium; pitch-range: 60
+}
+I {
+	stress: 60; richness: 50; pitch: medium; pitch-range: 60
+}
+B {
+	stress: 90; richness: 90; pitch: medium; pitch-range: 60
+}
+U {
+	richness: 0
+}
+A:link {
+	voice-family: harry, male
+}
+A:visited {
+	voice-family: betty, female
+}
+A:active {
+	voice-family: betty, female; pitch: x-high; pitch-range: 80
+}
+INPUT {
+	FONT-FAMILY: helvetica, univers, arial, sans-serif; FONT-SIZE: 10pt
+}
+SELECT {
+	FONT-FAMILY: helvetica, univers, arial, sans-serif; FONT-SIZE: 10pt
+}
+
+}

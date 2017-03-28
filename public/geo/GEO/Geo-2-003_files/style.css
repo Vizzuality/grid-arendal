@@ -1,0 +1,72 @@
+.search {
+	FONT-SIZE: x-small
+}
+.nounder {
+	FONT-FAMILY: Helvetica, Geneva, Arial, Verdana
+}
+.nounderb2 {
+	COLOR: blue; TEXT-DECORATION: none
+}
+.nounderblack {
+	COLOR: black; TEXT-DECORATION: none
+}
+.nounderblue {
+	COLOR: lime; FONT-FAMILY: Helvetica, Geneva, Arial, Verdana
+}
+.cop6_2 {
+	COLOR: #000000; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "Geneva", "Arial", "Verdana"; FONT-WEIGHT: bold
+}
+.cop6_2act {
+	COLOR: #ffffcc; FONT-FAMILY: "Helvetica", "Geneva", "Arial", "Verdana"; FONT-WEIGHT: bold
+}
+.nounderblue2 {
+	COLOR: lime; FONT-FAMILY: Helvetica, Geneva, Arial, Verdana
+}
+.nounderdocs {
+	COLOR: lime; FONT-FAMILY: Helvetica, Geneva, Arial, Verdana
+}
+.nounderwhite {
+	COLOR: #f5f5f5; FONT-FAMILY: Helvetica, Geneva, Arial, Verdana
+}
+A:hover {
+	COLOR: #cc0000; TEXT-DECORATION: underline
+}
+A {
+	TEXT-DECORATION: none
+}
+BR {
+	FONT-FAMILY: Geneva, Verdana, Arial
+}
+#table {
+	FONT-FAMILY: Geneva, Verdana, Arial
+}
+H2 {
+	BORDER-BOTTOM: silver 2px groove; BORDER-LEFT: silver 1px dashed; BORDER-RIGHT: silver 2px groove; BORDER-TOP: silver 1px dashed; COLOR: black; FONT-FAMILY: Helvetica, Verdana, Geneva, Chicago, Arial; TEXT-ALIGN: center; TEXT-TRANSFORM: uppercase
+}
+H3 {
+	BORDER-BOTTOM: silver 2px groove; BORDER-LEFT: silver 1px dashed; BORDER-RIGHT: silver 2px groove; BORDER-TOP: silver 1px dashed; COLOR: black; FONT-FAMILY: Helvetica, Verdana, Geneva, Chicago, Arial; TEXT-ALIGN: center; TEXT-TRANSFORM: uppercase
+}
+H4 {
+	BORDER-BOTTOM: silver 2px groove; BORDER-LEFT: silver 1px dashed; BORDER-RIGHT: silver 2px groove; BORDER-TOP: silver 1px dashed; COLOR: black; FONT-FAMILY: Helvetica, Verdana, Geneva, Chicago, Arial; TEXT-ALIGN: center; TEXT-TRANSFORM: uppercase
+}
+H5 {
+	BORDER-BOTTOM: silver 2px groove; BORDER-LEFT: silver 1px dashed; BORDER-RIGHT: silver 2px groove; BORDER-TOP: silver 1px dashed; COLOR: black; FONT-FAMILY: Helvetica, Verdana, Geneva, Chicago, Arial; TEXT-ALIGN: center; TEXT-TRANSFORM: uppercase
+}
+LI {
+	FONT-FAMILY: Geneva, Verdana, Arial
+}
+P {
+	FONT-FAMILY: Geneva, Verdana, Arial
+}
+TD {
+	FONT-FAMILY: Geneva, Verdana, Arial
+}
+UL {
+	FONT-FAMILY: Geneva, Verdana, Arial
+}
+.noundergreen {
+	COLOR: #00ff00; FONT-FAMILY: Helvetica, Geneva, Arial, Verdana
+}
+.brodtext {
+	FONT-FAMILY: "Times", "Times New Roman", "serif"
+}

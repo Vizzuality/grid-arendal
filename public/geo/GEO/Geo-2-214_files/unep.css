@@ -1,0 +1,39 @@
+.copy {
+	COLOR: #ffffff; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 10px
+}
+.menu {
+	COLOR: #ffffff; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+A:hover {
+	COLOR: #00bbff
+}
+.date {
+	COLOR: #ffffff; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 12px; FONT-WEIGHT: normal
+}
+.dotto {
+	FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 16px; FONT-WEIGHT: bold
+}
+.text {
+	COLOR: #000000; FONT-FAMILY: "Times New Roman", "Times", "serif"; FONT-SIZE: 12px; FONT-WEIGHT: normal
+}
+.text2 {
+	COLOR: #000000; FONT-FAMILY: "Times New Roman", "Times", "serif"; FONT-SIZE: 10px; FONT-WEIGHT: normal
+}
+.main {
+	COLOR: #ffffff; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+.icon {
+	COLOR: #003300; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 11px; FONT-WEIGHT: bold
+}
+.freshwater {
+	COLOR: #000066; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.category {
+	COLOR: #ffffff; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 13px; FONT-WEIGHT: bold
+}
+.text3 {
+	COLOR: #000000; FONT-FAMILY: "Times New Roman", "Times", "serif"; FONT-SIZE: 12px; FONT-STYLE: italic; FONT-WEIGHT: normal
+}
+.urban {
+	COLOR: #003300; FONT-FAMILY: "Arial", "Helvetica", "sans-serif"; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}

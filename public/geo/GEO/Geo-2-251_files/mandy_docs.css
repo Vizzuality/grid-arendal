@@ -1,0 +1,30 @@
+A {
+	COLOR: #366; FONT-FAMILY: Arial, Geneva, Helvetica, Swiss, SunSans-Regular; FONT-SIZE: 11px; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #f60; FONT-FAMILY: Arial, Geneva, Helvetica, Swiss, SunSans-Regular; FONT-SIZE: 11px
+}
+H1 {
+	COLOR: #336; FONT-FAMILY: Arial, Helvetica, Geneva, Verdana; FONT-SIZE: 20px; FONT-VARIANT: normal; FONT-WEIGHT: bold; MARGIN: 12pt 0px 3pt; TEXT-ALIGN: center; TEXT-TRANSFORM: uppercase; mso-ansi-language: EN-GB; mso-font-kerning: 16.0pt; mso-outline-level: 1; mso-pagination: widow-orphan; mso-style-next: Normal
+}
+H2 {
+	COLOR: #336; FONT-FAMILY: Arial, Helvetica, Geneva, Verdana; FONT-SIZE: 16px; FONT-WEIGHT: bold; MARGIN: 12pt 0px 0px; mso-ansi-language: EN-GB; mso-outline-level: 2; mso-pagination: widow-orphan; mso-style-next: Normal
+}
+H3 {
+	COLOR: black; FONT-FAMILY: Arial, Helvetica, Geneva, Verdana; FONT-SIZE: 12px; FONT-WEIGHT: bold; MARGIN: 12pt 0px 3pt; mso-ansi-language: EN-GB; mso-outline-level: 3; mso-pagination: widow-orphan; mso-style-next: Normal
+}
+H4 {
+	COLOR: black; FONT-FAMILY: Arial, Helvetica, Geneva, Verdana; FONT-SIZE: 11px; MARGIN: 12pt 0px 3pt; mso-ansi-language: EN-GB; mso-outline-level: 4; mso-pagination: widow-orphan; mso-style-next: Normal
+}
+H5 {
+	COLOR: black; FONT-FAMILY: Arial, Helvetica, Geneva, Verdana; FONT-SIZE: 11px; FONT-WEIGHT: normal; MARGIN: 0px 15px 0pt; TEXT-ALIGN: justify; mso-ansi-language: EN-GB; mso-outline-level: 4; mso-pagination: widow-orphan; mso-style-next: Normal
+}
+H6 {
+	COLOR: black; FONT-FAMILY: Arial, Helvetica, Geneva, Verdana; FONT-SIZE: 11px; FONT-WEIGHT: normal; MARGIN: 0px 0px 0pt; TEXT-ALIGN: justify; mso-ansi-language: EN-GB; mso-outline-level: 4; mso-pagination: widow-orphan; mso-style-next: Normal
+}
+OL {
+	
+}
+UL {
+	
+}

@@ -1,0 +1,48 @@
+.text {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: small
+}
+.menuFixed13 {
+	COLOR: #666600; FONT-FAMILY: Helvetica, Arial, sans-serif; FONT-SIZE: 13px; FONT-WEIGHT: bold
+}
+.menuFixed14 {
+	COLOR: #003300; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 14px; FONT-WEIGHT: bold; LINE-HEIGHT: 80%; TEXT-ALIGN: right
+}
+.headlLineA {
+	COLOR: #003300; FONT-FAMILY: Helvetica, Arial, sans-serif; FONT-SIZE: medium; FONT-STYLE: italic; TEXT-ALIGN: left
+}
+.text A:link {
+	COLOR: #003300; TEXT-DECORATION: none
+}
+.text A:hover {
+	text-weight: bold
+}
+.fMail {
+	COLOR: #003300; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: small
+}
+.footerMenu {
+	COLOR: #003300; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 13px; FONT-WEIGHT: bold
+}
+.footerMenu A:link {
+	COLOR: #003300; TEXT-DECORATION: none
+}
+.footerMenu A:visited {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A:link {
+	COLOR: #666600; TEXT-DECORATION: none
+}
+.menuFixed13 A:link {
+	COLOR: #666600; TEXT-DECORATION: none
+}
+.menuFixed13 A:visited {
+	COLOR: #666600; TEXT-DECORATION: none
+}
+.headlineB {
+	COLOR: #666600; FONT-FAMILY: Helvetica, Arial, sans-serif; FONT-SIZE: 18px; FONT-WEIGHT: bold
+}
+A:visited {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+.fixed14 {
+	COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 14px
+}

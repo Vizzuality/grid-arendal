@@ -1,0 +1,159 @@
+P.first {
+	COLOR: #333333; FONT-FAMILY: verdana, arial, helvetica, sans-serif; FONT-SIZE: 12px
+}
+P.second {
+	COLOR: #333333; FONT-FAMILY: verdana, arial, helvetica, sans-serif; FONT-SIZE: 10px
+}
+FONT.eight {
+	COLOR: #333333; FONT-FAMILY: verdana, arial, helvetica, sans-serif; FONT-SIZE: 8px
+}
+FONT.nine {
+	COLOR: #333333; FONT-FAMILY: verdana, arial, helvetica, sans-serif; FONT-SIZE: 9px
+}
+FONT.small {
+	COLOR: #333333; FONT-FAMILY: verdana, arial, helvetica, sans-serif; FONT-SIZE: 10px
+}
+FONT.home {
+	COLOR: #333333; FONT-FAMILY: verdana, arial, helvetica, sans-serif; FONT-SIZE: 11px
+}
+FONT.bodytext {
+	COLOR: #333333; FONT-FAMILY: verdana, arial, helvetica, sans-serif; FONT-SIZE: 12px
+}
+FONT.headline {
+	COLOR: #666666; FONT-FAMILY: verdana, arial, helvetica, sans-serif; FONT-SIZE: 20px; FONT-WEIGHT: bold
+}
+FONT.form {
+	COLOR: #ffffff; FONT-FAMILY: verdana, arial, helvetica, sans-serif; FONT-SIZE: 10px; FONT-WEIGHT: bold
+}
+FONT.newsheadone {
+	COLOR: #cc0000; FONT-FAMILY: verdana, arial, helvetica, sans-serif; FONT-SIZE: 16px; FONT-WEIGHT: bold
+}
+FONT.bodytextlight {
+	COLOR: #ffffff; FONT-FAMILY: verdana, arial, helvetica, sans-serif; FONT-SIZE: 12px
+}
+FONT.caption {
+	COLOR: #333333; FONT-FAMILY: verdana, arial, helvetica, sans-serif; FONT-SIZE: 10px; FONT-STYLE: italic
+}
+FONT.readmore {
+	COLOR: #cc0000; FONT-FAMILY: verdana, arial, helvetica, sans-serif; FONT-SIZE: 10px; FONT-STYLE: italic
+}
+FONT.country {
+	COLOR: #333333; FONT-FAMILY: verdana, arial, helvetica, sans-serif; FONT-SIZE: 16px; FONT-WEIGHT: bold
+}
+FONT.headlinesm {
+	COLOR: #666666; FONT-FAMILY: verdana, arial, helvetica, sans-serif; FONT-SIZE: 18px; FONT-WEIGHT: bold
+}
+FONT.dftfhead {
+	COLOR: #cc0000; FONT-FAMILY: verdana, arial, helvetica, sans-serif; FONT-SIZE: 16px; FONT-WEIGHT: bold
+}
+FONT.thirdhead {
+	COLOR: #333333; FONT-FAMILY: verdana, arial, helvetica, sans-serif; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+A:link {
+	COLOR: #cc0000; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #cc0000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #cc0000; TEXT-DECORATION: underline
+}
+A.where:link {
+	COLOR: #339966; TEXT-DECORATION: none
+}
+A.where:active {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A.where:visited {
+	COLOR: #339966; TEXT-DECORATION: none
+}
+A.where:hover {
+	COLOR: #339966; TEXT-DECORATION: underline
+}
+A.what:link {
+	COLOR: #cc6600; TEXT-DECORATION: none
+}
+A.what:active {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A.what:visited {
+	COLOR: #cc6600; TEXT-DECORATION: none
+}
+A.what:hover {
+	COLOR: #cc6600; TEXT-DECORATION: underline
+}
+A.who:link {
+	COLOR: #336699; TEXT-DECORATION: none
+}
+A.who:active {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A.who:visited {
+	COLOR: #336699; TEXT-DECORATION: none
+}
+A.who:hover {
+	COLOR: #336699; TEXT-DECORATION: underline
+}
+A.jobs:link {
+	COLOR: #669900; TEXT-DECORATION: none
+}
+A.jobs:active {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A.jobs:visited {
+	COLOR: #669900; TEXT-DECORATION: none
+}
+A.jobs:hover {
+	COLOR: #669900; TEXT-DECORATION: underline
+}
+A.pubs:link {
+	COLOR: #336699; TEXT-DECORATION: none
+}
+A.pubs:active {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A.pubs:visited {
+	COLOR: #336699; TEXT-DECORATION: none
+}
+A.pubs:hover {
+	COLOR: #336699; TEXT-DECORATION: underline
+}
+A.vol:link {
+	COLOR: #663366; TEXT-DECORATION: none
+}
+A.vol:active {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A.vol:visited {
+	COLOR: #663366; TEXT-DECORATION: none
+}
+A.vol:hover {
+	COLOR: #663366; TEXT-DECORATION: underline
+}
+A.home:link {
+	COLOR: #cc9933; TEXT-DECORATION: none
+}
+A.home:active {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A.home:visited {
+	COLOR: #cc9933; TEXT-DECORATION: none
+}
+A.home:hover {
+	COLOR: #cc9933; TEXT-DECORATION: underline
+}
+A.sitemap:link {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A.sitemap:active {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A.sitemap:visited {
+	COLOR: #333333; TEXT-DECORATION: none
+}
+A.sitemap:hover {
+	COLOR: #333333; TEXT-DECORATION: underline
+}

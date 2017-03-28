@@ -1,0 +1,136 @@
+<HTML>
+<HEAD>
+<TITLE>GEO-3: GLOBAL ENVIRONMENT OUTLOOK</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<link rel="stylesheet" href="http://www.grida.no/geo/geo3/geo3.css" type="text/css">
+</HEAD>
+<BODY BGCOLOR=#FFFFFF>
+<!---<script src="/include/survey/surveyjs.cfm" language="JavaScript"></script>--->
+<div id="overDiv" style="position:absolute; visibility:hidden; z-index:1000;"></div>
+<script language="JavaScript" src="http://www.grida.no/geo/overlib.js"><!-- overLIB (c) Erik Bosrup --></script> 
+
+<form action="http://www.grida.no/cgi-bin/htsearch/" method="post">
+  <TABLE WIDTH=650 BORDER=0 CELLPADDING=0 CELLSPACING=0 align="center">
+    <TR> 
+      <TD colspan="2" class="lightBlueBG"><a href="http://www.unep.org" class="white">UNEP</a> 
+        | <a href="http://www.unep.org/dewa/" class="white"> DEWA</a> | <a href="http://www.unep.net" class="white">UNEP.Net</a> 
+        | <a href="http://www.grida.no/geo1/" class="white">GEO-1</a> | <a href="http://www.grida.no/geo2000/" class="white">GEO-2</a>
+		| <a href="http://www.grida.no/geo/geo3/" class="white">GEO-3</a></TD>
+      <TD WIDTH=87 valign=bottom bgcolor="#006699"><IMG SRC="http://www.grida.no/geo/geo3/images/header_02.gif" WIDTH=87 HEIGHT=21></TD>
+    </TR>
+    <TR> 
+      <TD colspan="2"><IMG SRC="http://www.grida.no/geo/geo3/images/header_03.gif" WIDTH="563" HEIGHT=2></TD>
+      <TD><IMG SRC="http://www.grida.no/geo/geo3/images/header_04.gif" width="87" HEIGHT=2></TD>
+    </TR>
+    <TR> 
+      <TD colspan="2" class="redBG"><div class="yeallowHeader">GEO: Global Environment Outlook 3</div><div class="subTitle">Past, present and future perspectives</div></TD>
+      <TD WIDTH=87 class="darkBlueBG"><IMG SRC="http://www.grida.no/geo/geo3/images/header_06.gif" WIDTH=87 HEIGHT=42 class="darkBlueBG"></TD>
+    </TR>
+    <TR> 
+      <TD colspan="2"><IMG SRC="http://www.grida.no/geo/geo3/images/header_07.gif" WIDTH="563" HEIGHT=2></TD>
+      <TD><IMG SRC="http://www.grida.no/geo/geo3/images/header_08.gif" width="87" HEIGHT=2></TD>
+    </TR>
+    <TR> 
+      <TD class="darkBlueBG">&nbsp;<a href="http://www.grida.no/geo/contact.htm" class="white2">Contact 
+        Us</a> | <a href="http://www.grida.no/geo/help.htm" class="white2">Help</a> | </TD>
+      <TD align="right" class="darkBlueBG" width="313">
+		<input type="hidden" name="method" value="and">
+    	<input type="hidden" name="config" value="geo3">
+		<input type="hidden" name="format" value="builtin-long">
+		<input type="hidden" name="sort" value="score">
+		Search&nbsp;GEO-3:&nbsp;<input name="words" type="text" size="10">&nbsp;<input type="image" src="http://www.grida.no/geo/images/go.gif" name="submit" alt="submit" value="submit">
+		<script language="JavaScript">
+			// Here we restrict to 'geo3'.
+			// Special cases apply for: 
+			// - GRID-Arendal, which might be accessed either as www.grida.no or just grida.no; we spidered www.grida.no so we will force that as the restrict value.
+			// - WCMC, which set up a new subdomain instead of a /geo directory tree.
+			document.write('<input type="hidden" name="restrict" value="http://');
+			if (location.host == 'grida.no') {
+				document.write ('www.grida.no/geo/geo3/">')
+			} else if (location.host == 'geo.unep-wcmc.org') {
+				document.write ('geo.unep-wcmc.org/geo3/')
+			} else {
+				document.write (location.host + '/geo/geo3/">')
+			}
+		</script>
+		<noscript>
+			<input type="hidden" name="restrict" value="http://www.grida.no/geo/">
+		</noscript>		
+	</TD>
+      <TD WIDTH=87><IMG SRC="http://www.grida.no/geo/geo3/images/header_10.gif" WIDTH=87 HEIGHT=39></TD>
+    </TR>
+    <TR> 
+      <TD colspan="3"><img src="http://www.grida.no/geo/geo3/images/2pix.gif" width="100%" height="2"></TD>
+    </TR>
+    <TR> 
+      <TD colspan="3" class="breadCrumls"><b><a href="http://www.grida.no/geo/index.htm">Home</a> -&gt; 
+        <a href="http://www.grida.no/geo/geo3/index.htm">GEO-3</a> -&gt; 
+        Search</b></TD>
+    </TR>
+</TABLE>
+</form>
+<TABLE WIDTH=650 BORDER=0 CELLPADDING=0 CELLSPACING=0 align="center">
+<tr><td valign=top>
+
+	<div class="plaintext">
+	<center>
+	<form method="post" action="http://www.grida.no/cgi-bin/htsearch" name="search_form">
+    <p>Search for: <input type="text" size="20" name="words" value="$WORDS">&nbsp;<input type="submit" value="Go">
+    <input type="hidden" name="method" value="and">
+    <input type="hidden" name="config" value="geo">
+    <input type="hidden" name="format" value="builtin-long">
+    <input type="hidden" name="sort" value="score">
+    
+    <script language="JavaScript">
+    	// The restrict string matches 'geo', 'geo1', and 'geo2000'.
+    	// (It would also match 'geography' but we only spider the three directory trees mentioned above.)
+    	// Special cases apply for: 
+    	// - GRID-Arendal, which might be accessed either as www.grida.no or just grida.no; we spidered www.grida.no so we will force that as the restrict value.
+    	// - WCMC, which set up a new subdomain instead of a /geo directory tree.
+    	document.write('<input type="hidden" name="restrict" value="http://');
+    	if (location.host == 'grida.no') {
+    		document.write ('www.grida.no/geo">')
+    	} else if (location.host == 'geo.unep-wcmc.org') {
+			document.write ('geo.unep-wcmc.org')
+    	} else {
+    		document.write (location.host + '/geo">')
+    	}
+	</script>
+    <noscript>
+    	<input type="hidden" name="restrict" value="http://www.grida.no/geo/">
+    </noscript>
+
+    </font></b>
+	</form>
+
+	<p class="plaintext">Found <font color='red'><b>$MATCHES</b></font> document$PLURAL_MATCHES matching "<font color='red'><b>$WORDS</b></font>".
+	<br>Documents $(FIRSTDISPLAYED) - $(LASTDISPLAYED) of $(MATCHES) matches:
+	(more <img src="http://www.grida.no/htdig/star.gif" alt="*">'s indicate a better match)
+	</center>
+	<p>$(HTSEARCH_RESULTS)
+	<center><p>$(PAGEHEADER) $(PREVPAGE) $(PAGELIST) $(NEXTPAGE)</center>
+	</div>
+
+	</td>
+	</tr>
+	</table>
+
+  <table border="0" cellspacing="0" cellpadding="0" width="650" align="center">
+    <tr> 
+      <td class="footer" width="200">&nbsp;<!--Signup for news:<br>
+        <input type="text" name="news" size="15" value="e-mail" class="textBox">
+        <input type="image" src="http://www.grida.no/geo/geo3/images/add.gif" border="0" width="24" height="15" align="absbottom" name="image">-->
+      </td>
+      <td class="footer" align="center"> 
+        <p>Mirror sites: <br>
+          <a href="http://www-cger.nies.go.jp/geo/" class="white2">Japan</a> - 
+          <a href="http://www.unep.org/geo/" class="white2">Kenya</a> - <a href="http://www.rolac.unep.mx/geo/" class="white2">Mexico</a> 
+          - <a href="http://www.grida.no/geo/" class="white2">Norway</a> - <a href="http://www.grid.unep.ch/geo/" class="white2">Switzerland</a> 
+          - <a href="http://geo.unep-wcmc.org" class="white2">UK</a> - <a href="http://grid2.cr.usgs.gov/geo/" class="white2">USA</a> 
+        </p>
+        </td>
+      <td width="200" class="footer" align="right"><img src="http://www.grida.no/geo/geo3/images/ununep.gif" width="96" height="50"></td>
+    </tr>
+  </table>
+</BODY>
+</HTML>

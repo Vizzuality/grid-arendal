@@ -1,0 +1,60 @@
+A {
+	COLOR: #006699; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+B {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-WEIGHT: bold
+}
+A:visited {
+	COLOR: #990000; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #990000; TEXT-DECORATION: underline
+}
+.orgbar {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.blubar {
+	COLOR: #003366; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.blbar2 {
+	COLOR: #003366; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+P {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px
+}
+FORM {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px
+}
+TD {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 11px
+}
+LI {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px
+}
+BR {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px
+}
+UL {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px
+}
+OL {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px
+}
+H3 {
+	COLOR: #003366; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 15px; FONT-WEIGHT: bold
+}
+H2 {
+	COLOR: #003366; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 16px; FONT-WEIGHT: bold
+}
+.bodylink A {
+	COLOR: #990000; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+.bodylink A:visited {
+	COLOR: #990000; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+.bodylink A:hover {
+	COLOR: #990000; FONT-SIZE: 12px; TEXT-DECORATION: underline
+}
+BODY {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12px
+}
