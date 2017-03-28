@@ -1,0 +1,21 @@
+A:link {
+	TEXT-DECORATION: none
+}
+A:visited {
+	TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: red; TEXT-DECORATION: none
+}
+.nav {
+	FONT-FAMILY: Arial, Verdana, Helvetica, sans-serif; FONT-SIZE: 16px
+}
+.nav2 {
+	FONT-FAMILY: Arial, Verdana, Helvetica, sans-serif; FONT-SIZE: 13px
+}
+.nav3 {
+	FONT-FAMILY: Arial, Verdana, Helvetica, sans-serif; FONT-SIZE: 13px; LINE-HEIGHT: 19px
+}
+.monospace {
+	FONT-FAMILY: Courier, monospace
+}

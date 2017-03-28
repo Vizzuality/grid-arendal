@@ -1,0 +1,132 @@
+A {
+	FONT-FAMILY: arial, helvetica, sans-serif
+}
+ADDRESS {
+	FONT-FAMILY: arial, helvetica, sans-serif; MARGIN-LEFT: 2em; TEXT-ALIGN: left; TEXT-INDENT: 0px
+}
+BLOCKQUOTE {
+	FONT-FAMILY: arial, helvetica, sans-serif; MARGIN-LEFT: 1em; TEXT-ALIGN: left
+}
+BODY {
+	BACKGROUND: #ffffff; FONT-FAMILY: arial, helvetica, sans-serif
+}
+CAPTION {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-WEIGHT: bold
+}
+CITE {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-STYLE: italic
+}
+DD {
+	FONT-FAMILY: arial, helvetica, sans-serif
+}
+DL {
+	FONT-FAMILY: arial, helvetica, sans-serif
+}
+DT {
+	FONT-FAMILY: arial, helvetica, sans-serif
+}
+EM {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-WEIGHT: bold
+}
+H1 {
+	COLOR: #000099; FONT-FAMILY: arial, helvetica, sans-serif; FONT-WEIGHT: bold
+}
+H2 {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-WEIGHT: bold
+}
+H3 {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-WEIGHT: bold
+}
+H4 {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-WEIGHT: bold
+}
+H5 {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-WEIGHT: normal
+}
+H6 {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-STYLE: italic
+}
+HR {
+	
+}
+HR.full {
+	COLOR: #99ccff; HEIGHT: 6px
+}
+LI {
+	FONT-FAMILY: arial, helvetica, sans-serif
+}
+OL {
+	FONT-FAMILY: arial, helvetica, sans-serif
+}
+P {
+	FONT-FAMILY: arial, helvetica, sans-serif
+}
+PRE {
+	FONT-FAMILY: courier, new-courier, monospace
+}
+TD.blue {
+	BACKGROUND-COLOR: #99ccff
+}
+TD.gray {
+	BACKGROUND-COLOR: #cccccc
+}
+UL {
+	FONT-FAMILY: arial, helvetica, sans-serif
+}
+UL.gif {
+	FONT-FAMILY: arial, helvetica, sans-serif; LIST-STYLE: url(/images/red_square.gif)
+}
+.main-title {
+	COLOR: #000000; FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: large; FONT-WEIGHT: bold
+}
+.main-title2 {
+	COLOR: #000000; FONT-FAMILY: arial, helvetica, sans-serif; FONT-WEIGHT: bold
+}
+.main-title-link {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: large; FONT-WEIGHT: bold
+}
+.main-title-link2 {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-WEIGHT: bold
+}
+.red {
+	COLOR: #ff0000
+}
+.green {
+	COLOR: #006600
+}
+.gray {
+	COLOR: #999999
+}
+.smaller {
+	FONT-SIZE: small
+}
+.title-link1 {
+	FONT-FAMILY: arial, helvetica, sans-serif; TEXT-DECORATION: none
+}
+.title-link2 {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: smaller; TEXT-DECORATION: none
+}
+.titlebar-spacer {
+	COLOR: #ffffff; FONT-FAMILY: arial, helvetica, sans-serif; FONT-WEIGHT: bold
+}
+.pastel-1 {
+	BACKGROUND-COLOR: #ffe7ba; COLOR: #000000
+}
+.pastel-2 {
+	BACKGROUND-COLOR: #f0ffff; COLOR: #000000
+}
+.dark-1 {
+	BACKGROUND-COLOR: #8b4513; COLOR: #ffffff
+}
+.dark-2 {
+	BACKGROUND-COLOR: #000099; COLOR: #ffffff
+}
+.midtone-1 {
+	BACKGROUND-COLOR: #9bcd9b; COLOR: #ffffff
+}
+.midtone-2 {
+	BACKGROUND-COLOR: #d2b48c; COLOR: #ffffff
+}
+.white {
+	BACKGROUND-COLOR: #ffffff; COLOR: #000000
+}

@@ -1,0 +1,11 @@
+# survey.css
+
+p { font-family: Arial, Helvetica, sans-serif; font-size: 0.8em; }
+td { font-family: Arial, Helvetica, sans-serif; font-size: 0.8em; }
+h1 { font-family: Arial, Helvetica, sans-serif; font-size: 150%; font-style:bold; text-align: center; }
+
+.instructionbox { border: thin solid; border-color: #6699ff; padding: 1em; width:100%}
+
+.sectionheader { font-family: Arial, Helvetica, sans-serif; font-size: 150%; font-style:bold; text-decoration: }
+.question { font-family: Arial, Helvetica, sans-serif; font-size: 100%; font-style:italic; }
+.answer { font-family: Arial, Helvetica, sans-serif; font-size: 100%; }

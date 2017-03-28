@@ -1,0 +1,144 @@
+STYLE typetextcss .useless {
+	COLOR: #663333
+}
+BODY {
+	BACKGROUND-COLOR: white; COLOR: black
+}
+BODY.index {
+	BACKGROUND-COLOR: black; COLOR: white
+}
+A:link {
+	COLOR: #ff0000; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #396bad; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #aa2222; TEXT-DECORATION: none
+}
+DL {
+	COLOR: black; FONT-FAMILY: Verdana, Arial, Helvetica; FONT-SIZE: small
+}
+UL {
+	COLOR: black; FONT-FAMILY: Verdana, Arial, Helvetica; FONT-SIZE: small
+}
+OL {
+	COLOR: black; FONT-FAMILY: Verdana, Arial, Helvetica; FONT-SIZE: small
+}
+LI {
+	COLOR: black; FONT-FAMILY: Verdana, Arial, Helvetica; FONT-SIZE: small
+}
+DD {
+	COLOR: black; FONT-FAMILY: Verdana, Arial, Helvetica; FONT-SIZE: small
+}
+P {
+	COLOR: black; FONT-FAMILY: Verdana, Arial, Helvetica; FONT-SIZE: small
+}
+TD {
+	COLOR: black; FONT-FAMILY: Verdana, Arial, Helvetica; FONT-SIZE: small
+}
+TH {
+	COLOR: black; FONT-FAMILY: Verdana, Arial, Helvetica; FONT-SIZE: small
+}
+.right {
+	TEXT-ALIGN: right
+}
+.center {
+	TEXT-ALIGN: center
+}
+H1 {
+	FONT-FAMILY: Verdana, Arial, Helvetica; FONT-STYLE: normal
+}
+H2 {
+	FONT-FAMILY: Verdana, Arial, Helvetica; FONT-STYLE: normal
+}
+H3 {
+	FONT-FAMILY: Verdana, Arial, Helvetica; FONT-STYLE: normal
+}
+H4 {
+	FONT-FAMILY: Verdana, Arial, Helvetica; FONT-STYLE: normal
+}
+H5 {
+	FONT-FAMILY: Verdana, Arial, Helvetica; FONT-STYLE: normal
+}
+H6 {
+	FONT-FAMILY: Verdana, Arial, Helvetica; FONT-STYLE: normal
+}
+H1 {
+	COLOR: #396bad; FONT-SIZE: x-large; FONT-WEIGHT: bold
+}
+H2 {
+	COLOR: #396bad; FONT-SIZE: large; FONT-WEIGHT: bold
+}
+H3 {
+	COLOR: #396bad; FONT-SIZE: medium; FONT-WEIGHT: bold
+}
+H4 {
+	FONT-SIZE: small; FONT-WEIGHT: bold
+}
+H5 {
+	FONT-SIZE: small; FONT-STYLE: italic
+}
+H6 {
+	FONT-SIZE: small
+}
+.headertitle {
+	COLOR: white; FONT-SIZE: medium; FONT-WEIGHT: bold
+}
+.H1 {
+	COLOR: #396bad; FONT-SIZE: x-large; FONT-WEIGHT: bold
+}
+.H2 {
+	COLOR: #396bad; FONT-SIZE: large; FONT-WEIGHT: bold
+}
+.H3 {
+	COLOR: #396bad; FONT-SIZE: medium; FONT-WEIGHT: bold
+}
+.H4 {
+	FONT-SIZE: small; FONT-WEIGHT: bold
+}
+.H5 {
+	FONT-SIZE: small; FONT-STYLE: italic
+}
+.indent150 {
+	MARGIN-LEFT: 150px
+}
+.indent20 {
+	MARGIN-LEFT: 20px
+}
+.indent180 {
+	MARGIN-LEFT: 180px
+}
+.normal {
+	FONT-FAMILY: Verdana, Arial, Helvetica; FONT-SIZE: small; FONT-WEIGHT: normal
+}
+.xsmall {
+	FONT-SIZE: x-small
+}
+.bgblue1 {
+	BACKGROUND: #c4d3e9
+}
+.bgblue2 {
+	BACKGROUND: #8eacd6
+}
+.bgblue3 {
+	BACKGROUND: #638cc6; COLOR: white; FONT-WEIGHT: bold
+}
+.bgblack {
+	BACKGROUND: #000000
+}
+.bgwhite {
+	BACKGROUND: #ffffff
+}
+.bggrey1 {
+	BACKGROUND: #efefef
+}
+.bggrey2 {
+	BACKGROUND: #c0c0c0
+}
+.bggrey3 {
+	BACKGROUND: #999999
+}
+.black {
+	COLOR: black
+}

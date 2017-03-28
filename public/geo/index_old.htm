@@ -1,0 +1,309 @@
+<HTML>
+<HEAD>
+<TITLE>GEO: GLOBAL ENVIRONMENT OUTLOOK</TITLE>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<link rel="stylesheet" href="geo.css" type="text/css">
+</HEAD>
+<BODY BGCOLOR=#FFFFFF>
+<!---<script src="/include/survey/surveyjs.cfm" language="JavaScript"></script>--->
+<div id="overDiv" style="position:absolute; visibility:hidden; z-index:1000;"></div>
+<script language="JavaScript" src="overlib.js"><!-- overLIB (c) Erik Bosrup --></script>
+<form action="http://www.grida.no/cgi-bin/htsearch/" method="post">
+  <TABLE WIDTH=650 BORDER=0 CELLPADDING=0 CELLSPACING=0 align="center">
+    <TR> 
+      <TD colspan="2" class="lightBlueBG"><a href="http://www.unep.org" class="white">UNEP</a> 
+        | <a href="http://www.unep.org/dewa/" class="white"> DEWA</a> | <a href="http://www.unep.net" class="white">UNEP.Net</a> 
+        | <a href="http://www.grida.no/geo1/" class="white">GEO-1</a> | <a href="/geo2000/" class="white">GEO-2</a> 
+        | <a href="geo3/" class="white">GEO-3</a></TD>
+      <TD WIDTH=87> <IMG SRC="images/header_02.gif" WIDTH=87 HEIGHT=21></TD>
+    </TR>
+    <TR> 
+      <TD colspan="2"> <IMG SRC="images/header_03.gif" WIDTH="563" HEIGHT=2></TD>
+      <TD> <IMG SRC="images/header_04.gif"  HEIGHT=2></TD>
+    </TR>
+    <TR> 
+      <TD colspan="2" class="whiteHeader">GEO: GLOBAL ENVIRONMENT OUTLOOK</TD>
+      <TD WIDTH=87> <IMG SRC="images/header_06.gif" WIDTH=87 HEIGHT=42 class="darkBlueBG"></TD>
+    </TR>
+    <TR> 
+      <TD colspan="2"> <IMG SRC="images/header_07.gif" WIDTH="563" HEIGHT=2></TD>
+      <TD> <IMG SRC="images/header_08.gif" HEIGHT=2></TD>
+    </TR>
+    <TR> 
+      <TD class="darkBlueBG" width="250">&nbsp;<a href="contact.htm" class="white2">Contact 
+        Us</a> | <a href="help.htm" class="white2">Help</a></TD>
+      <TD align="right" class="darkBlueBG" width="313"> 
+        <input type="hidden" name="method" value="and">
+        <input type="hidden" name="config" value="geo">
+        <input type="hidden" name="format" value="builtin-long">
+        <input type="hidden" name="sort" value="score">
+        Search&nbsp;GEO:&nbsp; 
+        <input name="words" type="text" size="10">
+        &nbsp; 
+        <input type="image" src="images/go.gif" name="submit" alt="submit" value="submit">
+        <script language="JavaScript">
+			// The restrict string matches 'geo', 'geo1', and 'geo2000'.
+			// (It would also match 'geography' but we only spider the three directory trees mentioned above.)
+			// Special cases apply for: 
+			// - GRID-Arendal, which might be accessed either as www.grida.no or just grida.no; we spidered www.grida.no so we will force that as the restrict value.
+			// - WCMC, which set up a new subdomain instead of a /geo directory tree.
+			document.write('<input type="hidden" name="restrict" value="http://');
+			if (location.host == 'grida.no') {
+				document.write ('www.grida.no/geo">')
+			} else if (location.host == 'geo.unep-wcmc.org') {
+				document.write ('geo.unep-wcmc.org')
+			} else {
+				document.write (location.host + '/geo">')
+			}
+		</script>
+        <noscript> 
+        <input type="hidden" name="restrict" value="http://www.grida.no/geo/">
+        </noscript> </TD>
+      <TD WIDTH=87> <IMG SRC="images/header_10.gif" WIDTH=87 HEIGHT=39></TD>
+    </TR>
+    <TR> 
+      <TD colspan="3"><img src="images/2pix.gif" width="100%" height="2"></TD>
+    </TR>
+  </TABLE>
+</form>
+<table border="0" cellspacing="0" cellpadding="0" width="650" align="center" bgcolor="#FFFFFF">
+  <tr> 
+    <td class="menuHeader" width="199">News and Highlights</td>
+    <td>&nbsp;</td>
+    <td class="menuHeader" align="center" width="247">The GEO Report Series</td>
+    <td align="center" width="2">&nbsp;</td>
+    <td class="menuHeader" width="200">About GEO </td>
+  </tr>
+  <tr bgcolor="#FFFFFF"> 
+    <td class="menu" width="199" valign="top"> 
+      <table border="0" cellspacing="0" cellpadding="0" width="187" height="182">
+        <tr> 
+          <td class="menuLinks" valign="top"><img src="images/square.gif" width="6" height="5" vspace="5"></td>
+          <td class="menuLinks" valign="top" bgcolor="#FFFFFF"> 
+            <p><b><a href="pdfs/GEFChangeandChallenge.pdf">Change and Challenge:</a></b><a href="pdfs/GEFChangeandChallenge.pdf"> 
+              a State of the Environment<br>
+              Briefing for the Global Environment Facility</a>. <span class="pdf">(PDF 
+              1.0 MB)</span></p>
+          </td>
+        </tr>
+        <tr> 
+          <td class="menuLinks" valign="top"><img src="images/square.gif" width="6" height="5" vspace="5"></td>
+          <td class="menuLinks" valign="top" bgcolor="#FFFFFF"> 
+            <p><b>GEO 3 Launch</b><br>
+              Read the <a href="pressrelease.htm">Press release</a>.</p>
+          </td>
+        </tr>
+        <tr> 
+          <td class="menuLinks" valign="top" colspan="2"> 
+            <hr>
+          </td>
+        </tr>
+        <tr> 
+          <td class="menuLinks" valign="top"><img src="images/square.gif" width="6" height="5" vspace="5"></td>
+          <td class="menuLinks" valign="top" bgcolor="#FFFFFF"> 
+            <p><b>GEO 3 Fact Sheets on Regions:</b><BR>
+              <a href="pdfs/GEO-3%20Fact%20Sheet%20Africa.pdf">Africa</a> <span class="pdf">(PDF 
+              0.4 MB)</span><BR>
+              <a href="pdfs/GEO-3%20Fact%20Sheet%20Asia%20&%20the.pdf">Asia and 
+              the Pacific</a> <span class="pdf">(PDF 0.4 MB)</span><BR>
+              <a href="pdfs/GEO-3%20Fact%20Sheet%20Europe.pdf">Europe</a> <span class="pdf">(PDF 
+              0.4 MB)</span><BR>
+              <a href="pdfs/GEO-3%20Fact%20Sheet%20Latin%20Amer.pdf">Latin America 
+              and the Caribbean</a> <span class="pdf">(PDF 0.4 MB)</span><BR>
+              <a href="pdfs/GEO-3%20Fact%20sheet%20N%20America.pdf">North America</a> 
+              <span class="pdf">(PDF 0.4 MB)</span><BR>
+              <a href="pdfs/GEO-3%20Fact%20Sheet%20%20West%20Asia.pdf">West Asia</a> 
+              <span class="pdf">(PDF 0.4 MB)</span><br>
+              <a href="pdfs/GEO-3%20Fact%20Sheet%20%20The%20Polar.pdf">The Polar 
+              Regions</a> <span class="pdf">(PDF 0.4 MB)</span></p>
+          </td>
+        </tr>
+        <tr> 
+          <td class="menuLinks" valign="top" colspan="2"> 
+            <hr>
+          </td>
+        </tr>
+        <tr> 
+          <td class="menuLinks" valign="top"><img src="images/square.gif" width="6" height="5" vspace="5"></td>
+          <td class="menuLinks" valign="top" bgcolor="#FFFFFF"> <b>GEO-3 Synthesis:</b><br>
+            <table border="0" cellspacing="0" cellpadding="3">
+              <tr> 
+                <td class="plaintext">HTML</td>
+                <td class="plaintext">PDF</td>
+              </tr>
+              <tr> 
+                <td class="plaintext"><a href="geo3/english/overview/index.htm"">English</a></td>
+                <td class="plaintext"><a href="geo3/pdfs/synthesis.pdf"">English</a></td>
+              </tr>
+              <tr> 
+                <td class="plaintext"><a href="geo3/spanish/overview/index.htm">Español</a></td>
+                <td class="plaintext"><a href="geo3/pdfs/GEO3_Synthesis_spa.pdf">Español</a></td>
+              </tr>
+              <tr> 
+                <td class="plaintext"><a href="geo3/french/overview/index.htm">Français</a></td>
+                <td class="plaintext"><a href="geo3/pdfs/GEO3_Synthesis_fre.pdf">Français</a></td>
+              </tr>
+              <tr> 
+                <td class="plaintext"><a href="geo3/russian/overview/index.htm"><img src="images/russianMainpage.gif" width="60" height="15" border="0"></a></td>
+                <td class="plaintext"><a href="geo3/pdfs/GEO3_Synthesis_rus.pdf"><img src="images/russianMainpage.gif" width="60" height="15" border="0"></a></td>
+              </tr>
+              <tr> 
+                <td class="plaintext"><a href="http://www.ces.pku.edu.cn/geo/geo3/homepage/geo-3%20homepage/complete%20report/qianyan/overview.htm"><img src="images/ChineseMainpage.gif" width="51" height="16" border="0"></a></td>
+                <td class="plaintext"><p><a href="geo3/pdfs/Synthesis_Chinese.pdf"><img src="images/ChineseMainpage.gif" width="51" height="16" border="0"></a></p>                </td>
+              </tr>
+              <tr>
+                <td class="plaintext">&nbsp;</td>
+                <td class="plaintext"><a href="geo3/pdfs/Synthesis_Arabic.pdf"><img src="file:///W|/web-pub/geo/images/arabic2.gif" width="71" height="22" border="0"></a></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+    <td>&nbsp;</td>
+    <td align="center" class="menu" width="247" valign="top"> <br>
+      Click on one of the following book covers to access the GEO reports 
+      <p><img src="images/covers.jpg" width=193 height=339 border=0 usemap="#covers_Map"><br>
+      </p>
+      <table border="0" cellspacing="0" cellpadding="2">
+        <tr> 
+          <td colspan="3" class="plaintext"> 
+            <div align="center">Complete GEO-3 Report in HTML:</div>
+          </td>
+        </tr>
+        <tr> 
+          <td class="menuLinks"> 
+            <div align="center">
+              <p><a href="geo3/english/index.htm"">English</a></p>
+            </div>
+          </td>
+          <td class="plaintext"> 
+            <div align="center"><a href="geo3/spanish/index.htm">Español</a></div>
+          </td>
+          <td class="plaintext"> 
+            <div align="center"><a href="geo3/french/index.htm">Français</a></div>
+          </td>
+        </tr>
+        <tr> 
+          <td class="plaintext"> 
+            <div align="center"><a href="geo3/russian/index.htm"><img src="images/russianMainpage.gif" width="60" height="15" border="0"></a></div>
+          </td>
+          <td class="plaintext"> 
+            <div align="center"> <a href="http://www.ces.pku.edu.cn/geo/geo3/homepage/geo-3%20homepage/complete%20report/mulu.htm"><img src="images/ChineseMainpage.gif" width="51" height="16" border="0"></a> 
+            </div>
+          </td>
+          <td class="plaintext"> 
+            <div align="center"></div>
+          </td>
+        </tr>
+      </table>
+      <p> 
+        <map name="covers_Map"> 
+          <area shape="poly" alt="Global Environment Outlook 3" coords="186,141,38,140,38,333,185,333" href="geo3/" title="Global Environment Outlook 3">
+          <area shape="poly" alt="Global Environment Outlook 2000" coords="2,69,109,70,109,139,38,140,38,214,2,214" href="/geo2000/" title="Global Environment Outlook 2000">
+          <area shape="poly" alt="Global Environment Outlook" coords="152,118,114,118,114,68,60,67,60,1,151,2" href="http://www.grida.no/geo1" title="Global Environment Outlook">
+        </map>
+      </p>
+      <p><a href="http://www.earthprint.com/go.htm?to=2984">Order the GEO reports 
+        on-line</a> </p>
+    </td>
+    <td align="center" width="2">&nbsp;</td>
+    <td class="menu" width="200" valign="top"> 
+      <table border="0" cellspacing="0" cellpadding="0" width="100%">
+        <tr> 
+          <td class="menuLinks"><img src="images/square.gif" width="6" height="5"></td>
+          <td class="menuLinks">&nbsp;</td>
+          <td class="menuLinks"><a href="geo3/english/overview/023.htm">The GEO 
+            Project</a></td>
+        </tr>
+        <tr> 
+          <td class="menuLinks"><img src="images/square.gif" width="6" height="5"></td>
+          <td class="menuLinks">&nbsp;</td>
+          <td class="menuLinks"><a href="region.htm">GEO regions</a></td>
+        </tr>
+        <tr> 
+          <td class="menuLinks"><img src="images/square.gif" width="6" height="5"></td>
+          <td class="menuLinks">&nbsp;</td>
+          <td class="menuLinks"><a href="team.htm">UNEP Team</a></td>
+        </tr>
+        <tr> 
+          <td class="menuLinks"><img src="images/square.gif" width="6" height="5"></td>
+          <td class="menuLinks">&nbsp;</td>
+          <td class="menuLinks"><a href="focalpoints.htm">Collaborating Centres</a></td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td class="menuHeader" valign="top" colspan="3">GEO Products</td>
+        </tr>
+        <tr> 
+          <td class="menuLinks" valign="top"><img src="images/square.gif" width="6" height="5" vspace="5"></td>
+          <td class="menuLinks">&nbsp;</td>
+          <td class="menuLinks"> 
+            <p><a href="regreports.htm">Regional Reports</a></p>
+          </td>
+        </tr>
+        <tr> 
+          <td class="menuLinks" valign="top"><img src="images/square.gif" width="6" height="5" vspace="5"></td>
+          <td class="menuLinks">&nbsp;</td>
+          <td class="menuLinks"> 
+            <p><a href="techreports.htm">Technical Reports</a></p>
+          </td>
+        </tr>
+        <tr> 
+          <td>&nbsp;</td>
+        </tr>
+        <tr> 
+          <td class="menuHeader" valign="top" colspan="3">GEO Education</td>
+        </tr>
+        <tr> 
+          <td class="menuLinks" valign="top"><img src="images/square.gif" width="6" height="5" vspace="5"></td>
+          <td class="menuLinks">&nbsp;</td>
+          <td class="menuLinks" valign="top"> 
+            <p>Recognizing how important young people are to the future of our 
+              planet, the GEO project also targets children, youth and their educators 
+              through <a href="education.htm">GEO Education products</a>. These 
+              products aim to raise environmental awareness, involve young people 
+              in environmental assessment, and encourage youth action at local 
+              through global levels.</p>
+          </td>
+        </tr>
+        <tr> 
+          <td class="menuHeader" valign="top" colspan="3">Order GEO Publications</td>
+        </tr>
+        <tr> 
+          <td class="menuLinks" valign="top"><img src="images/square.gif" width="6" height="5" vspace="5"></td>
+          <td class="menuLinks">&nbsp;</td>
+          <td class="menuLinks">Complete on-line listing from <a href="http://www.earthprint.com/show.htm??url=http://www.earthprint.com/cgi-bin/ncommerce3/CategoryDisplay?cgrfnbr=21123&cgmenbr=27973&next=1">EarthPrint.com</a>.</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td width="199" height="2">&nbsp;</td>
+    <td height="2">&nbsp;</td>
+    <td align="center" width="247" height="2">&nbsp;</td>
+    <td align="center" width="2" height="2">&nbsp;</td>
+    <td width="200" height="2">&nbsp;</td>
+  </tr>
+</table>
+	  
+  <table border="0" cellspacing="0" cellpadding="0" width="650" align="center">
+    <tr> 
+      <td class="footer" width="200">&nbsp;<!--Signup for news:<br>
+        <input type="text" name="news" size="15" value="e-mail" class="textBox">
+        <input type="image" src="images/add.gif" border="0" width="24" height="15" align="absbottom" name="image">-->
+      </td>
+      <td class="footer" align="center"> 
+        <p>Mirror sites: <br>
+          <a href="http://www-cger.nies.go.jp/geo/" class="white2">Japan</a> - 
+          <a href="http://www.unep.org/geo/" class="white2">Kenya</a> - <a href="http://www.rolac.unep.mx/geo/" class="white2">Mexico</a> 
+          - <a href="http://www.grida.no/geo/" class="white2">Norway</a> - <a href="http://www.grid.unep.ch/geo/" class="white2">Switzerland</a> 
+          - <a href="http://geo.unep-wcmc.org" class="white2">UK</a> 
+        </p>
+        </td>
+      <td width="200" class="footer" align="right"><img src="images/ununep.gif" width="96" height="50"></td>
+    </tr>
+  </table>
+</BODY>

@@ -1,0 +1,100 @@
+BODY {
+	FONT-FAMILY: times, times new roman, garamond
+}
+H2 {
+	COLOR: #cc6600; FONT-FAMILY: times, times new roman, garamond; FONT-SIZE: 16px; FONT-WEIGHT: bold
+}
+H3 {
+	COLOR: #000000; FONT-FAMILY: times, times new roman, garamond; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+P {
+	COLOR: #000000; FONT-FAMILY: times, times new roman, garamond; FONT-SIZE: 14px
+}
+TD {
+	COLOR: #000000; FONT-FAMILY: verdana, arial, helvetica; FONT-SIZE: 9px; VERTICAL-ALIGN: top
+}
+LI.download {
+	COLOR: #000000; FONT-FAMILY: verdana, arial, helvetica; FONT-SIZE: 9px; VERTICAL-ALIGN: top
+}
+LI {
+	COLOR: #000000; FONT-FAMILY: times, times new roman, garamond; FONT-SIZE: 14px
+}
+TH {
+	COLOR: #cc6600; FONT-FAMILY: verdana, arial, helvetica; FONT-SIZE: 9px; FONT-WEIGHT: bold; VERTICAL-ALIGN: top
+}
+.breadcrumbs {
+	COLOR: #737373; FONT-FAMILY: verdana, arial, helvetica; FONT-SIZE: 9px; VERTICAL-ALIGN: top
+}
+.noscript {
+	COLOR: #737373; FONT-FAMILY: verdana, arial, helvetica; FONT-SIZE: 9px; VERTICAL-ALIGN: top
+}
+.contact {
+	COLOR: #333399; FONT-FAMILY: verdana, arial, helvetica; FONT-SIZE: 9px
+}
+.contactsubhead {
+	COLOR: #cc6600; FONT-FAMILY: verdana, arial, helvetica; FONT-SIZE: 9px
+}
+.contactnotes {
+	FONT-FAMILY: verdana, arial, helvetica; FONT-SIZE: 9px; LETTER-SPACING: 5px
+}
+.pagelinks {
+	COLOR: #000000; FONT-FAMILY: verdana, arial, helvetica; FONT-SIZE: 9px; LINE-HEIGHT: 10px; TEXT-ALIGN: right; VERTICAL-ALIGN: top
+}
+.note {
+	COLOR: red
+}
+.menu {
+	POSITION: absolute; VISIBILITY: hidden; WIDTH: 200px; Z-INDEX: 1000
+}
+
+@media Print    
+{
+.noprint {
+	DISPLAY: none
+}
+    }
+SELECT {
+	FONT-SIZE: 9px
+}
+TH.documentation {
+	COLOR: #333399
+}
+.left {
+	TEXT-ALIGN: left; WIDTH: 150px
+}
+TABLE {
+	BORDER-BOTTOM: #ffffff 1px solid; BORDER-LEFT: #ffffff 1px solid; BORDER-RIGHT: #ffffff 1px solid; BORDER-TOP: #ffffff 1px solid
+}
+.tabletitle {
+	BACKGROUND-COLOR: #d0cfc0; COLOR: #000000; TEXT-ALIGN: center
+}
+.tableregion {
+	BACKGROUND-COLOR: #ffffc0
+}
+.tableblock {
+	BACKGROUND-COLOR: #ffffc0; COLOR: #000000; TEXT-ALIGN: center
+}
+.tablenote {
+	BACKGROUND-COLOR: #ffffff; COLOR: #cc6600; TEXT-ALIGN: center
+}
+.tablereferences {
+	BACKGROUND-COLOR: #ffffc0; TEXT-ALIGN: left
+}
+.tabledownloads {
+	BACKGROUND-COLOR: #ffffc0; TEXT-ALIGN: right
+}
+.tabletotal {
+	BACKGROUND-COLOR: #ffffc0; FONT-WEIGHT: bold
+}
+rowclass {
+	BACKGROUND-COLOR: #ffffc0
+}
+.topcircle {
+	LEFT: 1px; POSITION: absolute; TOP: 108px; Z-INDEX: 5
+}
+.photocircle {
+	LEFT: 1px; POSITION: absolute; TOP: 144px; Z-INDEX: 5
+}
+.popbriefing {
+	BORDER-BOTTOM: orange 1px solid; BORDER-LEFT: orange 1px solid; BORDER-RIGHT: orange 1px solid; BORDER-TOP: orange 1px solid
+}

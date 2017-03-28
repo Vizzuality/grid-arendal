@@ -1,0 +1,22 @@
+<html>
+<head>
+<!-- #BeginEditable "doctitle" -->
+<title>Примечания</title>
+<!-- #EndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=Windows-1251">
+
+<link rel="stylesheet" href="syr.css">
+<script language="JavaScript" src="syr.js"></script>
+</head>
+
+<body onload="top.scrollTo(0,0)" bgcolor="#FFFFFF">
+<h4>Примечания к <!-- #BeginEditable "Chapter%20name%20or%20number" -->{Chapter 
+  name or number}<!-- #EndEditable --></h4>
+ <span class="footnote_text">
+<!-- #BeginEditable "Page_Content_Here" -->
+{Page_Content_Here}
+<!-- #EndEditable -->
+</span>
+<hr>
+</body>
+</html>

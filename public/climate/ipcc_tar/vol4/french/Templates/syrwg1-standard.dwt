@@ -1,0 +1,83 @@
+<html>
+<head>
+<!-- #BeginEditable "doctitle" -->
+<title>Bilan 2001 des changements climatiques: Rapport de synthèse</title>
+<!-- #EndEditable -->
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<link rel="stylesheet" href="../syrwg1.css">
+<script language="JavaScript" src="../syr.js"></script>
+<style type="text/css">
+<!--
+-->
+</style>
+</head>
+
+<body onload="top.scrollTo(0,0)" bgcolor="#FFFFFF">
+<form name="ChapterJumpForm">
+  <table width="100%" border="0" cellpadding="2" cellspacing="0">
+    <tr valign="bottom">
+      <td><span class="report_name">Bilan 2001 des changements climatiques :<br>
+        Les éléments scientifiques</span></td>
+      <td align="right"> <a target="_blank" href="http://www.ipcc.ch/"><img src="../images/ipccwht.gif" width="168" height="21" border="0" align="middle"></a> 
+        <a target="_blank" href="http://www.unep.org"><img src="../images/unep.gif" width="32" height="36" border="0" align="middle"></a> 
+        <a target="_blank" href="http://www.wmo.ch/"><img src="../images/wmo.gif" width="32" height="36" border="0" align="middle"></a> 
+      </td>
+    </tr>
+  </table>
+  <table width="100%" border="0" cellpadding="2" cellspacing="0">
+    <tr valign="middle"> 
+      <td colspan=2 class="banner"> <font face="Arial, Helvetica, sans-serif" size="1"> 
+        <script language="JavaScript">
+		<!--
+		ShowChapterJumpMenu();
+		//-->
+		</script>
+       </font> 
+      </td>
+    </tr>
+    <tr>
+	  <td valign=top>
+		<font face="Arial, Helvetica, sans-serif" size="1">
+        <script language="JavaScript">
+		<!--
+		PrevNext();
+		//-->
+		</script>
+		</font>
+	  </td>
+      <td valign=top align="right"><font face="Arial, Helvetica, sans-serif" size="1">
+        <p><a href="../index.htm">Autres rapports dans cette collection</a></p>
+        </font> </td>
+    </tr>
+  </table>
+</form>
+<!-- #BeginEditable "Page_Content_Here" -->
+{Page_Content_Here}
+<!-- #EndEditable -->
+<hr>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+	<tr valign="top">
+      
+    <td height="62"><noscript>
+      <p><font size="1" face="Arial, Helvetica, sans-serif"><font size="1" face="Arial, Helvetica, sans-serif"><a href="../index.htm">Table 
+        of contents</a></font></p>
+      </noscript> <font size="1" face="Arial, Helvetica, sans-serif">
+      <script language="JavaScript">
+		<!--
+		PrevNext();
+		//-->
+      </script>
+      <br>
+      <a href="../index.htm">Autres rapports dans 
+      cette collection</a> </font> </td>
+    <td align="right">
+        
+      <p><a target="_blank" href="http://www.ipcc.ch/"><img src="../images/ipccwht.gif" width="168" height="21" border="0" align="middle"></a>
+		<a target="_blank" href="http://www.unep.org"><img src="../images/unep.gif" width="32" height="36" border="0" align="middle"></a>
+		<a target="_blank" href="http://www.wmo.ch/"><img src="../images/wmo.gif" width="32" height="36" border="0" align="middle"></a></p>
+      </td>
+    </tr>
+</table>
+</body>
+</html>

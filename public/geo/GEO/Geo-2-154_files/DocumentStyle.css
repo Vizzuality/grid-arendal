@@ -1,0 +1,45 @@
+.PageDescription {
+	BACKGROUND-COLOR: lightgrey
+}
+.DocLocation {
+	COLOR: #0000ff; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; FONT-WEIGHT: bold; TEXT-ALIGN: left; TEXT-DECORATION: none
+}
+.Date {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 9px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.ArticleTitle {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 16px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.Abstract {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; MARGIN-LEFT: 20px; MARGIN-RIGHT: 20px; TEXT-ALIGN: justify; TEXT-DECORATION: none
+}
+.FullText {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; TEXT-ALIGN: justify; TEXT-DECORATION: none
+}
+.AlsoInSection {
+	COLOR: #0000ff; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; TEXT-DECORATION: none
+}
+P {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; TEXT-ALIGN: justify; TEXT-DECORATION: none
+}
+.footer {
+	BACKGROUND-COLOR: #cccccc; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; TEXT-ALIGN: center; TEXT-DECORATION: none
+}
+.rNavBar {
+	BACKGROUND-COLOR: lightgrey; HEIGHT: 100%
+}
+.HeaderText {
+	BACKGROUND-COLOR: #000099; COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold; TEXT-ALIGN: center
+}
+.DocContents {
+	COLOR: #0000ff; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #ff9933; TEXT-DECORATION: underline
+}
+A:link {
+	COLOR: #0000ff
+}
+.DocRelated {
+	COLOR: #000000; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; FONT-WEIGHT: bold; TEXT-ALIGN: center; TEXT-DECORATION: none
+}

@@ -1,0 +1,24 @@
+.link {
+	COLOR: #ffffff; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; FONT-STYLE: normal; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.linkyellow {
+	COLOR: #baac0b; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; FONT-STYLE: normal; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.linknotbold {
+	COLOR: #cccccc; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; FONT-STYLE: normal; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+.linkCopy {
+	COLOR: #d5eda1; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; FONT-STYLE: normal; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.linkmenu {
+	COLOR: #e6e7e6; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 9px; FONT-STYLE: normal; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.linknotboldblack {
+	COLOR: #697a5c; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 10px; FONT-STYLE: normal; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+.linknotboldCopy {
+	COLOR: #23331d; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; FONT-SIZE: 9px; FONT-STYLE: normal; FONT-WEIGHT: normal; TEXT-DECORATION: none
+}
+.unnamed1 {
+	CLIP: rect(auto auto auto auto); HEIGHT: auto; LEFT: auto; POSITION: absolute; TOP: auto; WIDTH: auto; Z-INDEX: 2
+}

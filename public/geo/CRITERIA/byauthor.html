@@ -1,0 +1,2628 @@
+<html>
+<head>
+<script>
+
+<!-- Begin copyright - This must be retained and posted as is to use this script -->
+
+// This Script was created by Satadip Dutta.
+// Email: sat_dutta@post1.com  / satadipd@inf.com
+// URL:http://www.angelfire.com/sd/dutta
+// Please honor my hard work, if you use a variant of this in your page,
+// then please email me :) and keep these comments in the Script.
+// This code is Copyright (c) 1997 Satadip Dutta
+// all rights reserved.
+// License is granted to user to reuse this code on their own Web site
+// if, and only if, this entire copyright notice is included. The Web Site
+// containing this  script   must be a not-for-profit ( non-commercial ) web site. If the script is to be used in a commercial
+// website exclusive permission must be obtained before using it.
+// Joe Burns of htmlgoodies.com has been authorised to use this code in the
+// site htmlgoodies.com.
+
+<!-- End copyright - This must be retained and posted as is to use this script -->
+
+title = new Object();
+desc = new Object();
+links= new Object();
+matched= new Object();
+keywords= new Object();
+found= new Object();
+var temp=0;
+// actual location or the item to be searched
+// description of he location
+// actual link
+// percentage match found
+// keywords as parsed from the input
+// # of titles present in the database
+title[0]=478
+//no of keywords after parsing
+keywords[0]=0
+//no of  matches found.
+found[0]=0
+
+<!-- Begin List of Searchable Items -->
+
+title[1]="Marland, G. Boden, T. A. and Andres, R. J"
+desc[1]="Marland, G. Boden, T. A. and Andres, R. J. - Global, Regional and National Fossil Fuel CO2 Emissions: Africa - [Geo-2-001]"
+links[1]="../GEO/Geo-2-001.htm"
+matched[1]=0
+
+title[2]="OAPEC"
+desc[2]="OAPEC - Annual Statistics Report 1999 - [Geo-2-002]"
+links[2]="../GEO/Geo-2-002.htm"
+matched[2]=0
+
+title[3]="UNFCCC"
+desc[3]=" UNFCCC - Table of National Communications - [Geo-2-003]"
+links[3]=" ../GEO/Geo-2-003.htm"
+matched[3]=0
+
+title[4]="WWF"
+desc[4]="WWF - Climate change and Southern Africa - [Geo-2-004] "
+links[4]="../GEO/Geo-2-004.htm"
+matched[4]=0
+
+title[5]="EEA"
+desc[5]="EEA - Databases on air Quality -  [Geo-2-005]"
+links[5]="../GEO/Geo-2-005.htm"
+matched[5]=0
+
+title[6]="GRID-Warsaw"
+desc[6]="GRID-Warsaw  - State of Poland's Environment - [Geo-2-006]"
+links[6]="../GEO/Geo-2-006.htm"
+matched[6]=0
+
+title[7]="UNEP"
+desc[7]="UNEP - Report of the 21st Meeting of the Open-Ended working group... -  [Geo-2-007]"
+links[7]="../GEO/Geo-2-007.htm"
+matched[7]=0
+
+title[8]="AFEAS"
+desc[8]="AFEAS - Product Data - [Geo-2-008]"
+links[8]="../GEO/Geo-2-008.htm"
+matched[8]=0
+
+title[9]="BP Amoco"
+desc[9]="BP Amoco - The Statistical Review of the World's Energy - [Geo-2-009]"
+links[9]="../GEO/Geo-2-009.htm"
+matched[9]=0
+
+title[10]="CEC"
+desc[10]="CEC - Commission for Environmental Cooperation - Continental Pollutant Pathways: An Agenda for Cooperation to Address Long Range Transport of Air Pollution  in North America - [Geo-2-010]"
+links[10]="../GEO/Geo-2-010.htm"
+matched[10]=0
+
+title[11]="Coon, C. E"
+desc[11]="Coon, C. E. - Why President Bush is Right to Abandon the Kyoto Protocol - [Geo-2-011]"
+links[11]="../GEO/Geo-2-011.htm"
+matched[11]=0
+
+title[12]="IISD"
+desc[12]="IISD - COP-6.bis Final Summary - [Geo-2-012]"
+links[12]="../GEO/Geo-2-012.txt"
+matched[12]=0
+
+title[13]="IPCC"
+desc[13]="IPCC - IPCC Third Assessment Report - Climate Change 2001. Working Group I: The Scientific Basis - [Geo-2-013]"
+links[13]="../GEO/Geo-2-013.htm"
+matched[13]=0
+
+title[14]="IPCC"
+desc[14]="IPCC - IPCC Third Assessment Report - Climate Change 2001. Working Group II: Impacts, Adaptation and Vulnerability - [Geo-2-014]"
+links[14]="../GEO/Geo-2-014.htm"
+matched[14]=0
+
+title[15]="IPCC"
+desc[15]="IPCC - IPCC Third Assessment Report - Climate Change 2001. Working Group III: Mitigation - [Geo-2-015]"
+links[15]="../GEO/Geo-2-015.htm"
+matched[15]=0
+
+title[16]="Marland, G. Boden, T. A. and  Andres, R. J"
+desc[16]="Marland, G. Boden, T. A. and  Andres, R. J. - Global Regional and National Fossil Fuel CO2 Emissions-Global - [Geo-2-016]"
+links[16]="../GEO/Geo-2-016.htm"
+matched[16]=0
+
+title[17]="NASA"
+desc[17]="NASA - The largest ever ozone hole observed over the Antarctica - [Geo-2-017]"
+links[17]="../GEO/Geo-2-017.htm"
+matched[17]=0
+
+title[18]="UNECE"
+desc[18]="UNECE - Convention on long-range transboundary air pollution - [Geo-2-018]"
+links[18]="../GEO/Geo-2-018.htm"
+matched[18]=0
+
+title[19]="UNEP"
+desc[19]="UNEP - Report of the twelfth meeting of the parties to the Montreal Protocol on substances that deplete the ozone layer - [Geo-2-019]"
+links[19]="../GEO/Geo-2-019.htm"
+matched[19]=0
+
+title[20]="UNEP"
+desc[20]="UNEP - Text of the Stockholm Convention on Persistent Organic Pollutants for Adoption by the Conference of Plenipotentiaries - [Geo-2-020]"
+links[20]="../GEO/Geo-2-020.htm"
+matched[20]=0
+
+title[21]="WMO"
+desc[21]="WMO - Global Atmosphere Watch System - [Geo-2-021]"
+links[21]="../GEO/Geo-2-021.htm"
+matched[21]=0
+
+title[22]="FAOSTAT"
+desc[22]="FAOSTAT -  FAOSTAT Statistical Database - [Geo-2-022]"
+links[22]="../GEO/Geo-2-022.htm"
+matched[22]=0
+
+title[23]="World Bank"
+desc[23]="World Bank - World Development Indicators Database - [Geo-2-024]"
+links[23]="../GEO/Geo-2-024.htm"
+matched[23]=0
+
+title[24]="CEC"
+desc[24]="CEC - Booming Economies, Silencing Environments, and the Paths to Our Future - [Geo-2-026]"
+links[24]="../GEO/Geo-2-026.htm"
+matched[24]=0
+
+title[25]="EC"
+desc[25]="EC - Global Climate Change: The Greenhouse Gas Emissions Outlook to 2020 - [Geo-2-027]"
+links[25]="../GEO/Geo-2-027.htm"
+matched[25]=0
+
+title[26]="EC"
+desc[26]="EC - Canadian Passenger Transportation - [Geo-2-028]"
+links[26]="../GEO/Geo-2-028.htm"
+matched[26]=0
+
+title[27]="EC"
+desc[27]="EC - Canada Signs International Agreement on Acid Rain and Smog Reductions - [Geo-2-029]"
+links[27]="../GEO/Geo-2-029.htm"
+matched[27]=0
+
+title[28]="EC"
+desc[28]="EC - Clean Air - [Geo-2-030]"
+links[28]="../GEO/Geo-2-030.htm"
+matched[28]=0
+
+title[29]="EC"
+desc[29]="EC - Canada and the United States Reach a Draft Agreement to Reduce Transboundary Smog - [Geo-2-031]"
+links[29]="../GEO/Geo-2-031.htm"
+matched[29]=0
+
+title[30]="EC"
+desc[30]="EC - Stratospheric Ozone - [Geo-2-032]"
+links[30]="../GEO/Geo-2-032.htm"
+matched[30]=0
+
+title[31]="Glick, P."
+desc[31]="Glick, P. - Global Warming: The High Costs of Inaction - [Geo-2-033]"
+links[31]="../GEO/Geo-2-033.htm"
+matched[31]=0
+
+title[32]="Hancey, C"
+desc[32]="Hancey, C. - Particulate Matter, Ground-Level Ozone and the Canada-wide Standards Regulatory Process - [Geo-2-034]"
+links[32]="../GEO/Geo-2-034.htm"
+matched[32]=0
+
+title[33]="Marland, G. Bodeen, T.A and Andres, R.J"
+desc[33]="Marland, G. Bodeen, T.A and Andres, R.J - Global, Regional and National Fossil Fuel CO2 Emission: North America - [Geo-2-035]"
+links[33]="../GEO/Geo-2-035.htm"
+matched[33]=0
+
+title[34]="OMA"
+desc[34]="OMA - The illness costs of air pollution - [Geo-2-036]"
+links[34]="../GEO/Geo-2-036.htm"
+matched[34]=0
+
+title[35]="SRP"
+desc[35]="SRP - The sustainability report - [Geo-2-037]"
+links[35]="../GEO/Geo-2-037.htm"
+matched[35]=0
+
+title[36]="US EIA"
+desc[36]="US EIA - International Energy Annual 1999 - [Geo-2-038]"
+links[36]="../GEO/Geo-2-038.htm"
+matched[36]=0
+
+title[37]="US EIA"
+desc[37]="US EIA - Energy information brief-United States of America - [Geo-2-039]"
+links[37]="../GEO/Geo-2-039.htm"
+matched[37]=0
+
+title[38]="US EPA"
+desc[38]="US EPA - Regional approaches to improving air quality - [Geo-2-040]"
+links[38]="../GEO/Geo-2-040.htm"
+matched[38]=0
+
+title[39]="US EPA"
+desc[39]="US EPA - National air quality and emissions trends report, 1999 - [Geo-2-041]"
+links[39]="../GEO/Geo-2-041.htm"
+matched[39]=0
+
+title[40]="US EPA"
+desc[40]="US EPA - National air quality and emissions trends report, 1998 - [Geo-2-042]"
+links[40]="../GEO/Geo-2-042.htm"
+matched[40]=0
+
+title[41]="US EPA"
+desc[41]="US EPA - Average annual emissions, all criteria pollutants - [Geo-2-043]"
+links[41]="../GEO/Geo-2-043.htm"
+matched[41]=0
+
+title[42]="BAPCO"
+desc[42]="BAPCO - BAPCO site for information on the introduction of uleaded gasoline - [Geo-2-044]"
+links[42]="../GEO/Geo-2-044.htm"
+matched[42]=0
+
+title[43]="Marland, G. Boden, T.A. and Andres, R.J"
+desc[43]="Marland, G. Boden, T.A. and Andres, R.J - Global, regional and national fossil fuel CO2 emissions-West Asia - [Geo-2-045]"
+links[43]="../GEO/Geo-2-045.htm"
+matched[43]=0
+
+title[44]="Global, Regional and National Fossil Fuel CO2 Emissions: Latin America and the Caribbean"
+desc[44]="Marland, G. Boden, T.A and Andres, R.J - Global, Regional and National Fossil Fuel CO2 Emissions: Latin America and the Caribbean - [Geo-2-046]"
+links[44]="../GEO/Geo-2-046.htm"
+matched[44]=0
+
+title[45]="Programa Brasileiro de Eliminação da Produção e do Consumo das Substâncias que Destroem a Camada de Ozônio "
+desc[45]="MMA - Programa Brasileiro de Eliminação da Produção e do Consumo das Substâncias que Destroem a Camada de Ozônio - [Geo-2-047]"
+links[45]="../GEO/Geo-2-047.htm"
+matched[45]=0
+
+
+title[46]="CAMPFIRE Association and Africa Resources Trust"
+desc[46]="CAMPFIRE - CAMPFIRE Factsheets - [Geo-2-048]"
+links[46]="../GEO/Geo-2-048.htm"
+matched[46]=0
+
+title[47]="FAO"
+desc[47]="FAO - Forest Resources Assessment Homepage - [Geo-2-049]"
+links[47]="../GEO/Geo-2-049.htm"
+matched[47]=0
+
+title[48]="Hilton-Taylor, C."
+desc[48]="Hilton-Taylor, C. - 2000 IUCN Red list of threatened species - [Geo-2-050]"
+links[48]="../GEO/Geo-2-050.htm"
+matched[48]=0
+
+title[49]="IUCN"
+desc[49]="IUCN - 1997 IUCN Redlist of threatened plants. - [Geo-2-051]"
+links[49]="../GEO/Geo-2-051.htm"
+matched[49]=0
+
+title[50]="UNEP-WCMC"
+desc[50]="UNEP-WCMC - GEO3 endangered animals snapshot - [Geo-2-052]"
+links[50]="../GEO/Geo-2-052.htm"
+matched[50]=0
+
+title[51]="UNEP-WCMC"
+desc[51]="UNEP-WCMC - GEO3 protected areas snapshot - [Geo-2-053]"
+links[51]="../GEO/Geo-2-053.htm"
+matched[51]=0
+
+
+title[52]="Amornsakchai, S., Annez, P., Vongvisessomjai, S., Choowaew, S., Thailand Development Research Institute, Kunurat, P., Nippanon, J., Schouten, R., Sripapatrprasite, P., Vaddhanaphuti, C., Vidthayanon, C., Wirojanagud, W. and Watana, E"
+desc[52]="Amornsakchai, S., Annez, P., Vongvisessomjai, S., Choowaew, S., Thailand Development Research Institute, Kunurat, P., Nippanon, J., Schouten, R., Sripapatrprasite, P., Vaddhanaphuti, C., Vidthayanon, C., Wirojanagud, W. and Watana, E - Pak Mun Dam, Mekong River Basin, Thailand. A WCD Case Study - [Geo-2-054]"
+links[52]="../GEO/Geo-2-054.htm"
+matched[52]=0
+
+title[53]="FAO"
+desc[53]="FAO - Forest Resources Assessment homepage - [Geo-2-055]"
+links[53]="../GEO/Geo-2-055.htm"
+matched[53]=0
+
+title[54]="Fuggle, R., Smith, W.T., Hydrosult Canada Inc. and Agrodev Canada Inc"
+desc[54]="Fuggle, R., Smith, W.T., Hydrosult Canada Inc. and Agrodev Canada Inc - Large dams in water and energy resource development in the People's Republic of China (PRC) - [Geo-2-056]"
+links[54]="../GEO/Geo-2-056.htm"
+matched[54]=0
+
+title[55]="UNEP-WCMC"
+desc[55]="UNEP-WCMC - GEO3 endangered animals snapshot-West Asia - [Geo-2-057]"
+links[55]="../GEO/Geo-2-057.htm"
+matched[55]=0
+
+title[56]="NBSAP"
+desc[56]="NBSAP - First national report for the convention on biological diversity strategy and action plan secretariat - [Geo-2-058]"
+links[56]="../GEO/Geo-2-058.htm"
+matched[56]=0
+
+title[57]="UNEP-WCMC"
+desc[57]="UNEP-WCMC - GEO3 endangered animals snapshot: Asia - [Geo-2-059]"
+links[57]="../GEO/Geo-2-059.htm"
+matched[57]=0
+
+title[58]="UNEP-WCMC"
+desc[58]="UNEP-WCMC - GEO3 protected areas snapshot: Asia - [Geo-2-060]"
+links[58]="../GEO/Geo-2-060.htm"
+matched[58]=0
+
+title[59]="WCD"
+desc[59]="WCD - Dams and Development: A new framework for decision-making - [Geo-2-061]"
+links[59]="../GEO/Geo-2-061.htm"
+matched[59]=0
+
+title[60]="EEA"
+desc[60]="EEA - Europe's environment: The Dobris assessment - [Geo-2-062]"
+links[60]="../GEO/Geo-2-062.htm"
+matched[60]=0
+
+title[61]="UNEP-WCMC"
+desc[61]="UNEP-WCMC - GEO3 Protected Areas snapshot-West Asia - [Geo-2-063]"
+links[61]="../GEO/Geo-2-063.htm"
+matched[61]=0
+
+title[62]="UNEP-WCMC"
+desc[62]="UNEP-WCMC - GEO3 endangered animals snapshot: Europe - [Geo-2-064]"
+links[62]="../GEO/Geo-2-064.htm"
+matched[62]=0
+
+title[63]="UNEP-WCMC"
+desc[63]="UNEP-WCMC - GEO3 protected areas snapshot: Europe -  [Geo-2-065]"
+links[63]="../GEO/Geo-2-065.htm"
+matched[63]=0
+
+title[64]="CREO"
+desc[64]="CREO - The Committee on Recently Extinct Organisms - [Geo-2-066]"
+links[64]="../GEO/Geo-2-066.htm"
+matched[64]=0
+
+title[65]="UNEP-WCMC"
+desc[65]="UNEP-WCMC - GEO3 endangered animals snapshot: Global - [Geo-2-068]"
+links[65]="../GEO/Geo-2-068.htm"
+matched[65]=0
+
+title[66]="Hilton-Taylor, C."
+desc[66]="Hilton-Taylor, C. - 2000 IUCN redlist of threatened species - [Geo-2-069]"
+links[66]="../GEO/Geo-2-069.htm"
+matched[66]=0
+
+title[67]="IPCC"
+desc[67]="IPCC - IPCC third assessment report-climate change 2001: Working group II: impacts, adaptation and vulnerability - [Geo-2-070]"
+links[67]="../GEO/Geo-2-070.htm"
+matched[67]=0
+
+title[68]="Mahoney, D.E."
+desc[68]="Mahoney, D.E. - The Convetion on internatinal trade in endangered species of fauna and flora: addressing problems in global wildlife trade and enforcement - [Geo-2-071]"
+links[68]="../GEO/Geo-2-071.htm"
+matched[68]=0
+
+title[69]="Alvarez, L."
+desc[69]="Alvarez, L. - Everglades: Congress puts finishing touches on massive restoration bill - [Geo-2-072]"
+links[69]="../GEO/Geo-2-072.htm"
+matched[69]=0
+
+title[70]="ANS"
+desc[70]="ANS - What are aquatic nuisance species and their impacts? - [Geo-2-073]"
+links[70]="../GEO/Geo-2-073.htm"
+matched[70]=0
+
+title[71]="Army Corps of Engineers"
+desc[71]="Army Corps of Engineers - Corps Facts: Florida Everglades - [Geo-2-074]"
+links[71]="../GEO/Geo-2-074.htm"
+matched[71]=0
+
+title[72]="COSEWIC"
+desc[72]="COSEWIC - Canadian secies at risk - [Geo-2-076]"
+links[72]="../GEO/Geo-2-076.htm"
+matched[72]=0
+
+title[73]="Ducks Unlimited"
+desc[73]="Ducks Unlimited: World leader in wetlands conservation - [Geo-2-077]"
+links[73]="../GEO/Geo-2-077.htm"
+matched[73]=0
+
+title[74]="EC"
+desc[74]="EC - Freshwater facts - [Geo-2-078]"
+links[74]="../GEO/Geo-2-078.htm"
+matched[74]=0
+
+title[75]="H. John Heinz III Center"
+desc[75]="H. John Heinz III Center - Designing a report on the state of the nations ecosystem - [Geo-2-079]"
+links[75]="../GEO/Geo-2-079.htm"
+matched[75]=0
+
+title[76]="Haber, E."
+desc[76]="Haber, E. - Invasive Exotic Plants of Canada - [Geo-2-080]"
+links[76]="../GEO/Geo-2-080.htm"
+matched[76]=0
+
+title[77]="FAO"
+desc[77]="FAO - The state of the world's forests 1999. - [Geo-2-081]"
+links[77]="../GEO/Geo-2-081.htm"
+matched[77]=0
+
+
+title[78]="NAWMP"
+desc[78]="NAWMP - 1998 update to the North American waterfowl management plan - [Geo-2-082]"
+links[78]="../GEO/Geo-2-082.htm"
+matched[78]=0
+
+title[79]="NRC"
+desc[79]="NRC - The national atlas of Canada online: Wetlands - [Geo-2-083]"
+links[79]="../GEO/Geo-2-083.htm"
+matched[79]=0
+
+title[80]="Pimentel, D., Bach, L., Zuniga, R. and Morrison, D. "
+desc[80]="Pimentel, D., Bach, L., Zuniga, R. and Morrison, D.  - Environmental and economic costs associated with non-indigenous species in the United States - [Geo-2-084]"
+links[80]="../GEO/Geo-2-084.htm"
+matched[80]=0
+
+title[81]="Ramsar"
+desc[81]="Ramsar - The Ramsar convention on wetlands - [Geo-2-085]"
+links[81]="../GEO/Geo-2-085.htm"
+matched[81]=0
+
+
+title[82]="UNEP-WCMC"
+desc[82]="UNEP-WCMC - GEO3 endangered animals snapshot: North America - [Geo-2-086]"
+links[82]="../GEO/Geo-2-086.htm"
+matched[82]=0
+
+title[83]="UNEP-WCMC"
+desc[83]="UNEP-WCMC - GEO3 protected areas snapshot: North America - [Geo-2-087]"
+links[83]="../GEO/Geo-2-087.htm"
+matched[83]=0
+
+title[84]="US EPA"
+desc[84]="US EPA - The wetlands program - [Geo-2-088]"
+links[84]="../GEO/Geo-2-088.htm"
+matched[84]=0
+
+title[85]="US EPA"
+desc[85]="US EPA - The Administration wetlands plan: An update - [Geo-2-089]"
+links[85]="../GEO/Geo-2-089.htm"
+matched[85]=0
+
+title[86]="US FWS"
+desc[86]="US FWS - Status and trends of wetlands in the conterminous United States 1986 to 1997 - [Geo-2-090]"
+links[86]="../GEO/Geo-2-090.htm"
+matched[86]=0
+
+title[87]="AAFC"
+desc[87]="AAFC - The health of our water - [Geo-2-091]"
+links[87]="../GEO/Geo-2-091.htm"
+matched[87]=0
+
+
+title[88]="Government of Colombia"
+desc[88]="Government of Colombia - El Comercio Ilegal de Especes. Ministerio del Medio Ambiente de Colombia - [Geo-2-092]"
+links[88]="../GEO/Geo-2-092.htm"
+matched[88]=0
+
+title[89]="Hilton-Taylor, C."
+desc[89]="Hilton-Taylor, C. - 2000 IUCN red list of threatened species - [Geo-2-093]"
+links[89]="../GEO/Geo-2-093.htm"
+matched[89]=0
+
+title[90]="UNEP-WCMC"
+desc[90]="UNEP-WCMC - GEO3 endangered animals snapshot: Latin America and the Caribbean - [Geo-2-094]"
+links[90]="../GEO/Geo-2-094.htm"
+matched[90]=0
+
+title[91]="RENCTAS"
+desc[91]="RENCTAS - Data about the traffic: Traffic numbers - [Geo-2-095]"
+links[91]="../GEO/Geo-2-095.htm"
+matched[91]=0
+
+title[92]="UNEP-WCMC"
+desc[92]="UNEP-WCMC - GEO3 protected areas snapshot: Latin America and the Caribbean - [Geo-2-096]"
+links[92]="../GEO/Geo-2-096.htm"
+matched[92]=0
+
+title[93]="United Nations"
+desc[93]="United Nations - Biodiversity conservation in the Choco biogeographic region. - [Geo-2-097]"
+links[93]="../GEO/Geo-2-097.htm"
+matched[93]=0
+
+
+title[94]="UNCCD"
+desc[94]="UNCCD - The United Nations Convention to Combat Desertification: An Explanatory  Leaflet - [Geo-2-098]"
+links[94]="../GEO/Geo-2-098.htm"
+matched[94]=0
+
+title[95]="UNEP"
+desc[95]="UNEP - UN Study sounds alarm about the disappearance of the Mesopotamian Marshlands - [Geo-2-099]"
+links[95]="../GEO/Geo-2-099.htm"
+matched[95]=0
+
+title[96]="British Antarctic Survey Ozone bulletin 01/00"
+desc[96]="BAS - British Antarctic Survey Ozone bulletin 01/00 - [Geo-2-100]"
+links[96]="../GEO/Geo-2-100.htm"
+matched[96]=0
+
+title[97]="Global Water Partnership "
+desc[97]="Global Water Partnership - Southern African Vision for Water, Life and the Environment in the 21st Century and Strategic Framework for Action Statement - [Geo-2-101]"
+links[97]="../GEO/Geo-2-101.htm"
+matched[97]=0
+
+title[98]="WCPA"
+desc[98]="WCPA - North Africa and Middle East - [Geo-2-102]"
+links[98]="../GEO/Geo-2-102.htm"
+matched[98]=0
+
+title[99]="Lake, W. B. and Souré, M"
+desc[99]="Lake, W. B. and Souré, M - Water and Development in Africa - [Geo-2-103]"
+links[99]="../GEO/Geo-2-103.htm"
+matched[99]=0
+
+title[100]="Mpofu, B."
+desc[100]="Mpofu, B. - Assessment of seed requirements in Southern African countries ravaged by floods and drought 1999/2000 season - [Geo-2-104]"
+links[100]="../GEO/Geo-2-104.htm"
+matched[100]=0
+
+title[101]="UNCSD"
+desc[101]="UNCSD - Cairo sludge disposal study - [Geo-2-105]"
+links[101]="../GEO/Geo-2-105.htm"
+matched[101]=0
+
+title[102]="Pierce, F."
+desc[102]="Pierce, F. - Death in a glass of water - [Geo-2-106]"
+links[102]="../GEO/Geo-2-106.htm"
+matched[102]=0
+
+title[103]="RRI"
+desc[103]="RRI - Japan environmental policy - [Geo-2-107]"
+links[103]="../GEO/Geo-2-107.htm"
+matched[103]=0
+
+title[104]="UNCSD"
+desc[104]="UNCSD - Lake Toba-Lake Champlain sister lakes exchange - [Geo-2-108]"
+links[104]="../GEO/Geo-2-108.htm"
+matched[104]=0
+
+title[105]="WHO"
+desc[105]="WHO - Communicable disease surveillance and response - [Geo-2-109]"
+links[105]="../GEO/Geo-2-109.htm"
+matched[105]=0
+
+title[106]="World Commission on Water"
+desc[106]="World Commission on Water - World's rivers in crisis - some are dying; otehrs could die - [Geo-2-110]"
+links[106]="../GEO/Geo-2-110.htm"
+matched[106]=0
+
+title[107]="WHO and UNICEF"
+desc[107]="WHO and UNICEF - Global water supply and sanitation assessment 2000 report - [Geo-2-111]"
+links[107]="../GEO/Geo-2-111.htm"
+matched[107]=0
+
+title[108]="WHO and UNICEF"
+desc[108]="WHO and UNICEF - Global water suply and sanitation assessment 2000 report - [Geo-2-112]"
+links[108]="../GEO/Geo-2-112.htm"
+matched[108]=0
+
+title[109]="World Bank"
+desc[109]="World Bank - Health and environment, environment strategy paper - [Geo-2-113]"
+links[109]="../GEO/Geo-2-113.htm"
+matched[109]=0
+
+title[110]="ETC/WTR"
+desc[110]="ETC/WTR - European topic center on water - [Geo-2-114]"
+links[110]="../GEO/Geo-2-114.htm"
+matched[110]=0
+
+title[111]="ICPR"
+desc[111]="ICPR - ICPR homepage - [Geo-2-115]"
+links[111]="../GEO/Geo-2-115.htm"
+matched[111]=0
+
+
+title[112]="Bernard, A."
+desc[112]="Bernard, A. - International cooperation through river basin commissions. - [Geo-2-116]"
+links[112]="../GEO/Geo-2-116.htm"
+matched[112]=0
+
+title[113]="CSD"
+desc[113]="CSD - Comprehensive assessment of the freshwater resources of the world. - [Geo-2-117]"
+links[113]="../GEO/Geo-2-117.htm"
+matched[113]=0
+
+title[114]="CSD"
+desc[114]="CSD - Overall progress achieved since the United Nations conference on environment and development - [Geo-2-118]"
+links[114]="../GEO/Geo-2-118.htm"
+matched[114]=0
+
+title[115]="FAO"
+desc[115]="FAO - AQUASTAT - FAO's information system on water and agriculture - [Geo-2-119]"
+links[115]="../GEO/Geo-2-119.htm"
+matched[115]=0
+
+title[116]="INBO"
+desc[116]="INBO - INBO homepage - [Geo-2-120]"
+links[116]="../GEO/Geo-2-120.htm"
+matched[116]=0
+
+title[117]="United Nations"
+desc[117]="Unitd Nations - Comprehensive assessment of the freshwater resources of the world. - [Geo-2-121]"
+links[117]="../GEO/Geo-2-121.htm"
+matched[117]=0
+
+title[118]="WCD"
+desc[118]="WCD - Dams and Development: A framework for decision-making - [Geo-2-122]"
+links[118]="../GEO/Geo-2-122.htm"
+matched[118]=0
+
+title[119]="WHO and UNICEF"
+desc[119]="WHO and UNICEF - Indicators on water supply and sanitation - [Geo-2-123]"
+links[119]="../GEO/Geo-2-123.htm"
+matched[119]=0
+
+title[120]="World Commission on Water"
+desc[120]="World Commission on Water - Worlds rivers in crisis - some are dying; others could die - [Geo-2-124]"
+links[120]="../GEO/Geo-2-124.htm"
+matched[120]=0
+
+title[121]="World Water Council"
+desc[121]="World Water Council - World water vision commission report: A water secure world - [Geo-2-125]"
+links[121]="../GEO/Geo-2-125.htm"
+matched[121]=0
+
+title[122]="World Water Forum"
+desc[122]="World Water Forum - Ministerial declaration to the Hague on water security in the 21st century - [Geo-2-126]"
+links[122]="../GEO/Geo-2-126.htm"
+matched[122]=0
+
+title[123]="UNCSD"
+desc[123]="UNCSD - The Tegucigalpa Model: Water supply for peri-urban settlements. - [Geo-2-127]"
+links[123]="../GEO/Geo-2-127.htm"
+matched[123]=0
+
+title[124]="WHO and UNICEF"
+desc[124]="WHO and UNICEF - Global water supply and sanitation assessment 2000 report. - [Geo-2-128]"
+links[124]="../GEO/Geo-2-128.htm"
+matched[124]=0
+
+title[125]="BNS"
+desc[125]="BNS - The Great Lakes binational toxics strategy. - [Geo-2-129]"
+links[125]="../GEO/Geo-2-129.htm"
+matched[125]=0
+
+title[126]="EC"
+desc[126]="EC - Groundwater - Nature's hidden treasure: Freshwater series A-5. - [Geo-2-130]"
+links[126]="../GEO/Geo-2-130.htm"
+matched[126]=0
+
+title[127]="EC"
+desc[127]="EC - Binational remedial action plans (RAPs) - [Geo-2-131]"
+links[127]="../GEO/Geo-2-131.htm"
+matched[127]=0
+
+title[128]="EC"
+desc[128]="EC - Tracking key environmental issues - [Geo-2-132]"
+links[128]="../GEO/Geo-2-132.htm"
+matched[128]=0
+
+title[128]="EC"
+desc[128]="EC - The management of water - [Geo-2-133]"
+links[128]="../GEO/Geo-2-133.htm"
+matched[128]=0
+
+title[129]="EC"
+desc[129]="EC - Great lakes water quality agreement - [Geo-2-134]"
+links[129]="../GEO/Geo-2-134.htm"
+matched[129]=0
+
+title[130]="Gobert, Christopher"
+desc[130]="Gobert, Christopher - Groundwater contamination: A look at the federal provisions. - [Geo-2-135]"
+links[130]="../GEO/Geo-2-135.htm"
+matched[130]=0
+
+title[131]="IIFA"
+desc[131]="IIFA - Fertilizer nutrient consumption, by region, 1970/71 to 1998/99. - [Geo-2-136]"
+links[131]="../GEO/Geo-2-136.htm"
+matched[131]=0
+
+title[132]="IJC"
+desc[132]="IJC - Great Lakes water quality agreement of 1978 - [Geo-2-137]"
+links[132]="../GEO/Geo-2-137.htm"
+matched[132]=0
+
+title[133]="IJC"
+desc[133]="IJC - Overcoming obstacles to sediment remediation in the Great Lakes basin - [Geo-2-138]"
+links[133]="../GEO/Geo-2-138.htm"
+matched[133]=0
+
+title[134]="IJC"
+desc[134]="IJC - International Joint Commission: United States and Canada - [Geo-2-139]"
+links[134]="../GEO/Geo-2-139.htm"
+matched[134]=0
+
+title[135]="IJC"
+desc[135]="IJC - Protection of the Waters of the Great Lakes: Final report to the governments of Canada and the United States - [Geo-2-140]"
+links[135]="../GEO/Geo-2-140.htm"
+matched[135]=0
+
+title[136]="Kolpin, Dana W. , Barbash, Jack E. and Gilliom, Robert J"
+desc[136]="Kolpin, Dana W. , Barbash, Jack E. and Gilliom, Robert J - Occurrence of Pesticides in Shallow Ground Water of the United States: Initial Results from the National Water-Quality Assessment Program - [Geo-2-141]"
+links[136]="../GEO/Geo-2-141.htm"
+matched[136]=0
+
+title[137]="Moody, David. W."
+desc[137]="Moody, David. W. - Sources and extent of groundwater contamination. - [Geo-2-142]"
+links[137]="../GEO/Geo-2-142.htm"
+matched[137]=0
+
+title[138]="Solley, Wayne B., Pierce, Robert R. and Perlman, Howard A"
+desc[138]="Solley, Wayne B., Pierce, Robert R. and Perlman, Howard A - Estimated Use of Water in the United States in 1995 - [Geo-2-143]"
+links[138]="../GEO/Geo-2-143.htm"
+matched[138]=0
+
+title[139]="US EPA"
+desc[139]="US EPA - National Water Quality Inventory: 1998 Report to Congress - [Geo-2-144]"
+links[139]="../GEO/Geo-2-144.htm"
+matched[139]=0
+
+title[140]="TFGRR"
+desc[140]="TFGRR - Groundwater Issues and Research in Canada: a report prepared for the Canadian Geoscience Council. Task Force on Groundwater Resources Research - [Geo-2-145]"
+links[140]="../GEO/Geo-2-145.htm"
+matched[140]=0
+
+title[141]="ACSAD"
+desc[141]="ACSAD - Alternative policy study: water resource management in West Asia - [Geo-2-146]"
+links[141]="../GEO/Geo-2-146.htm"
+matched[141]=0
+
+title[142]="UNEP"
+desc[142]="UNEP - The Mesopotamian marshlands: Demise of an ecosystem - [Geo-2-147]"
+links[142]="../GEO/Geo-2-147.htm"
+matched[142]=0
+
+title[143]="NASA"
+desc[143]="NASA - A shadow of a lake: Africa's disappearing lake Chad - [Geo-2-147]"
+links[143]="../GEO/Geo-2-147.htm"
+matched[143]=0
+
+
+title[144]="WCPA"
+desc[144]="WCPA - North Africa and the Middle East - [Geo-2-148]"
+links[144]="../GEO/Geo-2-148.htm"
+matched[144]=0
+
+title[145]="AC"
+desc[145]="AC - Report from the 3rd Arctic Council ministerial meeting - [Geo-2-149]"
+links[145]="../GEO/Geo-2-149.htm"
+matched[145]=0
+
+title[146]="CCAMLR"
+desc[146]="CCAMLR - Convention for the conservation of Antarctic marine living resources - [Geo-2-150]"
+links[146]="../GEO/Geo-2-150.htm"
+matched[146]=0
+
+title[147]="IISD"
+desc[147]="IISD - Milestones in Climate Change, International Undertaking Talks - [Geo-2-151]"
+links[147]="../GEO/Geo-2-151.htm"
+matched[147]=0
+
+title[148]="UNFCCC"
+desc[148]="UNFCCC - Greenhouse Gas Inventory Database (GHG) - [Geo-2-152]"
+links[148]="../GEO/Geo-2-152.htm"
+matched[148]=0
+
+title[149]="IISD"
+desc[149]="IISD - Climate Change Capacity Project-Africa - [Geo-2-153]"
+links[149]="../GEO/Geo-2-153.htm"
+matched[149]=0
+
+title[150]="UNEP"
+desc[150]="UNEP - More Knowledge of Interactions Between Asian Brown Haze, Global Warming and Ozone Urgently Needed Says UNEP - [Geo-2-154]"
+links[150]="../GEO/Geo-2-154.htm"
+matched[150]=0
+
+
+title[151]="DOC, NOAA and NCDC"
+desc[151]="DOC, NOAA and NCDC - Climate of 1999. Annual Review - [Geo-2-156]"
+links[151]="../GEO/Geo-2-156.htm"
+matched[151]=0
+
+title[152]="UNCCD"
+desc[152]="UNCCD - Action programmes to combat desertification: Africa - [Geo-2-158]"
+links[152]="../GEO/Geo-2-158.htm"
+matched[152]=0
+
+title[153]="AQUASTAT"
+desc[153]="AQUASTAT - Tablas Resumen de America Latina y el Caribe - [Geo-2-176]"
+links[153]="../GEO/Geo-2-176.htm"
+matched[153]=0
+
+title[154]="AAFC"
+desc[154]="AAFC - Agriculture in harmony with nature: Strategy for environmentally sustainable agriculture for agri-food development in Canada - [Geo-2-177]"
+links[154]="../GEO/Geo-2-177.htm"
+matched[154]=0
+
+title[155]="Benbrook, C.M."
+desc[155]="Benbrook, C.M - Pest management at the crossroads - [Geo-2-178]"
+links[155]="../GEO/Geo-2-178.htm"
+matched[155]=0
+
+title[156]="Cuperus, G., Berberet, R. and Kenkel, P"
+desc[156]="Cuperus, G., Berberet, R. and Kenkel, P - The future of integrated pest management - [Geo-2-179]"
+links[156]="../GEO/Geo-2-179.htm"
+matched[156]=0
+
+title[157]="Dregne, H.E."
+desc[157]="Dregne, H.E. - Desertification of Arid lands - [Geo-2-180]"
+links[157]="../GEO/Geo-2-180.htm"
+matched[157]=0
+
+title[158]="Gold, M.V."
+desc[158]="Gold, M.V. - Sustainable agriculture: Definitions and terms: Special referencec briefs series no. SRB 99-02 - [Geo-2-181]"
+links[158]="../GEO/Geo-2-181.htm"
+matched[158]=0
+
+title[159]="H. John Heinz III Center"
+desc[159]="H. John Heinz III Center - Designing a report on the state of the nation's ecosystem ... - [Geo-2-182]"
+links[159]="../GEO/Geo-2-182.htm"
+matched[159]=0
+
+title[160]="NIPMN"
+desc[160]="NIPMN - National Integrated Pest Management Network Server - [Geo-2-183]"
+links[160]="../GEO/Geo-2-183.htm"
+matched[160]=0
+
+title[161]="NRCS"
+desc[161]="NRCS - Summary report: 1997 national resouces inventory - [Geo-2-184]"
+links[161]="../GEO/Geo-2-184.htm"
+matched[161]=0
+
+title[162]="PMRA"
+desc[162]="PMRA - About PMRA health Canada - [Geo-2-185]"
+links[162]="../GEO/Geo-2-185.htm"
+matched[162]=0
+
+title[163]="Smith, C.A.S., Wall, G., Desjardins, R. and Grant, B"
+desc[163]="Smith, C.A.S., Wall, G., Desjardins, R. and Grant, B - Environmental Sustainability of Canadian Agriculture: Report of the Agri-Environmental Indicator Project: A Summary - [Geo-2-186]"
+links[163]="../GEO/Geo-2-186.htm"
+matched[163]=0
+
+title[164]="Tyrchniewicz, A. and Wilson, A"
+desc[164]="Tyrchniewicz, A. and Wilson, A - Sustainable Development for the Great Plains: Policy Analysis - [Geo-2-187]"
+links[164]="../GEO/Geo-2-187.htm"
+matched[164]=0
+
+title[165]="USDA"
+desc[165]="USDA - Part 407 - Sustainable agriculture (Subpart A - general) - [Geo-2-188]"
+links[165]="../GEO/Geo-2-188.htm"
+matched[165]=0
+
+title[166]="USDA"
+desc[166]="USDA - Water erosion vulnerability - [Geo-2-189]"
+links[166]="../GEO/Geo-2-189.htm"
+matched[166]=0
+
+title[167]="USDA"
+desc[167]="USDA - Wind erosion vulneability - [Geo-2-190]"
+links[167]="../GEO/Geo-2-190.htm"
+matched[167]=0
+
+title[168]="Zinn, Jeffrey"
+desc[168]="Zinn Jefrey - Conservation reserve program: Policy issues for the 1995 farm bill - [Geo-2-191]"
+links[168]="../GEO/Geo-2-191.htm"
+matched[168]=0
+
+title[169]="COMNAP"
+desc[169]="COMNAP - Stations and bases - [Geo-2-192]"
+links[169]="../GEO/Geo-2-192.htm"
+matched[169]=0
+
+title[170]="Marcoux, A."
+desc[170]="Marcoux, A. - Population Change-Natural Resources-Environment linkages in the Arab states region - [Geo-2-193]"
+links[170]="../GEO/Geo-2-193.htm"
+matched[170]=0
+
+title[171]="UNESCWA"
+desc[171]="UNESCWA - Economic and social commission for Western Asia: Regional report - [Geo-2-194]"
+links[171]="../GEO/Geo-2-194.htm"
+matched[171]=0
+
+title[172]="Chatty, D."
+desc[172]="Chatty, D - Enclosures and Exclusions: Wildlife conservation schemes and the pastoral tribes in the Middle East - [Geo-2-195]"
+links[172]="../GEO/Geo-2-195.htm"
+matched[172]=0
+
+title[173]="FAOSTAT"
+desc[173]="FAOSTAT Statistical database - [Geo-2-196]"
+links[173]="../GEO/Geo-2-196.htm"
+matched[173]=0
+
+title[174]="FAOSTAT"
+desc[174]="FAOSTAT Statistical database - [Geo-2-200]"
+links[174]="../GEO/Geo-2-200.htm"
+matched[174]=0
+
+title[175]="Global Vision"
+desc[175]="Global Vision - Sustainable City - [Geo-2-201]"
+links[175]="../GEO/Geo-2-201.htm"
+matched[175]=0
+
+title[176]="Mayhew, C. and Simmon, R."
+desc[176]="Mayhew, C. and Simmon, R. - Global city lights - [Geo-2-202]"
+links[176]="../GEO/Geo-2-202.htm"
+matched[176]=0
+
+title[177]="United Nations Population Division"
+desc[177]="United Nations Population Division - World Population Prospects: The 1999 Revision - [Geo-2-203]"
+links[177]="../GEO/Geo-2-203.htm"
+matched[177]=0
+
+title[178]="United Nations Population Division"
+desc[178]="United Nations Population Division - World Population Prospects: The 2000 Revision - [Geo-2-204]"
+links[178]="../GEO/Geo-2-204.htm"
+matched[178]=0
+
+title[179]="Napier, M"
+desc[179]="Napier, M. - Human settlements and the environment - [Geo-2-205]"
+links[179]="../GEO/Geo-2-205.htm"
+matched[179]=0
+
+title[180]="WHO and UNICEF"
+desc[180]="WHO and UNICEF - Global water supply and sanitation assessment 2000 report - [Geo-2-206]"
+links[180]="../GEO/Geo-2-206.htm"
+matched[180]=0
+
+
+title[181]="SEPA"
+desc[181]="SEPA - Report on the state of environment in China 1999 - [Geo-2-207]"
+links[181]="../GEO/Geo-2-207.htm"
+matched[181]=0
+
+title[182]="Swee Say, L"
+desc[182]="Swee Say, L - Transport and energy Commuting sustainably - [Geo-2-208]"
+links[182]="../GEO/Geo-2-208.htm"
+matched[182]=0
+
+title[183]="Tysmans, J. B."
+desc[183]="Tysmans, J. B. - Plague in India 1994 - Conditions, containment, goals - [Geo-2-209]"
+links[183]="../GEO/Geo-2-209.htm"
+matched[183]=0
+
+title[184]="WHO and UNICEF"
+desc[184]="WHO and UNICEF - Global Water supply and sanitation assessment 2000 report - [Geo-2-210]"
+links[184]="../GEO/Geo-2-210.htm"
+matched[184]=0
+
+title[185]="Blue Plan"
+desc[185]="Blue Plan - Urban sprawl in the Mediterranian region - [Geo-2-211]"
+links[185]="../GEO/Geo-2-211.htm"
+matched[185]=0
+
+title[186]="PPIC"
+desc[186]="PPIC - Producer responsibility - An overview - [Geo-2-212]"
+links[186]="../GEO/Geo-2-212.htm"
+matched[186]=0
+
+title[187]="UNCHS"
+desc[187]="UNCHS - Synthesis of National reports on the implementation of the Habitat agenda in the Economic Comission for Europe (ECE) Region - [Geo-2-213]"
+links[187]="../GEO/Geo-2-213.htm"
+matched[187]=0
+
+title[188]="UNEP-IETC"
+desc[188]="UNEP-IETC - International source book on environmentally sound technologies for municpal solid waste management - [Geo-2-214]"
+links[188]="../GEO/Geo-2-214.htm"
+matched[188]=0
+
+
+title[189]="Taniguchi, C."
+desc[189]="Taniguchi, C. - Transported to the future, Our Planet - [Geo-2-215]"
+links[189]="../GEO/Geo-2-215.htm"
+matched[189]=0
+
+title[190]="WHO and UNICEF"
+desc[190]="WHO and UNICEF - Global water supply and sanitation assessment 2000 report - [Geo-2-216]"
+links[190]="../GEO/Geo-2-216.htm"
+matched[190]=0
+
+title[191]="World Bank"
+desc[191]="World Bank - Eliminación del Plomo y Armonización de Combustibles en América Latina. - [Geo-2-217.]"
+links[191]="../GEO/Geo-2-217.htm"
+matched[191]=0
+
+title[192]="Baker, L."
+desc[192]="Baker, L. - Growing pains/ Malling America: The fast movong fight to stop urban sprawl - [Geo-2-218]"
+links[192]="../GEO/Geo-2-218.htm"
+matched[192]=0
+
+title[193]="Co-op America"
+desc[193]="Co-op America - Forty-four million Americans can't be wrong - [Geo-2-219]"
+links[193]="../GEO/Geo-2-219.htm"
+matched[193]=0
+
+title[194]="Franklin Associates"
+desc[194]="Franklin Associates - Characterization of municipal solid waste in the United States: 1998 update - [Geo-2-220]"
+links[194]="../GEO/Geo-2-220.htm"
+matched[194]=0
+
+title[195]="HUD"
+desc[195]="HUD - The state of the cities 2000: Megaforces shaping the future of the nation's cities - [Geo-2-221]"
+links[195]="../GEO/Geo-2-221.htm"
+matched[195]=0
+
+title[196]="Kolankiewicz, L., and Beck, R."
+desc[196]="Kolankiewicz, L., and Beck, R. - Weighing sprawl factors in large US cites - [Geo-2-222]"
+links[196]="../GEO/Geo-2-222.htm"
+matched[196]=0
+
+title[197]="NRCS"
+desc[197]="NRCS - Summary Report: 1997 National Resources Inventory, revised December 2000 - [Geo-2-223]"
+links[197]="../GEO/Geo-2-223.htm"
+matched[197]=0
+
+title[198]="Parfrey, E."
+desc[198]="Parfrey, E. - What is 'Smart Growth'? - [Geo-2-224]"
+links[198]="../GEO/Geo-2-224.htm"
+matched[198]=0
+
+title[199]="Pope, C."
+desc[199]="Pope, C. - Solving sprawl: The Sierra Club rates the states - [Geo-2-225]"
+links[199]="../GEO/Geo-2-225.htm"
+matched[199]=0
+
+title[200]="Sierra Club"
+desc[200]="Sierra Club - Sprawl costs us all: How your taxes fuel sub-urban sprawl - [Geo-2-226]"
+links[200]="../GEO/Geo-2-226.htm"
+matched[200]=0
+
+title[201]="Sierra Club"
+desc[201]="Sierra Club - Smart choices or sprawling growth: A 50 state survey of development - [Geo-2-227]"
+links[201]="../GEO/Geo-2-227.htm"
+matched[201]=0
+
+title[202]="ULI"
+desc[202]="ULI - Smart Growth: Myth and Fact - [Geo-2-228]"
+links[202]="../GEO/Geo-2-228.htm"
+matched[202]=0
+
+title[203]="Wendell Cox"
+desc[203]="Wendell Cox - US urban personal vehicle and public transport market share from 1945 - [Geo-2-229]"
+links[203]="../GEO/Geo-2-229.htm"
+matched[203]=0
+
+
+title[204]="United Nations Population Division"
+desc[204]="United NAtions Population Division - World population prospects: The 2000 revision - [Geo-2-230]"
+links[204]="../GEO/Geo-2-230.htm"
+matched[204]=0
+
+title[205]="Bogoyavlenskiy, D.D "
+desc[205]="Bogoyavlenskiy, D.D  - Historic-demographic note on the Nenets of the Komi republic - [Geo-2-231]"
+links[205]="../GEO/Geo-2-231.htm"
+matched[205]=0
+
+title[206]="Golovnev, A.V., Osherenkon, G., Pribylskii, Y.P. and Schindler, D.L. "
+desc[206]="Golovnev, A.V., Osherenkon, G., Pribylskii, Y.P. and Schindler, D.L.  - Indigenous Peoples and Development of the Yamal Peninsula. - [Geo-2-232]"
+links[206]="../GEO/Geo-2-232.htm"
+matched[206]=0
+
+title[207]="Weir, F."
+desc[207]="Weir, F. - Russia's arctic is now an economic gulag - [Geo-2-233]"
+links[207]="../GEO/Geo-2-233.htm"
+matched[207]=0
+
+title[208]="World Gazetteer"
+desc[208]="World Gazetteer - The World Gazetteer - [Geo-2-234]"
+links[208]="../GEO/Geo-2-234.htm"
+matched[208]=0
+
+title[209]="ESCAP"
+desc[209]="ESCAP - The state of the environment in Asia and the Pacific - [Geo-2-235]"
+links[209]="../GEO/Geo-2-235.htm"
+matched[209]=0
+
+title[210]="CEPAL"
+desc[210]="CEPAL - De la urbanizacion acelerada a la consolidacion de los asentamientos humanos en america latina y el caribe - [Geo-2-236]"
+links[210]="../GEO/Geo-2-236.htm"
+matched[210]=0
+
+
+title[211]="Fishstat"
+desc[211]="FISHSTAT Plus, Univesal software for fishery statistical time series - [Geo-2-237]"
+links[211]="../GEO/Geo-2-237.htm"
+matched[211]=0
+
+title[212]="GESAMP"
+desc[212]="GESAMP - Protecting the oceans from land-based activities - [Geo-2-238]"
+links[212]="../GEO/Geo-2-238.htm"
+matched[212]=0
+
+title[213]="FAO"
+desc[213]="FAO - Coastal environments under threat. - [Geo-2-239]"
+links[213]="../GEO/Geo-2-239.htm"
+matched[213]=0
+
+title[214]="Hayes, P. and L. Zarsky"
+desc[214]="Hayes, P. and L. Zarsky - Environmental issues and regimes in North East Asia - [Geo-2-240]"
+links[214]="../GEO/Geo-2-240.htm"
+matched[214]=0
+
+title[215]="OSPAR"
+desc[215]="OSPAR - Liquid discharges from nuclear installations in 1999 - [Geo-2-241]"
+links[215]="../GEO/Geo-2-241.htm"
+matched[215]=0
+
+title[216]="NOAA"
+desc[216]="NOAA - Wetland areas in the Bahamas - [Geo-2-242]"
+links[216]="../GEO/Geo-2-242.htm"
+matched[216]=0
+
+title[217]="Carlisle, J."
+desc[217]="Carlisle, J. - Nature, not man, is responsible for West coast Salmon decline - [Geo-2-243]"
+links[217]="../GEO/Geo-2-243.htm"
+matched[217]=0
+
+title[218]="DFO"
+desc[218]="DFO - 1999 agreement between Canada and the U.S under the Pacific Salmon treaty - [Geo-2-244]"
+links[218]="../GEO/Geo-2-244.htm"
+matched[218]=0
+
+title[219]="DFO"
+desc[219]="DFO - Canada and US reach a comprehensive agreement under the Pacific Salmon treaty - [Geo-2-245]"
+links[219]="../GEO/Geo-2-245.htm"
+matched[219]=0
+
+title[220]="DFO"
+desc[220]="DFO - Pacific fisheries adjustment and restructuring program. Backgrounder. - [Geo-2-246]"
+links[220]="../GEO/Geo-2-246.htm"
+matched[220]=0
+
+title[221]="DFO"
+desc[221]="DFO - Fisheries and Oceans announcees rebuilding efforts result in astounding recovery of Upper Adams and Nadina Sockeye Runs - [Geo-2-247]"
+links[221]="../GEO/Geo-2-247.htm"
+matched[221]=0
+
+title[222]="DFO"
+desc[222]="DFO - Remarkable rebuilding of Upper Adams Sockey Run Continues. - [Geo-2-248]"
+links[222]="../GEO/Geo-2-248.htm"
+matched[222]=0
+
+title[223]="DFO"
+desc[223]="DFO - Annual Summary commercial statistics, Salmon landings in BC (1951-95) - [Geo-2-249]"
+links[223]="../GEO/Geo-2-249.htm"
+matched[223]=0
+
+title[224]="WWF"
+desc[224]="WWF - Living Planet Report 2000 - [Geo-2-250]"
+links[224]="../GEO/Geo-2-250.htm"
+matched[224]=0
+
+title[225]="Shaw and Louw"
+desc[225]="Shaw and Louw - Environmental design for safer communities: Preventing crime in South Africa's cities and towns   Geo-2-251"
+links[225]="../GEO/Geo-2-251.htm"
+matched[225]=0
+
+title[226]="US EPA"
+desc[226]="US EPA - Our built and natural environment: A technical review of the interactions between land use, transportation and environmental quality - [Geo-2-252]"
+links[226]="../GEO/Geo-2-252.htm"
+matched[226]=0
+
+title[227]="CSO"
+desc[227]="CSO - Statistical abstract 99 - [Geo-2-253]"
+links[227]="../GEO/Geo-2-253.htm"
+matched[227]=0
+
+title[228]="NMFS"
+desc[228]="NMFS - Fisheries statistics & economics, commercial fisheries, annual landings - [Geo-2-254]"
+links[228]="../GEO/Geo-2-254.htm"
+matched[228]=0
+
+title[229]="NOAA"
+desc[229]="NOAA - 1998 Year of the ocean. Perspectives on marine environmental quality today. - [Geo-2-255]"
+links[229]="../GEO/Geo-2-255.htm"
+matched[229]=0
+
+title[230]="NOAA"
+desc[230]="NOAA - Oxygen depletion in Coastal Waters: NOAA's state of the coast report - [Geo-2-256]"
+links[230]="../GEO/Geo-2-256.htm"
+matched[230]=0
+
+title[231]="NOAA"
+desc[231]="NOAA - United States announces agreement with Canada on Pacific Salmon. - [Geo-2-257]"
+links[231]="../GEO/Geo-2-257.htm"
+matched[231]=0
+
+title[232]="NRC"
+desc[232]="NRC - Sensitivities to climate change: Fisheries - [Geo-2-258]"
+links[232]="../GEO/Geo-2-258.htm"
+matched[232]=0
+
+title[233]="NRC"
+desc[233]="NRC - Clean coastal waters: Understanding and reducing the effects of nutrient pollution - [Geo-2-259]"
+links[233]="../GEO/Geo-2-259.htm"
+matched[233]=0
+
+title[234]="US Senate"
+desc[234]="US Senate - Animal waste pollution in America: An emerging national problem - [Geo-2-260]"
+links[234]="../GEO/Geo-2-260.htm"
+matched[234]=0
+
+title[235]="US GCRP"
+desc[235]="US GCRP - Climate change impacts on the United States: The potential consequences of climate variability and change. - [Geo-2-261]"
+links[235]="../GEO/Geo-2-261.htm"
+matched[235]=0
+
+title[236]="AMAP"
+desc[236]="AMAP - Arctic pollution issues: A state of the Arctic environment report - [Geo-2-262]"
+links[236]="../GEO/Geo-2-262.htm"
+matched[236]=0
+
+title[237]="IFAD"
+desc[237]="IFAD - Rural Poverty Report 2001 - The Challenges of ending Rural Poverty - [Geo-2-270]"
+links[237]="../GEO/Geo-2-270.htm"
+matched[237]=0
+
+title[238]="IMF"
+desc[238]="IMF - Debt relief for Poor Countries (HIPC): What has Been Achieved? A factsheet - [Geo-2-271]"
+links[238]="../GEO/Geo-2-271.htm"
+matched[238]=0
+
+title[239]="ITU"
+desc[239]="ITU - ITU Telecommunication Indicator Update - [Geo-2-272]"
+links[239]="../GEO/Geo-2-272.htm"
+matched[239]=0
+
+title[240]="Okinawa Charter"
+desc[240]="Okinawa Charter - Okinawa Charter on Global Information Society - [Geo-2-273]"
+links[240]="../GEO/Geo-2-273.htm"
+matched[240]=0
+
+title[241]="Oxfam"
+desc[241]="Oxfam - Debt Relief: Still Failing the Poor - [Geo-2-274]"
+links[241]="../GEO/Geo-2-274.htm"
+matched[241]=0
+
+title[242]="Reed, D."
+desc[242]="Reed, D - Structural Adjustment, the Environment and Sustainable Development - [Geo-2-275]"
+links[242]="../GEO/Geo-2-275.htm"
+matched[242]=0
+
+title[243]="UNAIDS"
+desc[243]="UNAIDS - AIDS Epidemic Update - [Geo-2-276]"
+links[243]="../GEO/Geo-2-276.htm"
+matched[243]=0
+
+title[244]="UNDP"
+desc[244]="UNDP - Human Development Report 1999 - [Geo-2-277]"
+links[244]="../GEO/Geo-2-277.htm"
+matched[244]=0
+
+title[245]="UNDP"
+desc[245]="UNDP - Human Development Report 2001 - [Geo-2-278]"
+links[245]="../GEO/Geo-2-278.htm"
+matched[245]=0
+
+
+title[246]="UNFPA"
+desc[246]="UNFPA - PopulationIssues Briefing Kit 2001 - [Geo-2-279]"
+links[246]="../GEO/Geo-2-279.htm"
+matched[246]=0
+
+title[247]="UNHCR"
+desc[247]="UNHCR - Basic Facts - [Geo-2-280]"
+links[247]="../GEO/Geo-2-280.htm"
+matched[247]=0
+
+title[248]="ADB"
+desc[248]="ADB - ADB Statistics Pocketbook 2001 - [Geo-2-281]"
+links[248]="../GEO/Geo-2-281.htm"
+matched[248]=0
+
+title[249]="ADB"
+desc[249]="ADB - Human Development Indicators - [Geo-2-282]"
+links[249]="../GEO/Geo-2-282.htm"
+matched[249]=0
+
+title[250]="IMF"
+desc[250]="IMF - Debt Relief for Poor Countries (HIPC): What has Been Achiened? A factsheet - [Geo-2-283]"
+links[250]="../GEO/Geo-2-283.htm"
+matched[250]=0
+
+title[251]="Jensen, M."
+desc[251]="Jensen, M - Information and Communication Technologies (ICTs): trelecommunications, Internet and Computer Infrastructure in Africa - [Geo-2-284]"
+links[251]="../GEO/Geo-2-284.htm"
+matched[251]=0
+
+title[252]="Madavo, C"
+desc[252]="Madavo, C - Celebrating the Wealth of Africa - [Geo-2-285]"
+links[252]="../GEO/Geo-2-285.htm"
+matched[252]=0
+
+title[253]="Madavo, C. and Sarbib, J-L"
+desc[253]="Madavo, C. and Sarbib, J-L - Is There an Economic Recovery in Sub-Saharan Africa? - [Geo-2-286]"
+links[253]="../GEO/Geo-2-286.htm"
+matched[253]=0
+
+
+title[254]="UNAIDS"
+desc[254]="UNAIDS - AIDS Epidemic Update: December 2000: Global - [Geo-2-287]"
+links[254]="../GEO/Geo-2-287.htm"
+matched[254]=0
+
+title[255]="UNAIDS"
+desc[255]="UNAIDS - AIDS Epidemic Update: December 2001: Africa - [Geo-2-288]"
+links[255]="../GEO/Geo-2-288.htm"
+matched[255]=0
+
+title[256]="UNDP"
+desc[256]="UNDP - Human Development Report 2001 - [Geo-2-289]"
+links[256]="../GEO/Geo-2-289.htm"
+matched[256]=0
+
+title[257]="CCNIC"
+desc[257]="CCNIC - Semiannual Survey report on th Development of China's Internet (January 2002) - [Geo-2-290]"
+links[257]="../GEO/Geo-2-290.htm"
+matched[257]=0
+
+title[258]="UNAIDS"
+desc[258]="UNAIDS - AIDS Epidemic Update: December 2001: Asia - [Geo-2-291]"
+links[258]="../GEO/Geo-2-291.htm"
+matched[258]=0
+
+title[259]="UNESCO"
+desc[259]="UNESCO - Facts and Figures 2000 - Science and Technology - [Geo-2-292]"
+links[259]="../GEO/Geo-2-292.htm"
+matched[259]=0
+
+title[260]="ITU"
+desc[260]="ITU - ICT Free Statistics Homepage: Internet Indicators by Country for 1998 and 2000 - [Geo-2-293]"
+links[260]="../GEO/Geo-2-293.htm"
+matched[260]=0
+
+title[261]="REC"
+desc[261]="REC - Doors to Democracy: A Pan-European Assessment of Current Trends and Practices in Public Participation in Environmental Matters - [Geo-2-294]"
+links[261]="../GEO/Geo-2-294.htm"
+matched[261]=0
+
+title[262]="UNDP"
+desc[262]="UNDP - Human Development Report 1999 - [Geo-2-295]"
+links[262]="../GEO/Geo-2-295.htm"
+matched[262]=0
+
+title[263]="Massarani, L."
+desc[263]="Massarani, L - Latin America Falls Short in Science Spending - [Geo-2-296]"
+links[263]="../GEO/Geo-2-296.html"
+matched[263]=0
+
+title[264]="Dalaker, J."
+desc[264]="Dalaker, J - Poverty in the United States - [Geo-2-297]"
+links[264]="../GEO/Geo-2-297.htm"
+matched[264]=0
+
+title[265]="IEA"
+desc[265]="IEA - Key World Energy Statistics - [Geo-2-298]"
+links[265]="../GEO/Geo-2-298.htm"
+matched[265]=0
+
+title[266]="IIP"
+desc[266]="IIP - The Americas - [Geo-2-299]"
+links[266]="../GEO/Geo-2-299.htm"
+matched[266]=0
+
+title[267]="OECD"
+desc[267]="OECD - OECD Science Technology and Industry Scoreboard 2001. Towards a Knowledge Based Economy - [Geo-2-300]"
+links[267]="../GEO/Geo-2-300.htm"
+matched[267]=0
+
+title[268]="Ross, D.P. Scott, K and Smith, P."
+desc[268]="ross, D.P. Scott, K. and Smith, P - The Canadian Factbook on Poverty - [Geo-2-301]"
+links[268]="../GEO/Geo-2-301.htm"
+matched[268]=0
+
+title[269]="US Census Bureau"
+desc[269]="US Census Bureau - Population Estimates - [Geo-2-302]"
+links[269]="../GEO/Geo-2-302.htm"
+matched[269]=0
+
+title[270]="US Department of Commerce"
+desc[270]="US Department of Commerce - National Income and Product Account tables - [Geo-2-303]"
+links[270]="../GEO/Geo-2-303.htm"
+matched[270]=0
+
+title[271]="US Department of Labor"
+desc[271]="US Department of Labor - Labor Force Statistics from the Current Population Survey - [Geo-2-304]"
+links[271]="../GEO/Geo-2-304.htm"
+matched[271]=0
+
+title[272]="IEA"
+desc[272]="IEA - World Energy Outlook: 2001 Insights - [Geo-2-305]"
+links[272]="../GEO/Geo-2-305.htm"
+matched[272]=0
+
+title[273]="UNDP"
+desc[273]="UNDP - Human development report 2000: West Asia - [Geo-2-306]"
+links[273]="../GEO/Geo-2-306.htm"
+matched[273]=0
+
+title[274]="WHO"
+desc[274]="WHO - Statistical Information System - [Geo-2-307]"
+links[274]="../GEO/Geo-2-307.htm"
+matched[274]=0
+
+title[275]="BHP Billioton"
+desc[275]="BHP Billioton - Diamonds - [Geo-2-308]"
+links[275]="../GEO/Geo-2-308.htm"
+matched[275]=0
+
+title[276]="CIA"
+desc[276]="CIA - Greenland - [Geo-2-309]"
+links[276]="../GEO/Geo-2-309.htm"
+matched[276]=0
+
+title[277]="CIA"
+desc[277]="CIA - Iceland - [Geo-2-310]"
+links[277]="../GEO/Geo-2-310.htm"
+matched[277]=0
+
+title[278]="Colt, S"
+desc[278]="Colt, S - What's the Economic Importance of Alaska's Healthy Ecosystems? - [Geo-2-311]"
+links[278]="../GEO/Geo-2-311.htm"
+matched[278]=0
+
+title[279]="Conference Board of Canada"
+desc[279]="Conference Board of Canada - Iqualit Demographics - [Geo-2-312]"
+links[279]="../GEO/Geo-2-312.htm"
+matched[279]=0
+
+title[280]="DIAND"
+desc[280]="DIAND - Oil and Gas in Canada's North. The canadian Frontier - Renewing Exploration in the North - [Geo-2-313]"
+links[280]="../GEO/Geo-2-313.htm"
+matched[280]=0
+
+title[281]="Gemmill, Faith"
+desc[281]="Gemmill, Fith - Arctic Refuge, Home of the Gwich'in People - [Geo-2-314]"
+links[281]="../GEO/Geo-2-314.htm"
+matched[281]=0
+
+title[282]="Goldsmith, S."
+desc[282]="Goldsmith, S. - Alaska Gross State Product - Geo-2-315"
+links[282]="../GEO/Geo-2-315.htm"
+matched[282]=0
+
+title[283]="Norilsk"
+desc[283]="Norilsk - Norilsk Minign Centre - Nickel, Palladium and Copper Production Facility, Russia - [Geo-2-316]"
+links[283]="../GEO/Geo-2-316.htm"
+matched[283]=0
+
+title[284]="State of Alaska"
+desc[284]="State of Alaska - Visitor Information - [Geo-2-317]"
+links[284]="../GEO/Geo-2-317.htm"
+matched[284]=0
+
+title[285]="UNFWS"
+desc[285]="UNFWS - Potential Impacts of Proposed Oil and gas development on the Arctic Refuge's Coastal Plain - [Geo-2-318]"
+links[285]="../GEO/Geo-2-318.htm"
+matched[285]=0
+
+title[286]="Weir, F"
+desc[286]="Weir, F - Russia's Arctic is Now and Economic Gulag - [Geo-2-319]"
+links[286]="../GEO/Geo-2-319.htm"
+matched[286]=0
+
+title[287]="UNDP, UNDESA and WEC"
+desc[287]="UNDP, UNDESA and WEC - World Energy Assessment - [Geo-2-320]"
+links[287]="../GEO/Geo-2-320.htm"
+matched[287]=0
+
+title[288]="TI"
+desc[288]="TI - Press Release: New Index Highlights worldwide Corruption Crisis - [Geo-2-321]"
+links[288]="../GEO/Geo-2-321.htm"
+matched[288]=0
+
+title[289]="PCBS"
+desc[289]="PCBS - Population and Housing Census - [Geo-2-322]"
+links[289]="../GEO/Geo-2-322.htm"
+matched[289]=0
+
+title[290]="Statistics Canada"
+desc[290]="Statistics Canada - Canadian Statistics - [Geo-2-323]"
+links[290]="../GEO/Geo-2-323.htm"
+matched[290]=0
+
+title[291]="ADT"
+desc[291]="ADT - The State's Role In Guiding Tourism Growth - [Geo-2-328]"
+links[291]="../GEO/Geo-2-328.htm"
+matched[291]=0
+
+title[292]="Adams, J."
+desc[292]="Adams, J. - Corporate crime/our crime: What citizens have done and can do to curtail corporate 'crime'. - [Geo-2-329]"
+links[292]="../GEO/Geo-2-329.htm"
+matched[292]=0
+
+title[293]="CRED-OFDA"
+desc[293]="CRED-OFDA - EM-DAT: The OFDA/CRED International disaster database - [Geo-2-330]"
+links[293]="../GEO/Geo-2-330.htm"
+matched[293]=0
+
+title[294]="IDNDR"
+desc[294]="IDNDR - Progress and challenges in reducing losses from natural disasters - [Geo-2-331]"
+links[294]="../GEO/Geo-2-331.htm"
+matched[294]=0
+
+title[295]="IDNDR"
+desc[295]="IDNDR - Despite dedicated efforts, number and cost of natural disasters continue to rise - [Geo-2-332]"
+links[295]="../GEO/Geo-2-332.htm"
+matched[295]=0
+
+title[296]="ISDR"
+desc[296]="ISDR - The Concept of Disaster Reduction Embodied in the ISDR - [Geo-2-333]"
+links[296]="../GEO/Geo-2-333.htm"
+matched[296]=0
+
+title[297]="IFRC"
+desc[297]="IFRC - World Disasters Report 2001 - [Geo-2-334]"
+links[297]="../GEO/Geo-2-334.htm"
+matched[297]=0
+
+
+title[298]="UNDHA"
+desc[298]="UNDHA - United Nations Department of Humanitarian Affairs: Internationally agreed glossary of basic terms related to Disaster Management - [Geo-2-335]"
+links[298]="../GEO/Geo-2-335.htm"
+matched[298]=0
+
+title[299]="Dilley, M"
+desc[299]="Dilley, M. - Warning and Intervention: What kind of information does the response community need from the early warning community? - [Geo-2-336]"
+links[299]="../GEO/Geo-2-336.htm"
+matched[299]=0
+
+title[300]="Kim, S."
+desc[300]="Kim, S. - Southern Africa Swamped by Rains - [Geo-2-337]"
+links[300]="../GEO/Geo-2-337.htm"
+matched[300]=0
+
+title[301]="Mozambique National News Agency"
+desc[301]="Mozambique National News Agency - Government reports on flood damage and reconstruction - [Geo-2-338]"
+links[301]="../GEO/Geo-2-338.htm"
+matched[301]=0
+
+title[302]="Mpofu, B."
+desc[302]="Mpofu, B. - Assessment of seed requirements in Southern African countries ravaged by floods and drought - [Geo-2-339]"
+links[302]="../GEO/Geo-2-339.htm"
+matched[302]=0
+
+title[303]="World Bank"
+desc[303]="World Bank - World Bank Board approves $72 million for Kenya - [Geo-2-340]"
+links[303]="../GEO/Geo-2-340.htm"
+matched[303]=0
+
+title[304]="World Bank"
+desc[304]="World Bank - Upgrading urban communities, Version 2001 - [Geo-2-341]"
+links[304]="../GEO/Geo-2-341.htm"
+matched[304]=0
+
+title[305]="DoAC India"
+desc[305]="DoAC India - Super cyclone Orissa - [Geo-2-343]"
+links[305]="../GEO/Geo-2-343.htm"
+matched[305]=0
+
+title[306]="FAO"
+desc[306]="FAO - Time to save the Aral sea? - [Geo-2-342]"
+links[306]="../GEO/Geo-2-342.htm"
+matched[306]=0
+
+title[307]="FAO"
+desc[307]="FAO - Global forest resources assessment 2000 - [Geo-2-345]"
+links[307]="../GEO/Geo-2-345.htm"
+matched[307]=0
+
+title[308]="UNEP"
+desc[308]="UNEP - Disasters. - [Geo-2-344]"
+links[308]="../GEO/Geo-2-344.htm"
+matched[308]=0
+
+title[309]="UNESCAP"
+desc[309]="UNESCAP - Asia faces environmental disaster - [Geo-2-346]"
+links[309]="../GEO/Geo-2-346.htm"
+matched[309]=0
+
+title[310]="European Commission"
+desc[310]="European Commission - Nuclear safety in Central Europe and the new independent states - [Geo-2-347]"
+links[310]="../GEO/Geo-2-347.htm"
+matched[311]=0
+
+title[311]="ICRP"
+desc[311]="ICRP - Action plan on food defense - [Geo-2-348]"
+links[311]="../GEO/Geo-2-348.htm"
+matched[311]=0
+
+title[312]="ITOPF"
+desc[312]="ITOPF - Historical Data. - [Geo-2-349]"
+links[312]="../GEO/Geo-2-349.htm"
+matched[312]=0
+
+title[313]="European Commission"
+desc[313]="European Commission - Major accident reporting system of the European Commission - [Geo-2-350]"
+links[313]="../GEO/Geo-2-350.htm"
+matched[313]=0
+
+title[314]="M&M Protection Consultants "
+desc[314]="M&M Protection Consultants - Large property damage losses in the hydrocarbon-chemical industries, a thirty year review - [Geo-2-351]"
+links[314]="../GEO/Geo-2-351.htm"
+matched[314]=0
+
+title[315]="UNECE"
+desc[315]="UNECE - Convention on environmental impact assessment in a transboundary context - [Geo-2-352]"
+links[315]="../GEO/Geo-2-352.htm"
+matched[315]=0
+
+title[316]="AMIGRANSA"
+desc[316]="AMIGRANSA - Posición de AMIGRANSA ante el decreto 1.850 de explotación de los bosques de Imataca. - [Geo-2-353]"
+links[316]="../GEO/Geo-2-353.htm"
+matched[316]=0
+
+title[317]="Cutter"
+desc[317]="Cutter - Oil Spill Intelligence Report - [Geo-2-354]"
+links[317]="../GEO/Geo-2-354.htm"
+matched[317]=0
+
+title[318]="Filártiga, J., and Agüero Wagner, L"
+desc[318]="Filártiga, J., and Agüero Wagner, L - Fiebre del oro y ecoapocalipsis en Venezuela - [Geo-2-355]"
+links[318]="../GEO/Geo-2-355.htm"
+matched[318]=0
+
+title[319]="UNICEF"
+desc[319]="UNICEF - El Salvador Earthquakes - [Geo-2-356]"
+links[319]="../GEO/Geo-2-356.htm"
+matched[319]=0
+
+title[320]="World Bank"
+desc[320]="World Bank - In wake of floods, Bank urges Venezeula to protect poor ... - [Geo-2-357]"
+links[320]="../GEO/Geo-2-357.htm"
+matched[320]=0
+
+title[321]="Brun, S.E., Etkin, D., Law, D.G., Wallace, L., and White, R"
+desc[321]="Brun, S.E., Etkin, D., Law, D.G., Wallace, L., and White, R - Coping with natural hazards in Canada: Scientific - [Geo-2-358]"
+links[321]="../GEO/Geo-2-358.htm"
+matched[321]=0
+
+
+title[322]="CIFFC"
+desc[322]="CIFFC - Canadian Interagency Forest Fire Centre - [Geo-2-359]"
+links[322]="../GEO/Geo-2-359.htm"
+matched[322]=0
+
+title[323]="COTF"
+desc[323]="COTF - Exploring the Environment: Yellowstone Fires - [Geo-2-360]"
+links[323]="../GEO/Geo-2-360.htm"
+matched[323]=0
+
+title[324]="EC"
+desc[324]="EC - Climate Trends and Variations Bulletin for Canada: Annual 1997 Temperature and Precipitation in Historical Perspective - [Geo-2-361]"
+links[324]="../GEO/Geo-2-361.htm"
+matched[324]=0
+
+title[325]="EC"
+desc[325]="EC - The Canada Country Study (CCS), Volume VIII, National Cross-Cutting Issues Volume - [Geo-2-362]"
+links[325]="../GEO/Geo-2-362.htm"
+matched[325]=0
+
+title[326]="EC"
+desc[326]="EC - Environment Canada. FLoods - [Geo-2-363]"
+links[326]="../GEO/Geo-2-363.htm"
+matched[326]=0
+
+title[327]="EC"
+desc[327]="EC - Environment Canada. Tracking Key Environmental Issues - [Geo-2-364]"
+links[327]="../GEO/Geo-2-364.htm"
+matched[327]=0
+
+title[328]="FEMA"
+desc[328]="FEMA - About FEMA: History of the Federal Emergency Management Agency - [Geo-2-365]"
+links[328]="../GEO/Geo-2-365.htm"
+matched[328]=0
+
+title[329]="Francis, D. and Hengeveld, H."
+desc[329]="Francis, D. and Hengeveld, H. - Extreme Weather and Climate Change - [Geo-2-366]"
+links[329]="../GEO/Geo-2-366.htm"
+matched[329]=0
+
+title[330]="Gorte, R. W."
+desc[330]="Gorte, R. W. - Congressional Research Services Report for Congress: Forest Fires and Forest Health - [Geo-2-367]"
+links[330]="../GEO/Geo-2-367.htm"
+matched[330]=0
+
+title[331]="H. John Heinz III Center"
+desc[331]="H. John Heinz III Center - Designing a Report on the State of the NAtion's Ecosystem: Selected Measures for Croplands, Forests and Coasts and Oceans - [Geo-2-368]"
+links[331]="../GEO/Geo-2-368.htm"
+matched[331]=0
+
+title[332]="IJC"
+desc[332]="IJC - International Joint Commission Cautions that Efforts Must Remain Focused on Protecting Against Flood Damages - [Geo-2-369]"
+links[332]="../GEO/Geo-2-369.htm"
+matched[332]=0
+
+title[333]="Jardine, K"
+desc[333]="Jardine, K. - The Carbon Bomb: Climate Change and the Fate of the Northern Boreal Forests - [Geo-2-370]"
+links[333]="../GEO/Geo-2-370.htm"
+matched[333]=0
+
+title[334]="Morrison, P.H., Karl, J.W., Swope, L., Harma, K., Allen, T., Becwar, P., and Sabold, B. "
+desc[334]="Morrison, P.H., Karl, J.W., Swope, L., Harma, K., Allen, T., Becwar, P., and Sabold, B.  - Assessment of Summer 2000 Wildfires: Landscape History, Current Condition and Ownership - [Geo-2-371]"
+links[334]="../GEO/Geo-2-371.htm"
+matched[334]=0
+
+title[335]="Mutch, R. W."
+desc[335]="Mutch, R. W. - Use of Fires as a Management Tool on the National Forests - [Geo-2-372]"
+links[335]="../GEO/Geo-2-372.htm"
+matched[335]=0
+
+title[336]="NIFC"
+desc[336]="NIFC - National Interagency Fire Center - [Geo-2-373]"
+links[336]="../GEO/Geo-2-373.htm"
+matched[336]=0
+
+title[337]="NPS"
+desc[337]="NPS - Wildland Fire - [Geo-2-374]"
+links[337]="../GEO/Geo-2-374.htm"
+matched[337]=0
+
+title[338]="OCIPEP"
+desc[338]="OCIPEP - The Office of Critical Infrastructure Protection and Emergency Preparedness - [Geo-2-375]"
+links[338]="../GEO/Geo-2-375.htm"
+matched[338]=0
+
+title[339]="Trenberth, K. E."
+desc[339]="Trenberth, K. E. - The Extreme Weather Events of 1997 and 1998 - [Geo-2-376]"
+links[339]="../GEO/Geo-2-376.htm"
+matched[339]=0
+
+title[340]="Turner, C."
+desc[340]="Turner, C. - Fighting Fires: Blazing a Trail - [Geo-2-377]"
+links[340]="../GEO/Geo-2-377.htm"
+matched[340]=0
+
+title[341]="USGCRP"
+desc[341]="USGCRP - Climate Change Impacts on the United States: The Potential Consequences of Climate Variability and Change - [Geo-2-378]"
+links[341]="../GEO/Geo-2-378.htm"
+matched[341]=0
+
+title[342]="FAO"
+desc[342]="FAO - Special Report: Drought Causes Extensive Crop Damage in the Near East Raising Concerns for Food Supply Difficulties in Some Parts - [Geo-2-379]"
+links[342]="../GEO/Geo-2-379.htm"
+matched[342]=0
+
+title[343]="Oil Spill Intelligence Report"
+desc[343]="Oil Spill Intelligence Report - Oil Spills Involving More Than 10 Million Gallons - [Geo-2-380]"
+links[343]="../GEO/Geo-2-380.htm"
+matched[343]=0
+
+title[344]="UNCCD"
+desc[344]="UNCCD - Sub-Regional Action Programs (SRAP) to Combat Desertification and Drought in West Asia - [Geo-2-381]"
+links[344]="../GEO/Geo-2-381.htm"
+matched[344]=0
+
+title[345]="US DoD"
+desc[345]="US DoD - Oil Well Fires Environmental Exposures Report - [Geo-2-382]"
+links[345]="../GEO/Geo-2-382.htm"
+matched[345]=0
+
+title[346]="UNRWA"
+desc[346]="UNRWA - United NAtions Relief and Works Agency for Palestine Refugees in the Near East - [Geo-2-383]"
+links[346]="../GEO/Geo-2-383.htm"
+matched[346]=0
+
+title[347]="Arctic Council"
+desc[347]="Arctic Council - Arctic Council Activities - [Geo-2-384]"
+links[347]="../GEO/Geo-2-384.htm"
+matched[347]=0
+
+title[348]="EPPR"
+desc[348]="EPPR - Environmental Risk Analysis of Arctic Activities, Risk Analysis Report No. 2 - [Geo-2-385]"
+links[348]="../GEO/Geo-2-385.htm"
+matched[348]=0
+
+title[349]="Kriner, S."
+desc[349]="Kriner, S - Winter Chills Bring Spring Floods to Siberia - [Geo-2-386]"
+links[349]="../GEO/Geo-2-386.htm"
+matched[349]=0
+
+title[350]="Kriner, S."
+desc[350]="Kriner, S - Flood Disaster Averted Again in Siberian City  - [Geo-2-387]"
+links[350]="../GEO/Geo-2-387.htm"
+matched[350]=0
+
+title[351]="NOAA"
+desc[351]="NOAA - The Exxon Valdez Oil Spill - [Geo-2-388]"
+links[351]="../GEO/Geo-2-388.htm"
+matched[351]=0
+
+title[352]="CCFM"
+desc[352]="CCFM - National Forestry Database Program - [Geo-2-389]"
+links[352]="../GEO/Geo-2-389.htm"
+matched[352]=0
+
+title[353]="FAO"
+desc[353]="FAO - Commodity Market Review, 1999-2000 - [Geo-2-390]"
+links[353]="../GEO/Geo-2-390.htm"
+matched[353]=0
+
+title[354]="FAO"
+desc[354]="FAO - Global Forest Resources Assessment 2000: Global - [Geo-2-391]"
+links[354]="../GEO/Geo-2-391.htm"
+matched[354]=0
+
+title[355]="ITTO"
+desc[355]="ITTO - Annual Review and Assessment of the World Timber Situation, 1999 - [Geo-2-393]"
+links[355]="../GEO/Geo-2-393.htm"
+matched[355]=0
+
+title[356]="Quarto, A"
+desc[356]="Quarto, A - The Mangrove Forest Background Paper - [Geo-2-392]"
+links[356]="../GEO/Geo-2-392.htm"
+matched[356]=0
+
+title[357]="FAO"
+desc[357]="FAO - Global Forest Resources Assessment 2000: Africa - [Geo-2-394]"
+links[357]="../GEO/Geo-2-394.htm"
+matched[357]=0
+
+title[358]="World Bank"
+desc[358]="World Bank - World Development Indicators Database - [Geo-2-395]"
+links[358]="../GEO/Geo-2-395.htm"
+matched[358]=0
+
+title[359]="FAO"
+desc[359]="FAO - Global Forest Resources Assessment 2000: Asia - [Geo-2-396]"
+links[359]="../GEO/Geo-2-396.htm"
+matched[359]=0
+
+title[360]="FAO"
+desc[360]="FAO - Global Forest Resources Assessment 2000: Europe - [Geo-2-397]"
+links[360]="../GEO/Geo-2-397.htm"
+matched[360]=0
+
+title[361]="MCPFE Liaison Unit"
+desc[361]="MCPFE Liaison Unit - MCPFE Resolutions - [Geo-2-398]"
+links[361]="../GEO/Geo-2-398.htm"
+matched[361]=0
+
+title[362]="FAO"
+desc[362]="FAO - Global Forest Resources Assessment 2000: Latin America and the Caribbean - [Geo-2-399]"
+links[362]="../GEO/Geo-2-399.htm"
+matched[362]=0
+
+title[363]="FMT"
+desc[363]="FMT - Bolivia Sustainable Forestry Project (BOLFOR) - [Geo-2-400]"
+links[363]="../GEO/Geo-2-400.htm"
+matched[363]=0
+
+title[364]="Vaughan, S. Carpentier, C. L. and Patterson, Z."
+desc[364]="Vaughan, S. Carpentier, C. L. and Patterson, Z. - The Power of Markets on the Promise of Green Goods and Services - [Geo-2-401]"
+links[364]="../GEO/Geo-2-401.htm"
+matched[364]=0
+
+title[365]="FAO"
+desc[365]="FAO - Global Forestry Resources Assessment 2000: North America - [Geo-2-402]"
+links[365]="../GEO/Geo-2-402.htm"
+matched[365]=0
+
+title[366]="Clayoquot Biosphere Trust"
+desc[366]="Clayoquot Biosphere Trust - British Colombia Community Celebrates designation of Clayoquot Sound as an International Biosphere Reserve - [Geo-2-403]"
+links[366]="../GEO/Geo-2-403.htm"
+matched[366]=0
+
+title[367]="FSC"
+desc[367]="FSC - FSC Regional Total: North America - [Geo-2-404]"
+links[367]="../GEO/Geo-2-404.htm"
+matched[367]=0
+
+title[368]="H. John Heinz III Center"
+desc[368]="H. John Heinz III Center - Designing a report on the State of the Nation's Ecosystem: Selected Measures for Croplands, Forests and Coasts and Oceans - [Geo-2-405]"
+links[368]="../GEO/Geo-2-405.htm"
+matched[368]=0
+
+title[369]="Harmon, F."
+desc[369]="Harmon, F. - Acres of Late-Successional and Old-Growth Forest: The Wealth of Humboldt and the Klamath-Siskiyou Region - [Geo-2-406]"
+links[369]="../GEO/Geo-2-406.htm"
+matched[369]=0
+
+title[370]="NRC"
+desc[370]="NRC - Forest Health: Context for the Canadian Forest Services Program - [Geo-2-407]"
+links[370]="../GEO/Geo-2-407.htm"
+matched[370]=0
+
+title[371]="Lund, H. G."
+desc[371]="Lund, H. G. - Definitions of Old-Growth, Pristine, Climax, Ancient Forests and Similar Terms - [Geo-2-408]"
+links[371]="../GEO/Geo-2-408.htm"
+matched[371]=0
+
+title[372]="NRC"
+desc[372]="NRC - The State of Canada's Forests: 1999-2000 Forests in the New Millennium - [Geo-2-409]"
+links[372]="../GEO/Geo-2-409.htm"
+matched[372]=0
+
+title[373]="REGEN"
+desc[373]="REGEN - Regeneration Treatments in Canada - [Geo-2-410]"
+links[373]="../GEO/Geo-2-410.htm"
+matched[373]=0
+
+title[374]="Travers, R."
+desc[374]="Travers, R - British Colombia certification Forum: Seeking Peace in the Woods - [Geo-2-411]"
+links[374]="../GEO/Geo-2-411.htm"
+matched[374]=0
+
+title[375]="UN"
+desc[375]="UN - Natural Resource Aspects of Sustainable Development in the United States of America - [Geo-2-412]"
+links[375]="../GEO/Geo-2-412.htm"
+matched[375]=0
+
+title[376]="University of Waterloo"
+desc[376]="University of Waterloo - Resources on Parks and Protected Areas - [Geo-2-413]"
+links[376]="../GEO/Geo-2-413.htm"
+matched[376]=0
+
+title[377]="USDA"
+desc[377]="USDA - America's Forests: 1997 Health Update - [Geo-2-414]"
+links[377]="../GEO/Geo-2-414.htm"
+matched[377]=0
+
+title[378]="FAO"
+desc[378]="FAo - Global Forest Resources Assessment 2000: West Asia - [Geo-2-415]"
+links[378]="../GEO/Geo-2-415.htm"
+matched[378]=0
+
+title[379]="FAO"
+desc[379]="FAO - Global Forestry Resources 2000: Polar Region - [Geo-2-416]"
+links[379]="../GEO/Geo-2-416.htm"
+matched[379]=0
+
+title[380]="FAO"
+desc[380]="FAO - Forestry Country Profiles: Iceland - [Geo-2-417]"
+links[380]="../GEO/Geo-2-417.htm"
+matched[380]=0
+
+title[381]="GRID-Arendal"
+desc[381]="GRID-Arendal - Arctic Environmental Atlas - [Geo-2-418]"
+links[381]="../GEO/Geo-2-418.htm"
+matched[381]=0
+
+title[382]="Natural Resources Canada"
+desc[382]="Natural Resources Canada - Natural Resources Statistics - [Geo-2-419]"
+links[382]="../GEO/Geo-2-419.htm"
+matched[382]=0
+
+title[383]="UNEP-WCMC"
+desc[383]="UNEP-WCMC - Climate Change: The Threats to the World Forests - [Geo-2-420]"
+links[383]="../GEO/Geo-2-420.htm"
+matched[383]=0
+
+title[384]="UNEP"
+desc[384]="UNEP - GLOBIO. Global Methodology for Mapping Human Impacts on the Biosphere - [Geo-2-421]"
+links[384]="../GEO/Geo-2-421.htm"
+matched[384]=0
+
+title[385]="FAO-ECE"
+desc[385]="FAO-ECE - Forest Resources of Europe, CIS, North America, Australia, Japan and New Zealand - [Geo-2-422]"
+links[385]="../GEO/Geo-2-422.htm"
+matched[385]=0
+
+title[386]="BICN"
+desc[386]="BICN - Over 20 million People Exposed to Arsenic Poisoning - [Geo-3-001]"
+links[386]="../GEO/Geo-3-001.htm"
+matched[386]=0
+
+title[387]="BICN"
+desc[387]="BICN - Arsenic Hits 24 million in Bangladesh: WB - [Geo-3-002]"
+links[387]="../GEO/Geo-3-002.htm"
+matched[387]=0
+
+title[388]="Buchanan-Smith, M."
+desc[388]="Buchanan-Smith M - Roel of Early Warning Systems in Decision Making Processes - [Geo-3-003]"
+links[388]="../GEO/Geo-3-003.htm"
+matched[388]=0
+
+title[389]="ECES"
+desc[389]="ECES - Documenting the Collapse of a Dying Planet. Air Pollution - [Geo-3-004]"
+links[389]="../GEO/Geo-3-004.htm"
+matched[389]=0
+
+title[390]="FAO"
+desc[390]="FAO - Crops and drops - [Geo-3-005]"
+links[390]="../GEO/Geo-3-005.htm"
+matched[390]=0
+
+title[391]="FEWS"
+desc[391]="FEWS - Homepage Famine early Warning System - [Geo-3-006]"
+links[391]="../GEO/Geo-3-006.htm"
+matched[391]=0
+
+title[392]="FRPEH"
+desc[392]="FRPEH - Elemental Analysis and Source Appointment of Personal Pm2.5 Exposure: Application of EXPOLIS Pm2.5 Filters and data - [Geo-3-007]"
+links[392]="../GEO/Geo-3-007.htm"
+matched[392]=0
+
+title[393]="Kaly, U. and Craig, P."
+desc[393]="Kaly, U. and Craig, P. - Environmental Vulnerability Index: Development and Provisional Indices and Profiles for Fiji, Samoa, Tavalu and Vanuatu - [Geo-3-008]"
+links[393]="../GEO/Geo-3-008.htm"
+matched[393]=0
+
+title[394]="Karim, R. N."
+desc[394]="Karim, R. N. - Arsenic the Silent Killer - [Geo-3-009]"
+links[394]="../GEO/Geo-3-009.htm"
+matched[394]=0
+
+title[395]="Met Office"
+desc[395]="Met Office - The Great Smog of 1952 - [Geo-3-010]"
+links[395]="../GEO/Geo-3-010.htm"
+matched[395]=0
+
+title[396]="Meteorological Service of Singapore"
+desc[396]="Meteorological Service of Singapore - Monitoring Smoke haze and Forest Fires in SouthEast Asia - [Geo-3-011]"
+links[396]="../GEO/Geo-3-011.htm"
+matched[396]=0
+
+title[397]="NOAA"
+desc[397]="NOAA - NOAA Climate Prediction Center - [Geo-3-012]"
+links[397]="../GEO/Geo-3-012.htm"
+matched[397]=0
+
+title[398]="Pratt, C. Koshy, U. Kaly, U. Pal, R. and Sale-Mario, E."
+desc[398]="Pratt, C. Koshy, R. Kaly, U. Pal, R. and Sale-Mario, E. - Environmental Vulnerability Index (EVI) Project - [Geo-3-013]"
+links[398]="../GEO/Geo-3-013.htm"
+matched[398]=0
+
+title[399]="SOPAC"
+desc[399]="SOPAC - Environmental Vulnerability Index (EVI) to Summarize National Environmental Vulnerability Profiles - [Geo-3-014]"
+links[399]="../GEO/Geo-3-014.htm"
+matched[399]=0
+
+title[400]="Suchak, Y. K"
+desc[400]="Suchak, Y. K - Development and Environment Issues with Special Reference to Gandhian Perspective - [Geo-3-015]"
+links[400]="../GEO/Geo-3-015.htm"
+matched[400]=0
+
+title[401]="UN WIRE"
+desc[401]="UN WIRE - Arsenic: Contaminated water in Asia puts millions at risk - [Geo-3-017]"
+links[401]="../GEO/Geo-3-017.htm"
+matched[401]=0
+
+title[402]="UNEP"
+desc[402]="UNEP - APELL - Awareness and Preparedness for Emergencies at a Local Level - [Geo-3-018]"
+links[402]="../GEO/Geo-3-018.htm"
+matched[402]=0
+
+title[403]="US EPA"
+desc[403]="US EPA - Stay Healthy in the Sun - [Geo-3-019]"
+links[403]="../GEO/Geo-3-019.htm"
+matched[403]=0
+
+title[404]="Umrani, A.P. and Ali SHah, S."
+desc[404]="Umrani, A. P. and Ali Shah, S. - Food Security and Environment: Special Report - [Geo-3-016]"
+links[404]="../GEO/Geo-3-016.htm"
+matched[404]=0
+
+title[405]="Smith, K. R. Corvalan, C. F. and Kiellstrom, T"
+desc[405]="Smith, K. R. Corlovan, C. F. and Kiellstrom, T - How Much Global Ill Health is Attributable to Environemtnal Factors? - [Geo-3-020]"
+links[405]="../GEO/Geo-3-020.htm"
+matched[405]=0
+
+
+title[406]="FAO"
+desc[406]="FAO - Database on Introductions of Aquatic Species (DIAS) - [Geo-2-067]"
+links[406]="../GEO/Geo-2-067.htm"
+matched[406]=0
+
+title[407]="Moaffa Australia"
+desc[407]="Moaffa Australia - Serious Salinity Warning Must be Heeded - [Geo-2-157]"
+links[407]="../GEO/Geo-2-157.htm"
+matched[407]=0
+
+title[408]="MoE Japan"
+desc[408]="MoE Japan - Policies and Programmes - [Geo-2-159]"
+links[408]="../GEO/Geo-2-159.htm"
+matched[408]=0
+
+title[409]="NEPC"
+desc[409]="NEPC - National Environment Protection Council - [Geo-2-160]"
+links[409]="../GEO/Geo-2-160.htm"
+matched[409]=0
+
+title[410]="Oldeman, L.R."
+desc[410]="Oldeman, L. R. - The Global Extent of Soil Degradation - [Geo-2-161]"
+links[410]="../GEO/Geo-2-161.htm"
+matched[410]=0
+
+title[411]="USDA"
+desc[411]="USDA - Global Desertification Vulnerability - [Geo-2-162]"
+links[411]="../GEO/Geo-2-162.htm"
+matched[411]=0
+
+title[412]="EEA and UNEP"
+desc[412]="EEA and UNEP - Down to Earth: A Challenge for the 21st Century - [Geo-2-163]"
+links[412]="../GEO/Geo-2-163.htm"
+matched[412]=0
+
+title[413]="USDA"
+desc[413]="USDA - Water Erosion Vulnerability - [Geo-2-164]"
+links[413]="../GEO/Geo-2-164.htm"
+matched[413]=0
+
+title[414]="FAO"
+desc[414]="FAO - Prevention and Disposal of Obsolete and Unwanted pesticide Stocks in Africa and the near East - [Geo-2-165]"
+links[414]="../GEO/Geo-2-165.htm"
+matched[414]=0
+
+title[415]="FAO"
+desc[415]="FAO - Fertilizer Requirements in 2015 to 2030 - [Geo-2-166]"
+links[415]="../GEO/Geo-2-166.htm"
+matched[415]=0
+
+title[416]="FAO"
+desc[416]="FAO - Agriculture Towards 2015/30 - [Geo-2-167]"
+links[416]="../GEO/Geo-2-167.htm"
+matched[416]=0
+
+title[417]="GRID-Norway"
+desc[417]="GRID-Norway - Soil Degradation Map - [Geo-2-168]"
+links[417]="../GEO/Geo-2-168.gif"
+matched[417]=0
+
+title[418]="Mazzucato, V. and Niemeijer, D."
+desc[418]="Mazzucato, V and Niemeijer, D. - Overestimating Land Degradation - [Geo-2-169]"
+links[418]="../GEO/Geo-2-169.htm"
+matched[418]=0
+
+title[419]="Toulmin, C."
+desc[419]="Toulmin, C. - Lessons from the Theatre: Should This be the Final Curtain Call for the Convention to Combat Desertification - [Geo-2-170]"
+links[419]="../GEO/Geo-2-170.htm"
+matched[419]=0
+
+title[420]="UNCCD"
+desc[420]="UNCCD - Fact Sheet 2: The Causes of Desertification - [Geo-2-171]"
+links[420]="../GEO/Geo-2-171.htm"
+matched[420]=0
+
+title[421]="UNCCD"
+desc[421]="UNCCD - Fact Sheet 4: Action Programmes for Combating Desertification - [Geo-2-172]"
+links[421]="../GEO/Geo-2-172.htm"
+matched[421]=0
+
+title[422]="UNCCD"
+desc[422]="UNCCD - Action Programmes on National (NAP), Sub-National (SRAP) and Regional (RAP) Level - [Geo-2-173]"
+links[422]="../GEO/Geo-2-173.htm"
+matched[422]=0
+
+title[423]="Wood, S. Sebastian, K. and Scherr, S.J"
+desc[423]="Wood, S. Sebastian, K. and Scherr, S.J - Plot Analysis of Global Ecosystems: Agroecosystems - [Geo-2-174]"
+links[423]="../GEO/Geo-2-174.htm"
+matched[423]=0
+
+title[423]="Library of Congress"
+desc[423]="Library of Congress - Caribbean Islands: A Country Study - [Geo-2-175]"
+links[423]="../GEO/Geo-2-175.htm"
+matched[423]=0
+
+title[424]="Howarth, R. et al"
+desc[424]="Howarth, R. et al. - Nutrient Pollution of Coastal Rivers Bays and Seas - [Geo-2-263]"
+links[424]="../GEO/Geo-2-263.htm"
+matched[424]=0
+
+title[425]="Caribbean Compass"
+desc[425]="Caribbean Compass - Fish Kill Theories Abound, But Syill No - [Geo-2-264]"
+links[425]="../GEO/Geo-2-264.htm"
+matched[425]=0
+
+title[426]="REMPEC"
+desc[426]="REMPEC - Alerts and Accidents - [Geo-2-265]"
+links[426]="../GEO/Geo-2-265.htm"
+matched[426]=0
+
+title[427]="UNESCAP and ADB"
+desc[427]="UNESCAP and ADB - State of the Environment in Asia and Pacific - [Geo-2-266]"
+links[427]="../GEO/Geo-2-266.htm"
+matched[427]=0
+
+title[428]="Environment Australia"
+desc[428]="Environment Australia - The National Taskforce on the Prevention and Management of Marine Pest Incursions - [Geo-2-267]"
+links[428]="../GEO/Geo-2-267.htm"
+matched[428]=0
+
+title[429]="GESAMP"
+desc[429]="GESAMP - Estimates of Oil Entering the Marine Environment From Sea-Based Activities - [Geo-2-268]"
+links[429]="../GEO/Geo-2-268.htm"
+matched[429]=0
+
+title[430]="Worldwatch Institute"
+desc[430]="Worldwatch Institute - State of the World 1999: Chapter 5 - [Geo-2-269]"
+links[430]="../GEO/Geo-2-269.htm"
+matched[430]=0
+
+title[431]="ITU"
+desc[431]="ITU - ICT Free Statistics Homepage: Internet Indicators by Country For 1998 and 2000v - [Geo-2-324]"
+links[431]="../GEO/Geo-2-324.htm"
+matched[431]=0
+
+title[432]="OECD"
+desc[432]="OECD - Education at a Glance: OECD Indicators 2001 - [Geo-2-325]"
+links[432]="../GEO/Geo-2-325.htm"
+matched[432]=0
+
+title[433]="Arctic Council"
+desc[433]="Arctic Council - The Arctic Council - [Geo-2-326]"
+links[433]="../GEO/Geo-2-326.htm"
+matched[433]=0
+
+title[434]="Marland, G. Boden, T. A. and Andres, R. J"
+desc[434]="Marland, G. Boden, T. A. and Andres, R. J. - Global, Regional and National Fossil Fuel CO2 Emissions: Central and South America - [Geo-2-023]"
+links[434]="../GEO/Geo-2-023.htm"
+matched[434]=0
+
+title[435]="Annan, K"
+desc[435]="Annan, K - We the Peoples-The Role of the United Nations in the 21st Century - [Geo-1-001]"
+links[435]="../GEO/Geo-1-001.htm"
+matched[435]=0
+
+title[436]="Bennet, M"
+desc[436]="Bennet, M - The Gulf War - [Geo-1-002]"
+links[436]="../GEO/Geo-1-002.htm"
+matched[436]=0
+
+title[437]="Bingham, M"
+desc[437]="Bingham, M - Elephants, Rhinos, Tuna Bears, Oh My!... - [Geo-1-003]"
+links[437]="../GEO/Geo-1-003.htm"
+matched[437]=0
+
+title[438]="Campbell, T"
+desc[438]="Campbell, T - The First Email Message: Who Sent it and What it Said - [Geo-1-004]"
+links[438]="../GEO/Geo-1-004.htm"
+matched[438]=0
+
+title[439]="CITES Secretariat"
+desc[439]="CITES Secretariat - The CITES Species - [Geo-1-005]"
+links[439]="../GEO/Geo-1-005.htm"
+matched[439]=0
+
+title[440]="CTBTO"
+desc[440]="CTBTO - The Comprehensive Nuclear Test Ban Treaty - [Geo-1-006]"
+links[440]="../GEO/Geo-1-006.htm"
+matched[440]=0
+
+title[441]="Earth Charter"
+desc[441]="Earth Charter - The Earth Charter - [Geo-1-007]"
+links[441]="../GEO/Geo-1-007.htm"
+matched[441]=0
+
+title[442]="El-Ashry, M.T"
+desc[442]="El-Ashry M.T - The Global Environment Facility: A Self-Assessment - [Geo-1-008]"
+links[442]="../GEO/Geo-1-008.htm"
+matched[442]=0
+
+title[443]="GRI"
+desc[443]="GRI - Global Reporting Initiaive - [Geo-1-009]"
+links[443]="../GEO/Geo-1-009.htm"
+matched[443]=0
+
+title[444]="Human Genome Project"
+desc[444]="Human Genome Project - To Know Ourselves - [Geo-1-010]"
+links[444]="../GEO/Geo-1-010.htm"
+matched[444]=0
+
+title[445]="IFAD"
+desc[445]="IFAD - Rural Poverty Report - [Geo-1-011]"
+links[445]="../GEO/Geo-1-011.htm"
+matched[445]=0
+
+title[446]="IFRC"
+desc[446]="IFRC - World Disasters Report 2001 - [Geo-1-012]"
+links[446]="../GEO/Geo-1-012.htm"
+matched[446]=0
+
+title[447]="IPCC"
+desc[447]="IPCC - Working Group I: The Scientific Basis - Summary for Policy Makers - [Geo-1-013]"
+links[447]="../GEO/Geo-1-013.htm"
+matched[447]=0
+
+title[448]="Island Press"
+desc[448]="Island Press - The Environmental Impacts of War - [Geo-1-014]"
+links[448]="../GEO/Geo-1-014.htm"
+matched[448]=0
+
+title[449]="ISO"
+desc[449]="ISO - The ISO Survey of the ISO 9000 and ISO 14000 Certificates - [Geo-1-015]"
+links[449]="../GEO/Geo-1-015.htm"
+matched[449]=0
+
+title[450]="Landsat"
+desc[450]="Landsat - USGS Earthshots: Satelitte Images of Environmental Change - [Geo-1-016]"
+links[450]="../GEO/Geo-1-016.jpg"
+matched[450]=0
+
+title[451]="Lopez, O.A"
+desc[451]="Lopez, O.A - Strategies for Sustainability: Latin America - [Geo-1-017]"
+links[451]="../GEO/Geo-1-017.htm"
+matched[451]=0
+
+title[452]="MA"
+desc[452]="MA - Millenium Ecosystem Assessment - [Geo-1-018]"
+links[452]="../GEO/Geo-1-018.htm"
+matched[452]=0
+
+title[453]="Myers, N. and Brown, N."
+desc[453]="Myers, N. and Brown, N - The Role of Major U.S Foundations in the Implementation of Agenda 21 - [Geo-1-019]"
+links[453]="../GEO/Geo-1-019.htm"
+matched[453]=0
+
+title[454]="Riggs, F.W"
+desc[454]="Riggs, F.W - Globalization: Key Concepts - [Geo-1-020]"
+links[454]="../GEO/Geo-1-020.htm"
+matched[454]=0
+
+title[455]="Strong"
+desc[455]="Strong - Hunger, Poverty, Population and Environment. The Hunger Project Millennium Lecture, 7 April 1999 - [Geo-1-021]"
+links[455]="../GEO/Geo-1-021.htm"
+matched[455]=0
+
+title[456]="Topex/Poseidon"
+desc[456]="Topex/Poseidon - El Nino's Warm Water Pool is Increasing - [Geo-1-022]"
+links[456]="../GEO/Geo-1-022.tif"
+matched[456]=0
+
+title[457]="TRI"
+desc[457]="TRI - Toxics Release Inventory: Community Right to Know - [Geo-1-023]"
+links[457]="../GEO/Geo-1-023.htm"
+matched[457]=0
+
+title[458]="United Nations"
+desc[458]="United Nations - Global Compact: What it is and isn't - [Geo-1-024]"
+links[458]="../GEO/Geo-1-024.htm"
+matched[458]=0
+
+title[459]="United Nations"
+desc[459]="United Nations - Mandate of the Commission for Sustainable Development - [Geo-1-025]"
+links[459]="../GEO/Geo-1-025.htm"
+matched[459]=0
+
+title[460]="UN-ECOSOC"
+desc[460]="UN-ECOSOC - Overall Progress Achieved Since the United Nations Conference on Environment and Development - [Geo-1-026]"
+links[460]="../GEO/Geo-1-026.htm"
+matched[460]=0
+
+title[461]="UNDP"
+desc[461]="UNDP - Human Development Report - [Geo-1-027]"
+links[461]="../GEO/Geo-1-027.htm"
+matched[461]=0
+
+title[462]="UNEP"
+desc[462]="UNEP - The Stockholm Convention on Persitent Organic Pollutants - [Geo-1-028]"
+links[462]="../GEO/Geo-1-028.htm"
+matched[462]=0
+
+title[463]="UNESCO"
+desc[463]="UNESCO - Our Past, Our Future - [Geo-1-029]"
+links[463]="../GEO/Geo-1-029.htm"
+matched[463]=0
+
+title[464]="UNFCCC"
+desc[464]="UNFCCC - The Convention and the Kyoto Protocol - [Geo-1-030]"
+links[464]="../GEO/Geo-1-030.htm"
+matched[464]=0
+
+title[465]="UNHCR"
+desc[465]="UNHCR - The State of the World's Refugees: Fifty Years of Humanitarian Action - [Geo-1-031]"
+links[465]="../GEO/Geo-1-031.htm"
+matched[465]=0
+
+title[466]="UNU"
+desc[466]="UNU - Once Burned, Twice Shy? Lessons Learned from the 1997-98 El Nino - [Geo-1-032]"
+links[466]="../GEO/Geo-1-032.htm"
+matched[466]=0
+
+title[467]="WCD"
+desc[467]="WCD - Dams and Development: A New Framework for Decision-Making - [Geo-1-033]"
+links[467]="../GEO/Geo-1-033.htm"
+matched[467]=0
+
+title[468]="CEQ"
+desc[468]="CEQ - Managing the Impact of Wildfires on Communities and the Environment - [Geo-2-424]"
+links[468]="../GEO/Geo-2-424.htm"
+matched[468]=0
+
+title[469]="White House"
+desc[469]="White House - Vulnerabilities and Potential Consequences - [Geo-2-425]"
+links[469]="../GEO/Geo-2-425.htm"
+matched[469]=0
+
+title[470]="MSRM"
+desc[470]="MSRM - Special Projects - Clayquot Sound - [Geo-2-426]"
+links[470]="../GEO/Geo-2-426.htm"
+matched[470]=0
+
+title[471]="IPCC-DDC"
+desc[471]="IPCC-DDC - Accessing Scenario Information - [Geo-4-001]"
+links[471]="../GEO/Geo-4-001.htm"
+matched[471]=0
+
+title[472]="UNEP"
+desc[472]="UNEP - Global Treaty Adopted on Genetically Modified Organisms - [Geo-4-002]"
+links[472]="../GEO/Geo-4-002.htm"
+matched[472]=0
+
+title[473]="UNEP, Nellemann, C., Kullerud, L., Vistnes, I., Forbes, B.C., Foresman, T., Husby, E., Kofinas, G.P., Kaltenborn, B.P., Rouaud, J., Magomedova, M., Bobiwash, R., Lambrechts, C., Shei, P.J., Tveitdal, S., Gron, O., and Larsen, T.S"
+desc[473]="UNEP, Nellemann, C., Kullerud, L., Vistnes, I., Forbes, B.C., Foresman, T., Husby, E., Kofinas, G.P., Kaltenborn, B.P., Rouaud, J., Magomedova, M., Bobiwash, R., Lambrechts, C., Shei, P.J., Tveitdal, S., Gron, O., and Larsen, T.S - GLOBIO: Global Methodology for Mapping Human Impacts on the Biosphere - [Geo-4-003]"
+links[473]="../GEO/Geo-4-003.htm"
+matched[473]=0
+
+title[474]="IMF, OECD, United Nations and World Bank"
+desc[474]="IMF, OECD, United Nations and World Bank - A Better World for All: Progress Towards the International Development Goals - [Geo-4-004]"
+links[474]="../GEO/Geo-4-004.htm"
+matched[474]=0
+
+title[475]="WHO"
+desc[475]="WHO - Environmental Hazards kill at Least 3 Million Children Aged Under 5 Every Year - [Geo-3-021]"
+links[475]="../GEO/Geo-3-021.htm"
+matched[475]=0
+
+title[476]="Marland, G., Boden, T.A. and Andres, R.J"
+desc[476]="Marland, G., Boden, T.A and Andres, R.J - Global, Regional and National Fossil Fuel CO2 Emissions: Central and South America - [Geo-2-023]"
+links[476]="../GEO/Geo-2-023.htm"
+matched[476]=0
+
+title[477]="EUMETSTAT"
+desc[477]="EUMETSTAT - Winter Storm Lothar over Europe as seen in Meteosat Images - [Geo-2-423]"
+links[477]="../GEO/Geo-2-423.htm"
+matched[477]=0
+
+title[478]="GESAMP"
+desc[478]="GESAMP - Protecting the Oceans from Land Based Activities - [Geo-3-022]"
+links[478]="../GEO/Geo-3-022.htm"
+matched[478]=0
+
+<!-- End list of Searchable items -->
+
+function search(){
+// get the input from the input by the user and strip it into keywords
+//+
+var skeyword=document.searchengine.keywords.value.toLowerCase();
+var check=1;
+var pos=0;
+var i=0;
+var j=0;
+var  itemp=0;
+var config='';
+
+while (true)
+	{
+	if (skeyword.indexOf("+") == -1 )
+		{
+		keywords[check]=skeyword;
+		break;
+		}
+	pos=skeyword.indexOf("+");
+	if (skeyword !="+")
+	{
+	keywords[check]=skeyword.substring(0,pos);
+	check++;
+	}
+	else
+	{
+	check--;
+	break;
+	}
+	skeyword=skeyword.substring(pos+1, skeyword.length);
+	if (skeyword.length ==0)
+		{
+		check--;
+		break;
+		}
+
+	}
+// the keywords have been put in keywords object.
+keywords[0]=check;
+//alert(check);
+// matching and storing the matches in matched
+for ( i=1; i<=keywords[0];i++)
+	{
+	for (j=1;j<=title[0];j++)
+		{
+		if (title[j].toLowerCase().indexOf(keywords[i]) > -1 )
+			{
+			  matched[j]++;
+			}
+		}
+	}
+// putting all the indexes of the matched records  in found
+
+for (i=1;i<=title[0];i++)
+{
+	if (matched[i] > 0 )
+		{
+		  found[0]++;
+		// increment the found
+		  found[found[0]]=i;
+
+		}
+}
+//alert("found 0 " +  found[0]);
+// sort the list as per max percentage of matches
+
+
+for (i=1;i<=found[0]-1;i++)
+	{
+	for(j=i+1;j<=found[0];j++)
+		{
+		if ( matched[found[i]]< matched[found[j]] )
+			{
+			temp= found[j];
+			found[j]=found[i];
+			found[i]=temp;
+			}
+		}
+	}
+
+
+
+// end of sort
+
+// prepare for document write.
+config='toolbar=no,location=no,directories=no,status=yes,menubar=no,'
+config += 'scrollbars=yes,resizable=yes'
+output = window.open("","outputwindow",config)
+output.document.write('<title><u> GEO 3 Search Results</u> </title>');
+output.document.write('<BODY bgcolor=#ffffff  text=#000000  link=#990099 vlink =#339966 >');
+
+output.document.write('<center> <h1>GEO 3 Search Results </h1></center>');
+output.document.write('<hr>');
+output.document.write(' The Keyword(s) you searched :: '.big() )
+for (i=1;  i<=keywords[0]; i++)
+	{
+	output.document.write( keywords[i].bold() +"   ");
+	}
+output.document.write('<br>');
+
+if (found[0]==0)
+	{
+	//alert(found[0]);
+	 output.document.write('<hr>');
+	 output.document.write("<b>No matches resulted in this search </b> <br>");
+	output.document.write("You may close the results and reduce the length/number  of the keywords  <br>");
+	}
+else
+	{
+	// data has been found
+	output.document.write(" <hr> <b> The Results of the search are  : </b>  ");
+	output.document.write( found[0] +"  Entries found  ".italics());
+	output.document.write("<table border=1 width=100%>");
+	for (i=1; i<=found[0];i++)
+		{
+		output.document.write("<tr><td valign=top bgcolor=#9999ff>");
+		output.document.write("<h3>" +i +"</h3>");
+		output.document.write("<td valign=top>");
+		itemp=found[i];
+		output.document.write(desc[itemp].bold() +"<br>" +
+links[itemp].link(links[itemp])+"<br>");
+		temp= (matched[itemp]/keywords[0])*100
+		output.document.write("<i> Matched  with keywords  :: " +temp+" %  </i>" );
+		matched[itemp]=0
+		}
+	found[0]=0;
+	output.document.write("</table>");
+	}
+output.document.write ('This search was created by   &copy <a href="http:\\dutta.home.ml.org"> Satadip Dutta</a>    1997');
+output.document.write ("<hr>");
+output.document.write ("<form><center>")
+output.document.write ("<input type='button' value='Start Another Search' onClick = 'self.close()'>")
+output.document.write ("</center></form>")
+}
+
+function focus(){
+}
+
+</script>
+</head>
+<body>
+<center>
+<table border=2 cellpadding=15 cellspacing=5>
+<tr><td>
+<center>
+<p>
+This page requires a JavaScript enabled browser for you to perform any search queries.
+<br>
+To search by <big>author</big>, type in the author's name(s) then click "Search".
+You can input multiple keywords by seperating each word with the (+) sign.
+<p>
+Enter the author(s)' name(s)</big> then click "Search".
+</big><form name="searchengine" onSubmit="search();">
+<big>Author: </big><input type=text name="keywords" value="" maxlength=50>
+<input type=submit name="go" value="Search">
+
+</form>
+
+[ <a href="./bytitle.html">Search by Title</a> ]  [ <a href="./bygeotag.html">Search by GEO Tag</a> ]  [ <a href="../mainpage.html">Home</a> ]
+
+</center>
+</td></tr>
+</table>
+</center>
+</body>

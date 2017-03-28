@@ -1,0 +1,390 @@
+.color0 {
+	BACKGROUND-COLOR: #ffffff
+}
+.color1 {
+	BACKGROUND-COLOR: #002597
+}
+.color2 {
+	BACKGROUND-COLOR: #faa602
+}
+.color3 {
+	BACKGROUND-COLOR: #ede610
+}
+.color4 {
+	BACKGROUND-COLOR: #ecece0
+}
+.frontPageTOCRendererHeader {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.frontPageTOCRendererHeader A {
+	COLOR: #002597; TEXT-DECORATION: none
+}
+.frontPageSubBannerRenderer {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold; PADDING-LEFT: 4px; PADDING-RIGHT: 4px
+}
+.frontPageSubBannerRenderer A {
+	COLOR: #002597; TEXT-DECORATION: none
+}
+.frontPageSubBannerRenderer INPUT {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: normal
+}
+.frontPageTOCRendererContent {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+.frontPageTOCRendererContent A {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+.frontPageTOCRendererContent A:hover {
+	COLOR: #faa602
+}
+.frontPageShortCutRenderer {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; TEXT-DECORATION: none; whitespace: nowrap
+}
+.frontPageShortCutRenderer A {
+	COLOR: #002597; TEXT-DECORATION: none
+}
+.frontPageShortCutRenderer A:hover {
+	COLOR: #faa602
+}
+.frontPageCopyright A {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+.newsSummaryRendererTitle {
+	COLOR: #134f91; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-STYLE: italic; FONT-WEIGHT: bold
+}
+.newsSummaryRendererItemTitle {
+	COLOR: #134f91; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.newsSummaryRendererItem {
+	COLOR: #134f91; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 14px
+}
+.newsSummaryRendererItem A {
+	COLOR: #134f91
+}
+.shortCutRenderer {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+.shortCutRenderer A {
+	COLOR: #002597; TEXT-DECORATION: none
+}
+#shortCutRenderer A:hover {
+	COLOR: #faa602
+}
+.newsArticleRendererTitle {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.newsArticleRendererContent {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.tocRendererTitle {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.tocRendererTitle A {
+	COLOR: #002597; TEXT-DECORATION: none
+}
+.tocRendererTitle A:hover {
+	COLOR: #faa602
+}
+.tocRendererContent {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.tocRendererContent A {
+	COLOR: #002597; TEXT-DECORATION: none
+}
+.tocRendererError {
+	COLOR: red; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.tocLastRendererContent {
+	BACKGROUND-COLOR: #f0f8ff; COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.tocLastRendererContent A {
+	COLOR: #002597; TEXT-DECORATION: none
+}
+.tocLastRendererContent {
+	BACKGROUND-COLOR: #f0f8ff; COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.tocLastRendererContent A {
+	COLOR: #002597; TEXT-DECORATION: none
+}
+.tocRendererContentPathElement {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.tocRendererContentPathElement A {
+	COLOR: #002597; TEXT-DECORATION: none
+}
+.tocRendererContent A:hover {
+	COLOR: #faa602
+}
+.pageCopyright A {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; TEXT-DECORATION: none
+}
+.topBannerRendererText {
+	COLOR: #ffffff; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 10px; FONT-WEIGHT: bold
+}
+.topBannerRendererText A {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+.topBannerRendererText INPUT {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 9px
+}
+.bannerAdvert {
+	HEIGHT: 60px; OVERFLOW: hidden; WIDTH: 468px
+}
+.tocAdvert {
+	HEIGHT: 60px; OVERFLOW: hidden; WIDTH: 120px
+}
+.HTMLDocumentRendererTitle {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.HTMLDocumentRendererContent {
+	
+}
+.searchSummaryRendererTitle {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.searchSummaryRendererTableHeader {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.searchSummaryRendererScore {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.searchSummaryRendererName {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.searchSummaryRendererName A {
+	COLOR: #002597
+}
+.searchSummaryRendererDate {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.searchSummaryRendererSummaryLabel {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-STYLE: italic
+}
+.searchSummaryRendererSummary {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.searchSummaryRendererError {
+	COLOR: red; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.ContentTitle {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.CatalogueTOC-Key {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.CatalogueTOC-Heading {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.CatalogueTOC-Message {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.CatalogueTOC-Link {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.CatalogueTOC-Link A {
+	TEXT-DECORATION: none
+}
+.CatalogueTOC-Current {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.CatalogueTOC-Current A {
+	TEXT-DECORATION: none
+}
+.CatalogueDetail-DocTitle {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.CatalogueDetail-Key {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.CatalogueDetail-Content {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.CatalogueDetail-Heading {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.CatalogueDetail-ButtonLabel {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.CatalogueList-Content {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.CatalogueList-Title {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.CatalogueList-Comment {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-STYLE: italic
+}
+.StandardsQueryForm-Error {
+	COLOR: red; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.StandardsQueryForm-Key {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.StandardsQueryForm-Example {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.StandardsQueryForm-Heading {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.StandardsQueryResult-Title {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.StandardsQueryResult-Message {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.StandardsQueryResult-Error {
+	COLOR: red; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.StandardsQueryResult-Content {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.TechnicalCommitteeList-Content {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.TechnicalCommitteeParticipationList-SubHeader {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.TechnicalCommitteeDetail-Key {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-STYLE: italic
+}
+.TechnicalCommitteeDetail-Title {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.TechnicalCommitteeDetail-Content {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.TechnicalCommitteeDetail-Comment {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-STYLE: italic
+}
+.TechnicalCommitteeDetail-Heading {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.TechnicalCommitteeStandardsList-Content {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.TechnicalCommitteeContact-Content {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.TechnicalCommitteeContact-Key {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-STYLE: italic
+}
+.TechnicalProgrammeTCList-Content {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.TechnicalProgrammeProjectList-Content {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.TechnicalProgrammeProjectList-Heading {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold
+}
+.TechnicalProgrammeProjectDetail-Key {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.TechnicalProgrammeProjectDetail-Content {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.MeetingCalendarList-Heading {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.MeetingCalendarList-Content {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.MemberCountryList-Member {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.MemberCountryList-Type {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-STYLE: italic
+}
+.MemberAcronymList-Member {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.MemberAcronymList-Type {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-STYLE: italic
+}
+.MemberDetail-Content {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.MemberDetail-Type {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-STYLE: italic
+}
+.MemberDetail-Key {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-STYLE: italic
+}
+.MemberDetail-Title {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 14px; FONT-WEIGHT: bold
+}
+.MemberSummary-TypeLink {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.MemberSummary-Content {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.MemberParticipationList-TypeLink {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.MemberParticipationList-Content {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.MemberParticipationDetail-Project {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.MemberParticipationDetail-Title {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.MemberParticipationDetail-OMember {
+	COLOR: red
+}
+.MemberParticipationDetail-SMember {
+	COLOR: maroon
+}
+.MemberParticipationDetail-PMember {
+	COLOR: green
+}
+.sendPage {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+.openerPageText {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 14px; FONT-WEIGHT: bold; LINE-HEIGHT: 20px
+}
+.openerPageText A {
+	COLOR: blue; FONT-WEIGHT: normal
+}
+.InternationalizationTablePageAlphabet {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 20px
+}
+.InternationalizationTablePageAlphaMenu {
+	COLOR: black; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 18px
+}
+.InternationalizationTablePageTitle {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 15px
+}
+.InternationalizationTableText {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.InternationalizationTableError {
+	COLOR: red; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.FileChangePageTitle {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 15px
+}
+.FileChangePageText {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.FileChangePageError {
+	COLOR: red; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.AdvertisingBannersPageTitle {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 15px
+}
+.AdvertisingBannersTableText {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.AdvertisingBannersTableError {
+	COLOR: red; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.DirectoryListingAccessDeniedMsgText {
+	COLOR: #002597; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}
+.DirectoryListingAccessDeniedText {
+	COLOR: red; FONT-FAMILY: verdana,arial,helvetica,sans-serif; FONT-SIZE: 12px
+}

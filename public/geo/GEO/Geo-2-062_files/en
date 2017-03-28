@@ -1,0 +1,349 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html lang="en">
+<head>
+<base href="http://reports.eea.eu.int/92-826-5409-5/en/" />
+
+<title>EEA - Europe's Environment - The Dobris Assessment - English</title>
+<meta name="DC.Title" content="English">
+<meta name="description" content="Environmental change occurs as a result of both natural and human processes. Environmental systems and human activities contribute to environmental changes through the transformation and transportation of large quantities of energy and materials. Natural systems transform the sun's energy into living matter and cause changes by cycling materials through geological, biological, oceanic and atmospheric processes. Human activities transform materials and energy into products and services.">
+<meta name="DC.Source" content="">
+<meta name="DC.Date" content="2001-05-21">
+<meta name="keywords" lang="en" content="information">
+<link rel="stylesheet" type="text/css" href="/eea.css">
+<style type="text/css">
+</style>
+
+<script type="text/javascript">
+
+<!--
+
+Net=1;
+if ((navigator.appName.substring(0,5) == "Netsc"
+  && navigator.appVersion.charAt(0) > 2)
+  || (navigator.appName.substring(0,5) == "Micro"
+  && navigator.appVersion.charAt(0) > 3)) {
+ Net=0;
+
+ over = new Image;
+ out = new Image;
+ gammel = new Image;
+
+ over.src = "/images/on.gif";
+ out.src = "/images/off.gif";
+ 
+ gTarget = 'img1';
+}
+
+function Click(Target) {
+ if (Net != 1){
+  if (Target != gTarget) {
+   document[Target].src = over.src;
+   document[gTarget].src = out.src;
+   gTarget = Target;
+   gammel.src = document[Target].src;
+  }
+ }
+}
+
+function Over(Target) {
+ if (Net != 1){
+  gammel.src = document[Target].src;
+  document[Target].src = over.src;
+ }
+}
+
+function Out(Target) {
+ if (Net != 1){
+  document[Target].src = gammel.src;
+ }
+}
+function changeBGC(a, changeTo) {
+	a.style.backgroundColor = changeTo;
+}
+
+//-->
+
+</script> 
+
+</head>
+<body bgcolor="#f0f0f0" topmargin="0" leftmargin="0" marginwidth="0" marginheight="0"
+background="/images/background_theme.jpg">
+
+<!-- MAIN table -->
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+  <td width="130" bgcolor="#10847B" valign="top"><img
+     src="/images/theme_picture_1.jpg" height="109" width="130" alt=""></td>
+  <td width="20" valign="top"><img
+     height="109" width="20" src="/images/theme_picture_2.jpg" alt=""></td>
+  <td width="621" valign="top"> 
+
+
+    <table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td><img src="/images/theme_picture_3.jpg" width="95" height="35" alt=""></td>
+    </tr>
+    <tr>
+      <td><table border="0" width="621">
+          <tr>
+            <td width="618"><font
+    color="#006666" size="5" face="Arial"><strong><span
+   class="head2">European Environment Agency</span></strong></font><br>
+<font color="#006666" face="Arial" size="2"><strong><span
+   class="head0">All the Reports - All the time - All in One Place</span></strong></font></td>
+            <td width="50"><br></td>
+            <td><img src="http://reports.eea.eu.int/images/logo" alt="" height="62" width="66" border="0" /></td>
+          </tr>
+          </table>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr> 
+    <td width="130" bgcolor="#10847B"> 
+    </td>
+    <td width="20" height="25" background="/images/bar_filled.jpg"
+         align="bottom" bgcolor="#f0f0f0">&nbsp; 
+    </td>
+    <td colspan="2" height="25" background="/images/bar_filled.jpg">
+<!-- Start Breadcrumbs V. 3.3 -->
+
+  
+  <table background="" border="0" cellpadding="0" cellspacing="0" height="10">
+  <tr>
+    <td valign=BOTTOM align="left"><span class="barfont"><a href="http://www.eea.eu.int/">Home</a></span></td>
+    <td valign=BOTTOM align="left"><img width="28" height="24" src="/images/bar_hole.jpg"></td>
+      <td valign=BOTTOM align="left"><span class="barfont"><a href="http://reports.eea.eu.int">Reports</a></span></td>
+    <td valign=BOTTOM align="left"><img width="28" height="24" src="/images/bar_hole.jpg"></td>
+        <td valign=BOTTOM align="left"><span class="barfont"><a href="http://reports.eea.eu.int/92-826-5409-5">Europe's Environment - ...</a></span></td>
+    <td valign=BOTTOM align="left"><img width="28" height="24" src="/images/bar_hole.jpg"></td>
+        <td valign=BOTTOM align="left"><span class="barfont">English</span></td>
+    <td valign=BOTTOM align="left"><img width="28" height="25" src="/images/bar_dot.jpg"></td>
+          </tr>
+      </table>
+<!-- End Breadcrumbs -->
+   
+</td>
+  </tr>
+  <tr> 
+    <td bgcolor="#10847B" valign="top" width="130"> 
+<p align=center><center>
+<table border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td align="right"><a href="/index_alphabetic"
+ onMouseOver="Over('img0')"
+ onMouseOut="Out('img0')"
+ onClick="Click('img0')"
+><img
+ name="img0"
+ src="/images/off.gif"
+ border="0"
+ alt=""
+><img
+ src="/images/button_alphabetic.gif"
+ border="0"
+ width="84"
+ height="13"
+ alt="Alphabetic list"></a><br>
+<a href="/index_audience?audience=1"
+ onMouseOver="Over('img1')"
+ onMouseOut="Out('img1')"
+ onClick="Click('img1')"
+><img
+ name="img1"
+ src="/images/off.gif"
+ border="0"
+ alt=""
+><img
+ src="/images/button_genpublic.gif"
+ border="0"
+ width="84"
+ height="13"
+ alt="General Public"></a><br>
+<a href="/index_audience?audience=2"
+ onMouseOver="Over('img2')"
+ onMouseOut="Out('img2')"
+ onClick="Click('img2')"
+><img
+ name="img2"
+ src="/images/off.gif"
+ border="0"
+ alt=""
+><img
+ src="/images/button_specialist.gif"
+ border="0"
+ width="84"
+ height="13"
+ alt="Specialists"></a><br>
+<a href="http://search.eea.eu.int/"
+ onMouseOver="Over('img3')"
+ onMouseOut="Out('img3')"
+ onClick="Click('img3')"
+><img
+ name="img3"
+ src="/images/off.gif"
+ border="0"
+ alt=""
+><img
+ src="/images/button_search.gif"
+ border="0"
+ width="84"
+ height="13"
+ alt="Search"></a><br>
+</td></tr>
+</table>
+</center></p>
+    </td>
+   <td width="20"></td>
+    <td width="621" valign="top" class="mainfont">
+<table width="100%"><tr><td align=right valign=top>
+<a href="http://reports.eea.eu.int/92-826-5409-5/en"><img border=0
+src="/images/en.gif" alt="English"></a>
+<a href="http://reports.eea.eu.int/92-826-5409-5/da"><img border=0
+src="/images/da.gif" alt="Danish"></a>
+<a href="http://reports.eea.eu.int/92-826-5409-5/de"><img border=0
+src="/images/de.gif" alt="German"></a>
+<a href="http://reports.eea.eu.int/92-826-5409-5/es"><img border=0
+src="/images/es.gif" alt="Spanish"></a>
+<a href="http://reports.eea.eu.int/92-826-5409-5/fi"><img border=0
+src="/images/fi.gif" alt="Finnish"></a>
+<a href="http://reports.eea.eu.int/92-826-5409-5/fr"><img border=0
+src="/images/fr.gif" alt="French"></a>
+<a href="http://reports.eea.eu.int/92-826-5409-5/is"><img border=0
+src="/images/is.gif" alt="Icelandic"></a>
+<a href="http://reports.eea.eu.int/92-826-5409-5/it"><img border=0
+src="/images/it.gif" alt="Italian"></a>
+<a href="http://reports.eea.eu.int/92-826-5409-5/nl"><img border=0
+src="/images/nl.gif" alt="Dutch"></a>
+<a href="http://reports.eea.eu.int/92-826-5409-5/no"><img border=0
+src="/images/no.gif" alt="Norwegian"></a>
+<a href="http://reports.eea.eu.int/92-826-5409-5/pt"><img border=0
+src="/images/pt.gif" alt="Portuguese"></a>
+<a href="http://reports.eea.eu.int/92-826-5409-5/sv"><img border=0
+src="/images/sv.gif" alt="Swedish"></a>
+</td></tr>
+</table>
+<TABLE BORDER=0 WIDTH="100%"><TR><TD VALIGN=TOP>
+<h2><span class=head1>Europe's Environment - The Dobris Assessment</span></h2>
+<span class="mainfont"><DL><DT>Abstract:</DT><DD>Environmental change occurs as a result of both natural and human processes. Environmental systems and human activities contribute to environmental changes through the transformation and transportation of large quantities of energy and materials. Natural systems transform the sun's energy into living matter and cause changes by cycling materials through geological, biological, oceanic and atmospheric processes. Human activities transform materials and energy into products and services.</DD>
+</DL></span>
+<p><a href="printable_html">Printable version</a></p>
+<hr><!-- generated table of contents -->
+<span class="mainfont">
+<b>0</b>
+<a href="page000.html">Related resources</a><br>
+<b>1</b>
+<a href="page001new.html">1. Introduction</a><br>
+<b>2</b>
+<a href="page002new.html">2. Environmental changes and human development</a><br>
+<b>3</b>
+<a href="page003new.html">3. The continent - Extent and boundaries</a><br>
+<b>4</b>
+<a href="page004new.html">4. Air</a><br>
+<b>5</b>
+<a href="page005new.html">5. Inland Waters</a><br>
+<b>6</b>
+<a href="page006new.html">6. The seas</a><br>
+<b>7</b>
+<a href="page007new.html">7. Soil</a><br>
+<b>8</b>
+<a href="page008new.html">8. Landscapes</a><br>
+<b>9</b>
+<a href="page009new.html">9. Nature and wildlife</a><br>
+<b>10</b>
+<a href="page010new.html">10. The Urban Environment</a><br>
+<b>11</b>
+<a href="page011new.html">11. Human Health</a><br>
+<b>12</b>
+<a href="page012new.html">12. Population, Production and Consumption</a><br>
+<b>13</b>
+<a href="page013new.html">13. Exploitation of Natural Resources</a><br>
+<b>14</b>
+<a href="page014new.html">14. Emissions</a><br>
+<b>15</b>
+<a href="page015new.html">15. Waste</a><br>
+<b>16</b>
+<a href="page016new.html">16. Noise and Radiation</a><br>
+<b>17</b>
+<a href="page017new.html">17. Chemicals and GMO's</a><br>
+<b>18</b>
+<a href="page018new.html">18. Natural and Technological Hazards</a><br>
+<b>19</b>
+<a href="page019new.html">19. Energy</a><br>
+<b>20</b>
+<a href="page020new.html">20. Industry</a><br>
+<b>21</b>
+<a href="page021new.html">21. Transport</a><br>
+<b>22</b>
+<a href="page022new.html">22. Agriculture</a><br>
+<b>23</b>
+<a href="page023new.html">23. Forestry</a><br>
+<b>24</b>
+<a href="page024new.html">24. Fishing and Aquaculture</a><br>
+<b>25</b>
+<a href="page025new.html">25. Tourism and Recreation</a><br>
+<b>26</b>
+<a href="page026new.html">26. Households</a><br>
+<b>27</b>
+<a href="page027new.html">27. Climate Change</a><br>
+<b>28</b>
+<a href="page028new.html">28. Stratospheric Ozone Depletion</a><br>
+<b>29</b>
+<a href="page029new.html">29. Loss of Biodiversity</a><br>
+<b>30</b>
+<a href="page030new.html">30. Major Accidents</a><br>
+<b>31</b>
+<a href="page031new.html">31. Acidification</a><br>
+<b>32</b>
+<a href="page032new.html">32. Tropospheric ozone</a><br>
+<b>33</b>
+<a href="page033new.html">33. The Management of Freshwater</a><br>
+<b>34</b>
+<a href="page034new.html">34. Forest Degradation</a><br>
+<b>35</b>
+<a href="page035new.html">35. Coastal Zone Threats and Management</a><br>
+<b>36</b>
+<a href="page036new.html">36. Waste Production and Management</a><br>
+<b>37</b>
+<a href="page037new.html">37. Urban stress</a><br>
+<b>38</b>
+<a href="page038new.html">38. Chemical Risk</a><br>
+<b>39</b>
+<a href="page039new.html">39. General findings</a><br>
+<b>40</b>
+<a href="page040new.html">40. Highlights and Responses</a><br>
+<b>41</b>
+<a href="page041.html">Acronyms and Abbreviations</a><br>
+<b>42</b>
+<a href="page042.html">Appendix 1: An Inventory of 56 Environmental Problems</a><br>
+<b>83</b>
+<a href="page043.html">Appendix 2: Information Strenghts and Weaknesses</a><br>
+</span><!-- End of generated TOC -->
+
+<!-- End of : The Area of main text --> </td>
+<td width="15"></td>
+<td width="102" valign="top">
+
+<!-- Start of : The Area of commercial -->
+<!-- ##################################################################### -->
+
+
+</TD></TR></TABLE>
+
+<br>
+<hr>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr> 
+          <td width="47%"><span class=mainfont><font size="-2">Last updated 22 November 2001 - 09:43</font></span></td>
+          <td width="53%"><span class=mainfont><font size="-2">Comments to <a href="mailto:webmaster@eea.eu.int?subject=http://reports.eea.eu.int/92-826-5409-5/en">webmaster@eea.eu.int</a> 
+            </font> </span></td>
+        </tr>
+</table>
+<!-- ##################################################################### -->
+<!-- End of : The Area of workspace -->
+    </td>
+  </tr>
+</table>
+</body>
+</html>

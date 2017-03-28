@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+  <!--JObjectsQuest:OFF; Don't index the content of this file -->
+  <TITLE></TITLE>
+  <SCRIPT><!--
+  
+    // assign a name to this window...
+    window.name = "qviewer";
+
+    function startQuestAgent()
+    {
+      var f = open('searchw.htm','qasearch','scrollbars=yes,toolbar=no,directories=no,status=no,menubar=no,location=no,width=420,height=340');
+      f.focus();
+    }
+    
+  // -->
+  </SCRIPT>
+<HEAD>
+<BODY bgcolor="white">
+
+<center>
+<h2><font color=navy>
+Launching external search window with QuestAgent search applet
+</font></h2>
+
+<p>
+<a href="#"  onClick="javascript:startQuestAgent();"
+    onMouseOver="window.status='Search...'" >Search</a>
+
+<p>
+<FORM NAME="myForm">
+<INPUT NAME="Search" TYPE="button" VALUE="Search"
+   onClick="startQuestAgent()">
+</FORM>
+
+</center>
+
+<p>&nbsp;</p>
+<p>
+<font size="+1">Implementation Comments and Customization Tips:</font>
+<ul>
+  <li> Name <i>"qviewer"</i> have been assigned to this frame in order 
+       to be able to open found documents in it. (This was an optional 
+       step used for the purpose of demonstration only.)
+  <li> All means of starting search applet provided above invoke
+       JavaScript function <i>startQuestAgent</i> that opens a new 
+       window with search applet in it.
+  <li> To change appearance of any search applet component 
+       or to change any message (to translate applet to other 
+       language for example) review <i>qagent.prm</i> file
+       located in directory <i>
+       j:\ipcc\test\ca03e
+       </i>.
+  <li> You can change applet size using WIDTH and HEIGHT applet
+       parameters defined in this file but you might need to modify
+       browser window size defined in this file too.
+</ul>
+</p>
+
+<p>&nbsp;</p>
+
+</BODY></HTML>

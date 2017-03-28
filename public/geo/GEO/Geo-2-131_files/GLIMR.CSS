@@ -1,0 +1,114 @@
+BODY {
+	FONT-FAMILY: arial, helvetica, sans-serif
+}
+P {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 10pt
+}
+UL {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 10pt; LINE-HEIGHT: 13pt
+}
+.indent {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 10pt; LINE-HEIGHT: 15pt; MARGIN-LEFT: 15px
+}
+.in {
+	TEXT-INDENT: 2%
+}
+.grey {
+	COLOR: #707070; FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 10pt; FONT-WEIGHT: bold; MARGIN-LEFT: 30px
+}
+.blue {
+	COLOR: #0000cc; FONT-FAMILY: avantgarde, arial, helvetica, sans-serif; FONT-SIZE: 8pt
+}
+.bold {
+	FONT-WEIGHT: bold
+}
+.boldnews {
+	FONT-FAMILY: times new roman, serif; FONT-SIZE: 11pt; FONT-WEIGHT: bold
+}
+.big {
+	FONT-SIZE: 14pt; FONT-WEIGHT: bold
+}
+.intro {
+	FONT-SIZE: 12pt
+}
+.large {
+	FONT-FAMILY: times new roman, serif; FONT-SIZE: 14pt; FONT-WEIGHT: bold
+}
+.largenews {
+	FONT-FAMILY: times new roman, serif; FONT-SIZE: 16pt; FONT-WEIGHT: bold
+}
+.small {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 9pt
+}
+.smalljustify {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 9pt
+}
+.tiny {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 8pt
+}
+.smallnews {
+	FONT-FAMILY: times new roman, serif; FONT-SIZE: 10pt; TEXT-ALIGN: justify
+}
+.quote {
+	COLOR: #0000cc; FONT-FAMILY: times new roman, serif; FONT-SIZE: 12pt; FONT-STYLE: italic
+}
+DL {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 10pt
+}
+OL {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 10pt
+}
+A:link {
+	COLOR: #0099ff; FONT-FAMILY: arial, helvetica, sans-serif; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #660099; FONT-FAMILY: arial, helvetica, sans-serif; FONT-WEIGHT: bold; TEXT-DECORATION: none
+}
+H1 {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 22pt
+}
+H2 {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 18pt
+}
+H2.news {
+	FONT-FAMILY: times new roman, serif; FONT-SIZE: 18pt; FONT-WEIGHT: bold
+}
+H3 {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 16pt
+}
+H4 {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 15pt
+}
+H5 {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 14pt
+}
+BLOCKQUOTE {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 10pt
+}
+TH {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 12pt
+}
+TD {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 10pt
+}
+TD.news {
+	FONT-FAMILY: times new roman, serif; FONT-SIZE: 18pt; FONT-WEIGHT: bold; PADDING-BOTTOM: 2px; PADDING-LEFT: 2px; PADDING-RIGHT: 2px; PADDING-TOP: 2px
+}
+TD.sidebar {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 10pt; PADDING-TOP: 6px
+}
+DL.smallnews {
+	FONT-FAMILY: times new roman, serif; FONT-SIZE: 10pt; TEXT-ALIGN: justify
+}
+.question {
+	COLOR: #4d4d4d; FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 11pt; FONT-WEIGHT: bold
+}
+.answer {
+	FONT-FAMILY: arial, helvetica, sans-serif; FONT-SIZE: 11pt; MARGIN-LEFT: 25px
+}
+.welcome {
+	COLOR: #ffffff; FONT-FAMILY: times new roman, serif; FONT-SIZE: 11pt; FONT-WEIGHT: bold; TEXT-INDENT: 15px
+}
+.redborder {
+	BACKGROUND-COLOR: #eff7ff; BORDER-BOTTOM: #ff0000 solid; BORDER-LEFT: #ff0000 solid; BORDER-RIGHT: #ff0000 solid; BORDER-TOP: #ff0000 solid; PADDING-BOTTOM: 4px; PADDING-LEFT: 4px; PADDING-RIGHT: 4px; PADDING-TOP: 4px
+}

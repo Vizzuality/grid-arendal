@@ -1,0 +1,63 @@
+BODY {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #ffffcc
+}
+P {
+	FONT-SIZE: small; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+H3 {
+	FONT-SIZE: medium; COLOR: #669966; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+H4 {
+	FONT-SIZE: small; COLOR: #669966; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+H5 {
+	FONT-WEIGHT: normal; FONT-SIZE: small; COLOR: #669966; FONT-STYLE: italic; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+H6 {
+	FONT-SIZE: x-small; COLOR: #669966; FONT-FAMILY: Verdana, Arial, Helvetis-serif
+}
+TH {
+	FONT-SIZE: smaller; COLOR: #ffffff; BACKGROUND-COLOR: #669966
+}
+TD.labelrow {
+	FONT-SIZE: smaller; BACKGROUND-COLOR: #ffcf63; TEXT-ALIGN: center
+}
+TD.labelcol {
+	FONT-SIZE: smaller; BACKGROUND-COLOR: #fdae03; TEXT-ALIGN: center
+}
+TD.label {
+	FONT-SIZE: smaller; BACKGROUND-COLOR: #ffcc00; TEXT-ALIGN: right
+}
+TD {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+TABLE {
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+SELECT {
+	FONT-SIZE: x-small
+}
+P {
+	FONT-SIZE: small; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+LI {
+	FONT-SIZE: small; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+A:visited {
+	COLOR: #cc9900
+}
+A:link {
+	COLOR: #006600; TEXT-DECORATION: underline
+}
+A:hover {
+	COLOR: red; TEXT-DECORATION: underline
+}
+A:active {
+	COLOR: #663300
+}
+A {
+	COLOR: #006600
+}
+.submenu {
+	FONT-FAMILY: verdana, arial, helvetica, sans-serif; BACKGROUND-COLOR: #669966
+}

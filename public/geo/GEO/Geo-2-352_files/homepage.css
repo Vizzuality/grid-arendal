@@ -1,0 +1,93 @@
+BODY {
+	MARGIN-TOP: 1px; bgcolor: "FFFFFF"
+}
+DIV.programme {
+	COLOR: #000080; FONT-FAMILY: arial, sans-serif; FONT-SIZE: 14pt; FONT-WEIGHT: bold; TEXT-ALIGN: center
+}
+A {
+	COLOR: #0000ff; FONT-FAMILY: verdana, arial, sans-serif; FONT-SIZE: 10pt
+}
+A:hover {
+	COLOR: red
+}
+A.menu {
+	COLOR: #000080; FONT-SIZE: 8pt; TEXT-DECORATION: none
+}
+A.menu:hover {
+	COLOR: red
+}
+A.general {
+	COLOR: #993300; FONT-SIZE: 8pt; TEXT-DECORATION: none
+}
+A.links {
+	COLOR: #006600; FONT-SIZE: 8pt; TEXT-DECORATION: none
+}
+TD {
+	FONT-FAMILY: verdana, arial, sans-serif; FONT-SIZE: 10pt
+}
+LI {
+	FONT-FAMILY: verdana, arial, sans-serif; FONT-SIZE: 10pt
+}
+P {
+	FONT-FAMILY: verdana, arial, sans-serif; FONT-SIZE: 10pt
+}
+H1 {
+	COLOR: #000080; FONT-FAMILY: verdana, arial, sans-serif; FONT-SIZE: 14pt; FONT-WEIGHT: bold
+}
+H2 {
+	COLOR: #000080; FONT-FAMILY: verdana, arial, sans-serif; FONT-SIZE: 12pt; FONT-WEIGHT: bold
+}
+H3 {
+	COLOR: #000080; FONT-FAMILY: verdana, arial, sans-serif; FONT-SIZE: 10pt; FONT-WEIGHT: bold
+}
+P.highlights {
+	COLOR: #000080; FONT-FAMILY: arial, sans-serif; FONT-SIZE: 12pt; FONT-WEIGHT: bold
+}
+P.press {
+	COLOR: #000080; FONT-FAMILY: arial, sans-serif; FONT-SIZE: 12pt; FONT-WEIGHT: bold
+}
+P.more {
+	FONT-WEIGHT: bold; TEXT-ALIGN: right
+}
+P.general {
+	COLOR: #ffff66; FONT-FAMILY: arial, sans-serif; FONT-SIZE: 9pt
+}
+P.links {
+	COLOR: #ffffff; FONT-FAMILY: arial, sans-serif; FONT-SIZE: 9pt
+}
+SPAN.date {
+	FONT-FAMILY: arial, sans-serif; FONT-SIZE: 9pt
+}
+SPAN.highlight {
+	FONT-FAMILY: arial, sans-serif; FONT-SIZE: 9pt
+}
+SPAN.copyright {
+	COLOR: #000000; FONT-FAMILY: verdana, arial, sans-serif; FONT-SIZE: 8pt
+}
+SPAN.contact {
+	COLOR: #000000; FONT-FAMILY: verdana, arial, sans-serif; FONT-SIZE: 8pt
+}
+SPAN.update {
+	COLOR: black; FONT-FAMILY: verdana, arial, sans-serif; FONT-SIZE: 8pt; TEXT-ALIGN: left
+}
+DIV.main {
+	FONT-FAMILY: verdana, arial, sans-serif; FONT-SIZE: 9pt
+}
+TABLE.general {
+	BACKGROUND-COLOR: #993300
+}
+TABLE.links {
+	BACKGROUND-COLOR: #00cc66
+}
+TR.general {
+	BACKGROUND-COLOR: #993300; COLOR: #ffffff
+}
+TR.links {
+	BACKGROUND-COLOR: #00cc66
+}
+TD.info {
+	PADDING-LEFT: 2pt
+}
+SPAN.update {
+	COLOR: black; FONT-FAMILY: verdana, arial, sans-serif; FONT-SIZE: 8pt; TEXT-ALIGN: left
+}

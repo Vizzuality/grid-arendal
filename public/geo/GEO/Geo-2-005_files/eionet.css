@@ -1,0 +1,66 @@
+BODY {
+	BACKGROUND-COLOR: #f0f0f0; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 10pt
+}
+.Mainfont {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 10pt; FONT-STYLE: normal; LINE-HEIGHT: normal; TEXT-DECORATION: none
+}
+.barfont {
+	FONT-FAMILY: Arial, MS Sans Serif; FONT-SIZE: 7pt; FONT-STYLE: normal; LINE-HEIGHT: normal; TEXT-DECORATION: none
+}
+.title1 {
+	COLOR: #006666; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 16pt; FONT-STYLE: normal; FONT-WEIGHT: bold; LINE-HEIGHT: normal; TEXT-DECORATION: none
+}
+.title2 {
+	COLOR: #006666; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12pt; FONT-STYLE: normal; FONT-WEIGHT: bold; LINE-HEIGHT: normal; TEXT-DECORATION: none
+}
+.head0 {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 9pt; FONT-STYLE: normal; FONT-WEIGHT: bold; LINE-HEIGHT: normal; TEXT-DECORATION: none
+}
+.head1 {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12pt; FONT-STYLE: normal; FONT-WEIGHT: bold; LINE-HEIGHT: normal; TEXT-DECORATION: none
+}
+.head1w {
+	COLOR: #ffffff; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12pt; FONT-STYLE: normal; FONT-WEIGHT: bold; LINE-HEIGHT: normal; TEXT-DECORATION: none
+}
+.head2 {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 16pt; FONT-STYLE: normal; FONT-WEIGHT: bold; LINE-HEIGHT: normal; TEXT-DECORATION: none
+}
+A:link {
+	COLOR: #024176
+}
+A:visited {
+	COLOR: #a30a21
+}
+A:active {
+	COLOR: #a30a21
+}
+H1 {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 16pt; FONT-STYLE: normal; FONT-WEIGHT: bold; LINE-HEIGHT: normal; TEXT-DECORATION: none
+}
+H2 {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 12pt; FONT-STYLE: normal; FONT-WEIGHT: bold; LINE-HEIGHT: normal; TEXT-DECORATION: none
+}
+H3 {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 11pt; FONT-STYLE: normal; FONT-WEIGHT: bold; LINE-HEIGHT: normal; TEXT-DECORATION: none
+}
+TD {
+	FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 10pt; FONT-STYLE: normal; LINE-HEIGHT: normal; TEXT-DECORATION: none
+}
+TH {
+	BACKGROUND: #646666; COLOR: #ffffff; FONT-FAMILY: Arial, Helvetica, sans-serif; FONT-SIZE: 10pt; FONT-STYLE: normal; FONT-WEIGHT: bold; LINE-HEIGHT: normal; TEXT-DECORATION: none
+}
+TH A:link {
+	COLOR: #8080ff
+}
+TH A:visited {
+	COLOR: #ff8080
+}
+TH A:active {
+	COLOR: #ff8080
+}
+KBD {
+	FONT-WEIGHT: bold
+}
+.conference {
+	BACKGROUND-COLOR: #ffffff; FONT-FAMILY: Arial; FONT-SIZE: 70%
+}

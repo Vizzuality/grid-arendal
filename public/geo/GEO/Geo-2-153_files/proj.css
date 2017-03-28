@@ -1,0 +1,63 @@
+BODY {
+	FONT-FAMILY: Georgia
+}
+H2 {
+	COLOR: #336600; FONT-FAMILY: Georgia
+}
+H3 {
+	COLOR: #666666; FONT-FAMILY: Georgia
+}
+.sbhead {
+	FONT-FAMILY: Verdana; FONT-SIZE: small; FONT-WEIGHT: bold
+}
+.sblinks {
+	FONT-FAMILY: Verdana; FONT-SIZE: 8pt
+}
+.sbtlinks {
+	FONT-FAMILY: Verdana; FONT-SIZE: 8pt
+}
+.sbmhead {
+	COLOR: #ffffff; FONT-FAMILY: Verdana; FONT-SIZE: 8pt; FONT-WEIGHT: bold
+}
+.body {
+	FONT-FAMILY: Georgia
+}
+.small {
+	FONT-FAMILY: Georgia; FONT-SIZE: 8pt
+}
+.proglinks {
+	FONT-FAMILY: Georgia; FONT-SIZE: small; FONT-WEIGHT: bold
+}
+P {
+	FONT-FAMILY: Georgia
+}
+.contactinfo {
+	FONT-FAMILY: Georgia; FONT-SIZE: small; FONT-STYLE: italic
+}
+.title {
+	COLOR: #336600; FONT-FAMILY: Georgia; FONT-SIZE: large; FONT-WEIGHT: bold
+}
+.secondhead {
+	COLOR: #669900; FONT-FAMILY: Georgia; FONT-WEIGHT: bold
+}
+.smaller {
+	FONT-FAMILY: verdana; FONT-SIZE: 8pt; FONT-WEIGHT: bold
+}
+.darkgrey {
+	COLOR: #666666; FONT-WEIGHT: normal
+}
+.green {
+	COLOR: #336600; FONT-FAMILY: verdana; FONT-SIZE: 8pt; FONT-WEIGHT: bold
+}
+.commentarytitle {
+	COLOR: #cc0000; FONT-FAMILY: verdana; FONT-SIZE: 16pt; FONT-WEIGHT: bold
+}
+.navyellowed {
+	COLOR: #999966
+}
+.askthepresquestion {
+	COLOR: #003366; FONT-FAMILY: verdana; FONT-SIZE: 16pt; FONT-WEIGHT: bold
+}
+.askthepreswinner {
+	COLOR: #0099cc; FONT-FAMILY: verdana; FONT-SIZE: 8pt; FONT-WEIGHT: bold
+}

@@ -1,0 +1,60 @@
+H1 {
+	FONT-FAMILY: 'times new roman',times,georgia,serif
+}
+H2 {
+	FONT-FAMILY: 'times new roman',times,georgia,serif
+}
+H3 {
+	FONT-FAMILY: 'times new roman',times,georgia,serif
+}
+H4 {
+	FONT-FAMILY: 'times new roman',times,georgia,serif
+}
+P {
+	FONT-FAMILY: arial,helvetica,geneva,sans-serif; FONT-SIZE: 9pt; LINE-HEIGHT: 12pt
+}
+OL {
+	FONT-FAMILY: arial,helvetica,geneva,sans-serif; FONT-SIZE: 9pt; LINE-HEIGHT: 12pt
+}
+UL {
+	FONT-FAMILY: arial,helvetica,geneva,sans-serif; FONT-SIZE: 9pt; LINE-HEIGHT: 12pt
+}
+A {
+	COLOR: #666699; TEXT-DECORATION: none
+}
+A:hover {
+	BACKGROUND: #eeeeee; TEXT-DECORATION: underline
+}
+A:active {
+	BACKGROUND: #eeeeee
+}
+.caption {
+	COLOR: #666699
+}
+P.menu {
+	FONT-FAMILY: tahoma,arial,helvetica,geneva,sans-serif; FONT-SIZE: 8pt
+}
+.formfield {
+	FONT-FAMILY: "courier New",courier,monospace; FONT-SIZE: 8pt
+}
+.button {
+	FONT-SIZE: 10px
+}
+.tagline {
+	COLOR: #666699
+}
+.file {
+	FONT-FAMILY: tahoma; FONT-SIZE: 11px
+}
+H1 {
+	FONT-FAMILY: arial,geneva,sans-serif; FONT-SIZE: 14pt; FONT-WEIGHT: bold
+}
+H2 {
+	FONT-FAMILY: 'times new roman',times,georgia,serif; FONT-SIZE: 14pt; FONT-WEIGHT: normal
+}
+H3 {
+	COLOR: #666699; FONT-FAMILY: arial,geneva,sans-serif; FONT-SIZE: 9pt; FONT-WEIGHT: bold
+}
+H4 {
+	COLOR: #666699; FONT-FAMILY: arial,geneva,sans-serif; FONT-SIZE: 8pt; FONT-WEIGHT: bold; MARGIN-BOTTOM: 0px; MARGIN-LEFT: 10px
+}

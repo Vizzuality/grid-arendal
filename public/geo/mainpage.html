@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>GEO 3 Reference Search - main page</title>
+
+<script language="JavaScript">
+<!-- Begin
+function formHandler(form){
+var URL = document.form.site.options[document.form.site.selectedIndex].value;
+window.location.href = URL;
+}
+// End -->
+</SCRIPT>
+</head>
+<body>
+<table border=1 cellpadding=15 cellspacing=5>
+<tr><td>
+<center>
+        <h3> <u>The Global Environment Outlook GEO 3 Electronic References</u></h3>
+</center>
+<align=left>
+      <p> The <big>GEO 3 Electronic Reference Scheme</big> is a system developed to 
+        facilitate easy access to cited resources through CD-ROM and on the Web. 
+      <p>
+It allows for searches on references to be performed in three categories:
+<ol> 
+<li>Search by <big>Author</big>:
+<br>
+          A query based on the author's name(s) as they appear in the GEO 3 publication. 
+        <li>Search by <big>Title</big>:
+<br>
+          A query based on the title of cited resource(s)as they appear in the 
+          GEO 3 publication. 
+        <li>Search By <big>GEO Tag</big>:
+<br>
+          A mechanism that uniquely identifies each electronic reference as realized 
+          in the GEO 3 publication. 
+      </ol>
+  
+<center>
+<p>
+<hr>
+Select a category in the list from which to search.
+<form name="form">
+<select name="site" size=1 onChange="javascript:formHandler()">
+<option value="">Select a Search Criteria
+<option value="./CRITERIA/byauthor.html">Search by Author
+<option value="./CRITERIA/bytitle.html">Search by Title
+<option value="./CRITERIA/bygeotag.html">Search by GEO tag
+</select>
+</form>
+</center>
+</td></tr>
+</table>
+</body>
