@@ -13,12 +13,8 @@ class ErrorsController < ApplicationController
     elsif user.present?
       redirect_to staff_path(user)
     else
-      respond_to do |format|
-        format.html { render status: 404 }
-      end
+      render "not_found.html", status: 404
     end
-  rescue ActionController::UnknownFormat
-    render status: 404
   end
 
   private
