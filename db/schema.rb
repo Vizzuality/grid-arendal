@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170314094310) do
+ActiveRecord::Schema.define(version: 20170329121842) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -126,10 +126,11 @@ ActiveRecord::Schema.define(version: 20170314094310) do
     t.integer  "media_attachment_id"
     t.string   "email"
     t.string   "name"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
     t.string   "download_hash"
     t.integer  "graphic_id"
+    t.text     "description_of_usage"
   end
 
   create_table "media_attachments", force: :cascade do |t|
