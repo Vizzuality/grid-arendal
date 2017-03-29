@@ -12,7 +12,13 @@
     </div>
     <div class="field">
       <%= f.label :email %>
-      <%= f.text_field :email, class: 'js_graphic-request-modal-input', placeholder: 'you@email.com' %>
+      <%= f.text_field :email, class: 'js_graphic-request-modal-input',
+        placeholder: 'you@email.com' %>
+    </div>
+    <div class="field">
+      <%= f.label :description_of_usage %>
+      <%= f.text_field :description_of_usage, class: 'js_graphic-request-modal-input',
+        placeholder: 'Describe how you will use this resource.' %>
     </div>
     <%= f.submit "SUBMIT", class: 'js_graphic-request-modal-submit' %>
     <svg class="icon js_graphic-request-modal-closer">

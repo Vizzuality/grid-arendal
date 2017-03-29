@@ -39,6 +39,7 @@ class GraphicRequestsController < ApplicationController
 
   def graphic_request_params
     params.require(:graphic_request).permit(:email, :name, :graphic_id,
-                                            :media_attachment_id)
+                                            :media_attachment_id,
+                                            :description_of_usage)
   end
 end

@@ -68,7 +68,9 @@
     },
 
     _checkGraphicModalSubmitAvailability: function () {
-      var disabled = $($(this.options.downloadGraphicsInputClass)[0]).val() === "" || $($(this.options.downloadGraphicsInputClass)[1]).val() === "";
+      var disabled = $($(this.options.downloadGraphicsInputClass)[0]).val() === "" ||
+        $($(this.options.downloadGraphicsInputClass)[1]).val() === "" ||
+        $($(this.options.downloadGraphicsInputClass)[2]).val() === "";
       $(this.options.downloadGraphicsSubmitClass).prop("disabled", disabled);
     }
   });

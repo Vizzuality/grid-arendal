@@ -114,7 +114,16 @@
         </div>
         <div class="constraints">
           <div class="text -sidebar-title">Use Constraints</div>
-          <div class="text -meta">Using this item and referring to it is encouraged, and please use it in presentations, web pages, newspapers, blogs and reports.<br><br>For any form of publication, please include the link to this page and give the creator credit <% if @media_content.author.present? %>(in this case <%= @media_content.author %>)<% end %></div>
+          <div class="text -meta">
+            Using this item and referring to it is encouraged, and please use
+            it in presentations, web pages, newspapers, blogs and reports.<br>
+            <br>For any form of publication, please include the link to this
+            page and give the creator credit
+            <% if @media_content.author.present? %>(in this case <%= @media_content.author %>)<% end %>
+            If the high-resolution file is not available, please contact
+            <a href="mailto:grid@grida.no">grid@grida.no</a> for request and
+            permission for usage.
+          </div>
         </div>
       </div>
     </div>
