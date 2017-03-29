@@ -68,6 +68,8 @@ group :test do
   gem 'timecop'
 end
 
+gem "appsignal", group: :production
+
 gem 'sendgrid-ruby'
 gem 'newrelic_rpm'
 gem 'codeclimate-test-reporter', group: :test, require: nil
