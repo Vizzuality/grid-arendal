@@ -12,6 +12,8 @@ class ErrorsController < ApplicationController
         notice: "You have been redirected to GRID Arendal's new website. If this is not the content you are looking for, please use our new search by clicking the magnifying glass on the right hand side."
     elsif user.present?
       redirect_to staff_path(user)
+    elsif split[0].downcase == "mastrec"
+      redirect_to "http://news.grida.no/mastrec"
     elsif ["climate", "geo", "aeo", "geo1", "geo3", "geo2000"].include?(split[0])
       redirect_to "http://old.grida.no/#{request.fullpath}"
     else
