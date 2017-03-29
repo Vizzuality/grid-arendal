@@ -1,13 +1,13 @@
 <%
   social_links = [
-    {key: "twitter", url: "https://twitter.com/GRIDArendal"},
-    {key: "facebook", url: "https://www.facebook.com/ArendalGRID/"},
-    {key: "instagram", url: "https://www.instagram.com/gridarendal/"},
-    {key: "flickr", url: "https://www.flickr.com/photos/gridarendal/"},
-    {key: "linkedin", url: "https://www.linkedin.com/company/109106"},
-    {key: "youtube", url: "https://www.youtube.com/user/GridArendalNorway"},
-    {key: "vimeo", url: "https://vimeo.com/gridarendal"},
-    {key: "email", url: "mailto:grid@grida.no"},
+    {key: "twitter", title: "Twitter", url: "https://twitter.com/GRIDArendal"},
+    {key: "facebook", title: "Facebook", url: "https://www.facebook.com/ArendalGRID/"},
+    {key: "instagram", title: "Instagram", url: "https://www.instagram.com/gridarendal/"},
+    {key: "flickr", title: "Flickr", url: "https://www.flickr.com/photos/gridarendal/"},
+    {key: "linkedin", title: "LinkedIn", url: "https://www.linkedin.com/company/109106"},
+    {key: "youtube", title: "Youtube", url: "https://www.youtube.com/user/GridArendalNorway"},
+    {key: "vimeo", title: "Vimeo", url: "https://vimeo.com/gridarendal"},
+    {key: "email", title: "Email", url: "mailto:grid@grida.no"},
   ]
 %>
 <div class="l-footer">
@@ -17,7 +17,7 @@
     <div class="text -menu -light">Contact Us</div>
     <div class="social-links">
       <% social_links.each do |link| %>
-        <a href="<%= link[:url] %>" target="_blank">
+        <a href="<%= link[:url] %>" target="_blank" title="<%= link[:title] %>">
           <svg class="icon">
             <use xlink:href="#icon-rrss-<%= link[:key] %>"></use>
           </svg>
