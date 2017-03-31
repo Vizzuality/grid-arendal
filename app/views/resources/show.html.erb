@@ -131,8 +131,9 @@
 
 </div>
 
-<% if @media_content.set? %>
-  <% label_txt = case @media_content.type
+<% set = @media_content.set? ? @media_content : @media_content.album %>
+<% if set %>
+  <% label_txt = case set.type
              when MediaContent::TYPE_ALBUM
                "Photos"
              when MediaContent::TYPE_COLLECTION
@@ -141,8 +142,9 @@
                "Videos"
              end
   %>
-  <%= render 'shared/media', media_contents: @media_content.items,
-    title: "#{label_txt} included in album", sectionClass: 'content -color-4' %>
+  <%= render 'shared/media',
+    media_contents: set.items.where.not(id: @media_content.id).order(:title),
+    title: "#{label_txt} included in #{"same " if @media_content != set }album", sectionClass: 'content -color-4' %>
 <% end %>
 
 <% if [MediaContent::TYPE_GRAPHIC, MediaContent::TYPE_COLLECTION].include?(@media_content.type) %>
