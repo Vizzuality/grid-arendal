@@ -5,10 +5,6 @@ class UsersController < ApplicationController
   before_action :set_activities, only: [:show]
   before_action :set_publications, only: [:show]
 
-  def index
-    @users = User.order(:first_name, :last_name)
-  end
-
   def show
     @news = NewsArticle.limit(4).order(publication_date: :desc)
     @media_contents = MediaContent.albums_collections_and_videos.featured

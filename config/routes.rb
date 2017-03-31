@@ -25,7 +25,8 @@ Rails.application.routes.draw do
     get :paginate, on: :collection, defaults: { format: 'js' }
   end
 
-  resources :staff, controller: 'users' do
+  get '/staff', to: redirect("/about#staff")
+  resources :staff, controller: 'users', only: [:show] do
     get :related_items, on: :collection, defaults: { format: 'js' }
   end
 
