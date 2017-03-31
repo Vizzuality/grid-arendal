@@ -40,7 +40,7 @@
           <ul class="anchors">
             <li class="text -section-menu js-anchor" data-section-belongs="overview">Overview</li>
             <% if @activity.partners.any? || @activity.links.any? %>
-              <li class="text -section-menu js-anchor" data-section-belongs="partners">Partners & Links</li>
+              <li class="text -section-menu js-anchor" data-section-belongs="partners">Partners</li>
             <% end %>
             <% if @activity.lead_user || @activity.users.any? %>
               <li class="text -section-menu js-anchor" data-section-belongs="users">Staff involved</li>
@@ -101,7 +101,9 @@
 </section>
 
 <% if @activity.partners.any? || @activity.links.any? %>
-  <%= render 'shared/partners', partners: @activity.partners, links: @activity.links, sectionClass: 'content -color-3' %>
+  <%= render 'shared/partners', partners: @activity.partners,
+    title: "Partners",
+    links: @activity.links, sectionClass: 'content -color-3' %>
 <% end %>
 
 <% if @activity.lead_user || @activity.users.any? %>
