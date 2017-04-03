@@ -25,10 +25,10 @@ Rails.application.routes.draw do
     get :paginate, on: :collection, defaults: { format: 'js' }
   end
 
-  get '/staff', to: redirect("/about#staff")
   resources :staff, controller: 'users', only: [:show] do
     get :related_items, on: :collection, defaults: { format: 'js' }
   end
+  get '/staff', to: redirect("/about#staff")
 
   resources :graphic_requests, only: [:new, :create, :show]
 
