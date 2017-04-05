@@ -17,7 +17,7 @@ module Backend
 
     def update
       if @video.update(video_params)
-        redirect_to edit_video_url(@video),
+        redirect_to edit_video_url(id: @video.id, page: params[:page]),
           notice: 'Video updated'
       else
         set_videos

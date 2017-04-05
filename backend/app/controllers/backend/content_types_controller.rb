@@ -20,7 +20,7 @@ module Backend
 
     def update
       if @content_type.update(content_type_params)
-        redirect_to edit_content_type_url(@content_type),
+        redirect_to edit_content_type_url(id: @content_type, page: params[:page]),
           notice: 'Content Type updated'
       else
         render :edit

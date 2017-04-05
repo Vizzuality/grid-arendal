@@ -18,7 +18,7 @@ module Backend
 
     def update
       if @photo.update(photo_params)
-        redirect_to edit_photo_url(@photo),
+        redirect_to edit_photo_url(id: @photo.id, page: params[:page]),
           notice: 'Picture updated'
       else
         set_photos

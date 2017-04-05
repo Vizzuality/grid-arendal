@@ -20,7 +20,7 @@ module Backend
 
     def update
       if @partner.update(partner_params)
-        redirect_to edit_partner_url(@partner),
+        redirect_to edit_partner_url(id: @partner.id, page: params[:page]),
           notice: 'Partner updated'
       else
         render :edit

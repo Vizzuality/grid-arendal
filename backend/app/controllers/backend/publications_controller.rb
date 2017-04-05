@@ -21,7 +21,7 @@ module Backend
 
     def update
       if @publication.update(publication_params)
-        redirect_to edit_publication_url(@publication),
+        redirect_to edit_publication_url(id: @publication.id, page: params[:page]),
           notice: 'Publication updated'
       else
         set_objects

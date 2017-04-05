@@ -21,7 +21,7 @@ module Backend
 
     def update
       if @event.update(event_params)
-        redirect_to edit_event_url(@event),
+        redirect_to edit_event_url(id: @event.id, page: params[:page]),
           notice: 'Event updated'
       else
         set_objects

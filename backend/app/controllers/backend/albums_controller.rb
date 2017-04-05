@@ -26,7 +26,7 @@ module Backend
 
     def update
       if @album.update(album_params)
-        redirect_to edit_album_url(@album),
+        redirect_to edit_album_url(id: @album.id, page: params[:page]),
           notice: 'Album updated'
       else
         set_albums

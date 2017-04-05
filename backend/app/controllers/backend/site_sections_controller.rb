@@ -17,7 +17,8 @@ module Backend
 
     def update
       if @site_section.update(site_section_params)
-        redirect_to [:edit, @site_section], notice: 'Section updated'
+        redirect_to edit_site_section_url(id: @site_section.id, page: params[:page]),
+          notice: 'Section updated'
       else
         set_photos
         render :edit
