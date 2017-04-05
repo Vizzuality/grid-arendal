@@ -17,7 +17,7 @@ module Backend
 
     def update
       if @news_article.update(news_article_params)
-        redirect_to edit_news_article_url(@news_article),
+        redirect_to edit_news_article_url(id: @news_article.id, page: params[:page]),
           notice: 'News article updated'
       else
         set_objects

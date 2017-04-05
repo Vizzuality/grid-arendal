@@ -20,7 +20,8 @@ module Backend
 
     def update
       if @tag.update(tag_params)
-        redirect_to edit_tag_url(@tag), notice: 'Tag updated'
+        redirect_to edit_tag_url(id: @tag.id, page: params[:page]),
+          notice: 'Tag updated'
       else
         render :edit
       end

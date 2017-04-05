@@ -21,7 +21,7 @@ module Backend
 
     def update
       if @graphic.update(graphic_params)
-        redirect_to edit_graphic_url(@graphic),
+        redirect_to edit_graphic_url(id: @graphic, page: params[:page]),
           notice: 'Graphic updated'
       else
         set_graphics

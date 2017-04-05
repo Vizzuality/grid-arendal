@@ -26,7 +26,7 @@ module Backend
 
     def update
       if @collection.update(collection_params)
-        redirect_to edit_collection_url(@collection),
+        redirect_to edit_collection_url(id: @collection.id, page: params[:page]),
           notice: 'Collection updated'
       else
         set_collections

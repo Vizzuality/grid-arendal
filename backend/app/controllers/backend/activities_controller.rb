@@ -21,7 +21,7 @@ module Backend
 
     def update
       if @activity.update(activity_params)
-        redirect_to edit_activity_url(@activity),
+        redirect_to edit_activity_url(id: @activity.id, page: params[:page]),
           notice: 'Activity updated'
       else
         set_objects

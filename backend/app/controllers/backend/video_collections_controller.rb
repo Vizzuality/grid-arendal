@@ -19,7 +19,7 @@ module Backend
 
     def update
       if @video_collection.update(video_collection_params)
-        redirect_to edit_video_collection_url(@video_collection),
+        redirect_to edit_video_collection_url(id: @video_collection.id, page: params[:page]),
           notice: 'Video collection updated'
       else
         set_video_collections

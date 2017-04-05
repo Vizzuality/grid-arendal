@@ -21,11 +21,13 @@ div.fields
 
   = render 'backend/shared/form/field_input', form: form, value: :organization
 
-  = render 'backend/shared/form/field_input', form: form, value: :current_position, label_txt: 'Position'
+  = render 'backend/shared/form/field_input', form: form, value: :current_position,
+    label_txt: 'Position', note_txt: "Staff's role at GRID-Arendal"
 
   = render 'backend/shared/form/field_select', form: form,
     value: :position_category, collection: User::POSITION_CATEGORIES,
-    include_blank: true, label_txt: "Position Category", input_as: :select
+    include_blank: true, label_txt: "Position Category", input_as: :select,
+    note_txt: "Category in which to list this person on the About page [Leave empty to omit]"
 
   = render 'backend/shared/form/field_input', form: form, value: :phone
 
@@ -48,6 +50,6 @@ div.fields
   = render 'backend/shared/form/field_select', form: form, value: :role, collection: user_roles, as: :collection_select, label_txt: 'Role'
 
   = render 'backend/shared/form/field_checkbox', form: form, value: :active,
-    label_txt: "Admin"
+    label_txt: "Admin", note_txt: "Staff members that have access to the back office"
 
   /= render 'backend/shared/form/field_checkbox', form: form, value: :is_board_member

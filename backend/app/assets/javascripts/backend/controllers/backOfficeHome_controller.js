@@ -25,6 +25,11 @@
       });
       new App.View.IndexSearcher();
       new App.View.IndexFilter();
+      this.scrollElementIntoView(params);
+    },
+
+    scrollElementIntoView: function(params) {
+      $('#item_'+params['id'])[0].scrollIntoView( true );
     },
 
     _indexPaginate: function(params) {

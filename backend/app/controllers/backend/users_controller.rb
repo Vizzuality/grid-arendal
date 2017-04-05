@@ -21,7 +21,8 @@ module Backend
 
     def update
       if @user.update(user_params)
-        redirect_to edit_user_url(@user), notice: 'User updated'
+        redirect_to edit_user_url(id: @user, page: params[:page]),
+          notice: 'User updated'
       else
         @users = current_user&.admin? ? User.filter_users(user_filters) : User.filter_actives
         render :edit

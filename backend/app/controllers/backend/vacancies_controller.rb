@@ -20,7 +20,8 @@ module Backend
 
     def update
       if @vacancy.update(vacancy_params)
-        redirect_to edit_vacancy_url(@vacancy), notice: 'Vacancy updated'
+        redirect_to edit_vacancy_url(id: @vacancy.id, page: params[:page]),
+          notice: 'Vacancy updated'
       else
         set_vacancies
         set_objects
