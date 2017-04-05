@@ -1,3 +1,25 @@
 <div class="l-items-detail -no-index">
-  <%= render 'backend/shared/phrases' %>
+  <div class="c-home-info">
+    <% @links.each do |item| %>
+      <div class="item">
+        <h2 class="text main-title"><%= item[:name] %></h2>
+        <p class="text -plain-text">There are <%= item[:count] %> <%= item[:name].downcase %> in the system.</p>
+        <% if ["publications", "activities"].include?(item[:key]) %>
+          <p class="text -plain-text">
+            <%= item[:name].classify.constantize.where(is_published: true).count %>
+            published.
+          </p>
+          <p class="text -plain-text">
+            <%= item[:name].classify.constantize.where(is_featured: true).count %>
+            featured.
+          </p>
+        <% elsif item[:key] == "users" %>
+          <p class="text -plain-text">
+            <%= item[:key].classify.constantize.where(active: true).count %>
+            admins.
+          </p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
