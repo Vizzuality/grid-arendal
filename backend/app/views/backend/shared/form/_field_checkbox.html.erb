@@ -1,5 +1,15 @@
-<% label_txt ||= value %>
+<%
+  label_txt ||= value
+  note_txt ||= nil
+%>
 <div class="field">
   <%= form.label value, label_txt, class: 'text -field-label -bold -dark' %>
   <%= form.input value, label: false, as: :boolean %>
+  <% if note_txt %>
+    <div class="options">
+      <div class="text -field-note dark">
+        <%= note_txt %>
+      </div>
+    </div>
+  <% end %>
 </div>
