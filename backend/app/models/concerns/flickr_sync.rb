@@ -28,7 +28,9 @@ module FlickrSync
         self.description = split_it[0]
         # tries to get the author name from description
         self.author = split_it.size > 1 ? split_it[1].strip : photo_info.owner.realname
-
+        if self.author[-1] == '.'
+          self.author = self.author[0...-1]
+        end
         self.external_url = photo_info.urls.first["_content"]
         self.licence = photo_info.license
         if photo_info.tags.any?
@@ -91,6 +93,9 @@ module FlickrSync
             pic.description = split_it[0]
             # tries to get the author name from description
             pic.author = split_it.size > 1 ? split_it[1].strip : photo_info.owner.realname
+            if pic.author[-1] == '.'
+              pic.author = pic.author[0...-1]
+            end
 
             pic.external_url = photo_info.urls.first["_content"]
             pic.licence = photo_info.license
