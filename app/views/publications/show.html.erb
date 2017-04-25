@@ -122,7 +122,8 @@
 </div>
 
 <% if @publication.partners.any? %>
-    <%= render 'shared/partners', partners: @publication.partners, sectionClass: 'content -color-2' %>
+  <%= render 'shared/partners', partners: @publication.partners,
+    sectionClass: 'content -color-2' %>
 <% end %>
 
 <% if @users.any? || @publication.lead_user %>
