@@ -15,6 +15,7 @@
       selectTriggerClass: ".js-select",
       selectTagsTriggerClass: ".js-select-tags",
       selectTagsInlineClass: "js-inline-tags",
+      clearTagsClass: ".js-clear-tags",
       selectPhotoTriggerClass: ".js-select-photo",
     },
 
@@ -26,6 +27,7 @@
       this._loadSelect();
       this._loadDatepicker();
       this._loadTaggingSelect();
+      this._loadClearTags();
       this._loadPhotoSearch();
       this._loadFilesUploader();
     },
@@ -107,6 +109,16 @@
         }
         $(element).select2(params);
       }.bind(this));
+    },
+
+    _loadClearTags: function() {
+      $(this.options.clearTagsClass).on('click', function(e) {
+        e.preventDefault();
+        $(e.currentTarget).parents('.field').find('select').
+          val(null).trigger('change');
+        $(e.currentTarget).parents('form').submit();
+        return true;
+      });
     },
 
     _loadPhotoSearch: function() {
