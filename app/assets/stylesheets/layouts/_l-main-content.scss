@@ -95,30 +95,6 @@
         max-height: 80%;
       }
     }
-
-    .external-links {
-      margin-top: rem(16px);
-
-      li {
-        display: inline-block;
-        margin-right: rem(16px);
-        cursor: pointer;
-      }
-
-      .icon {
-        width: rem(20px);
-        height: rem(20px);
-        fill: rgba($color-1, 0.7);
-      }
-
-      span {
-        font-size: 13px;
-        font-family: $font-family-1;
-        font-weight: 400;
-        opacity: .8;
-        vertical-align: super;
-      }
-    }
   }
 
   &.-about {

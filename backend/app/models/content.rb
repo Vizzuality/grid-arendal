@@ -73,10 +73,6 @@ class Content < ApplicationRecord
 
   before_validation :strip_whitespace
 
-  def links
-    documents + weblinks
-  end
-
   private
 
   def strip_whitespace
