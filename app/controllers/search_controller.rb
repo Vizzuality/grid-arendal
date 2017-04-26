@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 class SearchController < ApplicationController
-  before_action :set_selected_section, only[:index]
+  before_action :set_selected_section, only: [:index]
   before_action :set_limit, only: [:index]
 
   helper_method :options_filter
