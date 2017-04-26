@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 class SearchController < ApplicationController
+  before_action :set_selected_section, only[:index]
   before_action :set_limit, only: [:index]
 
   helper_method :options_filter
@@ -7,7 +8,6 @@ class SearchController < ApplicationController
   def index
     @query = params[:query] && params[:query].strip
     if @query.present?
-      @selected_section = params[:section]
 
       case @selected_section
         when 'News'
@@ -39,8 +39,12 @@ class SearchController < ApplicationController
       params.permit(:query, :section)
     end
 
+    def set_selected_section
+      @selected_section = params[:section]
+    end
+
     def set_limit
-      @search_limit = 20
+      @search_limit = @selected_section ? 100 : 20
     end
 
     def set_news
