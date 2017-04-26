@@ -1,9 +1,11 @@
 <% title(@activity.title) %>
 
+<% picture_url = background_image_url(@activity) %>
+
 <% content_for :social_cards do %>
   <%= render 'shared/social_cards', title: "GRID-Arendal: #{@activity.title}",
     description: @activity.description.truncate(700),
-    img_src: @activity.media_content && @activity.media_content.medium_or_small_url %>
+    img_src: background_image_url(@activity, :medium) %>
 <% end %>
 
 <div class="l-header-single">
@@ -23,7 +25,7 @@
     </div>
   </div>
 
-  <div class="banner -activities-article <% if @activity.media_content %>-picture<% end %>" <% if @activity.media_content %>style="background-image: url('<%= @activity.media_content.biggest_size_url %>');"<% end %>>
+  <div class="banner -activities-article <% if picture_url %>-picture<% end %>" style="background-image: url('<%= picture_url %>');">
     <div class="section-menu">
       <div class="row">
         <div class="small-12 columns">
