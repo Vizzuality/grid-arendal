@@ -1,17 +1,6 @@
 <% title(@publication.title) %>
 
-<% picture_url = if @publication.picture.exists?
-                  @publication.picture.url(:original)
-                elsif @publication.media_content
-                  photo = if @publication.media_content.type == MediaContent::TYPE_PHOTO
-                            @publication.media_content
-                          else
-                            @publication.media_content.photos.first
-                          end
-                  photo.biggest_size_url
-                else
-                  asset_path('original/missing2.png')
-                end %>
+<% picture_url = background_image_url(@publication) %>
 
 <% content_for :social_cards do %>
   <%= render 'shared/social_cards', title: "#{@publication.title} | GRID-Arendal",
