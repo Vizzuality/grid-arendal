@@ -22,6 +22,7 @@ class Content < ApplicationRecord
   include Sanitizable
   include Featurable
   include PgSearch
+  include Attachable::Picture
 
   acts_as_taggable
 
