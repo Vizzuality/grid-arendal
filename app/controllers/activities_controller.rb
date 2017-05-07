@@ -50,7 +50,7 @@ class ActivitiesController < ApplicationController
 
   private
     def options_filter
-      params.permit(:type, :partners, :years, :tags, :programme, :status)
+      params.permit(:type, :partners, :tags, :programme, :status)
     end
 
     def set_page_param
