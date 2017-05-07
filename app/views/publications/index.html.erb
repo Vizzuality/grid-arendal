@@ -44,16 +44,21 @@
       with_search: true
     },
     {
+      data: @years,
+      type: 'select',
+      title: 'FILTER BY YEAR',
+      placeholder: 'Filter by year',
+      key: 'year',
+      display_method: 'to_i',
+      matching_method: 'to_i',
+      with_search: true
+    },
+    {
       data: @tags,
       type: 'tags',
       title: 'FILTER BY TAGS',
       placeholder: 'Filter by tags',
       key: 'tags'
-    },
-    {
-      data: @years,
-      type: 'years',
-      key: 'years'
     }
   ] %>
   <%= render 'shared/filters', filters: filters %>

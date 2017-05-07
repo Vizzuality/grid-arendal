@@ -150,10 +150,6 @@ $filters-screen-m-width: 16%;
       box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2);
       display: none;
 
-      .-publications & {
-        top: rem(80px);
-      }
-
       .-search & {
         top: rem(54px);
       }
@@ -525,10 +521,6 @@ $filters-screen-m-width: 16%;
 
   @media screen and (min-width: $screen-m) {
     display: block;
-
-    .-publications & {
-      height: rem(98px);
-    }
   }
 }
 

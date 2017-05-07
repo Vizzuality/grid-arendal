@@ -24,9 +24,7 @@ class Publication < Content
   has_many :related_contents, dependent: :destroy
   has_many :activities, through: :related_contents
 
-  scope :older_pubs, -> { where('EXTRACT(year from content_date) < ?', Date.today.year - 5)}
-  scope :filter_or_older_pubs, ->(years) {where('EXTRACT(year from content_date) IN (?) OR EXTRACT(year from content_date) < ?', years, Date.today.year-5)}
-  scope :by_years, ->(years) { where('EXTRACT(year from content_date) IN (?)', years) }
+  scope :by_year, ->(year) { where('EXTRACT(year from content_date) = ?', year) }
 
   def media_contents_with_graphics_expanded
     media_contents.map do |media|
@@ -44,28 +42,14 @@ class Publication < Content
       type = options['type']                          if options['type'].present?
       partners = options['partners']                  if options['partners'].present?
       status = options['status'] if options['status'].present?
-      older = nil
-      years = nil
-      if options['years'].present?
-        years = options['years'].split(',').map(&:to_i)
-        if years.include?(-1)
-          older = true
-          years.delete(-1)
-        end
-      end
+      year = options['year'].to_i if options['year'].present?
 
       publications = Publication.by_published.order(content_date: :desc)
       publications = publications.by_tags(tags)   if tags.present?
       publications = publications.by_type(type)   if type.present?
       publications = publications.by_partners(partners)   if partners.present?
       publications = publications.by_status(status)   if status.present?
-      if older && years.present?
-        publications = publications.filter_or_older_pubs(years)
-      elsif years.present?
-        publications = publications.by_years(years)
-      elsif older
-        publications = publications.older_pubs
-      end
+      publications = publications.by_year(year) if year.present?
       publications
     end
 
