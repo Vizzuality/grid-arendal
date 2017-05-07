@@ -38,6 +38,7 @@
         }
         this.selectedTagsNames.push(name);
       }
+      this._runCallback(this.selectedTagsNames);
     },
 
     _setSpeaker: function() {
