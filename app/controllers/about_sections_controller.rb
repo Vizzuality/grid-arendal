@@ -6,7 +6,7 @@ class AboutSectionsController < ApplicationController
     @users = User.regular_staff.with_category.order(:first_name)
     @categories = @users.map(&:position_category).uniq
 
-    @vacancies = Vacancy.published
+    @vacancies = Vacancy.published.order(:title)
     @board_members = User.board_members.order(:last_name)
     @affiliates = User.affiliates.order(:last_name)
     @programmes = Activity.programmes
