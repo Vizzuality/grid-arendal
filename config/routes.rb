@@ -36,5 +36,5 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  get "*any", via: :all, to: "errors#not_found", constraints: -> (req) { !(req.fullpath =~ /^\/images|system\/.*/) }
+  get "/*any", via: :all, to: "errors#not_found", constraints: -> (req) { !(req.fullpath =~ /^\/assets|images|system\/.*/) }, as: :not_found
 end
