@@ -6,7 +6,7 @@
 
   <%= render 'backend/shared/form/field_fake_input', value: form.object.external_id,
     label_txt: "Flickr album id", note_txt: "Flickr id can't be changed",
-    link_me_to: "https://www.flickr.com/photos/gridarendal/albums/#{form.object.external_id}" %>
+    link_me_to: "//www.flickr.com/photos/gridarendal/albums/#{form.object.external_id}" %>
 
   <%= render 'backend/shared/form/field_photos', form: form, label_txt: 'Pictures',
     photos: @album_photos, external_link: true %>

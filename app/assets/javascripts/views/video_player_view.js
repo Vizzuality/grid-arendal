@@ -66,7 +66,7 @@
     },
 
     _getIframeHTML: function () {
-      return '<iframe id="' + this.options.videoPlayerId + '" src="https://player.vimeo.com/video/' + this.$videoPlayerContainer.data('video-id') + '?title=0&byline=0&portrait=0" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
+      return '<iframe id="' + this.options.videoPlayerId + '" src="//player.vimeo.com/video/' + this.$videoPlayerContainer.data('video-id') + '?title=0&byline=0&portrait=0" width="100%" height="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>'
     },
 
   });
