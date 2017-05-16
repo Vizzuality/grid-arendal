@@ -12,8 +12,8 @@
       cardPictureClass: ".js-video-thumbnail[data-video-id]",
       cardVideoDataAttr: "video-id",
       cardVideoProviderDataAttr: "video-provider",
-      vimeoAPIUrl: "http://vimeo.com/api/v2/video/_VIDEO_ID_.json",
-      youtubeImageUrl: "https://img.youtube.com/vi/_VIDEO_ID_/hqdefault.jpg"
+      vimeoAPIUrl: "//vimeo.com/api/v2/video/_VIDEO_ID_.json",
+      youtubeImageUrl: "//img.youtube.com/vi/_VIDEO_ID_/hqdefault.jpg"
     },
 
     initialize: function() {
