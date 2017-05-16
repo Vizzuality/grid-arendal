@@ -4,7 +4,7 @@
 
 <% content_for :social_cards do %>
   <%= render 'shared/social_cards', title: "GRID-Arendal: #{@activity.title}",
-    description: @activity.description.truncate(700),
+    description: @activity.description && @activity.description.truncate(700),
     img_src: background_image_url(@activity, :medium) %>
 <% end %>
 

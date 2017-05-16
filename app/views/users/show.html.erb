@@ -8,7 +8,7 @@
 
 <% content_for :social_cards do %>
   <%= render 'shared/social_cards', title: "#{@user.full_name} | GRID-Arendal",
-    description: @user.description.truncate(120),
+    description: @user.description && @user.description.truncate(120),
     img_src: @user.avatar.try(:url) %>
 <% end %>
 
