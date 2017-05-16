@@ -1,16 +1,16 @@
 <% if ['albums', 'collections', 'photos', 'graphics'].include?(controller_name) %>
-  <%= link_to raw('<svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-rrss-flickr"></use></svg>'),
+  <%= link_to raw('<svg class="icon"><use xmlns:xlink="//www.w3.org/1999/xlink" xlink:href="#icon-rrss-flickr"></use></svg>'),
     [:flickr_update, item], title: "Flickr update" %>
 <% end %>
 <% if ['activities', 'publications', 'albums', 'videos', 'collections',
     'video_collections'].include?(controller_name) %>
   <% if can?(:make_featured, item) && item.not_featured? %>
-    <%= link_to raw('<svg class="icon" data-type="Make featured"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-star_outline"></use></svg>'),
+    <%= link_to raw('<svg class="icon" data-type="Make featured"><use xmlns:xlink="//www.w3.org/1999/xlink" xlink:href="#icon-star_outline"></use></svg>'),
       [:make_featured, item], method: :patch, remote: true, class: "MakeFeatured",
       title: "Make featured" %>
   <% end %>
   <% if can?(:remove_featured, item) && item.featured? %>
-    <%= link_to raw('<svg class="icon" data-type="Remove featured"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-star"></use></svg>'),
+    <%= link_to raw('<svg class="icon" data-type="Remove featured"><use xmlns:xlink="//www.w3.org/1999/xlink" xlink:href="#icon-star"></use></svg>'),
       [:remove_featured, item], method: :patch, remote: true,
       class: "RemoveFeatured", title: "Remove featured" %>
   <% end %>
@@ -19,15 +19,15 @@
 <% if ['activities', 'publications', 'vacancies'].
     include?(controller_name) %>
   <% if can?(:publish, item) && item.unpublished? %>
-    <%= link_to raw('<svg class="icon" data-type="Publish"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-visibility_off"></use></svg>'),
+    <%= link_to raw('<svg class="icon" data-type="Publish"><use xmlns:xlink="//www.w3.org/1999/xlink" xlink:href="#icon-visibility_off"></use></svg>'),
       [:publish, item], method: :patch, remote: true, class: "Publish",
       title: "Publish" %>
   <% end %>
   <% if can?(:unpublish, item) && item.published? %>
-    <%= link_to raw('<svg class="icon" data-type="Unpublish"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-visibility"></use></svg>'),
+    <%= link_to raw('<svg class="icon" data-type="Unpublish"><use xmlns:xlink="//www.w3.org/1999/xlink" xlink:href="#icon-visibility"></use></svg>'),
       [:unpublish, item], method: :patch, remote: true, class: "Unpublish",
       title: "Unpublish" %>
   <% end %>
 <% end %>
 
-<%= link_to raw('<svg class="icon" data-type="Delete"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-delete"></use></svg>'), item, method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to raw('<svg class="icon" data-type="Delete"><use xmlns:xlink="//www.w3.org/1999/xlink" xlink:href="#icon-delete"></use></svg>'), item, method: :delete, data: { confirm: 'Are you sure?' } %>
