@@ -36,5 +36,6 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
+  get 'indigenous', to: "static#indigenous"
   get "/*any", via: :all, to: "errors#not_found", constraints: -> (req) { !(req.fullpath =~ /^\/assets|images|system\/.*/) }, as: :not_found
 end

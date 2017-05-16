@@ -12,13 +12,13 @@
       <use xlink:href="#icon-rrss-email"></use>
     </svg>
   </a>
-  <%= link_to("http://www.facebook.com/sharer/sharer.php?u=#{request.original_url}",
+  <%= link_to("//www.facebook.com/sharer/sharer.php?u=#{request.original_url}",
               {class: "share-btn -facebook", target: "_blank", data: {key: "FB"} }) do %>
     <svg class="icon">
       <use xlink:href="#icon-rrss-facebook"></use>
     </svg>
   <% end %>
-  <a class="share-btn -twitter" href="http://www.twitter.com/share?text=Visit @GRIDArendal 's <%= yield(:title) %> in" target="_blank" data-key="twitter">
+  <a class="share-btn -twitter" href="//www.twitter.com/share?text=Visit @GRIDArendal 's <%= yield(:title) %> in" target="_blank" data-key="twitter">
     <svg class="icon">
       <use xlink:href="#icon-rrss-twitter"></use>
     </svg>
