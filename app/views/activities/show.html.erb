@@ -86,11 +86,10 @@
           <% if @activity.content_type.present? %>
             <p><strong>Type:</strong> <%= link_to @activity.content_type.title, activities_path(:type => @activity.content_type.id) %></p>
           <% end %>
-          <% if @activity.tags.where(category: Tag::PROGRAMME).any? %>
+          <% if @activity.programme %>
             <p>
               <strong>Programme:</strong>
-              <% @activity.tags.where(category: Tag::PROGRAMME).each_with_index do |tag, i| %><%= i != 0 ? ', ' : '' %>
-                <%= link_to tag, activities_path(:programme => tag.id) %><% end %>
+              <%= link_to @activity.programme.title, @activity.programme %>
             </p>
           <% end %>
         </div>
