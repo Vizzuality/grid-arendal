@@ -17,7 +17,7 @@ module Attachable
                           },
                           url: ':s3_domain_url',
                           path: "#{Rails.env}/:class/:s_picture/:id/:style/:basename.:extension",
-                          :s3_protocol => ''
+                          s3_protocol: :https
       else
         has_attached_file :picture, styles: { medium: '500x500>', thumb: '100x100>' },
                                     default_url: '/assets/:style/missing2.png'
@@ -46,7 +46,7 @@ module Attachable
                           },
                           url: ':s3_domain_url',
                           path: "#{Rails.env}/:class/:s_cover_picture/:id/:style/:basename.:extension",
-                          :s3_protocol => ''
+                          s3_protocol: :https
       else
         has_attached_file :cover_picture, styles: { medium: '500x500>', thumb: '100x100>' },
                           default_url: '/assets/:style/missing2.png'
@@ -74,7 +74,7 @@ module Attachable
                           },
                           url: ':s3_domain_url',
                           path: "#{Rails.env}/:class/:s_logo/:id/:style/:basename.:extension",
-                          :s3_protocol => ''
+                          s3_protocol: :https
       else
         has_attached_file :logo, styles: { medium: '300x300>', thumb: '100x100>' },
                                  default_url: '/assets/:style/missing2.png'
@@ -102,7 +102,7 @@ module Attachable
                           },
                           url: ':s3_domain_url',
                           path: "#{Rails.env}/:class/:s_background_image/:id/:style/:basename.:extension",
-                          :s3_protocol => ''
+                          s3_protocol: :https
       else
         has_attached_file :background_image, styles: { medium: '500x500>', thumb: '100x100>' },
                                              default_url: '/assets/:style/missing2.png'
@@ -130,7 +130,7 @@ module Attachable
                           },
                           url: ':s3_domain_url',
                           path: "#{Rails.env}/:class/:s_avatar/:id/:style/:basename.:extension",
-                          :s3_protocol => ''
+                          s3_protocol: :https
       else
         has_attached_file :avatar, styles: { medium: '300x300>', thumb: '100x100>' },
                                     default_url: '/assets/:style/missing2.png'
@@ -173,7 +173,7 @@ module Attachable
                           },
                           url: ':s3_domain_url',
                           path: "#{Rails.env}/:class/:s_thumbnail/:id/:style/:basename.:extension",
-                          :s3_protocol => ''
+                          s3_protocol: :https
       else
         has_attached_file :thumbnail, styles: { medium: '500x500>', thumb: '100x100>' },
                                    default_url: '/assets/:style/missing2.png'
@@ -214,7 +214,7 @@ module Attachable
                           },
                           url: ':s3_domain_url',
                           path: "#{Rails.env}/:class/:s_document/:id/:style/:basename.:extension",
-                          :s3_protocol => ''
+                          s3_protocol: :https
       else
         has_attached_file :document
       end
