@@ -34,6 +34,9 @@ class Photo < MediaContent
   delegate :publications, to: :album
   delegate :news_article, to: :album
 
+  # as background picture
+  has_many :contents, dependent: :nullify, foreign_key: :media_content_id
+
   def medium_or_small_url
     ordr = <<-SQL
       CASE

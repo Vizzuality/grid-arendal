@@ -38,6 +38,8 @@ class Content < ApplicationRecord
   has_many :content_partners, dependent: :destroy
   has_many :partners, through: :content_partners
   belongs_to :content_type
+
+  # background picture when linked to photos instead of uploaded to S3
   belongs_to :media_content
 
   has_many :content_news, dependent: :destroy
@@ -46,7 +48,7 @@ class Content < ApplicationRecord
   has_many :media_supports, dependent: :destroy
   has_many :media_contents, through: :media_supports
 
-  has_many :documents
+  has_many :documents, dependent: :destroy
   accepts_nested_attributes_for :documents, reject_if: :all_blank, allow_destroy: true
 
   has_many :weblinks, dependent: :destroy
