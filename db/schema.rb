@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170329121842) do
+ActiveRecord::Schema.define(version: 20170704144809) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -362,10 +362,16 @@ ActiveRecord::Schema.define(version: 20170329121842) do
   add_foreign_key "contents", "content_types"
   add_foreign_key "contents", "contents", column: "programme_id"
   add_foreign_key "contents", "media_contents"
+  add_foreign_key "contents", "users", column: "lead_user_id", name: "contents_lead_user_id_fk"
   add_foreign_key "documents", "contents"
+  add_foreign_key "event_contents", "contents", name: "event_contents_content_id_fk"
+  add_foreign_key "event_contents", "events", name: "event_contents_event_id_fk"
   add_foreign_key "event_partners", "events"
   add_foreign_key "event_partners", "partners"
+  add_foreign_key "event_users", "events", name: "event_users_event_id_fk"
+  add_foreign_key "event_users", "users", name: "event_users_user_id_fk"
   add_foreign_key "graphic_requests", "media_attachments"
+  add_foreign_key "graphic_requests", "media_contents", column: "graphic_id", name: "graphic_requests_graphic_id_fk"
   add_foreign_key "media_contents", "media_attachments", column: "eps_id"
   add_foreign_key "media_contents", "media_attachments", column: "pdf_id"
   add_foreign_key "media_contents", "media_contents", column: "album_id"
