@@ -7,6 +7,11 @@
 #  title       :string           not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  description :text
+#
+# Indexes
+#
+#  index_content_types_on_title  (title)
 #
 
 class ContentType < ApplicationRecord

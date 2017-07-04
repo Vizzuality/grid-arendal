@@ -27,14 +27,31 @@
 #  locked_at              :datetime
 #  failed_attempts        :integer          default(0), not null
 #  unlock_token           :string
+#  is_board_member        :boolean          default(FALSE)
+#  phone                  :string
+#  description            :text
 #  avatar_file_name       :string
 #  avatar_content_type    :string
 #  avatar_file_size       :integer
 #  avatar_updated_at      :datetime
+#  thumbnail_file_name    :string
+#  thumbnail_content_type :string
+#  thumbnail_file_size    :integer
+#  thumbnail_updated_at   :datetime
+#  middle_name            :string
+#  position_category      :string
+#  video_id               :integer
+#  facebook_url           :string
+#  linkedin_url           :string
+#  twitter_url            :string
+#  google_url             :string
+#  skype_user             :string
 #
 # Indexes
 #
+#  index_users_on_current_position      (current_position)
 #  index_users_on_email                 (email) UNIQUE
+#  index_users_on_position_category     (position_category)
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
 

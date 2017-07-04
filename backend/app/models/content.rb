@@ -3,18 +3,43 @@
 #
 # Table name: contents
 #
-#  id                   :integer          not null, primary key
-#  type                 :string
-#  title                :string
-#  description          :text
-#  is_published         :boolean
-#  position             :integer
-#  created_at           :datetime         not null
-#  updated_at           :datetime         not null
-#  picture_file_name    :string
-#  picture_content_type :string
-#  picture_file_size    :integer
-#  picture_updated_at   :datetime
+#  id                         :integer          not null, primary key
+#  type                       :string
+#  title                      :string
+#  description                :text
+#  is_published               :boolean
+#  position                   :integer
+#  created_at                 :datetime         not null
+#  updated_at                 :datetime         not null
+#  is_featured                :boolean
+#  project_number             :integer
+#  short_description          :text
+#  content_date               :date
+#  content_type_id            :integer
+#  media_content_id           :integer
+#  lead_user_id               :integer
+#  picture_file_name          :string
+#  picture_content_type       :string
+#  picture_file_size          :integer
+#  picture_updated_at         :datetime
+#  cover_picture_file_name    :string
+#  cover_picture_content_type :string
+#  cover_picture_file_size    :integer
+#  cover_picture_updated_at   :datetime
+#  status                     :string
+#  programme_id               :integer
+#
+# Indexes
+#
+#  index_contents_on_content_type_id   (content_type_id)
+#  index_contents_on_media_content_id  (media_content_id)
+#
+# Foreign Keys
+#
+#  contents_lead_user_id_fk  (lead_user_id => users.id)
+#  fk_rails_3790116d5c       (content_type_id => content_types.id)
+#  fk_rails_7839f6a2fb       (media_content_id => media_contents.id)
+#  fk_rails_c9694484f9       (programme_id => contents.id)
 #
 
 class Content < ApplicationRecord
