@@ -3,18 +3,25 @@
 #
 # Table name: news_articles
 #
-#  id               :integer          not null, primary key
-#  exposure_slug    :string
-#  title            :string
-#  position         :integer
-#  created_at       :datetime         not null
-#  updated_at       :datetime         not null
-#  publication_date :date
+#  id                :integer          not null, primary key
+#  exposure_slug     :string
+#  title             :string
+#  position          :integer
+#  created_at        :datetime         not null
+#  updated_at        :datetime         not null
+#  publication_date  :date
+#  short_description :text
+#  cover_src         :string
 #
+# Indexes
+#
+#  index_news_articles_on_to_tsvector_title  (setweight(to_tsvector('simple'::regconfig, COALESCE((title)::text, ''::text)), 'A'::"char"))
+#
+
+class NewsArticle < ApplicationRecord
 require 'rss'
 require 'open-uri'
 
-class NewsArticle < ApplicationRecord
   include PgSearch
   has_many :content_news, dependent: :destroy
   has_many :activities, through: :content_news, source: :activity
