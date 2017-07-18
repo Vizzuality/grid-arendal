@@ -1,4 +1,25 @@
 # frozen_string_literal: true
+# == Schema Information
+#
+# Table name: vacancies
+#
+#  id            :integer          not null, primary key
+#  title         :string
+#  description   :text
+#  is_published  :boolean          default(FALSE)
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  starting_date :date
+#  ending_date   :date
+#  vacancy_type  :string
+#  user_id       :integer
+#  duration      :string
+#
+# Foreign Keys
+#
+#  fk_rails_e98e4c98dd  (user_id => users.id)
+#
+
 class Vacancy < ApplicationRecord
   include Publishable
 

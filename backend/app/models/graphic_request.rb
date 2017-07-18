@@ -1,4 +1,24 @@
 # frozen_string_literal: true
+# == Schema Information
+#
+# Table name: graphic_requests
+#
+#  id                   :integer          not null, primary key
+#  media_attachment_id  :integer
+#  email                :string
+#  name                 :string
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#  download_hash        :string
+#  graphic_id           :integer
+#  description_of_usage :text
+#
+# Foreign Keys
+#
+#  fk_rails_d1a2c30045             (media_attachment_id => media_attachments.id)
+#  graphic_requests_graphic_id_fk  (graphic_id => media_contents.id)
+#
+
 class GraphicRequest < ApplicationRecord
   before_create :generate_hash
   belongs_to :media_attachment

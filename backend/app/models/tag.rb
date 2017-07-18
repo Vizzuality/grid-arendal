@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: tags
+#
+#  id             :integer          not null, primary key
+#  name           :string
+#  taggings_count :integer          default(0)
+#  category       :string
+#
+# Indexes
+#
+#  index_tags_on_name  (name) UNIQUE
+#
+
 class Tag < ApplicationRecord
   PROGRAMME = "Programme"
   CATEGORIES = ["Activity Area", PROGRAMME, "Region", "Theme"]

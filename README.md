@@ -1,8 +1,12 @@
-# Grid Arendal
+# GRID Arendal
 
 [![Build Status](https://travis-ci.org/Vizzuality/grid-arendal.svg?branch=master)](https://travis-ci.org/Vizzuality/grid-arendal) [![Code Climate](https://codeclimate.com/github/Vizzuality/grid-arendal/badges/gpa.svg)](https://codeclimate.com/github/Vizzuality/grid-arendal)
 
-TODO: Write a project description
+[GRID-Arendal's](https://www.grida.no) new website with a powerful and easy to
+use Content Management System developed specifically for the project and to meet
+the identified requirements.
+This application integrates with Flickr and Exposure two external services that
+were already being used by the GRID-Arendal's team.
 
 ## Installation
 
@@ -11,6 +15,8 @@ Requirements:
 * Ruby 2.3.1 [How to install](https://gorails.com/setup/osx/10.10-yosemite)
 * PostgreSQL 9.4+ [How to install](http://exponential.io/blog/2015/02/21/install-postgresql-on-mac-os-x-via-brew/)
 * If installing from a clean OS Sierra see below set up
+* Flickr account and application access keys (for media content management)
+* In production you will need an Amazon Web Services S3 Bucket and the access credentials (add to the .env file)
 
 Setup and install application
 
@@ -29,6 +35,8 @@ Install project dependencies:
 First time execute:
 
     cp config/database.yml.sample config/database.yml
+    cp env.sample .env
+    # fill in details on your .env file
 
     bundle exec rake db:create
     bundle exec rake db:migrate
