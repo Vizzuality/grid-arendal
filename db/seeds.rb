@@ -8,6 +8,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 if User.admin_users.empty?
+  puts "SEEDS: Creating an admin user"
   @user = User.new(email: 'admin@example.com', password: 'password', password_confirmation: 'password', active: true)
   @user.save
   @user.make_admin
@@ -19,3 +20,8 @@ if User.admin_users.empty?
   puts '*                                                                  *'
   puts '********************************************************************'
 end
+
+# Key Content Types
+puts "SEEDS: creating relevant content types"
+ContentType.find_or_create_by(title: ContentType::PROGRAMME, for_content: ContentType::ACTIVITY)
+ContentType.find_or_create_by(title: ContentType::ANNUAL_REPORT, for_content: ContentType::PUBLICATION)
