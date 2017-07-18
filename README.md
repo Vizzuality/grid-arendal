@@ -41,6 +41,7 @@ First time execute:
     bundle exec rake db:create
     bundle exec rake db:migrate
 
+    rails db:seed
     rails import:activities
     rails import:rss
     rails initialize:site_sections
