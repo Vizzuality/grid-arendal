@@ -1,6 +1,6 @@
 <% if @event %>
-  <% photo_url = if @event.background_image_file_name.present?
-                   @event.background_image
+  <% photo_url = if @event.cover_picture_file_name.present?
+                   @event.cover_picture
                  else
                    nil
                  end %>
@@ -13,7 +13,9 @@
           </svg>
           <div class="event-info">
             <h3 class="text -title-single-alt"><%= @event.title %></h3>
-            <div class="description text -event-description"><%= raw @event.description %></div>
+            <div class="description text -event-description">
+              <%= raw @event.short_description %>
+            </div>
             <div class="btn -dark">
               <%= link_to "Find out more", @event %>
             </div>
