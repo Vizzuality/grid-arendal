@@ -1,5 +1,7 @@
 <% title(@event.title) %>
 
+<% picture_url = background_image_url(@event) %>
+
 <div class="l-header-single">
   <div class="navigation -activities">
     <%= render 'shared/menu' %>
@@ -16,7 +18,7 @@
     </div>
   </div>
 
-  <div class="banner -activities-article <% if @event.background_image %>-picture<% end %>" <% if @event.background_image %>style="background-image: url('<%= @event.background_image %>');"<% end %>>
+  <div class="banner -activities-article <% if picture_url %>-picture<% end %>" <% if picture_url %>style="background-image: url('<%= picture_url %>');"<% end %>>
     <div class="section-menu">
       <div class="row">
         <div class="small-12 columns">
@@ -36,7 +38,9 @@
 
   <div class="row">
     <div class="small-12 column">
-      <div class="text -summary-alt"><%= raw @event.description %></div>
+      <div class="text -summary-alt">
+        <%= raw @event.description %>
+      </div>
     </div>
   </div>
 </section>

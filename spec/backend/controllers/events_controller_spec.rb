@@ -7,11 +7,15 @@ module Backend
     before :each do
       @partner_event = create(:partner_event, active: true)
       @event         = create(:event)
-      @adminuser     = create(:user, email: 'admin@sample.com', active: true, role: 'admin', first_name: 'Juanito')
+      @adminuser     = create(:user, email: 'admin@sample.com', active: true,
+                              role: 'admin', first_name: 'Juanito')
     end
 
     let!(:attri) do
-      { title: 'Update partner event' }
+      { title: 'Update partner event',
+        short_description: 'This is an awesome event',
+        description: 'It is really great'
+      }
     end
 
     let!(:attri_fail) do
