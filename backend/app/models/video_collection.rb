@@ -40,11 +40,11 @@ class VideoCollection < MediaContent
   end
 
   def video_provider
-    first_item.video_provider
+    first_item.try(:video_provider)
   end
 
   def video_id
-    first_item.video_id
+    first_item.try(:video_id)
   end
 
   class << self
