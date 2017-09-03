@@ -9,7 +9,8 @@
     note_txt: '(Choose the collection to which it belongs)' %>
 
   <%= render 'backend/shared/form/field_input', form: form, value: :external_url,
-  label_txt: "Video embed URL" %>
+    label_txt: "Video embed URL",
+    note_txt: "E.g.: Youtube: https://www.youtube.com/watch?v=mw44Ivan1dw ; Vimeo: https://vimeo.com/208123882" %>
 
   <%= render 'backend/shared/form/field_textarea', form: form, value: :description %>
 
