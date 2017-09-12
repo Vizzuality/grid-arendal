@@ -12,7 +12,7 @@ class AboutSectionsController < ApplicationController
     @programmes = Activity.programmes
     @annual_reports = Publication.published.joins(:content_type).
       where(content_types: {title: ContentType::ANNUAL_REPORT}).
-      order(content_date: :desc, title: :asc)
+      order(content_date: :desc, title: :asc).limit(3)
 
     not_in = []
     not_in << "vacancies" unless @vacancies.any?
