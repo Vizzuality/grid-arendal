@@ -1,19 +1,22 @@
 <% if @event %>
-  <% photo_url = if @event.background_image_file_name.present?
-                   @event.background_image
+  <% photo_url = if @event.cover_picture_file_name.present?
+                   @event.cover_picture
                  else
                    nil
                  end %>
   <div class="row">
     <div class="small-12 columns">
       <div class="c-events-modal">
-        <div class="event-container" style="background-image: url(<%= photo_url %>);">
+        <div class="event-container">
+          <div class="event-container-background" style="background-image: url(<%= photo_url %>);"></div>
           <svg class="close-btn icon js-btn-events-modal">
             <use xlink:href="#icon-close"></use>
           </svg>
           <div class="event-info">
             <h3 class="text -title-single-alt"><%= @event.title %></h3>
-            <div class="description text -event-description"><%= raw @event.description %></div>
+            <div class="description text -event-description">
+              <%= raw @event.short_description %>
+            </div>
             <div class="btn -dark">
               <%= link_to "Find out more", @event %>
             </div>
