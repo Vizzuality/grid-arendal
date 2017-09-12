@@ -13,6 +13,15 @@
     box-shadow: 0 rem(20px) rem(20px) 0 rgba($black, 0.2);
     z-index: 100;
 
+    .event-container-background {
+      height: 60%;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+
     @media screen and (min-width: $screen-m) {
       top: rem(70px);
       height: rem(530px);

@@ -11,6 +11,8 @@
       activities: @activities,
       publications: @publications,
       users: @users,
+      have_cover_picture: @event.cover_picture_file_name ? true : false,
+      cover_picture_url: @event.cover_picture,
       have_picture: @event.background_image_file_name ? true : false,
       picture_url: @event.background_image %>
   <% end %>

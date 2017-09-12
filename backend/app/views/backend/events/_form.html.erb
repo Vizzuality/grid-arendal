@@ -5,8 +5,17 @@
 <div class="fields">
 
   <%= render 'backend/shared/form/field_upload_img', form: form,
-    value: :background_image, label_txt: 'Background image',
-    have_picture: have_picture, picture_url: picture_url %>
+    value: :cover_picture, label_txt: 'Home banner image',
+    have_picture: have_cover_picture, picture_url: cover_picture_url,
+    note_txt: "Recommended size 970x200" %>
+
+  <%= render 'backend/shared/form/field_upload_img', form: form,
+    value: :background_image, label_txt: 'Event page background',
+    have_picture: have_picture, picture_url: picture_url,
+    note_txt: "Recommended a minimum size of 1200x600 and 2:1 proportion or higher" %>
+
+  <%= render 'backend/shared/form/field_textarea', form: form,
+    value: :short_description, note_txt: 'Home banner content' %>
 
   <%= render 'backend/shared/form/field_textarea', form: form,
     value: :description %>
