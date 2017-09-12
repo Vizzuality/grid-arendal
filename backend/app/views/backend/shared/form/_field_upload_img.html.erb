@@ -4,6 +4,7 @@
   if have_picture
     fix_input_class = fix_input_class + ' -have-picture'
   end
+  note_txt ||= nil
 %>
 
 <div class="field <%= field_class %>" data-type="picture">
@@ -18,6 +19,14 @@
         Drag and drop an image or click here to upload one.
       </p>
       <div class="current_picture" <% if have_picture %>style="background-image: url('<%= picture_url %>');"<% end %>></div>
+    </div>
+  <% end %>
+
+  <% if note_txt %>
+    <div class="options">
+      <div class="text -field-note dark">
+        <%= note_txt %>
+      </div>
     </div>
   <% end %>
 </div>
