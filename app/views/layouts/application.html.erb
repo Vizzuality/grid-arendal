@@ -39,6 +39,7 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'shared/analytics' %>
   </head>
   <body class="slide-<%= rand(1..6) %>">
     <%= render 'shared/icons' %>
@@ -56,6 +57,5 @@
 
     <%= render 'shared/footer' %>
   </body>
-  <%= render 'shared/analytics' %>
   <%= render 'shared/disqus' %>
 </html>
