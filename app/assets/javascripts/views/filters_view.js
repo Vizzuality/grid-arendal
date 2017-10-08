@@ -155,7 +155,7 @@
       }
       _.each(activeFilters, function(value, filter) {
         var selectedValues = value.split(",")
-        if(filter !== 'media') {
+        if(['media', 'status'].indexOf(filter) === -1) {
           selectedValues = selectedValues.map(Number);
         }
         var filter = _.findWhere(this.filters, {key: filter});
