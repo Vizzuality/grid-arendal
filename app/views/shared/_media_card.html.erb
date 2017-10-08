@@ -15,21 +15,11 @@
     video_id = media.video_id
   end
 
-  photos_count = media.type == MediaContent::TYPE_ALBUM ? media.photos.size : 0
-  videos_count = media.type == MediaContent::TYPE_VIDEO_COLLECTION ? media.videos.size : 0
-  graphics_count = media.type == MediaContent::TYPE_COLLECTION ? media.graphics.size : 0
-  needSteps = (photos_count + videos_count + graphics_count) > 1
-  meta = []
-  if photos_count == 1
-    meta.push("1 photo")
-  elsif photos_count > 0
-    meta.push("#{photos_count} photos")
-  end
-  if videos_count == 1
-    meta.push("1 video")
-  elsif videos_count > 0
-    meta.push("#{videos_count} videos")
-  end
+  meta, needSteps = if media.single?
+           ["", false]
+         else
+           [pluralize(media.items.size, media.item_title), (media.items.size > 1)]
+         end
 %>
 <div class="item js_slide slide">
   <%= link_to resource_path(media) do %>
@@ -45,7 +35,7 @@
       <div class="card-description">
         <h3 class="text -title-card-small"><%= media.title %></h3>
         <p class="card-meta">
-          <span class="text -meta"><%= meta.join(" | ") %></span>
+          <span class="text -meta"><%= meta %></span>
           <span class="icons">
             <svg class="icon">
               <use xlink:href="#icon-media_<%= svg_icon_for(media) %>"></use>

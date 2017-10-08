@@ -36,6 +36,10 @@ class Collection < MediaContent
   has_many :graphics, dependent: :destroy, foreign_key: :album_id
   alias_attribute :items, :graphics
 
+  def item_title
+    'Graphic'
+  end
+
   class << self
     def collections(params, limit)
       query_where = get_filter_condition(params, 'title')
