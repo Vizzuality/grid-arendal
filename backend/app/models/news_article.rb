@@ -42,7 +42,7 @@ require 'open-uri'
 
   def self.fetch_from_rss
     existing = NewsArticle.count
-    domain = "http://news.grida.no/"
+    domain = "https://news.grida.no/"
     url = "#{domain}feed.rss?page="
     page = 1
     begin
