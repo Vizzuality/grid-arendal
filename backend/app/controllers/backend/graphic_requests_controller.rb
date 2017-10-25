@@ -9,6 +9,12 @@ module Backend
     before_action :set_graphic_requests, except: [:destroy, :paginate]
 
     def index
+      respond_to do |format|
+        format.html
+        format.csv {
+          render text: @graphic_requests.to_csv
+        }
+      end
     end
 
     def edit
