@@ -20,15 +20,6 @@
             <div class="btn -dark">
               <%= link_to "Find out more", @event %>
             </div>
-            <% if @event.partners.any? %>
-              <div class="logos">
-                <% @event.partners.each do |partner| %>
-                  <%= link_to partner.web_url || "#" do %>
-                    <img src="<%= partner.logo.exists? ? partner.logo.url : asset_path('original/missing2.png') %>" class="logo">
-                  <% end %>
-                <% end %>
-              </div>
-            <% end %>
           </div>
         </div>
       </div>
