@@ -12,7 +12,7 @@ module Backend
       respond_to do |format|
         format.html
         format.csv {
-          render text: @graphic_requests.to_csv
+          render text: GraphicRequest.all.to_csv
         }
       end
     end
