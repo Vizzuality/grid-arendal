@@ -18,6 +18,7 @@
 #  fk_rails_d1a2c30045             (media_attachment_id => media_attachments.id)
 #  graphic_requests_graphic_id_fk  (graphic_id => media_contents.id)
 #
+require 'csv'
 
 class GraphicRequest < ApplicationRecord
   before_create :generate_hash
@@ -49,6 +50,15 @@ class GraphicRequest < ApplicationRecord
           .order(created_at: :desc)
       else
         GraphicRequest.order(created_at: :desc).limit(limit)
+      end
+    end
+
+    def to_csv
+      CSV.generate do |csv|
+        csv << column_names
+        all.each do |req|
+          csv << req.attributes.values_at(*column_names)
+        end
       end
     end
   end

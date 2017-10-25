@@ -1,4 +1,8 @@
 <h2 class="text -main-title -light">Graphics Download Requests</h2>
+<div class="buttons-bar">
+  <%= link_to "Download (.csv)", graphic_requests_path(format: :csv),
+    class: "btn -light -no-border -create-new" %>
+</div>
 
 <ul class="items-list">
   <% @graphic_requests.each do |graphic_request| %>
