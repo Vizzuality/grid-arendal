@@ -40,7 +40,7 @@ group :development, :test do
   gem 'awesome_print'
   gem 'faker'
   gem 'byebug', platform: :mri
-  gem 'rubocop', require: false
+  gem 'rubocop', '~> 0.49.0', require: false
   gem 'dotenv-rails'
 end
 
