@@ -133,7 +133,8 @@ class MediaContent < ApplicationRecord
   end
 
   def users
-    user_ids = (publications + activities).map do |item|
+    items = (publications || []) + (activities || [])
+    user_ids = (items).map do |item|
       item.users.pluck(:id)
     end.flatten.uniq
 

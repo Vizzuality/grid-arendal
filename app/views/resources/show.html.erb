@@ -155,7 +155,7 @@
   <%= render 'publications', media_content: @media_content %>
 <% end %>
 
-<% if @media_content.news_articles.any? %>
+<% if @media_content.news_articles.try(:any?) %>
   <%= render 'shared/news', news: @media_content.news_articles.
     order(publication_date: :desc), title: "Related news",
     sectionClass: 'content -color-4' %>

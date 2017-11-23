@@ -47,9 +47,9 @@ class Photo < MediaContent
   has_many :photo_sizes, dependent: :destroy
   belongs_to :album
 
-  delegate :activities, to: :album
-  delegate :publications, to: :album
-  delegate :news_article, to: :album
+  delegate :activities, to: :album, allow_nil: true
+  delegate :publications, to: :album, allow_nil: true
+  delegate :news_articles, to: :album, allow_nil: true
 
   # as background picture
   has_many :contents, dependent: :nullify, foreign_key: :media_content_id

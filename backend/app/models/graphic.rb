@@ -46,9 +46,9 @@ class Graphic < MediaContent
 
   has_many :photo_sizes, dependent: :destroy, foreign_key: :photo_id
 
-  delegate :activities, to: :collection
-  delegate :publications, to: :collection
-  delegate :news_article, to: :collection
+  delegate :activities, to: :collection, allow_nil: true
+  delegate :publications, to: :collection, allow_nil: true
+  delegate :news_articles, to: :collection, allow_nil: true
 
   class << self
     def graphics(params, limit)

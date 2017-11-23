@@ -1,4 +1,4 @@
-<% if media_content.activities.any? %>
+<% if media_content.activities.try(:any?) %>
   <%= render 'shared/posts', collection: media_content.activities.published.
     order(:title),
     title: 'Related activities',
