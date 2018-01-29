@@ -38,5 +38,9 @@ Rails.application.routes.draw do
 
   get 'indigenous', to: "static#indigenous"
   get 'climate/ipcc', to: "static#ipcc"
+  get 'climate/ipcc_tar', to: "static#ipcc_tar"
+  get 'climate/vital', to: "static#vital"
+  get 'climate/vitalafrica', to: "static#vitalafrica"
+  get 'aeo', to: "static#aeo"
   get "/*any", via: :all, to: "errors#not_found", constraints: -> (req) { !(req.fullpath =~ /^\/assets|images|system\/.*/) }, as: :not_found
 end
